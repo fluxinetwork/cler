@@ -1,0 +1,50 @@
+/*------------------------------*\
+
+    #VISIBILITY
+
+\*------------------------------*/
+
+[class*="show@"] {
+	display: none;
+}
+
+
+@media screen and (min-width: $break--s) {
+	.u-show\@small {
+		display: initial;
+	}
+
+	.u-hide\@small {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: $break--m) {
+	.u-show\@med {
+		display: initial;
+	}
+
+	.u-hide\@med {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: $break--l) {
+	.u-show\@large {
+		display: initial;
+	}
+
+	.u-hide\@large {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: $break--xl) {
+	.u-show\@xlarge {
+		display: initial;
+	}
+
+	.u-hide\@xlarge {
+		display: none !important;
+	}
+}

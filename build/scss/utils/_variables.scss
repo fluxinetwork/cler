@@ -1,0 +1,123 @@
+// BREAKPOINTS
+
+$breakpoints: (
+  small: 480px,
+  medium: 650px, 
+  large: 960px,
+  xlarge: 1300px,
+);
+
+$break--s: map-get($breakpoints, small);
+$break--m: map-get($breakpoints, medium);
+$break--l: map-get($breakpoints, large);
+$break--xl: map-get($breakpoints, xlarge);
+
+
+// SPACE
+
+$space-base: 2.8rem;
+$space--xs: $space-base*0.35;
+$space--s: $space-base*0.62;
+$space--m: $space-base;
+$space--l: $space-base*1.6;
+$space--xl: $space-base*2.5;
+$space--xxl: $space-base*4.3;
+
+$gutter: $space--s;
+$gutter--l: $space--m;
+
+$bigger: 1.2;
+$smaller: 0.7;
+
+
+
+// COLORS
+
+$c-main: #003399;
+$c-accent: #FF9933;
+$c-dark: #001135;
+$c-light:#FFF5E5;
+$c-txt: #333;
+$c-error: #F13636;
+$c-valid: #00C15F;
+
+// Color util for building layouts
+$bg-grid-tmp: transparent;
+$grid-tmp: false;
+@if ($grid-tmp) {
+	$bg-grid-tmp: rgba(green, 0.2);
+}
+
+
+// STYLES
+
+$radius: 3px;
+$cardW: 256px;
+$shadow: 0 0 15px rgba(#000,0.2);
+$shadow--heavy: 0 0 30px rgba(0,0,0,0.3);
+
+
+// TRANSITIONS
+
+$transition: all 0.2s ease-in-out;
+$transition--dynamic: all 0.3s $ease-out-quart;
+
+
+// TYPO
+
+$font-h: "qanelas", gotham, helvetica, arial, sans-serif;
+$font-txt: $font-h;
+$font-bt: $font-h;
+
+$font-base-size: 16px;
+$font-base-lh: 1.4;
+$font-small: 10px;
+
+$h1-font-sizes: (
+	null : (24px, 1.1),
+	medium : (32px),
+	large : (37px),
+	xlarge : (40px),
+);
+
+$h2-font-sizes: (
+	null : (20px, 1.3),
+	medium : (24px),
+	large : (26px),
+	xlarge : (28px),
+);
+
+$h3-font-sizes: (
+	null : (17px),
+	medium : (19px),
+	large : (21px)
+);
+
+$h4-font-sizes: (
+	null : (15px),
+	medium : (18px),
+	large : (20px),
+);
+
+$h5-font-sizes: (
+	null : (12px),
+	medium : (14px),
+	large : (16px),
+);
+
+$p-font-sizes: (
+	null : (14px),
+	medium : (16px),
+	large : (19px),
+);
+
+$bt-font-sizes: (
+	null : (13px),
+	medium : (14px),
+	large : (16px),
+);
+
+
+
+
+

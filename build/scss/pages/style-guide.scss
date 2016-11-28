@@ -1,0 +1,37 @@
+/*------------------------------*\
+
+    #STYLE-GUIDE
+
+\*------------------------------*/
+
+.style-guide {
+	padding: $space--xl;
+
+	.nav, .footer {
+		display: none;
+	}
+}
+
+.style-guide__section {
+	padding-bottom: $space--l;
+	border-bottom: 1px solid $c-dark;
+	margin-bottom: $space--l;
+}
+
+.style-guide__section-title {
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: $space--l;
+	opacity: 0.3;
+}
+
+.style-guide__colors {
+	display: flex;
+	align-items: flex-end;
+}
+
+.style-guide-element {
+	width: 100px;
+	margin-right: $space--m;
+	background-color: $c-dark;
+}

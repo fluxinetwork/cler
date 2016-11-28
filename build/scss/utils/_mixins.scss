@@ -1,0 +1,312 @@
+/*------------------------------*\
+
+    #MIXINS
+
+\*------------------------------*/
+
+//============================================================
+// LAYOUT
+//============================================================
+
+// MAX HEIGHT
+
+@mixin maxH($height) {
+  max-height: $height;
+  overflow: hidden;
+}
+
+// DISPLAY INLINE
+
+@mixin inline-block($valign: "middle") {
+  display: inline-block;
+  vertical-align: $valign;
+}
+
+// CLEARFIX 
+
+@mixin clearfix() {
+	zoom: 1;
+	&:before, &:after {
+	    content: " ";
+	    display: table;
+	}
+	&:after {
+	    clear: both;
+	}
+}
+
+// FLEX
+//
+// $positions: justify-content align-items
+// If only one value, will be used for the two properties
+
+@mixin flex($positions: null null, $column: false) {
+	display: flex;
+	
+	$positions: unpack-duo($positions);
+
+	$flex-positions: (
+		justify-content: nth($positions, 1),
+		align-items: nth($positions, 2)
+	);
+
+	@each $flex-position, $position in $flex-positions {
+		@if ($position != null) {
+			#{$flex-position}: $position;
+		}
+	}
+
+	@if ($column) {
+		flex-direction: column;
+	}
+}
+
+// FILL
+//
+// $mode = 'parent' || 'viewport'
+// $fullH fill width AND height
+
+@mixin fill($mode, $fullH: false) {
+	@if ($mode == 'viewport') {
+		position: relative;
+		width: 100vw;
+		max-width: 100%;
+		@if ($fullH) {
+			height: 100vh;
+		}
+	}
+	@if ($mode == 'parent') {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		@if ($fullH) {
+			height: 100%;
+		}
+	}
+}
+
+
+// CENTER 
+
+@mixin centered($direction: 'horizontal') {
+	@if ($direction == 'horizontal') {
+		left: 50%;
+		transform: translateX(-50%)
+	}
+	@else {
+		top: 50%;
+		transform: translateY(-50%)
+	}
+}
+
+
+// SQUARE
+
+@mixin square() {
+	&:before {
+	    content: "";
+	    display: block;
+	    padding-top: 100%;
+	}
+}
+
+
+// RECTANGLE
+
+@mixin rectangle($padding: 60%) {
+	&:before {
+	    content: "";
+	    display: block;
+	    padding-top: $padding;
+	}
+}
+
+
+//============================================================
+// TYPOGRAPHY
+//============================================================
+
+// RESPONSIVE FONT
+//
+// https://www.smashingmagazine.com/2015/06/responsive-typography-with-sass-maps/
+
+@mixin font_size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-font-size($fs-font-size);
+    }
+    @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-font-size($fs-font-size);
+      }
+    }
+  }
+}
+
+@mixin make_font-size($fs-font-size) {
+  // If $fs-font-size is a list, include
+  // both font-size and line-height
+  @if type-of($fs-font-size) == "list" {
+    font-size: nth($fs-font-size, 1);
+    @if (length($fs-font-size) > 1) {
+      line-height: nth($fs-font-size, 2);
+    }
+  }
+  @else {
+    font-size: $fs-font-size;
+  }
+}
+
+
+// FONT-SMOOTHING 
+
+@mixin font_smoothing($auto: true) {
+	@if $auto == false {
+		-webkit-font-smoothing: auto;
+		-moz-osx-font-smoothing: auto;
+	}
+	@else {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+
+// ADD WEBFONT
+//
+// $path in context of the fonts folder
+
+@mixin webfont($name, $path, $slug, $font-weight: 400) {
+	@font-face {
+	    font-family: $name;
+	    src: url('../fonts/'+$path+'/'+$slug+'.eot');
+	    src: url('../fonts/'+$path+'/'+$slug+'.eot?#iefix') format('embedded-opentype'),
+	         url('../fonts/'+$path+'/'+$slug+'.woff2') format('woff2'),
+	         url('../fonts/'+$path+'/'+$slug+'.ttf') format('truetype'),
+	         url('../fonts/'+$path+'/'+$slug+'.woff') format('woff'),
+	         url('../fonts/'+$path+'/'+$slug+'.svg') format('svg');
+	    font-weight: $font-weight;
+	    font-style: normal;
+	}
+}
+
+
+// TEXT TRUNCATE
+//
+// requires inline-block or block for proper styling
+
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+//============================================================
+// ELEMENT
+//============================================================
+
+// PSEUDO BACKGROUND
+//
+// Use in :before or :after
+// Parent element should be positioned
+
+@mixin pseudo_bg($color: #000, $opacity: 1) {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba($color, $opacity);
+}
+
+
+// MATERIAL SHADOW
+//
+// Make background with :after and fancy shadow with :before
+
+@mixin bg_with_shadow($bgColor: #eee, $shadowColor: #000, $shadowOpacity: 0.2,  $shadowOffset: 20px) {
+	position: relative;
+
+	> * {
+		z-index: 3;
+		position: relative;
+	}
+
+	&::before {
+		@include pseudo_bg(#000, 0);
+		width: 86%;
+		left: 7%;
+		box-shadow: 0 $shadowOffset 30px rgba($shadowColor, $shadowOpacity);
+		z-index: 1;
+	}
+
+	&::after {
+		@include pseudo_bg($bgColor, 1);
+		z-index: 2;
+	}
+}
+
+// BACKGROUND COVER 
+
+@mixin bg-cover($img) {
+	background-image: url(#{$img});
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+// VISIBILITY
+
+@mixin visibility($visible: false) {
+	@if ($visible) {
+		visibility: visible;
+		opacity: 1;
+	}
+	@else {
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+
+// LIST RESET
+
+@mixin list_reset() {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+
+//============================================================
+// SELECTORS
+//============================================================
+
+@mixin not($ignorList...) {
+    //if only a single value given
+    @if (length($ignorList) == 1){
+        //it is probably a list variable so set ignore list to the variable
+        $ignorList: nth($ignorList,1);
+    }
+    //set up an empty $notOutput variable
+    $notOutput: '';
+    //for each item in the list
+    @each $not in $ignorList {
+        //generate a :not([ignored_item]) segment for each item in the ignore list and put them back to back
+        $notOutput: $notOutput + ':not(#{$not})';
+    }
+    //output the full :not() rule including all ignored items
+    &#{$notOutput} {
+        @content;
+    }
+}
+

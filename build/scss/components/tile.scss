@@ -1,0 +1,103 @@
+/*------------------------------*\
+
+    #TILE
+
+\*------------------------------*/
+
+.c-tile {
+	display: block;
+	position: relative;
+	padding: $space--m;
+	margin: 0 auto;
+	border: 3px solid $c-main;
+	border-radius: $radius;
+	max-width: 200px;
+	transition: $transition;
+
+	&--noBdr {
+		border-color: transparent;
+	}
+
+	&--round {
+		border-radius: 100px;
+	}
+}
+
+.c-tile__content {
+	@include fill('parent', true);
+	@include flex(center, true);
+	padding: $space--m;
+}
+
+.c-tile__content__img {
+	width: 160px;
+	height: 160px;
+	margin-bottom: $space--l;
+	border-radius: 50%;
+	background-color: rgba($c-main, 0.1);
+}
+
+.c-tile__content__title {
+	@extend .h2--title;
+	position: relative;
+	font-weight: 700;
+	color: $c-main;
+	transition: $transition;
+}
+
+.c-tile__content__subtitle {
+	@include maxH(0);
+	text-align: center;
+	color: #fff;
+	transition: $transition;
+	letter-spacing: 0.7px;
+}
+
+@media screen and (min-width: $break--s) {
+	.c-tile {
+		padding: 0;
+		max-width: 100%;
+
+		&--round {
+			@include square();
+			border-radius: 50% !important;
+		}
+
+		&--square {
+			@include square();
+		}
+
+		&--rectangle {
+			@include rectangle(160px);
+		}
+
+		&--bg {
+			background-color: $c-light;
+		}
+	}
+
+	.c-tile--hover:hover {
+		background-color: $c-main;
+		background-image: radial-grad($c-main, 50%);
+		
+		.c-tile__content__title {
+			font-size: 0;
+		}
+
+		.c-tile__content__subtitle {
+			max-height: 100%;
+		}
+	}
+
+	.c-tile__content__title::after {
+		content:'•••';
+		position: absolute;
+		width: 100%;
+		display: block;
+		text-align: center;
+		bottom: -11px;
+		font-size: 14px;
+		letter-spacing: 3px;
+		transition: $transition;
+	}
+}

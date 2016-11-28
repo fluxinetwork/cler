@@ -1,0 +1,91 @@
+/*------------------------------*\
+
+    #FLEX
+
+\*------------------------------*/
+
+.l-flex {
+	display: flex;
+
+	&--column {
+		flex-direction: column;
+	}
+
+	&--wrap {
+		flex-wrap: wrap;
+	}
+
+	&--aic {
+		align-items: center;
+	}
+
+	&--jcc {
+		justify-content: center;
+	}
+
+	&--center {
+		align-items: center;
+		justify-content: center;
+	}
+
+	&--jcspb {
+		justify-content: space-between;
+	}
+	
+	&--jcspa {
+		justify-content: space-around;
+	}
+
+	&--none {
+		flex: none;
+	}
+
+	&--100 {
+		flex: 1 0 100%;
+	}
+
+	&--1 {
+		flex: 1 0 auto;
+	}
+
+	&--2 {
+		flex: 2 0 auto !important;
+	}
+
+	&--3 {
+		flex: 3 0 auto !important;
+	}
+}
+
+.l-flexCol {
+	display: flex;
+	flex-direction: column;
+}
+
+@media screen and (min-width: $break--s) {
+	.l-flex--row\@small {
+		flex-direction: row !important;
+	}
+}
+
+@media screen and (min-width: $break--m) {
+	.l-flex--row\@med {
+		flex-direction: row !important;
+	}
+}
+
+@media screen and (min-width: $break--l) {
+	.l-flex--row\@large {
+		flex-direction: row !important;
+	}
+
+	.l-flex--3\@large {
+		flex: 3 !important;
+	}
+}
+
+@media screen and (min-width: $break--xl) {
+	.l-flex--row\@xlarge {
+		flex-direction: row !important;
+	}
+}

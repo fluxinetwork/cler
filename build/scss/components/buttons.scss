@@ -1,0 +1,194 @@
+@import "lib/c-buttons.scss";
+/*------------------------------*\
+
+    #BUTTONS
+
+\*------------------------------*/
+
+%btn--micro {
+	width: 46px;
+	height: 46px;
+	border: 0;
+	border-radius: 50%;
+}
+%btn--close {
+	background-image: url('../img/cross.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: transparent !important;
+}
+
+.c-btn {
+	@extend %button;
+	@include font-size($bt-font-sizes);
+	border-radius: 100px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+
+	&:not(.c-btn--cta):hover {
+		background-color:$c-main;
+	}
+
+	&--cta {
+		@include bg-with-shadow($c-valid, $c-dark, 0.1, 10px);
+		background-color: transparent;
+		padding: $space--m*$smaller $space--m*$bigger;
+
+		&::before,
+		&::after {
+			border-radius: 100px;
+			transition: $transition--dynamic;
+		}
+
+		&:hover {
+			&::before,
+			&::after {
+				transform: scaleX(0.9);
+				background-color: $c-main;
+			}
+		}
+
+		.bg-dark & {
+			color: rgba($c-valid, 0.2);
+			transition: $transition--dynamic;
+
+			> * {
+				color: #fff !important;
+			}
+
+			&::before {
+				box-shadow: 0 10px 30px;
+			}
+
+			&:hover {
+				color: rgba($c-main, 0.4);
+			}
+		}
+	}
+
+	&--warning {
+		background-color: $c-error !important;
+	}
+
+	&--collapse {
+		padding-right: 0;
+		border-radius: 60px 0 0 60px;
+
+		+ .c-btnLogOut {
+			margin-left: 0 !important;
+			border-radius: 0 60px 60px 0;
+		}
+	}
+
+	&--close {
+		@extend %btn--micro;
+		@extend %btn--close;
+	}
+
+	&--add {
+		@extend %btn--micro;
+		@extend %btn--close;
+		transform: rotate(45deg)
+	}
+
+	&[type="submit"] {
+		display: flex;
+		align-items: center;
+		margin-right: $space--xs;
+
+		.spinner {
+			margin-right: $space--s;
+		}
+	}
+
+	.l-nav__login & {
+		transition: $transition;
+	}
+}	
+
+.c-btnArrow {
+	@extend %btn--micro;
+	background: url('../img/nav-arrows.svg') no-repeat transparent;
+
+	&--right {
+		background-position: -46px;
+
+		.l-card-slider__controls & {
+			margin-left: $space--xs;
+		}
+	}
+
+	.l-nav__buttons & {
+		margin-right: $space--xs;
+		visibility: hidden;
+		transform: scale(0);
+		transition: $transition--dynamic;
+
+		&.is-visible {
+			visibility: visible;
+			transform: scale(1);
+		}
+	}
+
+}
+
+.c-btnMenu {
+	position: relative;
+	@extend %btn--micro;
+	background: url('../img/button-hamburger.svg') no-repeat transparent;
+
+	@include bg_with_shadow($c-accent, $c-dark);
+
+	&::before,
+	&::after {
+		z-index: -1;
+		border-radius: 50%;
+	}
+
+	&::after {
+		transform: scale(1.3);
+		transition: $transition--dynamic;
+	}
+
+	.navBar.is-open & {
+		background-image: url('../img/button-close.svg');
+
+		&::after {
+			transform: scale(1);
+		}
+	}
+}
+
+.c-btnLogOut {
+	@extend %btn--micro;
+	@extend %btn--close;
+
+	.l-nav__login .c-btn + & {
+		margin-left: $space--xs;
+	}
+}
+
+.form__submit{
+	@extend %button;
+	background-color:#86bd4c !important;
+}
+
+.form__cancel{
+	@extend %button;
+	background-color:$c-error !important;
+}
+
+
+@media screen and (min-width: $break--m) {
+	.c-btn {
+		&--cta {
+			padding: $space--m $space--l*$bigger;
+		}
+	}
+
+	.c-btnArrow--right {
+		.c-card-slider__controls & {
+			margin: 0 $gutter 0 $space--xs;
+		}
+	}
+}

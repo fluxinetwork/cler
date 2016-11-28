@@ -1,0 +1,56 @@
+/*------------------------------*\
+
+    #RESET
+
+\*------------------------------*/
+
+/* Ultra light reset */
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+button, input, select, textarea {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+button {
+	cursor: pointer;
+}
+
+img { 
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+svg { max-height: 100% }
+
+a { 
+	text-decoration: none;
+	outline: 0;
+}
+
+ul {
+	padding-left: 1.5rem;
+}
+
+
+/* Better box-sizing */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+

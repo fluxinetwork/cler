@@ -1,0 +1,81 @@
+/*------------------------------*\
+
+    #COLORS
+
+\*------------------------------*/
+
+// COLOR
+
+.c-main {
+	color: $c-main !important;
+}
+
+.c-accent {
+	color: $c-accent !important;
+}
+
+.c-dark {
+	color: $c-dark !important;
+}
+
+.c-light {
+	color: $c-light !important;
+}
+
+.c-txt {
+	color: $c-txt !important;
+}
+
+.c-error {
+	color: $c-error !important;
+}
+
+.c-valid {
+	color: $c-valid !important;
+}
+
+
+// BG-COLOR
+
+.bg-main {
+	background-color: $c-main !important;
+}
+
+.bg-accent {
+	background-color: $c-accent !important;
+}
+
+.bg-dark {
+	background-color: $c-dark !important;
+}
+
+.bg-light {
+	background-color: $c-light !important;
+}
+
+.bg-txt {
+	background-color: $c-txt !important;
+}
+
+.bg-error {
+	background-color: $c-error !important;
+}
+
+.bg-valid {
+	background-color: $c-valid !important;
+}
+
+.bg-white {
+	background-color: #fff !important;
+}
+
+
+// GRADIENTS
+
+.bg-main--grad {
+	background-image: radial-grad($c-main, 50%);
+}
+
+.bg-accent--grad {
+	background-image: radial-grad($c-accent, 50%);
+}

@@ -1,0 +1,29 @@
+/*------------------------------*\
+
+    #SECTION-TITLE
+
+\*------------------------------*/
+
+.c-section-title {
+	@extend .h2--title;
+
+	.l-col > & {
+		text-align: center;
+		margin-bottom: $space--m;
+	}
+
+	.l-card-slider & {
+		color: #fff;
+		margin-bottom: 0;
+	}
+
+	@media screen and (min-width: $break--m) {
+		.l-col > & {
+			margin-bottom: $space--l;
+		}
+
+		.l-card-slider & {
+			text-align: right;
+		}
+	}
+}

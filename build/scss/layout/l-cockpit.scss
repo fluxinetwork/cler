@@ -1,0 +1,67 @@
+/*======================================================================*\
+==========================================================================
+
+//	LAYOUT COCKPIT
+
+==========================================================================
+\*======================================================================*/
+
+$break: $break--l;
+
+.l-cockpit{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+
+	@media screen and(min-width: $break) {
+		flex-direction: row;
+	}
+}
+
+
+//================================================================= INFOS
+
+.l-cockpit__infos {
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 100%;
+	padding-bottom: $space--s;
+
+	@media screen and(min-width: $break) {
+		flex: 1 0 auto;
+	}
+}
+
+.l-cockpit__infos__header {
+	@include flex(space-between center);
+
+	@media screen and(min-width: $break--l) {
+		align-items: flex-end;
+	}
+}
+
+.l-cockpit__infos__body {
+	flex: 1 0 auto;
+	margin: $space--l 0;
+
+	@media screen and(min-width: $break) {
+		margin: $space--m 0;
+	}
+}
+
+.l-cockpit__infos__footer {
+	
+}
+
+
+//================================================================ ASIDE
+
+.l-cockpit__aside {
+	margin-top: $gutter;
+
+	@media screen and(min-width: $break) {
+		flex: 0 0 $cardW;
+		margin-top: 0;
+		margin-left: $gutter;
+	}
+}

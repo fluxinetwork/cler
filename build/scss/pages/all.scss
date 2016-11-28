@@ -1,0 +1,54 @@
+/*======================================================================*\
+==========================================================================
+
+//	ALL PAGES 
+
+==========================================================================
+\*======================================================================*/
+
+
+//================================================================  NAVBAR
+
+.wrap-navBar {
+	z-index: 100;
+	background-color: $c-light;
+}
+
+.nav {
+	background-color: rgba($c-light, 0.9);
+	transition: $transition--dynamic;
+}
+
+.navLog,
+.nav-logo {
+	transition: $transition--dynamic;
+}
+
+
+//=================================================================  MAIN
+
+.main {
+	position: relative;
+	transition: $transition--dynamic;
+	min-height: 70vh;
+	background-color: $c-light;
+
+	&::after {
+		z-index: 10;
+		@include pseudo_bg($c-light, 1);
+		@include visibility();
+		transition: $transition--dynamic;
+	}
+
+	&.is-overlayed::after {
+		visibility: visible;
+		opacity: 0.7;
+	}
+}
+
+
+//================================================================  FOOTER
+
+.footer .l-col {
+	min-height: 20vh;
+}

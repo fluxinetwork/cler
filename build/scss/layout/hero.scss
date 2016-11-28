@@ -1,0 +1,46 @@
+/*------------------------------*\
+
+    #HERO
+
+\*------------------------------*/
+
+.l-hero {
+	padding-top: $space--l;
+	padding-bottom: $space--l;
+}
+
+.l-hero__title {
+	text-transform: uppercase;
+	margin-bottom: $space--xs;
+	font-weight: 900;
+	letter-spacing: 1.5px;
+}
+
+.l-hero__subtitle {
+	font-weight: 400;
+}
+
+.l-hero__btn {
+	margin-top: $space--m;
+}
+
+@media screen and (min-width: $break--m) {
+	.l-hero {
+		padding-top: $space--xl*$bigger;
+		padding-bottom: $space--xl*$bigger;
+	}
+}
+
+@media screen and (min-width: $break--l) {
+	.l-hero {
+		padding-top: $space--xxl;
+		padding-bottom: $space--xxl;
+	}
+}
+
+@media screen and (min-width: $break--xl) {
+	.l-hero {
+		padding-top: $space--xxl*$bigger;
+		padding-bottom: $space--xxl*$bigger;
+	}
+}

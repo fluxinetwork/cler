@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="46px" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/button-hamburger</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/button-hamburger">
+            <rect id="Rectangle" fill="#FFFFFF" x="7" y="7" width="32" height="32"></rect>
+            <path d="M23,46 C35.7025492,46 46,35.7025492 46,23 C46,10.2974508 35.7025492,0 23,0 C10.2974508,0 0,10.2974508 0,23 C0,35.7025492 10.2974508,46 23,46 Z M11,14.5 C11,12.5670034 12.574707,11 14.5026485,11 L31.4973515,11 C33.4318108,11 35,12.5709366 35,14.5 C35,16.4329966 33.425293,18 31.4973515,18 L14.5026485,18 C12.5681892,18 11,16.4290634 11,14.5 Z M11,23.5 C11,21.5670034 12.5688477,20 14.5017983,20 L24.4982017,20 C26.4321915,20 28,21.5709366 28,23.5 C28,25.4329966 26.4311523,27 24.4982017,27 L14.5017983,27 C12.5678085,27 11,25.4290634 11,23.5 Z M11,32.5 C11,30.5670034 12.574707,29 14.5026485,29 L31.4973515,29 C33.4318108,29 35,30.5709366 35,32.5 C35,34.4329966 33.425293,36 31.4973515,36 L14.5026485,36 C12.5681892,36 11,34.4290634 11,32.5 Z" id="Combined-Shape" fill="#FF9933"></path>
+        </g>
+    </g>
+</svg>

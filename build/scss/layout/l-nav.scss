@@ -1,0 +1,105 @@
+/*======================================================================*\
+==========================================================================
+
+//	LAYOUT NAV
+
+==========================================================================
+\*======================================================================*/
+
+.l-nav {
+	@include flex(space-between stretch);
+	padding-top: $space--s;
+	padding-bottom: $space--s;
+
+	@media screen and (min-width: $break--l) {
+		padding-top: $space--m; 
+	}
+}
+
+//================================================================== LOGO
+
+.l-nav__logo {
+	display: block;
+	flex: none;
+	max-width: 180px;
+
+	.navBar.is-open & {
+		margin-left: -300px;
+	}
+
+	img {
+		display: block;
+	}
+
+	@media screen and (min-width: $break--m) {
+		max-width: 220px;
+	}
+
+	@media screen and (min-width: $break--l) {
+		max-width: 200px;
+	}
+
+
+	@media screen and (min-width: $break--l+100) {
+		max-width: 250px;
+	}
+
+}
+
+
+//============================================================= PRIMARY
+
+.l-nav__primary {
+	position: fixed;
+	top: 100%;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+
+	.navBar.is-open & {
+		top: 0;
+	}
+
+	@media screen and (min-width: $break--l) {
+		position: relative;
+		top: 0;
+		height: auto;
+		margin-right: $space--xs;
+		background-color: transparent;
+		overflow: visible;
+	}
+}
+
+//============================================================== LOGIN
+
+.l-nav__login {
+	flex: none;
+	align-items: center;
+	align-self: center;
+	margin-left: auto;
+	transform: translateX(150%);
+
+	.navBar.is-open & {
+		transform: translateX(0);
+	}
+
+	@media screen and (min-width: $break--s) {
+		transform: translateX(0);
+	}
+}
+
+.l-nav__login__buttons {
+	display: flex;
+}
+
+
+//=========================================================== BUTTONS
+
+.l-nav__buttons {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	margin: 0 $space--m $space--m 0;
+}

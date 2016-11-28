@@ -1,0 +1,84 @@
+/*------------------------------*\
+
+    #GRID (LIB)
+
+\*------------------------------*/
+
+@mixin grid--2col() {
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	.l-grid__col {
+		flex: 0 1 50%;
+		padding: 0  $gutter/2  $gutter $gutter/2;
+	
+		&:first-child {
+			padding-left: 0;
+		}
+		&:nth-child(2n+2) {
+			padding-right: 0;
+		}
+		&:nth-child(2n+3) {
+			padding-left: 0;
+		}
+		&:nth-last-child(-n+2) {
+			padding-bottom: 0;
+		}
+	}
+}
+
+// PARENT
+
+.l-grid {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.l-grid--2col {
+	@include grid--2col();
+}
+
+// CHILDREN
+
+.l-grid__col {
+	flex: 1;
+	padding: $gutter/2 0 $gutter/2 0;
+	min-height: 100%;
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	&:last-child {
+		padding-bottom: 0;
+	}
+
+	.l-grid--noGutter & {
+		padding: 0 !important;
+	}
+}
+
+@media screen and (min-width: $break--s) {
+	.l-grid--2col\@small {
+		@include grid--2col();
+	}
+}
+
+@media screen and (min-width: $break--m) {
+	.l-grid {
+		flex-direction: row;
+	}
+
+	.l-grid__col {
+		padding: 0 $gutter/2 0 $gutter/2;
+		
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+}

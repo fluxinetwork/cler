@@ -1,0 +1,57 @@
+/*------------------------------*\
+
+    #STATES
+
+\*------------------------------*/
+
+.is-hidden {
+	@include visibility(false);
+} 
+
+.is-visible {
+	@include visibility(true);
+}
+
+.is-none {
+	display: none !important;
+}
+
+.is-muted {
+  opacity: 0.3;
+}
+
+.is-round {
+	@include square();
+	border-radius: 50% !important;
+}
+
+.is-square {
+	@include square();
+}
+
+.is-on-top {
+	z-index: 100 !important;
+}
+
+.is-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000 !important;
+	@include flex(center, true);
+	width: 100%;
+	height: 100%;
+	background-color: $c-main;
+}
+
+.is-fixed {
+	position: fixed !important;
+}
+
+.has-pointer {
+  cursor: pointer; 
+}
+
+.has-radius {
+	border-radius: $radius;
+}

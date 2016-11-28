@@ -1,0 +1,155 @@
+/*======================================================================*\
+==========================================================================
+
+//	LAYOUT CARD SLIDER
+
+==========================================================================
+\*======================================================================*/
+
+$break: $break--m;
+
+.l-card-slider {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+
+	@media screen and(min-width: $break) {
+		flex-direction: row;
+	}
+}
+
+
+//================================================================ ASIDE
+
+.l-card-slider__aside {
+	display: flex;
+	flex: 1 0 100%;
+
+	@media screen and(min-width: $break--s) {
+		justify-content: space-between;
+		align-items: baseline;
+		flex: 1;
+	}
+
+	@media screen and(min-width: $break) {
+		flex-direction: column;
+	}
+}
+
+.l-card-slider__aside__title {
+	display: flex;
+	justify-content: center;
+	flex: 1;
+
+	@media screen and(min-width: $break--s) {
+		justify-content: flex-start;
+	}
+
+	@media screen and(min-width: $break) {
+		flex-direction: column;
+		justify-content: flex-end;
+		align-self: flex-start;
+		flex: 0 0 167px;
+	}
+}
+
+.l-card-slider__aside__link {
+	display: none;
+
+	@media screen and(min-width: $break--s) {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	@media screen and(min-width: $break) {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-self: flex-end;
+		flex: 1;
+		margin-top: 28px;
+	}
+}
+
+.l-card-slider__aside__more {
+	display: none;
+
+	@media screen and(min-width: $break) {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-self: flex-end;
+		flex: 1;
+		margin-bottom: 28px;
+	}
+}
+
+
+//================================================================ CARDS
+
+.l-card-slider__cards {
+	display: flex;
+	min-height: 410px;
+	margin-top: $gutter;
+
+	@media screen and(min-width: $break) {
+		flex: 2;
+		margin-top: 0;
+		margin-left: $gutter;
+	}
+
+	@media screen and(min-width: $break--xl) {
+		flex: 2.55;
+	}
+}
+
+.l-card-slider__cards__row  {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	@include list-reset();
+	
+	@media screen and(max-width: $break - 1) {
+		.l-card-slider__cards__row__col:nth-child(n+5) {
+			display: none;
+		}
+	}
+
+	@media screen and(min-width: $break) {
+		position: absolute;
+		flex-direction: row;
+	}
+}
+
+.l-card-slider__cards__row__col  {
+	margin-bottom: $gutter;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	@media screen and(min-width: $break) {
+		flex: 0 0 $cardW;
+		margin: 0 $gutter 0 0;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+//============================================================ CONTROLS
+
+.l-card-slider__controls {
+	display: none;
+	margin-top: $gutter*2;
+
+	@media screen and(min-width: $break) {
+		display: flex;
+		flex: 1 0 100%;
+		justify-content: flex-end;
+	}
+
+	@media screen and(min-width: $break--xl) {
+		padding-right: $gutter;
+	}
+}

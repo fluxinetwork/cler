@@ -1,0 +1,41 @@
+/*======================================================================*\
+==========================================================================
+
+//	PROFIL
+
+==========================================================================
+\*======================================================================*/
+
+.l-cockpit__infos__body .l-grid__col {
+	&:nth-child(2) {
+		position: relative;
+
+		@media screen and(min-width: $break--m) {
+			&::before {
+				content: '';
+				position: absolute;
+				display: block;
+				left: 0;
+				width: 1px;
+				height: 50%;
+				background-color: rgba($c-dark, 0.2);
+			}
+		}
+	} 
+}
+
+.cockpit-add {
+	@include flex(center, true);
+	height: 100%;
+	border: 3px solid #fff;
+	border-radius: $radius;
+	transition: $transition--dynamic;
+
+	.c-btn {
+		margin-bottom: $space--s;
+	}
+
+	&:hover {
+		background: rgba(#fff, 0.2);
+	}
+}

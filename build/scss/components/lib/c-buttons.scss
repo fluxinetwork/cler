@@ -1,0 +1,16 @@
+%button{	
+	color: white;
+	cursor:pointer;
+	display: inline-block;
+	font-family: $font-bt;
+	font-weight: bold;
+	padding: $space--s*$smaller $space--s*$bigger;
+	background-color:$c-valid;
+	@include font-smoothing();
+	text-align: center;
+	transition: $transition--dynamic;
+}
+
+@media screen and (min-width: $break--m) {
+
+}

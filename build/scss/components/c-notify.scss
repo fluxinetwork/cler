@@ -1,0 +1,31 @@
+/*======================================================================*\
+==========================================================================
+
+//	COMOSANT NOTIFY
+
+==========================================================================
+\*======================================================================*/
+
+.c-notify {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	bottom: 0;
+	background-color: $c-dark;
+	transform: translateY(100%);
+	transition: $transition--dynamic;
+
+	&.is-open {
+		transform: translateY(0%);
+	}
+}
+
+.c-notify__content {
+	padding-top: $space--m;
+	padding-bottom: $space--m;
+	@include flex(space-between center);
+}
+
+.c-notify__message {
+	color: #fff !important;
+}

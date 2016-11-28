@@ -1,0 +1,311 @@
+/*======================================================================*\
+==========================================================================
+
+//	COMPOSANT FORM
+
+==========================================================================
+\*======================================================================*/
+
+$break: $break--m;
+
+.c-form {
+	width: 100%;
+	max-width:650px;
+	margin: 0 auto;
+	@include font-smoothing();
+	
+	&--popin {
+		width: 80%;
+		max-width: 350px;
+	}
+
+	&--large {
+		@media screen and (min-width: $break--l) {
+			.c-card__header, 
+			.c-card__body {
+				padding: $space--l;
+			}
+			.c-card__footer {
+				padding: 0 $space--l $space--l $space--l;
+			}
+		}
+	}
+
+	p {
+		@extend .h5;
+
+		+ .c-form__label:not(.c-form__label--checkbox) {
+			padding-top: $space--xs;
+		}
+	}
+
+	.is-accordeon {
+		@include visibility(false);
+		@include maxH(0);
+	}
+	.is-visible {
+		@include visibility(true);
+		@include maxH(100%);
+	}
+}
+
+//==============================================================  FIELDSET
+
+.c-form__fieldset {
+	padding:0;
+	border: 0;
+	margin-top: $space--xl;
+
+	.is-accordeon & {
+		margin-top: $space--xl !important;
+	}
+
+	.c-form--large & {
+		&:first-child {
+			margin-top: $space--m;
+		}
+	}
+}
+
+.c-form__fieldset__row {
+	margin-top: $space--m*$bigger;
+}
+
+.c-form__fieldset__flexrow {
+	display: flex;
+	flex-direction: column;
+
+	@media screen and (min-width: $break) {
+		flex-direction: row;
+
+		.c-form__fieldset__row  {
+			flex: 1 0 auto;
+			padding-right: $gutter;
+
+			+ .c-form__fieldset__row {
+				padding-left: $gutter;
+			}
+			
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+
+		&--asy {
+			.c-form__fieldset__row:first-child {
+				flex: 1 0 30%;
+			}
+
+			.c-form__fieldset__row:last-child {
+				flex: 1 0 70%;
+			}
+		}
+
+		&--asy2 {
+			.c-form__fieldset__row:first-child {
+				flex: 1 0 70%;
+			}
+
+			.c-form__fieldset__row:last-child {
+				flex: 1 0 30%;
+			}
+		}
+	}
+} 
+
+
+//===========================================================  INDICATEUR
+
+.c-form--indicateur {
+	position: relative;
+
+	&::before {
+		@include pseudo_bg($c-valid,1);
+		left: -23px;
+		width: 7px;
+		border-radius: $radius;
+	}
+
+	@media screen and(min-width: $break--m) {
+		&::before {
+			left: -34px;
+		}
+	}
+
+	@media screen and(min-width: $break--l) {
+		&::before {
+			left: -50px;
+		}
+	}
+}
+
+
+//==============================================================  LEGEND
+
+.c-form__legend {
+	position: relative;
+	@extend .h3;
+	font-weight: 900;
+	text-transform: uppercase;
+	color: $c-dark;
+
+	&::before {
+		background-color: $c-accent;
+		height: 84%;
+		top: 8%;
+	}
+}
+
+
+//==============================================================  COMMON
+
+.c-form__label,
+.c-form__input,
+.c-form__textarea,
+.c-form__select {
+	width: 100%;
+	display: block;
+}
+
+.c-form__input,
+.c-form__textarea,
+.c-form__select {
+	@extend .h5;
+	font-family: Courier, sans-serif;
+}
+
+.c-form__select,
+.c-form__textarea {
+	margin-top: $space--xs;
+}
+
+
+//===============================================================  LABEL
+
+.c-form__label {
+	position: relative;
+	font-weight: 700;
+
+	.i-required {
+		position: relative;
+		top: 5px;
+		margin-left: $space--xs;
+		color: $c-error;
+		font-size: 30px;
+		line-height: 0;
+	}
+}
+
+.c-form__label--checkbox {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: $space--xs;
+}
+.c-form__label__checkbox {
+	position: relative;
+	top: 3px;
+	flex: none;
+	margin: 0 $space--xs 0 0;
+}
+.c-form__label__txt {
+	flex: 1;
+	small {
+		font-weight: 400;
+	}
+}
+
+
+//===============================================================  INPUT
+
+.c-form__input {
+	padding: $space--xs 0 $space--xs*$smaller 0;
+	border: 0;
+	border-bottom: 1px solid rgba($c-dark, 0.2);
+	
+	&.error {
+		border: 1px solid $c-error;
+
+		& + .c-link--shy {
+			display: none;
+		}
+	}
+
+	&:focus {
+		text-indent: $space--xs;
+	}
+
+	.c-form--large & {
+		background-color: transparent;
+	}
+}
+
+
+//============================================================  TEXTAREA
+
+.c-form__textarea {
+	border: 1px solid rgba($c-dark, 0.1);
+	padding: $space--xs;
+}
+
+
+//==============================================================  SELECT
+
+.c-form__select {
+	height: 40px;
+	border: 0;
+	background-color: #eee;
+	cursor: pointer;
+
+	&.error {
+		border: 1px solid $c-error;
+		background-color: #fff;
+	}
+}
+
+
+//==============================================================  SUBMIT
+
+.c-form__submit {
+	@include flex(space-between center);
+	margin-top: $space--m*$bigger;
+	margin-bottom: $space--l;
+}
+
+
+//==============================================================  NOTIFY
+
+.c-form__notify span,
+.help-block {
+	position: relative;
+	display: block;
+	font-weight: 700;
+	color: #fff;
+	flex: 1 0 100%;
+}
+
+.c-form__notify span {
+	left: -15%;
+	width: 130%;
+	margin-top: $space--m;
+	padding: $space--s;
+	border-radius: $radius;
+	text-align: center;
+
+	&.error  {
+		background-color: $c-error;
+	}
+
+	&.success {
+		background-color: $c-valid;
+	}
+}
+
+
+.help-block {
+	padding: $space--xs $space--s;
+	border-radius: 0 0 $radius $radius;
+
+	&.form-error {
+		background-color: $c-error;
+	}
+}

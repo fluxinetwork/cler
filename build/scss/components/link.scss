@@ -1,0 +1,124 @@
+/*------------------------------*\
+
+    #LINK
+
+\*------------------------------*/
+
+.c-link {
+	position: relative;
+	top: -7px;
+	display: inline-block;
+	padding: 0 0 4px 0;
+	color: $c-main;
+	background-color: transparent;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 1px;
+	@include font-size($bt-font-sizes);	
+	transition: $transition--dynamic;
+
+	&::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 7px;
+		right: 0;
+		bottom: -7px;
+		background-color: $c-main;
+		border-radius: 6px;
+		transition: $transition--dynamic;
+	}
+
+	&:hover,
+	.cockpit-add:hover & {
+		&::after {
+			width: 70%;
+		}
+	}
+
+	&--white {
+		color: #fff !important;
+
+		&::after {
+			background-color: #fff !important;
+		}
+	}
+
+	&--accent,
+	.bg-main .l-card-slider__aside & {
+		color: $c-accent;
+
+		&::after {
+			background-color: $c-accent;
+		}
+	}
+
+	&--shy {
+		top: 0;
+		padding-bottom: 0;
+		font-size: $font-small;
+		color: rgba($c-dark, 0.5);
+
+		&--white {
+			color: rgba(#fff, 0.5);
+		}
+
+		&::after {
+			display: none;
+		}
+
+		&:hover {
+			color: $c-dark;
+		}
+	}
+
+	&--more {
+		@include font-size($h5-font-sizes);	
+		top: 0;
+		display: flex;
+		align-items: center;
+		color: $c-main;
+
+		&::before {
+			content: '';
+			position: relative;
+			top: -1px;
+			display: inline-block;
+			margin-right: $space--xs;
+			width: 50px;
+			height: 7px;
+			background-color: $c-accent;
+			border-radius: 6px;
+			transition: $transition--dynamic;
+			transform-origin: right;
+		}
+
+		&::after {
+			display: none !important;
+		}
+
+		&:hover,
+		.c-card:not(.c-form):hover & {
+			&::before {
+				transform: scaleX(0.7);
+			}
+		}
+	}
+
+	.l-card-slider__aside & {
+		top: 0;
+
+		&::after {
+			display: none;
+		}
+	}
+
+	@media screen and (min-width: $break--m) {
+		.l-card-slider__aside & {
+			top: -7px;
+			&::after {
+				display: block;
+			}
+		}
+	}
+}
