@@ -300,6 +300,35 @@ if ( CUSTOM_POST_TYPE ) {
 	}
 	add_action( 'init', 'cpts_formations' );
 
+	// CPT : Cartes
+	function cpts_cartes() {
+		$labels = array(
+			'name' => __( 'Cartes', '' ),
+			'singular_name' => __( 'Carte', '' ),
+			);
+
+		$args = array(
+			'label' => __( 'Carte', '' ),
+			'labels' => $labels,
+			'description' => '',
+			'public' => true,
+			'show_ui' => true,
+			'show_in_rest' => false,
+			'rest_base' => '',
+			'has_archive' => false,
+			'show_in_menu' => true,
+			'exclude_from_search' => false,
+			'capability_type' => 'post',
+			'map_meta_cap' => true,
+			'hierarchical' => false,
+			'rewrite' => array( 'slug' => 'carte-adherents', 'with_front' => true ),
+			'query_var' => true,
+
+			'supports' => array( 'title', 'author' ),
+			'taxonomies' => array( 'category', 'post_tag' ),
+		);
+		register_post_type( 'cartes', $args );
+
 
 }
 if ( CUSTOM_TAXONOMY ) {
