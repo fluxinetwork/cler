@@ -121,12 +121,12 @@ function fluxi_manage_adherent(){
 							$contacts_equipe_adhesion[] = CONTACT_TEPOS;
 						}
 
-						notify_by_mail ( $contacts_equipe_adhesion, 'Le CLER <' . CONTACT_GENERAL . '>','Adhésion en attente de validation',false,'<h2>Nouvelle demande d\'adhésion</h2><p>' . $current_user->user_firstname . ' ' . $current_user->user_lastname . ' vient d\'ajouter une demande d\'adhésion pour <strong>"' . $nom_structure . '"</strong>.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'adhésion</a></p>');
+						notify_by_mail ( $contacts_equipe_adhesion, 'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Adhésion en attente de validation',false,'<h2>Nouvelle demande d\'adhésion</h2><p>' . $current_user->user_firstname . ' ' . $current_user->user_lastname . ' vient d\'ajouter une demande d\'adhésion pour <strong>"' . $nom_structure . '"</strong>.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'adhésion</a></p>');
 
 
 						// Notification mail adhérent contact1
 						$mail_new_adherent = array(get_footer_mail(), $annee_cotisation, $accepte_charte_energie_positive, $redirect_slug, $type_adhesion);
-						notify_by_mail (array($email_contact1),'Le CLER <' . CONTACT_GENERAL . '>', 'Votre demande d\'adhésion '.$annee_cotisation, true, get_template_directory() . '/app/inc/mails/adhesion-readhesion.php', $mail_new_adherent);
+						notify_by_mail (array($email_contact1),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Votre demande d\'adhésion '.$annee_cotisation, true, get_template_directory() . '/app/inc/mails/adhesion-readhesion.php', $mail_new_adherent);
 
 						$message_response = 'Nous vous remercions de l’intérêt porté au CLER - Réseau pour la transition énergétique. L’équipe du CLER prendra contact avec vous pour un échange téléphonique afin de mieux connaître votre structure, vos activités et votre motivation.';
 
@@ -176,7 +176,7 @@ function fluxi_manage_adherent(){
 
 								// mail à l'utilisateur
 								$mail_readhesion = array(get_footer_mail(), $annee_cotisation, $accepte_charte_energie_positive, $redirect_slug, $type_adhesion);
-								notify_by_mail (array($email_contact1),'Le CLER <' . CONTACT_GENERAL . '>', 'Votre demande de ré-adhésion '.$annee_cotisation, true, get_template_directory() . '/app/inc/mails/adhesion-readhesion.php', $mail_readhesion);
+								notify_by_mail (array($email_contact1),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Votre demande de ré-adhésion '.$annee_cotisation, true, get_template_directory() . '/app/inc/mails/adhesion-readhesion.php', $mail_readhesion);
 
 								// Notification mail admin
 								$contacts_equipe_readhesion = array(CONTACTS_ADHESION_1);
@@ -184,7 +184,7 @@ function fluxi_manage_adherent(){
 									$contacts_equipe_readhesion[] = CONTACT_TEPOS;
 								}
 
-								notify_by_mail ( $contacts_equipe_readhesion, 'Le CLER <' . CONTACT_GENERAL . '>','Ré-adhésion en attente de validation',false,'<h2>Demande de ré-adhésion</h2><p>' . $current_user->user_firstname . ' ' . $current_user->user_lastname . ' vient d\'ajouter une demande de ré-adhésion pour <strong>"' . $nom_structure . '"</strong>.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_idp . '&action=edit">Accéder à l\'adhésion</a></p>');
+								notify_by_mail ( $contacts_equipe_readhesion, 'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Ré-adhésion en attente de validation',false,'<h2>Demande de ré-adhésion</h2><p>' . $current_user->user_firstname . ' ' . $current_user->user_lastname . ' vient d\'ajouter une demande de ré-adhésion pour <strong>"' . $nom_structure . '"</strong>.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_idp . '&action=edit">Accéder à l\'adhésion</a></p>');
 
 
 							// if is a modification
@@ -225,7 +225,7 @@ function fluxi_manage_adherent(){
 									$contacts_equipe_mod_adhesion[] = CONTACT_TEPOS;
 								}
 
-								notify_by_mail ( $contacts_equipe_mod_adhesion, 'Le CLER <' . CONTACT_GENERAL . '>','Modification d\'adhésion en attente de validation',false,'<h2>Modification d\'un bulletin d\'adhésion</h2><p>' . $current_user->user_firstname . ' ' . $current_user->user_lastname . ' vient de modifier le bulletin d\'adhésion pour <strong>"' . $nom_structure . '"</strong>.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_idp . '&action=edit">Accéder à l\'adhésion</a></p>');
+								notify_by_mail ( $contacts_equipe_mod_adhesion, 'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Modification d\'adhésion en attente de validation',false,'<h2>Modification d\'un bulletin d\'adhésion</h2><p>' . $current_user->user_firstname . ' ' . $current_user->user_lastname . ' vient de modifier le bulletin d\'adhésion pour <strong>"' . $nom_structure . '"</strong>.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_idp . '&action=edit">Accéder à l\'adhésion</a></p>');
 
 								$message_response = 'Votre bulletin d\'adhésion a été mise à jour.';
 
@@ -437,11 +437,11 @@ function send_email_paiement() {
 						'security_token'=> $security_token_r
 					);
 
-					// Update status paiement
-					$statut_adhesion = get_field('statut_adhesion');
-					if( $statut_adhesion == 'attente_validation' ):
+					// Update status adhésion
+					//$statut_adhesion = get_field('statut_adhesion');
+					//if( $statut_adhesion == 'attente_validation' ):
 						update_field( 'statut_adhesion', 'attente_paiement', $the_idp );
-					endif;
+					//endif;
 
 					// Create/update count sending & create/update mail paiement
 					$nb_send_mail_slug = 'nb_send_mail_paiement_' . $annee_cotisation;
@@ -491,7 +491,7 @@ function send_email_paiement() {
 
 							        // Appel à cotisation
 									$mail_vars_paiement = array(get_footer_mail(), $montant_cotisation, $today, $nom_structure, $adresse_structure, $annee_cotisation, $paiement_url );
-									notify_by_mail (array($mail_contact),'Le CLER <' . CONTACT_GENERAL . '>', 'Payer votre cotisation d\'adhésion '.$annee_cotisation.' au CLER', true, get_template_directory() . '/app/inc/mails/appel-cotisation.php', $mail_vars_paiement);
+									notify_by_mail (array($mail_contact),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Payer votre cotisation d\'adhésion '.$annee_cotisation.' au CLER', true, get_template_directory() . '/app/inc/mails/appel-cotisation.php', $mail_vars_paiement);
 
 									$message_response = 'L\'email contenant la procédure de paiement de la cotisation '.$annee_cotisation.' a bien été envoyé.';
 
@@ -525,7 +525,7 @@ function send_email_paiement() {
 
 									// Appel à cotisation
 									$mail_vars_paiement = array(get_footer_mail(), $montant_cotisation, $today, $nom_structure, $adresse_structure, $annee_cotisation, $paiement_url );
-									notify_by_mail (array($mail_contact),'Le CLER <' . CONTACT_GENERAL . '>', 'Payer votre cotisation d\'adhésion '.$annee_cotisation.' au CLER', true, get_template_directory() . '/app/inc/mails/appel-cotisation.php', $mail_vars_paiement);
+									notify_by_mail (array($mail_contact),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Payer votre cotisation d\'adhésion '.$annee_cotisation.' au CLER', true, get_template_directory() . '/app/inc/mails/appel-cotisation.php', $mail_vars_paiement);
 
 									$message_response = 'L\'email contenant la procédure de paiement de la cotisation '.$annee_cotisation.' a bien été envoyé.';
 
@@ -652,7 +652,7 @@ function send_email_facture() {
 
 					// Mail du reçu
 					$mail_vars_recu = array(get_footer_mail(), $montant_cotisation, $today, $nom_structure, $adresse_structure, $annee_cotisation, $date_paiement, $mode_paiement, $num_mode_paiement);
-					notify_by_mail (array($mail_contact),'Le CLER <' . CONTACT_GENERAL . '>', 'Votre reçu de cotisation d\'adhésion '.$annee_cotisation, true, get_template_directory() . '/app/inc/mails/recu-cotisation-adherent.php', $mail_vars_recu);
+					notify_by_mail (array($mail_contact),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Votre reçu de cotisation d\'adhésion '.$annee_cotisation, true, get_template_directory() . '/app/inc/mails/recu-cotisation-adherent.php', $mail_vars_recu);
 
 					$message_response = 'L\'email contenant le reçu '.$annee_cotisation.' a bien été envoyé.';
 

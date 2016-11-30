@@ -109,11 +109,11 @@ function fluxi_manage_formation(){
 						}
 
 						// Notification mail admin
-						//notify_by_mail (array(CONTACTS_FORMATION_1),'Le CLER <' . CONTACT_GENERAL . '>','Formation en attente de validation',false,'<h2>Nouvelle formation ajoutée</h2><p>' . $current_user->user_firstname . ' vient d\'ajouter la formation <strong>"' . wp_strip_all_tags( $title ) . '"</strong>.<br>Vous devez la publier pour la rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#86bd4c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'offre</a></p>');
+						notify_by_mail (array(CONTACTS_FORMATION_1),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Formation en attente de validation',false,'<h2>Nouvelle formation ajoutée</h2><p>' . $current_user->user_firstname . ' vient d\'ajouter la formation <strong>"' . wp_strip_all_tags( $title ) . '"</strong>.<br>Vous devez la publier pour la rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#86bd4c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'offre</a></p>');
 
 						// Notification mail current user
 						$mail_new_formation = array(get_footer_mail(), $redirect_slug, $is_adherent);
-						notify_by_mail (array($contact_email),'Le CLER <' . CONTACT_GENERAL . '>', 'Votre événement est enregistré', true, get_template_directory() . '/app/inc/mails/new-formation.php', $mail_new_formation);
+						notify_by_mail (array($contact_email),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Votre événement est enregistré', true, get_template_directory() . '/app/inc/mails/new-formation.php', $mail_new_formation);
 
 						$message_response = 'Votre formation a été ajoutée. Elle sera publiée sur le site après avoir été validée par nos soins.';
 

@@ -48,7 +48,7 @@ function fluxi_participation_webinaire(){
 
 					// Notification mail participation
 					$mail_vars_recap_webinaire = array($metas_tab['nom'],$metas_tab['prenom'],$metas_tab['nombre_participants'],$date_webinaire, $hour_webinaire, get_footer_mail());
-					notify_by_mail (array($metas_tab['email']),'Le CLER <' . CONTACT_GENERAL . '>', 'Webinaire du '.$date_webinaire, true, get_template_directory() . '/app/inc/mails/recap-webinaire.php', $mail_vars_recap_webinaire);
+					notify_by_mail (array($metas_tab['email']),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Webinaire du '.$date_webinaire, true, get_template_directory() . '/app/inc/mails/recap-webinaire.php', $mail_vars_recap_webinaire);
 
 					$message_response = 'Votre demande de participation au webinaire est enregistrée.';
 
@@ -177,7 +177,7 @@ function send_email_participation_webinaire() {
 					foreach($rows as $row){
 						// notify
 						$mail_vars_recap_webinaire = array($metas_tab['nom'],$metas_tab['prenom'],$metas_tab['nombre_participants'],$date_webinaire, $hour_webinaire, get_footer_mail());
-						notify_by_mail (array($row['email']),'Le CLER <' . CONTACT_GENERAL . '>','Webinaire du '.$date_webinaire,true, get_template_directory() . '/app/inc/mails/recap-webinaire.php', $mail_vars_recap_webinaire);
+						notify_by_mail (array($row['email']),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Webinaire du '.$date_webinaire,true, get_template_directory() . '/app/inc/mails/recap-webinaire.php', $mail_vars_recap_webinaire);
 					}
 
 					update_post_meta($the_idp, 'email_participation_webinaire_sended', '1');

@@ -11,7 +11,7 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>CLER - Ajout d\'une offre d\'emploi</title>
+  <title>CLER - Ajout d\'une formation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body bgcolor="#ffffff" style="margin:0;">

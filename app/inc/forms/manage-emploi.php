@@ -95,11 +95,11 @@ function fluxi_manage_emploi(){
 						}
 
 						// Notification mail admin
-						//notify_by_mail (array(CONTACTS_EMPLOI_1, CONTACTS_EMPLOI_2),'Le CLER <' . CONTACT_GENERAL . '>','Offre d\'emploi en attente de validation',false,'<h2>Nouvelle offre d\'emploi ajoutée</h2><p>' . $current_user->user_firstname . ' vient d\'ajouter l\'offre <strong>"' .  $title . '"</strong>.<br>Vous devez la publier pour la rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#86bd4c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'offre</a></p>');
+						notify_by_mail (array(CONTACTS_EMPLOI_1, CONTACTS_EMPLOI_2),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Offre d\'emploi en attente de validation',false,'<h2>Nouvelle offre d\'emploi ajoutée</h2><p>' . $current_user->user_firstname . ' vient d\'ajouter l\'offre <strong>"' .  $title . '"</strong>.<br>Vous devez la publier pour la rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#86bd4c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'offre</a></p>');
 
 						// Notification mail contact
 						$mail_new_offre = array(get_footer_mail(), $redirect_slug, $is_adherent);
-						notify_by_mail (array($contact_email),'Le CLER <' . CONTACT_GENERAL . '>', 'Votre offre d\'emploi est enregistrée', true, get_template_directory() . '/app/inc/mails/new-offre.php', $mail_new_offre);
+						notify_by_mail (array($contact_email),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Votre offre d\'emploi est enregistrée', true, get_template_directory() . '/app/inc/mails/new-offre.php', $mail_new_offre);
 
 						if( $is_adherent ):
 							$message_response = 'Votre offre a été ajoutée. Elle sera publiée sur le site après avoir été validée par nos soins.';
@@ -392,7 +392,7 @@ function send_email_paiement_offre_emp() {
 
 				// Procédure de paiement offre d'emploi
 				$mail_vars_paiement = array(get_footer_mail(), $today, $nom_structure, $adresse_structure, $nom_contact, $montant_offre, $refer_url );
-				notify_by_mail (array($mail_contact),'Le CLER <' . CONTACT_GENERAL . '>', 'Payer le publication de votre offre d\'emploi sur le site du CLER', true, get_template_directory() . '/app/inc/mails/paiement-offre.php', $mail_vars_paiement);
+				notify_by_mail (array($mail_contact),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Payer le publication de votre offre d\'emploi sur le site du CLER', true, get_template_directory() . '/app/inc/mails/paiement-offre.php', $mail_vars_paiement);
 
 				$message_response = 'L\'email contenant la procédure de paiement a bien été envoyé.';
 
@@ -499,7 +499,7 @@ function send_email_facture_offre() {
 
 				// Mail du reçu
 				$mail_vars_recu = array(get_footer_mail(), $montant, $today, $nom_structure, $adresse_structure, $date_paiement, $num_mode_paiement, $mode_paiement, $title_post);
-				notify_by_mail (array($mail_contact),'Le CLER <' . CONTACT_GENERAL . '>', 'Reçu de votre paiement', true, get_template_directory() . '/app/inc/mails/recu-offre-emploi.php', $mail_vars_recu);
+				notify_by_mail (array($mail_contact),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Reçu de votre paiement', true, get_template_directory() . '/app/inc/mails/recu-offre-emploi.php', $mail_vars_recu);
 
 				$message_response = 'L\'email contenant le reçu a bien été envoyé.';
 

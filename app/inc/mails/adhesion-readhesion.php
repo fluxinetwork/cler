@@ -23,21 +23,10 @@ if($type_adhesion=='rad'):
               <td>
                 <p>
                   Bonjour,<br><br>
-                    Nous avons bien reçu votre dossier de candidature pour une demande de ré-adhésion au CLER – Réseau pour la transition énergétique, et nous vous en remercions.<br>
-                   Votre adhésion sera soumise au prochain Conseil d\'administration (voir les dates des prochains CA + lien hypertexte). Dans l\'attente de sa confirmation, nous vous contacterons par téléphone pour un premier échange.<br><br>
-
-                  Vous pouvez dès à présent, si vous le souhaitez, compléter ou modifier votre candidature dans votre <a href="'.$refer_url.'">espace privé</a> sur le site CLER.org.<br><br>
-
-                  Pour les entreprises uniquement : merci de nous envoyer un extrait Kbis de moins de trois mois en format PDF à l\'adresse reseau@cler.org.<p>';
-
-                  if( $accepte_charte_energie_positive )
-                  $contenu_mail .= '<p>La participation au réseau TEPOS est également soumise à l’agrément du conseil du réseau TEPOS. Dans l\'attente de sa confirmation, nous vous remercions de votre patience.</p>';
-
-                  $contenu_mail .= '<p>Si le prochain Conseil d\'administration du CLER valide votre candidature, un appel à cotisation pour l\'année en cours vous sera envoyé automatiquement par email.<br><br>
-
+                    Nous avons bien reçu votre demande de renouvellement d’adhésion au CLER – Réseau pour la transition énergétique, et nous vous en remercions.<br><br>
+                  Après validation de votre demande, un appel à cotisation pour l\'année en cours vous sera envoyé automatiquement par email.<br><br>
                   Pour toute question relative à votre adhésion, vous pouvez contacter :<br>
                   Alexis Monteil au 01 55 86 80 09.<br><br>
-
                   En vous souhaitant une bonne journée,
                 </p>
               </td>

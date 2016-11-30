@@ -116,7 +116,7 @@ function fluxi_manage_paiement(){
 
 									// Notification mail user (offre)
 									$mail_offre_payee = array(get_footer_mail(), $montant, $today, $nom_structure, $adresse, $today, $last4, 'cb', $title_post );
-									notify_by_mail (array($contact_email),'Le CLER <' . CONTACT_GENERAL . '>', 'Reçu de votre paiement', true, get_template_directory() . '/app/inc/mails/recu-offre-emploi.php', $mail_offre_payee);
+									notify_by_mail (array($contact_email),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Reçu de votre paiement', true, get_template_directory() . '/app/inc/mails/recu-offre-emploi.php', $mail_offre_payee);
 
 								// ********** Paiement adhésion
 								else:									
@@ -165,7 +165,7 @@ function fluxi_manage_paiement(){
 
 									// Mail du reçu
 									$mail_vars_recu = array(get_footer_mail(), $montant, $today, $nom_structure, $adresse, $annee_cotisation, $today, 'cb', $last4);
-									notify_by_mail (array($contact_email),'Le CLER <' . CONTACT_GENERAL . '>', 'Votre reçu de cotisation d\'adhésion '.$annee_cotisation, true, get_template_directory() . '/app/inc/mails/recu-cotisation-adherent.php', $mail_vars_recu);
+									notify_by_mail (array($contact_email),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Votre reçu de cotisation d\'adhésion '.$annee_cotisation, true, get_template_directory() . '/app/inc/mails/recu-cotisation-adherent.php', $mail_vars_recu);
 
 								endif;
 
@@ -200,7 +200,7 @@ function fluxi_manage_paiement(){
 
 									$last4 = 'XXXX XXXX XXXX ' . $charge->source->last4;
 									$metas_tab['n_transaction'] = $charge->id;
-									$metas_tab['id_stripe'] = $user_stripe_id;
+									$metas_tab['id_stripe'] = $customer->id;
 									$metas_tab['id_carte'] = $charge->source->id;
 									$metas_tab['derniers_chiffres'] = $last4;
 									$metas_tab['statut_paiement'] = $charge->status;
@@ -235,7 +235,7 @@ function fluxi_manage_paiement(){
 
 										// Notification mail user (offre)
 										$mail_offre_payee = array(get_footer_mail(), $montant, $today, $nom_structure, $adresse, $today, $last4, 'cb', $title_post );
-										notify_by_mail (array($contact_email),'Le CLER <' . CONTACT_GENERAL . '>', 'Reçu de votre paiement', true, get_template_directory() . '/app/inc/mails/recu-offre-emploi.php', $mail_offre_payee);
+										notify_by_mail (array($contact_email),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Reçu de votre paiement', true, get_template_directory() . '/app/inc/mails/recu-offre-emploi.php', $mail_offre_payee);
 
 									// ********** Paiement adhésion
 									else:
@@ -286,7 +286,7 @@ function fluxi_manage_paiement(){
 
 										// Mail du reçu
 										$mail_vars_recu = array(get_footer_mail(), $montant, $today, $nom_structure, $adresse, $annee_cotisation, $today, 'cb', $last4);
-										notify_by_mail (array($contact_email),'Le CLER <' . CONTACT_GENERAL . '>', 'Votre reçu de cotisation d\'adhésion '.$annee_cotisation, true, get_template_directory() . '/app/inc/mails/recu-cotisation-adherent.php', $mail_vars_recu);
+										notify_by_mail (array($contact_email),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Votre reçu de cotisation d\'adhésion '.$annee_cotisation, true, get_template_directory() . '/app/inc/mails/recu-cotisation-adherent.php', $mail_vars_recu);
 
 									endif;
 

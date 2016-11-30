@@ -51,11 +51,11 @@ function fluxi_participation_concours(){
 
 					// Notification mail participation
 					$mail_vars_participation_concours = array(get_footer_mail(), $metas_tab['nom_prenom'], $title_concours, $metas_tab['titre_participation'], $redirect_slug);
-					notify_by_mail (array($metas_tab['email']),'Le CLER <' . CONTACT_GENERAL . '>', 'Votre participation à '.$title_concours, true, get_template_directory() . '/app/inc/mails/participation-concours.php', $mail_vars_participation_concours);
+					notify_by_mail (array($metas_tab['email']),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Votre participation à '.$title_concours, true, get_template_directory() . '/app/inc/mails/participation-concours.php', $mail_vars_participation_concours);
 
 					// Notification admin
 					
-					/*notify_by_mail (array(CONTACTS_CONCOURS),'Le CLER <' . CONTACT_GENERAL . '>', 'Nouvelle participation à "'.$title_concours.'"', false, '<h2>Nouvelle participation à "'.$title_concours.'"</h2>'.
+					notify_by_mail (array(CONTACTS_CONCOURS),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Nouvelle participation à "'.$title_concours.'"', false, '<h2>Nouvelle participation à "'.$title_concours.'"</h2>'.
 						
 						'<p><strong>Nom et prénom :</strong><br> ' . $metas_tab['nom_prenom'] . '</p>'.
 						'<p><strong>Nom structure :</strong><br> ' . $metas_tab['nom_structure'] . '</p>'.
@@ -63,7 +63,7 @@ function fluxi_participation_concours(){
 						'<p><strong>Texte de la participation :</strong><br> ' . $metas_tab['texte_participation'] . '</p>'.
 						'<p><strong>Lien : </strong><a href="' . $lien_video . '">' . $lien_video . '</a></p>'.
 						
-						'<p><a style="background-color:#86bd4c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_idp . '&action=edit">Accéder au concours</a></p>');*/
+						'<p><a style="background-color:#86bd4c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_idp . '&action=edit">Accéder au concours</a></p>');
 
 					$message_response = 'Votre participation au concours est enregistrée.';
 

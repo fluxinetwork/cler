@@ -115,9 +115,9 @@
 		<legend class="c-form__legend c-form--indicateur">Vos actions, vos attentes et vos motivations</legend>
 
 		<div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="activites_territoire">Vos activités concernant l’énergie<span class="i-required">•</span></label>
+	    	<label class="c-form__label" for="activites_territoire">Quelles sont les activités de votre structure ou de votre territoire sur l’énergie ?<span class="i-required">•</span></label>
 	    	<textarea rows="6" placeholder="" name="activites_territoire" id="activites_territoire" data-validation="required" class="c-form__input c-form__textarea"><?php echo $activites_territoire; ?></textarea>
-	    </div><!--Les actions de votre structure ou de votre territoire.-->
+	    </div>
 
 	    <div class="c-form__fieldset__row">
 	    	<label class="c-form__label" for="attente_du_reseau">Qu’attendez-vous du réseau ?<span class="i-required">•</span></label>
@@ -125,9 +125,9 @@
 	    </div>
 
 		<div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="contribuer_au_reseau">Votre contribution au réseau<span class="i-required">•</span></label>
+	    	<label class="c-form__label" for="contribuer_au_reseau">De quelle manière souhaitez-vous contribuer au réseau ?<span class="i-required">•</span></label>
 	    	<textarea rows="6" placeholder="" name="contribuer_au_reseau" id="contribuer_au_reseau" data-validation="required" class="c-form__input c-form__textarea"><?php echo $contribuer_au_reseau; ?></textarea>
-	    </div><!--Quelle serait-elle ?-->
+	    </div>
 
 	    <div class="c-form__fieldset__row">
 	    	<label class="c-form__label" for="connu_cler">Comment avez-vous connu le CLER ?<span class="i-required">•</span></label>
@@ -241,7 +241,7 @@
 
 		<div class="c-form__fieldset__row">
 			<label class="c-form__label" for="montant_cotisation">Montant de votre cotisation<span class="i-required">•</span></label>
-			<input type="text" placeholder="" name="montant_cotisation" id="montant_cotisation" data-validation="number" value="<?php echo $montant_cotisation; ?>" class="c-form__input">
+			<input type="text" placeholder="" name="montant_cotisation" id="montant_cotisation" data-validation="number" data-validation-allowing="range[160;500000]" value="<?php echo $montant_cotisation; ?>" class="c-form__input">
 		</div>
 
 		<div class="c-form__fieldset__row">
