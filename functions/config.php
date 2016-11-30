@@ -328,7 +328,8 @@ if ( CUSTOM_POST_TYPE ) {
 			'taxonomies' => array( 'category', 'post_tag' ),
 		);
 		register_post_type( 'cartes', $args );
-
+	}
+	add_action( 'init', 'cpts_cartes' );
 
 }
 if ( CUSTOM_TAXONOMY ) {
