@@ -29,7 +29,7 @@ define('CUSTOM_TAXONOMY', true);
 define('DISALLOW_FILE_EDIT', true);
 
 // MAILS
-
+/*
 define('CONTACT_GENERAL', 'info@cler.org');
 
 define('CONTACTS_ADHESION_1', 'lucile.krezel@cler.org');
@@ -48,27 +48,27 @@ define('CONTACTS_EMPLOI_2', 'lucile.krezel@cler.org');
 define('CONTACTS_CONCOURS', 'info@cler.org');
 
 define('CONTACTS_FORMATION_1', 'info@cler.org');
+*/
 
-/*
 define('CONTACT_GENERAL', 'rollandyann@gmail.com');
 
-define('CONTACTS_ADHESION_1', 'thibaut.caroli.pro@gmail.com');
+define('CONTACTS_ADHESION_1', 'rollandyann@gmail.com');
 define('CONTACTS_ADHESION_2','rollandyann@gmail.com');
-define('CONTACT_TEPOS', 'thibaut.caroli.pro@gmail.com');
+define('CONTACT_TEPOS', 'rollandyann@gmail.com');
 
 define('CONTACTS_PAIEMENT_1', 'rollandyann@gmail.com');
-define('CONTACTS_PAIEMENT_2','thibaut.caroli.pro@gmail.com');
+define('CONTACTS_PAIEMENT_2','rollandyann@gmail.com');
 
-define('CONTACTS_EVENT_1','thibaut.caroli.pro@gmail.com');
+define('CONTACTS_EVENT_1','rollandyann@gmail.com');
 define('CONTACTS_EVENT_2','rollandyann@gmail.com');
 
 define('CONTACTS_EMPLOI_1', 'rollandyann@gmail.com');
-define('CONTACTS_EMPLOI_2', 'thibaut.caroli.pro@gmail.com');
+define('CONTACTS_EMPLOI_2', 'rollandyann@gmail.com');
 
-define('CONTACTS_CONCOURS', 'thibaut.caroli.pro@gmail.com');
+define('CONTACTS_CONCOURS', 'rollandyann@gmail.com');
 
-define('CONTACTS_FORMATION_1', 'thibaut.caroli.pro@gmail.com');
-*/
+define('CONTACTS_FORMATION_1', 'rollandyann@gmail.com');
+
 /**
  * Custom post type & taxonomy
  */

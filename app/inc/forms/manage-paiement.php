@@ -118,6 +118,9 @@ function fluxi_manage_paiement(){
 									$mail_offre_payee = array(get_footer_mail(), $montant, $today, $nom_structure, $adresse, $today, $last4, 'cb', $title_post );
 									notify_by_mail (array($contact_email),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Reçu de votre paiement', true, get_template_directory() . '/app/inc/mails/recu-offre-emploi.php', $mail_offre_payee);
 
+									// Notification mail admin (offre)
+									notify_by_mail ( array(CONTACTS_EMPLOI_1, CONTACTS_EMPLOI_2), 'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Offre d\'emploi acquittée',false,'<h2>Paiement de la publication effectué</h2><p>L\'offre d\'emploi "' . $title_post . '" a été réglée le '.$today.'.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $idp . '&action=edit">Accéder à l\'offre</a></p>');									
+
 								// ********** Paiement adhésion
 								else:									
 
@@ -166,6 +169,9 @@ function fluxi_manage_paiement(){
 									// Mail du reçu
 									$mail_vars_recu = array(get_footer_mail(), $montant, $today, $nom_structure, $adresse, $annee_cotisation, $today, 'cb', $last4);
 									notify_by_mail (array($contact_email),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Votre reçu de cotisation d\'adhésion '.$annee_cotisation, true, get_template_directory() . '/app/inc/mails/recu-cotisation-adherent.php', $mail_vars_recu);
+
+									// Notification mail admin
+									notify_by_mail ( array(CONTACTS_ADHESION_1, CONTACTS_ADHESION_2), 'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Cotisation acquittée',false,'<p>La cotisation '.$annee_cotisation.' de la structure "' . $nom_structure . '" a été acquittée le '.$today.'.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $idp . '&action=edit">Accéder à l\'adhésion</a></p>');
 
 								endif;
 
@@ -237,6 +243,9 @@ function fluxi_manage_paiement(){
 										$mail_offre_payee = array(get_footer_mail(), $montant, $today, $nom_structure, $adresse, $today, $last4, 'cb', $title_post );
 										notify_by_mail (array($contact_email),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Reçu de votre paiement', true, get_template_directory() . '/app/inc/mails/recu-offre-emploi.php', $mail_offre_payee);
 
+										// Notification mail admin (offre)
+										notify_by_mail ( array(CONTACTS_EMPLOI_1, CONTACTS_EMPLOI_2), 'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Offre d\'emploi acquittée',false,'<h2>Paiement de la publication effectué</h2><p>L\'offre d\'emploi "' . $title_post . '" a été réglée le '.$today.'.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $idp . '&action=edit">Accéder à l\'offre</a></p>');	
+
 									// ********** Paiement adhésion
 									else:
 
@@ -287,6 +296,9 @@ function fluxi_manage_paiement(){
 										// Mail du reçu
 										$mail_vars_recu = array(get_footer_mail(), $montant, $today, $nom_structure, $adresse, $annee_cotisation, $today, 'cb', $last4);
 										notify_by_mail (array($contact_email),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Votre reçu de cotisation d\'adhésion '.$annee_cotisation, true, get_template_directory() . '/app/inc/mails/recu-cotisation-adherent.php', $mail_vars_recu);
+
+										// Notification mail admin
+										notify_by_mail ( array(CONTACTS_ADHESION_1, CONTACTS_ADHESION_2), 'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Cotisation acquittée',false,'<p>La cotisation '.$annee_cotisation.' de la structure "' . $nom_structure . '" a été acquittée le '.$today.'.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $idp . '&action=edit">Accéder à l\'adhésion</a></p>');
 
 									endif;
 
