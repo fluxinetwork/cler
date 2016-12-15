@@ -30,6 +30,11 @@ var FOO = {
         init: function() {
             isHome = true; 
         }
+    },
+    search:{
+        init: function(){
+            initCustomSearch();
+        }
     }
     
 };

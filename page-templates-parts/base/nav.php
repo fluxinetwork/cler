@@ -75,3 +75,8 @@
 		</div>
 	</nav>
 </header>
+<form method="get" id="nav__search" class="nav__search" action="<?php bloginfo('url'); ?>/">
+	<label class="is-hidden" for="s"><?php _e('Recherche :'); ?></label>
+  	<input type="text" class="nav__search__input js-search-input" value="<?php if (is_search()) : the_search_query(); endif; ?>" name="s" id="s" placeholder="Rechercher" data-swplive="true">
+  	<button type="submit" class="nav__search__submit icon-check_32 nav-bt" value="" id="nav__search__submit">Rechercher</button>  	
+</form>

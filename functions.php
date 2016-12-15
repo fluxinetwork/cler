@@ -9,6 +9,7 @@ require_once locate_template('/functions/images.php');
 require_once locate_template('/functions/menus.php');
 require_once locate_template('/functions/scripts.php');
 require_once locate_template('/functions/rss.php');
+require_once locate_template('/functions/search.php');
 
 require_once locate_template('/app/inc/forms/manage-emploi.php');
 require_once locate_template('/app/inc/forms/manage-formation.php');

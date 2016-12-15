@@ -2,14 +2,14 @@
 
 /* | RSS - V1.0 - 13/12/16 |
 --------------------------------
-   | notify_by_mail()
+   | fluxi_rss_custom()
    
 */
 
 /* CUSTOM RSS */
 
 /* Add main image and description ACF fields */
-function rss_post_thumbnail($content) {
+function fluxi_rss_custom($content) {
 	global $post;
 	$post_id = $post->ID;
 
@@ -36,5 +36,5 @@ function rss_post_thumbnail($content) {
 
 	return $content;
 }
-add_filter('the_excerpt_rss', 'rss_post_thumbnail');
-add_filter('the_content_feed', 'rss_post_thumbnail');
+add_filter('the_excerpt_rss', 'fluxi_rss_custom');
+add_filter('the_content_feed', 'fluxi_rss_custom');
