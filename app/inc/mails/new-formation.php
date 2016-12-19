@@ -21,7 +21,7 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
           <p>
           Bonjour,<br><br>
 
-            Vous venez de saisir une formationsur le site du CLER – Réseau pour la transition énergétique, et nous vous en remercions.<br><br>
+            Vous venez de saisir une formation sur le site du CLER – Réseau pour la transition énergétique, et nous vous en remercions.<br><br>
 
             Vous pouvez actualiser ou supprimer cette formation dans votre <a href="'.$refer_url.'">espace privé</a>.<br><br>
 

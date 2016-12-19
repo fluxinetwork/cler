@@ -6,10 +6,7 @@ Template Name: Gérer adhèrent
 <?php get_header(); ?>
 <section class="l-row bg-light">
 	<div class="l-col">
-		<div class="c-form c-form--large c-card">
-			<div class="c-card__header">
-				<h1 class="c-card__header__title">Demande d'adhésion<br><span>Rejoignez notre réseau !</span></h1>
-			</div>
+		<div class="c-form c-form--large c-card">			
 
 			<?php
 			// If user loged in
@@ -31,7 +28,7 @@ Template Name: Gérer adhèrent
 
 					if( $type_form == 'add' && current_user_can( 'publish_posts' ) && !is_adherent_cler() && get_adherent_status() == 'non_adherent' ):
 
-						$page_title = 'Demande d\'adhésion';
+						$page_title = 'Demande d\'adhésion';						
 					
 						$nom_contact1 = $current_user->user_lastname;
 						$prenom_contact1 = $current_user->user_firstname;
@@ -106,6 +103,7 @@ Template Name: Gérer adhèrent
 
 								$type_form = 'mod';
 								$page_title = 'Mettre à jour mon adhésion '.$last_year_cotisation;
+								
 								// Button form label
 								$type_form_name = 'Mettre à jour';
 								$montant_cotisation = $last_montant_cotisation;
@@ -115,6 +113,7 @@ Template Name: Gérer adhèrent
 							else:
 
 								$page_title = 'Demande de ré-adhésion '.($last_year_cotisation + 1);
+								
 								// Button form label
 								$type_form_name = 'Renouveler mon adhésion';
 								// Form option value for annee_cotisation
@@ -151,6 +150,7 @@ Template Name: Gérer adhèrent
 			<footer class="c-card__footer">
 				<a href="#" class="c-link c-link--more">Contactez-nous</a>
 			</footer>
+
 		</div>
 	</div>
 </section>

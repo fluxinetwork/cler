@@ -3,14 +3,18 @@
  * The template part for displaying the form "adhèrent" (add/re-add/update)
  */
 ?>
+
+<div class="c-card__header">
+	<h1 class="c-card__header__title"><?php echo $page_title; ?><br><span>Rejoignez notre réseau !</span></h1>
+</div>
+
 <form id="form-manage-adherent" role="form" class="c-card__body">
 	<fieldset class="c-form__fieldset">
 		<legend class="c-form__legend c-form--indicateur">Votre structure</legend>
 
 		<div class="c-form__fieldset__row">
 			<label class="c-form__label" for="nom_structure">Nom de la structure<span class="i-required">•</span></label>
-	      	<input type="text" name="nom_structure" id="nom_structure" value="<?php echo $nom_structure; ?>" placeholder="" data-validation="required" class="c-form__input">
-	      
+	      	<input type="text" name="nom_structure" id="nom_structure" value="<?php echo $nom_structure; ?>" placeholder="" data-validation="required" class="c-form__input">	      
 	    </div>
 
 	    <div class="c-form__fieldset__row">
@@ -70,7 +74,7 @@
 
 	    <div class="c-form__fieldset__row">
 	    	<label class="c-form__label" for="telephone_contact1">Téléphone<span class="i-required">•</span></label>
-	    	<input type="text" maxlength="10" placeholder="" value="<?php echo $telephone_contact1; ?>" name="telephone_contact1" id="telephone_contact1" data-validation="number" class="c-form__input">
+	    	<input type="text" maxlength="14" placeholder="" value="<?php echo $telephone_contact1; ?>" name="telephone_contact1" id="telephone_contact1" data-validation="required" class="c-form__input">
 	    </div>
 
 	    <div class="c-form__fieldset__row">
@@ -105,7 +109,7 @@
 
 		    <div class="c-form__fieldset__row">
 		    	 <label class="c-form__label" for="telephone_contact2">Téléphone<span class="i-required">•</span></label>
-		    	<input type="text" maxlength="10" placeholder="" value="<?php echo $telephone_contact2; ?>" name="telephone_contact2" id="telephone_contact2" data-validation="number" data-validation-depends-on="add_contact" class="c-form__input">
+		    	<input type="text" maxlength="14" placeholder="" value="<?php echo $telephone_contact2; ?>" name="telephone_contact2" id="telephone_contact2" data-validation="required" data-validation-depends-on="add_contact" class="c-form__input">
 		    </div>
 		</div>
 
@@ -136,19 +140,19 @@
 
 	    <div class="c-form__fieldset__row">
 	      	<label class="c-form__label" for="reseaux_cler">Quels réseaux spécifiques animés par le CLER souhaitez-vous rejoindre ?<span class="i-required">•</span></label>
-	      	<label class="c-form__label c-form__label--checkbox" for="reseaux_cler_0" class="">
+	      	<label class="c-form__label c-form__label--checkbox" for="reseaux_cler_0">
 	      		<input data-validation="required" class="c-form__label__checkbox" type="checkbox" name="reseaux_cler[]" value="rappel" id="reseaux_cler_0" <?php if(!empty($reseaux_cler) && in_array('rappel',$reseaux_cler))echo 'checked'; ?>>		       
 	      		<div class="c-form__label__txt">RAPPEL <small>(Réseau des acteurs de la pauvreté et de la précarité énergétique dans le logement)</small></div>
 	      	</label>
-	      	<label class="c-form__label c-form__label--checkbox" for="reseaux_cler_1" class="">
+	      	<label class="c-form__label c-form__label--checkbox" for="reseaux_cler_1">
 	      		<input class="c-form__label__checkbox" type="checkbox" name="reseaux_cler[]" value="tepos" id="reseaux_cler_1" <?php if(!empty($reseaux_cler) && in_array('tepos',$reseaux_cler))echo 'checked'; ?>>
 	      		<div class="c-form__label__txt">Réseau TEPOS <small>(Territoires à énergie positive)</small></div>
 	        </label>
-	      	<label class="c-form__label c-form__label--checkbox" for="reseaux_cler_2" class="">
+	      	<label class="c-form__label c-form__label--checkbox" for="reseaux_cler_2">
 	      		<input class="c-form__label__checkbox" type="checkbox" name="reseaux_cler[]" value="formateree" id="reseaux_cler_2" <?php if(!empty($reseaux_cler) && in_array('formateree',$reseaux_cler))echo 'checked'; ?>>
 	      		<div class="c-form__label__txt">Format’eree <small>(Organismes de formation énergies renouvelables et efficacité énergétique)</small></div>
 	        </label>
-	      	<label class="c-form__label c-form__label--checkbox" for="reseaux_cler_3" class="">
+	      	<label class="c-form__label c-form__label--checkbox" for="reseaux_cler_3">
 	      		<input class="c-form__label__checkbox" type="checkbox" name="reseaux_cler[]" value="eie" id="reseaux_cler_3" <?php if(!empty($reseaux_cler) && in_array('eie',$reseaux_cler))echo 'checked'; ?>>
 	      		<div class="c-form__label__txt">Commission EIE <small>(Espaces Info Energies)</small></div>
 	        </label>
@@ -195,7 +199,7 @@
 
 		    <div class="c-form__fieldset__row">
 				<p>L'appartenance au réseau TEPOS correspond à des valeurs et un engagement particuliers qui sont résumés dans une charte.<span class="i-required">•</span></p>
-				<label class="c-form__label c-form__label--checkbox" for="accepte_charte_energie_positive" class="">
+				<label class="c-form__label c-form__label--checkbox" for="accepte_charte_energie_positive">
 					<input type="checkbox" name="accepte_charte_energie_positive" id="accepte_charte_energie_positive" data-validation="required" value="1" data-validation-depends-on="reseaux_cler[]" data-validation-depends-on-value="tepos" <?php if($accepte_charte_energie_positive=='1')echo 'checked'; ?> class="c-form__label__checkbox">
 					<div class="c-form__label__txt">Je déclare avoir pris connaissance de la charte du Réseau Territoires à énergie positive<span class="i-required">•</span></div>
 				</label>
@@ -245,7 +249,7 @@
 		</div>
 
 		<div class="c-form__fieldset__row">
-			<label class="c-form__label c-form__label--checkbox" for="structure_fiscalisee" class="">
+			<label class="c-form__label c-form__label--checkbox" for="structure_fiscalisee">
 				<input type="checkbox" name="structure_fiscalisee" id="structure_fiscalisee" value="1" <?php if($structure_fiscalisee=='1')echo 'checked'; ?> class="c-form__label__checkbox">
 				<div class="c-form__label__txt">Si vous êtes une structure fiscalisée, souhaitez-vous recevoir un reçu d’adhésion ou de don ?</div>
 			</label>
@@ -257,7 +261,7 @@
 		<legend class="c-form__legend c-form--indicateur">Réglement et charte</legend>
 
 		<div class="c-form__fieldset__row">
-			<label class="c-form__label  c-form__label--checkbox" for="reglement_cler" class="">
+			<label class="c-form__label  c-form__label--checkbox" for="reglement_cler">
 				<input type="checkbox" name="reglement_cler" id="reglement_cler" value="1" data-validation="required" <?php if($reglement_cler=='1')echo 'checked'; ?> class="c-form__label__checkbox">
 				<div class="c-form__label__txt">Je déclare avoir pris connaissance du règlement intérieur du CLER<span class="i-required">•</span></div>
 			</label>
@@ -265,7 +269,7 @@
 	    </div>
 
 		<div class="c-form__fieldset__row">
-			<label class="c-form__label c-form__label--checkbox" for="charte_adherents" class="">
+			<label class="c-form__label c-form__label--checkbox" for="charte_adherents">
 				<input type="checkbox" name="charte_adherents" id="charte_adherents" value="1" data-validation="required" <?php if($charte_adherents=='1')echo 'checked'; ?> class="c-form__label__checkbox">
 				<div class="c-form__label__txt">Je déclare avoir pris connaissance de la charte adhérent du CLER<span class="i-required">•</span></div>
 			</label>

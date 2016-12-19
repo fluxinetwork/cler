@@ -34,7 +34,7 @@
 			<div class="form__group">
 				<label>Si vous n’être pas adhérent au CLER - Réseau pour la transition énergétique, contactez-nous directement : <strong>info@cler.org</strong>.</label>							 
 				<label for="adherent_cler" class="form__control form__control--checkbox" >Etes-vous adhérent au CLER ?<i class="i-required">*</i>
-					<input type="checkbox"name="adherent_cler" id="adherent_cler" value="1" <?php if($adherent_cler=='1')echo 'checked'; ?>>
+					<input type="checkbox" name="adherent_cler" id="adherent_cler" value="1" <?php if($adherent_cler=='1')echo 'checked'; ?>>
 					<div class="form__control__indicator"></div>
 				</label>							 
 		    </div>		   

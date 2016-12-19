@@ -29,7 +29,7 @@
 
 	    <div class="c-form__fieldset__row">
 			<label for="telephone" class="c-form__label">Téléphone de contact<span class="i-required">•</span></label>
-		    <input class="c-form__input" type="text" maxlength="10" value="<?php echo $telephone; ?>" name="telephone" id="telephone" data-validation="number">
+		    <input class="c-form__input" type="text" maxlength="14" value="<?php echo $telephone; ?>" name="telephone" id="telephone" data-validation="required">
 	    </div>
 
 	</fieldset>    
