@@ -15,7 +15,6 @@
 }
 
 .nav {
-	background-color: rgba($c-light, 0.9);
 	transition: $transition--dynamic;
 }
 
@@ -31,7 +30,6 @@
 	position: relative;
 	transition: $transition--dynamic;
 	min-height: 70vh;
-	background-color: $c-light;
 
 	&::after {
 		z-index: 10;

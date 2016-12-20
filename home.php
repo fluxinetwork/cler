@@ -22,7 +22,7 @@
 	</div>
 </section>
 
-<section class="l-row bg-white">
+<section class="l-row">
 	<div class="l-col"> 
 		<h2 class="c-section-title">Vos espaces dédiés</h2>
 		<div class="l-grid l-grid--2col grid-espaces-dedies">
@@ -64,7 +64,7 @@
 	</div>
 </section>
 
-<section class="l-row bg-white">
+<section class="l-row">
 	<div class="l-col">
 		<h2 class="c-section-title">Nos actions</h2>
 		<div class="l-grid l-grid--2col grid-actions">
@@ -103,7 +103,7 @@
 	</div>
 </section>
 
-<section class="l-row bg-white">
+<section class="l-row">
 	<div class="l-col l-grid">
 		<div class="l-grid__col">
 			<div class="l-grid__col__content hp-adherer-tmp">

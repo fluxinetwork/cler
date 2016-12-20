@@ -78,7 +78,6 @@
 
 	.c-tile--hover:hover {
 		background-color: $c-main;
-		background-image: radial-grad($c-main, 50%);
 		
 		.c-tile__content__title {
 			font-size: 0;

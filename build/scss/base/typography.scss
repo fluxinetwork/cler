@@ -40,7 +40,8 @@ h1, h2, h3, h4, h5 {
 h1, .h1 {	
 	@include font-size($h1-font-sizes);
 }
-h1 {	
+h1 {
+	font-weight: 900;	
 }
 
 h2, .h2 {	
@@ -55,6 +56,7 @@ h2, .h2 {
 	text-transform: uppercase;
 }
 h2 {	
+	font-weight: 400;
 }
 
 h3, .h3 {	
@@ -109,6 +111,10 @@ ul, ol {
 
 	&--white {
 		color: #fff;
+		opacity: 1;
+	}
+
+	&--dark {
 		opacity: 1;
 	}
 }

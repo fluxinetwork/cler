@@ -1,28 +1,24 @@
 /*======================================================================*\
 ==========================================================================
 
-//	SINGLE
+//	C-OFFRE
 
 ==========================================================================
 \*======================================================================*/
 
-.single__header {
+
+.c-offre {
 
 }
 
-.single__header__meta {
-	@include flex(null center);
-	margin-top: $space--xs;
-
-	.t-meta {
-		margin-right: $space--s;
-	}
+.c-offre__tile {
+	@extend .h2;
 }
 
-.single__header__figure {
-	margin: $space--l 0 0 0;
+.c-offre__meta {
+	@extend .t-meta;
 }
 
-.single__header__excerpt {
-	margin-top: $space--l;
+.c-offre__tags {
+	display: flex;
 }

@@ -1,28 +1,21 @@
 /*======================================================================*\
 ==========================================================================
 
-//	SINGLE
+//	C-FIGURE
 
 ==========================================================================
 \*======================================================================*/
 
-.single__header {
-
+.c-figure {
+	margin: 0
 }
 
-.single__header__meta {
-	@include flex(null center);
+.c-figure__img {
+	border-radius: $radius;
+}
+
+.c-figure__caption {
 	margin-top: $space--xs;
-
-	.t-meta {
-		margin-right: $space--s;
-	}
-}
-
-.single__header__figure {
-	margin: $space--l 0 0 0;
-}
-
-.single__header__excerpt {
-	margin-top: $space--l;
+	@extend .h5;
+	text-align: center;
 }
