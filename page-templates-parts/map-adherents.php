@@ -23,10 +23,9 @@
 		<div class="map-panel">
 
 			<div class="form">
-				<form id="form-filter-map" role="form">
-				    
-				    <label for="type_structure" class="hide">Type de structure</label>
-					<select name="type_structure" id="type_structure" data-validation="required">
+				<form id="form-filter-map" role="form">				    
+				    <label class="c-form__label" for="type_structure">Type de structure</label>
+					<select class="c-form__select" name="type_structure" id="type_structure" data-validation="required">
 						<option disabled selected value=""> Quel type de structure ?</option>
 						<?php
 							if( $ob_type_struct ):
@@ -37,8 +36,8 @@
 						?>
 					</select>				
 					
-					<button type="submit" id="submit-filters" class="form__submit">Filtrer</button>
-					<button type="reset" class="button" class="form__reset">X</button>
+					<button type="submit" id="submit-filters" class="c-btn">Filtrer</button>
+					<button type="reset" class="c-btn">reset</button>
 				</form>
 			</div>
 

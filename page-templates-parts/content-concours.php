@@ -18,76 +18,55 @@
 	$today = date('Ymd');
 ?>
 
-<article>
-
-	<header>
-		<h1><?php the_title(); ?></h1>		
-	</header>	
-
+<section>
+	<h1><?php the_title(); ?></h1>
 	<!-- Régles et jury -->
 	<p><?php echo get_field('regles_concours'); ?></p>
-	
-	<!-- Form participation concours -->	
-	<?php 
-		if( $today >= $date_debut_candidatures && $today <= $date_fin_candidatures ):
-			require_once( get_template_directory() . '/page-templates-parts/forms/form-concours.php' ); 
+</section>
+
+<!-- Form participation concours -->	
+<?php if( $today >= $date_debut_candidatures && $today <= $date_fin_candidatures ): ?>				
+	<!-- **** data-idp est utilisée par le formulaire *** -->
+	<!-- **** data-idp est utilisée par le formulaire *** -->
+	<!-- **** data-idp est utilisée par le formulaire *** -->
+	<section class="l-row bg-light"  id="concours" data-idp="<?php echo get_the_ID(); ?>">
+		<div class="l-col">
+			<div class="c-form c-form--large c-card">
+				<?php require_once( get_template_directory() . '/page-templates-parts/forms/form-concours.php' ); ?>							
+			</div>
+		</div>
+	</section>
+<?php endif; ?>
+
+<!-- Participations -->
+<?php
+	if( $today >= $date_debut_votes && $today <= $date_fin_votes ):
+		if( have_rows('candidatures') ): 
+			$i = 0;
+			echo '<section class="participations">';
+		    while ( have_rows('candidatures') ) : the_row(); 
+		    	$i++; 
+		    	$nb_votes = get_sub_field('nombre_votes');
+				$video = get_sub_field('video_candidature');
+				?>
+				<div class="participation">
+			        <h3><?php echo get_sub_field('titre_candidature'); ?></h3>
+			        <p><?php echo get_sub_field('texte_candidature'); ?></p>
+			        <div><?php echo $video; ?></div>
+
+					<div class="rating">
+						<p>Votes : <span class="js-nb-rate"><?php echo $nb_votes; ?></span></p>
+				       <form class="form-rating" role="form">					       		
+				       		<input type="hidden" value="<?php echo $idp; ?>" name="idp">
+							<input type="hidden" value="<?php echo $i; ?>" name="idc">
+							<?php wp_nonce_field( 'fluxi_rating_concours', 'fluxi_rating_concours_nonce_field' ); ?>
+				       		<button type="submit" class="c-btn">Voter</button>					       		
+				       </form>
+			       </div>
+				</div>
+			<?php
+		    endwhile;
+			echo '</section>';
 		endif;
-	?>
-
-	<!-- Participations -->
-	<?php
-		if( $today >= $date_debut_votes && $today <= $date_fin_votes ):
-			if( have_rows('candidatures') ): 
-				$i = 0;
-				echo '<div class="participations">';
-			    while ( have_rows('candidatures') ) : the_row(); 
-			    	$i++; 
-			    	$nb_votes = get_sub_field('nombre_votes');
-					$video = get_sub_field('video_candidature');
-					?>
-					<div class="participation">
-				        <h3><?php echo get_sub_field('titre_candidature'); ?></h3>
-				        <p><?php echo get_sub_field('texte_candidature'); ?></p>
-				        <div><?php echo $video; ?></div>
-
-						<div class="rating">
-							<p>Votes : <span class="js-nb-rate"><?php echo $nb_votes; ?></span></p>
-					       <form class="form-rating" role="form">
-					       		<p> 
-					       		  <input type="hidden" value="<?php echo $idp; ?>" name="idp">
-								  <input type="hidden" value="<?php echo $i; ?>" name="idc">
-								  <?php wp_nonce_field( 'fluxi_rating_concours', 'fluxi_rating_concours_nonce_field' ); ?>
-					       		  <button type="submit" class="button">Je kiff ça</button>
-					       		</p>
-					       </form>
-				       </div>
-					</div>
-				<?php
-			    endwhile;
-				echo '</div>';
-			endif;
-		endif;
-	?>
-
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	endif;
+?>

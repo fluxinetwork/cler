@@ -7,11 +7,11 @@ Template Name: Toutes les formations
 <?php
 	$count_formations = wp_count_posts('formations');
 ?>
-<article>
+<section>
 
 	<header>
 		<?php the_title( '<h1>', '</h1>' ); ?>
-		<h4 class="sub-title">Il y a <?php echo $count_formations->publish; ?> formations à consulter </h4>
+		<h4 class="sub-title">Il y a <span class="js-nb-results"><?php echo $count_formations->publish; ?></span> formations à consulter </h4>
 	</header>
 
 	<div class="main-col">
@@ -125,93 +125,97 @@ Template Name: Toutes les formations
 	?>
 	</div>
 
-	<aside class="sidebar">
-		<div class="form">
-			<form id="form-filter-posts" role="form">
-				<fieldset>
-					<legend>Filtrer les formations</legend>
-				    <div class="form__select">
-				    	<label for="departement" class="label-effect--1">Département</label>
-						<select name="departement" id="departement" data-validation="required">
-							<option disabled selected value="">Dans quel département ?</option>
-							<?php
-								foreach ( load_departements_fields() as $key => $value ) {
-					            	echo '<option value="'.$key.'">'.$value.'</option>';
-								}
-							?>
-						</select>
-				    </div>
+	<aside class="l-row bg-light">
 
-				    <div class="form__select">
-				      <label for="secteur" class="label-effect--1">Secteur</label>
-				      <select name="secteur" id="secteur">
-				        <option disabled selected value="">Quel secteur ?</option>				      
-				        <option value="secteur_1">Étude/ingénierie</option>
-						<option value="secteur_2">Conseil/Accompagnement</option>
-						<option value="secteur_3">Réalisation/Installation</option>
-						<option value="secteur_4">Maintenance/Exploitation</option>
-						<option value="secteur_5">Production industrielle/Fabrication</option>
-						<option value="secteur_6">Distribution/Vente/Commercialisation</option>
-						<option value="secteur_7">Maîtrise d’ouvrage</option>
-				      </select>
-				    </div>
+		<div class="l-col">
+			<div class="c-form c-form--large c-card">
 
-				    <div class="form__select">
-				      <label for="thematique" class="label-effect--1">Thématique</label>
-				      <select name="thematique" id="thematique">
-				        <option disabled selected value="">Quelle thématique ?</option>
-				        <option value="thematique_1">Maîtrise de l’énergie</option>
-						<option value="thematique_2">Énergies renouvelables/Généraliste </option>
-						<option value="thematique_3">Énergies renouvelables/Solaire thermique</option>
-						<option value="thematique_4">Énergies renouvelables/Solaire photovoltaïque</option>
-						<option value="thematique_5">Énergies renouvelables/Biomasse</option>
-						<option value="thematique_6">Énergies renouvelables/Biogaz</option>
-						<option value="thematique_7">Énergies renouvelables/Eolien</option>
-						<option value="thematique_8">Énergies renouvelables/Hydraulique</option>
-						<option value="thematique_9">Énergies renouvelables/Géothermie</option>
-						<option value="thematique_10">Territoires &amp; environnement </option>
-						<option value="thematique_11">Précarité énergétique</option>
-						<option value="thematique_12">Mobilité</option>
-				      </select>
-				    </div>
+				<form id="form-filter-posts" role="form" class="c-card__body">
+					<fieldset class="c-form__fieldset">
 
-				    <div class="form__select">
-				      <label for="publics" class="label-effect--1">Public</label>
-				      <select name="publics" id="publics">
-				        <option disabled selected value="">Quel public ?</option>
-				        <option value="public_1">lycéens, étudiants, apprentis</option>
-						<option value="public_2">salariés, demandeurs d’emplois</option>
-				      </select>
-				    </div>
+						<legend class="c-form__legend c-form--indicateur">Filtrer les formations</legend>
+					    <div class="c-form__fieldset__row">
+					    	<label for="departement" class="c-form__label is-none">Département</label>
+							<select class="c-form__select" name="departement" id="departement">
+								<option disabled selected value="">Dans quel département ?</option>
+								<?php
+									foreach ( load_departements_fields() as $key => $value ) {
+						            	echo '<option value="'.$key.'">'.$value.'</option>';
+									}
+								?>
+							</select>
+					    </div>
 
-				    <div class="form__select">
-				      <label for="agrement_formateree" class="label-effect--1">Agréée Format’eree</label>
-				      <select name="agrement_formateree" id="agrement_formateree">
-				        <option disabled selected value="">Agréée Format’eree ?</option>
-				        <option value="non">Formation non agréée</option>
-				        <option value="oui">Formation agréée</option>
-				      </select>
-				    </div>
-				</fieldset>
+					    <div class="c-form__fieldset__row">
+					      <label for="secteur" class="c-form__label is-none">Secteur</label>
+					      <select class="c-form__select" name="secteur" id="secteur">
+					        <option disabled selected value="">Quel secteur ?</option>				      
+					        <option value="secteur_1">Étude/ingénierie</option>
+							<option value="secteur_2">Conseil/Accompagnement</option>
+							<option value="secteur_3">Réalisation/Installation</option>
+							<option value="secteur_4">Maintenance/Exploitation</option>
+							<option value="secteur_5">Production industrielle/Fabrication</option>
+							<option value="secteur_6">Distribution/Vente/Commercialisation</option>
+							<option value="secteur_7">Maîtrise d’ouvrage</option>
+					      </select>
+					    </div>
 
-				<input type="hidden" value="formations" name="pt_slug">
-				<input type="hidden" value="<?php echo mt_rand(0,9999); ?>" name="toky_toky">
+					    <div class="c-form__fieldset__row">
+					      <label for="thematique" class="c-form__label is-none">Thématique</label>
+					      <select class="c-form__select" name="thematique" id="thematique">
+					        <option disabled selected value="">Quelle thématique ?</option>
+					        <option value="thematique_1">Maîtrise de l’énergie</option>
+							<option value="thematique_2">Énergies renouvelables/Généraliste </option>
+							<option value="thematique_3">Énergies renouvelables/Solaire thermique</option>
+							<option value="thematique_4">Énergies renouvelables/Solaire photovoltaïque</option>
+							<option value="thematique_5">Énergies renouvelables/Biomasse</option>
+							<option value="thematique_6">Énergies renouvelables/Biogaz</option>
+							<option value="thematique_7">Énergies renouvelables/Eolien</option>
+							<option value="thematique_8">Énergies renouvelables/Hydraulique</option>
+							<option value="thematique_9">Énergies renouvelables/Géothermie</option>
+							<option value="thematique_10">Territoires &amp; environnement </option>
+							<option value="thematique_11">Précarité énergétique</option>
+							<option value="thematique_12">Mobilité</option>
+					      </select>
+					    </div>
 
-				<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
+					    <div class="c-form__fieldset__row">
+					      <label for="publics" class="c-form__label is-none">Public</label>
+					      <select class="c-form__select" name="publics" id="publics">
+					        <option disabled selected value="">Quel public ?</option>
+					        <option value="public_1">lycéens, étudiants, apprentis</option>
+							<option value="public_2">salariés, demandeurs d’emplois</option>
+					      </select>
+					    </div>
 
+					    <div class="c-form__fieldset__row">
+					      <label for="agrement_formateree" class="c-form__label is-none">Agréée Format’eree</label>
+					      <select class="c-form__select" name="agrement_formateree" id="agrement_formateree">
+					        <option disabled selected value="">Agréée Format’eree ?</option>
+					        <option value="non">Formation non agréée</option>
+					        <option value="oui">Formation agréée</option>
+					      </select>
+					    </div>
+					</fieldset>
 
-				<div class="form__buttons">
-					<button type="reset" class="button" class="form__reset">Reset</button>
-				    <button type="submit" id="submit-filters" class="form__submit">Filtrer</button>
-				</div>
+					<input type="hidden" value="formations" name="pt_slug">
+					<input type="hidden" value="<?php echo mt_rand(0,9999); ?>" name="toky_toky">
 
-			</form>
+					<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
 
-			<br><a href="<?php echo get_home_url(); ?>/gerer-formation?act=add" class="hide">Ajouter une formation</a>
+					<div class="c-form__notify js-notify"></div>
+
+					<div class="c-form__submit">
+						<button class="c-btn" type="reset">Reset</button>
+					    <button class="c-btn" type="submit" id="submit-filters">Filtrer</button>
+					</div>
+
+				</form>
+			</div>
 		</div>
 
 	</aside>
-</article>
+</section>
 
 <?php get_footer(); ?>
 

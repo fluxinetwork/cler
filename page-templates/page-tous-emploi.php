@@ -7,11 +7,11 @@ Template Name: Toutes les offres d'emploi
 <?php
 	$count_offres = wp_count_posts('offres-emploi');
 ?>
-<article>
+<section>
 
 	<header>
 		<?php the_title( '<h1>', '</h1>' ); ?>
-		<h4 class="sub-title">Il y a <?php echo $count_offres->publish; ?> offres d'emploi à consulter </h4>
+		<h4 class="sub-title">Il y a <span class="js-nb-results"><?php echo $count_offres->publish; ?></span> offres d'emploi à consulter </h4>
 	</header>
 
 	<div class="main-col">
@@ -93,87 +93,93 @@ Template Name: Toutes les offres d'emploi
 	?>
 	</div>
 
-	<aside class="sidebar">
-		<div class="form">
-			<form id="form-filter-posts" role="form">
-				<fieldset>
-					<legend>Filtrer les offres d'emploi</legend>
-				    <div class="form__select">
-				    	<label for="departement" class="label-effect--1">Département</label>
-						<select name="departement" id="departement" data-validation="required">
-							<option disabled selected value="">Dans quel département ?</option>
-							<?php
-								foreach ( load_departements_fields() as $key => $value ) {
-					            	echo '<option value="'.$key.'">'.$value.'</option>';
-								}
-							?>
-						</select>
-				    </div>
+	<aside class="l-row bg-light">
 
-				    <div class="form__select">
-				      <label for="type_de_poste" class="label-effect--1">Type de poste</label>
-				      <select name="type_de_poste" id="type_de_poste">
-				        <option disabled selected value="">Quel type de poste ?</option>
-				        <option value="stage">Stage</option>
-				        <option value="cdd">CDD</option>
-				        <option value="cdi">CDI</option>
-				        <option value="autre">Autre</option>
-				      </select>
-				    </div>
+		<div class="l-col">
+			<div class="c-form c-form--large c-card">
+		
+				<form id="form-filter-posts" role="form" class="c-card__body">
+					<fieldset class="c-form__fieldset">
+						<legend class="c-form__legend c-form--indicateur">Filtrer les offres d'emploi</legend>
+					    <div class="c-form__fieldset__row">
+					    	<label for="departement" class="c-form__label is-none">Département</label>
+							<select class="c-form__select" name="departement" id="departement" data-validation="required">
+								<option disabled selected value="">Dans quel département ?</option>
+								<?php
+									foreach ( load_departements_fields() as $key => $value ) {
+						            	echo '<option value="'.$key.'">'.$value.'</option>';
+									}
+								?>
+							</select>
+					    </div>
 
-				    <div class="form__select">
-				      <label for="niveau_detude" class="label-effect--1">Niveau d’étude</label>
-				      <select name="niveau_detude" id="niveau_detude">
-				        <option disabled selected value="">Quel niveau d’étude ?</option>
-				        <option value="bac">BAC</option>
-				        <option value="bac_2">BAC+2</option>
-				        <option value="bac_3">BAC+3</option>
-				        <option value="bac_5">BAC+5</option>
-				      </select>
-				    </div>
+					    <div class="c-form__fieldset__row">
+					      <label for="type_de_poste" class="c-form__label is-none">Type de poste</label>
+					      <select class="c-form__select" name="type_de_poste" id="type_de_poste">
+					        <option disabled selected value="">Quel type de poste ?</option>
+					        <option value="stage">Stage</option>
+					        <option value="cdd">CDD</option>
+					        <option value="cdi">CDI</option>
+					        <option value="autre">Autre</option>
+					      </select>
+					    </div>
 
-				    <div class="form__select">
-				      <label for="experience" class="label-effect--1">Expérience demandée</label>
-				      <select name="experience" id="experience">
-				        <option disabled selected value="">Combien d'année d'expérience ?</option>
-				        <option value="experience_0">Jeune diplômé(e)</option>
-				        <option value="experience_1">1 à 3 ans</option>
-				        <option value="experience_2">3 à 5 ans</option>
-						<option value="experience_3">5 à 10 ans</option>
-						<option value="experience_4">Plus de 10 ans</option>
-				      </select>
-				    </div>
+					    <div class="c-form__fieldset__row">
+					      <label for="niveau_detude" class="c-form__label is-none">Niveau d’étude</label>
+					      <select class="c-form__select" name="niveau_detude" id="niveau_detude">
+					        <option disabled selected value="">Quel niveau d’étude ?</option>
+					        <option value="bac">BAC</option>
+					        <option value="bac_2">BAC+2</option>
+					        <option value="bac_3">BAC+3</option>
+					        <option value="bac_5">BAC+5</option>
+					      </select>
+					    </div>
 
-				    <div class="form__select">
-				      <label for="type_structure" class="label-effect--1">Type de structure</label>
-				      <select name="type_structure" id="type_structure">
-				        <option disabled selected value="">Quel de structure ?</option>
-				        <option value="entreprise">Entreprise</option>
-				        <option value="association">Association</option>
-				        <option value="collectivite">Collectivité</option>
-				        <option value="formation">Organisme de formation</option>
-				      </select>
-				    </div>
-				</fieldset>
+					    <div class="c-form__fieldset__row">
+					      <label for="experience" class="c-form__label is-none">Expérience demandée</label>
+					      <select class="c-form__select" name="experience" id="experience">
+					        <option disabled selected value="">Combien d'année d'expérience ?</option>
+					        <option value="experience_0">Jeune diplômé(e)</option>
+					        <option value="experience_1">1 à 3 ans</option>
+					        <option value="experience_2">3 à 5 ans</option>
+							<option value="experience_3">5 à 10 ans</option>
+							<option value="experience_4">Plus de 10 ans</option>
+					      </select>
+					    </div>
 
-				<input type="hidden" value="offres-emploi" name="pt_slug">
-				<input type="hidden" value="<?php echo mt_rand(0,9999); ?>" name="toky_toky">
+					    <div class="c-form__fieldset__row">
+					      <label for="type_structure" class="c-form__label is-none">Type de structure</label>
+					      <select class="c-form__select" name="type_structure" id="type_structure">
+					        <option disabled selected value="">Quel de structure ?</option>
+					        <option value="entreprise">Entreprise</option>
+					        <option value="association">Association</option>
+					        <option value="collectivite">Collectivité</option>
+					        <option value="formation">Organisme de formation</option>
+					      </select>
+					    </div>
+					</fieldset>
 
-				<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
+					<input type="hidden" value="offres-emploi" name="pt_slug">
+					<input type="hidden" value="<?php echo mt_rand(0,9999); ?>" name="toky_toky">
 
+					<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
 
-				<div class="form__buttons">
-					<button type="reset" class="button" class="form__reset">Reset</button>
-				    <button type="submit" id="submit-filters" class="form__submit">Filtrer</button>
-				</div>
+					<div class="c-form__notify js-notify"></div>
 
-			</form>
+					<div class="c-form__submit">
+						<button class="c-btn" type="reset">Reset</button>
+					    <button class="c-btn" type="submit" id="submit-filters">Filtrer</button>
+					</div>
 
-			<br><a href="<?php echo get_home_url(); ?>/gerer-offre-emploi?act=add" class="hide">Ajouter une offre d'emploi</a>
+				</form>
+				
+
+			</div>
 		</div>
 
 	</aside>
-</article>
+
+</section>
 
 <?php get_footer(); ?>
 

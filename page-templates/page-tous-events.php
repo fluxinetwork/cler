@@ -7,11 +7,11 @@ Template Name: Toutes les événements
 <?php
 	$count_event = wp_count_posts('evenements');
 ?>
-<article>
+<section>
 
 	<header>
 		<?php the_title( '<h1>', '</h1>' ); ?>
-		<h4 class="sub-title">Il y a <?php echo $count_event->publish; ?> événements à consulter </h4>
+		<h4 class="sub-title">Il y a <span class="js-nb-results"><?php echo $count_event->publish; ?></span> événements à consulter </h4>
 	</header>
 
 	<div class="main-col">
@@ -98,63 +98,71 @@ Template Name: Toutes les événements
 	?>
 	</div>
 
-	<aside class="sidebar">		
-		<div class="form">
-			<form id="form-filter-posts" role="form">
-				<fieldset>
-					<legend>Filtrer les événements</legend>
-				    <div class="form__select">
-				    	<label for="departement" class="label-effect--1">Département</label>
-						<select name="departement" id="departement">
-							<option disabled selected value="">Dans quel département ?</option>
-							<?php
-								foreach ( load_departements_fields() as $key => $value ) {
-					            	echo '<option value="'.$key.'">'.$value.'</option>';
-								}
-							?>
-						</select>
-				    </div>
+	<aside class="l-row bg-light">
 
-				    <div class="form__select">
-				      <label for="publics_event" class="label-effect--1">Publics</label>
-				      <select name="publics_event" id="publics_event">
-				      	<option disabled selected value="">Quel public concerné ?</option>
-						<option value="particuliers">Particuliers</option>
-				        <option value="professionnels">Professionnels</option>			        
-					  </select>			      
-				    </div>
+		<div class="l-col">
+			<div class="c-form c-form--large c-card">
+			
+				<form id="form-filter-posts" role="form" class="c-card__body">
+					<fieldset class="c-form__fieldset">
 
-				    <div class="form__select">
-				      <label for="themes" class="label-effect--1">Thèmes</label>
-					  <select name="themes" id="themes">
-				      	<option disabled selected value=""> - Quel thème ?</option>
-						<option value="energies_renouvelables">Énergies renouvelables</option>
-				        <option value="maitrise_energie_batiment">Maîtrise de l’énergie/Bâtiment</option>
-				        <option value="precarite_energetique">Précarité énergétique</option>
-				        <option value="mobilite">Mobilité</option>
-				        <option value="territoires_democratie">Territoires et démocratie</option>	
-				        <option value="emploi_formation">Emploi/formation</option>	       
-					  </select>	
-				    </div>
-				</fieldset>
+						<legend class="c-form__legend c-form--indicateur">Filtrer les événements</legend>
 
-				<input type="hidden" value="evenements" name="pt_slug">
-				<input type="hidden" value="<?php echo mt_rand(0,9999); ?>" name="toky_toky">
+					    <div class="c-form__fieldset__row">
+					    	<label class="c-form__label is-none" for="departement">Département</label>
+							<select class="c-form__select" name="departement" id="departement">
+								<option disabled selected value="">Dans quel département ?</option>
+								<?php
+									foreach ( load_departements_fields() as $key => $value ) {
+						            	echo '<option value="'.$key.'">'.$value.'</option>';
+									}
+								?>
+							</select>
+					    </div>
 
-				<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
+					    <div class="c-form__fieldset__row">
+					      <label class="c-form__label is-none" for="publics_event">Publics</label>
+					      <select class="c-form__select" name="publics_event" id="publics_event">
+					      	<option disabled selected value="">Quel public concerné ?</option>
+							<option value="particuliers">Particuliers</option>
+					        <option value="professionnels">Professionnels</option>			        
+						  </select>			      
+					    </div>
 
+					    <div class="c-form__fieldset__row">
+					      <label class="c-form__label is-none" for="themes">Thèmes</label>
+						  <select class="c-form__select" name="themes" id="themes">
+					      	<option disabled selected value=""> - Quel thème ?</option>
+							<option value="energies_renouvelables">Énergies renouvelables</option>
+					        <option value="maitrise_energie_batiment">Maîtrise de l’énergie/Bâtiment</option>
+					        <option value="precarite_energetique">Précarité énergétique</option>
+					        <option value="mobilite">Mobilité</option>
+					        <option value="territoires_democratie">Territoires et démocratie</option>	
+					        <option value="emploi_formation">Emploi/formation</option>	       
+						  </select>	
+					    </div>
+					</fieldset>
 
-				<div class="form__buttons">
-					<button type="reset" class="button" class="form__reset">Reset</button>
-				    <button type="submit" id="submit-filters" class="form__submit">Filtrer</button>
-				</div>
+					<input type="hidden" value="evenements" name="pt_slug">
+					<input type="hidden" value="<?php echo mt_rand(0,9999); ?>" name="toky_toky">
 
-			</form>
-			<a href="/gerer-evenement?act=add" class="hide">Ajouter un événement</a>
+					<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
+
+					<div class="c-form__notify js-notify"></div>
+
+					<div class="c-form__submit">
+						<button class="c-btn" type="reset">Reset</button>
+					    <button class="c-btn" type="submit" id="submit-filters">Filtrer</button>
+					</div>
+
+				</form>
+
+			</div>
 		</div>
 
 	</aside>
-</article>
+
+</section>
 
 <?php get_footer(); ?>
 

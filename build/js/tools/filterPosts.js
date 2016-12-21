@@ -10,11 +10,15 @@
 
 function initFluxiFilterPosts(){
 
-    $('.form').on('submit', 'form#form-filter-posts', function(e){
+    $('#form-filter-posts').on('submit', function(e){
 
         var params = $(this).serialize();
+       
+        var $results = $('.results-list');
+        var $formObj = $('#form-filter-posts');
+        var formID = '#form-filter-posts'; 
 
-       $('#submit-filters').html('<span class="spinner"></span> Chargement');
+        $formObj.find('button[type=submit]').html('<span class="spinner"></span> Chargement');
 
         $.ajax({
             type: 'POST',
@@ -24,24 +28,21 @@ function initFluxiFilterPosts(){
             success: function(data){
 
                 if(data[0].validation == 'error'){
-                    //$('#submit-filters').html('Filtrer');                    
+                    $formObj.find('button[type=submit]').html('Filtrer');                    
                 }else{
                     if(data[0].total > 0){
-                        
-                        $('.results-list').html('').append('<div class="notify"><span class="'+data[0].validation+'">'+data[0].message+'</span></div>').append(data[0].content);
-                    }else{
-                        if($('.results-list .notify').length){
-                            $('.results-list .notify').html('<span class="error">'+data[0].message+'</span>');
-                        }else{
-                            $('.results-list').prepend('<div class="notify"><span class="error">'+data[0].message+'</span></div>');
-                        }
+                        $('.js-nb-results').html(data[0].total);                  
+                        $results.html('').append(data[0].content);
+                        $formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
+                    }else{                        
+                        $formObj.find('.js-notify').html('<span class="error">'+data[0].message+'</span>');
                     }
                 }
-                $('#submit-filters').html('Filtrer');
+                $formObj.find('button[type=submit]').html('Filtrer');
             },
             error : function(jqXHR, textStatus, errorThrown) {
                 //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
-                $('#submit-filters').html('Filtrer');
+                $formObj.find('button[type=submit]').html('Filtrer');
             }
 
         });
