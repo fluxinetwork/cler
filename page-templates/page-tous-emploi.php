@@ -1,3 +1,4 @@
+
 <?php
 /*
 Template Name: Toutes les offres d'emploi
@@ -5,181 +6,110 @@ Template Name: Toutes les offres d'emploi
 ?>
 <?php get_header(); ?>
 <?php
-	$count_offres = wp_count_posts('offres-emploi');
+$nb_offres = wp_count_posts('offres-emploi')->publish;
+$output = ($nb_offres>1) ? $nb_offres.' offres' : $nb_offres.' offre';
 ?>
-<section>
 
-	<header>
-		<?php the_title( '<h1>', '</h1>' ); ?>
-		<h4 class="sub-title">Il y a <span class="js-nb-results"><?php echo $count_offres->publish; ?></span> offres d'emploi à consulter </h4>
-	</header>
+<div class="page">
+	<div class="l-row">
+		<header class="l-col l-col--content">
+			<h1><?php echo get_the_title(); ?></h1>
 
-	<div class="main-col">
-	<?php
-		$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+			<div class="single__header__meta">
+				<div class="c-dash"></div>
 
-		$args_filtered = array(
-			'post_type' => 'offres-emploi',
-			'post_status' => 'publish',
-			'posts_per_page' => 5,
-			'paged' => $paged
- 		);
-		$query_filtered = new WP_Query( $args_filtered );
-
-		if ( $query_filtered->have_posts() ) : ?>
-
-			<div class="results-list">
-				<?php while ( $query_filtered->have_posts() ) : $query_filtered->the_post();
-
-					$ob_type_de_poste = get_field_object('field_574dadcc3c7b1');
-					$label_type_de_poste = $ob_type_de_poste['choices'][ get_field('type_de_poste') ];
-
-					$ob_departement = get_field_object('field_574dab093c7b0');
-					$label_departement = $ob_departement['choices'][ get_field('departement') ];
-
-					$ob_experience = get_field_object('field_5773a4bc97554');
-					$label_experience = $ob_experience['choices'][ get_field('experience') ];
-
-					$ob_niveau_detude = get_field_object('field_574dae0e3c7b2');
-					$ch_niveau_detude = $ob_niveau_detude['choices'];
-					$val_niveau_detude = $ob_niveau_detude['value'];
-					$label_niveau_detude = '';
-
-					if( $val_niveau_detude ):
-
-						foreach( $val_niveau_detude as $v ):
-
-							$label_niveau_detude .= '<span class="tag">'.$ch_niveau_detude[ $v ] .'</span>';
-
-						endforeach;
-
-					endif;
-
-					?>
-
-					<a class="results-list-item" href="<?php the_permalink(); ?>">
-						<h2><?php echo get_the_title (); ?></h2>
-						<h4><?php echo get_field('nom_structure'); ?> - <?php echo get_field('ville'); ?> - <?php echo $label_departement; ?></h4>
-						<p class="description"><?php echo get_field('descriptif_organisme'); ?></p>
-						<span class="tag first"><?php echo $label_type_de_poste; ?></span>
-						<span class="tag"><?php echo $label_experience; ?></span>
-						<?php echo $label_niveau_detude; ?>
-					</a>
-
-				<?php endwhile; ?>
-
-				<?php
-	            echo '<div class="pager">';
-	    			echo paginate_links( array(
-	    				'base' => @add_query_arg('paged','%#%'),
-	    				'format' => '?paged=%#%',
-	    				'current' => max( 1, get_query_var('paged') ),
-	    				'total' => $query_filtered->max_num_pages,
-	              		'prev_next'=> false
-	    			) );
-	            echo '</div>';
-
-				?>
+				<span class="sub-title">Il y a <?php echo $output; ?>  d'emploi à consulter </span>
 			</div>
 
-
-		<?php
-		else :
-
-			echo '<p><strong>Il n\'y a aucune offre d\'emploi pour l\'instant.</strong></p>';
-
-		endif;
-		wp_reset_postdata();
-	?>
+		</header>
 	</div>
 
-	<aside class="l-row bg-light">
-
+	<div class="l-row">
 		<div class="l-col">
-			<div class="c-form c-form--large c-card">
-		
-				<form id="form-filter-posts" role="form" class="c-card__body">
-					<fieldset class="c-form__fieldset">
-						<legend class="c-form__legend c-form--indicateur">Filtrer les offres d'emploi</legend>
-					    <div class="c-form__fieldset__row">
-					    	<label for="departement" class="c-form__label is-none">Département</label>
-							<select class="c-form__select" name="departement" id="departement" data-validation="required">
-								<option disabled selected value="">Dans quel département ?</option>
-								<?php
-									foreach ( load_departements_fields() as $key => $value ) {
-						            	echo '<option value="'.$key.'">'.$value.'</option>';
-									}
-								?>
-							</select>
-					    </div>
+			
+			<?php
+				$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
-					    <div class="c-form__fieldset__row">
-					      <label for="type_de_poste" class="c-form__label is-none">Type de poste</label>
-					      <select class="c-form__select" name="type_de_poste" id="type_de_poste">
-					        <option disabled selected value="">Quel type de poste ?</option>
-					        <option value="stage">Stage</option>
-					        <option value="cdd">CDD</option>
-					        <option value="cdi">CDI</option>
-					        <option value="autre">Autre</option>
-					      </select>
-					    </div>
+				$args_filtered = array(
+					'post_type' => 'offres-emploi',
+					'post_status' => 'publish',
+					'posts_per_page' => 5,
+					'paged' => $paged
+		 		);
+				$query_filtered = new WP_Query( $args_filtered );
 
-					    <div class="c-form__fieldset__row">
-					      <label for="niveau_detude" class="c-form__label is-none">Niveau d’étude</label>
-					      <select class="c-form__select" name="niveau_detude" id="niveau_detude">
-					        <option disabled selected value="">Quel niveau d’étude ?</option>
-					        <option value="bac">BAC</option>
-					        <option value="bac_2">BAC+2</option>
-					        <option value="bac_3">BAC+3</option>
-					        <option value="bac_5">BAC+5</option>
-					      </select>
-					    </div>
+				if ( $query_filtered->have_posts() ) :
+					echo '<ul class="l-postList results-list">';
+					while ( $query_filtered->have_posts() ) : $query_filtered->the_post();
 
-					    <div class="c-form__fieldset__row">
-					      <label for="experience" class="c-form__label is-none">Expérience demandée</label>
-					      <select class="c-form__select" name="experience" id="experience">
-					        <option disabled selected value="">Combien d'année d'expérience ?</option>
-					        <option value="experience_0">Jeune diplômé(e)</option>
-					        <option value="experience_1">1 à 3 ans</option>
-					        <option value="experience_2">3 à 5 ans</option>
-							<option value="experience_3">5 à 10 ans</option>
-							<option value="experience_4">Plus de 10 ans</option>
-					      </select>
-					    </div>
+						$ob_type_de_poste = get_field_object('field_574dadcc3c7b1');
+						$label_type_de_poste = $ob_type_de_poste['choices'][ get_field('type_de_poste') ];
 
-					    <div class="c-form__fieldset__row">
-					      <label for="type_structure" class="c-form__label is-none">Type de structure</label>
-					      <select class="c-form__select" name="type_structure" id="type_structure">
-					        <option disabled selected value="">Quel de structure ?</option>
-					        <option value="entreprise">Entreprise</option>
-					        <option value="association">Association</option>
-					        <option value="collectivite">Collectivité</option>
-					        <option value="formation">Organisme de formation</option>
-					      </select>
-					    </div>
-					</fieldset>
+						$ob_departement = get_field_object('field_574dab093c7b0');
+						$label_departement = $ob_departement['choices'][ get_field('departement') ];
 
-					<input type="hidden" value="offres-emploi" name="pt_slug">
-					<input type="hidden" value="<?php echo mt_rand(0,9999); ?>" name="toky_toky">
+						$ob_experience = get_field_object('field_5773a4bc97554');
+						$label_experience = $ob_experience['choices'][ get_field('experience') ];
 
-					<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
+						$ob_niveau_detude = get_field_object('field_574dae0e3c7b2');
+						$ch_niveau_detude = $ob_niveau_detude['choices'];
+						$val_niveau_detude = $ob_niveau_detude['value'];
+						$label_niveau_detude = '';
 
-					<div class="c-form__notify js-notify"></div>
+						if( $val_niveau_detude ):
+							foreach( $val_niveau_detude as $v ):
+								$label_niveau_detude .= '<span class="tag">'.$ch_niveau_detude[ $v ] .'</span>';
+							endforeach;
+						endif;
 
-					<div class="c-form__submit">
-						<button class="c-btn" type="reset">Reset</button>
-					    <button class="c-btn" type="submit" id="submit-filters">Filtrer</button>
-					</div>
+						$output = '<li classs="l-postList__item">';
+						$output .= '<a href="'.get_permalink().'">';
+						$output .= '<article class="c-offre">';
 
-				</form>
+						$output .= '<h1 class="c-offre__title">'.get_the_title().'</h1>';
+
+						$output .= '<span class="c-offre__meta">'.get_field('nom_structure').' - '.get_field('ville').' - '.$label_departement.'</span>';
+
+						$output .= '<p class="c-offre_description">'.get_field('descriptif_organisme').'</p>';
+
+						$output .= '<div class="c-offre__tags">';
+						$output .= '<span class="c-tag">'.$label_type_de_poste.'</span>';
+						$output .= '<span class="c-tag">'.$label_experience.'</span>';
+						$output .= $label_niveau_detude;
+						$output .= '</div>';
+
+						$output .= '</article>';
+						$output .= '</a>';
+						$output .= '</li>';
+						
+						echo $output;
+
+					endwhile;
+
+			        echo '<div class="pager">';
+					echo paginate_links( array(
+						'base' => @add_query_arg('paged','%#%'),
+						'format' => '?paged=%#%',
+						'current' => max( 1, get_query_var('paged') ),
+						'total' => $query_filtered->max_num_pages,
+		          		'prev_next'=> false
+					) );
+			        echo '</div>';
+
+				else :
+					echo '<p><strong>Il n\'y a aucune offre d\'emploi pour l\'instant.</strong></p>';
+				endif;
+				wp_reset_postdata();
+			?>
+
+			<aside class="c-filterList">
 				
-
-			</div>
+			</aside>
 		</div>
-
-	</aside>
-
-</section>
+	</div>
+</div>
 
 <?php get_footer(); ?>
+
+
 

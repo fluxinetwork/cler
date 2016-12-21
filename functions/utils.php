@@ -266,3 +266,13 @@ function verify_post_author($user_id, $post_id){
 function acme_post_exists( $id ) {
   return is_string( get_post_status( $id ) );
 }
+
+
+/**
+ * Quick var_dump()
+ */
+
+function vardump($object) {
+	echo '<pre>'.var_dump($object).'</pre>';
+}
+

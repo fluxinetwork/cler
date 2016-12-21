@@ -1,4 +1,4 @@
-<header class="l-row bg-light wrap-navBar">
+<header class="l-row wrap-navBar">
 	<nav class="l-col l-nav navBar">
 		<a href="<?php bloginfo('url'); ?>" class="l-nav__logo nav-logo">
 			<img src="<?php bloginfo('template_url'); ?>/app/img/cler-logo.png" alt="Logo du CLER, Réseau pour la transition énergétique">
@@ -64,6 +64,11 @@
 				<li class="c-navList__item js-mute-main is-none">
 					<a href="" class="c-navList__item__link has-dropdown">Adhésion</a>
 				</li>
+				<?php if (is_user_logged_in() && current_user_can('administrator')) : ?>
+				<li class="c-navList__item">
+					<a href="<?php bloginfo('url'); ?>/wp-admin" class="c-navList__item__link has-dropdown">Admin</a>
+				</li>
+				<?php endif; ?>
 			</ul>
 		</div>
 		

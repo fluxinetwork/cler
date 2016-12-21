@@ -38,15 +38,6 @@ $break: $break--m;
 			padding-top: $space--xs;
 		}
 	}
-
-	.is-accordeon {
-		@include visibility(false);
-		@include maxH(0);
-	}
-	.is-visible {
-		@include visibility(true);
-		@include maxH(100%);
-	}
 }
 
 //==============================================================  FIELDSET
@@ -55,6 +46,10 @@ $break: $break--m;
 	padding:0;
 	border: 0;
 	margin-top: $space--xl;
+
+	&:first-child {
+		margin-top: 0;
+	}
 
 	.is-accordeon & {
 		margin-top: $space--xl !important;

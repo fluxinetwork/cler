@@ -3,10 +3,12 @@
 	/**
 	 * Wordpress snippets library
 	 *
-	 * #loop
-	 * #wpquery 
-	 * #thumbURL
-	 * #searchfilter
+	 * loop
+	 * wpquery 
+	 * get_cat
+	 * ACF repeater if/while
+	 * thumb URL
+	 * searchfilter
 	 */
 
 
@@ -33,6 +35,15 @@
 			the_post(); 
 		endwhile;
 	endif;
+
+
+	/**
+	 * Get category & category ID
+	 * #get_cat
+	 */
+
+	$cat = get_the_category();
+	$cat_id = $post_cat[0]->cat_ID;
 
 
 	/**

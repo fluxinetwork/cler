@@ -1,28 +1,20 @@
 /*======================================================================*\
 ==========================================================================
 
-//	SINGLE
+//	COMPOSANT DASH
 
 ==========================================================================
 \*======================================================================*/
 
-.single__header {
+.c-dash {
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 7px;
+	background-color: $c-accent;
+	border-radius: 6px;
 
-}
-
-.single__header__meta {
-	@include flex(null center);
-	margin-top: $space--xs;
-
-	.t-meta {
+	.single__header__meta & {
 		margin-right: $space--s;
 	}
-}
-
-.single__header__figure {
-	margin: $space--l 0 0 0;
-}
-
-.single__header__excerpt {
-	margin-top: $space--l;
 }
