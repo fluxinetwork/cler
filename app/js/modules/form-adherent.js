@@ -90,8 +90,8 @@ function initAdherentForm(){
                     if(data[0].validation == 'error'){
                         $formObj.find('button[type=submit]').prop('disabled', false);
                     }else{
-                        $formObj.find('button[type=submit]').hide();
-                        $formObj.find('.form__buttons').html('<a href="'+data[0].redirect+'" class="button">Retour</a>');
+                        //$formObj.find('button[type=submit]').hide();
+                        $formObj.find('.c-form__submit').html('<a href="'+data[0].redirect+'" class="button">Retour</a>');
                     }
                     $formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');                   
 

@@ -29,14 +29,15 @@ function initParticipationConcoursForm(){
 
 function initVoteConcours(){
 	// Test if user already rate & hide rating button
-	var concoursId = $('#form-participation-concours').data('idp');
+	var concoursId = $('#concours').data('idp');
 	var localS = localStorage.getItem('fluxi_r_c-'+concoursId);
 
 	if( localS == '42' ) {
-		$('.form-rating button[type=submit]').remove();
+		$('.form-rating').remove();
 	}
+	
 	// On submit rating
-	$('.rating').on('submit', 'form.form-rating', function(e){		
+	$('.form-rating').on('submit', function(e){		
 		e.preventDefault();
 		var $formObj = $(this);
         var params = $formObj.serialize();		
@@ -49,7 +50,7 @@ function initVoteConcours(){
 
         if( user_r_v != '42' ) {
 
-        	$button.html('<i class="f-spinner"></i> En cours ...').prop('disabled', true);
+        	$button.html('<i class="spinner"></i> En cours ...').prop('disabled', true);
 
 	        $.ajax({
 	            type: 'POST',
@@ -59,17 +60,17 @@ function initVoteConcours(){
 	            success: function(data){
 
 	                if(data[0].validation == 'error'){                
-	                	$('<p class="f-error-mess">'+data[0].message+'</p>').insertAfter($button);
+	                	$('<p class="error">'+data[0].message+'</p>').insertAfter($button);
 	                    $button.prop('disabled', false).html('Voter');
 	                }else{
-	                    $('<p class="f-success-mess">'+data[0].message+'</p>').insertAfter($button);
+	                    $('<p class="success">'+data[0].message+'</p>').insertAfter($button);
 
 	                    var nb_votes = parseInt($formObj.parent().find('.js-nb-rate').text()) + 1;
 	                    $formObj.parent().find('.js-nb-rate').html(nb_votes);
 	                   	
 	                    $button.hide();
 
-	                    $('.form-rating button[type=submit]').prop('disabled', true);
+	                    $button.prop('disabled', true);
 
 	                    localStorage.setItem('fluxi_r_c-'+the_idp, '42');
 	                }

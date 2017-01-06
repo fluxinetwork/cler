@@ -15,7 +15,11 @@ module.exports = function (grunt) {
 		    },
 		    css: {
 		        files: ['build/scss/**/*.scss'],
+<<<<<<< HEAD
 		        tasks: ['sass', 'postcss']
+=======
+		        tasks: ['sass']
+>>>>>>> origin/master
 		    },
 		    configFiles: {
 			    files: ['Gruntfile.js']
@@ -90,7 +94,7 @@ module.exports = function (grunt) {
 
 	});
 
-	//grunt.registerTask('css', ['sass', 'postcss']);
+	grunt.registerTask('css', ['sass']);
 	grunt.registerTask('js', ['jshint:all', 'concat:mainJS', 'concat:fullJS', 'uglify:full', 'uglify:main',]);
 	grunt.registerTask('default', ['watch']);
 

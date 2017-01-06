@@ -20,16 +20,28 @@
 
 	endif;
 ?>
-<article>
 
+<section>
 	<header><?php the_title( '<h1>', '</h1>' ); ?></header>
 
 	<?php the_content(); ?>
+</section>
 
-	<?php if( ! is_user_logged_in() ): ?>
-		<p><a class="js-popin-show" href="connexion">Connectez-vous</a> pour remplir automatiquement le formulaire de participation</p>		
-	<?php endif; ?>	
+<section class="l-row bg-light">
+	<div class="l-col">
+		<div class="c-form c-form--large c-card">
+		
+			<div class="c-card__header">
+				<h1 class="c-card__header__title"><?php the_title(); ?></h1>
+			</div>			
 
-	<?php require_once( get_template_directory() . '/page-templates-parts/forms/form-webinaire.php' ); ?>
+			<?php require_once( get_template_directory() . '/page-templates-parts/forms/form-webinaire.php' ); ?>
 
-</article>
+			<footer class="c-card__footer">
+				<a href="#" class="c-link c-link--more">Contactez-nous</a>
+			</footer>
+		</div>
+	</div>
+</section>
+
+

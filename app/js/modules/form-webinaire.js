@@ -22,10 +22,10 @@ function initWebinairesForm(){
     // Add nom structure
     $('input[name=adherent_cler]').click(function() {
     	if(this.checked){
-		    $('.js-nom-structure').removeClass('hide');
+		    $('.js-nom-structure').toggleClass('is-visible');
 		    // $(formID+' button[type=submit]').prop('disabled', false).removeClass('hide');
 		}else{
-			$('.js-nom-structure').addClass('hide');
+			$('.js-nom-structure').toggleClass('is-visible');
 			$('input[name=nom_structure]').val('');
 			//$(formID+' button[type=submit]').prop('disabled', true).addClass('hide');
 		}

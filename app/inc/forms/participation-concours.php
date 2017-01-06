@@ -137,14 +137,16 @@ function fluxi_rating_concours(){
 
 		        if( $i == $the_idc ):
 		        	$nb_votes++;
-		        	update_sub_field('nombre_votes', $nb_votes);
+		        	update_sub_field('nombre_votes', $nb_votes, $the_idp);
+
+
 		        endif;
 		    endwhile;
 
-		endif;		
-
+		endif;	
 
 		$message_response = 'Votre vote a été pris en compte.';
+
 	else :
 		// If invalid nonce
 		$reg_errors->add( 'nonce', $message_response );

@@ -1,0 +1,4917 @@
+[
+    {
+        "key": "group_5770ee5e0b9af",
+        "title": "Adh\u00e8rents",
+        "fields": [
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "attente_validation": "En attente de validation",
+                    "attente_paiement": "En attente de paiement",
+                    "cotisation_ok": "Cotisation acquitt\u00e9e",
+                    "readhesion": "En cours de r\u00e9adh\u00e9sion",
+                    "annulee": "Non adh\u00e9rent ou refus\u00e9"
+                },
+                "default_value": [
+                    "attente_validation"
+                ],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_5772cb552be97",
+                "label": "Statut de l'adh\u00e9sion",
+                "name": "statut_adhesion",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
+                "sub_fields": [
+                    {
+                        "default_value": "20XX",
+                        "min": "",
+                        "max": "",
+                        "step": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "key": "field_5796151aa4389",
+                        "label": "Ann\u00e9e",
+                        "name": "annee_cotisation",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "default_value": "",
+                        "min": "",
+                        "max": "",
+                        "step": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "key": "field_57961563a438a",
+                        "label": "Montant cotisation",
+                        "name": "montant_cotisation",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "display_format": "d\/m\/Y",
+                        "return_format": "d\/m\/Y",
+                        "first_day": 1,
+                        "key": "field_57961578a438b",
+                        "label": "Date de paiement",
+                        "name": "date_paiement",
+                        "type": "date_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "post_type": [
+                            "recus"
+                        ],
+                        "taxonomy": [],
+                        "allow_null": 0,
+                        "multiple": 0,
+                        "allow_archives": 1,
+                        "key": "field_579615a5a438c",
+                        "label": "Re\u00e7u",
+                        "name": "recu",
+                        "type": "page_link",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    }
+                ],
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Ajouter un \u00e9l\u00e9ment",
+                "collapsed": "",
+                "key": "field_579614d5a4388",
+                "label": "Cotisations",
+                "name": "cotisations",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_5771031e122b8",
+                "label": "Nom de la structure",
+                "name": "nom_structure",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "entreprise": "Entreprise",
+                    "association": "Association",
+                    "collectivite": "Collectivit\u00e9",
+                    "formation": "Organisme de formation"
+                },
+                "default_value": [],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_577102c963035",
+                "label": "Type de structure",
+                "name": "type_structure",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57710344122b9",
+                "label": "Adresse",
+                "name": "adresse",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": 6,
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57710351122ba",
+                "label": "Code postal",
+                "name": "code_postal",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57710377122bb",
+                "label": "Ville",
+                "name": "ville",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "height": 250,
+                "center_lat": "48.8534100",
+                "center_lng": "2.3488000",
+                "zoom": 12,
+                "key": "field_579a1e9221738",
+                "label": "Coordonn\u00e9es Google map",
+                "name": "localisation",
+                "type": "google_map",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "message": "",
+                "esc_html": 0,
+                "new_lines": "",
+                "key": "field_5771050db7ee0",
+                "label": "Contact principal",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_5771054bb7ee1",
+                "label": "Nom",
+                "name": "nom_contact1",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_5771058cb7ee2",
+                "label": "Pr\u00e9nom",
+                "name": "prenom_contact1",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_5771059db7ee3",
+                "label": "Fonction",
+                "name": "fonction_contact1",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_577105abb7ee4",
+                "label": "Email",
+                "name": "email_contact1",
+                "type": "email",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_577105c7b7ee5",
+                "label": "T\u00e9l\u00e9phone",
+                "name": "telephone_contact1",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": 0,
+                "message": "",
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": "",
+                "key": "field_5772916ae95cc",
+                "label": "Contact secondaire",
+                "name": "add_contact",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_577106394b4f4",
+                "label": "Nom",
+                "name": "nom_contact2",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5772916ae95cc",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_577106474b4f5",
+                "label": "Pr\u00e9nom",
+                "name": "prenom_contact2",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5772916ae95cc",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_577106594b4f6",
+                "label": "Fonction",
+                "name": "fonction_contact2",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5772916ae95cc",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_577106644b4f7",
+                "label": "Email",
+                "name": "email_contact2",
+                "type": "email",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5772916ae95cc",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_577106724b4f8",
+                "label": "T\u00e9l\u00e9phone",
+                "name": "telephone_contact2",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5772916ae95cc",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "message": "",
+                "esc_html": 0,
+                "new_lines": "",
+                "key": "field_577112f976615",
+                "label": "Vos actions, vos attentes et vos motivations",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "new_lines": "",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": 5,
+                "key": "field_5771131276616",
+                "label": "Quelles sont les activit\u00e9s de votre structure ou de votre territoire sur l\u2019\u00e9nergie ?",
+                "name": "activites_territoire",
+                "type": "textarea",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "new_lines": "",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": 5,
+                "key": "field_5771137c76617",
+                "label": "Qu\u2019attendez-vous du r\u00e9seau ?",
+                "name": "attente_du_reseau",
+                "type": "textarea",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "new_lines": "",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": 5,
+                "key": "field_577113b076618",
+                "label": "De quelle mani\u00e8re souhaitez-vous contribuer au r\u00e9seau ?",
+                "name": "contribuer_au_reseau",
+                "type": "textarea",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "new_lines": "",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": 5,
+                "key": "field_577113ec76619",
+                "label": "Comment avez-vous connu le CLER ?",
+                "name": "connu_cler",
+                "type": "textarea",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "layout": "vertical",
+                "choices": {
+                    "rappel": "RAPPEL (R\u00e9seau des acteurs de la pauvret\u00e9 et de la pr\u00e9carit\u00e9 \u00e9nerg\u00e9tique dans le logement)",
+                    "tepos": "R\u00e9seau TEPOS (Territoires \u00e0 \u00e9nergie positive)",
+                    "formateree": "Format\u2019eree (organismes de formation \u00e9nergies renouvelables et efficacit\u00e9 \u00e9nerg\u00e9tique)",
+                    "eie": "Commission EIE (Espaces Info Energies)"
+                },
+                "default_value": [],
+                "allow_custom": 0,
+                "save_custom": 0,
+                "toggle": 0,
+                "return_format": "value",
+                "key": "field_57710102db15a",
+                "label": "Souhaitez-vous participer \u00e0 des r\u00e9seaux sp\u00e9cifiques anim\u00e9s par le CLER ?",
+                "name": "reseaux_cler",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "message": "Pour les structures qui souhaitent rejoindre le r\u00e9seau Territoires \u00e0 \u00e9nergie positive (TEPOS) uniquement :",
+                "esc_html": 0,
+                "new_lines": "",
+                "key": "field_57711558cc85f",
+                "label": "R\u00e9seau Territoires \u00e0 \u00e9nergie positive (TEPOS)",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_57710102db15a",
+                            "operator": "==",
+                            "value": "tepos"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_577116dbcc860",
+                "label": "Nom \u00e9lu r\u00e9f\u00e9rent",
+                "name": "nom_elu",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_57710102db15a",
+                            "operator": "==",
+                            "value": "tepos"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_5771176bcc861",
+                "label": "Pr\u00e9nom \u00e9lu r\u00e9f\u00e9rent",
+                "name": "prenom_elu",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_57710102db15a",
+                            "operator": "==",
+                            "value": "tepos"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_5771178ccc862",
+                "label": "Fonction \u00e9lu r\u00e9f\u00e9rent",
+                "name": "fonction_elu",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_57710102db15a",
+                            "operator": "==",
+                            "value": "tepos"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_5771179bcc863",
+                "label": "Email \u00e9lu r\u00e9f\u00e9rent",
+                "name": "email_elu",
+                "type": "email",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_57710102db15a",
+                            "operator": "==",
+                            "value": "tepos"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_577117adcc864",
+                "label": "T\u00e9l\u00e9phone \u00e9lu r\u00e9f\u00e9rent",
+                "name": "telephone_elu",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_57710102db15a",
+                            "operator": "==",
+                            "value": "tepos"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_577118e310ee0",
+                "label": "Qui est votre parrain ?",
+                "name": "nom_parrain",
+                "type": "text",
+                "instructions": "Votre candidature au r\u00e9seau TEPOS doit \u00eatre parrain\u00e9 par un Territoire \u00e0 \u00e9nergie positive d\u00e9j\u00e0 membre. Qui est votre parrain ? Si vous rn\u2019avez pas de parrain, \u00e9crivez \u201cje n\u2019ai pas de parrain\u201d.",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_57710102db15a",
+                            "operator": "==",
+                            "value": "tepos"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": 0,
+                "message": "",
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": "",
+                "key": "field_5771192910ee1",
+                "label": "e d\u00e9clare avoir pris connaissance de la charte du R\u00e9seau Territoires \u00e0 \u00e9nergie positive",
+                "name": "accepte_charte_energie_positive",
+                "type": "true_false",
+                "instructions": "L'appartenance au r\u00e9seau TEPOS correspond \u00e0 des valeurs et un engagement particuliers qui sont r\u00e9sum\u00e9s dans une charte.",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_57710102db15a",
+                            "operator": "==",
+                            "value": "tepos"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": 0,
+                "message": "",
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": "",
+                "key": "field_57711a2a79108",
+                "label": "Structure fiscalis\u00e9e",
+                "name": "structure_fiscalisee",
+                "type": "true_false",
+                "instructions": "Pour obtenir un re\u00e7u d\u2019adh\u00e9sion \/ don",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": 0,
+                "message": "",
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": "",
+                "key": "field_57711a6079109",
+                "label": "Accepte le r\u00e8glement int\u00e9rieur du CLER",
+                "name": "reglement_cler",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": 0,
+                "message": "",
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": "",
+                "key": "field_57711abe7910a",
+                "label": "Accepte la charte des adh\u00e9rents",
+                "name": "charte_adherents",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "adherents"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_582c444d177f1",
+        "title": "Carte Adh\u00e8rents (copie)",
+        "fields": [
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_582c444d2a81b",
+                "label": "Nom de la structure",
+                "name": "nom_structure",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "entreprise": "Entreprise",
+                    "association": "Association",
+                    "collectivite": "Collectivit\u00e9",
+                    "formation": "Organisme de formation"
+                },
+                "default_value": [],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_582c444d2a829",
+                "label": "Type de structure",
+                "name": "type_structure",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_582c444d2a837",
+                "label": "Adresse",
+                "name": "adresse",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": 6,
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_582c444d2a844",
+                "label": "Code postal",
+                "name": "code_postal",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_582c444d2a851",
+                "label": "Ville",
+                "name": "ville",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "height": 250,
+                "center_lat": "48.8534100",
+                "center_lng": "2.3488000",
+                "zoom": 12,
+                "key": "field_582c444d2a860",
+                "label": "Coordonn\u00e9es Google map",
+                "name": "localisation",
+                "type": "google_map",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "cotisation_ok": "Cotisation acquitt\u00e9e"
+                },
+                "default_value": [
+                    "cotisation_ok"
+                ],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_582c444d2a7e4",
+                "label": "Statut de l'adh\u00e9sion",
+                "name": "statut_adhesion",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "disabled": 0,
+                "readonly": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "cartes"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_576936f3123cc",
+        "title": "Concours",
+        "fields": [
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "cler_obscur": "Cler Obscur",
+                    "haiku": "Ha\u00efku"
+                },
+                "default_value": [
+                    "cler_obscur"
+                ],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_576c15558ccb4",
+                "label": "Type de concours",
+                "name": "type_concours",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
+                "default_value": "",
+                "new_lines": "br",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": "",
+                "key": "field_576937d010805",
+                "label": "R\u00e9gles et modalit\u00e9s",
+                "name": "regles_concours",
+                "type": "textarea",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "display_format": "d\/m\/Y",
+                "return_format": "d\/m\/Y",
+                "first_day": 1,
+                "key": "field_576938d910806",
+                "label": "Date de d\u00e9but des candidatures",
+                "name": "date_debut_candidatures",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "display_format": "d\/m\/Y",
+                "return_format": "d\/m\/Y",
+                "first_day": 1,
+                "key": "field_576c14d21f46d",
+                "label": "Date de fin des candidatures",
+                "name": "date_fin_candidatures",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "display_format": "d\/m\/Y",
+                "return_format": "d\/m\/Y",
+                "first_day": 1,
+                "key": "field_5769396610807",
+                "label": "Date de d\u00e9but des votes",
+                "name": "date_debut_votes",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "display_format": "d\/m\/Y",
+                "return_format": "d\/m\/Y",
+                "first_day": 1,
+                "key": "field_576c146d1f46c",
+                "label": "Date de fin des votes",
+                "name": "date_fin_votes",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "display_format": "d\/m\/Y",
+                "return_format": "d\/m\/Y",
+                "first_day": 1,
+                "key": "field_5799ce25b2fa9",
+                "label": "Date de publication des r\u00e9sultats",
+                "name": "date_publication_resultats",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "sub_fields": [
+                    {
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "key": "field_57694e5c83680",
+                        "label": "Nom et pr\u00e9nom",
+                        "name": "nom_prenom",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "key": "field_57694fd183681",
+                        "label": "Nom de la structure",
+                        "name": "nom_structure",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "key": "field_57694fec83682",
+                        "label": "Mail de contact",
+                        "name": "mail_contact",
+                        "type": "email",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "key": "field_5769500783683",
+                        "label": "Titre candidature",
+                        "name": "titre_candidature",
+                        "type": "text",
+                        "instructions": "Titre du court m\u00e9trage, du Iku.",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "default_value": "",
+                        "new_lines": "br",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "rows": 8,
+                        "key": "field_5769504683684",
+                        "label": "Texte candidature",
+                        "name": "texte_candidature",
+                        "type": "textarea",
+                        "instructions": "Synopsis et intentions, Iku",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "default_value": "",
+                        "new_lines": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "rows": 3,
+                        "key": "field_576950be83685",
+                        "label": "Vid\u00e9o",
+                        "name": "video_candidature",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_576c15558ccb4",
+                                    "operator": "==",
+                                    "value": "cler_obscur"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "default_value": 0,
+                        "min": "",
+                        "max": "",
+                        "step": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "key": "field_576950f783686",
+                        "label": "Nombre de votes",
+                        "name": "nombre_votes",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "default_value": 0,
+                        "message": "",
+                        "ui": 0,
+                        "ui_on_text": "",
+                        "ui_off_text": "",
+                        "key": "field_5769510b83687",
+                        "label": "Gagnant",
+                        "name": "gagnant",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    }
+                ],
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "Ajouter une candidature",
+                "collapsed": "",
+                "key": "field_576939a710808",
+                "label": "Candidatures",
+                "name": "candidatures",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "concours"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_577e402c75403",
+        "title": "\u00c9v\u00e9nements",
+        "fields": [
+            {
+                "layout": "vertical",
+                "choices": {
+                    "particuliers": "Particuliers",
+                    "professionnels": "Professionnels"
+                },
+                "default_value": [],
+                "allow_custom": 0,
+                "save_custom": 0,
+                "toggle": 0,
+                "return_format": "value",
+                "key": "field_577e419326394",
+                "label": "Publics",
+                "name": "publics_event",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "layout": "vertical",
+                "choices": {
+                    "energies_renouvelables": "\u00c9nergies renouvelables",
+                    "maitrise_energie_batiment": "Ma\u00eetrise de l\u2019\u00e9nergie\/B\u00e2timent",
+                    "precarite_energetique": "Pr\u00e9carit\u00e9 \u00e9nerg\u00e9tique",
+                    "mobilite": "Mobilit\u00e9",
+                    "territoires_democratie": "Territoires et d\u00e9mocratie",
+                    "emploi_formation": "Emploi\/formation"
+                },
+                "default_value": [],
+                "allow_custom": 0,
+                "save_custom": 0,
+                "toggle": 0,
+                "return_format": "value",
+                "key": "field_577e41d926395",
+                "label": "Th\u00e8mes",
+                "name": "themes",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "display_format": "d\/m\/Y",
+                "return_format": "d\/m\/Y",
+                "first_day": 1,
+                "key": "field_577e40d28310b",
+                "label": "Date \u00e9v\u00e9nement",
+                "name": "date_event",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "departement_01": "Ain",
+                    "departement_02": "Aisne",
+                    "departement_03": "Allier",
+                    "departement_04": "Alpes de Haute Provence",
+                    "departement_05": "Hautes Alpes",
+                    "departement_06": "Alpes Maritimes",
+                    "departement_07": "Ard\u00e8che",
+                    "departement_08": "Ardennes",
+                    "departement_09": "Ari\u00e8ge",
+                    "departement_10": "Aube",
+                    "departement_11": "Aude",
+                    "departement_12": "Aveyron",
+                    "departement_13": "Bouches du Rh\u00f4ne",
+                    "departement_14": "Calvados",
+                    "departement_15": "Cantal",
+                    "departement_16": "Charente",
+                    "departement_17": "Charente Maritime",
+                    "departement_18": "Cher",
+                    "departement_19": "Corr\u00e8ze",
+                    "departement_2A": "Corse du Sud",
+                    "departement_2B": "Haute-Corse",
+                    "departement_21": "C\u00f4te d'Or",
+                    "departement_22": "C\u00f4tes d'Armor",
+                    "departement_23": "Creuse",
+                    "departement_24": "Dordogne",
+                    "departement_25": "Doubs",
+                    "departement_26": "Dr\u00f4me",
+                    "departement_27": "Eure",
+                    "departement_28": "Eure et Loir",
+                    "departement_29": "Finist\u00e8re",
+                    "departement_30": "Gard",
+                    "departement_31": "Haute Garonne",
+                    "departement_32": "Gers",
+                    "departement_33": "Gironde",
+                    "departement_34": "H\u00e9rault",
+                    "departement_35": "Ille et Vilaine",
+                    "departement_36": "Indre",
+                    "departement_37": "Indre et Loire",
+                    "departement_38": "Is\u00e8re",
+                    "departement_39": "Jura",
+                    "departement_40": "Landes",
+                    "departement_41": "Loir et Cher",
+                    "departement_42": "Loire",
+                    "departement_43": "Haute Loire",
+                    "departement_44": "Loire Atlantique",
+                    "departement_45": "Loiret",
+                    "departement_46": "Lot",
+                    "departement_47": "Lot et Garonne",
+                    "departement_48": "Loz\u00e8re",
+                    "departement_49": "Maine et Loire",
+                    "departement_50": "Manche",
+                    "departement_51": "Marne",
+                    "departement_52": "Haute Marne",
+                    "departement_53": "Mayenne",
+                    "departement_54": "Meurthe et Moselle",
+                    "departement_55": "Meuse",
+                    "departement_56": "Morbihan",
+                    "departement_57": "Moselle",
+                    "departement_58": "Ni\u00e8vre",
+                    "departement_59": "Nord",
+                    "departement_60": "Oise",
+                    "departement_61": "Orne",
+                    "departement_62": "Pas de Calais",
+                    "departement_63": "Puy de D\u00f4me",
+                    "departement_64": "Pyr\u00e9n\u00e9es Atlantiques",
+                    "departement_65": "Hautes Pyr\u00e9n\u00e9es",
+                    "departement_66": "Pyr\u00e9n\u00e9es Orientales",
+                    "departement_67": "Bas Rhin",
+                    "departement_68": "Haut Rhin",
+                    "departement_69": "Rh\u00f4ne",
+                    "departement_70": "Haute Sa\u00f4ne",
+                    "departement_71": "Sa\u00f4ne et Loire",
+                    "departement_72": "Sarthe",
+                    "departement_73": "Savoie",
+                    "departement_74": "Haute Savoie",
+                    "departement_75": "Paris",
+                    "departement_76": "Seine Maritime",
+                    "departement_77": "Seine et Marne",
+                    "departement_78": "Yvelines",
+                    "departement_79": "Deux S\u00e8vres",
+                    "departement_80": "Somme",
+                    "departement_81": "Tarn",
+                    "departement_82": "Tarn et Garonne",
+                    "departement_83": "Var",
+                    "departement_84": "Vaucluse",
+                    "departement_85": "Vend\u00e9e",
+                    "departement_86": "Vienne",
+                    "departement_87": "Haute Vienne",
+                    "departement_88": "Vosges",
+                    "departement_89": "Yonne",
+                    "departement_90": "Territoire de Belfort",
+                    "departement_91": "Essonne",
+                    "departement_92": "Hauts de Seine",
+                    "departement_93": "Seine Saint Denis",
+                    "departement_94": "Val de Marne",
+                    "departement_95": "Val d'Oise",
+                    "departement_971": "Guadeloupe",
+                    "departement_972": "Martinique",
+                    "departement_973": "Guyane",
+                    "departement_974": "R\u00e9union",
+                    "departement_975": "Saint Pierre et Miquelon",
+                    "departement_976": "Mayotte"
+                },
+                "default_value": [],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_577e40ac4281f",
+                "label": "D\u00e9partement",
+                "name": "departement",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_577e41158310c",
+                "label": "Adresse \u00e9v\u00e9nement",
+                "name": "adresse",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_577e41248310d",
+                "label": "Ville \u00e9v\u00e9nement",
+                "name": "ville",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": 6,
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_577e476928d95",
+                "label": "Code postal",
+                "name": "code_postal",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "new_lines": "br",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": 5,
+                "key": "field_577e404ae0c1f",
+                "label": "Descriptif",
+                "name": "descriptif_event",
+                "type": "textarea",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "placeholder": "",
+                "key": "field_577e416f26393",
+                "label": "Lien internet",
+                "name": "link_event",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "evenements"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content"
+        ],
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_57b6e95f2681c",
+        "title": "Formations",
+        "fields": [
+            {
+                "layout": "vertical",
+                "choices": {
+                    "public_1": "lyc\u00e9ens, \u00e9tudiants, apprentis",
+                    "public_2": "salari\u00e9s, demandeurs d\u2019emplois"
+                },
+                "default_value": [],
+                "allow_custom": 0,
+                "save_custom": 0,
+                "toggle": 0,
+                "return_format": "value",
+                "key": "field_57b6eadcf05ce",
+                "label": "Publics",
+                "name": "publics",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57b6eb0ef05cf",
+                "label": "Dur\u00e9e exact de la formation",
+                "name": "duree_formation",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "courte": "Formation courte",
+                    "longue": "Formation longue"
+                },
+                "default_value": [],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_581c6a4357258",
+                "label": "Type de dur\u00e9e de formation",
+                "name": "type_duree_formation",
+                "type": "select",
+                "instructions": "Une formation est consid\u00e9r\u00e9e comme longue lorsqu\u2019elle r\u00e9pond \u00e0 l\u2019une de ces deux conditions : le nombre d\u2019heures de formation est sup\u00e9rieur ou \u00e9gal \u00e0 120 & et la formation comprend une p\u00e9riode de stage en entreprise ou en alternance",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57b6eb26f05d0",
+                "label": "Co\u00fbt de la formation",
+                "name": "cout_formation",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "layout": "vertical",
+                "choices": {
+                    "secteur_1": "\u00c9tude\/ing\u00e9nierie",
+                    "secteur_2": "Conseil\/Accompagnement",
+                    "secteur_3": "R\u00e9alisation\/Installation",
+                    "secteur_4": "Maintenance\/Exploitation",
+                    "secteur_5": "Production industrielle\/Fabrication",
+                    "secteur_6": "Distribution\/Vente\/Commercialisation",
+                    "secteur_7": "Ma\u00eetrise d\u2019ouvrage"
+                },
+                "default_value": [],
+                "allow_custom": 0,
+                "save_custom": 0,
+                "toggle": 0,
+                "return_format": "value",
+                "key": "field_57b6eb62f05d1",
+                "label": "Secteur",
+                "name": "secteur",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "layout": "vertical",
+                "choices": {
+                    "bac": "BAC",
+                    "bac_2": "BAC+2",
+                    "bac_3": "BAC+3",
+                    "bac_5": "BAC+5"
+                },
+                "default_value": [],
+                "allow_custom": 0,
+                "save_custom": 0,
+                "toggle": 0,
+                "return_format": "value",
+                "key": "field_57b6eb9ef05d2",
+                "label": "Niveau d\u2019\u00e9tude",
+                "name": "niveau_detude",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "layout": "vertical",
+                "choices": {
+                    "thematique_1": "Ma\u00eetrise de l\u2019\u00e9nergie",
+                    "thematique_2": "\u00c9nergies renouvelables\/G\u00e9n\u00e9raliste",
+                    "thematique_3": "\u00c9nergies renouvelables\/Solaire thermique",
+                    "thematique_4": "\u00c9nergies renouvelables\/Solaire photovolta\u00efque",
+                    "thematique_5": "\u00c9nergies renouvelables\/Biomasse",
+                    "thematique_6": "\u00c9nergies renouvelables\/Biogaz",
+                    "thematique_7": "\u00c9nergies renouvelables\/Eolien",
+                    "thematique_8": "\u00c9nergies renouvelables\/Hydraulique",
+                    "thematique_9": "\u00c9nergies renouvelables\/G\u00e9othermie",
+                    "thematique_10": "Territoires & environnement",
+                    "thematique_11": "Pr\u00e9carit\u00e9 \u00e9nerg\u00e9tique",
+                    "thematique_12": "Mobilit\u00e9"
+                },
+                "default_value": [],
+                "allow_custom": 0,
+                "save_custom": 0,
+                "toggle": 0,
+                "return_format": "value",
+                "key": "field_57b6ebc6f05d3",
+                "label": "Th\u00e9matique",
+                "name": "thematique",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "new_lines": "wpautop",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": "",
+                "key": "field_57b6ea90f05cc",
+                "label": "Descriptif Formation",
+                "name": "descriptif_formation",
+                "type": "textarea",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "layout": "vertical",
+                "choices": {
+                    "non": "Non",
+                    "oui": "Oui"
+                },
+                "default_value": "",
+                "other_choice": 0,
+                "save_other_choice": 0,
+                "allow_null": 0,
+                "return_format": "value",
+                "key": "field_57b6ed427ce87",
+                "label": "Agr\u00e9ment Format\u2019eree",
+                "name": "agrement_formateree",
+                "type": "radio",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "layout": "vertical",
+                "choices": {
+                    "nonadherent": "Non adh\u00e9rent",
+                    "adherent": "Adh\u00e9rent"
+                },
+                "default_value": "",
+                "other_choice": 0,
+                "save_other_choice": 0,
+                "allow_null": 0,
+                "return_format": "value",
+                "key": "field_57b6ea747d0d1",
+                "label": "Adh\u00e9rent au CLER",
+                "name": "is_adherent",
+                "type": "radio",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57b6ec1bf05d4",
+                "label": "Centre de formation",
+                "name": "nom_centre",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57b6ec41f05d5",
+                "label": "Adresse",
+                "name": "adresse",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57b6ec81f05d6",
+                "label": "Ville",
+                "name": "ville",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57b6ec8ef05d7",
+                "label": "Code postal",
+                "name": "code_postal",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "departement_01": "Ain",
+                    "departement_02": "Aisne",
+                    "departement_03": "Allier",
+                    "departement_04": "Alpes de Haute Provence",
+                    "departement_05": "Hautes Alpes",
+                    "departement_06": "Alpes Maritimes",
+                    "departement_07": "Ard\u00e8che",
+                    "departement_08": "Ardennes",
+                    "departement_09": "Ari\u00e8ge",
+                    "departement_10": "Aube",
+                    "departement_11": "Aude",
+                    "departement_12": "Aveyron",
+                    "departement_13": "Bouches du Rh\u00f4ne",
+                    "departement_14": "Calvados",
+                    "departement_15": "Cantal",
+                    "departement_16": "Charente",
+                    "departement_17": "Charente Maritime",
+                    "departement_18": "Cher",
+                    "departement_19": "Corr\u00e8ze",
+                    "departement_2A": "Corse du Sud",
+                    "departement_2B": "Haute-Corse",
+                    "departement_21": "C\u00f4te d'Or",
+                    "departement_22": "C\u00f4tes d'Armor",
+                    "departement_23": "Creuse",
+                    "departement_24": "Dordogne",
+                    "departement_25": "Doubs",
+                    "departement_26": "Dr\u00f4me",
+                    "departement_27": "Eure",
+                    "departement_28": "Eure et Loir",
+                    "departement_29": "Finist\u00e8re",
+                    "departement_30": "Gard",
+                    "departement_31": "Haute Garonne",
+                    "departement_32": "Gers",
+                    "departement_33": "Gironde",
+                    "departement_34": "H\u00e9rault",
+                    "departement_35": "Ille et Vilaine",
+                    "departement_36": "Indre",
+                    "departement_37": "Indre et Loire",
+                    "departement_38": "Is\u00e8re",
+                    "departement_39": "Jura",
+                    "departement_40": "Landes",
+                    "departement_41": "Loir et Cher",
+                    "departement_42": "Loire",
+                    "departement_43": "Haute Loire",
+                    "departement_44": "Loire Atlantique",
+                    "departement_45": "Loiret",
+                    "departement_46": "Lot",
+                    "departement_47": "Lot et Garonne",
+                    "departement_48": "Loz\u00e8re",
+                    "departement_49": "Maine et Loire",
+                    "departement_50": "Manche",
+                    "departement_51": "Marne",
+                    "departement_52": "Haute Marne",
+                    "departement_53": "Mayenne",
+                    "departement_54": "Meurthe et Moselle",
+                    "departement_55": "Meuse",
+                    "departement_56": "Morbihan",
+                    "departement_57": "Moselle",
+                    "departement_58": "Ni\u00e8vre",
+                    "departement_59": "Nord",
+                    "departement_60": "Oise",
+                    "departement_61": "Orne",
+                    "departement_62": "Pas de Calais",
+                    "departement_63": "Puy de D\u00f4me",
+                    "departement_64": "Pyr\u00e9n\u00e9es Atlantiques",
+                    "departement_65": "Hautes Pyr\u00e9n\u00e9es",
+                    "departement_66": "Pyr\u00e9n\u00e9es Orientales",
+                    "departement_67": "Bas Rhin",
+                    "departement_68": "Haut Rhin",
+                    "departement_69": "Rh\u00f4ne",
+                    "departement_70": "Haute Sa\u00f4ne",
+                    "departement_71": "Sa\u00f4ne et Loire",
+                    "departement_72": "Sarthe",
+                    "departement_73": "Savoie",
+                    "departement_74": "Haute Savoie",
+                    "departement_75": "Paris",
+                    "departement_76": "Seine Maritime",
+                    "departement_77": "Seine et Marne",
+                    "departement_78": "Yvelines",
+                    "departement_79": "Deux S\u00e8vres",
+                    "departement_80": "Somme",
+                    "departement_81": "Tarn",
+                    "departement_82": "Tarn et Garonne",
+                    "departement_83": "Var",
+                    "departement_84": "Vaucluse",
+                    "departement_85": "Vend\u00e9e",
+                    "departement_86": "Vienne",
+                    "departement_87": "Haute Vienne",
+                    "departement_88": "Vosges",
+                    "departement_89": "Yonne",
+                    "departement_90": "Territoire de Belfort",
+                    "departement_91": "Essonne",
+                    "departement_92": "Hauts de Seine",
+                    "departement_93": "Seine Saint Denis",
+                    "departement_94": "Val de Marne",
+                    "departement_95": "Val d'Oise",
+                    "departement_971": "Guadeloupe",
+                    "departement_972": "Martinique",
+                    "departement_973": "Guyane",
+                    "departement_974": "R\u00e9union",
+                    "departement_975": "Saint Pierre et Miquelon",
+                    "departement_976": "Mayotte"
+                },
+                "default_value": [],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_57b6eab6f05cd",
+                "label": "D\u00e9partement",
+                "name": "departement",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57b6ef90a2944",
+                "label": "T\u00e9l\u00e9phone",
+                "name": "telephone",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57b6ecd57ce85",
+                "label": "Mail de contact",
+                "name": "contact_email",
+                "type": "email",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "placeholder": "",
+                "key": "field_57b6ed0e7ce86",
+                "label": "Site internet",
+                "name": "site_internet",
+                "type": "url",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "formations"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_571f9f1637ccc",
+        "title": "Gestion utilisateur",
+        "fields": [
+            {
+                "default_value": 1,
+                "message": "",
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": "",
+                "key": "field_571f9f9e2c4cd",
+                "label": "Compte d\u00e9sactiv\u00e9",
+                "name": "disable_account",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_571fa0333feee",
+                "label": "Token d'activation",
+                "name": "token_activation",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_571f9f9e2c4cd",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57c9a43cb241f",
+                "label": "ID Stripe",
+                "name": "id_stripe",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "user_form",
+                    "operator": "==",
+                    "value": "edit"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_574daaef8a726",
+        "title": "Offre d'emploi",
+        "fields": [
+            {
+                "default_value": 0,
+                "message": "",
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": "",
+                "key": "field_57cd7e99418ce",
+                "label": "Offre pay\u00e9e",
+                "name": "offer_payed",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "stage": "Stage",
+                    "cdd": "CDD",
+                    "cdi": "CDI",
+                    "autre": "Autre"
+                },
+                "default_value": [],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_574dadcc3c7b1",
+                "label": "Type de poste",
+                "name": "type_de_poste",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
+                "default_value": "",
+                "new_lines": "br",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": "",
+                "key": "field_574dae963c7b3",
+                "label": "Description de l\u2019organisme recruteur",
+                "name": "descriptif_organisme",
+                "type": "textarea",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "new_lines": "br",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": 5,
+                "key": "field_576bd950b3635",
+                "label": "Missions",
+                "name": "missions",
+                "type": "textarea",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "layout": "vertical",
+                "choices": {
+                    "bac": "BAC",
+                    "bac_2": "BAC+2",
+                    "bac_3": "BAC+3",
+                    "bac_5": "BAC+5"
+                },
+                "default_value": [],
+                "allow_custom": 0,
+                "save_custom": 0,
+                "toggle": 0,
+                "return_format": "value",
+                "key": "field_574dae0e3c7b2",
+                "label": "Niveau d\u2019\u00e9tude",
+                "name": "niveau_detude",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "experience_0": "Jeune dipl\u00f4m\u00e9(e)",
+                    "experience_1": "1 \u00e0 3 ans",
+                    "experience_2": "3 \u00e0 5 ans",
+                    "experience_3": "5 \u00e0 10 ans",
+                    "experience_4": "Plus de 10 ans"
+                },
+                "default_value": [],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_5773a4bc97554",
+                "label": "Exp\u00e9rience",
+                "name": "experience",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
+                "default_value": "",
+                "new_lines": "br",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": 5,
+                "key": "field_576bd9aeb3636",
+                "label": "Profil recherch\u00e9",
+                "name": "profil_recherche",
+                "type": "textarea",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "entreprise": "Entreprise",
+                    "association": "Association",
+                    "collectivite": "Collectivit\u00e9",
+                    "formation": "Organisme de formation"
+                },
+                "default_value": [],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_574daec83c7b4",
+                "label": "Type de structure",
+                "name": "type_structure",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_574daf423c7b5",
+                "label": "Nom de la structure",
+                "name": "nom_structure",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_574db099b8a3d",
+                "label": "Adresse",
+                "name": "adresse",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": 6,
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_5750182c253c0",
+                "label": "Code postal",
+                "name": "code_postal",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_5750184c253c1",
+                "label": "Ville",
+                "name": "ville",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "departement_01": "Ain",
+                    "departement_02": "Aisne",
+                    "departement_03": "Allier",
+                    "departement_04": "Alpes de Haute Provence",
+                    "departement_05": "Hautes Alpes",
+                    "departement_06": "Alpes Maritimes",
+                    "departement_07": "Ard\u00e8che",
+                    "departement_08": "Ardennes",
+                    "departement_09": "Ari\u00e8ge",
+                    "departement_10": "Aube",
+                    "departement_11": "Aude",
+                    "departement_12": "Aveyron",
+                    "departement_13": "Bouches du Rh\u00f4ne",
+                    "departement_14": "Calvados",
+                    "departement_15": "Cantal",
+                    "departement_16": "Charente",
+                    "departement_17": "Charente Maritime",
+                    "departement_18": "Cher",
+                    "departement_19": "Corr\u00e8ze",
+                    "departement_2A": "Corse du Sud",
+                    "departement_2B": "Haute-Corse",
+                    "departement_21": "C\u00f4te d'Or",
+                    "departement_22": "C\u00f4tes d'Armor",
+                    "departement_23": "Creuse",
+                    "departement_24": "Dordogne",
+                    "departement_25": "Doubs",
+                    "departement_26": "Dr\u00f4me",
+                    "departement_27": "Eure",
+                    "departement_28": "Eure et Loir",
+                    "departement_29": "Finist\u00e8re",
+                    "departement_30": "Gard",
+                    "departement_31": "Haute Garonne",
+                    "departement_32": "Gers",
+                    "departement_33": "Gironde",
+                    "departement_34": "H\u00e9rault",
+                    "departement_35": "Ille et Vilaine",
+                    "departement_36": "Indre",
+                    "departement_37": "Indre et Loire",
+                    "departement_38": "Is\u00e8re",
+                    "departement_39": "Jura",
+                    "departement_40": "Landes",
+                    "departement_41": "Loir et Cher",
+                    "departement_42": "Loire",
+                    "departement_43": "Haute Loire",
+                    "departement_44": "Loire Atlantique",
+                    "departement_45": "Loiret",
+                    "departement_46": "Lot",
+                    "departement_47": "Lot et Garonne",
+                    "departement_48": "Loz\u00e8re",
+                    "departement_49": "Maine et Loire",
+                    "departement_50": "Manche",
+                    "departement_51": "Marne",
+                    "departement_52": "Haute Marne",
+                    "departement_53": "Mayenne",
+                    "departement_54": "Meurthe et Moselle",
+                    "departement_55": "Meuse",
+                    "departement_56": "Morbihan",
+                    "departement_57": "Moselle",
+                    "departement_58": "Ni\u00e8vre",
+                    "departement_59": "Nord",
+                    "departement_60": "Oise",
+                    "departement_61": "Orne",
+                    "departement_62": "Pas de Calais",
+                    "departement_63": "Puy de D\u00f4me",
+                    "departement_64": "Pyr\u00e9n\u00e9es Atlantiques",
+                    "departement_65": "Hautes Pyr\u00e9n\u00e9es",
+                    "departement_66": "Pyr\u00e9n\u00e9es Orientales",
+                    "departement_67": "Bas Rhin",
+                    "departement_68": "Haut Rhin",
+                    "departement_69": "Rh\u00f4ne",
+                    "departement_70": "Haute Sa\u00f4ne",
+                    "departement_71": "Sa\u00f4ne et Loire",
+                    "departement_72": "Sarthe",
+                    "departement_73": "Savoie",
+                    "departement_74": "Haute Savoie",
+                    "departement_75": "Paris",
+                    "departement_76": "Seine Maritime",
+                    "departement_77": "Seine et Marne",
+                    "departement_78": "Yvelines",
+                    "departement_79": "Deux S\u00e8vres",
+                    "departement_80": "Somme",
+                    "departement_81": "Tarn",
+                    "departement_82": "Tarn et Garonne",
+                    "departement_83": "Var",
+                    "departement_84": "Vaucluse",
+                    "departement_85": "Vend\u00e9e",
+                    "departement_86": "Vienne",
+                    "departement_87": "Haute Vienne",
+                    "departement_88": "Vosges",
+                    "departement_89": "Yonne",
+                    "departement_90": "Territoire de Belfort",
+                    "departement_91": "Essonne",
+                    "departement_92": "Hauts de Seine",
+                    "departement_93": "Seine Saint Denis",
+                    "departement_94": "Val de Marne",
+                    "departement_95": "Val d'Oise",
+                    "departement_971": "Guadeloupe",
+                    "departement_972": "Martinique",
+                    "departement_973": "Guyane",
+                    "departement_974": "R\u00e9union",
+                    "departement_975": "Saint Pierre et Miquelon",
+                    "departement_976": "Mayotte"
+                },
+                "default_value": [],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_574dab093c7b0",
+                "label": "D\u00e9partement",
+                "name": "departement",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
+                "default_value": "",
+                "placeholder": "",
+                "key": "field_576bdbaef85d5",
+                "label": "Site internet de la structure",
+                "name": "site_internet_structure",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_576bda8ebb527",
+                "label": "Nom et pr\u00e9nom du contact",
+                "name": "nom_prenom_contact",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_576bdab4bb528",
+                "label": "Fonction du contact",
+                "name": "fonction_contact",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_574db0a7b8a3e",
+                "label": "T\u00e9l\u00e9phone de contact",
+                "name": "telephone",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_574db0bcb8a3f",
+                "label": "Email de contact",
+                "name": "contact_email",
+                "type": "email",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "layout": "vertical",
+                "choices": {
+                    "courrier": "Par courrier",
+                    "mail": "Par mail"
+                },
+                "default_value": [],
+                "allow_custom": 0,
+                "save_custom": 0,
+                "toggle": 0,
+                "return_format": "value",
+                "key": "field_576bdb28bb52a",
+                "label": "Modalit\u00e9 d\u2019envoi de la candidature",
+                "name": "modalite_candidature",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0
+            },
+            {
+                "display_format": "d\/m\/Y",
+                "return_format": "d\/m\/Y",
+                "first_day": 1,
+                "key": "field_576bdac0bb529",
+                "label": "Date limite de candidature",
+                "name": "date_candidature",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "post_type": [
+                    "recus"
+                ],
+                "taxonomy": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "allow_archives": 1,
+                "key": "field_57cea41770d84",
+                "label": "Re\u00e7u",
+                "name": "recu_offer",
+                "type": "page_link",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "offres-emploi"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_57516a1ab78f6",
+        "title": "Options formulaires",
+        "fields": [
+            {
+                "default_value": "departement_01=01 - Ain;departement_02=02 - Aisne;departement_03=03 - Allier;departement_04=04 - Alpes de Haute Provence;departement_05=05 - Hautes Alpes;departement_06=06 - Alpes Maritimes;departement_07=07 - Ard\u00e8che;departement_08=08 - Ardennes;departement_09=09 - Ari\u00e8ge;departement_10=10 - Aube;departement_11=11 - Aude;departement_12=12 - Aveyron;departement_13=13 - Bouches du Rh\u00f4ne;departement_14=14 - Calvados;departement_15=15 - Cantal;departement_16=16 - Charente;departement_17=17 - Charente Maritime;departement_18=18 - Cher;departement_19=19 - Corr\u00e8ze;departement_2A=2A - Corse du Sud;departement_2B=2B - Haute-Corse;departement_21=21 - C\u00f4te d'Or;departement_22=22 - C\u00f4tes d'Armor;departement_23=23 - Creuse;departement_24=24 - Dordogne;departement_25=25 - Doubs;departement_26=26 - Dr\u00f4me;departement_27=27 - Eure;departement_28=28 - Eure et Loir;departement_29=29 - Finist\u00e8re;departement_30=30 - Gard;departement_31=31 - Haute Garonne;departement_32=32 - Gers;departement_33=33 - Gironde;departement_34=34 - H\u00e9rault;departement_35=35 - Ille et Vilaine;departement_36=36 - Indre;departement_37=37 - Indre et Loire;departement_38=38 - Is\u00e8re;departement_39=39 - Jura;departement_40=40 - Landes;departement_41=41 - Loir et Cher;departement_42=42 - Loire;departement_43=43 - Haute Loire;departement_44=44 - Loire Atlantique;departement_45=45 - Loiret;departement_46=46 - Lot;departement_47=47 - Lot et Garonne;departement_48=48 - Loz\u00e8re;departement_49=49 - Maine et Loire;departement_50=50 - Manche;departement_51=51 - Marne;departement_52=52 - Haute Marne;departement_53=53 - Mayenne;departement_54=54 - Meurthe et Moselle;departement_55=55 - Meuse;departement_56=56 - Morbihan;departement_57=57 - Moselle;departement_58=58 - Ni\u00e8vre;departement_59=59 - Nord;departement_60=60 - Oise;departement_61=61 - Orne;departement_62=62 - Pas de Calais;departement_63=63 - Puy de D\u00f4me;departement_64=64 - Pyr\u00e9n\u00e9es Atlantiques;departement_65=65 - Hautes Pyr\u00e9n\u00e9es;departement_66=66 - Pyr\u00e9n\u00e9es Orientales;departement_67=67 - Bas Rhin;departement_68=68 - Haut Rhin;departement_69=69 - Rh\u00f4ne;departement_70=70 - Haute Sa\u00f4ne;departement_71=71 - Sa\u00f4ne et Loire;departement_72=72 - Sarthe;departement_73=73 - Savoie;departement_74=74 - Haute Savoie;departement_75=75 - Paris;departement_76=76 - Seine Maritime;departement_77=77 - Seine et Marne;departement_78=78 - Yvelines;departement_79=79 - Deux S\u00e8vres;departement_80=80 - Somme;departement_81=81 - Tarn;departement_82=82 - Tarn et Garonne;departement_83=83 - Var;departement_84=84 - Vaucluse;departement_85=85 - Vend\u00e9e;departement_86=86 - Vienne;departement_87=87 - Haute Vienne;departement_88=88 - Vosges;departement_89=89 - Yonne;departement_90=90 - Territoire de Belfort;departement_91=91 - Essonne;departement_92=92 - Hauts de Seine;departement_93=93 - Seine Saint Denis;departement_94=94 - Val de Marne;departement_95=95 - Val d'Oise;departement_971=971 - Guadeloupe;departement_972=972 - Martinique;departement_973=973 - Guyane;departement_974=974 - R\u00e9union;departement_975=975 - Saint Pierre et Miquelon;departement_976=976 - Mayotte;",
+                "new_lines": "",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": "",
+                "key": "field_57516a2cef487",
+                "label": "D\u00e9partements",
+                "name": "departements",
+                "type": "textarea",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": 50,
+                "min": "",
+                "max": "",
+                "step": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57c9ab33cad4b",
+                "label": "Montant d'un publication d'offre d'emploi",
+                "name": "montant_publication_offre_emploi",
+                "type": "number",
+                "instructions": "Ecrire le montant en euros",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "formulaires"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_5796183192129",
+        "title": "Re\u00e7us",
+        "fields": [
+            {
+                "multiple": 0,
+                "allow_null": 0,
+                "choices": {
+                    "recu_adhesion": "Re\u00e7u cotisation d'adh\u00e9sion",
+                    "recu_emploi": "Re\u00e7u paiement offre d'emploi"
+                },
+                "default_value": [],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_57961c6dcbf3d",
+                "label": "Type de re\u00e7u",
+                "name": "type_recu",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
+                "multiple": 0,
+                "allow_null": 1,
+                "choices": {
+                    "pending": "En attente",
+                    "succeeded": "Paiement valid\u00e9",
+                    "failed": "Echec de paiement"
+                },
+                "default_value": [],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_57d1385542d1e",
+                "label": "Statut paiement",
+                "name": "statut_paiement",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
+                "multiple": 0,
+                "allow_null": 1,
+                "choices": {
+                    "cb": "Carte bancaire",
+                    "cheque": "Ch\u00e8que"
+                },
+                "default_value": [],
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "return_format": "value",
+                "key": "field_57d26de028af6",
+                "label": "Mode de paiement",
+                "name": "mode_paiement",
+                "type": "select",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
+                "default_value": "",
+                "min": "",
+                "max": "",
+                "step": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57961c52cbf3c",
+                "label": "Ann\u00e9e de cotisation",
+                "name": "annee_cotisation",
+                "type": "number",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_57961c6dcbf3d",
+                            "operator": "==",
+                            "value": "recu_adhesion"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "min": "",
+                "max": "",
+                "step": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_5796258197260",
+                "label": "Montant",
+                "name": "montant",
+                "type": "number",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "display_format": "d\/m\/Y",
+                "return_format": "d\/m\/Y",
+                "first_day": 1,
+                "key": "field_57cd50dd93948",
+                "label": "Date de cr\u00e9ation",
+                "name": "date_creation",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "post_type": [
+                    "offres-emploi",
+                    "adherents"
+                ],
+                "taxonomy": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "allow_archives": 1,
+                "key": "field_57cd4fcf93946",
+                "label": "Publication associ\u00e9e",
+                "name": "publication",
+                "type": "page_link",
+                "instructions": "Offre d'emploi ou fiche ah\u00e9rent",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "display_format": "d\/m\/Y",
+                "return_format": "d\/m\/Y",
+                "first_day": 1,
+                "key": "field_5796251fca8aa",
+                "label": "Date de paiement",
+                "name": "date_paiement",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57962540ca8ab",
+                "label": "N\u00b0 de transaction",
+                "name": "n_transaction",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_57d26de028af6",
+                            "operator": "==",
+                            "value": "cb"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57d2781d28af7",
+                "label": "N\u00b0 de ch\u00e8que",
+                "name": "num_cheque",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_57d26de028af6",
+                            "operator": "==",
+                            "value": "cheque"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57d059e4c97bf",
+                "label": "ID carte",
+                "name": "id_carte",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_57d26de028af6",
+                            "operator": "==",
+                            "value": "cb"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "XXXX XXXX XXXX 1234",
+                "prepend": "",
+                "append": "",
+                "key": "field_57d1386a42d1f",
+                "label": "Derniers chiffres de carte",
+                "name": "derniers_chiffres",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_57d26de028af6",
+                            "operator": "==",
+                            "value": "cb"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57cd3a4ca66dd",
+                "label": "Nom pr\u00e9nom contact",
+                "name": "nom_prenom_contact",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57cd4abfa66e3",
+                "label": "Nom structure",
+                "name": "nom_structure",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57cd3b14a66df",
+                "label": "Adresse",
+                "name": "adresse",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57cd4d75b5723",
+                "label": "Email contact",
+                "name": "contact_email",
+                "type": "email",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57d14f37079b9",
+                "label": "T\u00e9l\u00e9phone de contact",
+                "name": "telephone",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_57d29d12265c9",
+                "label": "Cl\u00e9 de s\u00e9curit\u00e9e",
+                "name": "security_token",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_57d26de028af6",
+                            "operator": "==",
+                            "value": "cb"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "recus"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_577f86afcfd79",
+        "title": "Webinaire",
+        "fields": [
+            {
+                "layout": "vertical",
+                "choices": {
+                    "energies_renouvelables": "\u00c9nergies renouvelables",
+                    "maitrise_energie_batiment": "Ma\u00eetrise de l\u2019\u00e9nergie\/B\u00e2timent",
+                    "precarite_energetique": "Pr\u00e9carit\u00e9 \u00e9nerg\u00e9tique",
+                    "mobilite": "Mobilit\u00e9",
+                    "territoires_democratie": "Territoires et d\u00e9mocratie",
+                    "emploi_formation": "Emploi\/formation"
+                },
+                "default_value": [],
+                "allow_custom": 0,
+                "save_custom": 0,
+                "toggle": 0,
+                "return_format": "value",
+                "key": "field_577f86e4ec257",
+                "label": "Th\u00e8mes",
+                "name": "themes",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "display_format": "d\/m\/Y",
+                "return_format": "d\/m\/Y",
+                "first_day": 1,
+                "key": "field_577f8731ea688",
+                "label": "Date webinaire",
+                "name": "date_webinaire",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "display_format": "H:i",
+                "return_format": "H:i",
+                "key": "field_577f8754ea689",
+                "label": "Heure webinaire",
+                "name": "heure_webinaire",
+                "type": "time_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "sub_fields": [
+                    {
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "key": "field_577f893d5cba8",
+                        "label": "Nom",
+                        "name": "nom",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "key": "field_577f894e5cba9",
+                        "label": "Pr\u00e9nom",
+                        "name": "prenom",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "key": "field_577f89655cbaa",
+                        "label": "Email",
+                        "name": "email",
+                        "type": "email",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "default_value": "",
+                        "min": "",
+                        "max": "",
+                        "step": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "key": "field_577f89975cbac",
+                        "label": "Nombre de participants",
+                        "name": "nombre_participants",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "default_value": 0,
+                        "message": "",
+                        "ui": 0,
+                        "ui_on_text": "",
+                        "ui_off_text": "",
+                        "key": "field_577f8dacc5711",
+                        "label": "Adh\u00e9rent au CLER",
+                        "name": "adherent_cler",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        }
+                    },
+                    {
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "key": "field_577f897b5cbab",
+                        "label": "Nom de la structure",
+                        "name": "nom_structure",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "readonly": 0,
+                        "disabled": 0
+                    }
+                ],
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Ajouter un participant",
+                "collapsed": "",
+                "key": "field_577f88ea5cba7",
+                "label": "Participants",
+                "name": "participants",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "webinaires"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_5596908291941",
+        "title": "Fluxi content",
+        "fields": [
+            {
+                "default_value": "",
+                "new_lines": "wpautop",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": 4,
+                "key": "field_584fe426d4a26",
+                "label": "Extrait de la page",
+                "name": "fluxi_resum",
+                "type": "textarea",
+                "instructions": "Ce texte est utilis\u00e9 pour le r\u00e9f\u00e9rencement dans les moteurs de recherche et le flux RSS. Il n'a pas besoin d'\u00eatre tr\u00e8s long mais doit \u00eatre renseigner.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "default_value": 0,
+                "message": "",
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": "",
+                "key": "field_584fe4e2d4a27",
+                "label": "Mettre une image \u00e0 la une",
+                "name": "add_image",
+                "type": "true_false",
+                "instructions": "Activer cette case pour ajouter une image \u00e0 la une.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": 800,
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "key": "field_584fe569d4a28",
+                "label": "Image \u00e0 la une",
+                "name": "main_image",
+                "type": "image",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_584fe4e2d4a27",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "layouts": [
+                    {
+                        "key": "5630b9874805c",
+                        "name": "titre",
+                        "label": "Titre",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "choices": {
+                                    "1": "Titre principal",
+                                    "2": "Sous-titre",
+                                    "3": "Petit sous-titre"
+                                },
+                                "default_value": [
+                                    1
+                                ],
+                                "ui": 0,
+                                "ajax": 0,
+                                "placeholder": "",
+                                "return_format": "value",
+                                "key": "field_5630b74aee787",
+                                "label": "Taille du titre",
+                                "name": "taille_titre",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "disabled": 0,
+                                "readonly": 0
+                            },
+                            {
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "key": "field_5630b77cee788",
+                                "label": "Texte du titre",
+                                "name": "texte_titre",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "readonly": 0,
+                                "disabled": 0
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    {
+                        "key": "5630b9c64805d",
+                        "name": "texte",
+                        "label": "Texte",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "tabs": "visual",
+                                "toolbar": "full",
+                                "media_upload": 0,
+                                "default_value": "",
+                                "delay": 0,
+                                "key": "field_5630b8deee78b",
+                                "label": "Texte",
+                                "name": "texte",
+                                "type": "wysiwyg",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                }
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    {
+                        "key": "5630ba063cca2",
+                        "name": "image",
+                        "label": "Image",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "return_format": "array",
+                                "preview_size": "thumbnail",
+                                "library": "all",
+                                "min_width": "",
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": "",
+                                "key": "field_5630ba583cca4",
+                                "label": "Image",
+                                "name": "image",
+                                "type": "image",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                }
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    {
+                        "key": "5630bddfa6d7e",
+                        "name": "texte_et_image",
+                        "label": "Texte et image",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "return_format": "array",
+                                "preview_size": "thumbnail",
+                                "library": "all",
+                                "min_width": 240,
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": "",
+                                "key": "field_5630be5ea6d80",
+                                "label": "Image",
+                                "name": "image",
+                                "type": "image",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                }
+                            },
+                            {
+                                "tabs": "visual",
+                                "toolbar": "full",
+                                "media_upload": 0,
+                                "default_value": "",
+                                "delay": 0,
+                                "key": "field_5630beb2a6d81",
+                                "label": "Texte",
+                                "name": "texte",
+                                "type": "wysiwyg",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                }
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    {
+                        "key": "56fe8088a7b6f",
+                        "name": "citation",
+                        "label": "Citation",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "default_value": "",
+                                "new_lines": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "rows": 5,
+                                "key": "field_56fe8097a7b70",
+                                "label": "Citation",
+                                "name": "citation",
+                                "type": "textarea",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "readonly": 0,
+                                "disabled": 0
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    {
+                        "key": "559d2ba5b8e4d",
+                        "name": "liste",
+                        "label": "Liste",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "choices": {
+                                    "simple": "Liste simple",
+                                    "numero": "Liste num\u00e9rot\u00e9e"
+                                },
+                                "default_value": {
+                                    "simple": "Liste simple"
+                                },
+                                "ui": 0,
+                                "ajax": 0,
+                                "placeholder": "",
+                                "return_format": "value",
+                                "key": "field_559d36b99ae4b",
+                                "label": "Type de liste",
+                                "name": "type_liste",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "disabled": 0,
+                                "readonly": 0
+                            },
+                            {
+                                "sub_fields": [
+                                    {
+                                        "multiple": 0,
+                                        "allow_null": 0,
+                                        "choices": {
+                                            "texte": "Du texte",
+                                            "lien": "Un lien"
+                                        },
+                                        "default_value": {
+                                            "texte": "Du texte"
+                                        },
+                                        "ui": 0,
+                                        "ajax": 0,
+                                        "placeholder": "",
+                                        "return_format": "value",
+                                        "key": "field_559d30bfb8e50",
+                                        "label": "Type d'\u00e9l\u00e9ment",
+                                        "name": "type_element",
+                                        "type": "select",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "disabled": 0,
+                                        "readonly": 0
+                                    },
+                                    {
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "key": "field_559d2c73b8e4f",
+                                        "label": "Texte de l'\u00e9l\u00e9ment",
+                                        "name": "texte_element",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 1,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "readonly": 0,
+                                        "disabled": 0
+                                    },
+                                    {
+                                        "default_value": "",
+                                        "placeholder": "http:\/\/",
+                                        "key": "field_559d3100b8e51",
+                                        "label": "Url du lien",
+                                        "name": "url_lien",
+                                        "type": "url",
+                                        "instructions": "http:\/\/www.url.fr",
+                                        "required": 1,
+                                        "conditional_logic": [
+                                            [
+                                                {
+                                                    "field": "field_559d30bfb8e50",
+                                                    "operator": "==",
+                                                    "value": "lien"
+                                                }
+                                            ]
+                                        ],
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        }
+                                    }
+                                ],
+                                "min": 0,
+                                "max": 0,
+                                "layout": "row",
+                                "button_label": "Ajouter un \u00e9l\u00e9ment \u00e0 la liste",
+                                "collapsed": "",
+                                "key": "field_559d2c1ab8e4e",
+                                "label": "El\u00e9ment de la liste",
+                                "name": "element_liste",
+                                "type": "repeater",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                }
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    {
+                        "key": "559bf5e1e7e23",
+                        "name": "lien",
+                        "label": "Lien",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "choices": {
+                                    "lien-text": "Lien libre",
+                                    "lien-page": "Lien vers une page existante",
+                                    "bouton": "Bouton libre",
+                                    "bouton-page": "Bouton vers une page existante",
+                                    "fichier-interne": "Lien vers un fichier interne",
+                                    "fichier-externe": "Lien vers un fichier externe",
+                                    "lien-mailto": "Lien vers une adresse email",
+                                    "bouton-mailto": "Bouton vers une adresse email"
+                                },
+                                "default_value": [
+                                    "Lien texte"
+                                ],
+                                "ui": 0,
+                                "ajax": 0,
+                                "placeholder": "",
+                                "return_format": "value",
+                                "key": "field_559bf5f6e7e24",
+                                "label": "Type de lien",
+                                "name": "type_lien",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "disabled": 0,
+                                "readonly": 0
+                            },
+                            {
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "key": "field_563c763162641",
+                                "label": "Adresse email",
+                                "name": "add_mailto",
+                                "type": "email",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_559bf5f6e7e24",
+                                            "operator": "==",
+                                            "value": "lien-mailto"
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "field": "field_559bf5f6e7e24",
+                                            "operator": "==",
+                                            "value": "bouton-mailto"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                }
+                            },
+                            {
+                                "post_type": [],
+                                "taxonomy": [],
+                                "allow_null": 0,
+                                "multiple": 0,
+                                "allow_archives": 1,
+                                "key": "field_5630bc28563f8",
+                                "label": "Lien vers une page",
+                                "name": "lien_page",
+                                "type": "page_link",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_559bf5f6e7e24",
+                                            "operator": "==",
+                                            "value": "lien-page"
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "field": "field_559bf5f6e7e24",
+                                            "operator": "==",
+                                            "value": "bouton-page"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                }
+                            },
+                            {
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "key": "field_559bf694e7e25",
+                                "label": "Texte du lien",
+                                "name": "texte_lien",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "readonly": 0,
+                                "disabled": 0
+                            },
+                            {
+                                "default_value": "",
+                                "placeholder": "http:\/\/",
+                                "key": "field_559bf69ce7e26",
+                                "label": "Url du lien",
+                                "name": "url_lien",
+                                "type": "url",
+                                "instructions": "http:\/\/www.url.fr",
+                                "required": 1,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_559bf5f6e7e24",
+                                            "operator": "==",
+                                            "value": "fichier-externe"
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "field": "field_559bf5f6e7e24",
+                                            "operator": "==",
+                                            "value": "bouton"
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "field": "field_559bf5f6e7e24",
+                                            "operator": "==",
+                                            "value": "lien-text"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                }
+                            },
+                            {
+                                "return_format": "array",
+                                "library": "all",
+                                "min_size": "",
+                                "max_size": "",
+                                "mime_types": "",
+                                "key": "field_559bf6cfe7e27",
+                                "label": "Fichier",
+                                "name": "url_fichier",
+                                "type": "file",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_559bf5f6e7e24",
+                                            "operator": "==",
+                                            "value": "fichier-interne"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                }
+                            },
+                            {
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "choices": {
+                                    "_self": "Ouvrir dans la m\u00eame page",
+                                    "_blank": "Ouvrir dans une nouvelle page"
+                                },
+                                "default_value": [
+                                    "Ouvrir dans la m\u00eame page"
+                                ],
+                                "ui": 0,
+                                "ajax": 0,
+                                "placeholder": "",
+                                "return_format": "value",
+                                "key": "field_559bf6eae7e28",
+                                "label": "Cible du lien",
+                                "name": "cible_lien",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_559bf5f6e7e24",
+                                            "operator": "!=",
+                                            "value": "lien-mailto"
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "field": "field_559bf5f6e7e24",
+                                            "operator": "!=",
+                                            "value": "bouton-mailto"
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "field": "field_559bf5f6e7e24",
+                                            "operator": "==",
+                                            "value": "fichier-externe"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "disabled": 0,
+                                "readonly": 0
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    {
+                        "key": "5630bff3b00b5",
+                        "name": "galerie",
+                        "label": "Galerie",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "choices": {
+                                    "galerie_vignettes": "Slider d'images avec vignettes",
+                                    "galerie_slider": "Slider d'images sans vignettes",
+                                    "galerie_damier": "Damier d'images avec lightbox"
+                                },
+                                "default_value": [
+                                    "Slider d'images avec vignettes"
+                                ],
+                                "ui": 0,
+                                "ajax": 0,
+                                "placeholder": "",
+                                "return_format": "value",
+                                "key": "field_5630c0abb00b7",
+                                "label": "Type de galerie",
+                                "name": "type_galerie",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "disabled": 0,
+                                "readonly": 0
+                            },
+                            {
+                                "library": "all",
+                                "min": 1,
+                                "max": "",
+                                "min_width": "",
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": "jpg,jpeg,gif,png",
+                                "insert": "append",
+                                "key": "field_5630c041b00b6",
+                                "label": "Galerie",
+                                "name": "galerie",
+                                "type": "gallery",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "preview_size": "thumbnail"
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    {
+                        "key": "5630d415a1c35",
+                        "name": "code",
+                        "label": "Code",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "tabs": "text",
+                                "toolbar": "basic",
+                                "media_upload": 0,
+                                "default_value": "",
+                                "delay": 0,
+                                "key": "field_5630d42aa1c36",
+                                "label": "Code",
+                                "name": "code",
+                                "type": "wysiwyg",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                }
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    {
+                        "key": "5637304eaea54",
+                        "name": "cliquable",
+                        "label": "Cliquable",
+                        "display": "row",
+                        "sub_fields": [
+                            {
+                                "sub_fields": [
+                                    {
+                                        "default_value": "",
+                                        "maxlength": 150,
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "key": "field_5762d45d409c2",
+                                        "label": "Titre du cliquable",
+                                        "name": "titre_du_cliquable",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 1,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "readonly": 0,
+                                        "disabled": 0
+                                    },
+                                    {
+                                        "default_value": "Un petit texte doit imp\u00e9rativement \u00eatre renseign\u00e9 en cas d'utilisation de ce bloc.",
+                                        "new_lines": "",
+                                        "maxlength": 340,
+                                        "placeholder": "",
+                                        "rows": 4,
+                                        "key": "field_5762d4e2409c3",
+                                        "label": "Texte du cliquable",
+                                        "name": "texte_du_cliquable",
+                                        "type": "textarea",
+                                        "instructions": "",
+                                        "required": 1,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "readonly": 0,
+                                        "disabled": 0
+                                    },
+                                    {
+                                        "default_value": "",
+                                        "maxlength": 80,
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "key": "field_5762d527409c4",
+                                        "label": "Texte du bouton",
+                                        "name": "texte_bouton",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 1,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "readonly": 0,
+                                        "disabled": 0
+                                    },
+                                    {
+                                        "default_value": "",
+                                        "placeholder": "http:\/\/www.url.fr",
+                                        "key": "field_5762d5a1409c5",
+                                        "label": "Url du cliquable",
+                                        "name": "url_du_cliquable",
+                                        "type": "url",
+                                        "instructions": "",
+                                        "required": 1,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        }
+                                    },
+                                    {
+                                        "multiple": 0,
+                                        "allow_null": 0,
+                                        "choices": {
+                                            "_self": "Ouvrir dans la m\u00eame page",
+                                            "_blank": "Ouvrir dans une nouvelle page"
+                                        },
+                                        "default_value": [
+                                            "_self"
+                                        ],
+                                        "ui": 0,
+                                        "ajax": 0,
+                                        "placeholder": "",
+                                        "return_format": "value",
+                                        "key": "field_5762d5f1409c6",
+                                        "label": "Ouvrir dans une nouvelle page",
+                                        "name": "open_new_page",
+                                        "type": "select",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "disabled": 0,
+                                        "readonly": 0
+                                    }
+                                ],
+                                "min": 0,
+                                "max": 0,
+                                "layout": "row",
+                                "button_label": "Ajouter un cliquable",
+                                "collapsed": "",
+                                "key": "field_5762d430409c1",
+                                "label": "Module cliquable",
+                                "name": "module_cliquable",
+                                "type": "repeater",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                }
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    {
+                        "key": "5652ff566700b",
+                        "name": "mozaic_docs",
+                        "label": "Mozaic de documents",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "sub_fields": [
+                                    {
+                                        "default_value": "",
+                                        "maxlength": 30,
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "key": "field_56530c640d286",
+                                        "label": "Cat\u00e9gorie",
+                                        "name": "filtre",
+                                        "type": "text",
+                                        "instructions": "La cat\u00e9gorie servira de filtre.",
+                                        "required": 1,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "readonly": 0,
+                                        "disabled": 0
+                                    },
+                                    {
+                                        "sub_fields": [
+                                            {
+                                                "default_value": "",
+                                                "maxlength": 100,
+                                                "placeholder": "",
+                                                "prepend": "",
+                                                "append": "",
+                                                "key": "field_56530d5d0d288",
+                                                "label": "Titre du document",
+                                                "name": "titre",
+                                                "type": "text",
+                                                "instructions": "",
+                                                "required": 1,
+                                                "conditional_logic": 0,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "readonly": 0,
+                                                "disabled": 0
+                                            },
+                                            {
+                                                "return_format": "array",
+                                                "library": "all",
+                                                "min_size": "",
+                                                "max_size": "",
+                                                "mime_types": "",
+                                                "key": "field_5653241a2b728",
+                                                "label": "Document",
+                                                "name": "document",
+                                                "type": "file",
+                                                "instructions": "",
+                                                "required": 1,
+                                                "conditional_logic": [
+                                                    [
+                                                        {
+                                                            "field": "field_565309036700c",
+                                                            "operator": "==",
+                                                            "value": "mosaic_documents"
+                                                        }
+                                                    ]
+                                                ],
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                }
+                                            },
+                                            {
+                                                "default_value": "",
+                                                "new_lines": "wpautop",
+                                                "maxlength": 340,
+                                                "placeholder": "",
+                                                "rows": 3,
+                                                "key": "field_565324d42b72a",
+                                                "label": "Description",
+                                                "name": "description",
+                                                "type": "textarea",
+                                                "instructions": "",
+                                                "required": 0,
+                                                "conditional_logic": 0,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "readonly": 0,
+                                                "disabled": 0
+                                            }
+                                        ],
+                                        "min": 0,
+                                        "max": 0,
+                                        "layout": "table",
+                                        "button_label": "Ajouter un document",
+                                        "collapsed": "",
+                                        "key": "field_56530d170d287",
+                                        "label": "Documents",
+                                        "name": "elements",
+                                        "type": "repeater",
+                                        "instructions": "",
+                                        "required": 1,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        }
+                                    }
+                                ],
+                                "min": 0,
+                                "max": 0,
+                                "layout": "block",
+                                "button_label": "Ajouter un filtre",
+                                "collapsed": "",
+                                "key": "field_56530c340d285",
+                                "label": "Groupe de documents",
+                                "name": "groupe_elements",
+                                "type": "repeater",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                }
+                            }
+                        ],
+                        "min": 0,
+                        "max": 1
+                    }
+                ],
+                "min": "",
+                "max": "",
+                "button_label": "Ajouter un \u00e9l\u00e9ment de mise en page",
+                "key": "field_559bee2288403",
+                "label": "El\u00e9ments de mise en page",
+                "name": "elements_page",
+                "type": "flexible_content",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "webinaires"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "concours"
+                }
+            ]
+        ],
+        "menu_order": 1,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]

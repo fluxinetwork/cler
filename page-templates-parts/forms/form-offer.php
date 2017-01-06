@@ -9,7 +9,7 @@
 ?>
 
 <div class="c-card__header">
-	<h1 class="c-card__header__title"><?php echo $page_title; ?><br><span>Rejoignez notre réseau !</span></h1>
+	<h1 class="c-card__header__title"><?php echo $page_title; ?></h1>
 </div>
 
 <?php 
