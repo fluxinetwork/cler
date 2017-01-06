@@ -85,26 +85,28 @@ function fluxi_filter_posts(){
 
 						foreach( $val_niveau_detude as $v ):
 
-							$label_niveau_detude .= '<span class="tag">'.$ch_niveau_detude[ $v ] .'</span>';
+							$label_niveau_detude .= '<div class="c-tag">'.$ch_niveau_detude[ $v ] .'</div>';
 
 						endforeach;
 
 					endif;
 
-					$result_content .= '<a class="results-list-item" href="'.get_the_permalink().'">
-						<h2>'.get_the_title ().'</h2>
-						<h4>'.get_field('nom_structure').' - '.get_field('ville').' - '.$label_departement.'</h4>
-						<span class="tag first">'.$label_type_de_poste.'</span><span class="tag">'.$label_experience.'</span>'.$label_niveau_detude.'
-					</a>';
+					$result_content .= '<li classs="l-postList__item">
+						<a href="'.get_the_permalink().'">
+						<article class="c-offre">
+							<h1 class="c-offre__title">'.get_the_title ().'</h1>
+							<div class="c-offre__meta">'.get_field('nom_structure').' <i class="mgLeft--s fa fa-map-marker" aria-hidden="true"></i>'.get_field('ville').' <i class="mgLeft--s fa fa-location-arrow" aria-hidden="true"></i>'.$label_departement.'</div>
+							<div class="c-offre__tags">
+								<div class="c-tag">'.$label_type_de_poste.'</div>
+								<div class="c-tag">'.$label_experience.'</div>
+								'.$label_niveau_detude.'
+							</div>
+						</article>
+						</a>
+					</li>';
 
-					/*$getslugid = wp_get_post_terms( get_the_ID(), 'post_tag' );
-
-					foreach( $getslugid as $thisslug ) {
-						$message_response .= $thisslug->slug . ',';
-					}	*/
 
 				elseif( $pt_slug == 'evenements'):
-
 
 					$ob_departement = get_field_object('field_577e40ac4281f');
 					$label_departement = $ob_departement['choices'][ get_field('departement') ];

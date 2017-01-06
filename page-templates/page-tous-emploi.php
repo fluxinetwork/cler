@@ -17,16 +17,9 @@ $output = ($nb_offres>1) ? $nb_offres.' offres' : $nb_offres.' offre';
 
 			<div class="single__header__meta">
 				<div class="c-dash"></div>
-<<<<<<< HEAD
-				<span class="sub-title"><?php echo $output; ?>  disponibles</span>
-=======
-				<?php 
-					//
-					// Ici ajouter <span class="js-nb-results"></span> pour le comptage des posts via filtre	
-					//
-				?>
-				<span class="sub-title">Il y a <span class="js-nb-results"></span> <?php echo $output; ?>  d'emploi à consulter </span>
->>>>>>> origin/master
+
+				<span class="sub-title"><span class="js-nb-results"><?php echo $output; ?></span> disponibles</span>
+
 			</div>
 
 		</header>
