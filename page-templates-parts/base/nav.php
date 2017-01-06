@@ -61,7 +61,7 @@
 				<li class="c-navList__item js-mute-main">
 					<a href="" class="c-navList__item__link has-dropdown">Ressources</a>
 				</li>
-				<li class="c-navList__item js-mute-main is-none">
+				<li class="c-navList__item js-mute-main">
 					<a href="" class="c-navList__item__link has-dropdown">Adhésion</a>
 				</li>
 				<?php if (is_user_logged_in() && current_user_can('administrator')) : ?>
@@ -80,7 +80,7 @@
 		</div>
 	</nav>
 </header>
-<form method="get" id="nav__search" class="nav__search" action="<?php bloginfo('url'); ?>/">
+<form method="get" id="nav__search" class="nav__search is-none" action="<?php bloginfo('url'); ?>/">
 	<label class="is-hidden" for="s"><?php _e('Recherche :'); ?></label>
   	<input type="text" class="nav__search__input js-search-input" value="<?php if (is_search()) : the_search_query(); endif; ?>" name="s" id="s" placeholder="Rechercher" data-swplive="true">
   	<button type="submit" class="nav__search__submit icon-check_32 nav-bt" value="" id="nav__search__submit">Rechercher</button>  	

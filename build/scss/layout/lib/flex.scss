@@ -31,6 +31,14 @@
 	&--jcspb {
 		justify-content: space-between;
 	}
+
+	&--jcfs {
+		justify-content: flex-start !important;
+	}
+
+	&--jcfe {
+		justify-content: flex-end !important;
+	}
 	
 	&--jcspa {
 		justify-content: space-around;

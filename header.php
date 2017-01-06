@@ -8,6 +8,7 @@
 
 	<title><?php get_template_part( 'page-templates-parts/base/title'); ?></title>
 	
+	<script src="https://use.fontawesome.com/441df5285e.js"></script>
 	<?php wp_head(); ?>
 	
 </head>

@@ -20,7 +20,7 @@ body {
 
 // RESET
 
-h1, h2, h3, h4, h5, p, ul, ol, blockquote {
+h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
 	@include font-smoothing();
 	margin: 0;
 
@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, p, ul, ol, blockquote {
 	}
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
 	font-family: $font-h;
 	color: $c-dark;
 }
@@ -77,6 +77,12 @@ h5, .h5 {
 h5 {	
 }
 
+h6, .h6 {	
+	@include font-size($h6-font-sizes);	
+}
+h6 {	
+}
+
 
 // CONTENT
 
@@ -103,7 +109,7 @@ ul, ol {
 // MICRO STYLES
 
 .t-meta {
-	@extend .h5;
+	@extend .h6;
 	letter-spacing: 0.5px;
 	font-weight: 700;
 	color: $c-dark;

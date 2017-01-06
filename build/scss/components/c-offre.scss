@@ -8,17 +8,28 @@
 
 
 .c-offre {
+	padding: $space--m 0;
+	border-bottom: 1px solid rgba($c-dark, 0.1);
+	transition: $transition;
 
+	&:hover {
+		//transform: scale(1.05);
+	}
 }
 
-.c-offre__tile {
+.c-offre__title {
 	@extend .h2;
 }
 
 .c-offre__meta {
 	@extend .t-meta;
+	margin-bottom: $space--xs;
+
+	.fa {
+		margin-right: $space--xs*$smaller;
+	}
 }
 
 .c-offre__tags {
-	display: flex;
+	//display: flex;
 }

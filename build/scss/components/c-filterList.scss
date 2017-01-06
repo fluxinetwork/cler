@@ -1,0 +1,62 @@
+/*======================================================================*\
+==========================================================================
+
+//	C-FILTERLIST
+
+==========================================================================
+\*======================================================================*/
+
+.c-filterList {
+	position: relative;
+	z-index: 2;
+	width: 90%;
+	max-width: $maxW;
+	padding: $space--s;
+	margin: 0 auto;
+	background-color: rgba($c-dark, 0.05);
+	border-radius: $radius;
+}
+
+.c-filterList__filter {
+	@include flex(center stretch);
+
+	.fa {
+		@include flex(center);
+		background-color: #fff;
+		border-radius: $radius 0 0 $radius;
+		color: $c-dark;
+		padding-left: $space--xs;
+		width: 30px;
+	}
+
+	.c-form__select {
+		background-color: #fff;
+		margin-top: 0;
+		border-radius: 0 $radius $radius 0;
+	}
+}
+
+.c-filterList__buttons {
+	@include flex(space-between center);
+	margin-top: $space--s;
+}
+
+.c-filterList__buttons__submit {
+	display: flex;
+
+	.c-btn {
+		margin-left: $space--xs;
+	}
+}
+
+@media screen and (min-width: $break--m) and (max-width: $break--l) {
+	.c-filterList__filter .fa {
+		display: none;
+	}
+}
+
+@media screen and (min-width: $break--l) {
+	.c-filterList {
+		padding: $space--m;
+	}
+}

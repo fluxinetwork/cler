@@ -6,7 +6,7 @@
 
 <article class="single">
 	<div class="l-row bg-light">
-		<header class="l-col l-col--content">
+		<header class="l-col l-col--content l-col--pdL">
 			<h1><?php echo get_the_title(); ?></h1>
 
 			<div class="single__header__meta">

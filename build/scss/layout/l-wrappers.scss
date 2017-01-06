@@ -21,7 +21,7 @@ body {
 
 .l-col {
 	width: 100%;
-	max-width: 1270px;
+	max-width: $maxW;
 	padding: $space--m;
 	margin-left: auto;
 	margin-right: auto;
@@ -33,6 +33,21 @@ body {
 
 	&--content {
 		max-width: 700px;
+	}
+
+	&--pdM {
+		padding-top: $space--m !important;
+		padding-bottom: $space--m !important;
+	}
+
+	&--pdL {
+		padding-top: $space--l !important;
+		padding-bottom: $space--l !important;
+	}
+
+	&--noPd {
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
 	}
 
 	@media screen and (min-width: $break--s) {

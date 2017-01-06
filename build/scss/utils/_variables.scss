@@ -53,6 +53,7 @@ $grid-tmp: false;
 
 $radius: 3px;
 $cardW: 256px;
+$maxW: 1270px;
 $shadow: 0 0 15px rgba(#000,0.2);
 $shadow--heavy: 0 0 30px rgba(0,0,0,0.3);
 
@@ -103,6 +104,12 @@ $h5-font-sizes: (
 	null : (12px),
 	medium : (14px),
 	large : (16px),
+);
+
+$h6-font-sizes: (
+	null : (10px),
+	medium : (11px),
+	large : (12px),
 );
 
 $p-font-sizes: (

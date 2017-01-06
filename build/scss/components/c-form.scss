@@ -248,7 +248,7 @@ $break: $break--m;
 .c-form__select {
 	height: 40px;
 	border: 0;
-	background-color: #eee;
+	background-color: rgba($c-dark, 0.05);
 	cursor: pointer;
 
 	&.error {

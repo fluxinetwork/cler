@@ -73,7 +73,7 @@
 	}
 
 	&--more {
-		@include font-size($h5-font-sizes);	
+		@include font-size($h6-font-sizes);	
 		top: 0;
 		display: flex;
 		align-items: center;
@@ -82,7 +82,6 @@
 		&::before {
 			content: '';
 			position: relative;
-			top: -1px;
 			display: inline-block;
 			margin-right: $space--xs;
 			width: 50px;

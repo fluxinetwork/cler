@@ -1,0 +1,26 @@
+/*======================================================================*\
+==========================================================================
+
+//	C-TAG
+
+==========================================================================
+\*======================================================================*/
+
+.c-tag {
+	@extend .h6;
+	display: inline-block;
+	border: 2px solid $c-dark;
+	padding: $space--xs*$smaller $space--xs*$bigger;
+	margin: $space--xs*$smaller $space--xs*$smaller 0 0;
+	text-align: center;
+	border-radius: $radius;
+	font-weight: 700;
+	color: $c-dark;
+	opacity: 0.5;
+
+	&--focus {
+		background-color: $c-dark;
+		color: #fff;
+		text-transform: uppercase;
+	}
+}

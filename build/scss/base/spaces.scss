@@ -71,25 +71,34 @@
 	padding: $space--m !important;
 }
 .pdRight--m {
-	padding-right: $space--m;
+	padding-right: $space--m !important;
 }
 .pdLeft--m {
-	padding-left: $space--m;
+	padding-left: $space--m !important;
 }
 .pd--l {
 	padding: $space--l !important;
 }
 .pdRight--l {
-	padding-right: $space--l;
+	padding-right: $space--l !important;
 }
 .pdLeft--l {
-	padding-left: $space--l;
+	padding-left: $space--l !important;
+}
+.pdBottom--l {
+	padding-bottom: $space--l !important;
 }
 .pd--xl {
 	padding: $space--xl !important;
 }
+.pdBottom--xl {
+	padding-bottom: $space--xl !important;
+}
 .pd--xxl {
 	padding: $space--xxl !important;
+}
+.pdBottom--xxl {
+	padding-bottom: $space--xxl !important;
 }
 
 
@@ -102,19 +111,28 @@
 	margin: $space--xs !important;
 }
 .mgTop--xs {
-	margin-top: $space--xs;
+	margin-top: $space--xs !important;
 }
 .mg--s {
 	margin: $space--s !important;
 }
 .mgTop--s {
-	margin-top: $space--s;
+	margin-top: $space--s !important;
+}
+.mgLeft--s {
+	margin-left: $space--s !important;
 }
 .mg--m {
 	margin: $space--m !important;
 }
 .mgTop--m {
-	margin-top: $space--m;
+	margin-top: $space--m !important;
+}
+.mgRight--m {
+	margin-right: $space--m !important;
+}
+.mgLeft--m {
+	margin-left: $space--m !important;
 }
 .mg--l {
 	margin: $space--l !important;
