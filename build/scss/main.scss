@@ -32,6 +32,7 @@
 @import "layout/l-overlay";
 @import "layout/l-postList";
 @import "layout/footer";
+@import "layout/l-header";
 
 // COMPONENTS
 
@@ -50,6 +51,9 @@
 @import "components/c-offre";
 @import "components/c-tag";
 @import "components/c-filterList";
+@import "components/c-fluxi";
+@import "components/c-list";
+@import "components/c-gallery";
 
 
 // PAGES 
@@ -58,7 +62,7 @@
 @import "pages/all";
 @import "pages/homepage";
 @import "pages/profil";
-@import "pages/single";
+//@import "pages/single";
 
 // FORMS 
 @import "components/theforms";

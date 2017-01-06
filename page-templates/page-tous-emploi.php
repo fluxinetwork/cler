@@ -12,23 +12,16 @@ $output = ($nb_offres>1) ? $nb_offres.' offres' : $nb_offres.' offre';
 
 <div class="page">
 	<div class="l-row">
-		<header class="l-col l-col--content l-col--pdL">
+		<header class="l-col l-col--content l-col--pdL l-header">
 			<h1><?php echo get_the_title(); ?></h1>
 
-			<div class="single__header__meta">
+			<div class="l-header__meta">
 				<div class="c-dash"></div>
-<<<<<<< HEAD
-				<span class="sub-title"><?php echo $output; ?>  disponibles</span>
-=======
-				<?php 
-					//
-					// Ici ajouter <span class="js-nb-results"></span> pour le comptage des posts via filtre	
-					//
-				?>
-				<span class="sub-title">Il y a <span class="js-nb-results"></span> <?php echo $output; ?>  d'emploi à consulter </span>
->>>>>>> origin/master
-			</div>
 
+				<span>
+					<span class="js-nb-results"><?php echo $output; ?></span>  disponibles
+				</span>
+			</div>
 		</header>
 	</div>
 
@@ -37,7 +30,7 @@ $output = ($nb_offres>1) ? $nb_offres.' offres' : $nb_offres.' offre';
 		<div class="l-grid">
 		    <div class="c-filterList__filter l-grid__col">
 		    	<label for="departement" class="is-none">Département</label>
-		    	<i class="fa fa-map-marker" aria-hidden="true"></i>
+		    	<i class="fa fa-location-arrow" aria-hidden="true"></i>
 				<select name="departement" id="departement" data-validation="required" class="c-form__select">
 					<option disabled selected value="">Département</option>
 					<?php

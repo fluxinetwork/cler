@@ -1,0 +1,44 @@
+/*======================================================================*\
+==========================================================================
+
+//	COMPOSANT FLUXI CONTENT
+
+==========================================================================
+\*======================================================================*/
+
+$border: 7px solid $c-accent;
+
+.fc__blockquote {
+	position: relative;
+	padding: $space--m 0;
+	margin: $space--l 0;
+	border-top: $border;
+	border-bottom: $border;
+	@extend .h1;
+	font-weight: 900;
+	color: $c-accent;
+	letter-spacing: 0.5px;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		width: 20px;
+		height: 7px;
+		background-color: #FFF;
+	}
+
+	&::before {
+		top: -7px;	
+		right: 10%;
+	}
+
+	&::after {
+		bottom: -7px;	
+		left: 30%;
+	}
+}
+
+.fc__gallery {
+	margin: $space--l 0;
+}

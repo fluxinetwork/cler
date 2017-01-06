@@ -23,7 +23,7 @@ add_action('acf/init', 'wpc_acf_init');
 // ACTIVATE
 define('PAGE_EXCERPT', false);
 define('ACF_OPTION_PAGE', true);
-define('ADD_THUMBNAILS', true);
+define('ADD_THUMBNAILS', false);
 define('CUSTOM_POST_TYPE', true);
 define('CUSTOM_TAXONOMY', true);
 define('DISALLOW_FILE_EDIT', true);

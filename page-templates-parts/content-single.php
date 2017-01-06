@@ -6,46 +6,50 @@
 
 <article class="single">
 	<div class="l-row bg-light">
-		<header class="l-col l-col--content l-col--pdL">
+		<header class="l-col l-col--content l-col--pdL l-header l-header--single">
 			<h1><?php echo get_the_title(); ?></h1>
 
-			<div class="single__header__meta">
+			<div class="l-header__meta">
 				<div class="c-dash"></div>
 
-				<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta t-meta--dark"><?php echo get_the_date(); ?></time> 
+				<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta"><?php echo get_the_date(); ?></time> 
 
 				<?php
 					$categories = get_the_category();
 					$cat_name = $categories[0]->name;
 				?>
-				<span><?php echo $cat_name; ?></span>
+				<span class="c-tag"><?php echo $cat_name; ?></span>
 			</div>
 
 			<?php
-				$post_img_id = get_post_thumbnail_id();
-				$post_img_array = wp_get_attachment_image_src($post_img_id, 'large', true);
-				$post_img_url = $post_img_array[0];	
-				$post_caption = get_post($post_img_id)->post_excerpt
-			?>
-			<figure class="single__header__figure c-figure">
-			  <img src="<?php echo $post_img_url; ?>" class="c-figure__img">
-			  <figcaption class="c-figure__caption"><?php echo $post_caption; ?></figcaption>
-			</figure>
+			if (get_field('add_image') == 1) {
+				//$post_img_id = get_post_thumbnail_id();
+				$post_img_id = get_field('main_image');
 
-			<h2 class="single__header__excerpt"><?php echo get_the_excerpt(); ?></h2>
+				if ($post_img_id) {
+					$post_img_array = wp_get_attachment_image_src($post_img_id, 'large', true);
+					$post_img_url = $post_img_array[0];	
+					$post_caption = get_post($post_img_id)->post_excerpt;
+
+					$output = '<figure class="c-figure">';
+					$output .= ' <img src="'.$post_img_url.'" class="c-figure__img">';
+					$output .= ' <figcaption class="c-figure__caption">'.$post_caption.'</figcaption>';
+					$output .= '</figure>';
+					echo $output;
+				}
+			}
+			?>
+
+			<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum', false, false); ?></h2>
 
 		</header>
 	</div>
 	
 	<div class="single__body l-row">
-		<div class="l-col">
+		<div class="l-col l-col--content">
+			<?php the_content(); ?>
 		</div>
 	</div>
-
-	<?php //get_fluxi_content( get_the_id() ); ?>
-
-	<?php //echo get_fluxi_fields( get_the_id() ); ?>
-
 </article>
 
 

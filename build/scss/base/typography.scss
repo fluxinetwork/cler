@@ -88,7 +88,7 @@ h6 {
 
 p, .p {
 	@include font-size($p-font-sizes);	
-	max-width: 60rem;
+	//max-width: 60rem;
 }
 p {
 	margin-top: $space--s;
