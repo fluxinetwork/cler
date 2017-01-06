@@ -18,9 +18,8 @@ $output = ($nb_offres>1) ? $nb_offres.' offres' : $nb_offres.' offre';
 			<div class="l-header__meta">
 				<div class="c-dash"></div>
 
-				<span>
-					<span class="js-nb-results"><?php echo $output; ?></span>  disponibles
-				</span>
+				<span class="sub-title"><span class="js-nb-results"><?php echo $output; ?></span> disponibles</span>
+
 			</div>
 		</header>
 	</div>
