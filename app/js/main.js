@@ -274,6 +274,19 @@ function initFluxiFilterPosts(){
         var $results = $('.results-list');
         var $formObj = $('#form-filter-posts');
         var formID = '#form-filter-posts'; 
+        var cpt = $('[name="pt_slug"]').val();
+        var label = '';
+        var pluriel = '';
+
+        if( cpt == 'offres-emploi' ){
+            label = 'offre d\'emploi';
+        }else if ( cpt == 'evenements' ){
+            label = 'événement';
+        }else if ( cpt == 'formations' ){
+            label = 'formation';
+        }else {
+            label = 'publication';
+        }
 
         $formObj.find('button[type=submit]').html('<span class="spinner"></span> Chargement');
 
@@ -288,7 +301,16 @@ function initFluxiFilterPosts(){
                     $formObj.find('button[type=submit]').html('Filtrer');                    
                 }else{
                     if(data[0].total > 0){
-                        $('.js-nb-results').html(data[0].total);                  
+
+                        if(data[0].total > 1){
+                            pluriel = 's';
+                            if( cpt == 'offres-emploi' ){
+                                label = 'offres d\'emploi';
+                            }
+                        }
+
+                        $('.js-nb-results').html(data[0].total+' '+label+' disponible'+pluriel);
+
                         $results.html('').append(data[0].content);
                         $formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
                     }else{                        

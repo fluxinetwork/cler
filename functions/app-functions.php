@@ -116,14 +116,12 @@ function fluxi_filter_posts(){
 					$val_publics = $ob_publics['value'];
 					$label_publics = '';
 
+					$date_event = date("d/m/y", strtotime(get_field('date_event')));
+
 					if( $val_publics ):
-
 						foreach( $val_publics as $v ):
-
-							$label_publics .= '<span class="tag">'.$ch_publics[ $v ] .'</span>';
-
+							$label_publics .= '<span class="c-tag">'.$ch_publics[ $v ] .'</span>';
 						endforeach;
-
 					endif;
 
 					$ob_themes = get_field_object('field_577e41d926395');
@@ -132,33 +130,72 @@ function fluxi_filter_posts(){
 					$label_themes = '';
 
 					if( $val_themes ):
-
 						foreach( $val_themes as $v ):
-
-							$label_themes .= '<span class="tag">'.$ch_themes[ $v ] .'</span>';
-
+							$label_themes .= '<span class="c-tag">'.$ch_themes[ $v ] .'</span>';
 						endforeach;
-
 					endif;
 
-					$result_content .= '<a class="results-list-item" href="'.get_the_permalink().'">
-						<h2>'.get_the_title ().'</h2>
-						<h4>'.get_field('ville') .' - '. $label_departement .'</h4>
-						<p class="description">'.get_field('descriptif_event').'</p>
-						'.$label_publics.$label_themes.'
-					</a>';
+					$result_content .= '<li classs="l-postList__item">
+						<a href="'.get_the_permalink().'">
+						<article class="c-offre">
+							<h1 class="c-offre__title">'.get_the_title ().'</h1>
+							<div class="c-offre__meta">Le '.$date_event.' <i class="mgLeft--s fa fa-map-marker" aria-hidden="true"></i>'.get_field('ville').' <i class="mgLeft--s fa fa-location-arrow" aria-hidden="true"></i>'.$label_departement.'</div>
+							<div class="c-offre__tags">								
+								'.$label_themes.$label_publics.'
+							</div>
+						</article>
+						</a>
+					</li>';
 
 				elseif( $pt_slug == 'formations'):
 
-					$ob_departement = get_field_object('field_577e40ac4281f');
-					$label_departement = $ob_departement['choices'][ get_field('departement') ];
-					
+					$ob_departement = get_field_object('field_57b6eab6f05cd');
+					$label_departement = $ob_departement['choices'][ get_field('departement') ];					
 
-					$result_content .= '<a class="results-list-item" href="'.get_the_permalink().'">
-						<h2>'.get_the_title ().'</h2>
-						<h4>'.get_field('ville') .' - '. $label_departement .'</h4>
-						<p class="description">'.get_field('descriptif_formation').'</p>						
-					</a>';
+					$ob_thematique = get_field_object('field_57b6ebc6f05d3');
+					$ch_thematique = $ob_thematique['choices'];
+					$val_thematique = $ob_thematique['value'];
+					$label_thematique = '';
+
+					if( $val_thematique ):
+						foreach( $val_thematique as $v ):
+							$label_thematique .= '<span class="c-tag">'.$ch_thematique[ $v ] .'</span>';
+						endforeach;
+					endif;
+
+					$ob_secteur = get_field_object('field_57b6eb62f05d1');
+					$ch_secteur = $ob_secteur['choices'];
+					$val_secteur = $ob_secteur['value'];
+					$label_secteur = '';
+
+					if( $val_secteur ):
+						foreach( $val_secteur as $v ):
+							$label_secteur .= '<span class="c-tag">'.$ch_secteur[ $v ] .'</span>';
+						endforeach;
+					endif;
+
+					$agrement_formateree = get_field_object('agrement_formateree');
+					if($agrement_formateree == 'oui'):
+						$formateree_label = 'Agrément Format’eree';
+					else:
+						$formateree_label = 'Non agréée Format’eree';
+					endif;
+
+					$nom_centre = $get_field('nom_centre');
+
+					$result_content .= '<li classs="l-postList__item">
+						<a href="'.get_the_permalink().'">
+						<article class="c-offre">
+							<h1 class="c-offre__title">'.get_the_title ().'</h1>
+							<div class="c-offre__meta">'.$nom_centre.' <i class="mgLeft--s fa fa-map-marker" aria-hidden="true"></i>'.get_field('ville').' <i class="mgLeft--s fa fa-location-arrow" aria-hidden="true"></i>'.$label_departement.' - '.$formateree_label.'</div>
+							<div class="c-offre__tags">								
+								'.$label_secteur.$label_thematique.'
+							</div>
+						</article>
+						</a>
+					</li>';/**/
+
+
 
 			 	endif;
 

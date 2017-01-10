@@ -6,8 +6,8 @@ Template Name: Toutes les offres d'emploi
 ?>
 <?php get_header(); ?>
 <?php
-$nb_offres = wp_count_posts('offres-emploi')->publish;
-$output = ($nb_offres>1) ? $nb_offres.' offres' : $nb_offres.' offre';
+$nb_result = wp_count_posts('offres-emploi')->publish;
+$output = ($nb_result>1) ? $nb_result.' offres disponibles' : $nb_result.' offre disponible';
 ?>
 
 <div class="page">
@@ -18,7 +18,7 @@ $output = ($nb_offres>1) ? $nb_offres.' offres' : $nb_offres.' offre';
 			<div class="l-header__meta">
 				<div class="c-dash"></div>
 
-				<span class="sub-title"><span class="js-nb-results"><?php echo $output; ?></span> disponibles</span>
+				<span class="sub-title">&nbsp;<span class="js-nb-results"><?php echo $output; ?></span></span>
 
 			</div>
 		</header>
@@ -97,7 +97,7 @@ $output = ($nb_offres>1) ? $nb_offres.' offres' : $nb_offres.' offre';
 
 
 			<div class="c-filterList__buttons">
-				<a href="#" class="c-link c-link--shy">Poster une offre</a>
+				<a href="<?php echo home_url().'/mon-profil/gerer-offre-emploi/?act=add'; ?>" class="c-link c-link--shy">Poster une offre</a>
 				<div class="c-filterList__buttons__submit">
 					<?php
 					if ( isset( $_GET['toky_toky'] ) ) {
@@ -127,51 +127,53 @@ $output = ($nb_offres>1) ? $nb_offres.' offres' : $nb_offres.' offre';
 
 				if ( $query_filtered->have_posts() ) :
 					echo '<ul class="l-postList results-list">';
-					while ( $query_filtered->have_posts() ) : $query_filtered->the_post();
+						while ( $query_filtered->have_posts() ) : $query_filtered->the_post();
 
-						$ob_type_de_poste = get_field_object('field_574dadcc3c7b1');
-						$label_type_de_poste = $ob_type_de_poste['choices'][ get_field('type_de_poste') ];
+							$ob_type_de_poste = get_field_object('field_574dadcc3c7b1');
+							$label_type_de_poste = $ob_type_de_poste['choices'][ get_field('type_de_poste') ];
 
-						$ob_departement = get_field_object('field_574dab093c7b0');
-						$label_departement = $ob_departement['choices'][ get_field('departement') ];
+							$ob_departement = get_field_object('field_574dab093c7b0');
+							$label_departement = $ob_departement['choices'][ get_field('departement') ];
 
-						$ob_experience = get_field_object('field_5773a4bc97554');
-						$label_experience = $ob_experience['choices'][ get_field('experience') ];
+							$ob_experience = get_field_object('field_5773a4bc97554');
+							$label_experience = $ob_experience['choices'][ get_field('experience') ];
 
-						$ob_niveau_detude = get_field_object('field_574dae0e3c7b2');
-						$ch_niveau_detude = $ob_niveau_detude['choices'];
-						$val_niveau_detude = $ob_niveau_detude['value'];
-						$label_niveau_detude = '';
+							$ob_niveau_detude = get_field_object('field_574dae0e3c7b2');
+							$ch_niveau_detude = $ob_niveau_detude['choices'];
+							$val_niveau_detude = $ob_niveau_detude['value'];
+							$label_niveau_detude = '';
 
-						if( $val_niveau_detude ):
-							foreach( $val_niveau_detude as $v ):
-								$label_niveau_detude .= '<div class="c-tag">'.$ch_niveau_detude[ $v ] .'</div>';
-							endforeach;
-						endif;
+							if( $val_niveau_detude ):
+								foreach( $val_niveau_detude as $v ):
+									$label_niveau_detude .= '<div class="c-tag">'.$ch_niveau_detude[ $v ] .'</div>';
+								endforeach;
+							endif;
 
-						$output = '<li classs="l-postList__item">';
-						$output .= '<a href="'.get_permalink().'">';
-						$output .= '<article class="c-offre">';
+							$output = '<li classs="l-postList__item">';
+							$output .= '<a href="'.get_permalink().'">';
+							$output .= '<article class="c-offre">';
 
-						$output .= '<h1 class="c-offre__title">'.get_the_title().'</h1>';
+							$output .= '<h1 class="c-offre__title">'.get_the_title().'</h1>';
 
-						$output .= '<div class="c-offre__meta">'.get_field('nom_structure').' <i class="mgLeft--s fa fa-map-marker" aria-hidden="true"></i>'.get_field('ville').' <i class="mgLeft--s fa fa-location-arrow" aria-hidden="true"></i>'.$label_departement.'</div>';
+							$output .= '<div class="c-offre__meta">'.get_field('nom_structure').' <i class="mgLeft--s fa fa-map-marker" aria-hidden="true"></i>'.get_field('ville').' <i class="mgLeft--s fa fa-location-arrow" aria-hidden="true"></i>'.$label_departement.'</div>';
 
-						//$output .= '<p class="c-offre_description">'.get_field('descriptif_organisme').'</p>';
+							//$output .= '<p class="c-offre_description">'.get_field('descriptif_organisme').'</p>';
 
-						$output .= '<div class="c-offre__tags">';
-						$output .= '<div class="c-tag">'.$label_type_de_poste.'</div>';
-						$output .= '<div class="c-tag">'.$label_experience.'</div>';
-						$output .= $label_niveau_detude;
-						$output .= '</div>';
+							$output .= '<div class="c-offre__tags">';
+							$output .= '<div class="c-tag">'.$label_type_de_poste.'</div>';
+							$output .= '<div class="c-tag">'.$label_experience.'</div>';
+							$output .= $label_niveau_detude;
+							$output .= '</div>';
 
-						$output .= '</article>';
-						$output .= '</a>';
-						$output .= '</li>';
-						
-						echo $output;
+							$output .= '</article>';
+							$output .= '</a>';
+							$output .= '</li>';
+							
+							echo $output;
 
-					endwhile;
+						endwhile;
+
+					echo '</ul>';
 
 			        echo '<div class="pager">';
 					echo paginate_links( array(
