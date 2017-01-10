@@ -15,11 +15,7 @@ module.exports = function (grunt) {
 		    },
 		    css: {
 		        files: ['build/scss/**/*.scss'],
-<<<<<<< Updated upstream
-		        tasks: ['sass']
-=======
 		        tasks: ['sass', 'postcss']
->>>>>>> Stashed changes
 		    },
 		    configFiles: {
 			    files: ['Gruntfile.js']
@@ -64,7 +60,7 @@ module.exports = function (grunt) {
 		    }
 		},
 
-		/*postcss: {
+		postcss: {
 		    options: {
 		        map: false,
 		        processors: [
@@ -76,7 +72,7 @@ module.exports = function (grunt) {
 				src: 'app/css/main.css',
 				dest: 'app/css/main.min.css'
 			}
-         },*/
+         },
 
 		sass: {
 	        main: {
