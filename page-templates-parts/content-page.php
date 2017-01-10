@@ -4,15 +4,41 @@
  */
 ?>
 
-<article>
+<article classe="page">
 
-	<header><?php the_title( '<h1>', '</h1>' ); ?></header>
+	<div class="l-row bg-light">
+		<header class="l-col l-col--content l-header">
+			<h1><?php echo get_the_title(); ?></h1>
 
-	<?php the_content(); ?>
+			<?php
+			if (get_field('add_image') == 1) {
+				//$post_img_id = get_post_thumbnail_id();
+				$post_img_id = get_field('main_image');
 
-	<?php //get_fluxi_content( get_the_id() ); ?>
+				if ($post_img_id) {
+					$post_img_array = wp_get_attachment_image_src($post_img_id, 'large', true);
+					$post_img_url = $post_img_array[0];	
+					$post_caption = get_post($post_img_id)->post_excerpt;
 
-	<?php //echo get_fluxi_fields( get_the_id() ); ?>
+					$output = '<figure class="c-figure">';
+					$output .= ' <img src="'.$post_img_url.'" class="c-figure__img">';
+					$output .= ' <figcaption class="c-figure__caption">'.$post_caption.'</figcaption>';
+					$output .= '</figure>';
+					echo $output;
+				}
+			}
+			?>
+
+			<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum', false, false); ?></h2>
+
+		</header>
+	</div>
+	
+	<div class="l-row">
+		<div class="l-col l-col--content">
+			<?php the_content(); ?>
+		</div>
+	</div>
 
 </article>
 

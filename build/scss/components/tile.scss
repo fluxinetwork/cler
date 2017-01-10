@@ -53,6 +53,12 @@
 	letter-spacing: 0.7px;
 }
 
+.c-tile__content__icon {
+	color: $c-main;
+	@extend .h3;
+	margin-bottom: $space--s;
+}
+
 @media screen and (min-width: $break--s) {
 	.c-tile {
 		padding: 0;

@@ -8,34 +8,86 @@
 
 $border: 7px solid $c-accent;
 
+.fc {
+	li a,
+	p a {
+		color: $c-main;
+		font-weight: 700;
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -2px;
+			right: 0;
+			height: 3px;
+			width: 100%;
+			background-color: $c-main;
+		}
+
+		&:hover::after {
+			width: 70%;
+		}
+	}
+}
+
 .fc__blockquote {
 	position: relative;
 	padding: $space--m 0;
 	margin: $space--l 0;
-	border-top: $border;
-	border-bottom: $border;
 	@extend .h1;
 	font-weight: 900;
 	color: $c-accent;
 	letter-spacing: 0.5px;
+}
+
+.fc__blockquote__deco {
+	position: absolute;
+	height: 7px;
+	width: 110%;
+	left: -5%;
 
 	&::before,
 	&::after {
 		content: '';
 		position: absolute;
-		width: 20px;
+		display: block;
+		top: 0;
 		height: 7px;
-		background-color: #FFF;
+		border-radius: 100px;
+		background-color: $c-accent;
 	}
 
 	&::before {
-		top: -7px;	
-		right: 10%;
+		left: 0;
 	}
 
 	&::after {
-		bottom: -7px;	
-		left: 30%;
+		right: 0;
+	}
+
+	&--top {
+		top: -7px;
+		
+		&::before {
+			width: 73%;
+		}
+
+		&::after {
+			width: 25%;
+		}
+	}
+
+	&--bottom {
+		bottom: -7px;
+
+		&::before {
+			width: 30%;
+		}
+
+		&::after {
+			width: 68%;
+		}
 	}
 }
 

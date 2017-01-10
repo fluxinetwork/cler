@@ -15,7 +15,11 @@ module.exports = function (grunt) {
 		    },
 		    css: {
 		        files: ['build/scss/**/*.scss'],
+<<<<<<< Updated upstream
 		        tasks: ['sass']
+=======
+		        tasks: ['sass', 'postcss']
+>>>>>>> Stashed changes
 		    },
 		    configFiles: {
 			    files: ['Gruntfile.js']
@@ -65,7 +69,7 @@ module.exports = function (grunt) {
 		        map: false,
 		        processors: [
 		          	require('autoprefixer')({browsers: ['last 2 versions']}),
-		          	require('cssnano')()
+		          	//require('cssnano')()
 		        ]
 			},
 			main: {

@@ -8,7 +8,6 @@
 
 .c-card {
 	display: flex;
-	align-items: center;
 	position: relative;
 	transition: $transition--dynamic;
 	@include bg_with_shadow(#fff);
@@ -49,14 +48,12 @@
 
 .c-card__header {
 	display: none;
-	width: 80px;
-	height: 80px;
-	margin-left: $space--s;
+	min-width: 80px;
 	background-color: $c-dark;
 	background-image: url("../img/card-img.jpeg");
 	background-size: cover;
 	background-position: center;
-	border-radius: 50%;
+	border-radius: $radius 0 0 $radius;
 	color: #fff;
 
 	.c-card--contact & {
@@ -64,8 +61,6 @@
 	}
 
 	.c-card--emploi & {
-		height: auto;
-		display: flex;
 		flex-wrap: wrap;
 		background-image: none;
 	}
@@ -120,6 +115,16 @@
 	color: #fff;
 }
 
+.c-card__header__tag:nth-child(2),
+.c-card__header__cat {
+	display: none;
+
+	@media screen and (min-width: $break--m) {
+		display: flex;
+	}
+
+}
+
 .c-card__header__title {
 	@extend .h1;
 	font-weight: 900;
@@ -137,7 +142,7 @@
 //================================================================= BODY
 
 .c-card__body {
-	padding: $space--s*$smaller $space--s;
+	padding: $space--xs $space--s;
 	flex: 1;
 	width: 100%;
 

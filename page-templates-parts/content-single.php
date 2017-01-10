@@ -45,7 +45,7 @@
 		</header>
 	</div>
 	
-	<div class="single__body l-row">
+	<div class="l-row">
 		<div class="l-col l-col--content">
 			<?php the_content(); ?>
 		</div>

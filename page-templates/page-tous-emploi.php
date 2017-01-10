@@ -18,7 +18,11 @@ $output = ($nb_result>1) ? $nb_result.' offres disponibles' : $nb_result.' offre
 			<div class="l-header__meta">
 				<div class="c-dash"></div>
 
+<<<<<<< Updated upstream
 				<span class="sub-title">&nbsp;<span class="js-nb-results"><?php echo $output; ?></span></span>
+=======
+				<span class="t-meta"><span class="js-nb-results"><?php echo $output; ?></span> disponibles</span>
+>>>>>>> Stashed changes
 
 			</div>
 		</header>

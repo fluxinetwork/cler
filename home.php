@@ -29,6 +29,7 @@
 			<div class="l-grid__col">
 				<div class="c-tile c-tile--round c-tile--noBdr c-tile--bg">
 					<div class="c-tile__content">
+						<i class="fa fa-star-o c-tile__content__icon" aria-hidden="true"></i>
 						<a href="#" class="c-link">Adhérents</a>
 					</div>
 				</div>
@@ -36,6 +37,7 @@
 			<div class="l-grid__col">
 				<div class="c-tile c-tile--round c-tile--noBdr c-tile--bg">
 					<div class="c-tile__content">
+					<i class="fa fa-user-o c-tile__content__icon" aria-hidden="true"></i>
 						<a href="#" class="c-link">Citoyens</a>
 					</div>
 				</div>
@@ -43,6 +45,7 @@
 			<div class="l-grid__col">
 				<div class="c-tile c-tile--round c-tile--noBdr c-tile--bg">
 					<div class="c-tile__content">
+					<i class="fa fa-bullhorn c-tile__content__icon" aria-hidden="true"></i>
 						<a href="#" class="c-link">Presse</a>
 					</div>
 				</div>
@@ -50,6 +53,7 @@
 			<div class="l-grid__col">
 				<div class="c-tile c-tile--round c-tile--noBdr c-tile--bg">
 					<div class="c-tile__content">
+					<i class="fa fa-handshake-o c-tile__content__icon" aria-hidden="true"></i>
 						<a href="#" class="c-link">Élus</a>
 					</div>
 				</div>

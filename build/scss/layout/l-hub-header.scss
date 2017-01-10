@@ -1,0 +1,47 @@
+/*======================================================================*\
+==========================================================================
+
+//	LAYOUT HUB HEADER
+
+==========================================================================
+\*======================================================================*/
+
+.l-hub-header {
+
+}
+
+.l-hub-header__main {
+	display: flex;
+	flex-direction: column;
+	flex: 2;
+}
+
+.l-hub-header__main__more {
+	margin-top: auto;
+}
+
+.l-hub-header__contact {
+	@include flex(flex-start);
+
+	&--right {
+		justify-content: flex-end;
+	}
+}
+
+.l-hub-header__events {
+	
+}
+
+.l-hub-header__meta {
+	display: flex;
+	flex-direction: column;
+}
+
+.l-hub-header__meta__top {
+	flex: none;
+	margin-bottom: $space--xs;
+}
+
+.l-hub-header__meta__bottom {
+	flex: 1 0 auto;
+}
