@@ -7,7 +7,7 @@ Template Name: Toutes les offres d'emploi
 <?php get_header(); ?>
 <?php
 $nb_result = wp_count_posts('offres-emploi')->publish;
-$output = ($nb_result>1) ? $nb_result.' offres disponibles' : $nb_result.' offre disponible';
+$output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_result.' offre d\'emploi disponible';
 ?>
 
 <div class="page">
