@@ -300,12 +300,141 @@ if ( CUSTOM_POST_TYPE ) {
 	}
 	add_action( 'init', 'cpts_formations' );
 
+	// CPT : Portraits
+	function cpts_portraits() {
+		$labels = array(
+			'name' => __( 'Portraits', '' ),
+			'singular_name' => __( 'Portrait', '' ),
+		);
+
+		$args = array(
+			'label' => __( 'Portrait', '' ),
+			'labels' => $labels,
+			'description' => '',
+			'public' => true,
+			'show_ui' => true,
+			'show_in_rest' => false,
+			'rest_base' => '',
+			'has_archive' => false,
+			'show_in_menu' => true,
+			'exclude_from_search' => false,
+			'capability_type' => 'post',
+			'map_meta_cap' => true,
+			'hierarchical' => false,
+			'rewrite' => array( 'slug' => 'portraits', 'with_front' => true ),
+			'query_var' => true,
+
+			'supports' => array( 'title', 'author' ),
+			'taxonomies' => array( 'category', 'post_tag' ),
+		);
+		register_post_type( 'portraits', $args );
+	}
+	add_action( 'init', 'cpts_portraits' );
+
+	// CPT : Retours d'expérience
+	function cpts_retours() {
+		$labels = array(
+			'name' => __( 'Retours d\'expérience', '' ),
+			'singular_name' => __( 'Retour d\'expérience', '' ),
+		);
+
+		$args = array(
+			'label' => __( 'Retour d\'expérience', '' ),
+			'labels' => $labels,
+			'description' => '',
+			'public' => true,
+			'show_ui' => true,
+			'show_in_rest' => false,
+			'rest_base' => '',
+			'has_archive' => false,
+			'show_in_menu' => true,
+			'exclude_from_search' => false,
+			'capability_type' => 'post',
+			'map_meta_cap' => true,
+			'hierarchical' => false,
+			'rewrite' => array( 'slug' => 'retours-experience', 'with_front' => true ),
+			'query_var' => true,
+
+			'supports' => array( 'title', 'author' ),
+			'taxonomies' => array( 'category', 'post_tag' ),
+		);
+		register_post_type( 'retours-experience', $args );
+	}
+	add_action( 'init', 'cpts_retours' );
+
+	// CPT : Communiqués de presse
+	function cpts_communiques() {
+		$labels = array(
+			'name' => __( 'Communiqués de presse', '' ),
+			'singular_name' => __( 'Communiqué de presse', '' ),
+		);
+
+		$args = array(
+			'label' => __( 'Communiqué de presse', '' ),
+			'labels' => $labels,
+			'description' => '',
+			'public' => true,
+			'show_ui' => true,
+			'show_in_rest' => false,
+			'rest_base' => '',
+			'has_archive' => false,
+			'show_in_menu' => true,
+			'exclude_from_search' => false,
+			'capability_type' => 'post',
+			'map_meta_cap' => true,
+			'hierarchical' => false,
+			'rewrite' => array( 'slug' => 'communiques-presse', 'with_front' => true ),
+			'query_var' => true,
+
+			'supports' => array( 'title', 'author' ),
+			'taxonomies' => array( 'category', 'post_tag' ),
+		);
+		register_post_type( 'communiques-presse', $args );
+	}
+	add_action( 'init', 'cpts_communiques' );
+
+	// CPT : Équipes
+	function cpts_equipes() {
+		$labels = array(
+			'name' => __( 'Équipes', '' ),
+			'singular_name' => __( 'Équipe', '' ),
+		);
+
+		$args = array(
+			'label' => __( 'Équipe', '' ),
+			'labels' => $labels,
+			'description' => '',
+			'public' => true,
+			'show_ui' => true,
+			'show_in_rest' => false,
+			'rest_base' => '',
+			'has_archive' => false,
+			'show_in_menu' => true,
+			'exclude_from_search' => false,
+			'capability_type' => 'post',
+			'map_meta_cap' => true,
+			'hierarchical' => false,
+			'rewrite' => array( 'slug' => 'equipes', 'with_front' => true ),
+			'query_var' => true,
+
+			'supports' => array( 'title', 'author' ),
+			'taxonomies' => array( 'category', 'post_tag' ),
+		);
+		register_post_type( 'equipes', $args );
+	}
+	add_action( 'init', 'cpts_equipes' );
+
+
+
+	fluxi_register_custom_taxo('publics-cible', 'Publics', 'post', true);
+
+
 	// CPT : Cartes
 	function cpts_cartes() {
 		$labels = array(
 			'name' => __( 'Cartes', '' ),
 			'singular_name' => __( 'Carte', '' ),
-			);
+		);
 
 		$args = array(
 			'label' => __( 'Carte', '' ),
