@@ -1,0 +1,62 @@
+/*======================================================================*\
+==========================================================================
+
+//	HUB ADHERENT
+
+==========================================================================
+\*======================================================================*/
+
+$break: $break--m;
+$break2: $break--l;
+
+.adherents {
+	display: flex;
+	flex-direction: column;
+
+	@media screen and (min-width: $break2) {
+		flex-direction: row;
+	}
+}
+
+.adherents__main {
+	display: flex;
+	flex-direction: column;
+
+	@media screen and (min-width: $break2) {
+		flex: 1;
+	}
+}
+
+.adherents__main__links {
+	margin-top: $space--m;
+
+	@media screen and (min-width: $break2) {
+		margin-top: auto;
+	}
+}
+
+.adherents__aside {
+	margin-top: $space--m;
+	display: flex;
+	flex-direction: column;
+
+	@media screen and (min-width: $break) {
+		flex-direction: row;
+		margin-top: $space--l;
+	}
+
+	@media screen and (min-width: $break2) {
+		margin-top: 0;
+		margin-left: $gutter;
+		flex: none;
+	}
+}
+
+.adherents__aside__events {
+	margin-top: $gutter;
+
+	@media screen and (min-width: $break) {
+		margin-top: 0;
+		margin-left: $gutter;
+	}
+}

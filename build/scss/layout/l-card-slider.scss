@@ -23,16 +23,20 @@ $break: $break--m;
 
 .l-card-slider__aside {
 	display: flex;
-	flex: 1 0 100%;
+	flex: none;
 
 	@media screen and(min-width: $break--s) {
 		justify-content: space-between;
 		align-items: baseline;
-		flex: 1;
 	}
 
 	@media screen and(min-width: $break) {
 		flex-direction: column;
+		max-width: $cardW;
+	}
+
+	@media screen and(min-width: $break--l) {
+		max-width: 268px;
 	}
 }
 
@@ -96,10 +100,6 @@ $break: $break--m;
 		margin-top: 0;
 		margin-left: $gutter;
 	}
-
-	@media screen and(min-width: $break--xl) {
-		flex: 2.55;
-	}
 }
 
 .l-card-slider__cards__row  {
@@ -147,9 +147,5 @@ $break: $break--m;
 		display: flex;
 		flex: 1 0 100%;
 		justify-content: flex-end;
-	}
-
-	@media screen and(min-width: $break--xl) {
-		padding-right: $gutter;
 	}
 }

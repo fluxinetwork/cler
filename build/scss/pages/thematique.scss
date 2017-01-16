@@ -1,0 +1,75 @@
+/*======================================================================*\
+==========================================================================
+
+//	THEMATIQUE
+
+==========================================================================
+\*======================================================================*/
+
+$break1 : $break--s;
+$break2 : $break--l;
+
+.thematique {
+	display: flex;
+	flex-direction: column;
+
+	@media screen and(min-width: $break1) {
+		flex-direction: row;
+	}
+}
+
+.thematique__content {
+	display: flex;
+	flex-direction: column;
+
+	@media screen and(min-width: $break2) {
+		flex-direction: row;
+	}
+}
+
+.thematique__content__extra {
+	display: flex;
+	flex-direction: column;
+	margin-top: $space--m;
+	margin-bottom: $gutter;
+
+	@media screen and(min-width: $break1) {
+		flex-direction: row;
+	}
+
+	@media screen and(min-width: $break2) {
+		flex-direction: column;
+		margin-top: 0;
+		margin-left: $gutter;
+		flex: none;
+		width: $cardW;
+	}
+}
+
+.thematique__content__extra__notions {
+	
+}
+
+.thematique__content__extra__chiffre {
+	margin-top: $gutter;
+
+	@media screen and(min-width: $break1) {
+		margin-top: 0;
+		margin-left: $gutter;
+	}
+
+	@media screen and(min-width: $break2) {
+		margin-top: $space--xs;
+		margin-left: 0;
+	}
+}
+
+.thematique__aside {
+	display: none;
+	flex: none;
+
+	@media screen and(min-width: $break2) {
+		display: block;
+		margin-left: $gutter;
+	}
+}

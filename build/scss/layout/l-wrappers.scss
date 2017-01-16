@@ -74,11 +74,11 @@ body {
 //================================================================  BOX
 
 .l-box {
-	padding: $space--s;
+	padding: $space--s !important;
 	background-color: #FFF;
 	border-radius: $radius;
 
 	@media screen and (min-width: $break--m) {
-		padding: $space--m;
+		padding: $space--m !important;
 	}
 }

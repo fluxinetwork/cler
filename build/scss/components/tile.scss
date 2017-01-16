@@ -11,7 +11,7 @@
 	margin: 0 auto;
 	border: 3px solid $c-main;
 	border-radius: $radius;
-	max-width: 200px;
+	max-width: $cardW;
 	transition: $transition;
 
 	&--noBdr {

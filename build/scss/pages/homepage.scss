@@ -8,11 +8,12 @@
 .grid-espaces-dedies {
 	position: relative;
 	margin: 0 auto;
-	max-width: 525px;
+	max-width: $maxW/2;
+	padding-right: $gutter/2 !important;
 }
 
 .hp-hero__content {
-	max-width: 550px;
+	max-width: $maxW/2;
 	text-align: center;
 	margin: 0 auto;
 }

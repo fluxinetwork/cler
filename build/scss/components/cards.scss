@@ -29,7 +29,7 @@
 	@media screen and (min-width: $break--m) {
 		flex-direction: column;
 		align-items: stretch;
-		min-height: 410px;
+		min-height: $cardH;
 		max-width: $cardW;
 
 		&:not(.c-form):hover {
