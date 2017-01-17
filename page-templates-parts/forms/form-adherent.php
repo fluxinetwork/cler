@@ -141,7 +141,7 @@
 	    <div class="c-form__fieldset__row">
 	      	<label class="c-form__label" for="reseaux_cler">Quels réseaux spécifiques animés par le CLER souhaitez-vous rejoindre ?<span class="i-required">•</span></label>
 	      	<label class="c-form__label c-form__label--checkbox" for="reseaux_cler_0">
-	      		<input data-validation="required" class="c-form__label__checkbox" type="checkbox" name="reseaux_cler[]" value="rappel" id="reseaux_cler_0" <?php if(!empty($reseaux_cler) && in_array('rappel',$reseaux_cler))echo 'checked'; ?>>		       
+	      		<input class="c-form__label__checkbox" type="checkbox" name="reseaux_cler[]" value="rappel" id="reseaux_cler_0" <?php if(!empty($reseaux_cler) && in_array('rappel',$reseaux_cler))echo 'checked'; ?>>		       
 	      		<div class="c-form__label__txt">RAPPEL <small>(Réseau des acteurs de la pauvreté et de la précarité énergétique dans le logement)</small></div>
 	      	</label>
 	      	<label class="c-form__label c-form__label--checkbox" for="reseaux_cler_1">
@@ -211,29 +211,27 @@
 	<fieldset class="c-form__fieldset">
 		<legend class="c-form__legend c-form--indicateur">Cotisation</legend>
 		<div class="c-form__fieldset__row c-form--indicateur">
-    		<p><span class="t-fw--700">Pour les entreprise, les associations ou les organismes de formation</span>  le montant de la cotisation au CLER correspond à 1/1000ème du chiffre d'affaires ou du budget.</p>
+    		<p><span class="t-fw--700">Pour les entreprises, les associations ou les organismes de formation</span>  le montant de la cotisation au CLER correspond à 1/1000ème du chiffre d'affaires ou du budget.</p>
 
     		<p><span class="t-fw--700">Pour les collectivités</span>, le montant de la cotisation s'élève à :</p>
     		<ul class="t-list">
-	    		<li><span class="t-fw--700">Région :</span> 0.1€/habitant</li>
-	    		<li><span class="t-fw--700">Département :</span> 0.18€/habitant</li>
-	    		<li><span class="t-fw--700">Syndicat départemental :</span> 500 € + 0.1€/habitant</li>
-	    		<li><span class="t-fw--700">Autre :</span> 0.8€/habitant</li>
+	    		<li><span class="t-fw--700">Région :</span> 0.1 centimes d'€/habitant</li>
+	    		<li><span class="t-fw--700">Département :</span> 0.18 centimes d'€/habitant</li>
+	    		<li><span class="t-fw--700">Syndicat départemental :</span> 500 € + 0.1 centimes d'€/habitant</li>
+	    		<li><span class="t-fw--700">Autre :</span> 0.8 centimes d'€/habitant</li>
     		</ul>
 
     		<p class="t-fw--700 c-valid">Cotisation maximum :</p>
 			<ul class="t-list">
 	    		<li><span class="t-fw--700">Entreprises, organismes de formation et collectivités locales :</span> 2500€</li>
 	    		<li><span class="t-fw--700">Associations :</span> 1000€</li>
-	    		<li><span class="t-fw--700">Syndicat départemental :</span> 500 € + 0.1€/habitant</li>
-	    		<li><span class="t-fw--700">Autre :</span> 0.8€/habitant</li>
     		</ul>
 
     	 	<p><span class="c-valid t-fw--700">Cotisation minimum de 160 €</span> avec montant final arrondi à l'entier inférieur.</p>
 
     		<p><span class="t-fw--700">Le montant de votre cotisation inclut l’abonnement au trimestriel CLER Infos</span>. Si vous souhaitez recevoir plusieurs exemplaires de la revue à un tarif préférentiel réservé à nos adhérents, veuillez nous contacter.</p>
 
-    		<p><span class="t-fw--700">Si vous souhaitez faire un don au CLER</span>, vous pouvez l'ajouter au montant de votre adhésion. 60 % du montant de votre adhésion/don sont déductibles de vos impôts.</p>
+    		<p><span class="t-fw--700">Si vous souhaitez faire un don au CLER, vous pouvez l'ajouter au montant de votre adhésion. Pour les structures fiscalisées, 60 % du montant de votre adhésion/don est déductibles de vos impôts.</p>
 		</div>
 
 		<div class="c-form__fieldset__row">
