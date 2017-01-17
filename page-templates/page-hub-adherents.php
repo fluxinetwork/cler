@@ -14,7 +14,7 @@ Template Name: Hub adhérents
 			<div class="adherents__main__links">
 				<div class="h3 t-fw--700 mgBottom--s">Vous cherchez quelqu'un ?</div>
 				<a href="#" class="c-link">Le C.A</a>
-				<a href="#" class="c-link">L'équipe'</a>
+				<a href="#" class="c-link">L'équipe</a>
 				<a href="#" class="c-link">Le réseau</a>
 			</div>
 		</div>
@@ -33,7 +33,7 @@ Template Name: Hub adhérents
 
 <section class="l-row bg-main bg-main--grad">
 	<div class="l-col">
-		<?php include(TEMPLATEPATH.'/app/inc/proto/card-slider.php'); ?>
+		<?php get_template_part( 'page-templates-parts/sliders/adherents-actus' ); ?>
 	</div>
 </section>
 

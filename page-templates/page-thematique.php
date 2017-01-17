@@ -34,7 +34,7 @@ Template Name: Thématiques
 
 <section class="l-row bg-main bg-main--grad">
 	<div class="l-col">
-		<?php include(TEMPLATEPATH.'/app/inc/proto/card-slider.php'); ?>
+		<?php get_template_part( 'page-templates-parts/sliders/thema-actus' ); ?>
 	</div>
 </section>
 
@@ -44,6 +44,12 @@ Template Name: Thématiques
 		<a href="#" class="c-link">Le C.A</a>
 		<a href="#" class="c-link">L'équipe'</a>
 		<a href="#" class="c-link">Le réseau</a>
+	</div>
+</section>
+
+<section class="l-row bg-accent bg-accent--grad">
+	<div class="l-col">
+		<?php get_template_part( 'page-templates-parts/sliders/thema-offres' ); ?>
 	</div>
 </section>
 

@@ -256,12 +256,13 @@
 
 // BACKGROUND COVER 
 
-@mixin bg-cover($img) {
-	background-image: url(#{$img});
+@mixin bg-cover($img: false) {
+	@if ($img) {
+		background-image: url(#{$img});
+	}
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	background-attachment: fixed;
 }
 
 // VISIBILITY

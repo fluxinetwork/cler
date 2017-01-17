@@ -22,6 +22,7 @@ add_action('acf/init', 'wpc_acf_init');
 
 // ACTIVATE
 define('PAGE_EXCERPT', false);
+define('PAGE_TAXO', true);
 define('ACF_OPTION_PAGE', true);
 define('ADD_THUMBNAILS', false);
 define('CUSTOM_POST_TYPE', true);
@@ -393,8 +394,7 @@ if ( CUSTOM_POST_TYPE ) {
 	}
 	add_action( 'init', 'cpts_equipes' );
 
-	fluxi_register_custom_taxo('publics-cible', 'Publics', 'post', true);
-	fluxi_register_custom_taxo('public-cible', 'Publics', 'evenements', true);
+	fluxi_register_custom_taxo('publics-cible', 'Publics', array('post', 'evenements'), true);
 
 
 	// CPT : Cartes
@@ -443,6 +443,17 @@ if ( PAGE_EXCERPT ) {
 		add_post_type_support( 'page', 'excerpt' );
 	}
 	add_action( 'init', 'add_excerpts_to_pages' );
+}
+
+/**
+ * Add WP core taxonomy to pages
+ */
+
+if ( PAGE_TAXO ) {
+	function add_taxo_to_pages() {
+		register_taxonomy_for_object_type( 'category', 'page' );
+	}
+	add_action( 'init', 'add_taxo_to_pages' );
 }
 
 

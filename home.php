@@ -18,7 +18,7 @@
 
 <section class="l-row bg-main bg-main--grad">
 	<div class="l-col">
-		<?php include('app/inc/proto/card-slider.php'); ?>
+		<?php get_template_part( 'page-templates-parts/sliders/hp-actus' ); ?>
 	</div>
 </section>
 
@@ -64,7 +64,7 @@
 
 <section class="l-row bg-accent bg-accent--grad">
 	<div class="l-col">
-		<?php include('app/inc/proto/card-slider.php'); ?>
+		<?php get_template_part( 'page-templates-parts/sliders/thema-actus' ); ?>
 	</div>
 </section>
 

@@ -529,16 +529,16 @@ h2 {
   font-weight: 400;
 }
 
-h3, .h3, .c-card__header__tag, .c-card__header__title span, .c-card__body__title, .c-tile__content__icon, .c-form__legend {
+h3, .h3, .c-card__header__tag, .c-card__header__title span, .c-card__body__title, .c-tile__content__icon, .c-form__legend, .c-newsH__body__title {
   font-size: 17px;
 }
 @media screen and (min-width: 650px) {
-  h3, .h3, .c-card__header__tag, .c-card__header__title span, .c-card__body__title, .c-tile__content__icon, .c-form__legend {
+  h3, .h3, .c-card__header__tag, .c-card__header__title span, .c-card__body__title, .c-tile__content__icon, .c-form__legend, .c-newsH__body__title {
     font-size: 19px;
   }
 }
 @media screen and (min-width: 960px) {
-  h3, .h3, .c-card__header__tag, .c-card__header__title span, .c-card__body__title, .c-tile__content__icon, .c-form__legend {
+  h3, .h3, .c-card__header__tag, .c-card__header__title span, .c-card__body__title, .c-tile__content__icon, .c-form__legend, .c-newsH__body__title {
     font-size: 21px;
   }
 }
@@ -1420,6 +1420,19 @@ body {
   display: none;
 }
 
+/*======================================================================*\
+==========================================================================
+
+//	LAYOUT LIST
+
+==========================================================================
+\*======================================================================*/
+.l-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .c-btn, .form__submit, .form__cancel {
   color: white;
   cursor: pointer;
@@ -1741,7 +1754,6 @@ body {
 \*======================================================================*/
 .c-card {
   display: flex;
-  position: relative;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
 }
@@ -1803,7 +1815,6 @@ body {
   display: none;
   min-width: 80px;
   background-color: #001135;
-  background-image: url("../img/card-img.jpeg");
   background-size: cover;
   background-position: center;
   border-radius: 3px 0 0 3px;
@@ -1858,11 +1869,11 @@ body {
 }
 
 .c-card__header__cat {
+  justify-content: center;
   padding-top: 1.736rem;
   border-top: 1px solid #fff;
   flex: 1 0 100%;
   font-weight: 400;
-  text-align: center;
   color: #fff;
 }
 
@@ -2974,6 +2985,51 @@ body {
 
 .c-gallery__img {
   border-radius: 3px;
+}
+
+/*======================================================================*\
+==========================================================================
+
+//	COMOSANT NEWS HORIZONTAL
+
+==========================================================================
+\*======================================================================*/
+.c-newsH {
+  display: flex;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.c-newsH__img {
+  flex: none;
+  width: 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 3px 0 0 3px;
+}
+.c-newsH__img:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.c-newsH__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.736rem;
+  background: #fff;
+  border-radius: 0 3px 3px 0;
+}
+@media screen and (min-width: 960px) {
+  .c-newsH__body {
+    padding: 2.8rem;
+  }
+}
+
+.c-newsH__body__title {
+  margin-top: 0.98rem;
 }
 
 /*------------------------------*\

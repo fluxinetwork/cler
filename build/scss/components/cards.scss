@@ -8,10 +8,8 @@
 
 .c-card {
 	display: flex;
-	position: relative;
 	transition: $transition--dynamic;
 	@include bg_with_shadow(#fff);
-
 
 	&::before {
 		transition: $transition--dynamic;
@@ -50,7 +48,6 @@
 	display: none;
 	min-width: 80px;
 	background-color: $c-dark;
-	background-image: url("../img/card-img.jpeg");
 	background-size: cover;
 	background-position: center;
 	border-radius: $radius 0 0 $radius;
@@ -106,12 +103,12 @@
 }
 
 .c-card__header__cat {
+	justify-content: center;
 	padding-top: $space--s;
 	border-top: 1px solid #fff;
 	flex: 1 0 100%;
 	@extend .h5;
 	font-weight: 400;
-	text-align: center;
 	color: #fff;
 }
 
