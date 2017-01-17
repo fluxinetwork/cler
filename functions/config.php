@@ -360,38 +360,7 @@ if ( CUSTOM_POST_TYPE ) {
 		);
 		register_post_type( 'retours-experience', $args );
 	}
-	add_action( 'init', 'cpts_retours' );
-
-	// CPT : Communiqués de presse
-	function cpts_communiques() {
-		$labels = array(
-			'name' => __( 'Communiqués de presse', '' ),
-			'singular_name' => __( 'Communiqué de presse', '' ),
-		);
-
-		$args = array(
-			'label' => __( 'Communiqué de presse', '' ),
-			'labels' => $labels,
-			'description' => '',
-			'public' => true,
-			'show_ui' => true,
-			'show_in_rest' => false,
-			'rest_base' => '',
-			'has_archive' => false,
-			'show_in_menu' => true,
-			'exclude_from_search' => false,
-			'capability_type' => 'post',
-			'map_meta_cap' => true,
-			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'communiques-presse', 'with_front' => true ),
-			'query_var' => true,
-
-			'supports' => array( 'title', 'author' ),
-			'taxonomies' => array( 'category', 'post_tag' ),
-		);
-		register_post_type( 'communiques-presse', $args );
-	}
-	add_action( 'init', 'cpts_communiques' );
+	add_action( 'init', 'cpts_retours' );	
 
 	// CPT : Équipes
 	function cpts_equipes() {
@@ -423,8 +392,6 @@ if ( CUSTOM_POST_TYPE ) {
 		register_post_type( 'equipes', $args );
 	}
 	add_action( 'init', 'cpts_equipes' );
-
-
 
 	fluxi_register_custom_taxo('publics-cible', 'Publics', 'post', true);
 
