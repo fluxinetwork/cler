@@ -29,6 +29,11 @@ $gutter--l: $space--m;
 $bigger: 1.2;
 $smaller: 0.7;
 
+$cardW: 260px;
+$cardH: 410px;
+$maxW: 1100px;
+$contentW: 750px;
+
 
 
 // COLORS
@@ -52,9 +57,6 @@ $grid-tmp: false;
 // STYLES
 
 $radius: 3px;
-$cardW: 260px;
-$cardH: 410px;
-$maxW: 1100px;
 $shadow: 0 0 15px rgba(#000,0.2);
 $shadow--heavy: 0 0 30px rgba(0,0,0,0.3);
 
@@ -84,9 +86,9 @@ $h1-font-sizes: (
 
 $h2-font-sizes: (
 	null : (20px, 1.3),
-	medium : (22px),
-	large : (24px),
-	xlarge : (26px, 1.5),
+	medium : (21px),
+	large : (22px),
+	xlarge : (24px, 1.5),
 );
 
 $h3-font-sizes: (

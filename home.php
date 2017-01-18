@@ -6,10 +6,10 @@
 			<h1 class="l-hero__title"><span class="u-hide@med">CLER, </span>Réseau pour la<br class="u-show@small"> transition énergétique</h1>
 			<h2 class="l-hero__subtitle">We believe that a genuine-fair energy transition is the right answer to our global crisis.</h2>
 			<div class="l-hero__btn">
-			<?php  if (is_adherent_cler()) : ?>
-				<a href="#" class="c-btn c-btn--cta"><span>Explorer le réseau</span></a>
+			<?php  if (!is_adherent_cler()) : ?>
+				<a href="#" class="c-btn c-btn--cta"><span><i class="fa fa-map mgRight--xs"></i>Explorer le réseau</span></a>
 			<?php else : ?>
-				<a href="<?php echo home_url(); ?>/mon-profil/adhesion/?act=add" class="c-btn c-btn--cta"><span>Devenir adhérent</span></a>
+				<a href="<?php echo home_url(); ?>/mon-profil/adhesion/?act=add" class="c-btn c-btn--cta"><span><i class="fa fa-user-plus mgRight--xs"></i>Devenir adhérent</span></a>
 			<?php endif; ?>
 			</div>
 		</div>
@@ -64,7 +64,7 @@
 
 <section class="l-row bg-accent bg-accent--grad">
 	<div class="l-col">
-		<?php get_template_part( 'page-templates-parts/sliders/thema-actus' ); ?>
+		<?php get_template_part( 'page-templates-parts/sliders/hp-offres' ); ?>
 	</div>
 </section>
 

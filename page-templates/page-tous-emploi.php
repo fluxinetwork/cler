@@ -11,13 +11,13 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 ?>
 
 <div class="page">
-	<div class="l-row">
-		<header class="l-col l-col--content l-col--pdL l-header">
-			<h1><?php echo get_the_title(); ?></h1>
+	<div class="l-row bg-accent--grad">
+		<header class="l-col l-col--content">
+			<h1 class="c-white"><?php echo get_the_title(); ?></h1>
 
-			<div class="l-header__meta">
-				<div class="c-dash"></div>
-				<span class="sub-title">&nbsp;<span class="js-nb-results"><?php echo $output; ?></span></span>
+			<div class="c-meta">
+				<div class="c-dash bg-white"></div>
+				<span class="c-meta__meta c-white">&nbsp;<span class="js-nb-results"><?php echo $output; ?></span></span>
 			</div>
 		</header>
 	</div>
@@ -147,17 +147,22 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 								endforeach;
 							endif;
 
-							$output = '<li classs="l-postList__item">';
+							$output = '<li class="l-postList__item">';
 							$output .= '<a href="'.get_permalink().'">';
-							$output .= '<article class="c-offre">';
+							$output .= '<article class="offre">';
 
-							$output .= '<h1 class="c-offre__title">'.get_the_title().'</h1>';
+							$output .= '<h1 class="h2">'.get_the_title().'</h1>';
 
-							$output .= '<div class="c-offre__meta">'.get_field('nom_structure').' <i class="mgLeft--s fa fa-map-marker" aria-hidden="true"></i>'.get_field('ville').' <i class="mgLeft--s fa fa-location-arrow" aria-hidden="true"></i>'.$label_departement.'</div>';
+							$output .= '<div class="c-meta">';
+							$output .= '<div class="c-dash"></div>';
+							$output .= '<span class="c-meta__meta">'.get_field('nom_structure').'</span>';
+							$output .= '<span class="c-meta__meta"><i class="fa fa-map-marker c-meta__meta__icon" aria-hidden="true"></i>'.get_field('ville').'</span>';
+							$output .= '<span class="c-meta__meta"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i>'.$label_departement.'</span>';
+							$output .= '</div>';
 
 							//$output .= '<p class="c-offre_description">'.get_field('descriptif_organisme').'</p>';
 
-							$output .= '<div class="c-offre__tags">';
+							$output .= '<div class="c-offre__tags mgTop--xs">';
 							$output .= '<div class="c-tag">'.$label_type_de_poste.'</div>';
 							$output .= '<div class="c-tag">'.$label_experience.'</div>';
 							$output .= $label_niveau_detude;

@@ -19,6 +19,25 @@
 	transition: $transition--dynamic;
 }
 
+#search-input {
+	@extend .h3;
+	color: #fff;
+	background-color: transparent;
+	flex: 1 0 auto;
+	margin-right: $space--m;
+}
+#search-btn {
+	position: fixed;
+	@include flex(center);
+	width: 100px;
+	height: 100px;
+	bottom: -$space--s;
+	right: -$space--s;
+	border-radius: 50%;
+	background-color: $c-valid;
+	color: #fff;
+}
+
 .navLog,
 .nav-logo {
 	transition: $transition--dynamic;

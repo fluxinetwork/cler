@@ -32,7 +32,7 @@ body {
 	}
 
 	&--content {
-		max-width: 750px;
+		max-width: $contentW;
 	}
 
 	&--pdM {
@@ -59,7 +59,7 @@ body {
 	}
 
 	@media screen and (min-width: $break--xl) {
-		padding: $space--xxl 0;
+		padding: $space--xl*$bigger 0;
 	}
 }
 

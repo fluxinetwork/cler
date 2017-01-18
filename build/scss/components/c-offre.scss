@@ -8,13 +8,7 @@
 
 
 .c-offre {
-	padding: $space--m 0;
-	border-bottom: 1px solid rgba($c-dark, 0.1);
-	transition: $transition;
-
-	&:hover {
-		//transform: scale(1.05);
-	}
+	
 }
 
 .c-offre__title {
@@ -23,6 +17,7 @@
 
 .c-offre__meta {
 	@extend .t-meta;
+	margin-top: $space--xs;
 	margin-bottom: $space--xs;
 
 	.fa {

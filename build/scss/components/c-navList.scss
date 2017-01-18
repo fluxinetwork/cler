@@ -101,7 +101,7 @@
 			flex-direction: column;
 			justify-content: flex-start;
 			display: inline-table;
-			min-width: 250px;
+			width: 320px;
 			@include visibility(false);
 		}
 

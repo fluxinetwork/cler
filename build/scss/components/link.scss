@@ -54,9 +54,9 @@
 	}
 
 	&--shy {
+		@include font-size($h6-font-sizes);	
 		top: 0;
 		padding-bottom: 0;
-		font-size: $font-small;
 		color: rgba($c-dark, 0.5);
 
 		&--white {

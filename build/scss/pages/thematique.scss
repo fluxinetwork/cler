@@ -13,6 +13,10 @@ $break2 : $break--l;
 	display: flex;
 	flex-direction: column;
 
+	@media screen and (min-width: $break) and (max-width: $break2) {
+		max-width: $contentW;
+	}
+
 	@media screen and(min-width: $break1) {
 		flex-direction: row;
 	}

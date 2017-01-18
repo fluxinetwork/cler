@@ -1,0 +1,50 @@
+/*======================================================================*\
+==========================================================================
+
+//	COMPOSANT META
+
+==========================================================================
+\*======================================================================*/
+
+.c-meta {
+	display: flex;
+	align-items: center;
+	margin-top: $space--xs;
+
+	@media screen and (max-width: $break--m) {		
+		.offre & {
+			flex-direction: column;
+			align-items: flex-start;
+
+			.c-dash {
+				display: none;
+			}
+
+			.c-meta__meta {
+				margin-left: 0;
+
+				&:nth-child(3) {
+					margin: $space--xs*$smaller 0;
+				}
+			}
+		}
+	}
+}
+
+.c-meta__meta {
+	display: block;
+	@extend .t-meta;
+	margin-left: $space--s;
+}
+a.c-meta__meta {
+	color: #fff;
+	@include transition;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.c-meta__meta__icon {
+	margin-right: $space--xs*$smaller;
+}

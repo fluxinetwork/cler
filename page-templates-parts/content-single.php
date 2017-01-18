@@ -6,19 +6,19 @@
 
 <article class="single">
 	<div class="l-row bg-light">
-		<header class="l-col l-col--content l-col--pdL l-header l-header--single">
+		<header class="l-col l-col--content">
 			<h1><?php echo get_the_title(); ?></h1>
 
-			<div class="l-header__meta">
+			<div class="c-meta">
 				<div class="c-dash"></div>
 
-				<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta"><?php echo get_the_date(); ?></time> 
+				<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i><?php echo get_the_date(); ?></time> 
 
 				<?php
-					$categories = get_the_category();
-					$cat_name = $categories[0]->name;
+				$categories = get_the_category();
+				$cat_name = $categories[0]->name;
 				?>
-				<span class="c-tag"><?php echo $cat_name; ?></span>
+				<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i><?php echo $cat_name; ?></span>
 			</div>
 
 			<?php

@@ -1,0 +1,68 @@
+/*======================================================================*\
+==========================================================================
+
+//	COMPOSANT SEARCH
+
+==========================================================================
+\*======================================================================*/
+
+// .c-search {
+// 	display: flex;
+// 	align-items: center;
+// 	position: relative;
+
+// 	@media screen and (min-width: $break--l) {
+// 		position: fixed;
+// 		bottom: $space--l;
+// 		right: $space--l;
+// 	}
+// }
+
+// .c-search__label {
+// 	display: none;
+// }
+
+// .c-search__input {
+// 	position: absolute;
+// 	right: 0;
+// 	transform: scaleX(0);
+// 	transform-origin: right;
+// 	max-width: 0;
+// 	background-color: #fff;
+// 	border-radius: 100px;
+// 	height: 46px;
+// 	padding: 0 $space--m;
+// 	@include transition;
+// 	color: $c-dark;
+
+// 	.c-search.is-active &,
+// 	.c-search:hover & {
+// 		transform: scaleX(1);
+// 		max-width: 300px;
+// 		background-color: #f3f3f5;
+// 	}
+
+// 	@media screen and (min-width: $break--l) {
+// 		height: 64px;
+// 	}
+// }
+
+// .c-search__submit {
+// 	width: 46px;
+// 	height: 46px;
+// 	background-color: $c-dark;
+// 	color: #fff;
+// 	border-radius: 50%;
+// 	z-index: 2;
+// 	@include transition;
+
+// 	@media screen and (min-width: $break--l) {
+// 		width: 64px;
+// 		height: 64px;
+// 	}
+
+// 	.c-search:hover & {
+// 		background-color: #f3f3f5;
+// 		color: $c-dark;
+// 	}
+// }

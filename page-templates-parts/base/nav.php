@@ -25,6 +25,7 @@
 		</div>
 
 		<div class="l-nav__login navLog"><?php get_template_part( 'page-templates-parts/user', 'log-btn' ); ?></div>
+		<button id="search-btn" class="js-open-search"><i class="fa fa-search"></i></button>
 
 		<div class="l-nav__buttons u-hide@large">
 			<button class="c-btnArrow js-close-subnav"></button>
@@ -32,10 +33,12 @@
 		</div>	
 		
 	</nav>
+	
+	<div class="l-row c-notify js-notify" id="search">
+		<form method="get" class="l-col c-notify__content" action="<?php bloginfo('url'); ?>/">
+			<label class="is-none" for="s"><?php _e('Recherche :'); ?></label>
+		  	<input type="text" id="search-input" class="js-search-input c-notify__message" value="<?php if (is_search()) : the_search_query(); endif; ?>" name="s" id="s" placeholder="Rechercher" data-swplive="true">
+		  	<button type="submit" class="c-btn" value=""><i class="fa fa-search mgRight--xs"></i>Rechercher</button>  	
+		</form>
+	</div>
 </header>
-
-<form method="get" id="nav__search" class="nav__search is-none" action="<?php bloginfo('url'); ?>/">
-	<label class="is-hidden" for="s"><?php _e('Recherche :'); ?></label>
-  	<input type="text" class="nav__search__input js-search-input" value="<?php if (is_search()) : the_search_query(); endif; ?>" name="s" id="s" placeholder="Rechercher" data-swplive="true">
-  	<button type="submit" class="nav__search__submit icon-check_32 nav-bt" value="" id="nav__search__submit">Rechercher</button>  	
-</form>

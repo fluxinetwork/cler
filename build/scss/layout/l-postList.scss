@@ -9,3 +9,8 @@
 .l-postList {
 	@include list-reset();
 }
+
+.l-postList__item {
+	border-bottom: 1px solid rgba($c-dark, 0.1);
+	padding: $space--m 0;
+}

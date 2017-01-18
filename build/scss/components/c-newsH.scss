@@ -9,29 +9,29 @@
 
 .c-newsH {
 	display: flex;
-	max-width: 80%;
 	margin: 0 auto;
 }
 
 .c-newsH__img {
+	display: none;
 	flex: none;
-	width: 20%;
+	width: 180px;
+	height: 120px;
 	@include bg-cover();
-	@include square();
 	border-radius: $radius 0 0 $radius;
+
+	@media screen and (min-width: $break--m) {
+		display: block;
+	}
 }
 
 .c-newsH__body {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	padding: $space--s;
+	justify-content: center;
+	padding-left: $space--s;
 	background: #fff;
 	border-radius: 0 $radius $radius 0;
-
-	@media screen and (min-width: $break--l) {
-		padding: $space--m;
-	}
 }
 
 .c-newsH__body__title {

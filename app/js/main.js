@@ -588,4 +588,9 @@ function nav() {
 			$('.btn-profil').removeClass('bg-error c-btn--collapse').html($('.btn-profil').data('title')).removeData();
 		}
 	)
+
+	$('.js-open-search').on('click', function(){
+		$('#search').toggleClass('is-open');
+		$('#search-input').focus();
+	})
 }

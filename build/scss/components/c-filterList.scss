@@ -12,9 +12,27 @@
 	width: 90%;
 	max-width: $maxW;
 	padding: $space--s;
-	margin: 0 auto;
-	background-color: rgba($c-dark, 0.05);
-	border-radius: $radius;
+	margin: -$space--xs auto $space--xs auto;
+	//background-color: rgba($c-dark, 0.05);
+	@include bg_with_shadow(#F3F3F5);
+
+	&::after {
+		border-radius: $radius;
+	}
+
+	@media screen and (min-width: $break--m) {		
+		margin-top: -$space--m;
+		margin-bottom: $space--s;
+	}
+
+
+	@media screen and (min-width: $break--xl) {		
+		margin-top: -$space--l;
+	}
+
+	.c-link {
+		//color: #fff;
+	}
 }
 
 .c-filterList__filter {

@@ -14,10 +14,6 @@
 .l-header__meta {
 	@include flex(null baseline);
 	margin-top: $space--xs;
-	
-	.t-meta {
-		margin: 0 $space--s;
-	}
 }
 
 .l-header__excerpt {
