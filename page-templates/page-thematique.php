@@ -16,12 +16,12 @@ Template Name: Thématique
 			<div class="thematique__content__extra">
 				<div class="l-box thematique__content__extra__notions">
 					<span class="t-meta">Notions clés</span>
-					<p class="h5 mgTop--xs">justice, endettement, formation, respiration asynchrone, curcuma, service social.</p>
+					<p class="h5 mgTop--xs"><?php echo get_field('notions_cles'); ?></p>
 				</div>
 
 				<div class="l-box thematique__content__extra__chiffre">
 					<span class="t-meta">Chiffre clé</span>
-					<p class="h5 mgTop--xs">La loi de transition énergétique fixe pour objectif une baisse de 20 % de la consommation d'énergie d'ici à 2030 (par rapport à 2012).</p>
+					<p class="h5 mgTop--xs"><?php echo get_field('chiffre_cle'); ?></p>
 				</div>
 			</div>
 		</div>
