@@ -22,7 +22,7 @@ function get_json_map(){
 	if($post_type == 'adherents'):
 
 		if($tag=='all_cat'):
-			$tag = get_terms( 'type_energie', array(
+			$tag = get_terms( 'type_structure', array(
 				'hide_empty' => 0,
 				'fields' => 'id=>slug'
 			) );
@@ -35,13 +35,13 @@ function get_json_map(){
 			'post_status' => $post_status/*,
 			'tax_query' => array(
 				array(
-					'taxonomy' => 'type_energie',
+					'taxonomy' => 'type_structure',
 					'field'    => 'slug',
 					'terms'    => $tag,
 				)
 			)*/
 		);
-	endif; // End query params for projects
+	endif; // End query params for adherents
 
     $loop = new WP_Query($args);
 

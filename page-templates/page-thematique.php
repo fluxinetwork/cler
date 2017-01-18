@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Thématiques		
+Template Name: Thématique	
 */
 ?>
 <?php get_header(); ?>
