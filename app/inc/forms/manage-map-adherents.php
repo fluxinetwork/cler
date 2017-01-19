@@ -12,21 +12,21 @@ function get_json_map(){
 
 	// Query parameters
 	$suppress_filters = true;
-    $post_type = (isset($_POST['post_type'])) ? $_POST['post_type'] : 'adherents';
+    $post_type = (isset($_POST['post_type'])) ? $_POST['post_type'] : 'cartes';
 	$posts_per_page = (isset($_POST["posts_per_page"])) ? $_POST["posts_per_page"] : -1;
 	$post_status = (isset($_POST["post_status"])) ? $_POST["post_status"] : 'publish';
 
 	$tag = (isset($_POST["tag"])) ? $_POST["tag"] : 'all_cat';
 
 	// Query params for adherents
-	if($post_type == 'adherents'):
+	if($post_type == 'cartes'):
 
-		if($tag=='all_cat'):
+		/*if($tag=='all_cat'):
 			$tag = get_terms( 'type_structure', array(
 				'hide_empty' => 0,
 				'fields' => 'id=>slug'
 			) );
-		endif;
+		endif;*/
 
 		$args = array(
 			'suppress_filters' => $suppress_filters,
@@ -50,7 +50,7 @@ function get_json_map(){
 		$nb_items++;
 
 		// Query respons for projects
-		if($post_type == 'adherents'):
+		if($post_type == 'cartes'):
 
 			// Taxo Slug
 			$field_type_s = get_field_object('type_structure');

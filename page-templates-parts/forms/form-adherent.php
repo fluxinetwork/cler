@@ -263,7 +263,7 @@
 				<input type="checkbox" name="reglement_cler" id="reglement_cler" value="1" data-validation="required" <?php if($reglement_cler=='1')echo 'checked'; ?> class="c-form__label__checkbox">
 				<div class="c-form__label__txt">Je déclare avoir pris connaissance du règlement intérieur du CLER<span class="i-required">•</span></div>
 			</label>
-			<a href="#" class="c-link c-link--shy mgTop--xs">Lire le réglement</a>
+			<a href="<?php echo home_url(); ?>/wp-content/uploads/2017/01/reglement-cler.pdf" class="c-link c-link--shy mgTop--xs" target="_blank">Lire le réglement</a>
 	    </div>
 
 		<div class="c-form__fieldset__row">
@@ -271,7 +271,7 @@
 				<input type="checkbox" name="charte_adherents" id="charte_adherents" value="1" data-validation="required" <?php if($charte_adherents=='1')echo 'checked'; ?> class="c-form__label__checkbox">
 				<div class="c-form__label__txt">Je déclare avoir pris connaissance de la charte adhérent du CLER<span class="i-required">•</span></div>
 			</label>
-			<a href="#" class="c-link c-link--shy mgTop--xs">Lire la charte</a>
+			<a href="<?php echo home_url(); ?>/wp-content/uploads/2017/01/charte-cler.pdf" class="c-link c-link--shy mgTop--xs" target="_blank">Lire la charte</a>
 	    </div>
 
 	</fieldset>

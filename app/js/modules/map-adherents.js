@@ -5,7 +5,7 @@
 \*------------------------------*/
 
 var map = null;
-var themeURL = '/wp-content/themes/cler/';
+var themeURL = 'https://cler.org/dev-cler/wp-content/themes/cler';
 
 var windowW = $(window).width();
 var bpSmall = '400';
@@ -272,7 +272,7 @@ function addMakers(map, data){
     $.each(data, function(i){
 
         // If it's an adherent
-        if(data[i].postType == 'adherents'){
+        if(data[i].postType == 'cartes'){
             // Slug tag
             var tag = data[i].catSlug;
 
@@ -415,7 +415,7 @@ function initFilters(map){
 
     //console.log('Init filters');
 
-    $('.form').on('submit', 'form#form-filter-map', function(e){
+    $('#form-filter-map').on('submit', function(e){
         e.preventDefault();
         e.stopPropagation();
         if( $('#type_structure').val() ){
