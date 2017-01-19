@@ -1,12 +1,7 @@
 <div class="l-card-slider">
 	<aside class="l-card-slider__aside">
 		<div class="l-card-slider__aside__title">
-			<?php 
-			$categories = get_the_category();
-			$cat_id = $categories[0]->cat_ID;
-
-			echo '<span class="c-section-title">Les offres d\'emploi</span>';
-			?>
+			<span class="c-section-title">Les offres d'emploi</span>
 		</div>
 		<div class="l-card-slider__aside__link">
 			<a href="#" class="c-link">Voir tout</a>

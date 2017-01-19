@@ -129,8 +129,8 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 						$ob_type_de_poste = get_field_object('field_574dadcc3c7b1');
 						$label_type_de_poste = $ob_type_de_poste['choices'][ get_field('type_de_poste') ];
 
-						$ob_departement = get_field_object('field_574dab093c7b0');
-						$label_departement = $ob_departement['choices'][ get_field('departement') ];
+						$code_postal = get_field('code_postal');
+						$numero_departement = substr($code_postal,0,-3);
 
 						$ob_experience = get_field_object('field_5773a4bc97554');
 						$label_experience = $ob_experience['choices'][ get_field('experience') ];
@@ -156,12 +156,12 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 						$output .= '<div class="c-dash"></div>';
 						$output .= '<span class="c-meta__meta">'.get_field('nom_structure').'</span>';
 						$output .= '<span class="c-meta__meta"><i class="fa fa-map-marker c-meta__meta__icon" aria-hidden="true"></i>'.get_field('ville').'</span>';
-						$output .= '<span class="c-meta__meta"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i>'.$label_departement.'</span>';
+						$output .= '<span class="c-meta__meta"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i>'.$numero_departement.'</span>';
 						$output .= '</div>';
 
 						//$output .= '<p class="c-offre_description">'.get_field('descriptif_organisme').'</p>';
 
-						$output .= '<div class="c-offre__tags mgTop--xs">';
+						$output .= '<div class="mgTop--s">';
 						$output .= '<div class="c-tag">'.$label_type_de_poste.'</div>';
 						$output .= '<div class="c-tag">'.$label_experience.'</div>';
 						$output .= $label_niveau_detude;

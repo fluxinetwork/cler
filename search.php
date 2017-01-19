@@ -14,7 +14,7 @@ $nb_results = $wp_query->found_posts;
 if ($nb_results == 0) {
   $title = 'Aucun résultat';
 } else {
-  ($nb_results>1) ? $title = $nb_results.' résultats' : $nb_results.' résultat';
+  ($nb_results==1) ? $title = $nb_results.' résultat' : $title = $nb_results.' résultats';
 }
 ?>
 

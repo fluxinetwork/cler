@@ -200,7 +200,18 @@
 	.bg-main--grad & {
 		color: $c-main;
 	}
+	
+	.fa {
+		position: relative;
+	}
+	.fa-chevron-left {
+		left: -2px;
+	}
+	.fa-chevron-right {
+		left: 2px;
+	}
 }
+
 
 .form__submit{
 	@extend %button;

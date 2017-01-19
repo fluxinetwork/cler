@@ -29,6 +29,14 @@ $border: 7px solid $c-accent;
 			width: 70%;
 		}
 	}
+
+	h2 {
+		font-weight: 700;
+
+		&:not(:first-child) {
+			margin-top: $space--l;
+		}
+	}
 }
 
 .fc__blockquote {

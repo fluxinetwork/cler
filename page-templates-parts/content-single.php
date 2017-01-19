@@ -4,7 +4,7 @@
  */
 ?>
 
-<article class="single">
+<article>
 	<div class="l-row bg-light">
 		<header class="l-col l-col--content">
 			<h1><?php echo get_the_title(); ?></h1>

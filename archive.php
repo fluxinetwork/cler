@@ -41,7 +41,7 @@ Template Name: Toutes les actualités
 
 
 		<div class="c-filterList__buttons">
-			<a href="<?php echo home_url().'/mon-profil/gerer-offre-emploi/?act=add'; ?>" class="c-link c-link--shy">Voir nos publications</a>
+			<a href="<?php echo home_url().'/mon-profil/gerer-offre-emploi/?act=add'; ?>" class="c-link c-link--shy">Abonnement newsletter</a>
 			<div class="c-filterList__buttons__submit">
 				<?php
 				if ( isset( $_GET['toky_toky'] ) ) {

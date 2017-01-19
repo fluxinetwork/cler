@@ -76,14 +76,21 @@ $break: $break--m;
 
 .l-card-slider__aside__more {
 	display: none;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-self: flex-end;
+	flex: 1;
+	margin-bottom: 28px;
+
+	&--follow {
+		flex-direction: row;
+		text-align: right;
+		margin-bottom: 21px;
+		flex: none;
+	}
 
 	@media screen and(min-width: $break) {
 		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-		align-self: flex-end;
-		flex: 1;
-		margin-bottom: 28px;
 	}
 }
 

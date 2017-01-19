@@ -113,6 +113,10 @@ p {
 	&--dark {
 		opacity: 1;
 	}
+
+	.fc & {
+		display: inline-block;
+	} 
 }
 
 .t-list {

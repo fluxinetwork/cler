@@ -42,7 +42,7 @@
 }
 
 .c-meta__meta {
-	display: block;
+	@include flex(null center);
 	@extend .t-meta;
 	margin-left: $space--s;
 }

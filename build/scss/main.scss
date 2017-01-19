@@ -26,28 +26,28 @@
 @import "layout/lib/flex";
 @import "layout/l-wrappers";
 @import "layout/l-nav";
-@import "layout/hero";
+@import "layout/l-hero";
 @import "layout/l-card-slider";
 @import "layout/l-cockpit";
 @import "layout/l-overlay";
 @import "layout/l-postList";
-@import "layout/footer";
+@import "layout/l-footer";
 //@import "layout/l-header";
 @import "layout/l-hub-header";
 
 // COMPONENTS
 
-@import "components/buttons";
-@import "components/spinners";
-@import "components/cards";
-@import "components/tile";
-@import "components/section-title";
-@import "components/link";
+@import "components/c-buttons";
+@import "components/c-spinners";
+@import "components/c-cards";
+@import "components/c-tile";
+@import "components/c-section-title";
+@import "components/c-link";
 //@import "components/c-nav";
 @import "components/c-navList";
 @import "components/c-form";
 @import "components/c-notify";
-@import "components/map";
+//@import "components/c-map";
 @import "components/c-dash";
 @import "components/c-figure";
 //@import "components/c-offre";
@@ -58,7 +58,7 @@
 @import "components/c-gallery";
 @import "components/c-newsH";
 @import "components/c-meta";
-@import "components/c-search";
+//@import "components/c-search";
 
 
 // PAGES 
@@ -69,6 +69,8 @@
 @import "pages/profil";
 @import "pages/hub-adherents";
 @import "pages/thematique";
+@import "pages/map";
+@import "pages/single";
 
 // FORMS 
 @import "components/theforms";

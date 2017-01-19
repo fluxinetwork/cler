@@ -25,6 +25,13 @@
 		margin-bottom: $space--s;
 	}
 
+	@media screen and (min-width: $break--l) {		
+		&--small {
+			width: $contentW;
+			//transform: translateX(-20%);
+		}
+	}
+
 
 	@media screen and (min-width: $break--xl) {		
 		margin-top: -$space--l;

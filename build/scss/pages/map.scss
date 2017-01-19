@@ -1,0 +1,69 @@
+/*======================================================================*\
+==========================================================================
+
+//	PAGE MAP
+
+==========================================================================
+\*======================================================================*/
+
+#map{
+	width:100%;
+	height:800px;
+	max-height: 80vh;	
+}
+
+//============================================================ INFO WINDOW
+
+.infowindow--content{
+	.infowindow--content--title{
+		margin:0;
+		padding:0;
+		color:#fff;
+	}
+	p{
+		margin:0;
+		padding:0;
+		color:#f3f3f3;
+	}
+	.button{
+		color:#005d8c;
+		background:#fff;
+		width: 100%;
+	}
+}
+
+
+
+.infowindow--bg{
+	.infowindow--bg--corne{}
+	.infowindow--bg--corne__l div{background:#005d8c !important;}
+	.infowindow--bg--corne__r div{background:#005d8c !important;}
+	.infowindow--bg--shadow__corne{}
+
+	.infowindow--bg--bubble{
+		background:#005d8c !important;
+		border-radius: 3px !important;
+	}
+	.infowindow--bg--shadow__bubble{}
+}
+
+.infowindow--close{}
+
+//============================================================= MAP HOLDER
+
+.map__holder {
+	position: relative
+}
+
+.map__holder__loader {
+	display: none;
+}
+
+.map__holder__filters {
+	position: absolute;
+	@include centered();
+}
+
+.map__holder__cards {
+	display: none;
+}

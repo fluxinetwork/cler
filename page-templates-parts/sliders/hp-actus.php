@@ -3,9 +3,12 @@
 		<div class="l-card-slider__aside__title">
 			<span class="c-section-title">L'actualité de la transition</span>
 		</div>
+
 		<div class="l-card-slider__aside__link">
 			<a href="#" class="c-link">Voir tout</a>
 		</div>
+
+		<?php get_template_part( 'page-templates-parts/sliders/follow' ); ?>
 	</aside>
 
 	<div class="l-card-slider__cards">

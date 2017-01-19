@@ -5,3 +5,87 @@
 
 ==========================================================================
 \*======================================================================*/
+
+
+//================================================================== OFFRE
+
+$break: $break--m;
+
+.offre-dashboard {
+
+}
+
+.offre-dashboard__tags {
+	@extend .l-box;
+	display: flex;
+	flex-direction: column;
+
+	@media screen and (min-width: $break) {
+		align-items: center;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+} 
+
+.offre-dashboard__zone__tags__limite {
+	@extend .t-meta;
+	opacity: 1;
+	margin-top: $space--s;
+
+	@media screen and (min-width: $break) {
+		margin-top: 0;
+	}
+}
+
+.offre-dashboard__id {
+	display: flex;
+	flex-flow: column wrap;
+	margin-top: $gutter;
+
+	@media screen and (min-width: $break) {
+		flex-direction: row;
+	}
+}
+
+.offre-dashboard__id__who {
+	@extend .l-box;
+	margin-bottom: $gutter;
+
+	@media screen and (min-width: $break) {
+		flex: 1 0 47%;
+		margin-bottom: 0;
+	}
+}
+
+
+.offre-dashboard__id__where {
+	position: relative;
+	@extend .l-box;
+
+	@media screen and (min-width: $break) {
+		margin-left: $gutter;
+		flex: 1 0 47%;
+		@include flex(center);
+	}
+}
+
+.offre-dashboard__id__where__nb {
+	display: none;
+	position: absolute;
+	font-size: 200px;
+	font-weight: 700;
+	opacity: 0.2;
+	color: $c-accent;
+
+	@media screen and (min-width: $break) {
+		display: block;
+	}
+}
+
+.offre-dashboard__id__where__txt {
+	z-index: 2;
+
+	@media screen and (min-width: $break) {
+		text-align: center;
+	}
+}

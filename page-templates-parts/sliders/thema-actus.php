@@ -9,9 +9,12 @@
 			echo '<span class="c-section-title">L\'actualité<br> <span class="t-fw--400 h5 u-show@large">#'.$cat_slug.'</span></span>';
 			?>
 		</div>
+
 		<div class="l-card-slider__aside__link">
 			<a href="#" class="c-link">Voir tout</a>
 		</div>
+
+		<?php get_template_part( 'page-templates-parts/sliders/follow' ); ?>
 	</aside>
 
 	<div class="l-card-slider__cards">
