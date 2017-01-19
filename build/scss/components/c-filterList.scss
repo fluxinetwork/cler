@@ -14,7 +14,7 @@
 	padding: $space--s;
 	margin: -$space--xs auto $space--xs auto;
 	//background-color: rgba($c-dark, 0.05);
-	@include bg_with_shadow(#F3F3F5);
+	@include bg_with_shadow($c-neutral);
 
 	&::after {
 		border-radius: $radius;

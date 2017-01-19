@@ -83,3 +83,7 @@
 .bg-accent--grad {
 	background-image: radial-grad($c-accent, 50%);
 }
+
+.bg-dark--grad {
+	background-image: radial-grad($c-dark, 50%);
+}

@@ -232,6 +232,10 @@ html {
   background-image: radial-gradient(circle, #ffa64d, #FF9933 100%);
 }
 
+.bg-dark--grad {
+  background-image: radial-gradient(circle, #00194f, #001135 100%);
+}
+
 /*------------------------------*\
 
     #SPACES
@@ -283,6 +287,10 @@ html {
 
 .height--xxl {
   height: 12.04rem !important;
+}
+
+.no-pd {
+  padding: 0 !important;
 }
 
 .no-pdTop {
@@ -589,16 +597,16 @@ h5, .h5, .c-card__header__cat, .c-form p, .c-form__input,
   }
 }
 
-h6, .h6, .t-meta, .c-meta__meta, .c-tag {
+h6, .h6, .t-meta, .c-meta__meta, .pagination .page-numbers, .c-tag {
   font-size: 10px;
 }
 @media screen and (min-width: 650px) {
-  h6, .h6, .t-meta, .c-meta__meta, .c-tag {
+  h6, .h6, .t-meta, .c-meta__meta, .pagination .page-numbers, .c-tag {
     font-size: 11px;
   }
 }
 @media screen and (min-width: 960px) {
-  h6, .h6, .t-meta, .c-meta__meta, .c-tag {
+  h6, .h6, .t-meta, .c-meta__meta, .pagination .page-numbers, .c-tag {
     font-size: 12px;
   }
 }
@@ -622,7 +630,7 @@ p {
   margin-top: 1.736rem;
 }
 
-.t-meta, .c-meta__meta {
+.t-meta, .c-meta__meta, .pagination .page-numbers {
   letter-spacing: 0.5px;
   font-weight: 700;
   text-transform: uppercase;
@@ -3457,9 +3465,21 @@ body {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-left: 1.736rem;
   background: #fff;
   border-radius: 0 3px 3px 0;
+}
+@media screen and (min-width: 650px) {
+  .c-newsH__body {
+    padding-left: 1.736rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .c-newsH__body .c-dash {
+    display: none;
+  }
+  .c-newsH__body .c-meta__meta:nth-child(2) {
+    margin-left: 0;
+  }
 }
 
 .c-newsH__body__title {
@@ -3481,6 +3501,12 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 0.98rem;
+}
+.c-meta--white .c-dash {
+  background-color: #fff;
+}
+.c-meta--white .c-meta__meta {
+  color: #fff;
 }
 @media screen and (max-width: 650px) {
   .offre .c-meta {
@@ -3604,10 +3630,10 @@ a.c-meta__meta:hover {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100px;
-  height: 100px;
-  bottom: -1.736rem;
-  right: -1.736rem;
+  width: 64px;
+  height: 64px;
+  bottom: 1.736rem;
+  right: 1.736rem;
   border-radius: 50%;
   background-color: #00C15F;
   color: #fff;
@@ -3643,6 +3669,21 @@ a.c-meta__meta:hover {
 
 .footer .l-col {
   min-height: 20vh;
+}
+
+.pagination {
+  margin-top: 1.736rem;
+}
+.pagination .screen-reader-text,
+.pagination .next,
+.pagination .prev {
+  display: none;
+}
+.pagination .page-numbers {
+  margin-right: 0.98rem;
+}
+.pagination .page-numbers:hover, .pagination .page-numbers.current, .pagination .page-numbers.dots {
+  opacity: 1;
 }
 
 /*------------------------------*\

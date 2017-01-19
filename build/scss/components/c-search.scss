@@ -39,7 +39,7 @@
 // 	.c-search:hover & {
 // 		transform: scaleX(1);
 // 		max-width: 300px;
-// 		background-color: #f3f3f5;
+// 		background-color: $c-neutral;
 // 	}
 
 // 	@media screen and (min-width: $break--l) {
@@ -62,7 +62,7 @@
 // 	}
 
 // 	.c-search:hover & {
-// 		background-color: #f3f3f5;
+// 		background-color: $c-neutral;
 // 		color: $c-dark;
 // 	}
 // }

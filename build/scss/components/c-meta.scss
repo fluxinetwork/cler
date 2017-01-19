@@ -11,6 +11,16 @@
 	align-items: center;
 	margin-top: $space--xs;
 
+	&--white {
+		.c-dash {
+			background-color: #fff;
+		}
+
+		.c-meta__meta {
+			color: #fff;
+		}
+	}
+
 	@media screen and (max-width: $break--m) {		
 		.offre & {
 			flex-direction: column;

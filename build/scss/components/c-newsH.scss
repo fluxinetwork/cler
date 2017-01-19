@@ -6,6 +6,7 @@
 ==========================================================================
 \*======================================================================*/
 
+$break: $break--m;
 
 .c-newsH {
 	display: flex;
@@ -20,7 +21,7 @@
 	@include bg-cover();
 	border-radius: $radius 0 0 $radius;
 
-	@media screen and (min-width: $break--m) {
+	@media screen and (min-width: $break) {
 		display: block;
 	}
 }
@@ -29,9 +30,22 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding-left: $space--s;
 	background: #fff;
 	border-radius: 0 $radius $radius 0;
+
+	@media screen and (min-width: $break) {
+		padding-left: $space--s;
+	}
+
+	@media screen and (max-width: $break) {
+		.c-dash {
+			display: none;
+		}
+
+		.c-meta__meta:nth-child(2) {
+			margin-left: 0;
+		}
+	}
 }
 
 .c-newsH__body__title {

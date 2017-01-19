@@ -29,10 +29,10 @@
 #search-btn {
 	position: fixed;
 	@include flex(center);
-	width: 100px;
-	height: 100px;
-	bottom: -$space--s;
-	right: -$space--s;
+	width: 64px;
+	height: 64px;
+	bottom: $space--s;
+	right: $space--s;
 	border-radius: 50%;
 	background-color: $c-valid;
 	color: #fff;
@@ -69,4 +69,29 @@
 
 .footer .l-col {
 	min-height: 20vh;
+}
+
+//============================================================= PAGINATION
+
+.pagination {
+	margin-top: $space--s;
+	//text-align: center;
+
+
+	.screen-reader-text,
+	.next,
+	.prev {
+		display: none;
+	}
+
+	.page-numbers {
+		@extend .t-meta;
+		margin-right: $space--xs;
+		
+		&:hover,
+		&.current,
+		&.dots {
+			opacity: 1;
+		}
+	}
 }
