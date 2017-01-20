@@ -26,64 +26,65 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
   <title>CLER - Appel à cotisation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body bgcolor="#ffffff" style="margin:0;">
-    <table width="100%" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td>         
-            <p>            
-              Montreuil, le '.$today.'<br><br>
+<body style="background-color: #fff5e5; color: #333; margin:0; font-family: gotham,helvetica,arial,sans-serif; font-size: 16px;">
+  <table width="100%" style="background-color: #fff5e5; color: #333; font-family: gotham,helvetica,arial,sans-serif; font-size: 16px; text-align:center; margin:0; padding:0;" border="0" cellpadding="0" cellspacing="0">
+    <tr style="margin:0;padding:0;">
+      <td style="margin:0;padding:0;">
+        <table style="text-align:center; max-width:600px; width:100%;margin:0 auto 40px;padding:20px;" border="0" cellpadding="0" cellspacing="0">
+          <tr style="margin:0;padding:0;">
+            <td style="margin:0;padding:0;">
+              <table width="100%" style="text-align:left; margin:20px 0;" border="0" cellpadding="0" cellspacing="0">
+                <tr style="margin:0;padding:0;">
+                  <td style="background: #fff; padding:20px 30px 30px;">
+                        
+                    <h3>Montreuil, le '.$today.'</h3>
 
-              Destinataire :<br>
-              '.$nom_structure.'<br>
-              '.$adresse_structure.'
-            </p>
-           </td>
-        </tr>
+                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;"><strong>Destinataire :</strong><br>
+                    '.$nom_structure.'<br>
+                    '.$adresse_structure.'</p>
+             
+                    <hr style="border:1px dashed #ccc">
 
-        <tr>
-          <td>
-            <p>
-              Bonjour,<br><br>
 
-              Pour confirmer votre adhésion ou ré-adhésion au CLER – Réseau pour la transition énergétique, nous vous prions d\'acquitter rapidement votre cotisation pour l\'année '.$annee_cotisation.'.<br><br>
+                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">
+                      Bonjour,<br><br>
 
-              A réception du paiement, nous vous ferons parvenir un reçu attestant du règlement de votre cotisation.<br><br>
+                      Pour confirmer votre adhésion ou ré-adhésion au CLER – Réseau pour la transition énergétique, nous vous prions d\'acquitter rapidement votre cotisation pour l\'année '.$annee_cotisation.'.<br><br>
 
-              Vous trouverez ci-dessous l’appel à cotisation :
-            </p>
-          </td>
-        </tr>
+                      A réception du paiement, nous vous ferons parvenir un reçu attestant du règlement de votre cotisation.<br><br>
 
-        <tr>
-          <td>
-            <p style="border:2px solid #000; padding:15px;">
-              <strong>Appel à cotisation '.$annee_cotisation.'</strong><br><br>
+                      Vous trouverez ci-dessous l’appel à cotisation :
+                    </p>
+                    
+                    <p style="border:2px solid #000; padding:15px;text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">
+                      <strong>Appel à cotisation '.$annee_cotisation.'</strong><br><br>
 
-              Pour l\'adhésion de '.$nom_structure.' au CLER – Réseau pour la transition énergétique (Association loi 1901 non assujettie à la TVA) demandée le '.$today.'.<br><br>
+                      Pour l\'adhésion de '.$nom_structure.' au CLER – Réseau pour la transition énergétique (Association loi 1901 non assujettie à la TVA) demandée le '.$today.'.<br><br>
 
-              Montant de l’adhésion : '.$montant_cotisation.',00 €
-            </p>
-          </td>
-        </tr>
+                      Montant de l’adhésion : '.$montant_cotisation.',00 €
+                    </p>
+                    <br>
+                    <h3>Comment payer ?</h3>
 
-        <tr>
-          <td>
-            <h2>Comment payer ?</h2>
-            <ul>
-              <li>Si vous souhaitez régler l\'adhésion par carte bancaire, merci de procéder au règlement via la page de <a href="'.$refer_url.'">paiement en ligne</a>.</li>
-              <li>Si vous souhaitez payer par chèque, merci d\'adresser votre règlement à l\'ordre du CLER et de l\'envoyer par voie postale au Mundo-m, 47 avenue Pasteur, 93100 Montreuil.</li>
-              <li>Pour tout paiement par mandat administratif, merci de nous adresser un bon de commande à l\'adresse suivante : reseau@cler.org </li>
-          </ul>
-          </td>
-        </tr> 
+                    <h4>Réglement par carte bancaire</h4>                 
+                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Merci de procéder au règlement via la page de <a style="color: #00c15f; display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-bottom: 3px solid #00c15f; text-decoration: none;" href="'.$refer_url.'" target="_blank">paiement en ligne</a>.</p>
 
-        <tr>
-          <td>
-            '.$footer_mail.'
-          </td>
-        </tr> 
+                    <h4>Réglement par chèque</h4>
+                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Merci d\'adresser votre règlement de '.$montant_offre.',00 € à l\'ordre du CLER et de l\'envoyer par voie postale à :<br>Mundo-m, 47 avenue Pasteur, 93100 Montreuil.</p>                    
+        
+                    <h4>Réglement par mandat administratif</h4>
+                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Merci de nous adresser un bon de commande à l\'adresse suivante : reseau@cler.org </p>
 
-    </table>
+                  </td>
+                </tr> 
+              </table>
+              '.$footer_mail.'
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>';
 ?>

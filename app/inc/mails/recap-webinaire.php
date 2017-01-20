@@ -24,23 +24,32 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
   <title>CLER - Webinaire du '.$date_webinaire.'</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body bgcolor="#ffffff" style="margin:0;">
-    <table width="100%" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td>          
-            <p>Bonjour '.$prenom.' '.$nom.',<br><br>
+<body style="background-color: #fff5e5; color: #333; margin:0; font-family: gotham,helvetica,arial,sans-serif; font-size: 16px;">
+  <table width="100%" style="background-color: #fff5e5; color: #333; font-family: gotham,helvetica,arial,sans-serif; font-size: 16px; text-align:center; margin:0; padding:0;" border="0" cellpadding="0" cellspacing="0">
+    <tr style="margin:0;padding:0;">
+      <td style="margin:0;padding:0;">
+        <table style="text-align:center; max-width:600px; width:100%;margin:0 auto 40px;padding:20px;" border="0" cellpadding="0" cellspacing="0">
+          <tr style="margin:0;padding:0;">
+            <td style="margin:0;padding:0;">
+              <table width="100%" style="text-align:left; margin:20px 0;" border="0" cellpadding="0" cellspacing="0">
+                <tr style="margin:0;padding:0;">
+                  <td style="background: #fff; padding:20px 30px 30px;">          
+                    
+                    <h3>Bonjour '.$prenom.' '.$nom.'</h3>
 
-            Vous venez de vous inscrire au prochain <em>Mardi de la transition énergétique</em> organisé par le CLER – Réseau pour la transition énergétique, et nous vous en remercions. Votre participation au web-séminaire du '.$date_webinaire.' a bien été prise en compte.<br><br>
+                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Vous venez de vous inscrire au prochain <em>Mardi de la transition énergétique</em> organisé par le CLER – Réseau pour la transition énergétique, et nous vous en remercions.<br><br>Votre participation au web-séminaire du '.$date_webinaire.' a bien été prise en compte.<br><br>
 
-            Vous recevrez un email récapitulant le programme de ce web-séminaire, les intervenants et les modalités de votre participation quelques jours précédents l\'événement.</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            '.$footer_mail.'
-          </td>
-        </tr>       
-    </table>
+                    Vous recevrez un email récapitulant le programme de ce web-séminaire, les intervenants et les modalités de votre participation quelques jours précédents l\'événement.</p>
+                  </td>
+                </tr>
+              </table>
+              '.$footer_mail.'
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>';
 ?>
