@@ -27,7 +27,27 @@ Template Name: Thématique
 		</div>
 
 		<div class="thematique__aside">
-			<?php include(TEMPLATEPATH.'/app/inc/proto/card-contact.php'); ?>
+			<?php
+				$portrait = get_field('portrait_referent');
+				$id = $portrait[0];
+				$post_img_id = get_field('main_image', $id);
+				$post_img_array = wp_get_attachment_image_src($post_img_id, 'full', true);
+				$post_img_url = $post_img_array[0];	
+				$title = get_the_title($id);
+				$permalink = get_permalink($id);
+			?>
+			<a href="<?php echo $permalink; ?>">
+				<article class="c-card">
+					<div class="c-card__header" style="background-image: url(<?php echo $post_img_url; ?>);"></div>
+					<div class="c-card__body">
+						<span class="t-meta">Portrait</span>
+						<h1 class="c-card__body__title"><?php echo $title; ?></h1>
+					</div>
+					<div class="c-card__footer">
+						<span class="c-link c-link--more">Lire la suite</span>
+					</div>
+				</article>
+			</a>
 		</div>
 	</div>
 </section>
@@ -38,14 +58,19 @@ Template Name: Thématique
 	</div>
 </section>
 
+<?php if (get_field('liens_utiles')) : ?>
 <section class="l-row">
 	<div class="l-col t-align--c">
 		<h2 class="c-section-title">Liens utiles</h2>
-		<a href="#" class="c-link">Le C.A</a>
-		<a href="#" class="c-link">L'équipe'</a>
-		<a href="#" class="c-link">Le réseau</a>
+		<?php
+		$liens = get_field('liens_utiles');
+		foreach ($liens as $lien) {
+			echo '<a href="'.$lien['url_lien'].'" class="c-link">'.$lien['texte_lien'].'</a>';
+		}
+		?>
 	</div>
 </section>
+<?php endif; ?>
 
 <section class="l-row bg-accent bg-accent--grad">
 	<div class="l-col">

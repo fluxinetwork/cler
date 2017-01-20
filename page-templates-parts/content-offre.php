@@ -50,7 +50,7 @@
 <article>
 
 	<div class="l-row bg-accent--grad">
-		<header class="l-col l-col--content">
+		<header class="l-col l-col--content pdBottom--m">
 			<h1 class="c-white"><?php echo get_the_title(); ?></h1>
 
 			<div class="c-meta c-meta--white">
@@ -80,7 +80,7 @@
 					<div class="offre-dashboard__id__where__nb"><?php echo $numero_departement; ?></div>
 					<div class="offre-dashboard__id__where__txt">
 						<div class="t-meta t-meta--dark"><i class="fa fa-map-marker c-meta__meta__icon" aria-hidden="true"></i><?php echo $ville; ?></div>
-						<div class="t-meta t-meta--dark mgTop--s"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i><?php echo $label_departement; ?></div>
+						<div class="t-meta t-meta--dark mgTop--xs"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i><?php echo $label_departement; ?></div>
 					</div>
 				</div>
 			</div>
@@ -99,15 +99,19 @@
 
 			<h2>Profil recherché</h2>		
 			<p><?php echo get_field( 'profil_recherche' ); ?></p>
+		</div>
+	</div>
 
-			<h2>Postulez avant le <?php echo $date_candidature->format('j M Y'); ?></h2>
+	<div class="l-row bg-light">
+		<div class="l-col l-col--content fc">
+			<h2 clas>Postulez avant le <?php echo $date_candidature->format('j M Y'); ?></h2>
 
 			<?php
 				if( $val_modalite_candidature ): 
 					foreach( $val_modalite_candidature as $v ):
 						if( $ch_modalite_candidature[ $v ] == 'Par courrier' ):	?>
 							<p class="h5">
-								<span class="t-meta mgBottom--xs"><i class="fa fa-envelope c-meta__meta__icon" aria-hidden="true"></i><?php echo $ch_modalite_candidature[ $v ]; ?> :</span><br>
+								<span class="t-meta t-meta--dark mgBottom--xs"><i class="fa fa-envelope c-meta__meta__icon" aria-hidden="true"></i><?php echo $ch_modalite_candidature[ $v ]; ?> :</span><br>
 								<?php echo get_field( 'nom_structure' ); ?><br>
 								<?php echo get_field( 'adresse' ); ?><br>		
 								<?php echo get_field( 'code_postal' ); ?> 
@@ -115,7 +119,7 @@
 							</p>
 						<?php elseif( $ch_modalite_candidature[ $v ] == 'Par mail' ):?>
 							<p class="h5">
-								<span class="t-meta mgBottom--xs"><i class="fa fa-paper-plane c-meta__meta__icon" aria-hidden="true"></i><?php echo $ch_modalite_candidature[ $v ]; ?> :</span><br>
+								<span class="t-meta t-meta--dark mgBottom--xs"><i class="fa fa-paper-plane c-meta__meta__icon" aria-hidden="true"></i><?php echo $ch_modalite_candidature[ $v ]; ?> :</span><br>
 								<?php echo get_field( 'nom_prenom_contact' ); ?>, 
 								<?php echo get_field( 'fonction_contact' ); ?><br>	
 								<?php echo get_field( 'contact_email' ); ?> 			

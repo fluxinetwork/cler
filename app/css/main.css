@@ -305,12 +305,20 @@ html {
   padding-top: 1.736rem !important;
 }
 
+.pdBottom--s {
+  padding-bottom: 1.736rem !important;
+}
+
 .pd--m {
   padding: 2.8rem !important;
 }
 
 .pdRight--m {
   padding-right: 2.8rem !important;
+}
+
+.pdBottom--m {
+  padding-bottom: 2.8rem !important;
 }
 
 .pdLeft--m {
@@ -1942,7 +1950,7 @@ body {
 }
 @media screen and (min-width: 650px) {
   .c-card__body__title {
-    margin-top: 0.686rem;
+    margin-top: 0.49rem;
   }
 }
 
@@ -3618,8 +3626,8 @@ a.c-meta__meta:hover {
 .offre-dashboard__id__where__nb {
   display: none;
   position: absolute;
-  font-size: 200px;
-  font-weight: 700;
+  font-size: 180px;
+  font-weight: 900;
   opacity: 0.2;
   color: #FF9933;
 }

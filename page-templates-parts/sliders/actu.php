@@ -1,6 +1,6 @@
 <?php
 
-$post_img_id = $post_img_id = get_field('main_image');
+$post_img_id = get_field('main_image');
 $post_img_array = wp_get_attachment_image_src($post_img_id, 'full', true);
 $post_img_url = $post_img_array[0];	
 
