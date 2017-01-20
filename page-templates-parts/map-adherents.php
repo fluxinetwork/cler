@@ -17,14 +17,13 @@
 </div>
 
 <div class="map__holder">
-	<aside class="c-filterList c-filterList--small map__holder__filters">
-		<form id="form-filter-map" role="form">
-		<div class="l-grid">
-		    <div class="c-filterList__filter l-grid__col">
+	<aside class="l-filterList l-filterList--small map__holder__filters">
+		<form id="form-filter-map" role="form" class="l-monoFilter">
+		    <div class="l-filterList__filter">
 		    	<label for="departement" class="is-none">Département</label>
 		    	<i class="fa fa-filter" aria-hidden="true"></i>
 				<select class="c-form__select" name="type_structure" id="type_structure" data-validation="required">
-					<option disabled selected value=""> Quel type de structure ?</option>
+					<option disabled selected value="">Type de structure ?</option>
 					<?php
 						if( $ob_type_struct ):
 							foreach( $ob_type_struct['choices'] as $k => $v ):
@@ -34,26 +33,14 @@
 					?>
 				</select>	
 		    </div>
-		</div>
 
 			<input type="hidden" value="offres-emploi" name="pt_slug">
 			<input type="hidden" value="<?php echo mt_rand(0,9999); ?>" name="toky_toky">
-
 			<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
 
+			<button type="submit" id="submit-filters" class="c-btn l-monoFilter__btn">Filtrer</button>
 
-			<div class="c-filterList__buttons">
-				<a href="<?php echo home_url().'/mon-profil/gerer-offre-emploi/?act=add'; ?>" class="c-link c-link--shy">Adhérer au CLER</a>
-				<div class="c-filterList__buttons__submit">
-					<?php
-					if ( isset( $_GET['toky_toky'] ) ) {
-						echo '<button type="reset" class="c-btn c-btn--reset">Reset</button>';
-					}
-					?>
-					<button type="submit" id="submit-filters" class="c-btn">Filtrer</button>
-				</div>
-			</div>
-
+			<a href="" class="c-link c-link--shy l-monoFilter__link">Devenir adhérent</a>
 		</form>
 	</aside>
 

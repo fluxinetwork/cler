@@ -20,11 +20,11 @@ Template Name: Toutes les formations
 		</header>
 	</div>
 
-	<aside class="c-filterList">
+	<aside class="l-filterList">
 		<form id="form-filter-posts" role="form">
 			<div class="l-grid">	
 
-				<div class="c-filterList__filter l-grid__col">
+				<div class="l-filterList__filter l-grid__col">
 					<label for="departement" class="is-none">Département</label>
 					<i class="fa fa-location-arrow" aria-hidden="true"></i>
 					<select class="c-form__select" name="departement" id="departement">
@@ -37,7 +37,7 @@ Template Name: Toutes les formations
 					</select>
 				</div>
 
-				<div class="c-filterList__filter l-grid__col">
+				<div class="l-filterList__filter l-grid__col">
 				  <label for="secteur" class="is-none">Secteur</label>
 				  <i class="fa fa-briefcase" aria-hidden="true"></i>
 				  <select class="c-form__select" name="secteur" id="secteur">
@@ -52,7 +52,7 @@ Template Name: Toutes les formations
 				  </select>
 				</div>
 
-				<div class="c-filterList__filter l-grid__col">
+				<div class="l-filterList__filter l-grid__col">
 				  <label for="thematique" class="is-none">Thématique</label>
 				  <i class="fa fa-tag" aria-hidden="true"></i>
 				  <select class="c-form__select" name="thematique" id="thematique">
@@ -72,7 +72,7 @@ Template Name: Toutes les formations
 				  </select>
 				</div>
 
-				<div class="c-filterList__filter l-grid__col">
+				<div class="l-filterList__filter l-grid__col">
 				  <label for="publics" class="is-none">Public</label>
 				  <i class="fa fa-users" aria-hidden="true"></i>
 				  <select class="c-form__select" name="publics" id="publics">
@@ -82,7 +82,7 @@ Template Name: Toutes les formations
 				  </select>
 				</div>
 
-				<div class="c-filterList__filter l-grid__col">
+				<div class="l-filterList__filter l-grid__col">
 				  <label for="agrement_formateree" class="is-none">Agréée Format’eree</label>
 				  <i class="fa fa-check-circle" aria-hidden="true"></i>
 				  <select class="c-form__select" name="agrement_formateree" id="agrement_formateree">
@@ -99,9 +99,9 @@ Template Name: Toutes les formations
 
 			<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
 
-			<div class="c-filterList__buttons">
+			<div class="l-filterList__buttons">
 				<a href="<?php echo home_url().'/mon-profil/gerer-formations/?act=add'; ?>" class="c-link c-link--shy">Poster une formation</a>
-				<div class="c-filterList__buttons__submit">
+				<div class="l-filterList__buttons__submit">
 					<?php
 					if ( isset( $_GET['toky_toky'] ) ) {
 						echo '<button type="reset" class="c-btn c-btn--reset">Reset</button>';

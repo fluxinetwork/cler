@@ -16,18 +16,11 @@
 	.fc & {
 		margin: $space--l 0;
 	}
-
-	.c-meta + & {
-		margin: $space--m 0;
-
-		@media screen and (min-width: $break--m) {
-			margin: $space--l 0;
-		}
-	}
 }
 
 .c-figure__img {
 	border-radius: $radius;
+	width: 100%;
 }
 
 .c-figure__caption {

@@ -80,12 +80,11 @@ $break: $break--m;
 	justify-content: flex-end;
 	align-self: flex-end;
 	flex: 1;
-	margin-bottom: 28px;
+	margin-bottom: 21px;
 
 	&--follow {
 		flex-direction: row;
 		text-align: right;
-		margin-bottom: 21px;
 		flex: none;
 	}
 

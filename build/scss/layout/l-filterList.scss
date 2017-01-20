@@ -1,12 +1,12 @@
 /*======================================================================*\
 ==========================================================================
 
-//	C-FILTERLIST
+//	LAYOUT FILTER LIST
 
 ==========================================================================
 \*======================================================================*/
 
-.c-filterList {
+.l-filterList {
 	position: relative;
 	z-index: 2;
 	width: 90%;
@@ -42,7 +42,7 @@
 	}
 }
 
-.c-filterList__filter {
+.l-filterList__filter {
 	@include flex(center stretch);
 
 	.fa {
@@ -50,23 +50,28 @@
 		background-color: #fff;
 		border-radius: $radius 0 0 $radius;
 		color: $c-dark;
-		padding-left: $space--xs;
+		padding: 0 4px 0 $space--xs;
 		width: 30px;
+		transform: translateX(4px);
 	}
 
 	.c-form__select {
 		background-color: #fff;
 		margin-top: 0;
 		border-radius: 0 $radius $radius 0;
+
+		.l-monoFilter & {
+			min-width: 180px;
+		}
 	}
 }
 
-.c-filterList__buttons {
+.l-filterList__buttons {
 	@include flex(space-between center);
 	margin-top: $space--s;
 }
 
-.c-filterList__buttons__submit {
+.l-filterList__buttons__submit {
 	display: flex;
 
 	.c-btn {
@@ -75,13 +80,13 @@
 }
 
 @media screen and (min-width: $break--m) and (max-width: $break--l) {
-	.c-filterList__filter .fa {
+	.l-filterList__filter .fa {
 		display: none;
 	}
 }
 
 @media screen and (min-width: $break--l) {
-	.c-filterList {
+	.l-filterList {
 		padding: $space--m;
 	}
 }

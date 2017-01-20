@@ -17,10 +17,9 @@ Template Name: Toutes les actualités
 	</header>
 </div>
 
-<aside class="c-filterList c-filterList--small">
-	<form id="form-filter-posts" role="form">
-	<div class="l-grid">
-	    <div class="c-filterList__filter l-grid__col">
+<aside class="l-filterList l-filterList--small">
+	<form id="form-filter-posts" role="form" class="l-monoFilter">
+	    <div class="l-filterList__filter">
 	    	<label for="departement" class="is-none">Département</label>
 	    	<i class="fa fa-filter" aria-hidden="true"></i>
 			<select name="departement" id="departement" data-validation="required" class="c-form__select">
@@ -32,26 +31,20 @@ Template Name: Toutes les actualités
 				?>
 			</select>
 	    </div>
-	</div>
 
 		<input type="hidden" value="offres-emploi" name="pt_slug">
 		<input type="hidden" value="<?php echo mt_rand(0,9999); ?>" name="toky_toky">
 
 		<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
 
+		<button type="submit" id="submit-filters" class="c-btn l-monoFilter__btn">Filtrer</button>
+		<?php
+		if ( isset( $_GET['toky_toky'] ) ) {
+			echo '<button type="reset" class="c-btn c-btn--reset l-monoFilter__btn">Reset</button>';
+		}
+		?>
 
-		<div class="c-filterList__buttons">
-			<a href="<?php echo home_url().'/mon-profil/gerer-offre-emploi/?act=add'; ?>" class="c-link c-link--shy">Abonnement newsletter</a>
-			<div class="c-filterList__buttons__submit">
-				<?php
-				if ( isset( $_GET['toky_toky'] ) ) {
-					echo '<button type="reset" class="c-btn c-btn--reset">Reset</button>';
-				}
-				?>
-				<button type="submit" id="submit-filters" class="c-btn">Filtrer</button>
-			</div>
-		</div>
-
+		<a href="<?php echo home_url().'/mon-profil/gerer-offre-emploi/?act=add'; ?>" class="c-link c-link--shy l-monoFilter__link">Abonnement newsletter</a>
 	</form>
 </aside>
 
@@ -77,7 +70,7 @@ Template Name: Toutes les actualités
 				$query->the_post();
 
 				$post_img_id = get_field('main_image');
-				$post_img_array = wp_get_attachment_image_src($post_img_id, 'full', true);
+				$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumb', true);
 				$post_img_url = $post_img_array[0];	
 
 				$permalink = get_permalink();

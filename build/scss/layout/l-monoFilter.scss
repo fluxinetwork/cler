@@ -1,16 +1,20 @@
 /*======================================================================*\
 ==========================================================================
 
-//	COMPOSANT LIST
+//	LAYOUT MONO FILTER
 
 ==========================================================================
 \*======================================================================*/
 
-.c-list {
-	margin-left: $space--m;
+.l-monoFilter {
+	@include flex(null center);
 }
 
-.c-list__item {
-	@extend .p;
-	margin-top: $space--s;
+.l-monoFilter__btn {
+	flex: none;
+	margin-left: $space--s;
+}
+
+.l-monoFilter__link {
+	margin-left: auto;
 }

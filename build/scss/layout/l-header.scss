@@ -12,10 +12,14 @@
 }
 
 .l-header__meta {
-	@include flex(null baseline);
-	margin-top: $space--xs;
+	margin-top: $space--s !important;
 }
 
+.l-header__figure,
 .l-header__excerpt {
-	margin-top: $space--l;
+	margin-top: $space--m;
+
+	@media screen and (min-width: $break--m) {
+		margin-top: $space--l;
+	}
 }

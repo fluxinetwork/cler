@@ -37,12 +37,15 @@ $border: 7px solid $c-accent;
 			margin-top: $space--l;
 		}
 	}
+
+	h3 {
+		margin-top: $space--m;
+	}
 }
 
 .fc__blockquote {
 	position: relative;
 	padding: $space--m 0;
-	margin: $space--l 0;
 	@extend .h1;
 	font-weight: 900;
 	color: $c-accent;
@@ -99,6 +102,17 @@ $border: 7px solid $c-accent;
 	}
 }
 
-.fc__gallery {
-	margin: $space--l 0;
+
+.fc__item,
+.fc__blockquote,
+.fc__gallery   {
+	margin: $space--m 0;
+
+	@media screen and (min-width: $break--m) {
+		margin: $space--l 0;
+	}
+
+	@media screen and (min-width: $break--l) {
+		margin: $space--xl 0;
+	}
 }

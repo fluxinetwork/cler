@@ -21,10 +21,10 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 	</header>
 </div>
 
-<aside class="c-filterList">
+<aside class="l-filterList">
 	<form id="form-filter-posts" role="form">
 	<div class="l-grid">
-	    <div class="c-filterList__filter l-grid__col">
+	    <div class="l-filterList__filter l-grid__col">
 	    	<label for="departement" class="is-none">Département</label>
 	    	<i class="fa fa-location-arrow" aria-hidden="true"></i>
 			<select name="departement" id="departement" data-validation="required" class="c-form__select">
@@ -37,7 +37,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 			</select>
 	    </div>
 
-	    <div class="c-filterList__filter l-grid__col">
+	    <div class="l-filterList__filter l-grid__col">
 	      <label for="type_de_poste" class="is-none">Contrat</label>
 	      <i class="fa fa-file-text" aria-hidden="true"></i>
 	      <select name="type_de_poste" id="type_de_poste" class="c-form__select">
@@ -49,7 +49,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 	      </select>
 	    </div>
 
-	    <div class="c-filterList__filter l-grid__col">
+	    <div class="l-filterList__filter l-grid__col">
 	      <label for="niveau_detude" class="is-none">Diplôme</label>
 	      <i class="fa fa-graduation-cap" aria-hidden="true"></i>
 	      <select name="niveau_detude" id="niveau_detude" class="c-form__select">
@@ -61,7 +61,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 	      </select>
 	    </div>
 
-	    <div class="c-filterList__filter l-grid__col">
+	    <div class="l-filterList__filter l-grid__col">
 	      <label for="experience" class="is-none">Expérience</label>
 	      <i class="fa fa-arrows-h" aria-hidden="true"></i>
 	      <select name="experience" id="experience" class="c-form__select">
@@ -74,7 +74,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 	      </select>
 	    </div>
 
-	    <div class="c-filterList__filter l-grid__col">
+	    <div class="l-filterList__filter l-grid__col">
 	      <label for="type_structure" class="is-none">Structure</label>
 	      <i class="fa fa-cube" aria-hidden="true"></i>
 	      <select name="type_structure" id="type_structure" class="c-form__select">
@@ -93,9 +93,9 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 		<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
 
 
-		<div class="c-filterList__buttons">
+		<div class="l-filterList__buttons">
 			<a href="<?php echo home_url().'/mon-profil/gerer-offre-emploi/?act=add'; ?>" class="c-link c-link--shy">Poster une offre</a>
-			<div class="c-filterList__buttons__submit">
+			<div class="l-filterList__buttons__submit">
 				<?php
 				if ( isset( $_GET['toky_toky'] ) ) {
 					echo '<button type="reset" class="c-btn c-btn--reset">Reset</button>';
@@ -177,7 +177,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 
 				echo '</ul>';
 
-		        echo '<div class="pager">';
+		        echo '<div class="pagination">';
 				echo paginate_links( array(
 					'base' => @add_query_arg('paged','%#%'),
 					'format' => '?paged=%#%',

@@ -30,9 +30,13 @@ Template Name: Thématique
 			<?php
 				$portrait = get_field('portrait_referent');
 				$id = $portrait[0];
+
+				global $isMobile;
+				($isMobile) ? $img_size = 'medium' : $img_size = 'thumb';
 				$post_img_id = get_field('main_image', $id);
-				$post_img_array = wp_get_attachment_image_src($post_img_id, 'full', true);
+				$post_img_array = wp_get_attachment_image_src($post_img_id, $img_size, true);
 				$post_img_url = $post_img_array[0];	
+				
 				$title = get_the_title($id);
 				$permalink = get_permalink($id);
 			?>

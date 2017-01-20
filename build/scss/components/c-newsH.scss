@@ -10,7 +10,6 @@ $break: $break--m;
 
 .c-newsH {
 	display: flex;
-	margin: 0 auto;
 }
 
 .c-newsH__img {
@@ -48,7 +47,21 @@ $break: $break--m;
 	}
 }
 
+.c-newsH__body__meta {
+	@extend .t-meta;
+	margin-bottom: $space--xs
+}
+
+
 .c-newsH__body__title {
 	@extend .h3;
-	margin-top: $space--xs
+	//margin-top: $space--xs
+}
+
+.c-newsH__body__link {
+	margin-top: $space--s;
+
+	@media screen and (min-width: $break) {
+		margin-top: $space--m;
+	}
 }

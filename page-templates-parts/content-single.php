@@ -6,10 +6,10 @@
 
 <article>
 	<div class="l-row bg-light">
-		<header class="l-col l-col--content">
+		<header class="l-col l-col--content l-header">
 			<h1><?php echo get_the_title(); ?></h1>
 
-			<div class="c-meta">
+			<div class="c-meta l-header__meta">
 				<div class="c-dash"></div>
 
 				<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i><?php echo get_the_date(); ?></time> 
@@ -31,7 +31,7 @@
 					$post_img_url = $post_img_array[0];	
 					$post_caption = get_post($post_img_id)->post_excerpt;
 
-					$output = '<figure class="c-figure">';
+					$output = '<figure class="c-figure l-header__figure">';
 					$output .= ' <img src="'.$post_img_url.'" class="c-figure__img">';
 					$output .= ' <figcaption class="c-figure__caption">'.$post_caption.'</figcaption>';
 					$output .= '</figure>';

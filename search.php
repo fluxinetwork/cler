@@ -25,13 +25,13 @@ if ($nb_results == 0) {
       <h1 class="c-white"><?php echo $title; ?></h1>
       <div class="c-meta c-meta--white">
         <div class="c-dash"></div>
-        <span class="c-meta__meta"><i class="fa fa-search c-meta__meta__icon" aria-hidden="true"></i><?php echo esc_html($wp_query->query['s']); ?></span>
+        <span class="c-meta__meta"><i class="fa fa-tag c-meta__meta__icon" aria-hidden="true"></i><?php echo esc_html($wp_query->query['s']); ?></span>
       </div>
     </header>
   </div>
 
-  <aside id="search-filters" class="c-filterList c-filterList--small">
-      <div class="c-filterList__filter">
+  <aside id="search-filters" class="l-filterList l-filterList--small">
+      <div class="l-filterList__filter">
         <i class="fa fa-filter" aria-hidden="true"></i>
         <select class="c-form__select postform" id="filter" name="filter">
             <option value="-1">Aucun filtre</option>
@@ -62,15 +62,13 @@ if ($nb_results == 0) {
           }
 
           $post_img_id = get_field('main_image');
-          $post_img_array = wp_get_attachment_image_src($post_img_id, 'full', true);
+          $post_img_array = wp_get_attachment_image_src($post_img_id, 'thumb', true);
           $post_img_url = $post_img_array[0];  
 
           $permalink = get_permalink();
           $date = get_the_date('d M Y');
           $categories = get_the_category();
-          if ($categories) {
-             $cat_name = $categories[0]->cat_name;
-          }
+          ($categories) ? $cat_name = $categories[0]->cat_name : $cat_name = 'non classé';
           $title = get_the_title();
 
           $output = '<li class="l-postList__item">';
@@ -82,9 +80,11 @@ if ($nb_results == 0) {
           $output .= '<div class="c-meta">';
           $output .= '<div class="c-dash"></div>';
           $output .= '<span class="c-meta__meta"><i class="fa fa-folder c-meta__meta__icon" aria-hidden="true"></i>'.$post_type.'</span>';
-          $output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>';
-          if ($categories) {
-            $output .= '<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i>'.$cat_name.'</span>';
+          if ($post_type != 'page') {
+            $output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>';
+            if ($categories) {
+              $output .= '<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i>'.$cat_name.'</span>';
+            }
           }
           $output .= '</div>';
           $output .= '</div>';

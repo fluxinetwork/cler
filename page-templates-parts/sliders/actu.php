@@ -1,12 +1,15 @@
 <?php
 
+global $isMobile;
+($isMobile) ? $img_size = 'medium' : $img_size = 'thumb';
+
 $post_img_id = get_field('main_image');
-$post_img_array = wp_get_attachment_image_src($post_img_id, 'full', true);
+$post_img_array = wp_get_attachment_image_src($post_img_id, $img_size, true);
 $post_img_url = $post_img_array[0];	
 
 $permalink = get_permalink();
 $date = get_the_date('d M Y');
-$title = get_the_title();
+$title = limitString(get_the_title(), 0, 80, ' [...]');
 
 $output = '<li class="l-card-slider__cards__row__col">';
 $output .= '<a href="'.$permalink.'">';

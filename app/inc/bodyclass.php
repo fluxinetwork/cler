@@ -8,6 +8,8 @@ $bodyclass = '';
 global $isMobile;
 $isMobile = false;
 
+echo $isMobile.' megabanae';
+
 /*
  * If no browser detection plugin do basic mobile detection
  * Browser detection plugin : https://fr.wordpress.org/plugins/php-browser-detection/

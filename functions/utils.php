@@ -228,6 +228,17 @@ function get_sanitize_string($string)
 }
 
 /**
+ * Limit string characters number
+ *
+ */
+
+function limitString( $string, $start, $length, $endStr = '...' ) {    
+    if( strlen( $string ) <= $length ) return $string;  
+    $str = mb_substr( $string, $start, $length - strlen( $endStr ) + 1, 'UTF-8');  
+    return $str.$endStr;  
+} 
+
+/**
  * Virify post author
  *
  * @param   integer $user_id user id

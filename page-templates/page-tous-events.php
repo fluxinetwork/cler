@@ -21,10 +21,10 @@ Template Name: Toutes les événements
 		</header>
 	</div>
 
-	<aside class="c-filterList">
+	<aside class="l-filterList">
 		<form id="form-filter-posts" role="form">
 			<div class="l-grid">		    
-				<div class="c-filterList__filter l-grid__col">
+				<div class="l-filterList__filter l-grid__col">
 					<label class="is-none" for="departement">Département</label>
 					<i class="fa fa-location-arrow" aria-hidden="true"></i>
 					<select class="c-form__select" name="departement" id="departement">
@@ -37,7 +37,7 @@ Template Name: Toutes les événements
 					</select>
 				</div>
 
-				<div class="c-filterList__filter l-grid__col">
+				<div class="l-filterList__filter l-grid__col">
 				  <label class="is-none" for="publics_event">Publics</label>
 				  <i class="fa fa-users" aria-hidden="true"></i>
 				  <select class="c-form__select" name="publics_event" id="publics_event">
@@ -47,7 +47,7 @@ Template Name: Toutes les événements
 				  </select>			      
 				</div>
 
-				<div class="c-filterList__filter l-grid__col">
+				<div class="l-filterList__filter l-grid__col">
 				  <label class="is-none" for="themes">Thèmes</label>
 				  <i class="fa fa-tag" aria-hidden="true"></i>
 				  <select class="c-form__select" name="themes" id="themes">
@@ -67,9 +67,9 @@ Template Name: Toutes les événements
 
 			<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
 
-			<div class="c-filterList__buttons">
+			<div class="l-filterList__buttons">
 				<a href="<?php echo home_url().'/mon-profil/gerer-evenement/?act=add'; ?>" class="c-link c-link--shy">Poster un événement</a>
-				<div class="c-filterList__buttons__submit">
+				<div class="l-filterList__buttons__submit">
 					<?php
 					if ( isset( $_GET['toky_toky'] ) ) {
 						echo '<button type="reset" class="c-btn c-btn--reset">Reset</button>';
