@@ -503,7 +503,7 @@ function get_footer_mail(){
             </td>
           </tr>
           <tr style="margin:0;padding:0;">
-            <td colspan="2" style="margin:0;padding:0;"><p style="text-align:center; font-size:12px;line-height:16px;margin:15px 0 30px;padding:0;">Association loi 1901 • SIRET : 352 400 436 00049 • Code APE : 7022 Z</p></td>
+            <td colspan="2" style="margin:0;padding:0;"><p style="text-align:center; font-size:12px;line-height:16px;margin:15px 0 30px;padding:0;font-family: gotham,helvetica,arial,sans-serif;">Association loi 1901 • SIRET : 352 400 436 00049 • Code APE : 7022 Z</p></td>
           </tr>
           <tr style="margin:0;padding:0;">
             <td colspan="2" style="margin:0;padding:0;">

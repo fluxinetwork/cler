@@ -36,46 +36,45 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
   <title>CLER - Reçu paiement offre d\'emploi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body bgcolor="#ffffff" style="margin:0;">
-    <table width="100%" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td>         
-            <p>            
-              Montreuil, le '.$today.'<br><br>
+<body style="background-color: #fff5e5; color: #333; margin:0; font-family: gotham,helvetica,arial,sans-serif; font-size: 16px;">
+  <table width="100%" style="background-color: #fff5e5; color: #333; font-family: gotham,helvetica,arial,sans-serif; font-size: 16px; text-align:center; margin:0; padding:0;" border="0" cellpadding="0" cellspacing="0">
+    <tr style="margin:0;padding:0;">
+      <td style="margin:0;padding:0;">
+        <table style="text-align:center; max-width:600px; width:100%;margin:0 auto 40px;padding:20px;" border="0" cellpadding="0" cellspacing="0">
+          <tr style="margin:0;padding:0;">
+            <td style="margin:0;padding:0;">
+              <table width="100%" style="text-align:left; margin:20px 0;" border="0" cellpadding="0" cellspacing="0">
+                <tr style="margin:0;padding:0;">
+                  <td style="background: #fff; padding:20px 30px 30px;">
+                        
+                  <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Montreuil, le '.$today.'</h3>
 
-              Destinataire :<br>
-              '.$nom_structure.'<br>
-              '.$adresse_structure.'
-            </p>
-           </td>
-        </tr>
+                  <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;"><strong>Destinataire :</strong><br>
+                  '.$nom_structure.'<br>
+                  '.$adresse_structure.'</p>
 
-        <tr>
-          <td>
-            <p>Cher membre,<br><br>
-            Nous avons reçu votre paiement pour la publication de votre offre d\'emploi sur le site du CLER – Réseau pour la transition énergétique et nous vous en remercions.</p>
-          </td>
-        </tr>
+                  <hr style="border:1px dashed #ccc">
+                
+                  <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Cher membre</h3>
+                  <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Nous avons reçu votre paiement pour la publication de votre offre d\'emploi sur le site du CLER – Réseau pour la transition énergétique et nous vous en remercions.</p>
+                
+                  <p style="border:2px solid #000; padding:15px;text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">
+                    <strong>REÇU - publication d\'une offre d\'emploi acquitté </strong><br><br>
 
-        <tr>
-          <td>
-            <p style="border:2px solid #000; padding:15px;">
-              <strong>REÇU - publication d\'une offre d\'emploi acquitté </strong><br><br>
+                    Pour la publication "'.$title_post.'" sur le site du CLER – Réseau pour la transition énergétique (Association loi 1901 non assujettie à la TVA) acquitté le '.$date_paiement.' '.$infos_paiement.'. <br><br>
 
-              Pour la publication "'.$title_post.'" sur le site du CLER – Réseau pour la transition énergétique (Association loi 1901 non assujettie à la TVA) acquitté le '.$date_paiement.' '.$infos_paiement.'. <br><br>
-
-              Montant : '.$montant.',00 €
-            </p>
-          </td>
-        </tr>       
-
-        <tr>
-          <td>
+                    Montant : '.$montant.',00 €
+                  </p>
+                </td>
+              </tr>       
+            </table>
             '.$footer_mail.'
-          </td>
-        </tr> 
-
-    </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>';
 ?>

@@ -26,7 +26,7 @@ if($type_adhesion=='rad'):
                       <table width="100%" style="text-align:left; margin:20px 0;" border="0" cellpadding="0" cellspacing="0">
                         <tr style="margin:0;padding:0;">
                           <td style="background: #fff; padding:20px 30px 30px;">                
-                            <h3>Bonjour</h3>
+                            <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Bonjour</h3>
                               <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Nous avons bien reçu votre demande de renouvellement d’adhésion au CLER – Réseau pour la transition énergétique, et nous vous en remercions.<br><br>Après validation de votre demande, un appel à cotisation pour l\'année en cours vous sera envoyé automatiquement par email.</p>
                             <p style="font-size:14px;padding:20px 0; color:#999;font-family: gotham,helvetica,arial,sans-serif;line-height: 20px;">Pour toute question relative à votre adhésion, vous pouvez contacter :<br>
                             Alexis Monteil au 01 55 86 80 09.</p>
@@ -68,7 +68,7 @@ else:
                   <table width="100%" style="text-align:left; margin:20px 0;" border="0" cellpadding="0" cellspacing="0">
                     <tr style="margin:0;padding:0;">
                       <td style="background: #fff; padding:20px 30px 30px;">
-                        <h3>Bonjour</h3>
+                        <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Bonjour</h3>
                         <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Nous avons bien reçu votre dossier de candidature pour une demande d\'adhésion au CLER – Réseau pour la transition énergétique, et nous vous en remercions.<br><br>
 
                         Vous pouvez dès à présent, si vous le souhaitez, compléter ou modifier <a style="color: #00c15f; display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-bottom: 3px solid #00c15f; text-decoration: none;" href="'.$refer_url.'" target="_blank">votre formulaire</a> dans votre espace privé sur le site CLER.org.<br><br>

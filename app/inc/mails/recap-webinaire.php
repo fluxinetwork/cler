@@ -35,7 +35,7 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
                 <tr style="margin:0;padding:0;">
                   <td style="background: #fff; padding:20px 30px 30px;">          
                     
-                    <h3>Bonjour '.$prenom.' '.$nom.'</h3>
+                    <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Bonjour '.$prenom.' '.$nom.'</h3>
 
                     <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Vous venez de vous inscrire au prochain <em>Mardi de la transition énergétique</em> organisé par le CLER – Réseau pour la transition énergétique, et nous vous en remercions.<br><br>Votre participation au web-séminaire du '.$date_webinaire.' a bien été prise en compte.<br><br>
 

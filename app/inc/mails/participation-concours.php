@@ -34,7 +34,7 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
                 <tr style="margin:0;padding:0;">
                   <td style="background: #fff; padding:20px 30px 30px;">  
 
-                    <h3>Bonjour '.$nom_prenom.'</h3>          
+                    <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Bonjour '.$nom_prenom.'</h3>          
                     <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Merci pour votre participation "'.$titre_participation.'" à '.$title_concours.'.<br><br>Elle sera traitée par nos soins et sera publiée sur la <a style="color: #00c15f; display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-bottom: 3px solid #00c15f; text-decoration: none;" href="'.$redirect_slug.'" target="_blank">page du concours</a> après validation.</p>
                     
                   </td>
