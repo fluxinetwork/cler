@@ -17,6 +17,10 @@ function wpc_acf_init() {
 	acf_update_setting('google_api_key', GOOGLE_MAP_API_KEY);
 }
 add_action('acf/init', 'wpc_acf_init');
+define('FACEBOOK', 'fa');
+
+define('TWITTER', 'tw');
+
 
 
 

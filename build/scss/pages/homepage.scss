@@ -1,4 +1,4 @@
-/*------------------------------*\
+	/*------------------------------*\
 
     #HOMEPAGE
 
@@ -8,8 +8,7 @@
 .grid-espaces-dedies {
 	position: relative;
 	margin: 0 auto;
-	max-width: $maxW/2;
-	padding-right: $gutter/2 !important;
+	max-width: 535px;
 }
 
 .hp-hero__content {
@@ -68,6 +67,10 @@
 		}
 	}
 
+	.grid-actions {
+		position: relative;
+		left: -13px;
+	}
 }
 
 @media screen and (min-width: $break--xl) {

@@ -24,6 +24,7 @@
 	border-radius: 100px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	outline: 0;
 
 	&:not(.c-btn--cta):hover {
 		background-color:$c-main;
@@ -186,6 +187,7 @@
 .c-btnControls {
 	@extend .c-btn--round;
 	background-color: #FFF;
+	outline: 0;
 
 	&:nth-child(2) {
 		margin-left: $space--xs;

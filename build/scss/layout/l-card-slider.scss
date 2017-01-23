@@ -22,7 +22,10 @@ $break: $break--m;
 //================================================================ ASIDE
 
 .l-card-slider__aside {
+	position: relative;
+	z-index: 2;
 	display: flex;
+	padding-bottom: $gutter;
 	flex: none;
 
 	@media screen and(min-width: $break--s) {
@@ -33,6 +36,8 @@ $break: $break--m;
 	@media screen and(min-width: $break) {
 		flex-direction: column;
 		width: $cardW;
+		padding-bottom: 0;
+		padding-right: $gutter;
 	}
 
 	@media screen and(min-width: $break--l) {
@@ -97,22 +102,25 @@ $break: $break--m;
 //================================================================ CARDS
 
 .l-card-slider__cards {
+	position: relative;
 	display: flex;
-	margin-top: $gutter;
 
 	@media screen and(min-width: $break) {
 		flex: 2;
 		margin-top: 0;
-		margin-left: $gutter;
 		min-height: 410px;
 	}
 }
 
-.l-card-slider__cards__row  {
+.l-card-slider__cards__row  { 
+	@include list-reset();
+	position: relative;
+	left: 0;
 	display: flex;
 	flex: 1;
 	flex-direction: column;
-	@include list-reset();
+	@include transition;
+
 	
 	@media screen and(max-width: $break - 1) {
 		.l-card-slider__cards__row__col:nth-child(n+5) {
@@ -128,9 +136,16 @@ $break: $break--m;
 
 .l-card-slider__cards__row__col  {
 	margin-bottom: $gutter;
+	transform-origin: center;
+	@include transition;
 
 	&:last-child {
 		margin-bottom: 0;
+	}
+
+	&.is-off {
+		opacity: 0;
+		transform: scale(0.5);
 	}
 
 	@media screen and(min-width: $break) {

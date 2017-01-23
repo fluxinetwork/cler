@@ -5,33 +5,32 @@
 
 $bodyclass = '';
 
+/* Detect touch */
+
 global $isMobile;
 $isMobile = false;
 
-echo $isMobile.' megabanae';
+$iphone = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
+$ipad = strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
+$android = strpos($_SERVER['HTTP_USER_AGENT'],"Android");
+$windowsphone = strpos($_SERVER['HTTP_USER_AGENT'],"Windows Phone");
 
-/*
- * If no browser detection plugin do basic mobile detection
- * Browser detection plugin : https://fr.wordpress.org/plugins/php-browser-detection/
- */
-
-if ( function_exists('is_mobile') ) {
-	is_mobile() ? $bodyclass .= ' touch' : $bodyclass .= ' no-touch';
+if ($iphone == true || $ipad == true || $android == true || $windowsphone == true) { 
+	$bodyclass .= ' touch';
+	$isMobile = true;
 } else {
-	$iphone = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
-	$ipad = strpos($_SERVER['HTTP_USER_AGENT'],"iPad");
-	$android = strpos($_SERVER['HTTP_USER_AGENT'],"Android");
-	$windowsphone = strpos($_SERVER['HTTP_USER_AGENT'],"Windows Phone");
-
-	if ($iphone == true || $ipad == true || $android == true || $windowsphone == true) { 
-		$bodyclass .= ' touch';
-		$isMobile = true;
-	} else {
-		$bodyclass .= ' no-touch';
-	}
-
-	if ($iphone == true || $ipad == true) { 
-		$bodyclass .= ' ios';
-	}
+	$bodyclass .= ' no-touch';
 }
+
+if ($iphone == true || $ipad == true) { 
+	$bodyclass .= ' ios';
+}
+
+/* Detect filters */
+
+$template_with_filters = ['page-templates/page-tous-emploi.php', 'page-templates/page-tous-events.php', 'page-templates/page-tous-formations.php'];
+if (is_page_template($template_with_filters)) {
+	$bodyclass .= ' page-has-filters';
+}
+
 ?>

@@ -25,6 +25,7 @@
 	background-color: transparent;
 	flex: 1 0 auto;
 	margin-right: $space--m;
+	outline: 0;
 }
 #search-btn {
 	position: fixed;
@@ -36,6 +37,7 @@
 	border-radius: 50%;
 	background-color: $c-valid;
 	color: #fff;
+	outline: 0;
 }
 
 .navLog,

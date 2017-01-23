@@ -78,7 +78,9 @@ $break: $break--m;
 	color: $c-accent;
 
 	@media screen and (min-width: $break) {
-		display: block;
+		@include flex(center);
+		top: 0;
+		height: 100%;
 	}
 }
 

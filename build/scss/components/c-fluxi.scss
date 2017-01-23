@@ -108,6 +108,10 @@ $border: 7px solid $c-accent;
 .fc__gallery   {
 	margin: $space--m 0;
 
+	+ .fc__item {
+		margin-top: -$space--s !important;
+	}
+
 	@media screen and (min-width: $break--m) {
 		margin: $space--l 0;
 	}

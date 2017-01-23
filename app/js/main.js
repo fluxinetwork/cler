@@ -49,23 +49,8 @@ $(window).load(function() {
 var FOO = {
     common: {
         init: function() {
-            // Delete post
-            if($('.page-template-user-profil').length){
-                initFluxiDelPost();
-            }
-
-            // Filtres
-            if( $('.page-template-page-tous-emploi').length || $('.page-template-page-tous-events').length || $('.page-template-page-tous-formations').length){
-                initFluxiFilterPosts();
-            }
-
-            // Init NAV
             nav();
-
-            // Check if user is logged init
-            if ( $('body').hasClass('logged-in') ) {
-                isLogged = true;
-            }
+            slider();
         }
     },
     home: {
@@ -73,12 +58,26 @@ var FOO = {
             isHome = true; 
         }
     },
-    search:{
+    search: {
         init: function(){
             initCustomSearch();
         }
+    },
+    page_template_user_profil: {
+        init: function(){
+             initFluxiDelPost();
+        }
+    },
+    page_has_filters: {
+        init: function(){
+            initFluxiFilterPosts();
+        }
+    },
+    logged_in: {
+        init: function(){
+            isLogged = true;
+        }
     }
-    
 };
 
 var UTIL = {
@@ -593,4 +592,42 @@ function nav() {
 		$('#search').toggleClass('is-open');
 		$('#search-input').focus();
 	})
+}
+/*------------------------------*\
+
+    #SLIDER
+
+\*------------------------------*/
+
+function slider() {
+	$('.js-slider-controls').each(function(){
+		var nbSlides = $(this).parent().find('ul').children().length-1;
+		$(this).attr('data-slides', nbSlides).attr('data-step', 0);
+	})
+
+	$('.js-slide').on('click', function() {
+		var $this = $(this);
+		var $slides = $this.parent().prev().find('ul');
+		var nbSlides = parseInt($this.parent().attr('data-slides'));
+		var step = parseInt($this.parent().attr('data-step'));
+		var colW = parseInt($slides.children().eq(0).outerWidth());
+		var posL = parseInt($slides.css('left'));
+
+		console.log(posL-colW);
+
+		if( $this.attr('data-direction') == 'prev' && step > 0 ) {
+			$slides.css('left', posL+colW)
+			setTimeout(function(){
+				$slides.children().eq(step-1).toggleClass('is-off');
+			}, 100);
+			$this.parent().attr('data-step', step-1);
+
+		} else if( $this.attr('data-direction') == 'next' && step < nbSlides ) {
+			$slides.children().eq(step).toggleClass('is-off');
+			setTimeout(function(){
+				$slides.css('left', posL-colW);
+			}, 75);
+			$this.parent().attr('data-step', step+1);
+		}
+	});
 }

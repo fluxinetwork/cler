@@ -7,23 +7,8 @@
 var FOO = {
     common: {
         init: function() {
-            // Delete post
-            if($('.page-template-user-profil').length){
-                initFluxiDelPost();
-            }
-
-            // Filtres
-            if( $('.page-template-page-tous-emploi').length || $('.page-template-page-tous-events').length || $('.page-template-page-tous-formations').length){
-                initFluxiFilterPosts();
-            }
-
-            // Init NAV
             nav();
-
-            // Check if user is logged init
-            if ( $('body').hasClass('logged-in') ) {
-                isLogged = true;
-            }
+            slider();
         }
     },
     home: {
@@ -31,12 +16,26 @@ var FOO = {
             isHome = true; 
         }
     },
-    search:{
+    search: {
         init: function(){
             initCustomSearch();
         }
+    },
+    page_template_user_profil: {
+        init: function(){
+             initFluxiDelPost();
+        }
+    },
+    page_has_filters: {
+        init: function(){
+            initFluxiFilterPosts();
+        }
+    },
+    logged_in: {
+        init: function(){
+            isLogged = true;
+        }
     }
-    
 };
 
 var UTIL = {

@@ -1,4 +1,4 @@
-<div class="l-card-slider">
+<div class="l-card-slider js-slider">
 	<aside class="l-card-slider__aside">
 		<div class="l-card-slider__aside__title">
 			<span class="c-section-title">L'actualité de la transition</span>
