@@ -130,7 +130,7 @@ Template Name: Toutes les formations
 
 			if ( $query_filtered->have_posts() ) :
 
-				echo '<ul class="l-postList results-list">';
+				echo '<ul class="l-postList">';
 					while ( $query_filtered->have_posts() ) : $query_filtered->the_post();					
 
 						$ob_departement = get_field_object('field_57b6eab6f05cd');
@@ -202,7 +202,7 @@ Template Name: Toutes les formations
 
 					echo '</ul>';
 					
-		            echo '<div class="pager">';
+		            echo '<div class="pagination">';
 		    			echo paginate_links( array(
 		    				'base' => @add_query_arg('paged','%#%'),
 		    				'format' => '?paged=%#%',

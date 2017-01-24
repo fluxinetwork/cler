@@ -9,11 +9,6 @@ var FOO = {
         init: function() {
             nav();
             slider();
-
-            if( $('.page-template-page-tous-actualites').length ){               
-                initFluxiAutoFilterPosts();
-            }
-
         }
     },
     home: {
@@ -35,7 +30,12 @@ var FOO = {
         init: function(){
             initFluxiFilterPosts();
         }
-    }, 
+    },
+    page_has_auto_filters: {
+        init: function(){            
+            initFluxiAutoFilterPosts();
+        }
+    },
     logged_in: {
         init: function(){
             isLogged = true;

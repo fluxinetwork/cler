@@ -53,11 +53,14 @@ Template Name: Toutes les actualités
 
 <section class="l-row">
 	<div class="l-col l-col--content no-pdTop">
-		<ul class="l-postList results-list">
+		<ul class="l-postList">
 		<?php
-		$args = array(
+		$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+		$args_filtered = array(
 			'post_type' => 'post',
-			'posts_per_page' => 20,
+			'post_status' => 'publish',
+			'posts_per_page' => 2,
+			'paged' => $paged
 			// 'tax_query' => array(
 			// 	array(
 			// 		'taxonomy' => 'publics-cible',
@@ -67,10 +70,10 @@ Template Name: Toutes les actualités
 			// 	),
 			// )
 		);
-		$query = new WP_Query( $args );
-		if ( $query->have_posts() ) :
-			while ( $query->have_posts() ) :
-				$query->the_post();
+		$query_filtered = new WP_Query( $args_filtered );
+		if ( $query_filtered->have_posts() ) :
+			while ( $query_filtered->have_posts() ) :
+				$query_filtered->the_post();
 
 				$post_img_id = get_field('main_image');
 				$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumb', true);
@@ -105,6 +108,18 @@ Template Name: Toutes les actualités
 		wp_reset_postdata();
 		?>
 		</ul>
+
+		<?php 
+			echo '<div class="pagination">';
+			echo paginate_links( array(
+				'base' => @add_query_arg('paged','%#%'),
+				'format' => '?paged=%#%',
+				'current' => max( 1, get_query_var('paged') ),
+				'total' => $query_filtered->max_num_pages,
+	        	'prev_next'=> false
+			) );
+		    echo '</div>';
+		?>
 	</div>
 </section>
 

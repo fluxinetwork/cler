@@ -51,11 +51,6 @@ var FOO = {
         init: function() {
             nav();
             slider();
-
-            if( $('.page-template-page-tous-actualites').length ){               
-                initFluxiAutoFilterPosts();
-            }
-
         }
     },
     home: {
@@ -77,7 +72,12 @@ var FOO = {
         init: function(){
             initFluxiFilterPosts();
         }
-    }, 
+    },
+    page_has_auto_filters: {
+        init: function(){            
+            initFluxiAutoFilterPosts();
+        }
+    },
     logged_in: {
         init: function(){
             isLogged = true;
@@ -275,7 +275,7 @@ function initFluxiFilterPosts(){
 
         var params = $(this).serialize();
        
-        var $results = $('.results-list');
+        var $results = $('.l-postList');
         var $formObj = $('#form-filter-posts');
         var formID = '#form-filter-posts'; 
         var cpt = $('[name="pt_slug"]').val();
@@ -346,7 +346,7 @@ function initFluxiAutoFilterPosts(){
 
         var params = $(this).serialize();
        
-        var $results = $('.results-list');
+        var $results = $('.l-postList');
         var $formObj = $('#form-auto-filter-posts');
         var formID = '#form-auto-filter-posts'; 
         var cpt = $('[name="pt_slug"]').val();

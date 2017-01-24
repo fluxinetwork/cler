@@ -123,7 +123,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 			$query_filtered = new WP_Query( $args_filtered );
 
 			if ( $query_filtered->have_posts() ) :
-				echo '<ul class="l-postList results-list">';
+				echo '<ul class="l-postList">';
 					while ( $query_filtered->have_posts() ) : $query_filtered->the_post();
 
 						$ob_type_de_poste = get_field_object('field_574dadcc3c7b1');

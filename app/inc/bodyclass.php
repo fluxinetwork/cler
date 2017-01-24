@@ -33,4 +33,10 @@ if (is_page_template($template_with_filters)) {
 	$bodyclass .= ' page-has-filters';
 }
 
+ /* Auto filter */
+$template_with_auto_filters = ['page-templates/page-tous-actualites.php', ];
+if (is_page_template($template_with_auto_filters)) {
+	$bodyclass .= ' page-has-auto-filters';
+}
+
 ?>

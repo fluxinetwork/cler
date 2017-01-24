@@ -14,7 +14,7 @@ function initFluxiFilterPosts(){
 
         var params = $(this).serialize();
        
-        var $results = $('.results-list');
+        var $results = $('.l-postList');
         var $formObj = $('#form-filter-posts');
         var formID = '#form-filter-posts'; 
         var cpt = $('[name="pt_slug"]').val();
@@ -85,7 +85,7 @@ function initFluxiAutoFilterPosts(){
 
         var params = $(this).serialize();
        
-        var $results = $('.results-list');
+        var $results = $('.l-postList');
         var $formObj = $('#form-auto-filter-posts');
         var formID = '#form-auto-filter-posts'; 
         var cpt = $('[name="pt_slug"]').val();

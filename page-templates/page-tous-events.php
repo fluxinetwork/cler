@@ -97,7 +97,7 @@ Template Name: Toutes les événements
 
 			if ( $query_filtered->have_posts() ) : 
 
-				echo '<ul class="l-postList results-list">';
+				echo '<ul class="l-postList">';
 					while ( $query_filtered->have_posts() ) : $query_filtered->the_post();
 
 					$ob_departement = get_field_object('field_577e40ac4281f');
@@ -152,7 +152,7 @@ Template Name: Toutes les événements
 
 				echo '</ul>';
 		            
-		        echo '<div class="pager">';
+		        echo '<div class="pagination">';
 		    		echo paginate_links( array(
 		    			'base' => @add_query_arg('paged','%#%'),
 		    			'format' => '?paged=%#%',
