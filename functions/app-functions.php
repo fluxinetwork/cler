@@ -10,8 +10,8 @@
  */
 
 /**
- * Filter posts
- *
+ * Filter posts - Use tags
+ * 
  * @param   N/A
  *
  * @return	html - All filtered results
@@ -193,9 +193,34 @@ function fluxi_filter_posts(){
 							</div>
 						</article>
 						</a>
-					</li>';/**/
+					</li>';
 
 
+				elseif( $pt_slug == 'actualites'):
+
+					$post_img_id = get_field('main_image');
+					$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumb', true);
+					$post_img_url = $post_img_array[0];	
+
+					$date = get_the_date('d M Y');
+					$categories = get_the_category();
+					$cat_name = $categories[0]->cat_name;
+
+					$result_content .= '<li class="l-postList__item">
+											<a href="'.get_the_permalink().'">
+												<article class="c-newsH">
+													<div class="c-newsH__img" style="background-image: url('.$post_img_url.')"></div>
+													<div class="c-newsH__body">
+														<h1 class="c-newsH__body__title">'.get_the_title ().'</h1>
+														<div class="c-meta">
+															<div class="c-dash"></div>
+															<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>
+															<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i>'.$cat_name.'</span>
+														</div>
+													</div>
+												</article>
+											</a>
+										</li>';				
 
 			 	endif;
 
@@ -207,7 +232,7 @@ function fluxi_filter_posts(){
 
 	else :
 		// If invalid toky
-		$reg_errors->add( 'toky', $message_response );
+		$reg_errors->add( 'toky', 'Erreur, veuillez ré-essayer.');
 	endif;
 
 	if ( is_wp_error( $reg_errors ) && count( $reg_errors->get_error_messages() ) > 0):
@@ -237,6 +262,115 @@ function fluxi_filter_posts(){
 
 add_action('wp_ajax_nopriv_fluxi_filter_posts', 'fluxi_filter_posts');
 add_action('wp_ajax_fluxi_filter_posts', 'fluxi_filter_posts');
+
+
+/**
+ * Filter posts - Use category
+ * 
+ * @param   N/A
+ *
+ * @return	html - All filtered results
+ */
+
+function fluxi_auto_filter_posts(){
+	// Global array
+    $results = array();
+    global $reg_errors;
+	$reg_errors = new WP_Error;
+	$toky_toky = filter_var($_POST['toky_toky'], FILTER_SANITIZE_NUMBER_INT);
+
+	$message_response = 'Aucune publication ne correspond à vos critères.';
+
+	if ( isset( $_POST['fluxi_auto_filter_posts_nonce_field'] ) && wp_verify_nonce( $_POST['fluxi_auto_filter_posts_nonce_field'], 'fluxi_auto_filter_posts' ) && is_numeric($toky_toky) && $toky_toky < 100000 && !empty($_POST['pt_slug']) ):
+
+		$result_content = '';
+		$count_post = 0;
+		$all_cats = array();
+		$pt_slug = filter_var($_POST['pt_slug'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+		$category = filter_var($_POST['category'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+
+		$args_filtered = array(
+			'post_type' => $pt_slug,
+			'posts_per_page' => -1,
+			'post_status' => 'publish',
+			'cat_name' => $category
+ 		);
+		$query_filtered = new WP_Query( $args_filtered );
+
+		if ( $query_filtered->have_posts() ) :
+
+			$count_post = $query_filtered->found_posts;
+		    $message_end = ($count_post > 1) ? 'publications qui correspondent à vos critères.' : 'publication qui correspond à vos critères.';
+			$message_response = 'Il y a ' . $count_post .  ' ' .$message_end;
+
+			while ( $query_filtered->have_posts() ) : $query_filtered->the_post();
+
+				if( $pt_slug == 'post'):
+
+					$post_img_id = get_field('main_image');
+					$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumb', true);
+					$post_img_url = $post_img_array[0];	
+
+					$date = get_the_date('d M Y');
+					$categories = get_the_category();
+					$cat_name = $categories[0]->cat_name;
+
+					$result_content .= '<li class="l-postList__item">
+											<a href="'.get_the_permalink().'">
+												<article class="c-newsH">
+													<div class="c-newsH__img" style="background-image: url('.$post_img_url.')"></div>
+													<div class="c-newsH__body">
+														<h1 class="c-newsH__body__title">'.get_the_title ().'</h1>
+														<div class="c-meta">
+															<div class="c-dash"></div>
+															<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>
+															<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i>'.$cat_name.'</span>
+														</div>
+													</div>
+												</article>
+											</a>
+										</li>';		
+
+			 	endif;
+
+			endwhile;
+
+
+		endif;
+		wp_reset_postdata();
+
+	else :
+		// If invalid toky
+		$reg_errors->add( 'toky', 'Erreur, veuillez ré-essayer.');
+	endif;
+
+	if ( is_wp_error( $reg_errors ) && count( $reg_errors->get_error_messages() ) > 0):
+ 		$output_errors = '';
+		foreach ( $reg_errors->get_error_messages() as $error ) {
+			$output_errors .= $error . '<br>';
+		}
+		$data = array(
+			'validation' => 'error',
+			'message' => $output_errors
+		);
+		$results[] = $data;
+	else:
+		$data = array(
+			'validation' => 'success',
+			'content' => $result_content,
+			'total' => $count_post,
+			'message' => $message_response
+		);
+		$results[] = $data;
+	endif;
+
+	// Output JSON
+	wp_send_json($results);
+
+}
+
+add_action('wp_ajax_nopriv_fluxi_auto_filter_posts', 'fluxi_auto_filter_posts');
+add_action('wp_ajax_fluxi_auto_filter_posts', 'fluxi_auto_filter_posts');
 
 
 /**

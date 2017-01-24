@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Archive test		
+Template Name: Toutes les actualités	
 */
 ?>
 <?php get_header(); ?>
@@ -18,24 +18,27 @@ Template Name: Archive test
 </div>
 
 <aside class="l-filterList l-filterList--small">
-	<form id="form-filter-posts" role="form" class="l-monoFilter">
+	<form id="form-auto-filter-posts" role="form" class="l-monoFilter">
 	    <div class="l-filterList__filter">
-	    	<label for="departement" class="is-none">Département</label>
-	    	<i class="fa fa-filter" aria-hidden="true"></i>
-			<select name="departement" id="departement" data-validation="required" class="c-form__select">
-				<option disabled selected value="">Département</option>
-				<?php
-					foreach ( load_departements_fields() as $key => $value ) {
-		            	echo '<option value="'.$key.'">'.$value.'</option>';
+	    	<label for="category" class="is-none">Thèmatique</label>
+	    	<i class="fa fa-tag" aria-hidden="true"></i>
+			<select name="category" id="category" data-validation="required" class="c-form__select">
+				<option disabled selected value="">Thèmatique</option>
+				<?php					
+					$terms = get_terms( 'category', 'hide_empty=0' );
+					if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){					   
+					    foreach ( $terms as $term ) {					       
+					        echo '<option value="'.$term->slug.'">'.$term->name.'</option>';
+					    }					    
 					}
 				?>
 			</select>
 	    </div>
 
-		<input type="hidden" value="actualite" name="pt_slug">
+		<input type="hidden" value="post" name="pt_slug">
 		<input type="hidden" value="<?php echo mt_rand(0,9999); ?>" name="toky_toky">
 
-		<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
+		<?php wp_nonce_field( 'fluxi_auto_filter_posts', 'fluxi_auto_filter_posts_nonce_field' ); ?>
 
 		<button type="submit" id="submit-filters" class="c-btn l-monoFilter__btn">Filtrer</button>
 		<?php
@@ -44,13 +47,13 @@ Template Name: Archive test
 		}
 		?>
 
-		<a href="<?php echo home_url().'/mon-profil/gerer-offre-emploi/?act=add'; ?>" class="c-link c-link--shy l-monoFilter__link">Abonnement newsletter</a>
+		<a href="<?php echo home_url(); ?>" class="c-link c-link--shy l-monoFilter__link">Abonnement newsletter</a>
 	</form>
 </aside>
 
 <section class="l-row">
 	<div class="l-col l-col--content no-pdTop">
-		<ul class="l-postList">
+		<ul class="l-postList results-list">
 		<?php
 		$args = array(
 			'post_type' => 'post',
