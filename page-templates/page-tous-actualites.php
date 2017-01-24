@@ -4,6 +4,14 @@ Template Name: Toutes les actualités
 */
 ?>
 <?php get_header(); ?>
+<?php 
+	
+	if( isset( $_GET['cat'] ) && !empty( $_GET['cat'] ) ):
+		$category = filter_var($_GET['cat'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+	else:
+		$category = '';
+	endif;
+?>
 
 <div class="l-row bg-main--grad">
 	<header class="l-col l-col--content">
@@ -40,7 +48,7 @@ Template Name: Toutes les actualités
 
 		<?php wp_nonce_field( 'fluxi_auto_filter_posts', 'fluxi_auto_filter_posts_nonce_field' ); ?>
 
-		<button type="submit" id="submit-filters" class="c-btn l-monoFilter__btn">Filtrer</button>
+		<button type="submit" id="submit-filters" class="c-btn l-monoFilter__btn is-none">Filtrer</button>
 		<?php
 		if ( isset( $_GET['toky_toky'] ) ) {
 			echo '<button type="reset" class="c-btn c-btn--reset l-monoFilter__btn">Reset</button>';
@@ -59,16 +67,9 @@ Template Name: Toutes les actualités
 		$args_filtered = array(
 			'post_type' => 'post',
 			'post_status' => 'publish',
-			'posts_per_page' => 2,
-			'paged' => $paged
-			// 'tax_query' => array(
-			// 	array(
-			// 		'taxonomy' => 'publics-cible',
-			// 		'field'    => 'slug',
-			// 		'terms'    => 'adherent',
-			// 		'operator' => 'NOT IN'
-			// 	),
-			// )
+			'posts_per_page' => 10,
+			'paged' => $paged,
+			'category_name' => $category			
 		);
 		$query_filtered = new WP_Query( $args_filtered );
 		if ( $query_filtered->have_posts() ) :

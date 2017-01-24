@@ -13,10 +13,10 @@ function initFluxiFilterPosts(){
     $('#form-filter-posts').on('submit', function(e){
 
         var params = $(this).serialize();
-       
+
         var $results = $('.l-postList');
         var $formObj = $('#form-filter-posts');
-        var formID = '#form-filter-posts'; 
+        var formID = '#form-filter-posts';
         var cpt = $('[name="pt_slug"]').val();
         var label = '';
         var pluriel = '';
@@ -43,7 +43,7 @@ function initFluxiFilterPosts(){
             success: function(data){
 
                 if(data[0].validation == 'error'){
-                    $formObj.find('button[type=submit]').html('Filtrer');                    
+                    $formObj.find('button[type=submit]').html('Filtrer');
                 }else{
                     if(data[0].total > 0){
 
@@ -58,7 +58,7 @@ function initFluxiFilterPosts(){
 
                         $results.html('').append(data[0].content);
                         $formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
-                    }else{                        
+                    }else{
                         $formObj.find('.js-notify').html('<span class="error">'+data[0].message+'</span>');
                     }
                 }
@@ -81,13 +81,17 @@ function initFluxiFilterPosts(){
 
 function initFluxiAutoFilterPosts(){
 
+    $('[name="category"]').on('change', function(e){
+         $('#form-auto-filter-posts').trigger( 'submit' );
+    });
+
     $('#form-auto-filter-posts').on('submit', function(e){
 
         var params = $(this).serialize();
-       
+
         var $results = $('.l-postList');
         var $formObj = $('#form-auto-filter-posts');
-        var formID = '#form-auto-filter-posts'; 
+        var formID = '#form-auto-filter-posts';
         var cpt = $('[name="pt_slug"]').val();
         var label = '';
         var pluriel = '';
@@ -108,19 +112,23 @@ function initFluxiAutoFilterPosts(){
             success: function(data){
 
                 if(data[0].validation == 'error'){
-                    $formObj.find('button[type=submit]').html('Filtrer');                    
+                    $formObj.find('button[type=submit]').html('Filtrer');
                 }else{
                     if(data[0].total > 0){
 
+                        if($('.pagination').length){
+                           $('.pagination').remove();
+                        }
+
                         if(data[0].total > 1){
-                            pluriel = 's';                            
+                            pluriel = 's';
                         }
 
                         $('.js-nb-results').html(data[0].total+' '+label+' disponible'+pluriel);
 
                         $results.html('').append(data[0].content);
                         $formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
-                    }else{                        
+                    }else{
                         $formObj.find('.js-notify').html('<span class="error">'+data[0].message+'</span>');
                     }
                 }
