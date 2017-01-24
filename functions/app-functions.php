@@ -293,7 +293,7 @@ function fluxi_auto_filter_posts(){
 			'post_type' => $pt_slug,
 			'posts_per_page' => -1,
 			'post_status' => 'publish',
-			'cat_name' => $category
+			'category_name' => $category
  		);
 		$query_filtered = new WP_Query( $args_filtered );
 
