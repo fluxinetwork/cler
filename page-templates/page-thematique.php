@@ -32,7 +32,7 @@ Template Name: Thématique
 				$id = $portrait[0];
 
 				global $isMobile;
-				($isMobile) ? $img_size = 'medium' : $img_size = 'thumb';
+				($isMobile) ? $img_size = 'medium' : $img_size = 'thumbnail';
 				$post_img_id = get_field('main_image', $id);
 				$post_img_array = wp_get_attachment_image_src($post_img_id, $img_size, true);
 				$post_img_url = $post_img_array[0];	

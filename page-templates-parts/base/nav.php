@@ -25,7 +25,10 @@
 		</div>
 
 		<div class="l-nav__login navLog"><?php get_template_part( 'page-templates-parts/user', 'log-btn' ); ?></div>
-		<button id="search-btn" class="js-open-search"><i class="fa fa-search"></i></button>
+		<button id="search-btn" class="js-open-search">
+			<i class="fa fa-search"></i>
+			<i class="fa fa-times"></i>
+		</button>
 
 		<div class="l-nav__buttons u-hide@large">
 			<button class="c-btnArrow js-close-subnav"></button>
@@ -38,7 +41,7 @@
 		<form method="get" class="l-col c-notify__content" action="<?php bloginfo('url'); ?>/">
 			<label class="is-none" for="s"><?php _e('Recherche :'); ?></label>
 		  	<input type="text" id="search-input" class="js-search-input c-notify__message" value="<?php if (is_search()) : the_search_query(); endif; ?>" name="s" id="s" placeholder="Rechercher" data-swplive="true">
-		  	<button type="submit" class="c-btn" value=""><i class="fa fa-search mgRight--xs"></i>Rechercher</button>  	
+		  	<button type="submit" class="c-btn" value=""><i class="fa fa-search mgRight--xs"></i>Rechercher</button>  
 		</form>
 	</div>
 </header>

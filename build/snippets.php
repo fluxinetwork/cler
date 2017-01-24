@@ -9,6 +9,7 @@
 	 * ACF repeater if/while
 	 * thumb URL
 	 * searchfilter
+	 * format date in french
 	 */
 
 
@@ -137,5 +138,15 @@
 	echo $count_pages->publish;
 	$count_cpt = wp_count_posts('post_type');
 	echo $count_pages->draft;
+
+
+	/**
+	 * French date format
+	 * #countpost
+	 */
+
+	$dateformatstring = "d M Y";
+	$unixtimestamp = strtotime(get_field('date'));
+	echo date_i18n($dateformatstring, $unixtimestamp);
 
 ?>

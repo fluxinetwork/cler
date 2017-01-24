@@ -55,14 +55,14 @@ Template Name: Archive test
 		$args = array(
 			'post_type' => 'post',
 			'posts_per_page' => 20,
-			// 'tax_query' => array(
-			// 	array(
-			// 		'taxonomy' => 'publics-cible',
-			// 		'field'    => 'slug',
-			// 		'terms'    => 'adherent',
-			// 		'operator' => 'NOT IN'
-			// 	),
-			// )
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'publics-cible',
+					'field'    => 'slug',
+					'terms'    => 'adherent',
+					'operator' => 'NOT IN'
+				),
+			)
 		);
 		$query = new WP_Query( $args );
 		if ( $query->have_posts() ) :
@@ -70,7 +70,7 @@ Template Name: Archive test
 				$query->the_post();
 
 				$post_img_id = get_field('main_image');
-				$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumb', true);
+				$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumbnail', true);
 				$post_img_url = $post_img_array[0];	
 
 				$permalink = get_permalink();

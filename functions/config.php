@@ -9,7 +9,10 @@ define('EDITOR_STYLE', false);
 
 // VALUES
 define('POST_EXCERPT_LENGTH', 40);
+define('SLIDER_NB_POSTS', 10);
+
 define('STRIPE_KEY', 'sk_live_nIIBwPmVfcFQahFBHo6wfQpX');
+
 define('GOOGLE_ANALYTICS_ID', '');
 define('GOOGLE_MAP_API_KEY', 'AIzaSyCHOJtRqM6DSAm6HXYsYSITlHhzkvLKH_M');
 /* ACF Google Maps */
@@ -17,8 +20,8 @@ function wpc_acf_init() {
 	acf_update_setting('google_api_key', GOOGLE_MAP_API_KEY);
 }
 add_action('acf/init', 'wpc_acf_init');
-define('FACEBOOK', 'fa');
 
+define('FACEBOOK', 'fa');
 define('TWITTER', 'tw');
 
 

@@ -62,7 +62,7 @@ if ($nb_results == 0) {
           }
 
           $post_img_id = get_field('main_image');
-          $post_img_array = wp_get_attachment_image_src($post_img_id, 'thumb', true);
+          $post_img_array = wp_get_attachment_image_src($post_img_id, 'thumbnail', true);
           $post_img_url = $post_img_array[0];  
 
           $permalink = get_permalink();
@@ -71,23 +71,68 @@ if ($nb_results == 0) {
           ($categories) ? $cat_name = $categories[0]->cat_name : $cat_name = 'non classé';
           $title = get_the_title();
 
+          // WRAP
+
           $output = '<li class="l-postList__item">';
           $output .= '<a href="'.$permalink.'">';
           $output .= '<article class="c-newsH">';
-          $output .= '<div class="c-newsH__img" style="background-image: url('.$post_img_url.')"></div>';
+
+          // HEADER
+    
+          if ($post_type == 'actualité') { // ACTU
+
+            $output .= '<div class="c-newsH__img" style="background-image: url('.$post_img_url.')"></div>';
+
+          } else if ($post_type == 'emploi') { // EMPLOI
+
+            $ob_type_de_poste = get_field_object('field_574dadcc3c7b1');
+            $contrat = $ob_type_de_poste['choices'][ get_field('type_de_poste') ];
+            $code_postal = get_field('code_postal');
+            $num_departement = substr($code_postal,0,-3);
+
+            $output .= '<div class="c-newsH__img">';
+            $output .= '<div class="c-card__header__tag">'.$contrat.'</div>';
+            $output .= '<div class="c-card__header__tag">'.$num_departement.'</div>';
+            $output .= '</div>';
+
+          } else if ($post_type == 'evenements') { // EVENT
+
+            $date = '12 AVR 2017';
+            $output .= '<div class="c-newsH__img">'.$date.'</div>';
+
+          } else {
+
+            $output .= '<div class="c-newsH__img"></div>';
+
+          }
+
+          // BODY
+
           $output .= '<div class="c-newsH__body">';
+
           $output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
+
+          // META
+
           $output .= '<div class="c-meta">';
           $output .= '<div class="c-dash"></div>';
           $output .= '<span class="c-meta__meta"><i class="fa fa-folder c-meta__meta__icon" aria-hidden="true"></i>'.$post_type.'</span>';
-          if ($post_type != 'page') {
+
+          if ($post_type != 'page' || $post_type != 'evenement') {
+
             $output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>';
+
             if ($categories) {
               $output .= '<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i>'.$cat_name.'</span>';
             }
           }
+          // CLOSE META
           $output .= '</div>';
+
+          // CLOSE BODY
           $output .= '</div>';
+
+          // CLOSE WRAP
           $output .= '</article>';
           $output .= '</a>';
           $output .= '</li>';

@@ -50,10 +50,6 @@ $break2 : $break--l;
 	}
 }
 
-.thematique__content__extra__notions {
-	
-}
-
 .thematique__content__extra__chiffre {
 	margin-top: $gutter;
 
@@ -71,6 +67,7 @@ $break2 : $break--l;
 .thematique__aside {
 	display: none;
 	flex: none;
+	width: $cardW;
 
 	@media screen and(min-width: $break2) {
 		display: block;

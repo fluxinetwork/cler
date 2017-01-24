@@ -52,6 +52,7 @@ function nav() {
 	)
 
 	$('.js-open-search').on('click', function(){
+		$(this).toggleClass('icon-close');
 		$('#search').toggleClass('is-open');
 		$('#search-input').focus();
 	})

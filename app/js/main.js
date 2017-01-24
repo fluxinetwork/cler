@@ -658,6 +658,7 @@ function nav() {
 	)
 
 	$('.js-open-search').on('click', function(){
+		$(this).toggleClass('icon-close');
 		$('#search').toggleClass('is-open');
 		$('#search-input').focus();
 	})
@@ -686,16 +687,12 @@ function slider() {
 
 		if( $this.attr('data-direction') == 'prev' && step > 0 ) {
 			$slides.css('left', posL+colW)
-			setTimeout(function(){
-				$slides.children().eq(step-1).toggleClass('is-off');
-			}, 100);
+			$slides.children().eq(step-1).toggleClass('is-off');
 			$this.parent().attr('data-step', step-1);
 
 		} else if( $this.attr('data-direction') == 'next' && step < nbSlides ) {
 			$slides.children().eq(step).toggleClass('is-off');
-			setTimeout(function(){
-				$slides.css('left', posL-colW);
-			}, 75);
+			$slides.css('left', posL-colW);
 			$this.parent().attr('data-step', step+1);
 		}
 	});

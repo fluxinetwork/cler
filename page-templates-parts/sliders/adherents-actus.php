@@ -16,7 +16,7 @@
 			<?php
 			$args = array(
 				'post_type' => 'post',
-				'posts_per_page' => 6,
+				'posts_per_page' => SLIDER_NB_POSTS,
 				'tax_query' => array(
 					array(
 						'taxonomy' => 'publics-cible',
