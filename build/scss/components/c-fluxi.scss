@@ -8,25 +8,37 @@
 
 $border: 7px solid $c-accent;
 
+//=======================================================  LIENS ET TITRES
+
 .fc {
 	li a,
-	p a {
+	p a,
+	.fc__focus a {
+		@extend .p;
 		color: $c-main;
 		font-weight: 700;
 		position: relative;
+		text-shadow:
+			1px 1px 0 #fff,
+			-1px 1px 0 #fff,
+			2px 0 0 #fff,
+			-2px 0 0 #fff;
+		box-shadow:
+			inset 0 0 0 0 #fff,
+			inset 0 -2px 0 0 $c-main;
 
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: -2px;
-			right: 0;
-			height: 3px;
-			width: 100%;
-			background-color: $c-main;
+		@media screen and (min-width: $break--m) {
+			box-shadow:
+				inset 0 0 0 0 #fff,
+				inset 0 -3px 0 0 $c-main;
 		}
 
-		&:hover::after {
-			width: 70%;
+		&:hover {
+			text-shadow: none;
+			box-shadow:
+				inset 0 -1px 0 0 #fff,
+				inset 0 -100px 0 0 rgba($c-main, 0.1);
+
 		}
 	}
 
@@ -42,6 +54,9 @@ $border: 7px solid $c-accent;
 		margin-top: $space--m;
 	}
 }
+
+
+//===========================================================  BLOCKQUOTE
 
 .fc__blockquote {
 	position: relative;
@@ -103,14 +118,94 @@ $border: 7px solid $c-accent;
 }
 
 
+//============================================================  ACCORDEON
+
+.fc__accordeon {
+	border-top: 1px solid rgba($c-dark, 0.1);
+	border-bottom: 1px solid rgba($c-dark, 0.1);
+	padding: $space--m 0;
+
+	+ .fc__accordeon {
+		border-top: none;
+	}
+}
+
+.fc__accordeon__title {
+	cursor: pointer;
+	@include flex(null center);
+}
+
+.fc__accordeon__icon {
+	@extend .h5;
+	flex: none;
+	margin-right: $space--xs;
+	@include transition;
+	@extend %btn--micro;
+	@include flex(center);
+	background-color: $c-valid;
+	color: #fff;
+
+	.fc__accordeon.is-open & {
+		transform: rotate(90deg);
+	}
+}
+
+.fc__accordeon__content { 
+	margin-top: $space--s;
+}
+
+
+//================================================================  FOCUS
+
+.fc__focus {
+	padding: $space--s;
+	border-radius: $radius;
+	background-color: $c-light;
+
+	@media screen and (min-width: $break--m) {
+		padding: $space--m;
+	}
+
+	@media screen and (min-width: $break--l) {
+		padding: $space--l;
+	}
+
+	p:not(:last-child) {
+		margin-bottom: $space--l;
+	}
+
+	a {	
+		text-shadow:
+			1px 1px 0 $c-light,
+			-1px 1px 0 $c-light,
+			2px 0 0 $c-light,
+			-2px 0 0 $c-light;
+	}
+}
+
+
+//======================================================  CONTACT & PUBLI
+
+.fc__contact + .fc__contact,
+.fc__publication + .fc__publication {
+
+
+	@media screen and (min-width: $break--m) {
+		margin-top: -$space--s;
+	}
+
+	@media screen and (min-width: $break--l) {
+		margin-top: -$space--m;
+	}
+}
+
+
+//================================================================  ITEM
+
 .fc__item,
 .fc__blockquote,
 .fc__gallery   {
-	margin: $space--m 0;
-
-	+ .fc__item {
-		margin-top: -$space--s !important;
-	}
+	margin: $space--l 0;
 
 	@media screen and (min-width: $break--m) {
 		margin: $space--l 0;

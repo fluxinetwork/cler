@@ -11,7 +11,7 @@
 		</div>
 
 		<div class="l-card-slider__aside__link">
-			<a href="#" class="c-link">Voir tout</a>
+			<a href="<?php echo get_bloginfo('url'); ?>/?cat=<?php echo $cat_slug?>" class="c-link">Voir tout</a>
 		</div>
 
 		<?php get_template_part( 'page-templates-parts/sliders/follow' ); ?>

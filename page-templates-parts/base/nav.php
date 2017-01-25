@@ -1,5 +1,5 @@
-<header class="l-row wrap-navBar">
-	<nav class="l-col l-nav navBar" role="navigation">
+<header class="wrap-navBar">
+	<nav class="l-nav navBar" role="navigation">
 		<a href="<?php bloginfo('url'); ?>" class="l-nav__logo nav-logo">
 			<img src="<?php bloginfo('template_url'); ?>/app/img/cler-logo.png" alt="Logo du CLER, Réseau pour la transition énergétique">
 		</a>

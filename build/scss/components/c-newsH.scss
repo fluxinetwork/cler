@@ -10,6 +10,10 @@ $break: $break--m;
 
 .c-newsH {
 	display: flex;
+
+	&:hover .c-link::before {
+	    transform: scaleX(0.7);
+	}
 }
 
 .c-newsH__img {
@@ -18,7 +22,7 @@ $break: $break--m;
 	width: 180px;
 	height: 120px;
 	@include bg-cover();
-	border-radius: $radius 0 0 $radius;
+	border-radius: $radius;
 	background-color: $c-dark;
 
 	@media screen and (min-width: $break) {
@@ -30,10 +34,6 @@ $break: $break--m;
 	@include flex(center null, true);
 	background: #fff;
 	border-radius: 0 $radius $radius 0;
-
-	.fc__item & {
-		justify-content: space-between;
-	}
 
 	@media screen and (min-width: $break) {
 		padding-left: $space--s;
@@ -52,7 +52,6 @@ $break: $break--m;
 
 .c-newsH__body__meta {
 	@extend .t-meta;
-	margin-bottom: $space--xs
 }
 
 
@@ -60,10 +59,13 @@ $break: $break--m;
 	@extend .h3;
 
 	.fc__item & {
-		margin-bottom: $space--s;
+		margin-top: $space--xs*$smaller;
 	}
 }
 
 .c-newsH__body__link {
-	margin-top: auto;
+	margin-top: $space--s;
+	padding-bottom: 0;
+	position: relative;
+	top: 4px;
 }

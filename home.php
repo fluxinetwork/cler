@@ -30,7 +30,7 @@
 				<div class="c-tile c-tile--round c-tile--noBdr c-tile--bg">
 					<div class="c-tile__content">
 						<i class="fa fa-star c-tile__content__icon" aria-hidden="true"></i>
-						<a href="#" class="c-link">Adhérents</a>
+						<a href="<?php echo get_permalink(3024); ?>" class="c-link">Adhérents</a>
 					</div>
 				</div>
 			</div>
@@ -38,7 +38,7 @@
 				<div class="c-tile c-tile--round c-tile--noBdr c-tile--bg">
 					<div class="c-tile__content">
 					<i class="fa fa-users c-tile__content__icon" aria-hidden="true"></i>
-						<a href="#" class="c-link">Citoyens</a>
+						<a href="<?php echo get_permalink(1288); ?>" class="c-link">Citoyens</a>
 					</div>
 				</div>
 			</div>
@@ -46,7 +46,7 @@
 				<div class="c-tile c-tile--round c-tile--noBdr c-tile--bg">
 					<div class="c-tile__content">
 					<i class="fa fa-microphone c-tile__content__icon" aria-hidden="true"></i>
-						<a href="#" class="c-link">Presse</a>
+						<a href="<?php echo get_permalink(1292); ?>" class="c-link">Presse</a>
 					</div>
 				</div>
 			</div>
@@ -54,7 +54,7 @@
 				<div class="c-tile c-tile--round c-tile--noBdr c-tile--bg">
 					<div class="c-tile__content">
 					<i class="fa fa-handshake-o c-tile__content__icon" aria-hidden="true"></i>
-						<a href="#" class="c-link">Élus</a>
+						<a href="<?php echo get_permalink(1291); ?>" class="c-link">Élus</a>
 					</div>
 				</div>
 			</div>
