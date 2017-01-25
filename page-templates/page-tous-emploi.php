@@ -96,11 +96,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 		<div class="l-filterList__buttons">
 			<a href="<?php echo home_url().'/mon-profil/gerer-offre-emploi/?act=add'; ?>" class="c-link c-link--shy">Poster une offre</a>
 			<div class="l-filterList__buttons__submit">
-				<?php
-				if ( isset( $_GET['toky_toky'] ) ) {
-					echo '<button type="reset" class="c-btn c-btn--reset">Reset</button>';
-				}
-				?>
+				<button type="reset" class="c-btn c-btn--reset js-reload is-none">Reset</button>
 				<button type="submit" id="submit-filters" class="c-btn">Filtrer</button>
 			</div>
 		</div>
@@ -110,7 +106,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 
 <div class="l-row">
 	<div class="l-col l-col--content no-pdTop">
-		
+		<div class="js-notify"></div>
 		<?php
 			$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
@@ -123,6 +119,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 			$query_filtered = new WP_Query( $args_filtered );
 
 			if ( $query_filtered->have_posts() ) :
+				
 				echo '<ul class="l-postList">';
 					while ( $query_filtered->have_posts() ) : $query_filtered->the_post();
 

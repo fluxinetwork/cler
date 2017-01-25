@@ -102,11 +102,7 @@ Template Name: Toutes les formations
 			<div class="l-filterList__buttons">
 				<a href="<?php echo home_url().'/mon-profil/gerer-formations/?act=add'; ?>" class="c-link c-link--shy">Poster une formation</a>
 				<div class="l-filterList__buttons__submit">
-					<?php
-					if ( isset( $_GET['toky_toky'] ) ) {
-						echo '<button type="reset" class="c-btn c-btn--reset">Reset</button>';
-					}
-					?>
+					<button type="reset" class="c-btn c-btn--reset js-reload is-none">Reset</button>
 					<button type="submit" id="submit-filters" class="c-btn">Filtrer</button>
 				</div>
 			</div>			
@@ -117,108 +113,109 @@ Template Name: Toutes les formations
 
 	<div class="l-row">
 		<div class="l-col l-col--content no-pdTop">
-		<?php
-			$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+			<div class="js-notify"></div>
+			<?php
+				$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
-			$args_filtered = array(
-				'post_type' => 'formations',
-				'post_status' => 'publish',
-				'posts_per_page' => 5,
-				'paged' => $paged
-	 		);
-			$query_filtered = new WP_Query( $args_filtered );
+				$args_filtered = array(
+					'post_type' => 'formations',
+					'post_status' => 'publish',
+					'posts_per_page' => 5,
+					'paged' => $paged
+		 		);
+				$query_filtered = new WP_Query( $args_filtered );
 
-			if ( $query_filtered->have_posts() ) :
+				if ( $query_filtered->have_posts() ) :
 
-				echo '<ul class="l-postList">';
-					while ( $query_filtered->have_posts() ) : $query_filtered->the_post();					
+					echo '<ul class="l-postList">';
+						while ( $query_filtered->have_posts() ) : $query_filtered->the_post();					
 
-						$ob_departement = get_field_object('field_57b6eab6f05cd');
-						$label_departement = $ob_departement['choices'][ get_field('departement') ];
+							$ob_departement = get_field_object('field_57b6eab6f05cd');
+							$label_departement = $ob_departement['choices'][ get_field('departement') ];
 
-						$ob_niveau_detude = get_field_object('field_574dae0e3c7b2');
-						$ch_niveau_detude = $ob_niveau_detude['choices'];
-						$val_niveau_detude = $ob_niveau_detude['value'];
-						$label_niveau_detude = '';
+							$ob_niveau_detude = get_field_object('field_574dae0e3c7b2');
+							$ch_niveau_detude = $ob_niveau_detude['choices'];
+							$val_niveau_detude = $ob_niveau_detude['value'];
+							$label_niveau_detude = '';
 
-						if( $val_niveau_detude ):
-							foreach( $val_niveau_detude as $v ):
-								$label_niveau_detude .= '<span class="c-tag">'.$ch_niveau_detude[ $v ] .'</span>';
-							endforeach;
-						endif;
+							if( $val_niveau_detude ):
+								foreach( $val_niveau_detude as $v ):
+									$label_niveau_detude .= '<span class="c-tag">'.$ch_niveau_detude[ $v ] .'</span>';
+								endforeach;
+							endif;
 
-						$ob_thematique = get_field_object('field_57b6ebc6f05d3');
-						$ch_thematique = $ob_thematique['choices'];
-						$val_thematique = $ob_thematique['value'];
-						$label_thematique = '';
+							$ob_thematique = get_field_object('field_57b6ebc6f05d3');
+							$ch_thematique = $ob_thematique['choices'];
+							$val_thematique = $ob_thematique['value'];
+							$label_thematique = '';
 
-						if( $val_thematique ):
-							foreach( $val_thematique as $v ):
-								$label_thematique .= '<span class="c-tag">'.$ch_thematique[ $v ] .'</span>';
-							endforeach;
-						endif;
+							if( $val_thematique ):
+								foreach( $val_thematique as $v ):
+									$label_thematique .= '<span class="c-tag">'.$ch_thematique[ $v ] .'</span>';
+								endforeach;
+							endif;
 
-						$ob_secteur = get_field_object('field_57b6eb62f05d1');
-						$ch_secteur = $ob_secteur['choices'];
-						$val_secteur = $ob_secteur['value'];
-						$label_secteur = '';
+							$ob_secteur = get_field_object('field_57b6eb62f05d1');
+							$ch_secteur = $ob_secteur['choices'];
+							$val_secteur = $ob_secteur['value'];
+							$label_secteur = '';
 
-						if( $val_secteur ):
-							foreach( $val_secteur as $v ):
-								$label_secteur .= '<span class="c-tag">'.$ch_secteur[ $v ] .'</span>';
-							endforeach;
-						endif;
+							if( $val_secteur ):
+								foreach( $val_secteur as $v ):
+									$label_secteur .= '<span class="c-tag">'.$ch_secteur[ $v ] .'</span>';
+								endforeach;
+							endif;
 
-						$agrement_formateree = get_field_object('agrement_formateree');
-						if($agrement_formateree == 'oui'):
-							$formateree_label = 'Agrément Format’eree';
-						else:
-							$formateree_label = 'Non agréée Format’eree';
-						endif;
+							$agrement_formateree = get_field_object('agrement_formateree');
+							if($agrement_formateree == 'oui'):
+								$formateree_label = 'Agrément Format’eree';
+							else:
+								$formateree_label = 'Non agréée Format’eree';
+							endif;
 
-						$output = '<li classs="l-postList__item">';
-						$output .= '<a href="'.get_permalink().'">';
-						$output .= '<article class="c-offre">';
+							$output = '<li classs="l-postList__item">';
+							$output .= '<a href="'.get_permalink().'">';
+							$output .= '<article class="c-offre">';
 
-						$output .= '<h1 class="c-offre__title">'.get_the_title().'</h1>';
+							$output .= '<h1 class="c-offre__title">'.get_the_title().'</h1>';
 
-						$output .= '<div class="c-offre__meta">'.get_field('nom_centre').' <i class="mgLeft--s fa fa-map-marker" aria-hidden="true"></i>'.get_field('ville').' <i class="mgLeft--s fa fa-location-arrow" aria-hidden="true"></i>'.$label_departement.' - '.$formateree_label.'</div>';
+							$output .= '<div class="c-offre__meta">'.get_field('nom_centre').' <i class="mgLeft--s fa fa-map-marker" aria-hidden="true"></i>'.get_field('ville').' <i class="mgLeft--s fa fa-location-arrow" aria-hidden="true"></i>'.$label_departement.' - '.$formateree_label.'</div>';
 
-						//$output .= '<p class="c-offre_description">'.get_field('descriptif_organisme').'</p>';
+							//$output .= '<p class="c-offre_description">'.get_field('descriptif_organisme').'</p>';
 
-						$output .= '<div class="c-offre__tags">';
-						$output .= $label_secteur;
-						$output .= $label_thematique;
-						//$output .= $label_niveau_detude;						
-						$output .= '</div>';
+							$output .= '<div class="c-offre__tags">';
+							$output .= $label_secteur;
+							$output .= $label_thematique;
+							//$output .= $label_niveau_detude;						
+							$output .= '</div>';
 
-						$output .= '</article>';
-						$output .= '</a>';
-						$output .= '</li>';
+							$output .= '</article>';
+							$output .= '</a>';
+							$output .= '</li>';
+							
+							echo $output;						
+
+						endwhile;
+
+						echo '</ul>';
 						
-						echo $output;						
-
-					endwhile;
-
-					echo '</ul>';
+			            echo '<div class="pagination">';
+			    			echo paginate_links( array(
+			    				'base' => @add_query_arg('paged','%#%'),
+			    				'format' => '?paged=%#%',
+			    				'current' => max( 1, get_query_var('paged') ),
+			    				'total' => $query_filtered->max_num_pages,
+			              		'prev_next'=> false
+			    			) );
+			            echo '</div>';
 					
-		            echo '<div class="pagination">';
-		    			echo paginate_links( array(
-		    				'base' => @add_query_arg('paged','%#%'),
-		    				'format' => '?paged=%#%',
-		    				'current' => max( 1, get_query_var('paged') ),
-		    				'total' => $query_filtered->max_num_pages,
-		              		'prev_next'=> false
-		    			) );
-		            echo '</div>';
-				
-			else :
+				else :
 
-				echo '<p><strong>Il n\'y a aucune formation pour l\'instant.</strong></p>';
+					echo '<p><strong>Il n\'y a aucune formation pour l\'instant.</strong></p>';
 
-			endif;
-			wp_reset_postdata();
-		?>
+				endif;
+				wp_reset_postdata();
+			?>
 
 		</div>
 	</div>

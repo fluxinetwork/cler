@@ -1,8 +1,3 @@
-<?php
-/*
-Template Name: Archive test		
-*/
-?>
 <?php get_header(); ?>
 
 <div class="l-row bg-main--grad">
@@ -45,14 +40,19 @@ Template Name: Archive test
 		?>
 		
 		<?php
-if ( is_post_type_archive() ) {
-    ?>
-    <h1><?php post_type_archive_title(); ?></h1>
-    <?php
 
-    echo '<p>'.$query->query['post_type'].'</p>';
-}
-?>
+		if(is_post_type_archive( 'magazine' )){
+			
+		}
+
+		if ( is_post_type_archive() ) {
+		    ?>
+		    <h1><?php post_type_archive_title(); ?></h1>
+		    <?php
+
+		    echo '<p>'.$query->query['post_type'].'</p>';
+		}
+		?>
 
 		<a href="<?php echo home_url().'/mon-profil/gerer-offre-emploi/?act=add'; ?>" class="c-link c-link--shy l-monoFilter__link">Abonnement newsletter</a>
 	</form>

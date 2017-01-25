@@ -1,15 +1,20 @@
 <?php
 /*
-Template Name: Toutes les actualités	
+Template Name: Toutes les actualités
 */
 ?>
 <?php get_header(); ?>
-<?php 
-	
+<?php
 	if( isset( $_GET['cat'] ) && !empty( $_GET['cat'] ) ):
-		$category = filter_var($_GET['cat'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+		$category_name = filter_var($_GET['cat'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 	else:
-		$category = '';
+		$category_name = '';
+	endif;
+
+	if( isset( $_GET['public'] ) && !empty( $_GET['public'] ) ):
+		$public_name = filter_var($_GET['public'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+	else:
+		$public_name = '';
 	endif;
 ?>
 
@@ -25,9 +30,6 @@ Template Name: Toutes les actualités
 	</header>
 </div>
 
-
-
-
 <aside class="l-filterList l-filterList--small">
 	<form id="form-auto-filter-posts" role="form" class="l-monoFilter">
 	    <div class="l-filterList__filter">
@@ -35,12 +37,12 @@ Template Name: Toutes les actualités
 	    	<i class="fa fa-tag" aria-hidden="true"></i>
 			<select name="category" id="category" data-validation="required" class="c-form__select">
 				<option disabled selected value="">Thèmatique</option>
-				<?php					
+				<?php
 					$terms = get_terms( 'category', 'hide_empty=0' );
-					if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){					   
-					    foreach ( $terms as $term ) {					       
+					if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+					    foreach ( $terms as $term ) {
 					        echo '<option value="'.$term->slug.'">'.$term->name.'</option>';
-					    }					    
+					    }
 					}
 				?>
 			</select>
@@ -48,20 +50,19 @@ Template Name: Toutes les actualités
 
 		<input type="hidden" value="post" name="pt_slug">
 		<input type="hidden" value="<?php echo mt_rand(0,9999); ?>" name="toky_toky">
-
 		<?php wp_nonce_field( 'fluxi_auto_filter_posts', 'fluxi_auto_filter_posts_nonce_field' ); ?>
-
-		<!--<button type="submit" id="submit-filters" class="c-btn l-monoFilter__btn is-none">Filtrer</button>-->
 		
-<a href="<?php echo get_post_type_archive_link( 'equipes' ); ?>">Archives equipes</a>
-
+		<span class="js-loader"></span>
+		<button type="button" class="c-btn c-btn--reset l-monoFilter__btn js-reload is-none">Reset</button>
 		<a href="<?php echo home_url(); ?>" class="c-link c-link--shy l-monoFilter__link">Abonnement newsletter</a>
 	</form>
+
 </aside>
 
 <section class="l-row">
 	<div class="l-col l-col--content no-pdTop">
-		<ul class="l-postList">
+		<div class="js-notify"></div>		
+		<ul class="l-postList">		
 		<?php
 		$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 		$args_filtered = array(
@@ -69,7 +70,7 @@ Template Name: Toutes les actualités
 			'post_status' => 'publish',
 			'posts_per_page' => 10,
 			'paged' => $paged,
-			'category_name' => $category			
+			'category_name' => $category_name,$public_name
 		);
 		$query_filtered = new WP_Query( $args_filtered );
 		if ( $query_filtered->have_posts() ) :
@@ -77,8 +78,8 @@ Template Name: Toutes les actualités
 				$query_filtered->the_post();
 
 				$post_img_id = get_field('main_image');
-				$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumb', true);
-				$post_img_url = $post_img_array[0];	
+				$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumbnail', true);
+				$post_img_url = $post_img_array[0];
 
 				$permalink = get_permalink();
 				$date = get_the_date('d M Y');
@@ -110,7 +111,7 @@ Template Name: Toutes les actualités
 		?>
 		</ul>
 
-		<?php 
+		<?php
 			echo '<div class="pagination">';
 			echo paginate_links( array(
 				'base' => @add_query_arg('paged','%#%'),

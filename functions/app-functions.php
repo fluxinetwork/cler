@@ -308,7 +308,7 @@ function fluxi_auto_filter_posts(){
 				if( $pt_slug == 'post'):
 
 					$post_img_id = get_field('main_image');
-					$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumb', true);
+					$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumbnail', true);
 					$post_img_url = $post_img_array[0];	
 
 					$date = get_the_date('d M Y');

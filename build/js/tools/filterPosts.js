@@ -26,9 +26,7 @@ function initFluxiFilterPosts(){
         }else if ( cpt == 'evenements' ){
             label = 'événement';
         }else if ( cpt == 'formations' ){
-            label = 'formation';
-        }else if ( cpt == 'actualites' ){
-            label = 'actualité';
+            label = 'formation';        
         }else {
             label = 'publication';
         }
@@ -47,6 +45,10 @@ function initFluxiFilterPosts(){
                 }else{
                     if(data[0].total > 0){
 
+                        if($('.pagination').length){
+                           $('.pagination').remove();
+                        }
+
                         if(data[0].total > 1){
                             pluriel = 's';
                             if( cpt == 'offres-emploi' ){
@@ -57,7 +59,7 @@ function initFluxiFilterPosts(){
                         $('.js-nb-results').html(data[0].total+' '+label+' disponible'+pluriel);
 
                         $results.html('').append(data[0].content);
-                        $formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
+                        //$formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
                     }else{
                         $formObj.find('.js-notify').html('<span class="error">'+data[0].message+'</span>');
                     }
@@ -71,6 +73,12 @@ function initFluxiFilterPosts(){
 
         });
         return false;
+    });
+
+    /* Reset by reload */
+    $('.js-reload').on('click', function(e){
+        var curr_location = window.location.href
+        window.location = window.location.href;
     });
 
 }
@@ -105,7 +113,8 @@ function initFluxiAutoFilterPosts(){
             label = 'publication';
         }
 
-        $formObj.find('button[type=submit]').html('<span class="spinner"></span> Chargement');
+        $formObj.find('.js-loader').html('<span class="c-btn"><span class="spinner"></span></span>');
+        $results.prev().html('');
 
         $.ajax({
             type: 'POST',
@@ -115,7 +124,7 @@ function initFluxiAutoFilterPosts(){
             success: function(data){
 
                 if(data[0].validation == 'error'){
-                    $formObj.find('button[type=submit]').html('Filtrer');
+                    $results.prev().html('<span class="error">Il semble y avoir un problème, veuillez ré-essayer.</span>');
                 }else{
                     if(data[0].total > 0){
 
@@ -125,28 +134,32 @@ function initFluxiAutoFilterPosts(){
 
                         if(data[0].total > 1){
                             pluriel = 's';
-                        }
-
-                        $('.js-nb-results').html(data[0].total+' '+label+' disponible'+pluriel);
+                        }                        
 
                         $results.html('').append(data[0].content);
-                        $formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
-
-                        $formObj.append('<button type="reset" class="c-btn c-btn--reset l-monoFilter__btn">Reset</button>');
-                        
+                        $formObj.find('.js-loader').html('');
+                        $formObj.find('.js-reload').removeClass('is-none');
+                        //$results.prev().html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
+                       
                     }else{
-                        $formObj.find('.js-notify').html('<span class="error">'+data[0].message+'</span>');
+                        $results.prev().html('<span class="error">'+data[0].message+'</span>');
                     }
                 }
-                $formObj.find('button[type=submit]').html('Filtrer');
+               
             },
             error : function(jqXHR, textStatus, errorThrown) {
                 //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
-                $formObj.find('button[type=submit]').html('Filtrer');
+                $results.prev().html('<span class="error">Il semble y avoir un problème, veuillez ré-essayer.</span>');
             }
 
         });
         return false;
+    });
+
+    /* Reset by reload */
+    $('.js-reload').on('click', function(e){
+        var curr_location = window.location.href
+        window.location = window.location.href;
     });
 
 }

@@ -20,6 +20,9 @@
 					<li class="c-navList__item">
 						<a href="<?php bloginfo('url'); ?>/wp-admin" class="c-navList__item__link has-dropdown">Admin</a>
 					</li>
+					<li class="c-navList__item">
+						<a href="<?php echo get_edit_post_link( get_the_ID() ); ?> " class="c-navList__item__link has-dropdown">Edit</a>
+					</li>
 				<?php endif; ?>
 			</ul>
 		</div>
