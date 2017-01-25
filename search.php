@@ -92,13 +92,12 @@ if ($nb_results == 0) {
 
             $output .= '<div class="c-newsH__img">';
             $output .= '<div class="c-card__header__tag">'.$contrat.'</div>';
-            $output .= '<div class="c-card__header__tag">'.$num_departement.'</div>';
             $output .= '</div>';
 
           } else if ($post_type == 'evenements') { // EVENT
 
-            $date = '12 AVR 2017';
-            $output .= '<div class="c-newsH__img">'.$date.'</div>';
+            $date = get_the_date('d M');
+            $output .= '<div class="c-newsH__img "><div class="c-card__header__tag">'.$date.'</div></div>';
 
           } else {
 
@@ -118,7 +117,7 @@ if ($nb_results == 0) {
           $output .= '<div class="c-dash"></div>';
           $output .= '<span class="c-meta__meta"><i class="fa fa-folder c-meta__meta__icon" aria-hidden="true"></i>'.$post_type.'</span>';
 
-          if ($post_type != 'page' || $post_type != 'evenement') {
+          if ($post_type != 'page' || $post_type != 'evenements') {
 
             $output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>';
 

@@ -100,7 +100,14 @@
 
 .pagination {
 	margin-top: $space--s;
-	//text-align: center;
+	background-color: $c-valid;
+	border-radius: 100px;
+	display: inline-block;
+	padding: $space--s $space--m;
+
+	.t-meta {
+		color: #fff;
+	}
 
 
 	.screen-reader-text,
@@ -111,7 +118,10 @@
 
 	.page-numbers {
 		@extend .t-meta;
-		margin-right: $space--xs;
+
+		&:not(:first-child) {
+			margin-left: $space--xs;
+		}
 		
 		&:hover,
 		&.current,

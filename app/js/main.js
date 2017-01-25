@@ -694,7 +694,7 @@ function slider() {
 		var $slides = $this.parent().prev().find('ul');
 		var nbSlides = parseInt($this.parent().attr('data-slides'));
 		var step = parseInt($this.parent().attr('data-step'));
-		var colW = parseInt($slides.children().eq(0).outerWidth());
+		var colW = parseInt($slides.children().eq(0).outerWidth(true));
 		var posL = parseInt($slides.css('left'));
 
 		console.log(posL-colW);

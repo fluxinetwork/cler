@@ -79,13 +79,13 @@ $break2: $break--l;
 	@include list-reset();
 }
 
-.eventList__item {
-	margin-top: $space--s;
-}
-
 .miniEvent {
 	border-bottom: 1px solid $c-dark;
-	padding-bottom: $space--s;
+	padding: $space--s 0;
+
+	&:hover {
+		background-color: rgba(#fff, 0.5);
+	}
 }
 
 .miniEvent__meta {
