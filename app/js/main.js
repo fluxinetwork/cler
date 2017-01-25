@@ -338,6 +338,9 @@ function initFluxiFilterPosts(){
 
 /**
  * Ajax auto filter posts by cat
+ *
+ * Use a single field "category"
+ *
  */
 
 function initFluxiAutoFilterPosts(){
@@ -389,6 +392,9 @@ function initFluxiAutoFilterPosts(){
 
                         $results.html('').append(data[0].content);
                         $formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
+
+                        $formObj.append('<button type="reset" class="c-btn c-btn--reset l-monoFilter__btn">Reset</button>');
+                        
                     }else{
                         $formObj.find('.js-notify').html('<span class="error">'+data[0].message+'</span>');
                     }

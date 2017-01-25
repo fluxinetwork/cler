@@ -43,6 +43,16 @@ Template Name: Archive test
 			echo '<button type="reset" class="c-btn c-btn--reset l-monoFilter__btn">Reset</button>';
 		}
 		?>
+		
+		<?php
+if ( is_post_type_archive() ) {
+    ?>
+    <h1><?php post_type_archive_title(); ?></h1>
+    <?php
+
+    echo '<p>'.$query->query['post_type'].'</p>';
+}
+?>
 
 		<a href="<?php echo home_url().'/mon-profil/gerer-offre-emploi/?act=add'; ?>" class="c-link c-link--shy l-monoFilter__link">Abonnement newsletter</a>
 	</form>

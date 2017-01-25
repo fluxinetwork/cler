@@ -25,6 +25,9 @@ Template Name: Toutes les actualités
 	</header>
 </div>
 
+
+
+
 <aside class="l-filterList l-filterList--small">
 	<form id="form-auto-filter-posts" role="form" class="l-monoFilter">
 	    <div class="l-filterList__filter">
@@ -48,12 +51,9 @@ Template Name: Toutes les actualités
 
 		<?php wp_nonce_field( 'fluxi_auto_filter_posts', 'fluxi_auto_filter_posts_nonce_field' ); ?>
 
-		<button type="submit" id="submit-filters" class="c-btn l-monoFilter__btn is-none">Filtrer</button>
-		<?php
-		if ( isset( $_GET['toky_toky'] ) ) {
-			echo '<button type="reset" class="c-btn c-btn--reset l-monoFilter__btn">Reset</button>';
-		}
-		?>
+		<!--<button type="submit" id="submit-filters" class="c-btn l-monoFilter__btn is-none">Filtrer</button>-->
+		
+<a href="<?php echo get_post_type_archive_link( 'equipes' ); ?>">Archives equipes</a>
 
 		<a href="<?php echo home_url(); ?>" class="c-link c-link--shy l-monoFilter__link">Abonnement newsletter</a>
 	</form>

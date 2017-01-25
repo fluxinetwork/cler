@@ -103,7 +103,7 @@ if ( CUSTOM_POST_TYPE ) {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'offres-emploi', 'with_front' => true ),
+			'rewrite' => array( 'slug' => 'outils/offres-emploi', 'with_front' => true ),
 			'query_var' => true,
 
 			'supports' => array( 'title', 'author' ),
@@ -135,7 +135,7 @@ if ( CUSTOM_POST_TYPE ) {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => true,
-			'rewrite' => array( 'slug' => 'le-reseau/les-adherents', 'with_front' => true ),
+			'rewrite' => array( 'slug' => 'le-reseau/adherents', 'with_front' => true ),
 			'query_var' => true,
 
 			'supports' => array( 'title', 'page-attributes', 'author' ),
@@ -201,11 +201,11 @@ if ( CUSTOM_POST_TYPE ) {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'evenements', 'with_front' => true ),
+			'rewrite' => array( 'slug' => 'outils/evenements', 'with_front' => true ),
 			'query_var' => true,
 
 			'supports' => array( 'title', 'editor', 'author' ),
-			'taxonomies' => array( 'category', 'post_tag' ),
+			'taxonomies' => array( 'post_tag' ),
 		);
 		register_post_type( 'evenements', $args );
 
@@ -265,11 +265,11 @@ if ( CUSTOM_POST_TYPE ) {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'webinaires', 'with_front' => true ),
+			'rewrite' => array( 'slug' => 'outils/webinaires', 'with_front' => true ),
 			'query_var' => true,
 
 			'supports' => array( 'title', 'author' ),
-			'taxonomies' => array( 'category', 'post_tag' ),
+			'taxonomies' => array( 'category' ),
 		);
 		register_post_type( 'webinaires', $args );
 
@@ -297,11 +297,11 @@ if ( CUSTOM_POST_TYPE ) {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'formations', 'with_front' => true ),
+			'rewrite' => array( 'slug' => 'outils/formations', 'with_front' => true ),
 			'query_var' => true,
 
 			'supports' => array( 'title', 'author' ),
-			'taxonomies' => array( 'category', 'post_tag' ),
+			'taxonomies' => array( 'post_tag' ),
 		);
 		register_post_type( 'formations', $args );
 
@@ -329,11 +329,11 @@ if ( CUSTOM_POST_TYPE ) {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'portraits', 'with_front' => true ),
+			'rewrite' => array( 'slug' => 'le-reseau/portraits', 'with_front' => true ),
 			'query_var' => true,
 
 			'supports' => array( 'title', 'author' ),
-			'taxonomies' => array( 'category', 'post_tag' ),
+			'taxonomies' => array( 'category' ),
 		);
 		register_post_type( 'portraits', $args );
 	}
@@ -360,11 +360,11 @@ if ( CUSTOM_POST_TYPE ) {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'retours-experience', 'with_front' => true ),
+			'rewrite' => array( 'slug' => 'le-reseau/retours-experience', 'with_front' => true ),
 			'query_var' => true,
 
 			'supports' => array( 'title', 'author' ),
-			'taxonomies' => array( 'category', 'post_tag' ),
+			'taxonomies' => array( 'category' ),
 		);
 		register_post_type( 'retours-experience', $args );
 	}
@@ -385,7 +385,7 @@ if ( CUSTOM_POST_TYPE ) {
 			'show_ui' => true,
 			'show_in_rest' => false,
 			'rest_base' => '',
-			'has_archive' => false,
+			'has_archive' => true,
 			'show_in_menu' => true,
 			'exclude_from_search' => false,
 			'capability_type' => 'post',
@@ -395,7 +395,7 @@ if ( CUSTOM_POST_TYPE ) {
 			'query_var' => true,
 
 			'supports' => array( 'title', 'author' ),
-			'taxonomies' => array( 'category', 'post_tag' ),
+			'taxonomies' => array( ),
 		);
 		register_post_type( 'equipes', $args );
 	}
@@ -429,7 +429,7 @@ if ( CUSTOM_POST_TYPE ) {
 			'query_var' => true,
 
 			'supports' => array( 'title', 'author' ),
-			'taxonomies' => array( 'category', 'post_tag' ),
+			'taxonomies' => array( 'post_tag' ),
 		);
 		register_post_type( 'cartes', $args );
 	}
