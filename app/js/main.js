@@ -287,7 +287,7 @@ function initFluxiFilterPosts(){
         }else if ( cpt == 'evenements' ){
             label = 'événement';
         }else if ( cpt == 'formations' ){
-            label = 'formation';        
+            label = 'formation';
         }else {
             label = 'publication';
         }
@@ -383,33 +383,24 @@ function initFluxiAutoFilterPosts(){
             url: ajax_object.ajax_url,
             data: 'action=fluxi_auto_filter_posts&'+params,
             success: function(data){
-
+                $formObj.find('.js-loader').html('');
                 if(data[0].validation == 'error'){
                     $results.prev().html('<span class="error">Il semble y avoir un problème, veuillez ré-essayer.</span>');
                 }else{
                     if(data[0].total > 0){
-
-                        if($('.pagination').length){
-                           $('.pagination').remove();
-                        }
-
-                        if(data[0].total > 1){
-                            pluriel = 's';
-                        }                        
-
+                        if($('.pagination').length){ $('.pagination').remove(); }
+                        if(data[0].total > 1){ pluriel = 's'; }
                         $results.html('').append(data[0].content);
-                        $formObj.find('.js-loader').html('');
-                        $formObj.find('.js-reload').removeClass('is-none');
                         //$results.prev().html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
-                       
                     }else{
                         $results.prev().html('<span class="error">'+data[0].message+'</span>');
                     }
+                    $formObj.find('.js-reload').removeClass('is-none');
                 }
-               
             },
             error : function(jqXHR, textStatus, errorThrown) {
                 //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
+                $formObj.find('.js-loader').html('');
                 $results.prev().html('<span class="error">Il semble y avoir un problème, veuillez ré-essayer.</span>');
             }
 
