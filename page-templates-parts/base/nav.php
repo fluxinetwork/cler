@@ -28,14 +28,18 @@
 		</div>
 
 		<div class="l-nav__login navLog"><?php get_template_part( 'page-templates-parts/user', 'log-btn' ); ?></div>
-		<button id="search-btn" class="js-open-search">
+
+		<button id="search-btn" class="c-btnIcon js-open-search">
 			<i class="fa fa-search"></i>
 			<i class="fa fa-times"></i>
 		</button>
 
 		<div class="l-nav__buttons u-hide@large">
-			<button class="c-btnArrow js-close-subnav"></button>
-			<button class="c-btnMenu js-open-nav"></button>
+			<button class="c-btnIcon js-close-subnav is-none"><i class="fa fa-chevron-left"></i></button>
+			<button class="c-btnIcon js-open-nav">
+				<i class="fa fa-bars"></i>
+				<i class="fa fa-times"></i>
+			</button>
 		</div>	
 		
 	</nav>

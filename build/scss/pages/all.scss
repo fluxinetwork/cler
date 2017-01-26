@@ -10,7 +10,8 @@
 //================================================================  NAVBAR
 
 .wrap-navBar {
-	z-index: 100;
+	position: relative;
+	z-index: 2000;
 	background-color: #fff;
 	box-shadow: $shadow;
 	padding: 0 $space--m;
@@ -36,35 +37,13 @@
 }
 #search-btn {
 	position: fixed;
+	display: none;
 	z-index: 2000;
-	@include flex(center);
-	width: 64px;
-	height: 64px;
 	bottom: $space--s;
 	right: $space--s;
-	border-radius: 50%;
-	background-color: $c-valid;
-	color: #fff;
-	outline: 0;
-	@include transition();
 
-	.fa:nth-child(2) {
-		display: none;
-	}
-
-	&.icon-close {
-		background-color: transparent;
-
-		.fa:nth-child(1) {
-			display: none;
-		}
-		.fa:nth-child(2) {
-			display: block;
-		}
-
-		@media screen and (max-width: $break--xl) {
-			display: none;
-		}
+	@media screen and (min-width: $break--l) {
+		display: block;
 	}
 }
 

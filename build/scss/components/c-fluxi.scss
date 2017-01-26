@@ -139,11 +139,8 @@ $border: 7px solid $c-accent;
 	@extend .h5;
 	flex: none;
 	margin-right: $space--xs;
-	@include transition;
-	@extend %btn--micro;
-	@include flex(center);
-	background-color: $c-valid;
-	color: #fff;
+	@extend .c-btnIcon;
+	@extend .c-btnIcon--small;
 
 	.fc__accordeon.is-open & {
 		transform: rotate(90deg);

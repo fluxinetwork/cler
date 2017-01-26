@@ -44,15 +44,15 @@ function nav() {
 
 	$('.js-tips-logout').hover(
 		function() {
-			$('.btn-profil').addClass('bg-error c-btn--collapse').data('title', $('.btn-profil').html()).html('A bientôt !')
+			$('.btn-profil').addClass('bg-error is-collapsed').data('title', $('.btn-profil').html()).html('A bientôt !')
 		},
 		function() {
-			$('.btn-profil').removeClass('bg-error c-btn--collapse').html($('.btn-profil').data('title')).removeData();
+			$('.btn-profil').removeClass('bg-error is-collapsed').html($('.btn-profil').data('title')).removeData();
 		}
 	)
 
 	$('.js-open-search').on('click', function(){
-		$(this).toggleClass('icon-close');
+		$(this).toggleClass('icon2');
 		$('#search').toggleClass('is-open');
 		$('#search-input').focus();
 	})

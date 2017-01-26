@@ -459,7 +459,7 @@ html {
 
 \*------------------------------*/
 body {
-  font: 16px calibre, "qanelas", gotham, helvetica, arial, sans-serif;
+  font: 16px "qanelas", gotham, helvetica, arial, sans-serif;
   line-height: 1.4;
   color: #333;
 }
@@ -495,7 +495,7 @@ h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, 
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: calibre, "qanelas", gotham, helvetica, arial, sans-serif;
+  font-family: "qanelas", gotham, helvetica, arial, sans-serif;
   color: #001135;
 }
 
@@ -1160,6 +1160,7 @@ body {
 
 .l-nav__buttons {
   position: fixed;
+  z-index: 2000;
   bottom: 0;
   right: 0;
   display: -webkit-flex;
@@ -1881,11 +1882,11 @@ body {
   display: none;
 }
 
-.c-btn, .form__submit, .form__cancel {
+.c-btn {
   color: white;
   cursor: pointer;
   display: inline-block;
-  font-family: calibre, "qanelas", gotham, helvetica, arial, sans-serif;
+  font-family: "qanelas", gotham, helvetica, arial, sans-serif;
   font-weight: bold;
   padding: 1.2152rem 2.0832rem;
   background-color: #00C15F;
@@ -1900,20 +1901,6 @@ body {
     #BUTTONS
 
 \*------------------------------*/
-.c-btn--round, .c-btnControls, .c-btn--close, .c-btn--add, .c-btnArrow, .c-btnMenu, .c-btnLogOut, .fc__accordeon__icon {
-  width: 46px;
-  height: 46px;
-  border: 0;
-  border-radius: 50%;
-}
-
-.c-btn--close, .c-btn--add {
-  background-image: url("../img/cross.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent !important;
-}
-
 .c-btn {
   font-size: 13px;
   border-radius: 100px;
@@ -1988,16 +1975,10 @@ body {
 .bg-dark .c-btn--cta:hover {
   color: rgba(0, 51, 153, 0.4);
 }
-.c-btn--round, .c-btnControls {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+@media screen and (min-width: 650px) {
+  .c-btn--cta {
+    padding: 2.8rem 5.376rem;
+  }
 }
 .c-btn--warning {
   background-color: #F13636 !important;
@@ -2009,18 +1990,6 @@ body {
 .c-btn--reset:hover {
   background-color: #F13636 !important;
   color: #fff;
-}
-.c-btn--collapse {
-  padding-right: 0;
-  border-radius: 60px 0 0 60px;
-}
-.c-btn--collapse + .c-btnLogOut {
-  margin-left: 0 !important;
-  border-radius: 0 60px 60px 0;
-}
-.c-btn--add {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
 }
 .c-btn[type="submit"] {
   display: -webkit-flex;
@@ -2037,121 +2006,76 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-.c-btnArrow {
-  background: url("../img/nav-arrows.svg") no-repeat transparent;
+.is-collapsed {
+  padding-right: 0;
+  border-radius: 60px 0 0 60px;
 }
-.c-btnArrow--right {
-  background-position: -46px;
-}
-.l-card-slider__controls .c-btnArrow--right {
-  margin-left: 0.98rem;
-}
-.l-nav__buttons .c-btnArrow {
-  margin-right: 0.98rem;
-  visibility: hidden;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-.l-nav__buttons .c-btnArrow.is-visible {
-  visibility: visible;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+.is-collapsed + .c-btnIcon, .is-collapsed + .fc__accordeon__icon {
+  margin-left: 0 !important;
+  border-radius: 0 60px 60px 0;
 }
 
-.c-btnMenu {
-  position: relative;
-  background: url("../img/button-hamburger.svg") no-repeat transparent;
-  position: relative;
-}
-.c-btnMenu > * {
-  z-index: 3;
-  position: relative;
-}
-.c-btnMenu::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  width: 86%;
-  left: 7%;
-  box-shadow: 0 20px 30px rgba(0, 17, 53, 0.2);
-  z-index: 1;
-}
-.c-btnMenu::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #ff9933;
-  z-index: 2;
-}
-.c-btnMenu::before, .c-btnMenu::after {
-  z-index: -1;
+.c-btnIcon, .fc__accordeon__icon {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 64px;
+  height: 64px;
+  background-color: #00C15F;
+  color: #fff;
   border-radius: 50%;
-}
-.c-btnMenu::after {
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-.navBar.is-open .c-btnMenu {
-  background-image: url("../img/button-close.svg");
-}
-.navBar.is-open .c-btnMenu::after {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-
-.l-nav__login .c-btn + .c-btnLogOut {
-  margin-left: 0.98rem;
-}
-
-.c-btnControls {
-  background-color: #FFF;
   outline: 0;
+  transition: all 0.15s ease-out 0s;
 }
-.c-btnControls:nth-child(2) {
+.c-btnIcon--small, .fc__accordeon__icon, .c-btnIcon--controls {
+  width: 48px;
+  height: 48px;
+}
+.c-btnIcon--controls {
+  background-color: #FFF;
+}
+.c-btnIcon--controls:nth-child(2) {
   margin-left: 0.98rem;
 }
-.bg-accent .c-btnControls, .bg-accent--grad .c-btnControls {
+.bg-accent .c-btnIcon--controls, .bg-accent--grad .c-btnIcon--controls {
   color: #FF9933;
 }
-.bg-main .c-btnControls, .bg-main--grad .c-btnControls {
+.bg-main .c-btnIcon--controls, .bg-main--grad .c-btnIcon--controls {
   color: #003399;
 }
-.c-btnControls .fa {
+.c-btnIcon .fa, .fc__accordeon__icon .fa {
   position: relative;
 }
-.c-btnControls .fa-chevron-left {
+.c-btnIcon .fa:nth-child(2), .fc__accordeon__icon .fa:nth-child(2) {
+  display: none;
+}
+.c-btnIcon .fa-chevron-left, .fc__accordeon__icon .fa-chevron-left {
   left: -2px;
 }
-.c-btnControls .fa-chevron-right {
+.c-btnIcon .fa-chevron-right, .fc__accordeon__icon .fa-chevron-right {
   left: 2px;
 }
-
-.form__submit {
-  background-color: #86bd4c !important;
+.c-btnIcon.icon2, .icon2.fc__accordeon__icon {
+  background-color: transparent;
 }
-
-.form__cancel {
-  background-color: #F13636 !important;
+.c-btnIcon.icon2 .fa:nth-child(1), .icon2.fc__accordeon__icon .fa:nth-child(1) {
+  display: none;
 }
-
-@media screen and (min-width: 650px) {
-  .c-btn--cta {
-    padding: 2.8rem 5.376rem;
-  }
-
-  .c-card-slider__controls .c-btnArrow--right {
-    margin: 0 1.736rem 0 0.98rem;
+.c-btnIcon.icon2 .fa:nth-child(2), .icon2.fc__accordeon__icon .fa:nth-child(2) {
+  display: block;
+}
+@media screen and (max-width: 1300px) {
+  .c-btnIcon.icon2, .icon2.fc__accordeon__icon {
+    display: none;
   }
 }
+
 /*------------------------------*\
 
       #SPINNER
@@ -3481,18 +3405,6 @@ body {
       -ms-flex: none;
           flex: none;
   margin-right: 0.98rem;
-  transition: all 0.15s ease-out 0s;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #00C15F;
-  color: #fff;
 }
 .fc__accordeon.is-open .fc__accordeon__icon {
   -webkit-transform: rotate(90deg);
@@ -3785,7 +3697,8 @@ a.c-meta__meta:hover {
 ==========================================================================
 \*======================================================================*/
 .wrap-navBar {
-  z-index: 100;
+  position: relative;
+  z-index: 2000;
   background-color: #fff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   padding: 0 2.8rem;
@@ -3812,41 +3725,14 @@ a.c-meta__meta:hover {
 
 #search-btn {
   position: fixed;
+  display: none;
   z-index: 2000;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 64px;
-  height: 64px;
   bottom: 1.736rem;
   right: 1.736rem;
-  border-radius: 50%;
-  background-color: #00C15F;
-  color: #fff;
-  outline: 0;
-  transition: all 0.15s ease-out 0s;
 }
-#search-btn .fa:nth-child(2) {
-  display: none;
-}
-#search-btn.icon-close {
-  background-color: transparent;
-}
-#search-btn.icon-close .fa:nth-child(1) {
-  display: none;
-}
-#search-btn.icon-close .fa:nth-child(2) {
-  display: block;
-}
-@media screen and (max-width: 1300px) {
-  #search-btn.icon-close {
-    display: none;
+@media screen and (min-width: 960px) {
+  #search-btn {
+    display: block;
   }
 }
 

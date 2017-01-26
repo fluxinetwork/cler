@@ -98,6 +98,7 @@
 
 .l-nav__buttons {
 	position: fixed;
+	z-index: 2000;
 	bottom: 0;
 	right: 0;
 	display: flex;
