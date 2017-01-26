@@ -15,12 +15,14 @@ Template Name: Toutes les actualités
 		$public_slug = filter_var($_GET['public'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 		$args_filtered = array(
 			'post_type' => 'post',
-			'post_status' => 'publish',			
+			'post_status' => 'publish',
 			'paged' => $paged,
 			'tax_query' => array(
-		        'taxonomy' => 'publics-cible',
-		        'field' => 'name',
-		        'terms' => $public_slug,
+				array(
+			        'taxonomy' => 'publics-cible',
+			        'field' => 'name',
+			        'terms' => $public_slug
+		        )
 		    ),
 		);
 	else:
@@ -37,8 +39,8 @@ Template Name: Toutes les actualités
 
 	if ( $public_slug == 'adherent' ):		$public_label = 'Blog de l\'association';
 	elseif( $public_slug == 'presse' ):		$public_label = 'Communiqués de presse';
-	elseif( $public_slug == 'elu' ):		$public_label = 'Actualités élu';
-	elseif( $public_slug == 'citoyen' ):	$public_label = 'Actualités citoyen';
+	elseif( $public_slug == 'elu' ):		$public_label = 'Élu, agissez !';
+	elseif( $public_slug == 'citoyen' ):	$public_label = 'Citoyens, agissez !';
 	else:									$public_label = 'Actualités';
 	endif;
 
@@ -48,13 +50,13 @@ Template Name: Toutes les actualités
 <div class="l-row bg-main--grad">
 	<header class="l-col l-col--content">		
 
-			<h1 class="c-white"><?php echo ( $public_slug != '' ? $public_label : $page_title ) ?></h1>
+		<h1 class="c-white"><?php echo ( $public_slug != '' ? $public_label : $page_title ) ?></h1>
 		
 		<div class="c-meta">
 			<div class="c-dash bg-white"></div>
 			<span class="c-meta__meta c-white">Suivez nous sur</span><br>
-			<a href="#" class="c-meta__meta"><i class="fa fa-facebook-square c-meta__meta__icon" aria-hidden="true"></i>Facebook</a>
-			<a href="#" class="c-meta__meta"><i class="fa fa-twitter-square c-meta__meta__icon" aria-hidden="true"></i>Twitter</a>
+			<a href="https://www.facebook.com/pages/CLER-R%C3%A9seau-pour-la-transition-%C3%A9nerg%C3%A9tique/437435406311054" class="c-meta__meta" target="_blank"><i class="fa fa-facebook-square c-meta__meta__icon" aria-hidden="true"></i>Facebook</a>
+			<a href="https://twitter.com/assoCLER" class="c-meta__meta" target="_blank"><i class="fa fa-twitter-square c-meta__meta__icon" aria-hidden="true"></i>Twitter</a>
 		</div>
 	</header>
 </div>
@@ -72,7 +74,7 @@ Template Name: Toutes les actualités
 						$terms = get_terms( 'category', 'hide_empty=0' );
 						if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
 						    foreach ( $terms as $term ) {
-						        echo '<option value="'.$term->slug.'">'.$term->name.'</option>';
+						        echo '<option value="'.$term->slug.'" '.( $category_slug == $term->slug ? 'selected' : '' ).'>'.$term->name.'</option>';
 						    }
 						}
 					?>

@@ -32,6 +32,7 @@ function initFluxiFilterPosts(){
         }
 
         $formObj.find('button[type=submit]').html('<span class="spinner"></span> Chargement');
+        $results.prev().html('');
 
         $.ajax({
             type: 'POST',
@@ -61,7 +62,7 @@ function initFluxiFilterPosts(){
                         $results.html('').append(data[0].content);
                         //$formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
                     }else{
-                        $formObj.find('.js-notify').html('<span class="error">'+data[0].message+'</span>');
+                        $results.prev().html('<p class="error">'+data[0].message+'</p>');
                     }
                 }
                 $formObj.find('button[type=submit]').html('Filtrer');
@@ -124,15 +125,15 @@ function initFluxiAutoFilterPosts(){
             success: function(data){
                 $formObj.find('.js-loader').html('');
                 if(data[0].validation == 'error'){
-                    $results.prev().html('<span class="error">Il semble y avoir un problème, veuillez ré-essayer.</span>');
+                    $results.prev().html('<p class="error">Il semble y avoir un problème, veuillez ré-essayer.</p>');
                 }else{
                     if(data[0].total > 0){
                         if($('.pagination').length){ $('.pagination').remove(); }
                         if(data[0].total > 1){ pluriel = 's'; }
                         $results.html('').append(data[0].content);
-                        //$results.prev().html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
+                        //$results.prev().html('<ps class="'+data[0].validation+'">'+data[0].message+'</ps>');
                     }else{
-                        $results.prev().html('<span class="error">'+data[0].message+'</span>');
+                        $results.prev().html('<p class="error">'+data[0].message+'</p>');
                     }
                     $formObj.find('.js-reload').removeClass('is-none');
                 }
@@ -140,7 +141,7 @@ function initFluxiAutoFilterPosts(){
             error : function(jqXHR, textStatus, errorThrown) {
                 //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
                 $formObj.find('.js-loader').html('');
-                $results.prev().html('<span class="error">Il semble y avoir un problème, veuillez ré-essayer.</span>');
+                $results.prev().html('<p class="error">Il semble y avoir un problème, veuillez ré-essayer.</p>');
             }
 
         });

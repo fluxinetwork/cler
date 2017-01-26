@@ -2,7 +2,7 @@
 
 <div class="l-row bg-main--grad">
 	<header class="l-col l-col--content">
-		<h1 class="c-white"><?php echo get_the_title(); ?></h1>
+		<h1 class="c-white">Page d'archive : <?php echo get_the_title(); ?></h1>
 		<div class="c-meta">
 			<div class="c-dash bg-white"></div>
 			<span class="c-meta__meta c-white">Suivez nous sur</span><br>
@@ -37,22 +37,7 @@
 		if ( isset( $_GET['toky_toky'] ) ) {
 			echo '<button type="reset" class="c-btn c-btn--reset l-monoFilter__btn">Reset</button>';
 		}
-		?>
-		
-		<?php
-
-		if(is_post_type_archive( 'magazine' )){
-			
-		}
-
-		if ( is_post_type_archive() ) {
-		    ?>
-		    <h1><?php post_type_archive_title(); ?></h1>
-		    <?php
-
-		    echo '<p>'.$query->query['post_type'].'</p>';
-		}
-		?>
+		?>		
 
 		<a href="<?php echo home_url().'/mon-profil/gerer-offre-emploi/?act=add'; ?>" class="c-link c-link--shy l-monoFilter__link">Abonnement newsletter</a>
 	</form>
