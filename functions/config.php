@@ -401,7 +401,7 @@ if ( CUSTOM_POST_TYPE ) {
 	}
 	add_action( 'init', 'cpts_equipes' );
 
-	fluxi_register_custom_taxo('publics-cible', 'Publics', array('post', 'evenements'), true);
+	fluxi_register_custom_taxo('publics-cible', 'Publics', array('post', 'evenements', 'page'), true);
 
 
 	// CPT : Cartes
