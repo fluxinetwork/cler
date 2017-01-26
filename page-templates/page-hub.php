@@ -14,7 +14,13 @@ Template Name: Hub
 
 <section class="l-row bg-main bg-main--grad">
 	<div class="l-col">
-		<?php the_content; ?>
+		<?php get_template_part( 'page-templates-parts/sliders/hub-actus' ); ?>
+	</div>
+</section>
+
+<section class="l-row">
+	<div class="l-col l-col--content">
+		<?php the_content(); ?>
 	</div>
 </section>
 
