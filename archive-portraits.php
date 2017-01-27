@@ -1,8 +1,104 @@
+<?php get_header(); ?>
+<?php
+	global $post, $wp_query, $page;
+	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;	
+
+	$page_portraits_id = '1304';
+?>
+
+<div class="l-row bg-light">
+	<header class="l-col l-col--content">
+		<h1><?php echo get_the_title($page_portraits_id); ?></h1>
+		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum',$page_portraits_id); ?></h2>
+	</header>
+</div>
+
+<section class="l-row">
+	<div class="l-col l-col--content no-pdTop">		
+		<ul class="l-postList">		
+		<?php
+		
+		if ( have_posts() ) :
+			while ( have_posts() ) : the_post();
+
+				$permalink = get_permalink();
+				$date = get_the_date('d M Y');
+				$title = get_the_title();
+
+				$post_img_id = get_field('main_image');
+				if($post_img_id){
+					$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumbnail', true);
+					$post_img_url = 'url('.$post_img_array[0].')';
+				}else{
+					$post_img_url = 'none';
+				}
+
+				$categories = get_the_category();
+				if($categories){					
+					$cat_name = '<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i>'.$categories[0]->cat_name.'</span>';
+				}else{
+					$cat_name = '';
+				}				
+
+				$output = '<li class="l-postList__item">';
+				$output .= '<a href="'.$permalink.'">';
+				$output .= '<article class="c-newsH">';
+				$output .= '<div class="c-newsH__img" style="background-image:'.$post_img_url.'"></div>';
+				$output .= '<div class="c-newsH__body">';
+				$output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
+				$output .= '<div class="c-meta">';
+				$output .= '<div class="c-dash"></div>';
+				$output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>';
+				$output .= $cat_name;
+				$output .= '</div>';
+				$output .= '</div>';
+				$output .= '</article>';
+				$output .= '</a>';
+				$output .= '</li>';
+
+				echo $output;
+
+			endwhile;
+
+		else:
+
+			echo '<li><p class="mgTop--s"><strong>Il n\'y a pas de portrait pour le moment.</strong></p></li>';
+
+		endif;
+		wp_reset_postdata();
+		?>
+		</ul>
+
+		<?php
+			echo '<div class="pagination">';
+			echo paginate_links( array(
+				'base' => @add_query_arg('paged','%#%'),
+				'format' => '?paged=%#%',
+				'current' => max( 1, get_query_var('paged') ),
+				'total' => $wp_query->max_num_pages,
+	        	'prev_next'=> false
+			) );
+		    echo '</div>';
+		?>
+	</div>
+</section>
+
+<?php get_footer(); ?>
+
+
+
+
+
+
+
+
+
+
 <?php
 /*
 Template Name: Tous les portraits
-*/
-?>
+
+
 <?php get_header(); ?>
 <?php
 	
@@ -15,11 +111,13 @@ Template Name: Tous les portraits
 	);	
 
 	$query_all = new WP_Query( $args );
+
+	echo get_the_ID();
 ?>
 
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
-		<h1><?php echo post_type_archive_title(); ?></h1>
+		<h1>Portraits</h1>
 		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum'); ?></h2>
 	</header>
 </div>
@@ -96,4 +194,4 @@ Template Name: Tous les portraits
 </section>
 
 <?php get_footer(); ?>
-
+*/?>

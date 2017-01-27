@@ -12,21 +12,23 @@
 	<h1 class="c-card__header__title"><?php echo $page_title; ?></h1>
 </div>
 
-<?php 
-	if(!is_adherent_cler() ):
-
-		if( !empty($statut_paiement) && $statut_paiement == 'succeeded' ): ?>
-
-			<p>Vous avez payé pour la publication de cette offre d'emploi, vous pouvez <a href="<?php echo get_the_permalink($id_recu); ?>">consulter le reçu</a>.</p>
-		<?php else: ?>
-			<p>Vous n'êtes pas adhérent au CLER, une contribution de <strong><?php echo get_field('montant_publication_offre_emploi', 'option'); ?>€</strong> vous sera demandé pour chaque nouvelle publication. Vous recevrez un email contenant les informations nécessaire au réglement dès que nous aurons validé votre offre. Pour devenir adhérent vous pouvez consulter <a href="#">cette page</a>.</p>
-		<?php
-		endif;	
- 	endif; 
- ?>
-
-
 <form id="form-manage-emploi" role="form" class="c-card__body">
+
+	<?php 
+		if(is_adherent_cler() ):
+			echo '<div class="fc c-form__fieldset__row">';
+				if( !empty($statut_paiement) && $statut_paiement == 'succeeded' ): ?>
+
+					<p>Vous avez payé pour la publication de cette offre d'emploi, vous pouvez <a href="<?php echo get_the_permalink($id_recu); ?>">consulter le reçu</a>.</p>
+				<?php else: ?>
+					
+					<p>Vous n'êtes pas adhérent au CLER : une contribution de <strong><?php echo get_field('montant_publication_offre_emploi', 'option'); ?> euros</strong> vous sera donc demandée pour chaque nouvelle publication. Vous recevrez un email contenant les informations nécessaires au réglement dès que nous aurons validé votre offre. Pour devenir adhérent, vous pouvez <a href="<?php echo home_url().'/adherer/'; ?>">consulter cette page</a>.</p>
+
+				<?php
+				endif;	
+			echo '</div>';
+	 	endif; 
+	 ?>
 
 	<fieldset class="c-form__fieldset">
 		<legend class="c-form__legend c-form--indicateur">Votre offre</legend>

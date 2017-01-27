@@ -21,7 +21,7 @@
 <section>
 	<h1><?php the_title(); ?></h1>
 	<!-- Régles et jury -->
-	<p><?php echo get_field('regles_concours'); ?></p>
+	<?php echo 'ICI LE CONTENT ::: '.get_the_content(); ?>
 </section>
 
 <!-- Form participation concours -->	

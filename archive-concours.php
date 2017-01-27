@@ -6,13 +6,24 @@ Template Name: Tous les concours
 <?php get_header(); ?>
 <?php
 	
-	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;	
-	
-	$args = array(
-		'post_type' => 'concours',
-		'post_status' => 'publish',
-		'paged' => $paged			
-	);	
+	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+
+	if( isset( $_GET['type'] ) && !empty( $_GET['type'] ) ){
+		$type_concours = filter_var($_GET['type'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+		$args = array(
+			'post_type' => 'concours',
+			'post_status' => 'publish',
+			'paged' => $paged,
+			'meta_key'		=> 'type_concours',
+			'meta_value'	=> $type_concours		
+		);	
+	}else{
+		$args = array(
+			'post_type' => 'concours',
+			'post_status' => 'publish',
+			'paged' => $paged	
+		);	
+	}
 
 	$query_all = new WP_Query( $args );
 ?>
@@ -25,8 +36,7 @@ Template Name: Tous les concours
 </div>
 
 <section class="l-row">
-	<div class="l-col l-col--content no-pdTop">
-		<div class="js-notify"></div>		
+	<div class="l-col l-col--content no-pdTop">		
 		<ul class="l-postList">		
 		<?php
 		

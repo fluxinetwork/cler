@@ -204,7 +204,7 @@ if ( CUSTOM_POST_TYPE ) {
 			'rewrite' => array( 'slug' => 'outils/evenements', 'with_front' => true ),
 			'query_var' => true,
 
-			'supports' => array( 'title', 'editor', 'author' ),
+			'supports' => array( 'title', 'author' ),
 			'taxonomies' => array( 'post_tag' ),
 		);
 		register_post_type( 'evenements', $args );

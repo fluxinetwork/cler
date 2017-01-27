@@ -1,31 +1,52 @@
 <?php
 /*
-Template Name: Tous les retours d'experience
+Template Name: Tous les concours
 */
 ?>
 <?php get_header(); ?>
 <?php
 	
-	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;	
-	
-	$args = array(
-		'post_type' => 'retours-experience',
-		'post_status' => 'publish',
-		'paged' => $paged			
-	);	
+	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+
+	if( isset( $_GET['type'] ) && !empty( $_GET['type'] ) ){
+		$type_concours = filter_var($_GET['type'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+
+		if( $type_concours == 'haiku'){
+			$page_title = 'Concours "Un haïku pour le climat"';
+		}else {
+			$page_title = 'Concours CLER Obscur';
+		}
+
+		$args = array(
+			'post_type' => 'concours',
+			'post_status' => 'publish',
+			'paged' => $paged,
+			'meta_key'		=> 'type_concours',
+			'meta_value'	=> $type_concours		
+		);	
+	}else{
+
+		$page_title = 'Nos concours';
+
+		$args = array(
+			'post_type' => 'concours',
+			'post_status' => 'publish',
+			'paged' => $paged	
+		);	
+	}
 
 	$query_all = new WP_Query( $args );
 ?>
 
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
-		<h1><?php echo post_type_archive_title(); ?></h1>
+		<h1><?php echo $page_title; ?></h1>
 		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum'); ?></h2>
 	</header>
 </div>
 
 <section class="l-row">
-	<div class="l-col l-col--content no-pdTop">		
+	<div class="l-col l-col--content no-pdTop">
 		<ul class="l-postList">		
 		<?php
 		
@@ -73,7 +94,7 @@ Template Name: Tous les retours d'experience
 
 		else:
 
-			echo '<li><p class="error">Il n\'y a pas de portrait pour le moment.</p></li>';
+			echo '<li><p class="mgTop--s"><strong>Il n\'y a pas de concours pour le moment.</strong></p></li>';
 
 		endif;
 		wp_reset_postdata();
