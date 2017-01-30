@@ -57,7 +57,7 @@ Template Name: Profil
 				<div class="c-tile c-tile--square c-tile--noBdr c-tile--bg">
 					<div class="c-tile__content">
 						<div class="c-tile__content__img"></div>
-						<a href="#" class="c-link">Offre d'emploi</a>
+						<a href="https://cler.org/dev-cler/outils/publiez-vos-offres-demploi/" class="c-link">Offre d'emploi</a>
 						<span class="t-meta pdTop--s">Gratuit</span>
 					</div>
 				</div>
@@ -66,7 +66,7 @@ Template Name: Profil
 				<div class="c-tile c-tile--square c-tile--noBdr c-tile--bg">
 					<div class="c-tile__content">
 						<div class="c-tile__content__img"></div>
-						<a href="#" class="c-link">Évènement</a>
+						<a href="https://cler.org/dev-cler/mon-profil/gerer-evenement/?act=add" class="c-link">Évènement</a>
 						<span class="t-meta pdTop--s">Gratuit</span>
 					</div>
 				</div>
@@ -75,7 +75,7 @@ Template Name: Profil
 				<div class="c-tile c-tile--square c-tile--noBdr c-tile--bg">
 					<div class="c-tile__content">
 						<div class="c-tile__content__img"></div>
-						<a href="#" class="c-link">Formation</a>
+						<a href="https://cler.org/dev-cler/mon-profil/gerer-formations/?act=add" class="c-link">Formation</a>
 						<span class="t-meta pdTop--s">Gratuit</span>
 					</div>
 				</div>

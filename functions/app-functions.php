@@ -73,6 +73,9 @@ function fluxi_filter_posts(){
 					$ob_departement = get_field_object('field_574dab093c7b0');
 					$label_departement = $ob_departement['choices'][ get_field('departement') ];
 
+					$code_postal = get_field('code_postal');
+					$numero_departement = substr($code_postal,0,-3);
+
 					$ob_experience = get_field_object('field_5773a4bc97554');
 					$label_experience = $ob_experience['choices'][ get_field('experience') ];
 
@@ -91,20 +94,28 @@ function fluxi_filter_posts(){
 
 					endif;
 
-					$result_content .= '<li classs="l-postList__item">
-						<a href="'.get_the_permalink().'">
-						<article class="c-offre">
-							<h1 class="c-offre__title">'.get_the_title ().'</h1>
-							<div class="c-offre__meta">'.get_field('nom_structure').' <i class="mgLeft--s fa fa-map-marker" aria-hidden="true"></i>'.get_field('ville').' <i class="mgLeft--s fa fa-location-arrow" aria-hidden="true"></i>'.$label_departement.'</div>
-							<div class="c-offre__tags">
-								<div class="c-tag">'.$label_type_de_poste.'</div>
-								<div class="c-tag">'.$label_experience.'</div>
-								'.$label_niveau_detude.'
-							</div>
-						</article>
-						</a>
-					</li>';
+					$result_content = '<li class="l-postList__item">';
+					$result_content .= '<a href="'.get_permalink().'">';
+					$result_content .= '<article class="offre">';
 
+					$result_content .= '<h1 class="h2">'.get_the_title().'</h1>';
+
+					$result_content .= '<div class="c-meta">';
+					$result_content .= '<div class="c-dash"></div>';
+					$result_content .= '<span class="c-meta__meta">'.get_field('nom_structure').'</span>';
+					$result_content .= '<span class="c-meta__meta"><i class="fa fa-map-marker c-meta__meta__icon" aria-hidden="true"></i>'.get_field('ville').'</span>';
+					$result_content .= '<span class="c-meta__meta"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i>'.$numero_departement.'</span>';
+					$result_content .= '</div>';
+
+					$result_content .= '<div class="mgTop--s">';
+					$result_content .= '<div class="c-tag">'.$label_type_de_poste.'</div>';
+					$result_content .= '<div class="c-tag">'.$label_experience.'</div>';
+					$result_content .= $label_niveau_detude;
+					$result_content .= '</div>';
+
+					$result_content .= '</article>';
+					$result_content .= '</a>';
+					$result_content .= '</li>';
 
 				elseif( $pt_slug == 'evenements'):
 

@@ -14,11 +14,19 @@
 
 				<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i><?php echo get_the_date(); ?></time> 
 
-				<?php
+				<?php				
 				$categories = get_the_category();
-				$cat_name = $categories[0]->name;
+				if(! empty( $categories )):
+					$cat_name = '';
+					$cat_count = 0;
+					foreach( $categories as $category ) {
+						$cat_count++;						
+				        $cat_name .= ($cat_count > 1 ? ' - ' : '').esc_html( $category->name );
+				    }
+					echo '<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i>'.$cat_name.'</span>';
+				endif;
 				?>
-				<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i><?php echo $cat_name; ?></span>
+				
 			</div>
 
 			<?php
