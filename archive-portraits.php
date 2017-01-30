@@ -2,14 +2,12 @@
 <?php
 	global $post, $wp_query, $page;
 	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;	
-
-	$page_portraits_id = '1304';
 ?>
 
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
-		<h1><?php echo get_the_title($page_portraits_id); ?></h1>
-		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum',$page_portraits_id); ?></h2>
+		<h1><?php echo get_the_title(1304); ?></h1>
+		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum',1304); ?></h2>
 	</header>
 </div>
 

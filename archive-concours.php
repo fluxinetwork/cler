@@ -30,7 +30,7 @@ Template Name: Tous les concours
 
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
-		<h1><?php echo post_type_archive_title(); ?></h1>
+		<h1>Concours</h1>
 		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum'); ?></h2>
 	</header>
 </div>

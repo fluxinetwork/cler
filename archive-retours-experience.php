@@ -19,8 +19,8 @@ Template Name: Tous les retours d'experience
 
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
-		<h1><?php echo post_type_archive_title(); ?></h1>
-		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum'); ?></h2>
+		<h1><?php echo get_the_title(1303); ?></h1>
+		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum', 1303); ?></h2>
 	</header>
 </div>
 
@@ -73,7 +73,7 @@ Template Name: Tous les retours d'experience
 
 		else:
 
-			echo '<li><p class="error">Il n\'y a pas de portrait pour le moment.</p></li>';
+			echo '<li><p class="error">Il n\'y a pas de retour d\'expérience pour le moment.</p></li>';
 
 		endif;
 		wp_reset_postdata();

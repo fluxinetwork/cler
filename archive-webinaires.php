@@ -19,8 +19,8 @@ Template Name: Tous les webinaires
 
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
-		<h1><?php echo post_type_archive_title(); ?></h1>
-		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum'); ?></h2>
+		<h1><?php echo get_the_title(2285); ?></h1>
+		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum',2285); ?></h2>
 	</header>
 </div>
 
@@ -74,7 +74,7 @@ Template Name: Tous les webinaires
 
 		else:
 
-			echo '<li><p class="error">Il n\'y a pas de portrait pour le moment.</p></li>';
+			echo '<li><p class="error">Il n\'y a pas de web-séminaire pour le moment.</p></li>';
 
 		endif;
 		wp_reset_postdata();

@@ -8,17 +8,19 @@ Template Name: Tous les concours
 	
 	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
-	if( isset( $_GET['type'] ) && !empty( $_GET['type'] ) ){
+	if( isset( $_GET['type'] ) && !empty( $_GET['type'] ) ):
 		$type_concours = filter_var($_GET['type'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 
-		if( $type_concours == 'haiku' ){
-			$page_title = 'Concours "Un haïku pour le climat"';
-		}elseif( $type_concours == 'cler_obscur' ) {
-			$page_title = 'Concours CLER Obscur';
-		}
-		else{	
-			$page_title = 'Concours';
-		}
+		if( $type_concours == 'haiku' ):
+			$page_title = get_the_title(1275);
+			$fluxi_resum = get_field('fluxi_resum', 1275);
+		elseif( $type_concours == 'cler_obscur' ):
+			$page_title = get_the_title(3117);
+			$fluxi_resum = get_field('fluxi_resum', 3117);		
+		else:	
+			$page_title = 'Nos concours';
+			$fluxi_resum = get_field('fluxi_resum', 3117);
+		endif;
 
 		$args = array(
 			'post_type' => 'concours',
@@ -26,17 +28,19 @@ Template Name: Tous les concours
 			'paged' => $paged,
 			'meta_key'		=> 'type_concours',
 			'meta_value'	=> $type_concours		
-		);	
-	}else{
+		);
 
+	else:
 		$page_title = 'Nos concours';
 
 		$args = array(
 			'post_type' => 'concours',
 			'post_status' => 'publish',
 			'paged' => $paged	
-		);	
-	}
+		);
+
+		$fluxi_resum = get_field('fluxi_resum', 3117);
+	endif;
 
 	$query_all = new WP_Query( $args );
 ?>
@@ -44,7 +48,7 @@ Template Name: Tous les concours
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
 		<h1><?php echo $page_title; ?></h1>
-		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum'); ?></h2>
+		<h2 class="l-header__excerpt"><?php echo $fluxi_resum; ?></h2>
 	</header>
 </div>
 
