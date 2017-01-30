@@ -11,10 +11,13 @@ Template Name: Tous les concours
 	if( isset( $_GET['type'] ) && !empty( $_GET['type'] ) ){
 		$type_concours = filter_var($_GET['type'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 
-		if( $type_concours == 'haiku'){
+		if( $type_concours == 'haiku' ){
 			$page_title = 'Concours "Un haïku pour le climat"';
-		}else {
+		}elseif( $type_concours == 'cler_obscur' ) {
 			$page_title = 'Concours CLER Obscur';
+		}
+		else{	
+			$page_title = 'Concours';
 		}
 
 		$args = array(

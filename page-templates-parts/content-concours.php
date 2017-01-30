@@ -20,15 +20,13 @@
 
 <section>
 	<h1><?php the_title(); ?></h1>
-	<!-- Régles et jury -->
-	<?php echo 'ICI LE CONTENT ::: '.get_the_content(); ?>
+	<!-- Fluxi content -->
+	<?php the_content(); ?>
 </section>
 
 <!-- Form participation concours -->	
-<?php if( $today >= $date_debut_candidatures && $today <= $date_fin_candidatures ): ?>				
-	<!-- **** data-idp est utilisée par le formulaire *** -->
-	<!-- **** data-idp est utilisée par le formulaire *** -->
-	<!-- **** data-idp est utilisée par le formulaire *** -->
+<?php if( $today >= $date_debut_candidatures && $today <= $date_fin_candidatures ): ?>
+	<?php //data-idp est utilisée par le formulaire ?>
 	<section class="l-row bg-light"  id="concours" data-idp="<?php echo get_the_ID(); ?>">
 		<div class="l-col">
 			<div class="c-form c-form--large c-card">

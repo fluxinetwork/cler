@@ -27,7 +27,7 @@ Template Name: Tous les webinaires
 <section class="l-row">
 	<div class="l-col l-col--content no-pdTop">
 		<div class="js-notify"></div>		
-		<ul class="l-postList">		
+		<ul class="l-postList">
 		<?php
 		
 		if ( $query_all->have_posts() ) :
