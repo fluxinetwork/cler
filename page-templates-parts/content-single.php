@@ -20,7 +20,9 @@
 					$cat_name = '';
 					$cat_count = 0;
 					foreach( $categories as $category ) {
-						$cat_count++;						
+						$cat_count++;
+						// Limit
+						if( $cat_count < 4 )		
 				        $cat_name .= ($cat_count > 1 ? ' - ' : '').esc_html( $category->name );
 				    }
 					echo '<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i>'.$cat_name.'</span>';
