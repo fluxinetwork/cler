@@ -5,30 +5,30 @@ Template Name: Tous les retours d'experience
 ?>
 <?php get_header(); ?>
 <?php
-	
-	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;	
-	
+
+	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+
 	$args = array(
 		'post_type' => 'retours-experience',
 		'post_status' => 'publish',
-		'paged' => $paged			
-	);	
+		'paged' => $paged
+	);
 
 	$query_all = new WP_Query( $args );
 ?>
 
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
-		<h1><?php echo get_the_title(1303); ?></h1>
-		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum', 1303); ?></h2>
+		<h1><?php echo get_the_title(); ?></h1>
+		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum'); ?></h2>
 	</header>
 </div>
 
 <section class="l-row">
-	<div class="l-col l-col--content no-pdTop">		
-		<ul class="l-postList">		
+	<div class="l-col l-col--content no-pdTop">
+		<ul class="l-postList">
 		<?php
-		
+
 		if ( $query_all->have_posts() ) :
 			while ( $query_all->have_posts() ) : $query_all->the_post();
 
@@ -45,11 +45,11 @@ Template Name: Tous les retours d'experience
 				}
 
 				$categories = get_the_category();
-				if($categories){					
+				if($categories){
 					$cat_name = '<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i>'.$categories[0]->cat_name.'</span>';
 				}else{
 					$cat_name = '';
-				}				
+				}
 
 				$output = '<li class="l-postList__item">';
 				$output .= '<a href="'.$permalink.'">';

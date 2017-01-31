@@ -19,7 +19,7 @@ Template Name: Tous les concours
 			$fluxi_resum = get_field('fluxi_resum', 3117);		
 		else:	
 			$page_title = 'Nos concours';
-			$fluxi_resum = get_field('fluxi_resum', 3117);
+			$fluxi_resum = "Afin de donner la parole aux citoyens, le CLER a créé deux concours ouverts à tous. Grâce à ces deux compétitions réunissant des films courts et des haïkus, nous souhaitons récompenser la créativité et encourager l'expression de messages positifs autour des énergies renouvelables et de la maîtrise de l'énergie. L'enthousiasme, l'esprit collectif et la capacité mobilisatrice des oeuvres amateurs, scolaires ou semi-professionnelles présentées chaque année montrent les multiples visages de la transition énergétique sur le terrain.";
 		endif;
 
 		$args = array(
@@ -39,7 +39,7 @@ Template Name: Tous les concours
 			'paged' => $paged	
 		);
 
-		$fluxi_resum = get_field('fluxi_resum', 3117);
+		$fluxi_resum = "Afin de donner la parole aux citoyens, le CLER a créé deux concours ouverts à tous. Grâce à ces deux compétitions réunissant des films courts et des haïkus, nous souhaitons récompenser la créativité et encourager l'expression de messages positifs autour des énergies renouvelables et de la maîtrise de l'énergie. L'enthousiasme, l'esprit collectif et la capacité mobilisatrice des oeuvres amateurs, scolaires ou semi-professionnelles présentées chaque année montrent les multiples visages de la transition énergétique sur le terrain.";
 	endif;
 
 	$query_all = new WP_Query( $args );
