@@ -31,7 +31,7 @@ Template Name: Tous les concours
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
 		<h1>Concours</h1>
-		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum'); ?></h2>
+		<h2 class="l-header__excerpt">Afin de donner la parole aux citoyens, le CLER a créé deux concours ouverts à tous. Grâce à ces deux compétitions réunissant des films courts et des haïkus, nous souhaitons récompenser la créativité et encourager l'expression de messages positifs autour des énergies renouvelables et de la maîtrise de l'énergie. L'enthousiasme, l'esprit collectif et la capacité mobilisatrice des oeuvres amateurs, scolaires ou semi-professionnelles présentées chaque année montrent les multiples visages de la transition énergétique sur le terrain.</h2>
 	</header>
 </div>
 

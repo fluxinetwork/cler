@@ -82,5 +82,10 @@ Template Name: Thématique
 	</div>
 </section>
 
+
+<section>
+	<?php get_template_part( 'page-templates-parts/zone-telechargement' ); ?>
+</section>
+
 <?php get_footer(); ?>
 
