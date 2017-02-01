@@ -103,8 +103,8 @@ Template Name: Hub adhérents
 	</div>
 </section>
 
-<section>
-<?php get_template_part( 'page-templates-parts/zone-telechargement' ); ?>
+<section class="l-row">
+<?php get_template_part( 'page-templates-parts/downloads' ); ?>
 </section>
 
 <?php get_footer(); ?>

@@ -1,0 +1,38 @@
+/*======================================================================*\
+==========================================================================
+
+//	LAYOUT DOWNLOAD
+
+==========================================================================
+\*======================================================================*/
+
+.l-download__title {
+	@include flex(null center, true);
+	@extend .h3;
+	color: $c-dark;
+
+	.c-dash {
+		background-color: $c-dark;
+		display: block;
+		margin-top: $space--s;
+
+		.l-download.is-active & {
+			width: 100%;
+		}
+	}
+} 
+
+
+.l-download__list {
+	@include list-reset();
+	flex-wrap: wrap;
+	display: none;
+
+	.l-download.is-active & {
+		display: flex;
+	}
+}
+
+.l-download__list__item {
+	margin: $space--s;
+}

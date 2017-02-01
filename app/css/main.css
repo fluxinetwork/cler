@@ -548,16 +548,16 @@ h2 {
   font-weight: 400;
 }
 
-h3, .h3, .c-card__header__tag, .c-card__header__title span, .c-card__body__title, .c-tile__content__icon, .c-form__legend, .c-newsH__body__title, #search-input, .adherents__aside__events__title {
+h3, .h3, .l-download__title, .c-card__header__tag, .c-card__header__title span, .c-card__body__title, .c-tile__content__icon, .c-form__legend, .c-newsH__body__title, #search-input, .adherents__aside__events__title {
   font-size: 17px;
 }
 @media screen and (min-width: 650px) {
-  h3, .h3, .c-card__header__tag, .c-card__header__title span, .c-card__body__title, .c-tile__content__icon, .c-form__legend, .c-newsH__body__title, #search-input, .adherents__aside__events__title {
+  h3, .h3, .l-download__title, .c-card__header__tag, .c-card__header__title span, .c-card__body__title, .c-tile__content__icon, .c-form__legend, .c-newsH__body__title, #search-input, .adherents__aside__events__title {
     font-size: 19px;
   }
 }
 @media screen and (min-width: 960px) {
-  h3, .h3, .c-card__header__tag, .c-card__header__title span, .c-card__body__title, .c-tile__content__icon, .c-form__legend, .c-newsH__body__title, #search-input, .adherents__aside__events__title {
+  h3, .h3, .l-download__title, .c-card__header__tag, .c-card__header__title span, .c-card__body__title, .c-tile__content__icon, .c-form__legend, .c-newsH__body__title, #search-input, .adherents__aside__events__title {
     font-size: 20px;
   }
 }
@@ -596,16 +596,16 @@ h5, .h5, .c-card__header__cat, .c-form p, .c-form__input,
   }
 }
 
-h6, .h6, .t-meta, .c-newsH__body__meta, .c-meta__meta, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite, .c-tag {
+h6, .h6, .t-meta, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite, .c-tag {
   font-size: 10px;
 }
 @media screen and (min-width: 650px) {
-  h6, .h6, .t-meta, .c-newsH__body__meta, .c-meta__meta, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite, .c-tag {
+  h6, .h6, .t-meta, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite, .c-tag {
     font-size: 11px;
   }
 }
 @media screen and (min-width: 960px) {
-  h6, .h6, .t-meta, .c-newsH__body__meta, .c-meta__meta, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite, .c-tag {
+  h6, .h6, .t-meta, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite, .c-tag {
     font-size: 12px;
   }
 }
@@ -635,7 +635,7 @@ p {
   margin-top: 2.0832rem;
 }
 
-.t-meta, .c-newsH__body__meta, .c-meta__meta, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite {
+.t-meta, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite {
   letter-spacing: 0.5px;
   font-weight: 700;
   text-transform: uppercase;
@@ -649,7 +649,7 @@ p {
 .t-meta--dark {
   opacity: 1;
 }
-.fc .t-meta, .fc .c-newsH__body__meta, .fc .c-meta__meta, .fc .pagination .page-numbers, .pagination .fc .page-numbers, .fc .miniEvent__meta, .fc .offre-dashboard__zone__tags__limite {
+.fc .t-meta, .fc .c-newsH__body__meta, .fc .c-meta__meta, .fc .c-downloadItem__title, .fc .pagination .page-numbers, .pagination .fc .page-numbers, .fc .miniEvent__meta, .fc .offre-dashboard__zone__tags__limite {
   display: inline-block;
 }
 
@@ -1614,6 +1614,43 @@ body {
 
 .l-hub-header__aside {
   display: none;
+}
+
+/*======================================================================*\
+==========================================================================
+
+//	LAYOUT DOWNLOAD
+
+==========================================================================
+\*======================================================================*/
+.l-download__title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #001135;
+}
+.l-download__title .c-dash {
+  background-color: #001135;
+  display: block;
+  margin-top: 1.736rem;
+}
+.l-download.is-active .l-download__title .c-dash {
+  width: 100%;
+}
+
+.l-download__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+  display: none;
+}
+.l-download.is-active .l-download__list {
+  display: flex;
+}
+
+.l-download__list__item {
+  margin: 1.736rem;
 }
 
 .c-btn {
@@ -3220,6 +3257,21 @@ a.c-meta__meta:hover {
   margin-right: 0.686rem;
 }
 
+/*======================================================================*\
+==========================================================================
+
+//	COMPOSANT DOWNLOAD ITEM
+
+==========================================================================
+\*======================================================================*/
+.c-downloadItem__icon {
+  color: #003399;
+}
+
+.c-downloadItem__title {
+  margin-left: 0.98rem;
+}
+
 /*------------------------------*\
 
     #STYLE-GUIDE
@@ -3340,7 +3392,7 @@ a.c-meta__meta:hover {
   display: inline-block;
   padding: 1.736rem 2.8rem;
 }
-.pagination .t-meta, .pagination .c-newsH__body__meta, .pagination .c-meta__meta, .pagination .page-numbers, .pagination .miniEvent__meta, .pagination .offre-dashboard__zone__tags__limite {
+.pagination .t-meta, .pagination .c-newsH__body__meta, .pagination .c-meta__meta, .pagination .c-downloadItem__title, .pagination .page-numbers, .pagination .miniEvent__meta, .pagination .offre-dashboard__zone__tags__limite {
   color: #fff;
 }
 .pagination .screen-reader-text,
