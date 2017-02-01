@@ -1,13 +1,17 @@
 <?php
-
-// DEV
+/**
+ * DEV
+ */
 define('THEME_DIR_NAME', 'cler');
 define('THEME_DIR_PATH', get_template_directory_uri());
 define('DEV', true);
 define('ADMIN_STYLE', true);
 define('EDITOR_STYLE', false);
 
-// VALUES
+
+/**
+ * VALUES
+ */
 define('POST_EXCERPT_LENGTH', 40);
 define('SLIDER_NB_POSTS', 10);
 
@@ -21,21 +25,20 @@ function wpc_acf_init() {
 }
 add_action('acf/init', 'wpc_acf_init');
 
-define('FACEBOOK', 'fa');
-define('TWITTER', 'tw');
 
-
-
-
-// ACTIVATE
+/**
+ * ACTIVATE
+ */
 define('PAGE_EXCERPT', false);
 define('PAGE_TAXO', true);
 define('ACF_OPTION_PAGE', true);
 define('ADD_THUMBNAILS', false);
 define('DISALLOW_FILE_EDIT', true);
 
-// MAILS
 
+/**
+ * MAILS
+ */
 define('CONTACT_GENERAL', 'info@cler.org');
 
 define('CONTACTS_ADHESION_1', 'lucile.krezel@cler.org');
@@ -55,26 +58,29 @@ define('CONTACTS_CONCOURS', 'info@cler.org');
 
 define('CONTACTS_FORMATION_1', 'info@cler.org');
 
-/*
-define('CONTACT_GENERAL', 'rollandyann@gmail.com');
 
-define('CONTACTS_ADHESION_1', 'rollandyann@gmail.com');
-define('CONTACTS_ADHESION_2','rollandyann@gmail.com');
-define('CONTACT_TEPOS', 'rollandyann@gmail.com');
+/**
+ * LINKS
+ */
+define('FACEBOOK', 'https://www.facebook.com/CLER-R%C3%A9seau-pour-la-Transition-%C3%A9nerg%C3%A9tique-437435406311054/');
+define('TWITTER', 'https://twitter.com/assoCLER');
 
-define('CONTACTS_PAIEMENT_1', 'rollandyann@gmail.com');
-define('CONTACTS_PAIEMENT_2','rollandyann@gmail.com');
+define('MAP_ADHERENT', '311');
+define('ADHEREZ', '1286');
 
-define('CONTACTS_EVENT_1','rollandyann@gmail.com');
-define('CONTACTS_EVENT_2','rollandyann@gmail.com');
+define('HUB_ADHERENT', '3024');
+define('HUB_CITOYEN', '1288');
+define('HUB_ELU', '1291');
+define('HUB_PRESSE', '1292');
 
-define('CONTACTS_EMPLOI_1', 'rollandyann@gmail.com');
-define('CONTACTS_EMPLOI_2', 'rollandyann@gmail.com');
+define('ALL_NEWS', '2897');
 
-define('CONTACTS_CONCOURS', 'rollandyann@gmail.com');
+define('PAGE_OFFRE', '3067');
+define('ADD_OFFRE', '143');
+define('ADD_EVENT', '313');
+define('ADD_FORMATION', '1234');
 
-define('CONTACTS_FORMATION_1', 'rollandyann@gmail.com');
-*/
+define('MODIF_PROFIL', '');
 
 
 /**
