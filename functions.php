@@ -2,6 +2,7 @@
 
 require_once locate_template('/functions/utils.php'); 
 require_once locate_template('/functions/config.php');
+require_once locate_template('/functions/cpt.php'); 
 require_once locate_template('/functions/app-functions.php');  
 require_once locate_template('/functions/cleanup.php');
 require_once locate_template('/functions/admin.php');     
