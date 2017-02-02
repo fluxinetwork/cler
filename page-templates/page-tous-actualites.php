@@ -66,10 +66,10 @@ Template Name: Toutes les actualités
 	<aside class="l-filterList l-filterList--small">
 		<form id="form-auto-filter-posts" role="form" class="l-monoFilter">
 		    <div class="l-filterList__filter">
-		    	<label for="category" class="is-none">Thèmatique</label>
+		    	<label for="category" class="is-none">Thématique</label>
 		    	<i class="fa fa-tag" aria-hidden="true"></i>
 				<select name="category" id="category" data-validation="required" class="c-form__select">
-					<option disabled selected value="">Thèmatique</option>
+					<option disabled selected value="">Thématique</option>
 					<?php
 						$terms = get_terms( 'category', 'hide_empty=0' );
 						if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){

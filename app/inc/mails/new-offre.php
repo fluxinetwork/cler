@@ -4,7 +4,7 @@ $footer_mail=$refer_url=$is_adherent= '';
 if ( $vars ) :   
     $footer_mail = $vars[0];    
     $refer_url = $vars[1]; 
-    $is_adherent = $vars[2]; 
+    $is_adherent = $vars[2];
 endif;
 
 $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

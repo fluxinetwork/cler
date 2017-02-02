@@ -16,8 +16,8 @@ Template Name: Récupération de password
 	<div class="form">
 		<form id="form-password-reset" role="form">
 			<fieldset>
-				<legend>Réinitialiser votre password</legend>
-				<p class="form__detail">Veuillez entrer votre adresse email ci-dessous pour recevoir un message contenant un nouveau password.</p>
+				<legend>Réinitialiser votre mot de passe</legend>
+				<p class="form__detail">Veuillez entrer votre adresse email ci-dessous pour recevoir un message contenant un nouveau mot de passe.</p>
 				<div class="form__row">	    	
 					<input type="text" class="js-input-effect input-effect--2" name="email" id="email" value="<?php if( is_user_logged_in() ){ echo $current_user->user_email; } ?>" placeholder="" data-validation="email">
 					<label for="email">Votre email<i class="i-required">*</i></label>

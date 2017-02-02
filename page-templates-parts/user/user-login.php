@@ -31,14 +31,14 @@
 			
 			<div class="c-form__submit">
 			    <button type="submit" id="submit-login" class="c-btn">Connexion</button>
-			    <a class="c-link c-link--shy t-align--r" href="<?php echo home_url(); ?>/recuperation-password/">Mot de passe oublié ?</a>
+			    <a class="c-link c-link--shy t-align--r" href="<?php echo get_the_permalink(RESET_PASSWORD); ?>">Mot de passe oublié ?</a>
 		    </div>
 
 		</fieldset>
 	</form>			
 	
 	<footer class="c-card__footer">
-		<a href="<?php echo home_url(); ?>/creation-utilisateur/" class="c-link c-link--more">Créer un compte</a>
+		<a href="<?php echo get_the_permalink(CREER_USER); ?>" class="c-link c-link--more">Créer un compte</a>
 	</footer>
 </div>
 
@@ -52,7 +52,7 @@
 				</div>
 				<?php get_template_part( 'page-templates-parts/message', 'need-login' ); ?>
 				<footer class="c-card__footer">
-					<a href="#" class="c-link c-link--more">Contactez-nous</a>
+					<a href="<?php echo get_the_permalink(CONTACT); ?>" class="c-link c-link--more">Contactez-nous</a>
 				</footer>
 			</div>
 		</div>

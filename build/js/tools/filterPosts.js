@@ -60,6 +60,9 @@ function initFluxiFilterPosts(){
                         $('.js-nb-results').html(data[0].total+' '+label+' disponible'+pluriel);
 
                         $results.html('').append(data[0].content);
+
+                        $('.js-reload').removeClass('is-none');
+                        
                         //$formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
                     }else{
                         $results.prev().html('<p class="mgTop--s"><strong>'+data[0].message+'</strong></p>');

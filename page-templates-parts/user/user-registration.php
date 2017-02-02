@@ -27,7 +27,7 @@
 				    <div class="c-form__fieldset__row">	
 				    	<label for="password" class="c-form__label">Mot de passe<span class="i-required">•</span></label>
 				    	<input type="text" class="c-form__input" name="password" id="password" value="" rel="gp" data-validation="required" data-character-set="a-z,A-Z,0-9,#" data-size="18" placeholder="">
-				    	<button class="js-generate-password c-link c-link--shy mgTop--s" type="button">Générer un password</button>
+				    	<button class="js-generate-password c-link c-link--shy mgTop--s" type="button">Générer un mot de passe</button>
 				    </div>	
 
 				    <div class="c-form__notify js-notify"></div>

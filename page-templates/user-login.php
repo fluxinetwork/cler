@@ -10,7 +10,7 @@ Template Name: Connexion utilisateur
 		</div>
 
 		<div class="l-overlay__content">
-			<?php require_once( FU_PLUGIN_DIR . 'assets/inc/page-templates-parts/user-login.php' ); ?>
+			<?php get_template_part( 'page-templates-parts/user/user', 'login' ); ?>
 		</div>
 	</div>
 </div>

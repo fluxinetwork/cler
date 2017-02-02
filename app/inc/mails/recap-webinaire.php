@@ -39,7 +39,7 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 
                     <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Vous venez de vous inscrire au prochain <em>Mardi de la transition énergétique</em> organisé par le CLER – Réseau pour la transition énergétique, et nous vous en remercions.<br><br>Votre participation au web-séminaire du '.$date_webinaire.' a bien été prise en compte.<br><br>
 
-                    Vous recevrez un email récapitulant le programme de ce web-séminaire, les intervenants et les modalités de votre participation quelques jours précédents l\'événement.</p>
+                    Vous recevrez un email récapitulant le programme de ce web-séminaire, les intervenants et les modalités de votre participation quelques jours précédant l\'événement.</p>
                   </td>
                 </tr>
               </table>

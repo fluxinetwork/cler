@@ -321,9 +321,12 @@ function initFluxiFilterPosts(){
                         $('.js-nb-results').html(data[0].total+' '+label+' disponible'+pluriel);
 
                         $results.html('').append(data[0].content);
+
+                        $('.js-reload').removeClass('is-none');
+                        
                         //$formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
                     }else{
-                        $results.prev().html('<p class="error">'+data[0].message+'</p>');
+                        $results.prev().html('<p class="mgTop--s"><strong>'+data[0].message+'</strong></p>');
                     }
                 }
                 $formObj.find('button[type=submit]').html('Filtrer');
@@ -386,7 +389,7 @@ function initFluxiAutoFilterPosts(){
             success: function(data){
                 $formObj.find('.js-loader').html('');
                 if(data[0].validation == 'error'){
-                    $results.prev().html('<p class="error">Il semble y avoir un problème, veuillez ré-essayer.</p>');
+                    $results.prev().html('<p class="mgTop--s"><strong>Il semble y avoir un problème, veuillez ré-essayer.</strong></p>');
                 }else{
                     if(data[0].total > 0){
                         if($('.pagination').length){ $('.pagination').remove(); }
@@ -394,7 +397,7 @@ function initFluxiAutoFilterPosts(){
                         $results.html('').append(data[0].content);
                         //$results.prev().html('<ps class="'+data[0].validation+'">'+data[0].message+'</ps>');
                     }else{
-                        $results.prev().html('<p class="error">'+data[0].message+'</p>');
+                        $results.prev().html('<p class="mgTop--s">'+data[0].message+'</strong></p>');
                     }
                     $formObj.find('.js-reload').removeClass('is-none');
                 }
@@ -402,7 +405,7 @@ function initFluxiAutoFilterPosts(){
             error : function(jqXHR, textStatus, errorThrown) {
                 //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
                 $formObj.find('.js-loader').html('');
-                $results.prev().html('<p class="error">Il semble y avoir un problème, veuillez ré-essayer.</p>');
+                $results.prev().html('<p class="mgTop--s"><strong>Il semble y avoir un problème, veuillez ré-essayer.</strong></p>');
             }
 
         });

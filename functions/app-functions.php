@@ -683,7 +683,7 @@ function get_adresse_cler(){
 	Tél : 01 55 86 80 00<br>
 	Mail : info@cler.org<br>
 	Fax : 01 55 86 80 01<br>
-	<a href="http://www.cler.org" target="_blank">http://www.cler.org</a>';
+	<a href="https://www.cler.org" target="_blank">www.cler.org</a>';
 
 	 // return footer mail
     return $adresse_cler;

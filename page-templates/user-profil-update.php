@@ -29,11 +29,11 @@ Template Name: Modifier compte utilisateur
 
 				<form id="form-update-password" role="form" class="c-card__body">
 					<fieldset class="c-form__fieldset">
-						<p>Votre password doit contenir au moins 8 caractères.</p>
+						<p>Votre mot de passe doit contenir au moins 8 caractères.</p>
 					    <div class="c-form__fieldset__row">
-							<label class="c-form__label" for="password">Password<span class="i-required">•</span></label>
+							<label class="c-form__label" for="password">Mot de passe<span class="i-required">•</span></label>
 					    	<input type="text" class="c-form__input" name="password" id="password" value="" rel="gp" placeholder="•••••" data-validation="required length" data-character-set="a-z,A-Z,0-9,#" data-size="12" data-validation-length="min8" data-validation-error-msg-required="Vous devez entrer un password">
-					    	<button class="js-generate-password c-link c-link--shy mgTop--s" type="button">Générer un password</button>
+					    	<button class="js-generate-password c-link c-link--shy mgTop--s" type="button">Générer un mot de passe</button>
 					    </div>
 					</fieldset>
 
