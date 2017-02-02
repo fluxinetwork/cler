@@ -4,10 +4,10 @@
 			<span class="c-section-title">Les offres d'emploi</span>
 		</div>
 		<div class="l-card-slider__aside__link">
-			<a href="<?php echo get_permalink(1300); ?>" class="c-link">Voir tout</a>
+			<a href="<?php the_permalink(PAGE_OFFRES); ?>" class="c-link">Voir tout</a>
 		</div>
 		<div class="l-card-slider__aside__more">
-			<a href="#" class="c-link c-link--white">Postez votre offre</a>
+			<a href="<?php the_permalink(FORM_OFFRE); ?>?act=add" class="c-link c-link--white">Postez votre offre</a>
 		</div>
 	</aside>
 
@@ -30,7 +30,7 @@
 			wp_reset_postdata();
 			?>
 			<li class="l-card-slider__cards__row__col u-show@med">
-				<a href="#" class="cockpit-add">
+				<a href="<?php the_permalink(PAGE_OFFRES); ?>" class="cockpit-add">
 					<span class="c-link c-link--white">voir tout</span>
 				</a>
 			</li>

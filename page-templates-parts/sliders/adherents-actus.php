@@ -5,7 +5,7 @@
 		</div>
 		
 		<div class="l-card-slider__aside__link">
-			<a href="#" class="c-link">Voir tout</a>
+			<a href="<?php the_permalink(ALL_NEWS); ?>?public=adherent" class="c-link">Voir tout</a>
 		</div>
 
 		<?php get_template_part( 'page-templates-parts/sliders/follow' ); ?>
@@ -37,7 +37,7 @@
 			wp_reset_postdata();
 			?>
 			<li class="l-card-slider__cards__row__col u-show@med">
-				<a href="#" class="cockpit-add">
+				<a href="<?php the_permalink(ALL_NEWS); ?>?public=adherent" class="cockpit-add">
 					<span class="c-link c-link--white">voir tout</span>
 				</a>
 			</li>

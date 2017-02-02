@@ -76,6 +76,8 @@ define('HUB_PRESSE', '1292');
 define('ALL_NEWS', '2897');
 
 define('PAGE_OFFRE', '3067');
+define('PAGE_OFFRES', '1300');
+
 define('FORM_OFFRE', '143');
 define('FORM_EVENT', '313');
 define('FORM_FORMATION', '1234');
@@ -93,7 +95,7 @@ define('PAGE_RAPPEL', '1248');
 define('CHARTE_CLER', '2659');
 define('REGLEMENT_CLER', '2665');
 
-define('CONTACT', '');
+define('CONTACT', '3183');
 
 /**
  * Add excerpt to pages
