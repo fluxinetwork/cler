@@ -9,7 +9,7 @@
 				<fieldset class="c-form__fieldset">
 					<legend class="is-none">Vos informations</legend>
 					
-				   	<div>	
+				   	<div class="c-form__fieldset__row">	
 				    	<label for="nom" class="c-form__label">Nom<span class="i-required">•</span></label>
 				    	<input type="text" class="c-form__input" name="nom" id="nom" value="" placeholder="" data-validation="required" data-validation-error-msg-required="Vous devez entrer un nom.">
 				    </div>
