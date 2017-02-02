@@ -25,7 +25,7 @@ Template Name: Profil
 						</span>
 						<h1 class="c-section-title">Mes informations</h1>
 					</div>
-					<a href="<?php echo home_url(); ?>/mon-profil/modifier-profil/" class="c-link">Modifier</a>
+					<a href="<?php echo get_the_permalink(FORM_PROFIL); ?>" class="c-link">Modifier</a>
 				</header>
 
 				<div class="l-cockpit__infos__body l-grid">
@@ -43,7 +43,7 @@ Template Name: Profil
 				</div>
 
 				<footer class="l-cockpit__infos__footer">
-					<a href="<?php echo home_url(); ?>/mon-profil/modifier-profil/?tf=mdp" class="c-link c-link--more">Modifier mot de passe</a>
+					<a href="<?php echo get_the_permalink(FORM_PROFIL); ?>?tf=mdp" class="c-link c-link--more">Modifier mot de passe</a>
 				</footer>
 			</div>
 
@@ -56,15 +56,15 @@ Template Name: Profil
 		<?php if ($adherent) : ?>
 
 			<div class="l-grid__col l-center">
-				<a href="<?php echo home_url(); ?>/mon-profil/adhesion/?act=mod" class="c-link">Modifier votre adhésion</a>
+				<a href="<?php echo get_the_permalink(FORM_ADHESION); ?>?act=mod" class="c-link">Modifier votre adhésion</a>
 			</div>
 			<div class="l-grid__col l-center">
-				<a href="<?php echo home_url(); ?>/mon-profil/adhesion/?act=rad" class="c-btn c-btn--cta"><div>Renouveler votre adhésion</div></a>
+				<a href="<?php echo get_the_permalink(FORM_ADHESION); ?>?act=rad" class="c-btn c-btn--cta"><div>Renouveler votre adhésion</div></a>
 			</div>
 
 		<?php else : ?>
 
-			<a href="<?php echo home_url(); ?>/mon-profil/adhesion/?act=add" class="c-btn c-btn--cta"><div>Devenir adhérent</div></a>
+			<a href="<?php echo get_the_permalink(FORM_ADHESION); ?>?act=add" class="c-btn c-btn--cta"><div>Devenir adhérent</div></a>
 
 		<?php endif; ?>
 		</div>
@@ -88,7 +88,7 @@ Template Name: Profil
 				<div class="c-tile c-tile--square c-tile--noBdr c-tile--bg">
 					<div class="c-tile__content">
 						<div class="c-tile__content__img"></div>
-						<a href="#" class="c-link">Offre d'emploi</a>
+						<a href="<?php echo get_the_permalink(FORM_OFFRE); ?>?act=add" class="c-link">Offre d'emploi</a>
 						<span class="t-meta pdTop--s"><?php ($adherent) ? print('Gratuit') : print('Payant'); ?></span>
 					</div>
 				</div>
@@ -97,7 +97,7 @@ Template Name: Profil
 				<div class="c-tile c-tile--square c-tile--noBdr c-tile--bg">
 					<div class="c-tile__content">
 						<div class="c-tile__content__img"></div>
-						<a href="#" class="c-link">Évènement</a>
+						<a href="<?php echo get_the_permalink(FORM_EVENT); ?>?act=add" class="c-link">Évènement</a>
 						<span class="t-meta pdTop--s">Gratuit</span>
 					</div>
 				</div>
@@ -106,7 +106,7 @@ Template Name: Profil
 				<div class="c-tile c-tile--square c-tile--noBdr c-tile--bg">
 					<div class="c-tile__content">
 						<div class="c-tile__content__img"></div>
-						<a href="#" class="c-link">Formation</a>
+						<a href="<?php echo get_the_permalink(FORM_FORMATION); ?>?act=add" class="c-link">Formation</a>
 						<span class="t-meta pdTop--s">Gratuit</span>
 					</div>
 				</div>
@@ -125,7 +125,7 @@ Template Name: Profil
 			</div>
 			<?php get_template_part( 'page-templates-parts/message', 'need-login' ); ?>
 			<footer class="c-card__footer">
-				<a href="#" class="c-link c-link--more">Contactez-nous</a>
+				<a href="<?php echo get_the_permalink(CONTACT); ?>" class="c-link c-link--more">Contactez-nous</a>
 			</footer>
 		</div>
 	</div>

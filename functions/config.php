@@ -66,7 +66,7 @@ define('FACEBOOK', 'https://www.facebook.com/CLER-R%C3%A9seau-pour-la-Transition
 define('TWITTER', 'https://twitter.com/assoCLER');
 
 define('MAP_ADHERENT', '311');
-define('ADHEREZ', '1286');
+define('PAGE_ADHEREZ', '1286');
 
 define('HUB_ADHERENT', '3024');
 define('HUB_CITOYEN', '1288');
@@ -76,12 +76,18 @@ define('HUB_PRESSE', '1292');
 define('ALL_NEWS', '2897');
 
 define('PAGE_OFFRE', '3067');
-define('ADD_OFFRE', '143');
-define('ADD_EVENT', '313');
-define('ADD_FORMATION', '1234');
+define('FORM_OFFRE', '143');
+define('FORM_EVENT', '313');
+define('FORM_FORMATION', '1234');
+define('FORM_PROFIL', '9');
+define('FORM_ADHESION', '141');
 
-define('MODIF_PROFIL', '');
+define('PAGE_ACTIONS', '1246');
+define('PAGE_SLIME', '1269');
+define('PAGE_TEPOS', '1250');
+define('PAGE_RAPPEL', '1248');
 
+define('CONTACT', '');
 
 /**
  * Add excerpt to pages

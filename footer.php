@@ -5,8 +5,6 @@
     </div><!-- .global -->	
 
     <!-- Popin login-->
-	<?php //require_once(  THEME_DIR_PATH . '/page-templates-parts/user/user-login-popin.php' ); ?>
-
 	<?php get_template_part( 'page-templates-parts/user/user-login-popin'); ?>	
 
 	<div class="l-row c-notify js-notify">
