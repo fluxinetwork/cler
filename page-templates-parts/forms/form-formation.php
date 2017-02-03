@@ -62,22 +62,30 @@
 	    </div>
 
 		<div class="c-form__fieldset__row">
-	    	<label for="niveau_detude" class="c-form__label">Niveau d’étude requis<span class="i-required">*</span></label>
+	    	<label for="niveau_detude" class="c-form__label">Diplôme / Niveau<span class="i-required">*</span></label>
 	    	<label for="niveau_detude_0" class="c-form__label c-form__label--checkbox">
-	    		<input type="checkbox" class="c-form__label__checkbox" name="niveau_detude[]" value="bac" id="niveau_detude_0" data-validation="checkbox_group" data-validation-qty="min1" <?php if(!empty($niveau_detude) && in_array('bac',$niveau_detude))echo 'checked'; ?>>
-	    		<div class="c-form__label__txt">BAC</div>		    		
+	    		<input type="checkbox" class="c-form__label__checkbox" name="niveau_detude[]" value="cap_bep" id="niveau_detude_0" data-validation="checkbox_group" data-validation-qty="min1" <?php if(!empty($niveau_detude) && in_array('cap_bep',$niveau_detude))echo 'checked'; ?>>
+	    		<div class="c-form__label__txt">CAP - BEP</div>		    		
 	    	</label>
 	    	<label for="niveau_detude_1" class="c-form__label c-form__label--checkbox">
-	    		<input type="checkbox" class="c-form__label__checkbox" name="niveau_detude[]" value="bac_2" id="niveau_detude_1" <?php if(!empty($niveau_detude) && in_array('bac_2',$niveau_detude))echo 'checked'; ?>>
-	    		<div class="c-form__label__txt">BAC+2</div>		    		
+	    		<input type="checkbox" class="c-form__label__checkbox" name="niveau_detude[]" value="bac" id="niveau_detude_1" <?php if(!empty($niveau_detude) && in_array('bac',$niveau_detude))echo 'checked'; ?>>
+	    		<div class="c-form__label__txt">BAC</div>		    		
 	    	</label>
 	    	<label for="niveau_detude_2" class="c-form__label c-form__label--checkbox">
-	    		<input type="checkbox" class="c-form__label__checkbox" name="niveau_detude[]" value="bac_3" id="niveau_detude_2" <?php if(!empty($niveau_detude) && in_array('bac_3',$niveau_detude))echo 'checked'; ?>>
-	    		<div class="c-form__label__txt">BAC+3</div>		    	 	
+	    		<input type="checkbox" class="c-form__label__checkbox" name="niveau_detude[]" value="bac_2" id="niveau_detude_2" <?php if(!empty($niveau_detude) && in_array('bac_2',$niveau_detude))echo 'checked'; ?>>
+	    		<div class="c-form__label__txt">BAC+2</div>		    	 	
 	    	</label>
 	    	<label for="niveau_detude_3" class="c-form__label c-form__label--checkbox">
-	    	  	<input type="checkbox" class="c-form__label__checkbox" name="niveau_detude[]" value="bac_5" id="niveau_detude_3" <?php if(!empty($niveau_detude) && in_array('bac_5',$niveau_detude))echo 'checked'; ?>>
+	    	  	<input type="checkbox" class="c-form__label__checkbox" name="niveau_detude[]" value="bac_3" id="niveau_detude_3" <?php if(!empty($niveau_detude) && in_array('bac_3',$niveau_detude))echo 'checked'; ?>>
+	    	  	<div class="c-form__label__txt">BAC+3</div>		    	  	
+	    	</label>
+	    	<label for="niveau_detude_4" class="c-form__label c-form__label--checkbox">
+	    	  	<input type="checkbox" class="c-form__label__checkbox" name="niveau_detude[]" value="bac_5" id="niveau_detude_4" <?php if(!empty($niveau_detude) && in_array('bac_5',$niveau_detude))echo 'checked'; ?>>
 	    	  	<div class="c-form__label__txt">BAC+5</div>		    	  	
+	    	</label>
+	    	<label for="niveau_detude_5" class="c-form__label c-form__label--checkbox">
+	    	  	<input type="checkbox" class="c-form__label__checkbox" name="niveau_detude[]" value="autre" id="niveau_detude_5" <?php if(!empty($niveau_detude) && in_array('autre',$niveau_detude))echo 'checked'; ?>>
+	    	  	<div class="c-form__label__txt">Autre</div>		    	  	
 	    	</label>
 	    </div>
 
@@ -89,63 +97,78 @@
 	    	</label>
 	    	<label for="thematique_1" class="c-form__label c-form__label--checkbox">
 	    		<input type="checkbox" class="c-form__label__checkbox" name="thematique[]" value="thematique_2" id="thematique_1" <?php if(!empty($thematique) && in_array('thematique_2',$thematique))echo 'checked'; ?>>
-	    		<div class="c-form__label__txt">Énergies renouvelables/Généraliste</div>		    		
+	    		<div class="c-form__label__txt">Bâtiment</div>		    		
 	    	</label>
 	    	<label for="thematique_2" class="c-form__label c-form__label--checkbox">
 	    		<input type="checkbox" class="c-form__label__checkbox" name="thematique[]" value="thematique_3" id="thematique_2" <?php if(!empty($thematique) && in_array('thematique_3',$thematique))echo 'checked'; ?>>
-	    		<div class="c-form__label__txt">Énergies renouvelables/Solaire thermique</div>		    	 	
+	    		<div class="c-form__label__txt">Énergies renouvelables/Généraliste</div>		    	 	
 	    	</label>
 	    	<label for="thematique_3" class="c-form__label c-form__label--checkbox">
 	    	  	<input type="checkbox" class="c-form__label__checkbox" name="thematique[]" value="thematique_4" id="thematique_3" <?php if(!empty($thematique) && in_array('thematique_4',$thematique))echo 'checked'; ?>>
-	    	  	<div class="c-form__label__txt">Énergies renouvelables/Solaire photovoltaïque</div>		    	  	
+	    	  	<div class="c-form__label__txt">Énergies renouvelables/Solaire</div>		    	  	
 	    	</label>
 	    	<label for="thematique_4" class="c-form__label c-form__label--checkbox">
 	    	  	<input type="checkbox" class="c-form__label__checkbox" name="thematique[]" value="thematique_5" id="thematique_4" <?php if(!empty($thematique) && in_array('thematique_5',$thematique))echo 'checked'; ?>>
-	    	  	<div class="c-form__label__txt">Énergies renouvelables/Biomasse</div>		    	  	
+	    	  	<div class="c-form__label__txt">Énergies renouvelables/Biomasse et biogaz</div>		    	  	
 	    	</label>
 	    	<label for="thematique_5" class="c-form__label c-form__label--checkbox">
 	    	  	<input type="checkbox" class="c-form__label__checkbox" name="thematique[]" value="thematique_6" id="thematique_5" <?php if(!empty($thematique) && in_array('thematique_6',$thematique))echo 'checked'; ?>>
-	    	  	<div class="c-form__label__txt">Énergies renouvelables/Biogaz</div>		    	  	
+	    	  	<div class="c-form__label__txt">Énergies renouvelables/Eolien</div>		    	  	
 	    	</label>
 	    	<label for="thematique_6" class="c-form__label c-form__label--checkbox">
 	    	  	<input type="checkbox" class="c-form__label__checkbox" name="thematique[]" value="thematique_7" id="thematique_6" <?php if(!empty($thematique) && in_array('thematique_7',$thematique))echo 'checked'; ?>>
-	    	  	<div class="c-form__label__txt">Énergies renouvelables/Eolien</div>		    	  	
+	    	  	<div class="c-form__label__txt">Précarité énergétique</div>		    	  	
 	    	</label>
 	    	<label for="thematique_7" class="c-form__label c-form__label--checkbox">
 	    	  	<input type="checkbox" class="c-form__label__checkbox" name="thematique[]" value="thematique_8" id="thematique_7" <?php if(!empty($thematique) && in_array('thematique_8',$thematique))echo 'checked'; ?>>
-	    	  	<div class="c-form__label__txt">Énergies renouvelables/Hydraulique</div>		    	  	
+	    	  	<div class="c-form__label__txt">Mobilité</div>		    	  	
 	    	</label>
 	    	<label for="thematique_8" class="c-form__label c-form__label--checkbox">
 	    	  	<input type="checkbox" class="c-form__label__checkbox" name="thematique[]" value="thematique_9" id="thematique_8" <?php if(!empty($thematique) && in_array('thematique_9',$thematique))echo 'checked'; ?>>
-	    	  	<div class="c-form__label__txt">Énergies renouvelables/Géothermie</div>		    	  	
+	    	  	<div class="c-form__label__txt">Territoires et environnement</div>		    	  	
 	    	</label>
 	    	<label for="thematique_9" class="c-form__label c-form__label--checkbox">
 	    	  	<input type="checkbox" class="c-form__label__checkbox" name="thematique[]" value="thematique_10" id="thematique_9" <?php if(!empty($thematique) && in_array('thematique_10',$thematique))echo 'checked'; ?>>
-	    	  	<div class="c-form__label__txt">Territoires &amp; environnement</div>		    	  	
-	    	</label>
-	    	<label for="thematique_10" class="c-form__label c-form__label--checkbox">
-	    	  	<input type="checkbox" class="c-form__label__checkbox" name="thematique[]" value="thematique_11" id="thematique_10" <?php if(!empty($thematique) && in_array('thematique_11',$thematique))echo 'checked'; ?>>
-	    	  	<div class="c-form__label__txt">Précarité énergétique</div>		    	  	
-	    	</label>
-	    	<label for="thematique_11" class="c-form__label c-form__label--checkbox">
-	    	  	<input type="checkbox" class="c-form__label__checkbox" name="thematique[]" value="thematique_12" id="thematique_11" <?php if(!empty($thematique) && in_array('thematique_12',$thematique))echo 'checked'; ?>>
-	    	  	<div class="c-form__label__txt">Mobilité</div>		    	  	
-	    	</label>
+	    	  	<div class="c-form__label__txt">Agriculture et agronomie</div>		    	  	
+	    	</label>	    	
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="duree_formation" class="c-form__label">Durée</label>
-	    	<input class="c-form__input" type="text" name="duree_formation" id="duree_formation" value="<?php echo $duree_formation; ?>"  placeholder="">
+	    	<label for="departement" class="c-form__label">Département de la formation<span class="i-required">*</span></label>
+			<select class="c-form__select" name="departement" id="departement" data-validation="required">
+				<option disabled selected value="">Dans quel département ?<span class="i-required">*</span></option>
+				<?php
+					foreach ( load_departements_fields() as $key => $value ) {
+
+		            	if( $departement == $key ):
+		            		echo '<option value="'.$key.'" selected>'.$value.'</option>';
+		            	else:
+		            		echo '<option value="'.$key.'">'.$value.'</option>';
+		            	endif;
+
+					}
+				?>
+			</select>
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="cout_formation" class="c-form__label">Coût</label>
-	    	<input class="c-form__input" type="text" name="cout_formation" id="cout_formation" value="<?php echo $cout_formation; ?>" placeholder="">
+	    	<label for="adresse_formation" class="c-form__label">Ville de la formation<span class="i-required">*</span></label>
+	    	<input class="c-form__input" type="text" name="adresse_formation" id="adresse_formation" value="<?php echo $adresse_formation; ?>"  placeholder="" data-validation="required">
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="descriptif_formation" class="c-form__label">Description formation<span class="i-required">*</span></label>
-	    	<textarea class="c-form__input c-form__textarea" rows="6" name="descriptif_formation" id="descriptif_formation" data-validation="required" placeholder=""><?php echo $descriptif_formation; ?></textarea>		    	
+			<label class="c-form__label" for="type_duree_formation">Durée de la formation<span class="i-required">•</span></label>
+			<select name="type_duree_formation" id="type_duree_formation" data-validation="required" class="c-form__select">
+				<option disabled selected value="">Formation longue ou courte ?</option>
+				<option value="courte" <?php if($type_duree_formation=='courte')echo 'selected';?>>Formation courte</option>
+				<option value="longue" <?php if($type_duree_formation=='longue')echo 'selected';?>>Formation longue</option>				
+			</select>
+			<p>Une formation est considérée comme <strong>longue</strong> si sa durée est supérieure ou égale à <strong>120 heures</strong> et si elle comprend une période de stage en entreprise ou en alternance.</p>
+	    </div>
+	    
+	    <div class="c-form__fieldset__row">
+	    	<label for="descriptif_formation" class="c-form__label">Présentation de la formation<span class="i-required">*</span></label>
+	    	<textarea class="c-form__input c-form__textarea" rows="10" name="descriptif_formation" id="descriptif_formation" data-validation="required" placeholder="Préciser le coût, les débouchés et perspectives"><?php echo $descriptif_formation; ?></textarea>		    	
 	    </div>
 
 		<div class="c-form__fieldset__row">
@@ -159,6 +182,11 @@
 		  		<input type="radio" name="agrement_formateree" value="oui" <?php if( !empty($agrement_formateree) && $agrement_formateree == 'oui')echo 'checked';?>>
 		  		<div class="c-form__label__txt">Oui</div>
 	  		</label>
+	    </div>
+
+	    <div class="c-form__fieldset__row">
+	    	<label for="site_internet" class="c-form__label">Site internet de la formation</label>
+	    	<input class="c-form__input" type="url" value="<?php echo $site_internet; ?>" name="site_internet" id="site_internet">
 	    </div>
 
     </fieldset>
@@ -196,26 +224,8 @@
 
 	    <div class="c-form__fieldset__row">
 	    	<label for="ville" class="c-form__label">Ville<span class="i-required">*</span></label>
-	    	<input class="c-form__input" type="text" value="<?php echo $ville; ?>" name="ville" id="ville" data-validation="required">		    	
-	    </div>
-
-	    <div class="c-form__fieldset__row">
-	    	<label for="departement" class="c-form__label">Département<span class="i-required">*</span></label>
-			<select class="c-form__select" name="departement" id="departement" data-validation="required">
-				<option disabled selected value="">Dans quel département ?<span class="i-required">*</span></option>
-				<?php
-					foreach ( load_departements_fields() as $key => $value ) {
-
-		            	if( $departement == $key ):
-		            		echo '<option value="'.$key.'" selected>'.$value.'</option>';
-		            	else:
-		            		echo '<option value="'.$key.'">'.$value.'</option>';
-		            	endif;
-
-					}
-				?>
-			</select>
-	    </div>
+	    	<input class="c-form__input" type="text" value="<?php echo $ville; ?>" name="ville" id="ville" data-validation="required">	    	
+	    </div>	    
 
 	    <div class="c-form__fieldset__row">
 	    	<label for="telephone" class="c-form__label">Téléphone de contact<span class="i-required">*</span></label>
@@ -225,12 +235,7 @@
 	    <div class="c-form__fieldset__row">
 	    	<label for="contact_email" class="c-form__label">Email de contact<span class="i-required">*</span></label>
 	    	<input class="c-form__input" type="text" value="<?php echo $contact_email; ?>" name="contact_email" id="contact_email" data-validation="email">		    	
-	    </div>
-
-	    <div class="c-form__fieldset__row">
-	    	<label for="site_internet" class="c-form__label">Site internet</label>
-	    	<input class="c-form__input" type="url" value="<?php echo $site_internet; ?>" name="site_internet" id="site_internet">
-	    </div>
+	    </div>	    
 
 	</fieldset>
 

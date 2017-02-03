@@ -11,7 +11,7 @@ Template Name: Gérer formation
 			// If user loged in
 			if( is_user_logged_in() ):
 				// vars
-				$the_idp=$formation_title=$type_form=$type_form_name=$publics=$duree_formation=$cout_formation=$secteur=$niveau_detude=$thematique=$descriptif_formation=$agrement_formateree=$is_adherent=$nom_centre=$adresse=$code_postal=$ville=$departement=$telephone=$contact_email=$site_internet='';
+				$the_idp=$formation_title=$type_form=$type_form_name=$publics=$adresse_formation=$type_duree_formation=$secteur=$niveau_detude=$thematique=$descriptif_formation=$agrement_formateree=$is_adherent=$nom_centre=$adresse=$code_postal=$ville=$departement=$telephone=$contact_email=$site_internet='';
 
 				if( !empty($_GET['act'])):
 
@@ -34,8 +34,8 @@ Template Name: Gérer formation
 							$formation_title= get_the_title ( $the_idp );
 							
 							$publics = get_field('publics', $the_idp);
-							$duree_formation = get_field('duree_formation', $the_idp);
-							$cout_formation = get_field('cout_formation', $the_idp);
+							$adresse_formation = get_field('adresse_formation', $the_idp);
+							$type_duree_formation = get_field('type_duree_formation', $the_idp);							
 							$secteur = get_field('secteur', $the_idp);
 							$niveau_detude = get_field('niveau_detude', $the_idp);
 							$thematique = get_field('thematique', $the_idp);

@@ -27,7 +27,7 @@ function fluxi_manage_formation(){
 		// Verify email & token
 		if ( is_numeric($toky_toky) && $toky_toky == 68415684348 ):
 
-			if ( !empty($_POST['title']) && !empty($_POST['departement']) && !empty($_POST['descriptif_formation']) && !empty($_POST['publics']) && !empty($_POST['secteur']) && !empty($_POST['niveau_detude']) && !empty($_POST['thematique']) && !empty($_POST['nom_centre']) && !empty($_POST['adresse']) && !empty($_POST['ville']) && !empty($_POST['code_postal']) && !empty($_POST['telephone']) && !empty($_POST['contact_email']) && !empty($_POST['agrement_formateree']) ):
+			if ( !empty($_POST['title']) && !empty($_POST['departement']) && !empty($_POST['descriptif_formation']) && !empty($_POST['publics']) && !empty($_POST['secteur']) && !empty($_POST['niveau_detude']) && !empty($_POST['thematique']) && !empty($_POST['nom_centre']) && !empty($_POST['adresse']) && !empty($_POST['ville']) && !empty($_POST['code_postal']) && !empty($_POST['telephone']) && !empty($_POST['contact_email']) && !empty($_POST['agrement_formateree']) && !empty($_POST['type_duree_formation']) ):
 
 				if($action_form == 'add' || $action_form == 'mod'):
 					$title = wp_strip_all_tags($_POST['title']);
@@ -39,8 +39,9 @@ function fluxi_manage_formation(){
 					$metas_tab = array(
 						'is_adherent'		=> $is_adherent,
 						'departement'		=> filter_var( $_POST['departement'], FILTER_SANITIZE_STRING),
-						'duree_formation' => filter_var( $_POST['duree_formation'], FILTER_SANITIZE_STRING),
+						'adresse_formation' => filter_var( $_POST['adresse_formation'], FILTER_SANITIZE_STRING),						
 						'type_duree_formation' => filter_var( $_POST['type_duree_formation'], FILTER_SANITIZE_STRING),
+						'agrement_formateree' => filter_var( $_POST['agrement_formateree'], FILTER_SANITIZE_STRING),
 						'cout_formation' => filter_var( $_POST['cout_formation'], FILTER_SANITIZE_STRING),
 						'nom_centre' => filter_var( $_POST['nom_centre'], FILTER_SANITIZE_STRING),
 						'descriptif_formation'	=> filter_var( $_POST['descriptif_formation'], FILTER_SANITIZE_STRING),

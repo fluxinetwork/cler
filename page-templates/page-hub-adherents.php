@@ -9,23 +9,22 @@ Template Name: Hub adhérents
 	<div class="l-col adherents">
 		<div class="adherents__main">
 			<h1 class="l-hero__title">espace adhérents</h1>
-			<h2 class="l-hero__subtitle">For many of us, our very first experience of learning about the celestial bodies begins when we saw our first full moon in the sky. It is truly a magnificent view even to the naked eye.</h2>
+			<h2 class="l-hero__subtitle"><?php echo get_field('fluxi_resum');?></h2>
 
 			<div class="adherents__main__links">
 				<div class="h3 t-fw--700 mgBottom--s">Vous cherchez quelqu'un ?</div>
-				<a href="#" class="c-link">Le C.A</a>
-				<a href="#" class="c-link">L'équipe</a>
-				<a href="#" class="c-link">Le réseau</a>
+				<a href="<?php the_permalink(PAGE_CA); ?>" class="c-link">Le C.A</a>
+				<a href="<?php the_permalink(PAGE_EQUIPE); ?>" class="c-link">L'équipe</a>
+				<a href="<?php the_permalink(MAP_ADHERENT); ?>" class="c-link">Le réseau</a>
 			</div>
 		</div>
 		
 		<aside class="adherents__aside">
 			<div class="adherents__aside__contact">
-				<?php
+				<?php /*
 					$contact = get_field('contact_referent');
 					$contact_id = $contact[0];
-					$descriptif_contact = get_field('descriptif_contact', false, false);	
-					
+					$descriptif_contact = get_field('descriptif_contact', false, false);					
 
 					if( $contact ):			
 						$photo = get_field('photo', $contact_id);
@@ -43,7 +42,9 @@ Template Name: Hub adhérents
 
 						echo $output;
 						
-					endif;
+					endif; */
+
+					get_template_part( 'page-templates-parts/card','contact' );
 				?>
 			</div>
 

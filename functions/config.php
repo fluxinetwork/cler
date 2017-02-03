@@ -67,6 +67,8 @@ define('TWITTER', 'https://twitter.com/assoCLER');
 
 define('MAP_ADHERENT', '311');
 define('PAGE_ADHEREZ', '1286');
+define('PAGE_CA', '2655');
+define('PAGE_EQUIPE', '2658');
 
 define('HUB_ADHERENT', '3024');
 define('HUB_CITOYEN', '1288');

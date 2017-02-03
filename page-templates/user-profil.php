@@ -48,7 +48,7 @@ Template Name: Profil
 			</div>
 
 			<aside class="l-cockpit__aside u-show@large">
-				<a href="mailto:jane.mery@cler.org"><?php include(TEMPLATEPATH.'/app/inc/proto/card-contact.php'); ?></a>
+				<?php include(TEMPLATEPATH.'/page-templates-parts/card-contact.php'); ?>
 			</aside>
 		</div>
 		
@@ -74,7 +74,9 @@ Template Name: Profil
 
 <section class="l-row bg-accent bg-accent--grad">
 	<div class="l-col">
+
 		<?php include(TEMPLATEPATH.'/app/inc/proto/publications-slider.php'); ?>
+
 	</div>
 </section>
 

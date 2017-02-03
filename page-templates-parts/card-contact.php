@@ -1,4 +1,9 @@
 <?php
+/**
+ * The template part for displaying the contact card
+ */
+?>
+<?php
 	$contact = get_field('contact_referent');
 	$contact_id = $contact[0];
 	$descriptif_contact = get_field('descriptif_contact', false, false);					
@@ -10,8 +15,9 @@
 		$output .= '<article class="c-card">';
 		$output .= '<div class="c-card__header" style="background-image: url('.$photo['sizes']['thumbnail'].')"></div>';
 		$output .= '<div class="c-card__body">';
-		$output .= '<div class="c-card__body__meta"><span class="t-meta">'.$descriptif_contact.'</span></div>';
+		$output .= '<div class="c-card__body__meta"><span class="t-meta">Besoin d\'aide ?</span></div>';
 		$output .= '<h1 class="c-card__body__title">'.get_the_title($contact_id).'</h1>';
+		$output .= '<p>'.$descriptif_contact.'</p>';
 		$output .= '</div>';
 		$output .= '<div class="c-card__footer"><span class="c-link c-link--more c-card__body__link">Contactez moi</span></div>';
 		$output .= '</article>';
