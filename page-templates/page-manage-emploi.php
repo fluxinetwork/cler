@@ -76,7 +76,7 @@ Template Name: Gérer offre d'emploi
 
 
 			<footer class="c-card__footer">
-				<a href="#" class="c-link c-link--more">Contactez-nous</a>
+				<a href="<?php the_permalink(CONTACT); ?>" class="c-link c-link--more">Contactez-nous</a>
 			</footer>
 		</div>
 	</div>

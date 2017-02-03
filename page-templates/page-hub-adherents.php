@@ -99,7 +99,7 @@ Template Name: Hub adhérents
 
 <section class="l-row bg-main bg-main--grad">
 	<div class="l-col">
-		<?php get_template_part( 'page-templates-parts/sliders/adherents-actus' ); ?>
+		<?php get_template_part( 'page-templates-parts/sliders/adherents','actus' ); ?>
 	</div>
 </section>
 

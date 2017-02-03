@@ -74,7 +74,7 @@ Template Name: Tous les webinaires
 
 		else:
 
-			echo '<li><p class="error">Il n\'y a pas de web-séminaire pour le moment.</p></li>';
+			echo '<li><p><strong>Il n\'y a pas de web-séminaire pour le moment.</strong></p></li>';
 
 		endif;
 		wp_reset_postdata();

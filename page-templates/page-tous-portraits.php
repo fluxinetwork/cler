@@ -37,10 +37,11 @@ Template Name: Tous les portraits
 				$permalink = get_permalink();
 				$date = get_the_date('d M Y');
 				$title = get_the_title();
+				$description = get_field('fluxi_resum', false, false);
 
 				$post_img_id = get_field('main_image');
 				if($post_img_id){
-					$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumbnail', true);
+					$post_img_array = wp_get_attachment_image_src($post_img_id, 'portrait', true);
 					$post_img_url = 'url('.$post_img_array[0].')';
 				}else{
 					$post_img_url = 'none';
@@ -59,6 +60,9 @@ Template Name: Tous les portraits
 				$output .= '<div class="c-newsH__img" style="background-image:'.$post_img_url.'"></div>';
 				$output .= '<div class="c-newsH__body">';
 				$output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
+
+				$output .= '<p class="mgTop--xs">'.$description.'</p>';
+
 				$output .= '<div class="c-meta">';
 				$output .= '<div class="c-dash"></div>';
 				$output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>';
@@ -75,7 +79,7 @@ Template Name: Tous les portraits
 
 		else:
 
-			echo '<li><p class="error">Il n\'y a pas de portrait pour le moment.</p></li>';
+			echo '<li><p><strong>Il n\'y a pas de portrait pour le moment.</strong></p></li>';
 
 		endif;
 		wp_reset_postdata();

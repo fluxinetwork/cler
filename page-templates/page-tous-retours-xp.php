@@ -73,7 +73,7 @@ Template Name: Tous les retours d'experience
 
 		else:
 
-			echo '<li><p class="error">Il n\'y a pas de retour d\'expérience pour le moment.</p></li>';
+			echo '<li><p><strong>Il n\'y a pas de retour d\'expérience pour le moment.</strong></p></li>';
 
 		endif;
 		wp_reset_postdata();
