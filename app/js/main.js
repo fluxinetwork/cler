@@ -212,11 +212,13 @@ function initFluxiDelPost(){
                 success: function(data){
 
                     if(data[0].validation == 'error'){
-                        $button.html('Supprimer').find('.spinner').remove();
+                        $button.find('.spinner').remove();
+                        console.log('Erreur pendant suppression. Rechargez la page puis essayez à nouveau.');
                     }else{
                         
                         $('#js-idp-'+theIdp).fadeOut( 'slow', function() {
-                            $('#js-idp-'+theIdp).remove();
+                            //$('#js-idp-'+theIdp).remove();
+                            console.log('Votre publication a bien été supprimée.'+theIdp);
                         });                        
                     }                    
 

@@ -71,15 +71,11 @@ Template Name: Profil
 	</div>
 </section>
 
-
-<section class="l-row bg-accent bg-accent--grad">
+<section class="l-row bg-main  bg-accent bg-accent--grad">
 	<div class="l-col">
-
-		<?php include(TEMPLATEPATH.'/app/inc/proto/publications-slider.php'); ?>
-
+		<?php include(TEMPLATEPATH.'/page-templates-parts/sliders/publications-slider.php'); ?>
 	</div>
 </section>
-
 
 <section class="l-row bg-white">
 	<div class="l-col">

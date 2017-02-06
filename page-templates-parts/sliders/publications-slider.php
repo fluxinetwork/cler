@@ -8,11 +8,16 @@
 	$query_publications = new WP_Query( $args_publications );
 ?>
 
+
 <div class="l-card-slider">
 	<aside class="l-card-slider__aside">
-		<div class="l-card-slider__aside__title">
-			<span class="c-section-title">Gérer vos publications</span>
+		<div class="l-card-slider__aside__title"><span class="c-section-title">Gérer vos publications</span></div>
+
+		<div class="l-card-slider__aside__link">
+			<strong class="js-notify"></strong>
 		</div>
+
+		<?php get_template_part( 'page-templates-parts/sliders/follow' ); ?>
 	</aside>
 
 	<div class="l-card-slider__cards">
@@ -32,10 +37,9 @@
 					$mod_post_url = get_the_permalink(FORM_FORMATION).'?act=mod&amp;idp='.get_the_ID();
 					$cpt_label = 'Formation';
 				endif;
-
 			?>
 
-				<li class="l-card-slider__cards__row__col">
+				<li class="l-card-slider__cards__row__col u-show@med">
 					
 					<article class="c-card c-card--emploi">
 						<header class="c-card__header">
@@ -83,8 +87,5 @@
 		</ul>
 	</div>
 
-	<div class="l-card-slider__controls">
-		<button class="c-btnArrow"></button>
-		<button class="c-btnArrow c-btnArrow--right"></button>
-	</div>
+	<?php get_template_part( 'page-templates-parts/sliders/controls' ); ?>
 </div>
