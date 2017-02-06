@@ -121,6 +121,8 @@ function fluxi_filter_posts(){
 
 					$ob_departement = get_field_object('field_577e40ac4281f');
 					$label_departement = $ob_departement['choices'][ get_field('departement') ];
+					$code_postal = get_field('code_postal');
+					$numero_departement = substr($code_postal,0,-3);
 
 					$ob_publics = get_field_object('field_577e419326394');
 					$ch_publics = $ob_publics['choices'];
@@ -144,19 +146,31 @@ function fluxi_filter_posts(){
 						foreach( $val_themes as $v ):
 							$label_themes .= '<span class="c-tag">'.$ch_themes[ $v ] .'</span>';
 						endforeach;
-					endif;
+					endif; 
 
-					$result_content .= '<li classs="l-postList__item">
-						<a href="'.get_the_permalink().'">
-						<article class="c-offre">
-							<h1 class="c-offre__title">'.get_the_title ().'</h1>
-							<div class="c-offre__meta">Le '.$date_event.' <i class="mgLeft--s fa fa-map-marker" aria-hidden="true"></i>'.get_field('ville').' <i class="mgLeft--s fa fa-location-arrow" aria-hidden="true"></i>'.$label_departement.'</div>
-							<div class="c-offre__tags">								
-								'.$label_themes.$label_publics.'
-							</div>
-						</article>
-						</a>
-					</li>';
+					$result_content = '<li class="l-postList__item">';
+					$result_content .= '<a href="'.get_permalink().'">';
+					$result_content .= '<article class="offre">';
+
+					$result_content .= '<h1 class="h2">'.get_the_title().'</h1>';
+
+					$result_content .= '<div class="c-meta">';
+					$result_content .= '<div class="c-dash"></div>';
+					$result_content .= '<span class="c-meta__meta">'.$date_event.'</span>';
+					$result_content .= '<span class="c-meta__meta"><i class="fa fa-map-marker c-meta__meta__icon" aria-hidden="true"></i>'.get_field('ville').'</span>';
+					$result_content .= '<span class="c-meta__meta"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i>'.$numero_departement.'</span>';
+					$result_content .= '</div>';
+
+					//$result_content .= '<p class="c-offre_description">'.get_field('descriptif_organisme').'</p>';
+
+					$result_content .= '<div class="mgTop--s">';
+					$result_content .= $label_themes;
+					$result_content .= $label_publics;
+					$result_content .= '</div>';
+
+					$result_content .= '</article>';
+					$result_content .= '</a>';
+					$result_content .= '</li>';
 
 				elseif( $pt_slug == 'formations'):
 
