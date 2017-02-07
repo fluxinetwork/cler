@@ -88,7 +88,7 @@ Template Name: Hub adhérents
 
 					endwhile;
 				else :
-					echo '<p class="t-meta mgTop--s">Rien de prévu pour le moment...</p>';
+					echo '<li><p class="mgTop--s"><strong>Rien de prévu pour le moment...</strong></p></li>';
 				endif;
 				wp_reset_postdata();
 				?>

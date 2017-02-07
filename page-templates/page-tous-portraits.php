@@ -79,7 +79,7 @@ Template Name: Tous les portraits
 
 		else:
 
-			echo '<li><p><strong>Il n\'y a pas de portrait pour le moment.</strong></p></li>';
+			echo '<li><p class="mgTop--s"><strong>Il n\'y a pas de portrait pour le moment.</strong></p></li>';
 
 		endif;
 		wp_reset_postdata();

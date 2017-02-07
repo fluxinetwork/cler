@@ -168,7 +168,7 @@ Template Name: Toutes les événements
 				
 		else :
 
-			echo '<p><strong>Il n\'y a aucun événement pour l\'instant.</strong></p>';
+			echo '<p class="mgTop--s"><strong>Il n\'y a aucun événement pour l\'instant.</strong></p>';
 
 		endif;
 		wp_reset_postdata();

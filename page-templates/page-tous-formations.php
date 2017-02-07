@@ -210,7 +210,7 @@ Template Name: Toutes les formations
 				
 			else :
 
-				echo '<p><strong>Il n\'y a aucune formation pour l\'instant.</strong></p>';
+				echo '<p class="mgTop--s"><strong>Il n\'y a aucune formation pour l\'instant.</strong></p>';
 
 			endif;
 			wp_reset_postdata();
