@@ -13,11 +13,13 @@
 	<aside class="l-card-slider__aside">
 		<div class="l-card-slider__aside__title"><span class="c-section-title">Gérer vos publications</span></div>
 
-		<div class="l-card-slider__aside__link">
+		<div class="l-card-slider__aside__link t-align--r">
 			<strong class="js-notify"></strong>
 		</div>
 
-		<?php get_template_part( 'page-templates-parts/sliders/follow' ); ?>
+		<div class="l-card-slider__aside__more l-card-slider__aside__more--follow">
+			<a href="<?php the_permalink(CONTACT);?>" class="c-meta__meta" target="_blank"><i class="fa fa-envelope c-meta__meta__icon" aria-hidden="true"></i>Besoin d'aide ?</a>
+		</div>
 	</aside>
 
 	<div class="l-card-slider__cards">
@@ -39,14 +41,15 @@
 				endif;
 			?>
 
-				<li class="l-card-slider__cards__row__col u-show@med">
+				<li id="js-idp-<?php echo get_the_ID(); ?>" class="l-card-slider__cards__row__col u-show@med">
 					
 					<article class="c-card c-card--emploi">
 						<header class="c-card__header">
-							<div class="c-card__header__tag"><a title="Modifier la publication" href="<?php echo $mod_post_url; ?>"><i class="fa fa-pencil" aria-hidden="true"></i>
-</a></div>
-							<div class="c-card__header__tag"><a title="Supprimer la publication" href="#" class="js-del-post" data-idp="<?php echo get_the_ID(); ?>" data-toky="<?php echo mt_rand(0,9999); ?>" data-title="<?php echo get_the_title (); ?>"><i class="fa fa-trash" aria-hidden="true"></i>
-</a></div>
+							<div class="c-card__header__tag">
+								<a title="Modifier la publication" href="<?php echo $mod_post_url; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+							</div>
+							<div class="c-card__header__tag"><a title="Supprimer la publication" href="#" class="js-del-post" data-idp="<?php echo get_the_ID(); ?>" data-toky="<?php echo mt_rand(0,9999); ?>" data-title="<?php echo get_the_title (); ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+							</div>
 							<h5 class="c-card__header__cat"><?php echo $cpt_label; ?></h5>
 						</header>
 						<div class="c-card__body">

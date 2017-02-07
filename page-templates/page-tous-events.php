@@ -106,8 +106,7 @@ Template Name: Toutes les événements
 				$val_publics = $ob_publics['value'];
 				$label_publics = '';
 
-				$date_event = date("d/m/y", strtotime(get_field('date_event')));
-				
+				$date_event = get_field('date_event');				
 
 				if( $val_publics ):
 					foreach( $val_publics as $v ):

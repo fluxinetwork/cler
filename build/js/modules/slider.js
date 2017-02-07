@@ -18,7 +18,7 @@ function slider() {
 		var colW = parseInt($slides.children().eq(0).outerWidth(true));
 		var posL = parseInt($slides.css('left'));
 
-		console.log(posL-colW);
+		//console.log(posL-colW);
 
 		if( $this.attr('data-direction') == 'prev' && step > 0 ) {
 			$slides.css('left', posL+colW)
