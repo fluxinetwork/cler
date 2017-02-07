@@ -7,7 +7,18 @@ Template Name: Accueil
 
 <section class="l-row bg-light hp-hero">
 	<div class="l-col l-hero">
-		<div class="hp-hero__content">			
+		<div class="hp-portraits">
+			<?php
+				for ($i=1; $i<6; $i++) {
+					echo '<div class="hp-portraits__row">';
+					for ($j=0; $j<$i+2; $j++) {
+						echo '<div class="hp-portraits_img"></div>';
+					}
+					echo '</div>';
+				}
+			?>
+		</div>	
+		<div class="hp-hero__content">
 			<h1 class="l-hero__title"><span class="u-hide@med">CLER, </span>Réseau pour la<br class="u-show@small"> transition énergétique</h1>
 			<h2 class="l-hero__subtitle">We believe that a genuine-fair energy transition is the right answer to our global crisis.</h2>
 			<div class="l-hero__btn">

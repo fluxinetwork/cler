@@ -41,6 +41,8 @@
 	z-index: 2000;
 	bottom: $space--s;
 	right: $space--s;
+	@include transition;
+	transition-timing-function: $easeOutBack;
 
 	@media screen and (min-width: $break--l) {
 		display: block;

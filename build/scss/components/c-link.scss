@@ -13,6 +13,7 @@
 	background-color: transparent;
 	text-transform: uppercase;
 	font-weight: 700;
+	font-family: $font-h;
 	letter-spacing: 1px;
 	@include font-size($bt-font-sizes);	
 	transition: $transition--dynamic;

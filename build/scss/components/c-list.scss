@@ -12,5 +12,9 @@
 
 .c-list__item {
 	@extend .p;
-	margin-top: $space--s;
+	margin-top: $space--xs*0.5;
+
+	&:first-child {
+		margin-top: $space--s;
+	}
 }

@@ -14,8 +14,8 @@ body {
 // WEBFONT
 
 @include webfont('qanelas', 'qanelas/black', 'qanelassoft-black-webfont', 900);
-@include webfont('qanelas', 'qanelas/bold', 'qanelassoft-bold-webfont', 700);
-@include webfont('qanelas', 'qanelas/regular', 'qanelassoft-regular-webfont');
+//@include webfont('qanelas', 'qanelas/bold', 'qanelassoft-bold-webfont', 700);
+//@include webfont('qanelas', 'qanelas/regular', 'qanelassoft-regular-webfont');
 
 
 // RESET
@@ -101,6 +101,7 @@ p {
 	@extend .h6;
 	letter-spacing: 0.5px;
 	font-weight: 700;
+	font-family: $font-subh;
 	text-transform: uppercase;
 	color: $c-dark;
 	opacity: 0.5;

@@ -11,7 +11,7 @@ $categories = get_the_category();
 
 $permalink = get_permalink();
 $date = get_the_date('d M Y');
-$title = limitString(get_the_title(), 0, 80, ' [...]');
+$title = limitString(get_the_title(), 0, LIMIT_STRING, ' [...]');
 
 $output = '<li class="l-card-slider__cards__row__col">';
 $output .= '<a href="'.$permalink.'">';

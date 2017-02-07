@@ -72,7 +72,7 @@ module.exports = function (grunt) {
 				src: 'app/css/main.css',
 				dest: 'app/css/main.min.css'
 			}
-         },
+        },
 
 		sass: {
 	        main: {
@@ -85,9 +85,6 @@ module.exports = function (grunt) {
 	            }
 	        }
 		},
-
-		
-
 	});
 
 	grunt.registerTask('css', ['sass']);

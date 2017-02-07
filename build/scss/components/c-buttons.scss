@@ -11,6 +11,7 @@
 	border-radius: 100px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	font-weight: 900;
 	outline: 0;
 
 	&:not(.c-btn--cta):hover {
@@ -26,12 +27,13 @@
 		&::after {
 			border-radius: 100px;
 			transition: $transition--dynamic;
+			transition-timing-function: $easeOutBack;
 		}
 
 		&:hover {
 			&::before,
 			&::after {
-				transform: scaleX(0.9);
+				transform: scale(1.1);
 				background-color: $c-main;
 			}
 		}
@@ -108,7 +110,6 @@
 	color: #fff;
 	border-radius: 50%;
 	outline: 0;
-	@include transition();
 
 	&--small,
 	&--controls {
@@ -143,10 +144,10 @@
 	}
 
 	.fa-chevron-left {
-		left: -2px;
+		left: -1px;
 	}
 	.fa-chevron-right {
-		left: 2px;
+		left: 1px;
 	}
 
 	&.icon2 {

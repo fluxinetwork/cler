@@ -25,6 +25,7 @@
 
 .c-figure__caption {
 	@extend .h5;
+	font-family: $font-subh;
 	text-align: center;
 	margin-top: $space--xs;
 	color: $c-txt;

@@ -27,6 +27,7 @@
 	@include fill('parent', true);
 	@include flex(center, true);
 	padding: $space--m;
+	font-family: $font-subh;
 }
 
 .c-tile__content__img {

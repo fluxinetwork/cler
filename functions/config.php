@@ -14,6 +14,7 @@ define('EDITOR_STYLE', false);
  */
 define('POST_EXCERPT_LENGTH', 40);
 define('SLIDER_NB_POSTS', 10);
+define('LIMIT_STRING', 100);
 
 define('STRIPE_KEY', 'sk_live_nIIBwPmVfcFQahFBHo6wfQpX');
 

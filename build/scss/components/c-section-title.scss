@@ -6,6 +6,7 @@
 
 .c-section-title {
 	@extend .h2--title;
+	font-family: $font-h;
 
 	.l-col > & {
 		text-align: center;
