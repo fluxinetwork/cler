@@ -184,7 +184,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 		        echo '</div>';
 
 			else :
-				echo '<p class="mgTop--s"><strong>Il n\'y a aucune offre d\'emploi pour l\'instant.</strong></p>';
+				echo '<p class="mgTop--s font-subh"><strong>Il n\'y a aucune offre d\'emploi pour l\'instant.</strong></p>';
 			endif;
 			wp_reset_postdata();
 		?>

@@ -136,7 +136,7 @@ Template Name: Toutes les actualités
 
 		else:
 
-			echo '<li><p class="mgTop--s"><strong>Il n\'y a pas d\'actualités dans cette catégorie pour le moment.</strong></p></li>';
+			echo '<li><p class="mgTop--s font-subh"><strong>Il n\'y a pas d\'actualités dans cette catégorie pour le moment.</strong></p></li>';
 
 		endif;
 		wp_reset_postdata();

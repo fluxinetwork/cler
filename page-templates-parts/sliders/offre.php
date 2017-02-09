@@ -18,7 +18,7 @@ $output .= '<a href="'.$permalink.'">';
 $output .= '<article class="c-card c-card--emploi">';
 $output .= '<header class="c-card__header">';
 $output .= '<div class="c-card__header__tag">'.$label_type_de_poste.'</div>';
-$output .= '<div class="c-card__header__tag">'.$num_departement.'</div>';
+$output .= '<div class="c-card__header__tag"><i class="fa fa-location-arrow mgRight--xs"></i>'.$num_departement.'</div>';
 $output .= '<h5 class="c-card__header__cat">'.$cat_name.'</h5>';
 $output .= '</header>';
 $output .= '<div class="c-card__body">';

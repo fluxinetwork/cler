@@ -15,29 +15,24 @@ $border: 7px solid $c-accent;
 	p a,
 	.fc__focus p a {
 		@extend .p;
-		color: $c-main;
-		font-weight: 700;
+		color: $c-txt;
+		//font-weight: 700;
 		position: relative;
-		text-shadow:
-			1px 1px 0 #fff,
-			-1px 1px 0 #fff,
-			2px 0 0 #fff,
-			-2px 0 0 #fff;
 		box-shadow:
 			inset 0 -2px 0 0 #fff,
 			inset 0 -4px 0 0 $c-main;
 
 		@media screen and (min-width: $break--m) {
 			box-shadow:
-				inset 0 -4px 0 0 #fff,
-				inset 0 -6px 0 0 $c-main;
+				inset 0 0 0 0 #fff,
+				inset 0 -2px 0 0 $c-main;
 		}
 
 		&:hover {
 			text-shadow: none;
 			box-shadow:
-				inset 0 -1px 0 0 #fff,
-				inset 0 -100px 0 0 rgba($c-main, 0.1);
+				inset 0 0 0 0 #fff,
+				inset 0 -2px 0 0 rgba($c-main, 0.1);
 
 		}
 	}

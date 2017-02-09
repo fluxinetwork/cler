@@ -9,6 +9,11 @@ var FOO = {
         init: function() {
             nav();
             slider();
+
+            if ( $('.fitvid').length ) {
+                console.log('fitvid init + dailymotion');
+                $('.fitvid').fitVids({ customSelector: "iframe[src*='dailymotion.com']"});
+            }
         }
     },
     home: {
