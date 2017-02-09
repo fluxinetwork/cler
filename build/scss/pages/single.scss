@@ -18,12 +18,19 @@ $break: $break--m;
 .offre-dashboard__tags {
 	@extend .l-box;
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
 
 	@media screen and (min-width: $break) {
 		align-items: center;
-		flex-direction: row;
 		justify-content: space-between;
+	}
+}
+
+.offre-dashboard__zone__tags__tags {
+	flex: 1 0 100%;
+
+	@media screen and (min-width: $break) {
+		flex: 1 0 50%;
 	}
 } 
 
@@ -31,6 +38,7 @@ $break: $break--m;
 	@extend .t-meta;
 	opacity: 1;
 	margin-top: $space--s;
+	display: inline-block;
 
 	@media screen and (min-width: $break) {
 		margin-top: 0;
@@ -90,5 +98,25 @@ $break: $break--m;
 
 	@media screen and (min-width: $break) {
 		text-align: center;
+	}
+}
+
+
+//================================================================ WEBINAIRE
+
+.webinaire-meta {
+	@extend .offre-dashboard__zone__tags__limite;
+
+	&:nth-child(2) {
+		margin-left: auto;
+	}
+}
+
+.webinaire-meta--btn {
+	flex: 1 0 100%;
+
+	@media screen and (min-width: $break) {
+		flex: none;
+		margin-left: auto;
 	}
 }

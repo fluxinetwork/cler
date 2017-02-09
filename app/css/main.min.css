@@ -369,6 +369,10 @@ html {
   margin-top: 0 !important;
 }
 
+.no-mgBottom {
+  margin-bottom: 0 !important;
+}
+
 .mg--xs {
   margin: 0.98rem !important;
 }
@@ -597,16 +601,16 @@ h5, .h5, .c-card__header__cat, .c-form p, .c-form__input,
   }
 }
 
-h6, .h6, .t-meta, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite, .c-tag {
+h6, .h6, .t-meta, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite, .webinaire-meta, .c-tag {
   font-size: 10px;
 }
 @media screen and (min-width: 700px) {
-  h6, .h6, .t-meta, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite, .c-tag {
+  h6, .h6, .t-meta, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite, .webinaire-meta, .c-tag {
     font-size: 11px;
   }
 }
 @media screen and (min-width: 960px) {
-  h6, .h6, .t-meta, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite, .c-tag {
+  h6, .h6, .t-meta, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite, .webinaire-meta, .c-tag {
     font-size: 12px;
   }
 }
@@ -636,7 +640,7 @@ p {
   margin-top: 2.0832rem;
 }
 
-.t-meta, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite {
+.t-meta, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .pagination .page-numbers, .miniEvent__meta, .offre-dashboard__zone__tags__limite, .webinaire-meta {
   letter-spacing: 0.5px;
   font-weight: 700;
   font-family: "Roboto Condensed", sans-serif;
@@ -651,7 +655,7 @@ p {
 .t-meta--dark {
   opacity: 1;
 }
-.fc .t-meta, .fc .c-newsH__body__meta, .fc .c-meta__meta, .fc .c-downloadItem__title, .fc .pagination .page-numbers, .pagination .fc .page-numbers, .fc .miniEvent__meta, .fc .offre-dashboard__zone__tags__limite {
+.fc .t-meta, .fc .c-newsH__body__meta, .fc .c-meta__meta, .fc .c-downloadItem__title, .fc .pagination .page-numbers, .pagination .fc .page-numbers, .fc .miniEvent__meta, .fc .offre-dashboard__zone__tags__limite, .fc .webinaire-meta {
   display: inline-block;
 }
 
@@ -2983,6 +2987,15 @@ body {
 .c-form p + .c-form__label:not(.c-form__label--checkbox) {
   padding-top: 0.98rem;
 }
+.c-form--blend::before {
+  display: none;
+}
+.c-form--blend .c-card__body {
+  padding-top: 0;
+}
+.c-form--blend .c-form__fieldset:first-child {
+  margin-top: 0 !important;
+}
 
 .c-form__fieldset {
   padding: 0;
@@ -3080,6 +3093,7 @@ body {
 .c-form__legend {
   position: relative;
   font-weight: 900;
+  font-family: "qanelas", gotham, helvetica, arial, sans-serif;
   text-transform: uppercase;
   color: #001135;
 }
@@ -3111,6 +3125,7 @@ body {
 .c-form__label {
   position: relative;
   font-weight: 700;
+  font-family: "qanelas", gotham, helvetica, arial, sans-serif;
 }
 .c-form__label .i-required {
   position: relative;
@@ -3144,6 +3159,7 @@ body {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  font-family: "qanelas", gotham, helvetica, arial, sans-serif;
 }
 .c-form__label__txt small {
   font-weight: 400;
@@ -3202,6 +3218,7 @@ body {
   position: relative;
   display: block;
   font-weight: 700;
+  font-family: "Roboto Condensed", sans-serif;
   color: #fff;
   -webkit-flex: 1 0 100%;
       -ms-flex: 1 0 100%;
@@ -3873,7 +3890,7 @@ a.c-meta__meta:hover {
   display: inline-block;
   padding: 1.736rem 2.8rem;
 }
-.pagination .t-meta, .pagination .c-newsH__body__meta, .pagination .c-meta__meta, .pagination .c-downloadItem__title, .pagination .page-numbers, .pagination .miniEvent__meta, .pagination .offre-dashboard__zone__tags__limite {
+.pagination .t-meta, .pagination .c-newsH__body__meta, .pagination .c-meta__meta, .pagination .c-downloadItem__title, .pagination .page-numbers, .pagination .miniEvent__meta, .pagination .offre-dashboard__zone__tags__limite, .pagination .webinaire-meta {
   color: #fff;
 }
 .pagination .screen-reader-text,
@@ -4486,9 +4503,9 @@ a.c-meta__meta:hover {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 @media screen and (min-width: 700px) {
   .offre-dashboard__tags {
@@ -4496,21 +4513,32 @@ a.c-meta__meta:hover {
         -ms-flex-align: center;
                 -ms-grid-row-align: center;
             align-items: center;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
 }
 
-.offre-dashboard__zone__tags__limite {
-  opacity: 1;
-  margin-top: 1.736rem;
+.offre-dashboard__zone__tags__tags {
+  -webkit-flex: 1 0 100%;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
 }
 @media screen and (min-width: 700px) {
-  .offre-dashboard__zone__tags__limite {
+  .offre-dashboard__zone__tags__tags {
+    -webkit-flex: 1 0 50%;
+        -ms-flex: 1 0 50%;
+            flex: 1 0 50%;
+  }
+}
+
+.offre-dashboard__zone__tags__limite, .webinaire-meta {
+  opacity: 1;
+  margin-top: 1.736rem;
+  display: inline-block;
+}
+@media screen and (min-width: 700px) {
+  .offre-dashboard__zone__tags__limite, .webinaire-meta {
     margin-top: 0;
   }
 }
@@ -4596,6 +4624,24 @@ a.c-meta__meta:hover {
 @media screen and (min-width: 700px) {
   .offre-dashboard__id__where__txt {
     text-align: center;
+  }
+}
+
+.webinaire-meta:nth-child(2) {
+  margin-left: auto;
+}
+
+.webinaire-meta--btn {
+  -webkit-flex: 1 0 100%;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+}
+@media screen and (min-width: 700px) {
+  .webinaire-meta--btn {
+    -webkit-flex: none;
+        -ms-flex: none;
+            flex: none;
+    margin-left: auto;
   }
 }
 

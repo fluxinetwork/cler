@@ -37,6 +37,9 @@ Template Name: Tous les webinaires
 				$date = get_the_date('d M Y');
 				$title = get_the_title();
 
+				$date_webiniare = new DateTime(get_field('date_webinaire', false, false));
+				$heure_webinaire = get_field('heure_webinaire');
+
 				$post_img_id = get_field('main_image');
 				if($post_img_id){
 					$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumbnail', true);
@@ -60,8 +63,8 @@ Template Name: Tous les webinaires
 				$output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
 				$output .= '<div class="c-meta">';
 				$output .= '<div class="c-dash"></div>';
-				$output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>';
-				$output .= $cat_name;
+				$output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date_webiniare->format('j M Y').'</span>';
+				$output .= '<span class="c-meta__meta"><i class="fa fa-clock-o c-meta__meta__icon" aria-hidden="true"></i>'.$heure_webinaire.'</span>';
 				$output .= '</div>';
 				$output .= '</div>';
 				$output .= '</article>';

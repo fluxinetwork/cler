@@ -38,6 +38,22 @@ $break: $break--m;
 			padding-top: $space--xs;
 		}
 	}
+
+	&--blend {
+		//max-width: 100%;
+
+		&::before {
+			display: none;
+		}
+
+		.c-card__body {
+			padding-top: 0;
+		}
+
+		.c-form__fieldset:first-child {
+			margin-top: 0 !important;
+		}
+	}
 }
 
 //==============================================================  FIELDSET
@@ -141,6 +157,7 @@ $break: $break--m;
 	position: relative;
 	@extend .h3;
 	font-weight: 900;
+	font-family: $font-h;
 	text-transform: uppercase;
 	color: $c-dark;
 
@@ -180,6 +197,7 @@ $break: $break--m;
 .c-form__label {
 	position: relative;
 	font-weight: 700;
+	font-family: $font-h;
 
 	.i-required {
 		position: relative;
@@ -204,6 +222,7 @@ $break: $break--m;
 }
 .c-form__label__txt {
 	flex: 1;
+	font-family: $font-h;
 	small {
 		font-weight: 400;
 	}
@@ -274,6 +293,7 @@ $break: $break--m;
 	position: relative;
 	display: block;
 	font-weight: 700;
+	font-family: $font-subh;
 	color: #fff;
 	flex: 1 0 100%;
 }

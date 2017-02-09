@@ -11,27 +11,27 @@
 		<?php if( ! is_user_logged_in() ): ?>
 			<div class="c-form__fieldset__row c-form--indicateur">
 				<p> Pour remplir automatiquement le formulaire de participation : <a class="js-popin-show c-link c-link--shy" href="connexion">connectez-vous</a>.</p>
-				<p>Si vous n’être pas adhérent au CLER - Réseau pour la transition énergétique, contactez-nous directement : <strong>info@cler.org</strong>.</p>
+				<p class="is-none">Si vous n’être pas adhérent au CLER - Réseau pour la transition énergétique, contactez-nous directement : <strong>info@cler.org</strong>.</p>
 			</div>		
 		<?php endif; ?>	
 
 		<div class="c-form__fieldset__row">
-			<label class="c-form__label" for="nom">Nom<span class="i-required">*</span></label>	      
+			<label class="c-form__label" for="nom">Nom<span class="i-required">•</span></label>	      
 	      	<input type="text" class="c-form__input" placeholder="" value="<?php echo $user_lastname; ?>" name="nom" id="nom" data-validation="required">
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="prenom">Prénom<span class="i-required">*</span></label>	      
+	    	<label class="c-form__label" for="prenom">Prénom<span class="i-required">•</span></label>	      
 	      	<input type="text" class="c-form__input" placeholder="" value="<?php echo $user_firstname; ?>" name="prenom" id="prenom" data-validation="required">	      	
 	    </div>
 
 		<div class="c-form__fieldset__row">
-	      	<label class="c-form__label" for="email">Email<span class="i-required">*</span></label>
+	      	<label class="c-form__label" for="email">Email<span class="i-required">•</span></label>
 	      	<input type="text" class="c-form__input" placeholder="" value="<?php echo $user_email; ?>" name="email" id="email" data-validation="email">
 	    </div>
 
 		 <div class="c-form__fieldset__row">
-			<label class="c-form__label" for="nombre_participants">Nombre de participants<span class="i-required">*</span></label>
+			<label class="c-form__label" for="nombre_participants">Nombre de participants<span class="i-required">•</span></label>
 			<input type="text" class="c-form__input" name="nombre_participants" id="nombre_participants" data-validation="number" value="">
 		</div>
 
@@ -44,7 +44,7 @@
 
 		<div class="is-accordeon js-nom-structure">
 			<div class="c-form__fieldset__row">
-				<label class="c-form__label" for="nom_structure">Nom de la structure<span class="i-required">*</span></label>		   		
+				<label class="c-form__label" for="nom_structure">Nom de la structure<span class="i-required">•</span></label>		   		
 		    	<input type="text" class="c-form__input" name="nom_structure" id="nom_structure" value="<?php echo $nom_structure; ?>" placeholder="" data-validation="required" data-validation-depends-on="adherent_cler">		    	
 		    </div>
 	    </div>
@@ -58,7 +58,7 @@
 
     <div class="c-form__notify js-notify"></div>
 
-	<div class="c-form__submit">
+	<div class="c-form__submit no-mgBottom">
     	<button type="submit" id="submit-participation-webinaire" class="c-btn">Envoyer</button>
     </div>
 </form>	 	  
