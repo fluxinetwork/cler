@@ -28,6 +28,16 @@ $break: $break--m;
 	@media screen and (min-width: $break) {
 		@include flex(center);
 	}
+
+	.fc__contact &,
+	.c-newsH--contact & {
+		height: 180px;
+		border-radius: 50%;
+	}
+
+	.fc__publication & {
+		height: 230px;
+	}
 }
 
 .c-newsH__body {
@@ -57,14 +67,22 @@ $break: $break--m;
 
 .c-newsH__body__title {
 	@extend .h3;
-
-	.fc__item & {
-		margin-top: $space--xs*$smaller;
+	margin-top: $space--xs*$smaller;
+	
+	&:first-child {
+		margin-top: 0;
 	}
 }
 
+.c-newsH__body__desc {
+	@extend .h5;
+	font-family: $font-subh;
+	color: $c-txt;
+	margin-top: $space--xs;
+}
+
 .c-newsH__body__link {
-	margin-top: $space--s;
+	margin-top: $space--m;
 	padding-bottom: 0;
 	position: relative;
 	top: 4px;

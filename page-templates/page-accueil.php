@@ -7,17 +7,6 @@ Template Name: Accueil
 
 <section class="l-row bg-light hp-hero">
 	<div class="l-col l-hero">
-		<div class="hp-portraits">
-			<?php
-				for ($i=1; $i<6; $i++) {
-					echo '<div class="hp-portraits__row">';
-					for ($j=0; $j<$i+2; $j++) {
-						echo '<div class="hp-portraits_img"></div>';
-					}
-					echo '</div>';
-				}
-			?>
-		</div>	
 		<div class="hp-hero__content">
 			<h1 class="l-hero__title"><span class="u-hide@med">CLER, </span>Réseau pour la<br class="u-show@small"> transition énergétique</h1>
 			<h2 class="l-hero__subtitle">We believe that a genuine-fair energy transition is the right answer to our global crisis.</h2>
@@ -30,6 +19,18 @@ Template Name: Accueil
 
 			</div>
 		</div>
+
+		<div class="hp-portraits">
+			<?php
+				for ($i=1; $i<6; $i++) {
+					echo '<div class="hp-portraits__row">';
+					for ($j=0; $j<$i+2; $j++) {
+						echo '<div class="hp-portraits_img"></div>';
+					}
+					echo '</div>';
+				}
+			?>
+		</div>	
 	</div>
 </section>
 
@@ -44,36 +45,36 @@ Template Name: Accueil
 		<h2 class="c-section-title">Vos espaces dédiés</h2>
 		<div class="l-grid l-grid--2col grid-espaces-dedies">
 			<div class="l-grid__col">
-				<div class="c-tile c-tile--round c-tile--noBdr c-tile--bg">
+				<a href="<?php echo get_the_permalink(HUB_ADHERENT); ?>" class="c-tile c-tile--round c-tile--noBorder">
 					<div class="c-tile__content">
 						<i class="fa fa-star c-tile__content__icon" aria-hidden="true"></i>
-						<a href="<?php echo get_the_permalink(HUB_ADHERENT); ?>" class="c-link">Adhérents</a>
+						<span class="c-link">Adhérents</span>
 					</div>
-				</div>
+				</a>
 			</div>
 			<div class="l-grid__col">
-				<div class="c-tile c-tile--round c-tile--noBdr c-tile--bg">
+				<a href="<?php echo get_the_permalink(HUB_CITOYEN); ?>" class="c-tile c-tile--round c-tile--noBorder">
 					<div class="c-tile__content">
-					<i class="fa fa-users c-tile__content__icon" aria-hidden="true"></i>
-						<a href="<?php echo get_the_permalink(HUB_CITOYEN); ?>" class="c-link">Citoyens</a>
+						<i class="fa fa-users c-tile__content__icon" aria-hidden="true"></i>
+						<span class="c-link">Citoyens</span>
 					</div>
-				</div>
+				</a>
 			</div>
 			<div class="l-grid__col">
-				<div class="c-tile c-tile--round c-tile--noBdr c-tile--bg">
+				<a href="<?php echo get_the_permalink(HUB_PRESSE); ?>" class="c-tile c-tile--round c-tile--noBorder">
 					<div class="c-tile__content">
-					<i class="fa fa-microphone c-tile__content__icon" aria-hidden="true"></i>
-						<a href="<?php echo get_the_permalink(HUB_PRESSE); ?>" class="c-link">Presse</a>
+						<i class="fa fa-microphone c-tile__content__icon" aria-hidden="true"></i>
+						<span class="c-link">Presse</span>
 					</div>
-				</div>
+				</a>
 			</div>
 			<div class="l-grid__col">
-				<div class="c-tile c-tile--round c-tile--noBdr c-tile--bg">
+				<a href="<?php echo get_the_permalink(HUB_ELU); ?>" class="c-tile c-tile--round c-tile--noBorder">
 					<div class="c-tile__content">
-					<i class="fa fa-handshake-o c-tile__content__icon" aria-hidden="true"></i>
-						<a href="<?php echo get_the_permalink(HUB_ELU); ?>" class="c-link">Élus</a>
+						<i class="fa fa-handshake-o c-tile__content__icon" aria-hidden="true"></i>
+						<span class="c-link">Élus</span>
 					</div>
-				</div>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -114,7 +115,7 @@ Template Name: Accueil
 				</a>
 			</div>
 			<div class="l-grid__col">
-				<div class="c-tile c-tile--rectangle c-tile--noBdr">
+				<div class="c-tile c-tile--rectangle c-tile--noBorder">
 					<div class="c-tile__content">
 						<a href="<?php echo get_the_permalink(PAGE_ACTIONS); ?>" class="c-link">Voir tout</a>
 					</div>

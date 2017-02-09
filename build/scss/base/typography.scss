@@ -14,7 +14,7 @@ body {
 // WEBFONT
 
 @include webfont('qanelas', 'qanelas/black', 'qanelassoft-black-webfont', 900);
-//@include webfont('qanelas', 'qanelas/bold', 'qanelassoft-bold-webfont', 700);
+@include webfont('qanelas', 'qanelas/bold', 'qanelassoft-bold-webfont', 700);
 //@include webfont('qanelas', 'qanelas/regular', 'qanelassoft-regular-webfont');
 
 

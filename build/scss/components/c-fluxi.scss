@@ -181,18 +181,17 @@ $border: 7px solid $c-accent;
 
 //======================================================  CONTACT & PUBLI
 
-.fc__contact + .fc__contact,
-.fc__publication + .fc__publication {
-
-
-	@media screen and (min-width: $break--m) {
-		margin-top: -$space--s;
-	}
+.fc__contact,
+.fc__publication {
+	padding: $space--s 0;
+	border-top: 1px solid rgba($c-dark, 0.1);
+	border-bottom: 1px solid rgba($c-dark, 0.1);
 
 	@media screen and (min-width: $break--l) {
-		margin-top: -$space--m;
+		padding: $space--m 0
 	}
-}
+} 
+
 
 
 //================================================================  ITEM
@@ -208,5 +207,14 @@ $border: 7px solid $c-accent;
 
 	@media screen and (min-width: $break--l) {
 		margin: $space--xl 0;
+	}
+}
+
+.fc__item + .fc__item {
+	margin-top: -$space--l;
+	border-top: none;
+
+	@media screen and (min-width: $break--l) {
+		margin-top: -$space--xl;
 	}
 }

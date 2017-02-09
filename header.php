@@ -17,7 +17,6 @@
 	<title><?php get_template_part( 'page-templates-parts/base/title'); ?></title>
 	
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Vollkorn:400,700" rel="stylesheet">
 	<script src="https://use.fontawesome.com/441df5285e.js"></script>
 	<?php wp_head(); ?>
 	

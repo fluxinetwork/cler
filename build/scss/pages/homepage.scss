@@ -1,14 +1,20 @@
-	/*------------------------------*\
+/*======================================================================*\
+==========================================================================
 
-    #HOMEPAGE
+//	HOMEPAGE
 
-\*------------------------------*/
+==========================================================================
+\*======================================================================*/
 
-.grid-actions,
-.grid-espaces-dedies {
-	position: relative;
-	margin: 0 auto;
-	max-width: 535px;
+
+//=============================================================== HERO
+
+@mixin pseudoRound() {
+	content: '';
+	position: absolute;
+	display: block;
+	background-color: #fff;
+	border-radius: 50%;
 }
 
 .hp-hero__content {
@@ -16,11 +22,16 @@
 	max-width: $maxW/2;
 	text-align: center;
 	margin: 0 auto;
+
+	@media screen and (min-width: $break--m) {
+		text-align: left;
+		margin-left: 0;
+	}
 }
 
-.hp-adherer-txt {
-	max-width: 350px;
-}
+//========================================================= PORTRAITS
+
+// CONTAINER
 
 .hp-portraits {
 	position: absolute;
@@ -52,22 +63,55 @@
 		right: -60px;
 		transform: scale(1);
 	}
+
+	&::before,
+	&::after {
+		@include pseudoRound();
+	}
+
+	&::before {
+		z-index: -1;
+		bottom: -250px;
+		right: -250px;
+		width: 700px;
+		height: 700px;
+	}
+
+	&::after {
+		background-color: $c-accent;
+		width: 400px;
+		height: 400px;
+		z-index: -2;
+		top: 40px;
+		right: 20%;
+		opacity: 0.2;
+	}
 }
+
+// ROW
 
 .hp-portraits__row {
 	display: flex;
 	flex-direction: row-reverse;
 }
 
-$size: 100px;
+// IMG
+
+$size-portrait: 100px;
 
 .hp-portraits_img {
-	width: $size;
-	height: $size;
+	width: $size-portrait;
+	height: $size-portrait;
 	border-radius: 50%;
 	background-image: url('../img/portraits.jpg');
 	background-size: 2500%;
 	margin: 0 $space--m $space--m 0;
+	@include transition();
+	transition-timing-function: $easeOutBack;
+
+	&:hover {
+		transform: scale(1.2);
+	}
 }
 
 $loop: 1;
@@ -75,45 +119,29 @@ $loop: 1;
 	.hp-portraits__row:nth-child(#{$i}) {
 		@for $j from 1 through $i+3 {
 			.hp-portraits_img:nth-child(#{$j}) {
-				background-position: $size*$loop;
+				background-position: $size-portrait*$loop;
 			}
 			$loop: $loop+1;
 		}
 	}
 }
 
-@media screen and (min-width: $break--m) {
-	.hp-hero {
-		//background-image: url('../img/hp-people-pyramid.png');
-		background-size: 55%;
-		background-repeat: no-repeat;
-		background-position: right -76px bottom -30px;
-	}
+//========================================================== SPECIAL GRIDS
 
-	.hp-hero__content {
-		text-align: left;
-		margin-left: 0;
-	}
+.grid-actions,
+.grid-espaces-dedies {
+	position: relative;
+	margin: 0 auto;
+	max-width: 535px;
 
-	.grid-actions,
-	.grid-espaces-dedies {
+	@media screen and (min-width: $break--m) {
 		padding-left: 0;
 		padding-right: 0;
 	}
-	
-	.hp-adherer-tmp {
-		background-color: $c-light;
-		height: 100%;
-	}
 }
 
-@media screen and (min-width: $break--l) {
-	.hp-hero {
-		background-size: 45%;
-		background-position: right 0px bottom -30px;
-	}
-
-	.grid-espaces-dedies {
+.grid-espaces-dedies {
+	@media screen and (min-width: $break--l) {
 		max-width: 815px;
 		margin: 0 auto;
 		align-items: center;
@@ -129,5 +157,15 @@ $loop: 1;
 	}
 }
 
-@media screen and (min-width: $break--xl) {
+
+//========================================================== ADHERER
+
+.hp-adherer-tmp {
+	background-color: $c-light;
+	height: 100%;
+}
+
+.hp-adherer-txt {
+	max-width: 350px;
+	font-family: $font-subh;
 }

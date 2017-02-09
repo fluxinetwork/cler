@@ -14,12 +14,8 @@
 	max-width: $cardW;
 	transition: $transition;
 
-	&--noBdr {
+	&--noBorder {
 		border-color: transparent;
-	}
-
-	&--round {
-		border-radius: 100px;
 	}
 }
 
@@ -27,7 +23,6 @@
 	@include fill('parent', true);
 	@include flex(center, true);
 	padding: $space--m;
-	font-family: $font-subh;
 }
 
 .c-tile__content__img {
@@ -41,6 +36,7 @@
 .c-tile__content__title {
 	@extend .h2--title;
 	position: relative;
+	font-family: $font-h;
 	font-weight: 700;
 	color: $c-main;
 	transition: $transition;
@@ -48,6 +44,7 @@
 
 .c-tile__content__subtitle {
 	@include maxH(0);
+	font-family: $font-subh;
 	text-align: center;
 	color: #fff;
 	transition: $transition;
@@ -67,7 +64,8 @@
 
 		&--round {
 			@include square();
-			border-radius: 50% !important;
+			border-radius: 50%;
+			background-color: $c-light;
 		}
 
 		&--square {
@@ -76,10 +74,6 @@
 
 		&--rectangle {
 			@include rectangle(160px);
-		}
-
-		&--bg {
-			background-color: $c-light;
 		}
 	}
 

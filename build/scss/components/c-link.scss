@@ -31,7 +31,8 @@
 	}
 
 	&:hover,
-	.cockpit-add:hover & {
+	.cockpit-add:hover &,
+	.c-tile:hover & {
 		&::after {
 			width: 70%;
 		}

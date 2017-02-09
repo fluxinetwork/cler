@@ -21,7 +21,7 @@ Template Name: Tous les portraits
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
 		<h1><?php echo get_the_title(); ?></h1>
-		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum'); ?></h2>
+		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum', false, false); ?></h2>
 	</header>
 </div>
 
@@ -56,18 +56,12 @@ Template Name: Tous les portraits
 
 				$output = '<li class="l-postList__item">';
 				$output .= '<a href="'.$permalink.'">';
-				$output .= '<article class="c-newsH">';
+				$output .= '<article class="c-newsH c-newsH--contact">';
 				$output .= '<div class="c-newsH__img" style="background-image:'.$post_img_url.'"></div>';
 				$output .= '<div class="c-newsH__body">';
+				$output .= '<span class="c-newsH__body__meta">'.$date.'</span>';
 				$output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
-
-				$output .= '<p class="mgTop--xs">'.$description.'</p>';
-
-				$output .= '<div class="c-meta">';
-				$output .= '<div class="c-dash"></div>';
-				$output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>';
-				$output .= $cat_name;
-				$output .= '</div>';
+				$output .= '<p class="c-newsH__body__desc">'.$description.'</p>';
 				$output .= '</div>';
 				$output .= '</article>';
 				$output .= '</a>';
