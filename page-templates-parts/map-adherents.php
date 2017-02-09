@@ -4,14 +4,18 @@
  */
 ?>
 
-<?php $ob_type_struct = get_field_object('field_577102c963035'); ?>
+<?php 
+	$ob_type_struct = get_field_object('field_577102c963035');	
+	$nb_adherent = wp_count_posts('cartes');
+	$nb_adherent_publish = $nb_adherent->publish;
+?>
 
 <div class="l-row bg-dark--grad">
 	<header class="l-col l-col--content">
 		<h1 class="c-white"><?php echo get_the_title(); ?></h1>
 		<div class="c-meta c-meta--white">
 			<div class="c-dash"></div>
-			<span class="c-meta__meta"><i class="fa fa-user c-meta__meta__icon" aria-hidden="true"></i>275 adhérents</span>
+			<span class="c-meta__meta"><i class="fa fa-user c-meta__meta__icon" aria-hidden="true"></i><?php echo $nb_adherent_publish; ?> adhérents</span>
 		</div>
 	</header>
 </div>
@@ -20,7 +24,7 @@
 	<aside class="l-filterList l-filterList--small map__holder__filters">
 		<form id="form-filter-map" role="form" class="l-monoFilter">
 		    <div class="l-filterList__filter">
-		    	<label for="departement" class="is-none">Département</label>
+		    	<label for="departement" class="is-none">Type de structure</label>
 		    	<i class="fa fa-filter" aria-hidden="true"></i>
 				<select class="c-form__select" name="type_structure" id="type_structure" data-validation="required">
 					<option disabled selected value="">Type de structure ?</option>
@@ -31,16 +35,16 @@
 							endforeach;
 						endif;
 					?>
-				</select>	
+				</select>
 		    </div>
 
-			<input type="hidden" value="offres-emploi" name="pt_slug">
+			<input type="hidden" value="cartes" name="pt_slug">
 			<input type="hidden" value="<?php echo mt_rand(0,9999); ?>" name="toky_toky">
 			<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
 
 			<button type="submit" id="submit-filters" class="c-btn l-monoFilter__btn">Filtrer</button>
 
-			<a href="" class="c-link c-link--shy l-monoFilter__link">Devenir adhérent</a>
+			<a href="<?php the_permalink(PAGE_ADHEREZ); ?>" class="c-link c-link--shy l-monoFilter__link">Devenir adhérent</a>
 		</form>
 	</aside>
 
@@ -48,10 +52,7 @@
 
 	<div id="map"></div>
 
-	<div class="map__holder__cards"></div>			
+	<div class="map__holder__cards"></div>
 </div>
 
 <?php the_content(); ?>
-
-
-

@@ -181,9 +181,16 @@ var iconsSelMap = {
 
 
 
-$( document ).ready(function() {
-	if($('.page-template-page-map-adherents').length){
+$( document ).ready( function() {
+
+	if( $('.page-template-page-map-adherents').length ){        
+        activateFilters = true;
         initAdherentsMap();
+    }
+
+    if( $('.formateree').length ){
+        filterCat = 'formation';
+        initAdherentsMap();  
     }
 
 });
@@ -202,9 +209,7 @@ function initAdherentsMap(){
 
     var mapContainer = document.getElementById("map");
 
-    var latlng = new google.maps.LatLng(47.50,2.20);
-
-    activateFilters = true;
+    var latlng = new google.maps.LatLng(47.50,2.20);    
 
     var mapOptions = {
         zoom: 6,
@@ -247,6 +252,7 @@ function loadMarkers(map){
     //console.log('loadMarkers '+filterCat);
     
     var str = 'action=get_json_map&tag='+filterCat;
+
     $.ajax({
         type: 'POST',
         dataType: 'JSON',

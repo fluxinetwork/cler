@@ -159,7 +159,7 @@ function enqueue_scripts() {
     wp_register_script( 'googlemap-api', 'https://maps.googleapis.com/maps/api/js?key='.GOOGLE_MAP_API_KEY , array(), null, true );
     wp_register_script( 'cluster-api', THEME_DIR_PATH . '/app/js/vendors/markerclusterer.js' , array(), null, true );
     wp_register_script( 'map-adherents', THEME_DIR_PATH . '/app/js/modules/map-adherents.js', array('jQuery','cluster-api'), null, true );
-    if( is_page_template( 'page-templates/page-map-adherents.php' ) ){
+    if( is_page_template( 'page-templates/page-map-adherents.php' ) || is_page_template( 'page-templates/page-formateree.php' ) ){
         wp_enqueue_script( 'googlemap-api');
         wp_localize_script( 'map-adherents', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
         wp_enqueue_script( 'map-adherents' );
