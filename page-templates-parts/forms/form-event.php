@@ -12,22 +12,22 @@
 	<fieldset class="c-form__fieldset">
 		<legend class="c-form__legend c-form--indicateur">Détail de l'événement</legend>
 		<div class="c-form__fieldset__row">
-		  	<label class="c-form__label" for="title">Intitulé de l’événement<span class="i-required">*</span></label>
+		  	<label class="c-form__label" for="title">Intitulé de l’événement<span class="i-required">•</span></label>
 	      	<input class="c-form__input" type="text" name="title" id="title" value="<?php echo $title_event; ?>" placeholder="" data-validation="required">
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="date_event">Date de l'événement<span class="i-required">*</span></label>
+	    	<label class="c-form__label" for="date_event">Date de l'événement<span class="i-required">•</span></label>
 	      	<input type="text" data-validation="date" data-validation-format="dd/mm/yyyy" class="c-form__input" value="<?php if($type_form == 'mod')echo $date_event->format('d/m/Y'); ?>" name="date_event" id="date_event">
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="descriptif_event">Description de votre événement<span class="i-required">*</span></label>
+	    	<label class="c-form__label" for="descriptif_event">Description de votre événement<span class="i-required">•</span></label>
 	      	<textarea rows="6" class="c-form__input c-form__textarea" placeholder="" name="descriptif_event" id="descriptif_event" data-validation="required"><?php echo $descriptif_event; ?></textarea>
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	      <label class="c-form__label" for="publics_event">Publics concernés<span class="i-required">*</span></label>
+	      <label class="c-form__label" for="publics_event">Publics concernés<span class="i-required">•</span></label>
 	      <label for="publics_event_0" class="c-form__label c-form__label--checkbox">
 	        <input class="c-form__label__checkbox" type="checkbox" name="publics_event[]" value="particuliers" id="publics_event_0" data-validation="checkbox_group" data-validation-qty="min1" <?php if(!empty($publics_event) && in_array('particuliers',$publics_event))echo 'checked'; ?>>
 	        <div class="c-form__label__txt">Particuliers</div>
@@ -39,7 +39,7 @@
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	      <label class="c-form__label" for="themes">Thèmes<span class="i-required">*</span></label>
+	      <label class="c-form__label" for="themes">Thèmes<span class="i-required">•</span></label>
 	      <label for="themes_0" class="c-form__label c-form__label--checkbox">
 	        <input class="c-form__label__checkbox" type="checkbox" name="themes[]" value="energies_renouvelables" id="themes_0" data-validation="checkbox_group" data-validation-qty="min1" <?php if(!empty($themes) && in_array('energies_renouvelables',$themes))echo 'checked'; ?>>
 	        <div class="c-form__label__txt">Énergies renouvelables</div>
@@ -71,24 +71,24 @@
 		<legend class="c-form__legend c-form--indicateur">Localisation et contacts</legend>
 
 	     <div class="c-form__fieldset__row">
-	     	<label class="c-form__label" for="adresse">Adresse<span class="i-required">*</span></label>
+	     	<label class="c-form__label" for="adresse">Adresse<span class="i-required">•</span></label>
 	      	<input class="c-form__input" type="text" placeholder="" value="<?php echo $adresse; ?>" name="adresse" id="adresse" data-validation="required">
 	    </div>
 
 		<div class="c-form__fieldset__row">
-			<label class="c-form__label" for="code_postal">Code postal<span class="i-required">*</span></label>
+			<label class="c-form__label" for="code_postal">Code postal<span class="i-required">•</span></label>
 	      	<input class="c-form__input" type="text" maxlength="5" placeholder="" value="<?php echo $code_postal; ?>" name="code_postal" id="code_postal" data-validation="number">
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="ville">Ville<span class="i-required">*</span></label>
+	    	<label class="c-form__label" for="ville">Ville<span class="i-required">•</span></label>
 	      	<input class="c-form__input" type="text" placeholder="" value="<?php echo $ville; ?>" name="ville" id="ville" data-validation="required">
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="departement">Département<span class="i-required">*</span></label>
+	    	<label class="c-form__label" for="departement">Département<span class="i-required">•</span></label>
 			<select class="c-form__select" name="departement" id="departement" data-validation="required">
-				<option disabled selected value="">Dans quel département ?<span class="i-required">*</span></option>
+				<option disabled selected value="">Dans quel département ?<span class="i-required">•</span></option>
 				<?php
 					foreach ( load_departements_fields() as $key => $value ) {
 

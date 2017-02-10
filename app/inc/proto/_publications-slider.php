@@ -63,21 +63,21 @@
 			<?php endwhile; endif; wp_reset_postdata(); ?>
 
 			<li class="l-card-slider__cards__row__col u-show@med">
-				<a href="<?php echo get_the_permalink(FORM_OFFRE); ?>?act=add" class="cockpit-add">
+				<a href="<?php echo get_the_permalink(FORM_OFFRE); ?>?act=add" class="c-ghostCard">
 					<button class="c-btn c-btn--add"></button>
 					<span class="c-link c-link--white">offre d'emploi</span>
 					<span class="t-meta t-meta--white pdTop--s"><?php ($adherent) ? print('') : print('Payant'); ?></span>
 				</a>
 			</li>
 			<li class="l-card-slider__cards__row__col u-show@med">
-				<a href="<?php echo get_the_permalink(FORM_EVENT); ?>?act=add" class="cockpit-add">
+				<a href="<?php echo get_the_permalink(FORM_EVENT); ?>?act=add" class="c-ghostCard">
 					<button class="c-btn c-btn--add"></button>
 					<span class="c-link c-link--white">évènement</span>
 					<span class="t-meta t-meta--white pdTop--s">Gratuit</span>
 				</a>
 			</li>
 			<li class="l-card-slider__cards__row__col u-show@med">
-				<a href="<?php echo get_the_permalink(FORM_FORMATION); ?>?act=add" class="cockpit-add">
+				<a href="<?php echo get_the_permalink(FORM_FORMATION); ?>?act=add" class="c-ghostCard">
 					<button class="c-btn c-btn--add"></button>
 					<span class="c-link c-link--white">formation</span>
 					<span class="t-meta t-meta--white pdTop--s">Gratuit</span>

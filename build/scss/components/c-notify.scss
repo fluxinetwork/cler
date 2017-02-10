@@ -24,6 +24,7 @@
 	padding-top: $space--m;
 	padding-bottom: $space--m;
 	@include flex(space-between center);
+	font-family: $font-subh;
 }
 
 .c-notify__message {

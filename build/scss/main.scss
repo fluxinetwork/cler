@@ -10,6 +10,7 @@
 @import "utils/mixins";
 @import "utils/helpers";
 
+
 // BASE
 
 @import "base/reset";
@@ -28,7 +29,6 @@
 @import "layout/l-nav";
 @import "layout/l-hero";
 @import "layout/l-card-slider";
-@import "layout/l-cockpit";
 @import "layout/l-filterList";
 @import "layout/l-monoFilter";
 @import "layout/l-overlay";
@@ -37,6 +37,8 @@
 @import "layout/l-header";
 @import "layout/l-hub-header";
 @import "layout/l-download";
+@import "layout/l-miniDashboard";
+
 
 // COMPONENTS
 
@@ -46,14 +48,11 @@
 @import "components/c-tile";
 @import "components/c-section-title";
 @import "components/c-link";
-//@import "components/c-nav";
 @import "components/c-navList";
 @import "components/c-form";
 @import "components/c-notify";
-//@import "components/c-map";
 @import "components/c-dash";
 @import "components/c-figure";
-//@import "components/c-offre";
 @import "components/c-tag";
 @import "components/c-fluxi";
 @import "components/c-list";
@@ -61,7 +60,7 @@
 @import "components/c-newsH";
 @import "components/c-meta";
 @import "components/c-downloadItem";
-//@import "components/c-search";
+@import "components/c-ghostCard";
 
 
 // PAGES 
@@ -74,6 +73,7 @@
 @import "pages/thematique";
 @import "pages/map";
 @import "pages/single";
+
 
 // FORMS 
 @import "components/theforms";

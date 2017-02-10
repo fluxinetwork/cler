@@ -40,12 +40,13 @@
 	display: none;
 	z-index: 2000;
 	bottom: $space--s;
-	right: $space--s;
+	right: $space--m;
 	@include transition;
 	transition-timing-function: $easeOutBack;
 
 	@media screen and (min-width: $break--l) {
 		display: block;
+		right: $space--l;
 	}
 }
 
@@ -85,16 +86,18 @@
 //============================================================= PAGINATION
 
 .pagination {
-	margin-top: $space--s;
-	background-color: $c-valid;
 	border-radius: 100px;
+	overflow: hidden;
+	margin-top: $space--m;
 	display: inline-block;
-	padding: $space--s $space--m;
+
+	.nav-links {
+		display: flex;
+	}
 
 	.t-meta {
 		color: #fff;
 	}
-
 
 	.screen-reader-text,
 	.next,
@@ -103,16 +106,42 @@
 	}
 
 	.page-numbers {
+		background-color: $c-valid;
+		padding: $space--s;
+		opacity: 1;
 		@extend .t-meta;
+		@include transition();
+ 
+		&.current {
+			position: relative;
+			color: rgba(#fff, 0.5);
 
-		&:not(:first-child) {
-			margin-left: $space--xs;
+			&::after {
+				content: '';
+				width: 5px;
+				height: 5px;
+				border-radius: 50%;
+				position: absolute;
+				bottom: $space--xs;
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: rgba(#fff, 0.5);
+			}
 		}
-		
-		&:hover,
-		&.current,
-		&.dots {
-			opacity: 1;
+
+		&:not(.current):not(.dots):hover {
+			background-color: $c-main;
 		}
 	}
 }
+
+.pagination .page-numbers:first-child,
+.pagination .prev + .page-numbers {
+	padding-left: $space--m;
+}
+
+.pagination .page-numbers:last-child,
+.pagination .page-numbers:not(.current):nth-last-child(2) {
+	padding-right: $space--m;
+}
+

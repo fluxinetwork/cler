@@ -6,36 +6,84 @@
 ==========================================================================
 \*======================================================================*/
 
-.l-cockpit__infos__body .l-grid__col {
-	&:nth-child(2) {
-		position: relative;
+$break: $break--l;
 
-		@media screen and(min-width: $break--m) {
-			&::before {
-				content: '';
-				position: absolute;
-				display: block;
-				left: 0;
-				width: 1px;
-				height: 50%;
-				background-color: rgba($c-dark, 0.2);
-			}
-		}
-	} 
+//============================================================== DASHBOARD
+
+.userDashboard {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+
+	@media screen and(min-width: $break) {
+		flex-direction: row;
+	}
 }
 
-.cockpit-add {
-	@include flex(center, true);
-	height: 100%;
-	border: 3px solid #fff;
-	border-radius: $radius;
-	transition: $transition--dynamic;
 
-	.c-btn {
-		margin-bottom: $space--s;
+// INFOS
+
+.userDashboard__infos {
+	@extend .l-box;
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 100%;
+	padding-bottom: $space--s;
+
+	@media screen and(min-width: $break) {
+		flex: 1 0 auto;
+	}
+}
+
+.userDashboard__infos__header {
+	@include flex(space-between center);
+
+	@media screen and(min-width: $break--l) {
+		align-items: flex-end;
+	}
+}
+
+.userDashboard__infos__body {
+	flex: 1 0 auto;
+	margin: $space--l 0;
+	font-family: $font-subh;
+
+	@media screen and(min-width: $break) {
+		margin: $space--m 0;
 	}
 
-	&:hover {
-		background: rgba(#fff, 0.2);
+	.l-grid__col {
+		&:nth-child(2) {
+			position: relative;
+
+			@media screen and(min-width: $break--m) {
+				&::before {
+					content: '';
+					position: absolute;
+					display: block;
+					left: 0;
+					width: 1px;
+					height: 50%;
+					background-color: rgba($c-dark, 0.2);
+				}
+			}
+		} 
+	}
+}
+
+.userDashboard__infos__footer {
+	
+}
+
+
+// ASIDE
+
+.userDashboard__aside {
+	margin-top: $gutter;
+
+	@media screen and(min-width: $break) {
+		flex: 0 0 $cardW;
+		margin-top: 0;
+		margin-left: $gutter;
 	}
 }

@@ -16,19 +16,19 @@ Template Name: Profil
 ?>
 <section class="l-row bg-light">
 	<div class="l-col no-pdBottom">
-		<div class="l-cockpit">
-			<div class="l-cockpit__infos l-box">
-				<header class="l-cockpit__infos__header">
+		<div class="userDashboard">
+			<div class="userDashboard__infos">
+				<header class="userDashboard__infos__header">
 					<div>
 						<span class="t-meta u-show@large">
 						<?php ($adherent) ? print('Adhérent') : print('Utilisateur'); ?>
 						</span>
 						<h1 class="c-section-title">Mes informations</h1>
 					</div>
-					<a href="<?php echo get_the_permalink(FORM_PROFIL); ?>" class="c-link">Modifier</a>
+					<a href="<?php echo get_the_permalink(FORM_PROFIL); ?>" class="c-btn c-btn--ghost"><i class="fa fa-pencil c-meta__meta__icon" aria-hidden="true"></i>Modifier</a>
 				</header>
 
-				<div class="l-cockpit__infos__body l-grid">
+				<div class="userDashboard__infos__body l-grid">
 					
 					<div class="l-grid__col l-center">
 						<div class="l-grid__col__content l-center pd--s">
@@ -42,12 +42,12 @@ Template Name: Profil
 					</div>
 				</div>
 
-				<footer class="l-cockpit__infos__footer">
+				<footer class="userDashboard__infos__footer">
 					<a href="<?php echo get_the_permalink(FORM_PROFIL); ?>?tf=mdp" class="c-link c-link--more">Modifier mot de passe</a>
 				</footer>
 			</div>
 
-			<aside class="l-cockpit__aside u-show@large">
+			<aside class="userDashboard__aside u-show@large">
 				<?php include(TEMPLATEPATH.'/page-templates-parts/card-contact.php'); ?>
 			</aside>
 		</div>
@@ -71,7 +71,7 @@ Template Name: Profil
 	</div>
 </section>
 
-<section class="l-row bg-main  bg-accent bg-accent--grad">
+<section class="l-row bg-valid--grad">
 	<div class="l-col">
 		<?php include(TEMPLATEPATH.'/page-templates-parts/sliders/publications-slider.php'); ?>
 	</div>
@@ -83,31 +83,31 @@ Template Name: Profil
 
 		<ul class="l-grid list-reset">
 			<li class="l-grid__col">
-				<div class="c-tile c-tile--square c-tile--noBdr c-tile--bg">
+				<a href="<?php echo get_the_permalink(FORM_OFFRE); ?>?act=add" class="c-tile c-tile--square c-tile--noBorder c-tile--bg">
 					<div class="c-tile__content">
-						<div class="c-tile__content__img"></div>
-						<a href="<?php echo get_the_permalink(FORM_OFFRE); ?>?act=add" class="c-link">Offre d'emploi</a>
+						<div class="c-tile__content__img"><i class="fa fa-briefcase"></i></div>
+						<span class="c-link">Offre d'emploi</span>
 						<span class="t-meta pdTop--s"><?php ($adherent) ? print('Gratuit') : print('Payant'); ?></span>
 					</div>
-				</div>
+				</a>
 			</li>
 			<li class="l-grid__col">
-				<div class="c-tile c-tile--square c-tile--noBdr c-tile--bg">
+				<a href="<?php echo get_the_permalink(FORM_EVENT); ?>?act=add" class="c-tile c-tile--square c-tile--noBorder c-tile--bg">
 					<div class="c-tile__content">
-						<div class="c-tile__content__img"></div>
-						<a href="<?php echo get_the_permalink(FORM_EVENT); ?>?act=add" class="c-link">Évènement</a>
+						<div class="c-tile__content__img"><i class="fa fa-calendar"></i></div>
+						<span class="c-link">Évènement</span>
 						<span class="t-meta pdTop--s">Gratuit</span>
 					</div>
-				</div>
+				</a>
 			</li>
 			<li class="l-grid__col">
-				<div class="c-tile c-tile--square c-tile--noBdr c-tile--bg">
+				<a href="<?php echo get_the_permalink(FORM_FORMATION); ?>?act=add"  class="c-tile c-tile--square c-tile--noBorder c-tile--bg">
 					<div class="c-tile__content">
-						<div class="c-tile__content__img"></div>
-						<a href="<?php echo get_the_permalink(FORM_FORMATION); ?>?act=add" class="c-link">Formation</a>
+						<div class="c-tile__content__img"><i class="fa fa-graduation-cap"></i></div>
+						<span class="c-link">Formation</span>
 						<span class="t-meta pdTop--s">Gratuit</span>
 					</div>
-				</div>
+				</a>
 			</li>
 		</ul>
 	</div>

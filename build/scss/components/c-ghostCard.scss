@@ -1,30 +1,23 @@
 /*======================================================================*\
 ==========================================================================
 
-//	LAYOUT HEADER
+//	COMPOSANT GHOST CARD
 
 ==========================================================================
 \*======================================================================*/
 
+.c-ghostCard {
+	@include flex(center, true);
+	height: 100%;
+	border: 3px solid #fff;
+	border-radius: $radius;
+	transition: $transition--dynamic;
 
-.l-header__date {
-	margin-bottom: $space--s;
-}
-
-.l-header__meta {
-	margin-top: $space--s;
-}
-
-
-.l-header__figure,
-.l-header__excerpt {
-	margin-top: $space--m;
-
-	@media screen and (min-width: $break--m) {
-		margin-top: $space--l;
+	.c-btnIcon {
+		margin-bottom: $space--s;
 	}
-}
 
-.l-header__excerpt {
-	font-family: $font-subh;
+	&:hover {
+		background: rgba(#fff, 0.2);
+	}
 }

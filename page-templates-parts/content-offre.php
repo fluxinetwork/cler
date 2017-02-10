@@ -50,41 +50,56 @@
 <article>
 
 	<div class="l-row bg-accent--grad">
-		<header class="l-col l-col--content pdBottom--m">
+		<header class="l-col l-col--content">
+			<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta c-white l-header__date"><?php echo get_the_date(); ?></time>
 			<h1 class="c-white"><?php echo get_the_title(); ?></h1>
 
-			<div class="c-meta c-meta--white">
+			<div class="c-meta l-header__meta c-meta--white">
 				<div class="c-dash"></div>
-				<span class="c-meta__meta">Publié le <?php echo $date_publi; ?></span>
+				<?php				
+				$categories = get_the_category();
+				if(! empty( $categories )):
+					$cat_name = '';
+					$cat_count = 0;
+					foreach( $categories as $category ) {
+						$cat_count++;
+						// Limit
+						if( $cat_count < 4 )		
+				        $cat_name .= ($cat_count > 1 ? ', ' : '').esc_html( $category->name );
+				    }
+					echo '<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i>'.$cat_name.'</span>';
+				endif;
+				?>
+				
 			</div>
-		</header>
 
-		<div class="offre-dashboard l-col l-col--content no-pdTop">
-			<div class="offre-dashboard__tags">
-				<div class="offre-dashboard__zone__tags__tags">
-					<div class="c-tag"><?php echo $label_type_de_poste; ?></div>
-					<div class="c-tag"><?php echo $label_experience; ?></div>
-					<?php echo $label_niveau_detude; ?>
+			<div class="l-miniDashboard">
+				<div class="l-miniDashboard__row">
+					<div class="l-miniDashboard__row__element offre-tags">
+						<div class="c-tag"><?php echo $label_type_de_poste; ?></div>
+						<div class="c-tag"><?php echo $label_experience; ?></div>
+						<?php echo $label_niveau_detude; ?>
+					</div>
+					<span class="l-miniDashboard__row__element"><i class="fa fa-clock-o c-meta__meta__icon" aria-hidden="true"></i>Postuler avant le <?php echo $date_candidature->format('j M Y'); ?></span>
 				</div>
-				<span class="offre-dashboard__zone__tags__limite"><i class="fa fa-clock-o c-meta__meta__icon" aria-hidden="true"></i>Postuler avant le <?php echo $date_candidature->format('j M Y'); ?></span>
-			</div>
-			<div class="offre-dashboard__id">
-				<div class="offre-dashboard__id__who">
-					<span class="t-meta"><i class="fa fa-cube c-meta__meta__icon" aria-hidden="true"></i><?php echo $type_structure; ?></span>
-					<h3 class="c-card__body__title"><?php echo $nom; ?></h3>
-					<?php if ($site_internet_structure) :
-						echo '<a href="'.$site_internet_structure.'" class="c-link c-link--more mgTop--m" target="_blank">Voir le site internet</a>';
-					endif ?>
-				</div>
-				<div class="offre-dashboard__id__where">
-					<div class="offre-dashboard__id__where__nb"><?php echo $numero_departement; ?></div>
-					<div class="offre-dashboard__id__where__txt">
-						<div class="t-meta t-meta--dark"><i class="fa fa-map-marker c-meta__meta__icon" aria-hidden="true"></i><?php echo $ville; ?></div>
-						<div class="t-meta t-meta--dark mgTop--xs"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i><?php echo $label_departement; ?></div>
+				<div class="l-miniDashboard__duo">
+					<div class="l-miniDashboard__duo__left">
+						<span class="t-meta"><?php echo $type_structure; ?></span>
+						<h3 class="c-card__body__title"><?php echo $nom; ?></h3>
+						<?php if ($site_internet_structure) :
+							echo '<a href="'.$site_internet_structure.'" class="c-link c-link--more mgTop--m" target="_blank">Voir le site internet</a>';
+						endif ?>
+					</div>
+					<div class="l-miniDashboard__duo__right offre-localisation">
+						<div class="offre-localisation__nb"><?php echo $numero_departement; ?></div>
+						<div class="offre-localisation__txt">
+							<div class="t-meta t-meta--dark"><i class="fa fa-map-marker c-meta__meta__icon" aria-hidden="true"></i><?php echo $ville; ?></div>
+							<div class="t-meta t-meta--dark mgTop--xs"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i><?php echo $label_departement; ?></div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</header>
 	</div>
 
 	<div class="l-row">

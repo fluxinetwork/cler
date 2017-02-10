@@ -66,7 +66,7 @@ if ($nb_results == 0) {
           $post_img_url = $post_img_array[0];  
 
           $permalink = get_permalink();
-          $date = get_the_date('d M Y');
+          $date_publi = get_the_date('d M Y');
           $categories = get_the_category();
           ($categories) ? $cat_name = $categories[0]->cat_name : $cat_name = 'non classé';
           $title = get_the_title();
@@ -108,7 +108,7 @@ if ($nb_results == 0) {
           // BODY
 
           $output .= '<div class="c-newsH__body">';
-
+          $output .= '<span class="t-meta">'.$date_publi  .'</span>';
           $output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
 
           // META
@@ -118,13 +118,18 @@ if ($nb_results == 0) {
           $output .= '<span class="c-meta__meta"><i class="fa fa-folder c-meta__meta__icon" aria-hidden="true"></i>'.$post_type.'</span>';
 
           if ($post_type != 'page' || $post_type != 'evenements') {
-
-            $output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>';
-
             if ($categories) {
               $output .= '<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i>'.$cat_name.'</span>';
             }
           }
+
+          if ($post_type == 'webinaires') {
+              $date_webiniare = new DateTime(get_field('date_webinaire', false, false));
+              $heure_webinaire = get_field('heure_webinaire');
+              $output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date_webiniare->format('j M Y').'</span>';
+              $output .= '<span class="c-meta__meta"><i class="fa fa-clock-o c-meta__meta__icon" aria-hidden="true"></i>'.$heure_webinaire.'</span>';
+          }
+
           // CLOSE META
           $output .= '</div>';
 
@@ -143,8 +148,9 @@ if ($nb_results == 0) {
         echo '</ul>';      
 
         the_posts_pagination( array(
-        'prev_text'          => __( 'Précédent', 'cler' ),
-        'next_text'          => __( 'Suivant', 'cler' ),
+        'prev_text' => __( 'Précédent', 'cler' ),
+        'next_text' => __( 'Suivant', 'cler' ),
+        'mid_size' => 2,
         'before_page_number' => '<span>' . __( 'Page', 'cler' ) . ' </span>',
         ) );
 

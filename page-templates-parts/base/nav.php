@@ -47,8 +47,8 @@
 	<div class="l-row c-notify js-notify" id="search">
 		<form method="get" class="l-col c-notify__content" action="<?php bloginfo('url'); ?>/">
 			<label class="is-none" for="s"><?php _e('Recherche :'); ?></label>
-		  	<input type="text" id="search-input" class="js-search-input c-notify__message" value="<?php if (is_search()) : the_search_query(); endif; ?>" name="s" id="s" placeholder="Rechercher" data-swplive="true">
-		  	<button type="submit" class="c-btn" value=""><i class="fa fa-search mgRight--xs"></i>Rechercher</button>  
+		  	<input type="text" id="search-input" class="js-search-input c-notify__message" value="<?php if (is_search()) : the_search_query(); endif; ?>" name="s" id="s" placeholder="Que cherchez-vous ?" data-swplive="true">
+		  	<button type="submit" class="c-btn" value="">Rechercher</button>  
 		</form>
 	</div>
 </header>

@@ -7,13 +7,11 @@
 <article>
 	<div class="l-row bg-light">
 		<header class="l-col l-col--content l-header">
+			<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta l-header__date"><?php echo get_the_date(); ?></time> 
 			<h1><?php echo get_the_title(); ?></h1>
 
 			<div class="c-meta l-header__meta">
 				<div class="c-dash"></div>
-
-				<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i><?php echo get_the_date(); ?></time> 
-
 				<?php				
 				$categories = get_the_category();
 				if(! empty( $categories )):
@@ -23,7 +21,7 @@
 						$cat_count++;
 						// Limit
 						if( $cat_count < 4 )		
-				        $cat_name .= ($cat_count > 1 ? ' - ' : '').esc_html( $category->name );
+				        $cat_name .= ($cat_count > 1 ? ', ' : '').esc_html( $category->name );
 				    }
 					echo '<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i>'.$cat_name.'</span>';
 				endif;

@@ -13,12 +13,12 @@
 	<fieldset class="c-form__fieldset">
 		<legend class="c-form__legend c-form--indicateur">Votre formation</legend>
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="title">Intitulé de la formation<span class="i-required">*</span></label>
+	    	<label class="c-form__label" for="title">Intitulé de la formation<span class="i-required">•</span></label>
 	    	<input class="c-form__input" type="text" name="title" id="title" value="<?php echo $formation_title; ?>" data-validation="required" placeholder="">		    	
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="publics" class="c-form__label">Publics<span class="i-required">*</span></label>
+	    	<label for="publics" class="c-form__label">Publics<span class="i-required">•</span></label>
 	    	<label for="publics_0" class="c-form__label c-form__label--checkbox">
 	    		<input type="checkbox" class="c-form__label__checkbox" name="publics[]" value="public_1" id="publics_0" data-validation="checkbox_group" data-validation-qty="min1" <?php if(!empty($publics) && in_array('public_1',$publics))echo 'checked'; ?>>
 	    		<div class="c-form__label__txt">Lycéens, étudiants, apprentis</div>    		
@@ -30,7 +30,7 @@
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="secteur" class="c-form__label">Secteur<span class="i-required">*</span></label>
+	    	<label for="secteur" class="c-form__label">Secteur<span class="i-required">•</span></label>
 	    	<label for="secteur_0" class="c-form__label c-form__label--checkbox">
 	    		<input type="checkbox" class="c-form__label__checkbox" name="secteur[]" value="secteur_1" id="secteur_0" data-validation="checkbox_group" data-validation-qty="min1" <?php if(!empty($secteur) && in_array('secteur_1',$secteur))echo 'checked'; ?>>
 	    		<div class="c-form__label__txt">Étude/ingénierie</div>	    		
@@ -62,7 +62,7 @@
 	    </div>
 
 		<div class="c-form__fieldset__row">
-	    	<label for="niveau_detude" class="c-form__label">Diplôme / Niveau<span class="i-required">*</span></label>
+	    	<label for="niveau_detude" class="c-form__label">Diplôme / Niveau<span class="i-required">•</span></label>
 	    	<label for="niveau_detude_0" class="c-form__label c-form__label--checkbox">
 	    		<input type="checkbox" class="c-form__label__checkbox" name="niveau_detude[]" value="cap_bep" id="niveau_detude_0" data-validation="checkbox_group" data-validation-qty="min1" <?php if(!empty($niveau_detude) && in_array('cap_bep',$niveau_detude))echo 'checked'; ?>>
 	    		<div class="c-form__label__txt">CAP - BEP</div>		    		
@@ -90,7 +90,7 @@
 	    </div>
 
 	     <div class="c-form__fieldset__row">
-	    	<label for="thematique" class="c-form__label">Thématique<span class="i-required">*</span></label>
+	    	<label for="thematique" class="c-form__label">Thématique<span class="i-required">•</span></label>
 	    	<label for="thematique_0" class="c-form__label c-form__label--checkbox">
 	    		<input type="checkbox" class="c-form__label__checkbox" name="thematique[]" value="thematique_1" id="thematique_0" data-validation="checkbox_group" data-validation-qty="min1" <?php if(!empty($thematique) && in_array('thematique_1',$thematique))echo 'checked'; ?>>
 	    		<div class="c-form__label__txt">Maîtrise de l’énergie</div>		    		
@@ -134,9 +134,9 @@
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="departement" class="c-form__label">Département de la formation<span class="i-required">*</span></label>
+	    	<label for="departement" class="c-form__label">Département de la formation<span class="i-required">•</span></label>
 			<select class="c-form__select" name="departement" id="departement" data-validation="required">
-				<option disabled selected value="">Dans quel département ?<span class="i-required">*</span></option>
+				<option disabled selected value="">Dans quel département ?<span class="i-required">•</span></option>
 				<?php
 					foreach ( load_departements_fields() as $key => $value ) {
 
@@ -152,7 +152,7 @@
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="adresse_formation" class="c-form__label">Ville de la formation<span class="i-required">*</span></label>
+	    	<label for="adresse_formation" class="c-form__label">Ville de la formation<span class="i-required">•</span></label>
 	    	<input class="c-form__input" type="text" name="adresse_formation" id="adresse_formation" value="<?php echo $adresse_formation; ?>"  placeholder="" data-validation="required">
 	    </div>
 
@@ -167,12 +167,12 @@
 	    </div>
 	    
 	    <div class="c-form__fieldset__row">
-	    	<label for="descriptif_formation" class="c-form__label">Présentation de la formation<span class="i-required">*</span></label>
+	    	<label for="descriptif_formation" class="c-form__label">Présentation de la formation<span class="i-required">•</span></label>
 	    	<textarea class="c-form__input c-form__textarea" rows="10" name="descriptif_formation" id="descriptif_formation" data-validation="required" placeholder="Préciser le coût, les débouchés et perspectives"><?php echo $descriptif_formation; ?></textarea>		    	
 	    </div>
 
 		<div class="c-form__fieldset__row">
-	    	<label class="c-form__label">Êtes-vous labellisé par le CLER - Réseau pour la transition énergétique (Agrément Format’eree) <span class="i-required">*</span></label>
+	    	<label class="c-form__label">Êtes-vous labellisé par le CLER - Réseau pour la transition énergétique (Agrément Format’eree) <span class="i-required">•</span></label>
 		    <label class="c-form__label c-form__label--checkbox">			    	
 		    	<input type="radio" name="agrement_formateree" data-validation="required" value="non" <?php if( !empty($agrement_formateree) && $agrement_formateree == 'non')echo 'checked';?>>
 		    	<div class="c-form__label__txt">Non</div>
@@ -195,7 +195,7 @@
 		<legend class="c-form__legend c-form--indicateur">Structure et contacts</legend>
 
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label">Étes-vous adhérent au CLER ?<span class="i-required">*</span></label>
+	    	<label class="c-form__label">Étes-vous adhérent au CLER ?<span class="i-required">•</span></label>
 		    <label class="c-form__label c-form__label--checkbox">			    	
 		    	<input type="radio" name="is_adherent" value="nonadherent" <?php if(!is_adherent_cler())echo 'checked';?>>
 		    	<div class="c-form__label__txt">Non</div>
@@ -208,32 +208,32 @@
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="nom_centre" class="c-form__label">Centre de formation<span class="i-required">*</span></label>
+	    	<label for="nom_centre" class="c-form__label">Centre de formation<span class="i-required">•</span></label>
 	    	<input class="c-form__input" type="text" value="<?php echo $nom_centre; ?>" name="nom_centre" id="nom_centre" data-validation="required">
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="adresse" class="c-form__label">Adresse<span class="i-required">*</span></label>
+	    	<label for="adresse" class="c-form__label">Adresse<span class="i-required">•</span></label>
 	    	<input class="c-form__input" type="text" value="<?php echo $adresse; ?>" name="adresse" id="adresse" data-validation="required">
 	    </div>
 
 		<div class="c-form__fieldset__row">
-			<label for="code_postal" class="c-form__label">Code postal<span class="i-required">*</span></label>
+			<label for="code_postal" class="c-form__label">Code postal<span class="i-required">•</span></label>
 	    	<input class="c-form__input" type="text" maxlength="5" value="<?php echo $code_postal; ?>" name="code_postal" id="code_postal" data-validation="number">
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="ville" class="c-form__label">Ville<span class="i-required">*</span></label>
+	    	<label for="ville" class="c-form__label">Ville<span class="i-required">•</span></label>
 	    	<input class="c-form__input" type="text" value="<?php echo $ville; ?>" name="ville" id="ville" data-validation="required">	    	
 	    </div>	    
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="telephone" class="c-form__label">Téléphone de contact<span class="i-required">*</span></label>
+	    	<label for="telephone" class="c-form__label">Téléphone de contact<span class="i-required">•</span></label>
 		    <input class="c-form__input" type="text" maxlength="14" value="<?php echo $telephone; ?>" name="telephone" id="telephone" data-validation="required">			   
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="contact_email" class="c-form__label">Email de contact<span class="i-required">*</span></label>
+	    	<label for="contact_email" class="c-form__label">Email de contact<span class="i-required">•</span></label>
 	    	<input class="c-form__input" type="text" value="<?php echo $contact_email; ?>" name="contact_email" id="contact_email" data-validation="email">		    	
 	    </div>	    
 

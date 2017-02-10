@@ -67,7 +67,7 @@ Template Name: Toutes les actualités
 		<form id="form-auto-filter-posts" role="form" class="l-monoFilter">
 		    <div class="l-filterList__filter">
 		    	<label for="category" class="is-none">Thématique</label>
-		    	<i class="fa fa-tag" aria-hidden="true"></i>
+		    	<i class="fa fa-bookmark" aria-hidden="true"></i>
 				<select name="category" id="category" data-validation="required" class="c-form__select">
 					<option disabled selected value="">Thématique</option>
 					<?php
@@ -87,7 +87,7 @@ Template Name: Toutes les actualités
 			
 			<span class="js-loader"></span>
 			<button type="button" class="c-btn c-btn--reset l-monoFilter__btn js-reload is-none">Reset</button>
-			<a href="<?php echo home_url(); ?>" class="c-link c-link--shy l-monoFilter__link">Abonnement newsletter</a>
+			<a href="<?php echo home_url(); ?>" class="c-link c-link--shy l-monoFilter__link"><i class="fa fa-envelope c-meta__meta__icon" aria-hidden="true"></i>Abonnement newsletter</a>
 		</form>
 
 	</aside>

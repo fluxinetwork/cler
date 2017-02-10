@@ -31,7 +31,7 @@
 	}
 
 	&:hover,
-	.cockpit-add:hover &,
+	.c-ghostCard:hover &,
 	.c-tile:hover & {
 		&::after {
 			width: 70%;
@@ -60,6 +60,7 @@
 		top: 0;
 		padding-bottom: 0;
 		color: rgba($c-dark, 0.5);
+		font-family: $font-subh;
 
 		&--white {
 			color: rgba(#fff, 0.5);
@@ -99,7 +100,7 @@
 		}
 
 		&:hover,
-		.c-card:not(.c-form):hover & {
+		.c-card:not(.c-form):not(.c-card--user):hover & {
 			&::before {
 				transform: scaleX(0.7);
 			}

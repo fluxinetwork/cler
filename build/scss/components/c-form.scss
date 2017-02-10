@@ -56,6 +56,19 @@ $break: $break--m;
 	}
 }
 
+
+//===================================================== MODIF C-CARD__BODY
+
+.c-form .c-card__body:first-child {
+	.c-form__fieldset:first-child {
+		margin-top: 0;
+	}
+	
+	.c-form__submit {
+		margin-bottom: 0;
+	}
+}
+
 //==============================================================  FIELDSET
 
 .c-form__fieldset {

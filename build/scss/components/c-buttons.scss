@@ -74,6 +74,17 @@
 		}
 	}
 
+	&--ghost {
+		background-color: transparent;
+		border: 3px solid $c-valid;
+		color: $c-valid;
+
+		&:hover {
+			background-color: $c-valid !important;
+			color: #fff;
+		}
+	}
+
 	&[type="submit"] {
 		display: flex;
 		align-items: center;
@@ -110,6 +121,16 @@
 	color: #fff;
 	border-radius: 50%;
 	outline: 0;
+	@include transition();
+
+	&:not(.c-btn_con--controls):hover {
+		background-color: $c-main;
+	}
+
+	.c-ghostCard & {
+		background-color: #fff;
+		color: $c-valid;
+	}
 
 	&--small,
 	&--controls {
@@ -132,6 +153,11 @@
 		.bg-main &,
 		.bg-main--grad & {
 			color: $c-main;
+		}
+
+		.bg-valid &,
+		.bg-valid--grad & {
+			color: $c-valid;
 		}
 	}
 

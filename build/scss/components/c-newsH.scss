@@ -62,6 +62,11 @@ $break: $break--m;
 
 .c-newsH__body__meta {
 	@extend .t-meta;
+
+	.equipe &,
+	.administrateurs & {
+		display: none;
+	}
 }
 
 

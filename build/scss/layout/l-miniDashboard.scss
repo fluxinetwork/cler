@@ -1,0 +1,89 @@
+/*======================================================================*\
+==========================================================================
+
+//	LAYOUT MINI DASHBOARD
+
+==========================================================================
+\*======================================================================*/
+
+$break: $break--m;
+
+//================================================================== ROW
+
+.l-miniDashboard__row {
+	@extend .l-box;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: $space--m;
+
+	@media screen and (max-width: $break) {
+		.single-webinaires & {
+			justify-content: center;
+		}
+
+		.single-concours & {
+			flex-direction: column
+		}
+	}
+
+	@media screen and (min-width: $break) {
+		margin-top: $space--l;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+.l-miniDashboard__row__element {
+	@extend .t-meta;
+	opacity: 1;
+	display: inline-block;
+
+	@media screen and (max-width: $break) {
+		margin-right: $space--s;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		.single-concours & {
+			margin-top: $space--s;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+.l-miniDashboard__row__element--btn {
+	flex: 1 0 100%;
+	margin-top: $space--s;
+
+	@media screen and (min-width: $break) {
+		margin-top: 0;
+		flex: none;
+	}
+}
+
+
+//================================================================== DUO
+
+.l-miniDashboard__duo {
+	display: flex;
+	flex-flow: column wrap;
+	margin-top: $gutter;
+
+	@media screen and (min-width: $break) {
+		flex-direction: row;
+	}
+}
+
+.l-miniDashboard__duo__left {
+	@extend .l-box;
+	margin-bottom: $gutter;
+
+	@media screen and (min-width: $break) {
+		flex: 1 0 47%;
+		margin-bottom: 0;
+	}
+}

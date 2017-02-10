@@ -20,7 +20,6 @@
 
 	endif;
 
-	$date_publi = get_the_date('d M Y');
 	$date_webiniare = new DateTime(get_field('date_webinaire', false, false));
 	$heure_webinaire = get_field('heure_webinaire');
 	$themes = get_field('themes');
@@ -32,19 +31,15 @@
 
 <article>
 	<div class="l-row bg-light">
-		<header class="l-col l-col--content l-header no-pdBottom">
+		<header class="l-col l-col--content l-header">
+			<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta l-header__date"><?php echo get_the_date(); ?></time>
 			<h1><?php echo get_the_title(); ?></h1>
 
-			<div class="c-meta">
-				<div class="c-dash"></div>
-				<span class="c-meta__meta">Publié le <?php echo $date_publi; ?></span>
-			</div>
-
-			<div class="offre-dashboard mgTop--m">
-				<div class="offre-dashboard__tags">
-					<span class="webinaire-meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i><?php echo $date_webiniare->format('j M Y'); ?></span>
-					<span class="webinaire-meta"><i class="fa fa-clock-o c-meta__meta__icon" aria-hidden="true"></i><?php echo $heure_webinaire; ?></span>
-					<a href="#inscription" class="c-btn webinaire-meta webinaire-meta--btn">Inscription</a>
+			<div class="l-miniDashboard ">
+				<div class="l-miniDashboard__row">
+					<span class="l-miniDashboard__row__element"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i><?php echo $date_webiniare->format('j M Y'); ?></span>
+					<span class="l-miniDashboard__row__element"><i class="fa fa-clock-o c-meta__meta__icon" aria-hidden="true"></i><?php echo $heure_webinaire; ?></span>
+					<a href="#inscription" class="l-miniDashboard__row__element l-miniDashboard__row__element--btn c-btn c-btn--ghost"><i class="fa fa-user-plus c-meta__meta__icon" aria-hidden="true"></i>Inscription</a>
 				</div>
 			</div>
 
@@ -71,14 +66,15 @@
 
 		</header>
 	</div>
-</article>
 
-<section class="l-row bg-light" id="inscription">
-	<div class="l-col l-col--content">
-		<div class="c-form c-form--large c-card">
-			<?php require_once( get_template_directory() . '/page-templates-parts/forms/form-webinaire.php' ); ?>
+	<section class="l-row bg-valid--grad" id="inscription">
+		<div class="l-col l-col--content">
+			<div class="c-form c-form--large c-card">
+				<?php require_once( get_template_directory() . '/page-templates-parts/forms/form-webinaire.php' ); ?>
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
+
+</article>
 
 

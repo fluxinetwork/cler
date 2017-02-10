@@ -58,7 +58,7 @@
 
     <div class="c-form__notify js-notify"></div>
 
-	<div class="c-form__submit no-mgBottom">
+	<div class="c-form__submit">
     	<button type="submit" id="submit-participation-webinaire" class="c-btn">Envoyer</button>
     </div>
 </form>	 	  

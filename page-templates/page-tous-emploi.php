@@ -93,7 +93,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 
 
 		<div class="l-filterList__buttons">
-			<a href="<?php echo home_url().'/outils/publiez-vos-offres-demploi/'; ?>" class="c-link c-link--shy">Poster une offre</a>
+			<a href="<?php echo home_url().'/outils/publiez-vos-offres-demploi/'; ?>" class="c-link c-link--shy"><i class="fa fa-plus c-meta__meta__icon" aria-hidden="true"></i>Poster une offre</a>
 			<div class="l-filterList__buttons__submit">
 				<button type="reset" class="c-btn c-btn--reset js-reload is-none">Reset</button>
 				<button type="submit" id="submit-filters" class="c-btn">Filtrer</button>
@@ -145,7 +145,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 						$output = '<li class="l-postList__item">';
 						$output .= '<a href="'.get_permalink().'">';
 						$output .= '<article class="offre">';
-
+						$output .= '<time datetime="'.get_the_date('Y-m-d').'" class="t-meta l-header__date">'.get_the_date().'</time> ';
 						$output .= '<h1 class="h2">'.get_the_title().'</h1>';
 
 						$output .= '<div class="c-meta">';

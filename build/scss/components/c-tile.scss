@@ -26,11 +26,23 @@
 }
 
 .c-tile__content__img {
+	position: relative;
 	width: 160px;
 	height: 160px;
 	margin-bottom: $space--l;
 	border-radius: 50%;
-	background-color: rgba($c-main, 0.1);
+	@include flex(center);
+	background-color: $c-light;
+	flex: none;
+
+	.fa {
+		@extend .h2;
+		color: $c-main;
+	}
+
+	@media screen and (min-width: $break--l) {
+		
+	}
 }
 
 .c-tile__content__title {
@@ -56,6 +68,7 @@
 	@extend .h3;
 	margin-bottom: $space--s;
 }
+
 
 @media screen and (min-width: $break--s) {
 	.c-tile {

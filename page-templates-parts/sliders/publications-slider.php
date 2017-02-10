@@ -43,13 +43,10 @@
 
 				<li id="js-idp-<?php echo get_the_ID(); ?>" class="l-card-slider__cards__row__col u-show@med">
 					
-					<article class="c-card c-card--emploi">
+					<article class="c-card c-card--user">
 						<header class="c-card__header">
-							<div class="c-card__header__tag">
-								<a title="Modifier la publication" href="<?php echo $mod_post_url; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-							</div>
-							<div class="c-card__header__tag"><a title="Supprimer la publication" href="#" class="js-del-post" data-idp="<?php echo get_the_ID(); ?>" data-toky="<?php echo mt_rand(0,9999); ?>" data-title="<?php echo get_the_title (); ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
-							</div>
+							<a title="Modifier la publication" href="<?php echo $mod_post_url; ?>" class="c-card__header__tag"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+							<a title="Supprimer la publication" href="#" class="js-del-post c-card__header__tag" data-idp="<?php echo get_the_ID(); ?>" data-toky="<?php echo mt_rand(0,9999); ?>" data-title="<?php echo get_the_title (); ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
 							<h5 class="c-card__header__cat"><?php echo $cpt_label; ?></h5>
 						</header>
 						<div class="c-card__body">
@@ -66,22 +63,22 @@
 			<?php endwhile; endif; wp_reset_postdata(); ?>
 
 			<li class="l-card-slider__cards__row__col u-show@med">
-				<a href="<?php echo get_the_permalink(FORM_OFFRE); ?>?act=add" class="cockpit-add">
-					<button class="c-btn c-btn--add"></button>
+				<a href="<?php echo get_the_permalink(FORM_OFFRE); ?>?act=add" class="c-ghostCard">
+					<button class="c-btnIcon"><i class="fa fa-plus"></i></button>
 					<span class="c-link c-link--white">offre d'emploi</span>
 					<span class="t-meta t-meta--white pdTop--s"><?php ($adherent) ? print('') : print('Payant'); ?></span>
 				</a>
 			</li>
 			<li class="l-card-slider__cards__row__col u-show@med">
-				<a href="<?php echo get_the_permalink(FORM_EVENT); ?>?act=add" class="cockpit-add">
-					<button class="c-btn c-btn--add"></button>
+				<a href="<?php echo get_the_permalink(FORM_EVENT); ?>?act=add" class="c-ghostCard">
+					<button class="c-btnIcon"><i class="fa fa-plus"></i></button>
 					<span class="c-link c-link--white">évènement</span>
 					<span class="t-meta t-meta--white pdTop--s">Gratuit</span>
 				</a>
 			</li>
 			<li class="l-card-slider__cards__row__col u-show@med">
-				<a href="<?php echo get_the_permalink(FORM_FORMATION); ?>?act=add" class="cockpit-add">
-					<button class="c-btn c-btn--add"></button>
+				<a href="<?php echo get_the_permalink(FORM_FORMATION); ?>?act=add" class="c-ghostCard">
+					<button class="c-btnIcon"><i class="fa fa-plus"></i></button>
 					<span class="c-link c-link--white">formation</span>
 					<span class="t-meta t-meta--white pdTop--s">Gratuit</span>
 				</a>

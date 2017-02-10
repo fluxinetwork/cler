@@ -87,3 +87,7 @@
 .bg-dark--grad {
 	background-image: radial-grad($c-dark, 50%);
 }
+
+.bg-valid--grad {
+	background-image: radial-grad($c-valid, 50%);
+}

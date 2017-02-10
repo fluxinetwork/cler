@@ -37,7 +37,7 @@
 			wp_reset_postdata();
 			?>
 			<li class="l-card-slider__cards__row__col u-show@med">
-				<a href="<?php the_permalink(ALL_NEWS); ?>?cat=<?php echo $cat_slug?>" class="cockpit-add">
+				<a href="<?php the_permalink(ALL_NEWS); ?>?cat=<?php echo $cat_slug?>" class="c-ghostCard">
 					<span class="c-link c-link--white">voir tout</span>
 				</a>
 			</li>

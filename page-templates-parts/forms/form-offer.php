@@ -39,9 +39,9 @@
 	    </div>	    
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="type_de_poste" class="c-form__label">Type de poste<span class="i-required">*</span></label>
+	    	<label for="type_de_poste" class="c-form__label">Type de poste<span class="i-required">•</span></label>
 	    	<select class="c-form__select" name="type_de_poste" id="type_de_poste" data-validation="required">
-	    		<option disabled selected value="">Quel type de poste ?<span class="i-required">*</span></option>
+	    		<option disabled selected value="">Quel type de poste ?<span class="i-required">•</span></option>
 	    		<option value="stage" <?php if($type_de_poste=='stage')echo 'selected';?>>Stage</option>
 	    		<option value="cdd" <?php if($type_de_poste=='cdd')echo 'selected';?>>CDD</option>
 	    		<option value="cdi" <?php if($type_de_poste=='cdi')echo 'selected';?>>CDI</option>
@@ -50,12 +50,12 @@
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="missions">Quelles missions ?<span class="i-required">*</span></label>
+	    	<label class="c-form__label" for="missions">Quelles missions ?<span class="i-required">•</span></label>
 	    	<textarea class="c-form__input c-form__textarea" rows="6" name="missions" id="missions" data-validation="required"><?php echo $missions; ?></textarea>  
 	    </div>
 
 		<div class="c-form__fieldset__row">
-	    	<label for="niveau_detude" class="c-form__label">Niveau d’étude requis<span class="i-required">*</span></label>
+	    	<label for="niveau_detude" class="c-form__label">Niveau d’étude requis<span class="i-required">•</span></label>
 	    	<label for="niveau_detude_0" class="c-form__label c-form__label--checkbox">
 	    		<input type="checkbox" class="c-form__label__checkbox" name="niveau_detude[]" value="bac" id="niveau_detude_0" data-validation="checkbox_group" data-validation-qty="min1" <?php if(!empty($niveau_detude) && in_array('bac',$niveau_detude))echo 'checked'; ?>>
 	    		<div class="c-form__label__txt">BAC</div>
@@ -75,9 +75,9 @@
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="experience" class="c-form__label">Expérience<span class="i-required">*</span></label>
+	    	<label for="experience" class="c-form__label">Expérience<span class="i-required">•</span></label>
 	    	<select class="c-form__select" name="experience" id="experience" data-validation="required">
-	    		<option disabled selected value="">Combien d'année d'expérience ?<span class="i-required">*</span></option>
+	    		<option disabled selected value="">Combien d'année d'expérience ?<span class="i-required">•</span></option>
 	    		<option value="experience_0" <?php if($experience=='experience_0')echo 'selected';?>>Jeune diplômé(e)</option>
 	    		<option value="experience_1" <?php if($experience=='experience_1')echo 'selected';?>>1 à 3 ans</option>
 	    		<option value="experience_2" <?php if($experience=='experience_2')echo 'selected';?>>3 à 5 ans</option>
@@ -87,7 +87,7 @@
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="profil_recherche">Profil recherché<span class="i-required">*</span></label>
+	    	<label class="c-form__label" for="profil_recherche">Profil recherché<span class="i-required">•</span></label>
 	    	<textarea class="c-form__input c-form__textarea" rows="6" name="profil_recherche" id="profil_recherche" data-validation="required" placeholder=""><?php echo $profil_recherche; ?></textarea>
 	    </div>
     </fieldset>
@@ -96,9 +96,9 @@
 		<legend class="c-form__legend c-form--indicateur">Votre structure</legend>
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="type_structure" class="c-form__label">Type de structure<span class="i-required">*</span></label>
+	    	<label for="type_structure" class="c-form__label">Type de structure<span class="i-required">•</span></label>
 	    	<select class="c-form__select" name="type_structure" id="type_structure" data-validation="required">
-	    		<option disabled selected value="">Quel type de structure ?<span class="i-required">*</span></option>
+	    		<option disabled selected value="">Quel type de structure ?<span class="i-required">•</span></option>
 	    		<option value="entreprise" <?php if($type_structure=='entreprise')echo 'selected';?>>Entreprise</option>
 	    		<option value="association" <?php if($type_structure=='association')echo 'selected';?>>Association</option>
 	    		<option value="collectivite" <?php if($type_structure=='collectivite')echo 'selected';?>>Collectivité</option>
@@ -107,29 +107,29 @@
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="nom_structure">Nom de la structure<span class="i-required">*</span></label>
+	    	<label class="c-form__label" for="nom_structure">Nom de la structure<span class="i-required">•</span></label>
 	    	<input class="c-form__input" type="text" value="<?php echo $nom_structure; ?>" name="nom_structure" id="nom_structure" data-validation="required">  
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="adresse">Adresse<span class="i-required">*</span></label>
+	    	<label class="c-form__label" for="adresse">Adresse<span class="i-required">•</span></label>
 	    	<input class="c-form__input" type="text" value="<?php echo $adresse; ?>" name="adresse" id="adresse" data-validation="required">
 	    </div>
 
 		<div class="c-form__fieldset__row">
-			<label class="c-form__label" for="code_postal">Code postal<span class="i-required">*</span></label>
+			<label class="c-form__label" for="code_postal">Code postal<span class="i-required">•</span></label>
 	    	<input class="c-form__input" type="text" maxlength="5" value="<?php echo $code_postal; ?>" name="code_postal" id="code_postal" data-validation="number">	    	
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="ville">Ville<span class="i-required">*</span></label>
+	    	<label class="c-form__label" for="ville">Ville<span class="i-required">•</span></label>
 	    	<input class="c-form__input" type="text" value="<?php echo $ville; ?>" name="ville" id="ville" data-validation="required">
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label for="departement" class="c-form__label">Département<span class="i-required">*</span></label>
+	    	<label for="departement" class="c-form__label">Département<span class="i-required">•</span></label>
 			<select class="c-form__select" name="departement" id="departement" data-validation="required">
-				<option disabled selected value="">Dans quel département ?<span class="i-required">*</span></option>
+				<option disabled selected value="">Dans quel département ?<span class="i-required">•</span></option>
 				<?php
 					foreach ( load_departements_fields() as $key => $value ) {
 
@@ -145,7 +145,7 @@
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="descriptif_organisme">Description de votre structure<span class="i-required">*</span></label>
+	    	<label class="c-form__label" for="descriptif_organisme">Description de votre structure<span class="i-required">•</span></label>
 	    	<textarea class="c-form__input c-form__textarea" rows="6" name="descriptif_organisme" id="descriptif_organisme" data-validation="required" placeholder=""><?php echo $descriptif_organisme; ?></textarea>	    	
 	    </div>   
 	</fieldset>
@@ -154,27 +154,27 @@
 		<legend class="c-form__legend c-form--indicateur">Contact et candidatures</legend>	     
 
 		<div class="c-form__fieldset__row">
-			<label class="c-form__label" for="nom_prenom_contact">Nom et prénom du contact<span class="i-required">*</span></label>
+			<label class="c-form__label" for="nom_prenom_contact">Nom et prénom du contact<span class="i-required">•</span></label>
 	    	<input class="c-form__input" type="text" value="<?php echo $nom_prenom_contact; ?>" name="nom_prenom_contact" id="nom_prenom_contact" data-validation="required">	    	
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	   		<label class="c-form__label" for="fonction_contact">Fonction du contact<span class="i-required">*</span></label>
+	   		<label class="c-form__label" for="fonction_contact">Fonction du contact<span class="i-required">•</span></label>
 	    	<input class="c-form__input" type="text" value="<?php echo $fonction_contact; ?>" name="fonction_contact" id="fonction_contact" data-validation="required">
 	    </div>
 
 		<div class="c-form__fieldset__row">
-			<label class="c-form__label" for="contact_email">Email de contact<span class="i-required">*</span></label>
+			<label class="c-form__label" for="contact_email">Email de contact<span class="i-required">•</span></label>
 	    	<input class="c-form__input" type="text" value="<?php echo $contact_email; ?>" name="contact_email" id="contact_email" data-validation="email">	    	
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="telephone">Téléphone de contact<span class="i-required">*</span></label>
+	    	<label class="c-form__label" for="telephone">Téléphone de contact<span class="i-required">•</span></label>
 		    <input class="c-form__input" type="text" maxlength="14" value="<?php echo $telephone; ?>" name="telephone" id="telephone" data-validation="required">		    
 	    </div>
 
 		<div class="c-form__fieldset__row">
-	      	<label for="modalite_candidature" class="c-form__label">Modalité de candidature<span class="i-required">*</span></label>
+	      	<label for="modalite_candidature" class="c-form__label">Modalité de candidature<span class="i-required">•</span></label>
 	      	<label for="modalite_candidature_0" class="c-form__label c-form__label--checkbox">
 	        	<input type="checkbox" class="c-form__label__checkbox" name="modalite_candidature[]" value="courrier" id="modalite_candidature_0" data-validation="checkbox_group" data-validation-qty="min1" <?php if(!empty($modalite_candidature) && in_array('courrier',$modalite_candidature))echo 'checked'; ?>>        
 	        	<div class="c-form__label__txt"> Par courrier</div>
@@ -186,7 +186,7 @@
 	    </div>		
 
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="date_candidature">Date limite de candidature<span class="i-required">*</span></label>
+	    	<label class="c-form__label" for="date_candidature">Date limite de candidature<span class="i-required">•</span></label>
 	      	<input class="c-form__input" data-validation="date" data-validation-format="dd/mm/yyyy" type="text" value="<?php if($type_form == 'mod')echo $date_candidature->format('d/m/Y'); ?>" name="date_candidature" id="date_candidature">	      	
 	    </div>
 

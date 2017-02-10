@@ -50,7 +50,7 @@
 		background-color: #fff;
 		border-radius: $radius 0 0 $radius;
 		color: $c-dark;
-		padding: 0 4px 0 $space--xs;
+		padding: 0 $space--xs*$smaller 0 $space--xs;
 		width: 30px;
 		transform: translateX(4px);
 	}

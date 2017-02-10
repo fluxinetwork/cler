@@ -17,7 +17,7 @@
 		$output .= '<div class="c-card__body">';
 		$output .= '<div class="c-card__body__meta"><span class="t-meta">Besoin d\'aide ?</span></div>';
 		$output .= '<h1 class="c-card__body__title">'.get_the_title($contact_id).'</h1>';
-		$output .= '<p>'.$descriptif_contact.'</p>';
+		$output .= '<p class="c-newsH__body__desc">'.$descriptif_contact.'</p>';
 		$output .= '</div>';
 		$output .= '<div class="c-card__footer"><span class="c-link c-link--more c-card__body__link">Contactez moi</span></div>';
 		$output .= '</article>';

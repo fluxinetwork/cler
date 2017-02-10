@@ -9,24 +9,7 @@
 
 //================================================================== OFFRE
 
-$break: $break--m;
-
-.offre-dashboard {
-
-}
-
-.offre-dashboard__tags {
-	@extend .l-box;
-	display: flex;
-	flex-wrap: wrap;
-
-	@media screen and (min-width: $break) {
-		align-items: center;
-		justify-content: space-between;
-	}
-}
-
-.offre-dashboard__zone__tags__tags {
+.offre-tags {
 	flex: 1 0 100%;
 
 	@media screen and (min-width: $break) {
@@ -34,39 +17,7 @@ $break: $break--m;
 	}
 } 
 
-.offre-dashboard__zone__tags__limite {
-	@extend .t-meta;
-	opacity: 1;
-	margin-top: $space--s;
-	display: inline-block;
-
-	@media screen and (min-width: $break) {
-		margin-top: 0;
-	}
-}
-
-.offre-dashboard__id {
-	display: flex;
-	flex-flow: column wrap;
-	margin-top: $gutter;
-
-	@media screen and (min-width: $break) {
-		flex-direction: row;
-	}
-}
-
-.offre-dashboard__id__who {
-	@extend .l-box;
-	margin-bottom: $gutter;
-
-	@media screen and (min-width: $break) {
-		flex: 1 0 47%;
-		margin-bottom: 0;
-	}
-}
-
-
-.offre-dashboard__id__where {
+.offre-localisation {
 	position: relative;
 	@extend .l-box;
 
@@ -77,7 +28,7 @@ $break: $break--m;
 	}
 }
 
-.offre-dashboard__id__where__nb {
+.offre-localisation__nb {
 	display: none;
 	position: absolute;
 	font-size: 180px;
@@ -93,7 +44,7 @@ $break: $break--m;
 	}
 }
 
-.offre-dashboard__id__where__txt {
+.offre-localisation__txt {
 	z-index: 2;
 
 	@media screen and (min-width: $break) {
@@ -101,22 +52,16 @@ $break: $break--m;
 	}
 }
 
-
 //================================================================ WEBINAIRE
 
-.webinaire-meta {
-	@extend .offre-dashboard__zone__tags__limite;
-
-	&:nth-child(2) {
-		margin-left: auto;
-	}
-}
-
-.webinaire-meta--btn {
-	flex: 1 0 100%;
+.webinaire-dashboard {
+	margin-top: $space--m;
 
 	@media screen and (min-width: $break) {
-		flex: none;
-		margin-left: auto;
+		margin-top: $space--l;
 	}
 }
+
+
+
+
