@@ -5,41 +5,53 @@
 ?>
 <?php 
 	if( have_rows('onglet_documents') ):
+		$all_onglets = '';
+		$all_pans = '';
 
-		echo '<ul class="l-col list-reset l-grid">';
+		
 
-		while ( have_rows('onglet_documents') ) : the_row();
-
+		while ( have_rows('onglet_documents') ) : the_row();			
+			
 			$texte_onglet = get_sub_field('texte_onglet');
 			$documents = get_sub_field('documents');
 
-			echo '<li class="l-download is-active l-grid__col"><a href="#" class="l-download__title">'.$texte_onglet.'</a>';
+			$all_onglets .= '<a href="#" class="l-download__title">'.$texte_onglet.'</a>';
+
+			//$all_pans .= '<li class="l-download is-active l-grid__col">';
 
 			if( $documents ):
 
-				echo '<ul class="l-download__list">';
+				$all_pans .= '<ul class="l-download__list">';
 
 			    foreach( $documents as $post): 
 			        setup_postdata($post);
 			        
-			        echo '<li class="l-download__list__item">
+			        $all_pans .= '<li class="l-download__list__item">
 			        		<a href="'.$post->guid.'" class="c-downloadItem">
 			        			<i class="fa fa-download c-downloadItem__icon"></i>
 			        			<span class="c-downloadItem__title">'.$post->post_title.'</span>
-			        		</a><
+			        		</a>
 			        	  </li>';
 
 			    endforeach;			   
 			    wp_reset_postdata();
 
-			    echo '</ul>';
+			    $all_pans .= '</ul>';
 			endif;
 
-			echo '</li>';
+			//$all_pans .= '</li>';
 
 		endwhile;
 
-		echo '</ul>';
+
+		// OUTPUT
+
+		echo '<div class="js-tab">'.$all_onglets.'</div>';
+
+		echo '<div class="l-col list-reset l-grid">';
+			echo $all_pans;
+		echo '</div>';		
+		
 
 	else:
 		// No items
