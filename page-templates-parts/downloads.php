@@ -21,7 +21,7 @@
 
 			if( $documents ):
 
-				$all_pans .= '<ul class="l-download__list">';
+				$all_pans .= '<ul class="l-download is-active l-grid__col">';
 
 			    foreach( $documents as $post): 
 			        setup_postdata($post);
