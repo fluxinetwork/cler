@@ -51,7 +51,8 @@ var FOO = {
         init: function() {
             nav();
             slider();
-
+            tabs();
+            
             if ( $('.fitvid').length ) {
                 console.log('fitvid init + dailymotion');
                 $('.fitvid').fitVids({ customSelector: "iframe[src*='dailymotion.com']"});
@@ -737,4 +738,29 @@ function slider() {
 			$this.parent().attr('data-step', step+1);
 		}
 	});
+}
+
+/*------------------------------*\
+
+    #TABS
+
+\*------------------------------*/
+
+function tabs() {
+
+	$('.js-tab a').on('click', function(e) {
+		e.preventDefault();
+		var $tabs = $(this).parent();
+		var $pans = $tabs.next();
+		var indexTab = $(this).data('tab');
+
+		$pans.find('ul').removeClass('is-active');
+		$pans.find('ul:eq('+indexTab+')').addClass('is-active');
+		$tabs.find('a').removeClass('is-active');
+		$(this).addClass('is-active');
+	});
+	// Init
+	if( $('.js-tab').length )
+		$('.js-tab a').first().trigger( 'click' );		
+	
 }

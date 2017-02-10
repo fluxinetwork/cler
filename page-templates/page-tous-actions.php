@@ -28,7 +28,7 @@ Template Name: Toutes les actions
 		    while( $subpages->have_posts() ) : $subpages->the_post();
 
 		      	$post_img_id = get_field('main_image');
-				$post_img_array = wp_get_attachment_image_src($post_img_id, 'portrait', true);
+				$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumbnail', true);
 				$post_img_url = $post_img_array[0];
 
 				$permalink = get_permalink();

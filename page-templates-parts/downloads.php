@@ -7,21 +7,20 @@
 	if( have_rows('onglet_documents') ):
 		$all_onglets = '';
 		$all_pans = '';
-
-		
+		$nb_tabs = 0;		
 
 		while ( have_rows('onglet_documents') ) : the_row();			
 			
 			$texte_onglet = get_sub_field('texte_onglet');
 			$documents = get_sub_field('documents');
 
-			$all_onglets .= '<a href="#" class="l-download__title">'.$texte_onglet.'</a>';
+			$all_onglets .= '<a href="#" class="l-download__title" data-tab="'.$nb_tabs.'">'.$texte_onglet.'</a>';
 
 			//$all_pans .= '<li class="l-download is-active l-grid__col">';
 
 			if( $documents ):
 
-				$all_pans .= '<ul class="l-download is-active l-grid__col">';
+				$all_pans .= '<ul class="l-download l-grid__col">';
 
 			    foreach( $documents as $post): 
 			        setup_postdata($post);
@@ -37,10 +36,14 @@
 			    wp_reset_postdata();
 
 			    $all_pans .= '</ul>';
+
+
 			endif;
 
 			//$all_pans .= '</li>';
 
+			 $nb_tabs ++;
+			 
 		endwhile;
 
 
