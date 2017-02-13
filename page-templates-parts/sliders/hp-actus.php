@@ -24,7 +24,6 @@
 					$query->the_post();
 
 					get_template_part( 'page-templates-parts/sliders/actu' );
-
 				endwhile;
 			endif;
 			wp_reset_postdata();

@@ -103,10 +103,7 @@ Template Name: Toutes les actualités
 		if ( $query_filtered->have_posts() ) :
 			while ( $query_filtered->have_posts() ) :
 				$query_filtered->the_post();
-
-				$post_img_id = get_field('main_image');
-				$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumbnail', true);
-				$post_img_url = $post_img_array[0];
+				get_template_part( 'page-templates-parts/content', 'thumb' );
 
 				$permalink = get_permalink();
 				$date = get_the_date('d M Y');

@@ -64,14 +64,8 @@ Template Name: Tous les concours
 				$date = get_the_date('d M Y');
 				$title = get_the_title();
 
-				$post_img_id = get_field('main_image');
-				if($post_img_id){
-					$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumbnail', true);
-					$post_img_url = 'url('.$post_img_array[0].')';
-				}else{
-					$post_img_url = 'none';
-				}
-
+				get_template_part( 'page-templates-parts/content', 'thumb' );
+				
 				$categories = get_the_category();
 				if($categories){					
 					$cat_name = '<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i>'.$categories[0]->cat_name.'</span>';

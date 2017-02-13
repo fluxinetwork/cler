@@ -82,12 +82,12 @@ Template Name: Toutes les formations
 			</div>
 
 			<div class="l-filterList__filter l-grid__col">
-			  <label for="agrement_formateree" class="is-none">Agréée Format’eree</label>
+			  <label for="agrement_formateree" class="is-none">Format’eree</label>
 			  <i class="fa fa-check-circle" aria-hidden="true"></i>
 			  <select class="c-form__select" name="agrement_formateree" id="agrement_formateree">
-			    <option disabled selected value="">Agréée Format’eree</option>
-			    <option value="non">Formation non agréée</option>
+			    <option disabled selected value="">Format’eree</option>
 			    <option value="oui">Formation agréée</option>
+			    <option value="non">Formation non agréée</option>
 			  </select>
 			</div>
 		

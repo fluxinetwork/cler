@@ -26,10 +26,7 @@ Template Name: Toutes les actions
 		<?php if( $subpages->have_posts() ) :
 
 		    while( $subpages->have_posts() ) : $subpages->the_post();
-
-		      	$post_img_id = get_field('main_image');
-				$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumbnail', true);
-				$post_img_url = $post_img_array[0];
+		      	get_template_part( 'page-templates-parts/content', 'thumb' );
 
 				$permalink = get_permalink();
 				$title = get_the_title();
@@ -41,12 +38,10 @@ Template Name: Toutes les actions
 				$output .= '<div class="c-newsH__img" style="background-image: url('.$post_img_url.')"></div>';
 				$output .= '<div class="c-newsH__body">';
 				$output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
-
-				$output .= '<p class="mgTop--xs">'.$description.'</p>';
-
+				$output .= '<p class="c-newsH__body__desc">'.$description.'</p>';
 				$output .= '<div class="c-meta">';
 				$output .= '<div class="c-dash"></div>';
-				$output .= '<span class="c-meta__meta">Lire la suite</span>';				
+				$output .= '<span class="c-link c-link--more c-newsH__body__link" target="_blank">En savoir plus</span>';				
 				$output .= '</div>';
 				$output .= '</div>';
 				$output .= '</article>';

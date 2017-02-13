@@ -40,13 +40,7 @@ Template Name: Tous les webinaires
 				$date_webiniare = new DateTime(get_field('date_webinaire', false, false));
 				$heure_webinaire = get_field('heure_webinaire');
 
-				$post_img_id = get_field('main_image');
-				if($post_img_id){
-					$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumbnail', true);
-					$post_img_url = 'url('.$post_img_array[0].')';
-				}else{
-					$post_img_url = 'none';
-				}
+				get_template_part( 'page-templates-parts/content', 'thumb' );
 
 				$categories = get_the_category();
 				if($categories){					
