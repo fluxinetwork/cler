@@ -4,9 +4,9 @@
  */
 ?>
 
-<article classe="page">
+<article classe="page formateree">
 
-	<div class="l-row bg-light">
+	<div class="l-row bg-pattern-formateree">
 		<header class="l-col l-col--content l-header">
 			<h1><?php echo get_the_title(); ?></h1>
 			<div class="c-meta l-header__meta">
@@ -38,9 +38,7 @@
 	</div>
 	
 	<div class="l-row">
-		<div class="l-col l-col--content">
 			<?php the_content(); ?>
-		</div>
 	</div>
 
 </article>

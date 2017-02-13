@@ -24,7 +24,7 @@
 		width: 100%;
 		height: 7px;
 		right: 0;
-		bottom: -7px;
+		bottom: -5px;
 		background-color: $c-main;
 		border-radius: 6px;
 		transition: $transition--dynamic;
@@ -32,7 +32,8 @@
 
 	&:hover,
 	.c-ghostCard:hover &,
-	.c-tile:hover & {
+	.c-tile:hover &,
+	.user-postLink:hover & {
 		&::after {
 			width: 70%;
 		}

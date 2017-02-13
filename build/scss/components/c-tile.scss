@@ -25,26 +25,6 @@
 	padding: $space--m;
 }
 
-.c-tile__content__img {
-	position: relative;
-	width: 160px;
-	height: 160px;
-	margin-bottom: $space--l;
-	border-radius: 50%;
-	@include flex(center);
-	background-color: $c-light;
-	flex: none;
-
-	.fa {
-		@extend .h2;
-		color: $c-main;
-	}
-
-	@media screen and (min-width: $break--l) {
-		
-	}
-}
-
 .c-tile__content__title {
 	@extend .h2--title;
 	position: relative;

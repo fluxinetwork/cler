@@ -136,7 +136,8 @@ $border: 7px solid $c-accent;
 	flex: none;
 	margin-right: $space--xs;
 	@extend .c-btnIcon;
-	@extend .c-btnIcon--small;
+	@extend .c-btn--ghost;
+	text-indent: 3px;
 
 	.fc__accordeon.is-open & {
 		transform: rotate(90deg);
@@ -187,6 +188,16 @@ $border: 7px solid $c-accent;
 	}
 } 
 
+.fc__contact + .fc__contact,
+.fc__publication + .fc__publication {
+	margin-top: -$space--l*1.0.1;
+	border-top: none;
+
+	@media screen and (min-width: $break--l) {
+		margin-top: -$space--xl;
+	}
+}
+
 
 
 //================================================================  ITEM
@@ -202,14 +213,5 @@ $border: 7px solid $c-accent;
 
 	@media screen and (min-width: $break--l) {
 		margin: $space--xl 0;
-	}
-}
-
-.fc__item + .fc__item {
-	margin-top: -$space--l;
-	border-top: none;
-
-	@media screen and (min-width: $break--l) {
-		margin-top: -$space--xl;
 	}
 }

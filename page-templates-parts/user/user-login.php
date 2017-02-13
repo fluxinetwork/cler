@@ -31,7 +31,7 @@
 			
 			<div class="c-form__submit">
 			    <button type="submit" id="submit-login" class="c-btn">Connexion</button>
-			    <a class="c-link c-link--shy t-align--r" href="<?php echo get_the_permalink(RESET_PASSWORD); ?>">Mot de passe oublié ?</a>
+			    <a class="c-link c-link--shy t-align--r" href="<?php echo get_the_permalink(RESET_PASSWORD); ?>">Mot de passe<br> oublié ?</a>
 		    </div>
 
 		</fieldset>

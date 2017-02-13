@@ -13,7 +13,7 @@ $title = limitString(get_the_title(), 0, LIMIT_STRING, ' [...]');
 
 $output = '<li class="l-card-slider__cards__row__col">';
 $output .= '<a href="'.$permalink.'">';
-$output .= '<article class="c-card c-card--emploi">';
+$output .= '<article class="c-card">';
 $output .= '<header class="c-card__header" style="background-image: url('.$post_img_url.');"></header>';
 $output .= '<div class="c-card__body">';
 $output .= '<span class="t-meta">'.$date.'</span>';

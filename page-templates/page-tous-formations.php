@@ -102,7 +102,7 @@ Template Name: Toutes les formations
 			<a href="<?php the_permalink(FORM_FORMATION); ?>?act=add" class="c-link c-link--shy">Poster une formation</a>
 			<div class="l-filterList__buttons__submit">
 				<button type="reset" class="c-btn c-btn--reset js-reload is-none">Reset</button>
-				<button type="submit" id="submit-filters" class="c-btn">Filtrer</button>
+				<button type="submit" id="submit-filters" class="c-btn c-btn--ghost"><i class="fa fa-filter c-meta__meta__icon"></i>Filtrer</button>
 			</div>
 		</div>			
 

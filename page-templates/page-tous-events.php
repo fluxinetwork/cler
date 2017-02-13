@@ -67,10 +67,10 @@ Template Name: Toutes les événements
 		<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
 
 		<div class="l-filterList__buttons">
-			<a href="<?php the_permalink(FORM_EVENT) ?>?act=add" class="c-link c-link--shy">Poster un événement</a>
+			<a href="<?php the_permalink(FORM_EVENT) ?>?act=add" class="c-link c-link--shy"><i class="fa fa-plus c-meta__meta__icon" aria-hidden="true"></i>Poster un événement</a>
 			<div class="l-filterList__buttons__submit">
 				<button type="reset" class="c-btn c-btn--reset js-reload is-none">Reset</button>
-				<button type="submit" id="submit-filters" class="c-btn">Filtrer</button>
+				<button type="submit" id="submit-filters" class="c-btn c-btn--ghost"><i class="fa fa-filter c-meta__meta__icon"></i>Filtrer</button>
 			</div>
 		</div>
 

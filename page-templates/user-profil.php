@@ -23,9 +23,9 @@ Template Name: Profil
 						<span class="t-meta u-show@large">
 						<?php ($adherent) ? print('Adhérent') : print('Utilisateur'); ?>
 						</span>
-						<h1 class="c-section-title">Mes informations</h1>
+						<h1 class="c-section-title"><span class="u-show@small">Mes </span>informations</h1>
 					</div>
-					<a href="<?php echo get_the_permalink(FORM_PROFIL); ?>" class="c-btn c-btn--ghost"><i class="fa fa-pencil c-meta__meta__icon" aria-hidden="true"></i>Modifier</a>
+					<a href="<?php echo get_the_permalink(FORM_PROFIL); ?>" class="c-btn c-btn--ghost"><i class="fa fa-pencil c-meta__meta__icon u-show@small" aria-hidden="true"></i>Modifier</a>
 				</header>
 
 				<div class="userDashboard__infos__body l-grid">
@@ -78,36 +78,27 @@ Template Name: Profil
 </section>
 
 <section class="l-row bg-white">
-	<div class="l-col">
+	<div class="l-col l-col--content">
 		<h2 class="c-section-title">Publier un contenu</h2>
 
 		<ul class="l-grid list-reset">
 			<li class="l-grid__col">
-				<a href="<?php echo get_the_permalink(FORM_OFFRE); ?>?act=add" class="c-tile c-tile--square c-tile--noBorder c-tile--bg">
-					<div class="c-tile__content">
-						<div class="c-tile__content__img"><i class="fa fa-briefcase"></i></div>
-						<span class="c-link">Offre d'emploi</span>
-						<span class="t-meta pdTop--s"><?php ($adherent) ? print('Gratuit') : print('Payant'); ?></span>
-					</div>
-				</a>
+				<div class="user-postLink">
+					<a href="<?php echo get_the_permalink(FORM_EVENT); ?>?act=add" class="c-btn c-btn--ghost"><i class="u-show@large mgRight--xs fa fa-calendar"></i>Évènement</a>
+					<span class="t-meta pdTop--s">Gratuit</span>
+				</div>
 			</li>
 			<li class="l-grid__col">
-				<a href="<?php echo get_the_permalink(FORM_EVENT); ?>?act=add" class="c-tile c-tile--square c-tile--noBorder c-tile--bg">
-					<div class="c-tile__content">
-						<div class="c-tile__content__img"><i class="fa fa-calendar"></i></div>
-						<span class="c-link">Évènement</span>
-						<span class="t-meta pdTop--s">Gratuit</span>
-					</div>
-				</a>
+				<div class="user-postLink">
+					<a href="<?php echo get_the_permalink(FORM_OFFRE); ?>?act=add" class="c-btn c-btn--ghost"><i class="u-show@large mgRight--xs fa fa-briefcase"></i>Offre <span class="u-show@xlarge">d'</span>emploi</a>
+					<span class="t-meta pdTop--s"><?php ($adherent) ? print('Gratuit') : print('Payant'); ?></span>
+				</div>
 			</li>
 			<li class="l-grid__col">
-				<a href="<?php echo get_the_permalink(FORM_FORMATION); ?>?act=add"  class="c-tile c-tile--square c-tile--noBorder c-tile--bg">
-					<div class="c-tile__content">
-						<div class="c-tile__content__img"><i class="fa fa-graduation-cap"></i></div>
-						<span class="c-link">Formation</span>
-						<span class="t-meta pdTop--s">Gratuit</span>
-					</div>
-				</a>
+				<div class="user-postLink">
+					<a href="<?php echo get_the_permalink(FORM_FORMATION); ?>?act=add" class="c-btn c-btn--ghost"><i class="u-show@large mgRight--xs fa fa-graduation-cap"></i>Formation</a>
+					<span class="t-meta pdTop--s">Gratuit</span>
+				</div>
 			</li>
 		</ul>
 	</div>

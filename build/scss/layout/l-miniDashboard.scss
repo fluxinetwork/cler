@@ -40,24 +40,21 @@ $break: $break--m;
 
 	@media screen and (max-width: $break) {
 		margin-right: $space--s;
+		margin-top: $space--s;
+
+		&:first-child,
+		.single-webinaires &:nth-child(2) {
+			margin-top: 0;
+		}
 
 		&:last-child {
 			margin-right: 0;
-		}
-
-		.single-concours & {
-			margin-top: $space--s;
-
-			&:first-child {
-				margin-top: 0;
-			}
 		}
 	}
 }
 
 .l-miniDashboard__row__element--btn {
 	flex: 1 0 100%;
-	margin-top: $space--s;
 
 	@media screen and (min-width: $break) {
 		margin-top: 0;

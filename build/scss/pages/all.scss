@@ -39,10 +39,9 @@
 	position: fixed;
 	display: none;
 	z-index: 2000;
-	bottom: $space--s;
+	bottom: $space--m;
 	right: $space--m;
 	@include transition;
-	transition-timing-function: $easeOutBack;
 
 	@media screen and (min-width: $break--l) {
 		display: block;
@@ -117,7 +116,7 @@
 			color: rgba(#fff, 0.5);
 
 			&::after {
-				content: '';
+				//content: '';
 				width: 5px;
 				height: 5px;
 				border-radius: 50%;

@@ -1,7 +1,7 @@
 <?php if( !is_user_logged_in() ): ?>
-	<div id="popin" class="l-overlay bg-main bg-main--grad">
+	<div id="popin" class="l-overlay bg-main--grad">
 		<div class="l-overlay__close">
-			<button class="c-btn c-btn--close js-popin-close"></button>
+			<button class="c-btnIcon c-btnIcon--controls js-popin-close"><i class="fa fa-times"></i></button>
 		</div>
 
 		<div class="l-overlay__content">

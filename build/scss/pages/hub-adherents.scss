@@ -34,6 +34,10 @@ $break2: $break--l;
 .adherents__main__links {
 	margin-top: $space--m;
 
+	.h3 {
+		font-family: $font-subh;
+	}
+
 	@media screen and (min-width: $break2) {
 		margin-top: auto;
 		padding-bottom: 25px;
@@ -70,7 +74,8 @@ $break2: $break--l;
 
 .adherents__aside__events__title {
 	@extend .h3;
-	font-weight: 700;
+	font-family: $font-h;
+	font-weight: 900;
 	border-bottom: 1px solid $c-dark;
 	padding-bottom: $space--s;
 }

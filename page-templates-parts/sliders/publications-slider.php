@@ -8,7 +8,7 @@
 	$query_publications = new WP_Query( $args_publications );
 ?>
 
-
+<?php if ( $query_publications->have_posts() ) : ?>
 <div class="l-card-slider">
 	<aside class="l-card-slider__aside">
 		<div class="l-card-slider__aside__title"><span class="c-section-title">Gérer vos publications</span></div>
@@ -25,23 +25,24 @@
 	<div class="l-card-slider__cards">
 		<ul class="l-card-slider__cards__row">
 
-			<?php if ( $query_publications->have_posts() ) : while ( $query_publications->have_posts() ) : $query_publications->the_post(); 
+			<?php
+				while ( $query_publications->have_posts() ) :
+					$query_publications->the_post(); 
+					$post_cpt = get_post_type( get_the_ID() );
 
-				$post_cpt = get_post_type( get_the_ID() );
-
-				if( $post_cpt == 'offres-emploi'):
-					$mod_post_url = get_the_permalink(FORM_OFFRE).'?act=mod&amp;idp='.get_the_ID();
-					$cpt_label = 'Offre d\'emploi';
-				elseif($post_cpt == 'evenements'):
-					$mod_post_url = get_the_permalink(FORM_EVENT).'?act=mod&amp;idp='.get_the_ID();
-					$cpt_label = 'Evénement';
-				elseif($post_cpt == 'formations'):
-					$mod_post_url = get_the_permalink(FORM_FORMATION).'?act=mod&amp;idp='.get_the_ID();
-					$cpt_label = 'Formation';
-				endif;
+					if( $post_cpt == 'offres-emploi'):
+						$mod_post_url = get_the_permalink(FORM_OFFRE).'?act=mod&amp;idp='.get_the_ID();
+						$cpt_label = 'Offre d\'emploi';
+					elseif($post_cpt == 'evenements'):
+						$mod_post_url = get_the_permalink(FORM_EVENT).'?act=mod&amp;idp='.get_the_ID();
+						$cpt_label = 'Evénement';
+					elseif($post_cpt == 'formations'):
+						$mod_post_url = get_the_permalink(FORM_FORMATION).'?act=mod&amp;idp='.get_the_ID();
+						$cpt_label = 'Formation';
+					endif;
 			?>
 
-				<li id="js-idp-<?php echo get_the_ID(); ?>" class="l-card-slider__cards__row__col u-show@med">
+				<li id="js-idp-<?php echo get_the_ID(); ?>" class="l-card-slider__cards__row__col">
 					
 					<article class="c-card c-card--user">
 						<header class="c-card__header">
@@ -49,18 +50,20 @@
 							<a title="Supprimer la publication" href="#" class="js-del-post c-card__header__tag" data-idp="<?php echo get_the_ID(); ?>" data-toky="<?php echo mt_rand(0,9999); ?>" data-title="<?php echo get_the_title (); ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
 							<h5 class="c-card__header__cat"><?php echo $cpt_label; ?></h5>
 						</header>
+						<a href="<?php echo get_the_permalink(get_the_ID()); ?>" class="c-card__bodyLink">
 						<div class="c-card__body">
 							<span class="t-meta"></span>
 							<h1 class="c-card__body__title"><?php the_title(); ?></h1>
 						</div>
 						<footer class="c-card__footer">
-							<a href="<?php echo get_the_permalink(get_the_ID()); ?>" target="_blank"><span class="c-link c-link--more">Voir la publication</span></a>
+							<span class="c-link c-link--more">Voir la publication</span>
 						</footer>
+						</a>
 					</article>
 
 				</li>
 
-			<?php endwhile; endif; wp_reset_postdata(); ?>
+			<?php endwhile;?>
 
 			<li class="l-card-slider__cards__row__col u-show@med">
 				<a href="<?php echo get_the_permalink(FORM_OFFRE); ?>?act=add" class="c-ghostCard">
@@ -89,3 +92,4 @@
 
 	<?php get_template_part( 'page-templates-parts/sliders/controls' ); ?>
 </div>
+<?php endif; wp_reset_postdata(); ?>

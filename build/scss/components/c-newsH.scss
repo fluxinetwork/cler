@@ -21,7 +21,7 @@ $break: $break--m;
 	flex: none;
 	width: 180px;
 	height: 120px;
-	@include bg-cover();
+	@include bg_cover();
 	border-radius: $radius;
 	background-color: $c-dark;
 

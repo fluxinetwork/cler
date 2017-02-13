@@ -45,6 +45,7 @@
 //=============================================================== HEADER
 
 .c-card__header {
+	position: relative;
 	display: none;
 	min-width: 80px;
 	background-color: $c-dark;
@@ -52,19 +53,43 @@
 	background-position: center;
 	border-radius: $radius 0 0 $radius;
 	color: #fff;
+	
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		display: block;
+		top: $space--m;
+		height: 7px;
+		z-index: 10;
 
-	.c-card--contact & {
-		background-image: url("../img/jane.jpg");
+		.bg-main &,
+		.bg-main--grad & {
+			background-color: $c-main !important;
+		}
+	}
+
+	&::before {
+		border-radius: 0 100px 100px 0;
+		left: 0;
+		width: 80px;
+	}
+
+	&::after {
+		border-radius: 100px 0 0 100px;
+		right: 0;
+		width: 170px;
 	}
 
 	.c-card--emploi &,
 	.c-card--user & {
 		flex-wrap: wrap;
 		background-image: none;
-	}
 
-	.c-card--user & {
-		//background-color: $c-valid;
+		&::before,
+		&::after {
+			display: none;
+		}
 	}
 
 	.c-form & {
@@ -156,6 +181,14 @@
 
 //================================================================= BODY
 
+.c-card__bodyLink {
+	flex: 1;
+
+	&:hover .c-link::before {
+		transform: scaleX(0.7);
+	}
+}
+
 .c-card__body {
 	padding: $space--xs $space--s;
 	flex: 1;
@@ -168,8 +201,7 @@
 
 .c-card__body__title {
 	@extend .h3;
-	line-height: 1.3;
-	//font-family: $font-subh;
+	line-height: 1.2;
 
 	@media screen and (min-width: $break--m) {
 		margin-top: $space--xs*0.5;
@@ -186,6 +218,11 @@
 
 	.c-form & {
 		display: block;
+	}
+
+	.c-card--user & {
+		position: absolute;
+		bottom: 0;
 	}
 
 	@media screen and (min-width: $break--m) {

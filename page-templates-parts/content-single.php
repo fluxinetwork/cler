@@ -26,7 +26,6 @@
 					echo '<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i>'.$cat_name.'</span>';
 				endif;
 				?>
-				
 			</div>
 
 			<?php

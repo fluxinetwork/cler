@@ -87,3 +87,63 @@ $break: $break--l;
 		margin-left: $gutter;
 	}
 }
+
+
+//============================================================== PUBLIER
+
+.user-postLink {
+	@include flex (center, true);
+
+	&:hover {
+		.user-postLink__icon {
+
+			&::before {
+				background-color: $c-main;
+				transform: scale(0.9);
+			}
+
+			.fa {
+				color: #fff;
+
+				&:first-child {
+					transform: scale(0);
+				}
+
+				&:last-child {
+					transform: scale(1);
+				}
+			}
+		}
+	}
+}
+
+.user-postLink__icon {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	margin-bottom: $space--m;
+	@include flex(center);
+	flex: none;
+
+	&::before {
+		@include pseudo_bg($c-light);
+		@include transition();
+		border-radius: 50%;
+	}
+
+	@media screen and(min-width: $break) {
+		width: 160px;
+		height: 160px;
+	}
+
+	.fa {
+		position: absolute;
+		@extend .h2;
+		color: $c-main;
+		@include transition();
+
+		&:last-child {
+			transform: scale(0);
+		}
+	}
+}

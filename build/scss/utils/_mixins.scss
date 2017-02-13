@@ -228,6 +228,24 @@
 }
 
 
+// PSEUDO ROUND
+//
+// Use in :before or :after
+// Parent element should be positioned
+
+@mixin pseudo_round($size: null) {
+	content: '';
+	position: absolute;
+	display: block;
+	border-radius: 50%;
+
+	@if ($size) {
+		width: $size;
+		height: $size;
+	}
+}
+
+
 // MATERIAL SHADOW
 //
 // Make background with :after and fancy shadow with :before
@@ -256,7 +274,7 @@
 
 // BACKGROUND COVER 
 
-@mixin bg-cover($img: false) {
+@mixin bg_cover($img: false) {
 	@if ($img) {
 		background-image: url(#{$img});
 	}

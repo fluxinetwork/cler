@@ -10,7 +10,7 @@
 	<?php else: ?>
 		<a href="<?php echo home_url(); ?>" class="button">Accueil</a>
 	<?php endif; ?>
-	<p class="h3">Vous n'avez pas la possibilité d'effectuer cette action. Contactez-nous si le problème persiste.</p>
+	<p class="h3 font-subh">Vous n'avez pas la possibilité d'effectuer cette action. Contactez-nous si le problème persiste.</p>
 </div>
 
 

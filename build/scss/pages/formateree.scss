@@ -1,0 +1,88 @@
+/*======================================================================*\
+==========================================================================
+
+//	FORMATEREE
+
+==========================================================================
+\*======================================================================*/
+
+$c-formateree: #338699;
+
+.l-header {
+	position: relative;
+	background: #fff;
+
+	> * {
+		position: relative;
+	}
+
+	&::before {
+		@include pseudo_bg(#fff);
+		left: -10%;
+		width: 120%;
+		z-index: 0;
+		box-shadow: 0 -200px 50px rgba($c-dark, 0.1);
+	}
+}
+
+.formateree {
+
+	// PAGE INTRO
+
+	.bg-pattern-formateree {
+		background-image: url("../img/pattern-formateree.jpg");
+	}
+
+	
+
+	// SLIDER
+
+	.bg-slider-formateree {
+		background-image: radial-grad($c-formateree, 50%);
+	}
+	.c-link {
+		color: $c-dark;
+
+		&::after {
+			background-color: $c-dark;
+		}
+	}
+	.c-card__header {
+		&::before, &::after {
+			background-color: $c-formateree;
+		}
+	}
+	.c-btnIcon--controls {
+		color: $c-formateree;
+	}
+	.c-ghostCard {
+		box-shadow: none;
+	}
+	.formateree-photo {
+		width: 100%;
+	}
+	
+
+	// MAP
+	
+	.map__holder {
+		&::before {
+			@include pseudo_bg($c-formateree);
+			height: 80%;
+			z-index: -1;
+		}
+
+		.c-section-title {
+			@extend .l-col;
+			@extend .l-col--content;
+			padding-bottom: $space--m;
+			color: #fff;
+		}
+	}
+
+	.map-formateree {
+		max-width: 90%;
+		margin: 0 auto;
+	}
+	
+}

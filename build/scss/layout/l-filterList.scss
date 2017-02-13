@@ -13,8 +13,7 @@
 	max-width: $maxW;
 	padding: $space--s;
 	margin: -$space--xs auto $space--xs auto;
-	//background-color: rgba($c-dark, 0.05);
-	@include bg_with_shadow($c-neutral);
+	@include bg_with_shadow();
 
 	&::after {
 		border-radius: $radius;
@@ -28,17 +27,12 @@
 	@media screen and (min-width: $break--l) {		
 		&--small {
 			width: $contentW;
-			//transform: translateX(-20%);
 		}
 	}
 
 
 	@media screen and (min-width: $break--xl) {		
 		margin-top: -$space--l;
-	}
-
-	.c-link {
-		//color: #fff;
 	}
 }
 
