@@ -5,8 +5,11 @@
  * add_image_size('name', width, height, crop);
  */
 function add_img_sizes() {
+	add_image_size('publi', 180, 230, true);
 	add_image_size('card--rss', 260, 175, true);
-	add_image_size('portrait', 180, 200, true);
+	add_image_size('thumb2x', 360, 360, true);
+	add_image_size('single', 640, 360, true);
+	add_image_size('single2x', 1280, 720, true);
 }
 add_action('after_setup_theme', 'add_img_sizes');
 

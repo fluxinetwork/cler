@@ -85,7 +85,11 @@
 	.c-card--user & {
 		flex-wrap: wrap;
 		background-image: none;
+	}
 
+	.c-card--emploi &,
+	.c-card--user &,
+	.c-form--popin & {
 		&::before,
 		&::after {
 			display: none;

@@ -48,7 +48,7 @@ Template Name: Tous les concours
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
 		<h1><?php echo $page_title; ?></h1>
-		<h2 class="l-header__excerpt"><?php echo $fluxi_resum; ?></h2>
+		<?php get_template_part( 'page-templates-parts/content', 'intro'); ?>
 	</header>
 </div>
 

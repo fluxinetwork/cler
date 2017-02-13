@@ -20,7 +20,7 @@ Template Name: Tous les webinaires
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
 		<h1><?php echo get_the_title(); ?></h1>
-		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum'); ?></h2>
+		<?php get_template_part( 'page-templates-parts/content', 'intro'); ?>
 	</header>
 </div>
 

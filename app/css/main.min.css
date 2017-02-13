@@ -2360,7 +2360,7 @@ body {
           flex-wrap: wrap;
   background-image: none;
 }
-.c-card--emploi .c-card__header::before, .c-card--emploi .c-card__header::after, .c-card--user .c-card__header::before, .c-card--user .c-card__header::after {
+.c-card--emploi .c-card__header::before, .c-card--emploi .c-card__header::after, .c-card--user .c-card__header::before, .c-card--user .c-card__header::after, .c-form--popin .c-card__header::before, .c-form--popin .c-card__header::after {
   display: none;
 }
 .c-form .c-card__header {
@@ -4865,14 +4865,17 @@ a.c-meta__meta:hover {
 
 ==========================================================================
 \*======================================================================*/
-.l-header {
+.formateree .bg-pattern-formateree {
+  background-image: url("../img/pattern-formateree.jpg");
+}
+.formateree .l-header {
   position: relative;
   background: #fff;
 }
-.l-header > * {
+.formateree .l-header > * {
   position: relative;
 }
-.l-header::before {
+.formateree .l-header::before {
   content: '';
   position: absolute;
   top: 0;
@@ -4883,11 +4886,6 @@ a.c-meta__meta:hover {
   left: -10%;
   width: 120%;
   z-index: 0;
-  box-shadow: 0 -200px 50px rgba(0, 17, 53, 0.1);
-}
-
-.formateree .bg-pattern-formateree {
-  background-image: url("../img/pattern-formateree.jpg");
 }
 .formateree .bg-slider-formateree {
   background-image: radial-gradient(circle, #3997ac, #338699 100%);
