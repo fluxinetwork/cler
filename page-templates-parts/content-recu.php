@@ -99,7 +99,7 @@
 
 		elseif( $type_recu == 'recu_emploi' ):
 
-			$recu = '<h2>Montreuil, le '.$today.'</h2>
+			$recu = '<h2>Montreuil, le '.$date_paiement.'</h2>
 
                   <h3 class="t-fw--700"><strong>Destinataire :</strong><br>
                   '.$nom_structure.'<br>

@@ -18,16 +18,13 @@ function initWebinairesForm(){
     $(formID+' button[type=submit]').prop('disabled', false);
     $formObj = $('#form-participation-webinaire');
 
-
     // Add nom structure
     $('input[name=adherent_cler]').click(function() {
     	if(this.checked){
-		    $('.js-nom-structure').toggleClass('is-visible');
-		    // $(formID+' button[type=submit]').prop('disabled', false).removeClass('hide');
+		    $('.js-nom-structure').slideToggle();		    
 		}else{
-			$('.js-nom-structure').toggleClass('is-visible');
-			$('input[name=nom_structure]').val('');
-			//$(formID+' button[type=submit]').prop('disabled', true).addClass('hide');
+			$('.js-nom-structure').slideToggle();
+			$('input[name=nom_structure]').val('');			
 		}
 	});
 

@@ -22,12 +22,11 @@
 
 					($count_recus==4) ? print('<div style="display:none;">') : '';
 
-					$output = '<a href="'.get_the_permalink().'">';					
-					$output .= get_the_title();
-					$output .= '</a>';
-					$output .= '</li>';
+					echo '<a class="c-downloadItem__title" href="'.get_the_permalink().'">';					
+					echo get_the_title();
+					echo '</a>';
 
-					echo $output;
+					($count_recus<$query_recus->post_count) ? print('<br>') : '';
 
 					($count_recus==$query_recus->post_count) ? print('</div>') : '';
 

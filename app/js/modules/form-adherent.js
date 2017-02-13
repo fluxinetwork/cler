@@ -20,9 +20,9 @@ function initAdherentForm(){
     // Add secondary contact
     $('input[name=add_contact]').click(function() {
     	if($('input[name=add_contact]').is(':checked')){
-		    $('.js-contact2').toggleClass('is-visible');
+		    $('.js-contact2').slideToggle();
 		}else{
-			$('.js-contact2').toggleClass('is-visible');
+			$('.js-contact2').slideToggle();
 
 			$('input[name=nom_contact2]').val('').removeClass('has-content');
 			$('input[name=prenom_contact2]').val('').removeClass('has-content');
@@ -34,15 +34,15 @@ function initAdherentForm(){
 	});
 
 	if($('input[name=add_contact]').is(':checked')){
-		$('.js-add-conatct').triggerHandler('click');
+		$('input[name=add_contact]').triggerHandler('click');
 	}
 
 	// Add TEPOS fields
 	$('input#reseaux_cler_1').click(function() {
     	if(this.checked){
-		    $('.js-tepos').toggleClass('is-visible');
+		    $('.js-tepos').slideToggle();
 		}else{
-			$('.js-tepos').toggleClass('is-visible');
+			$('.js-tepos').slideToggle();
 			// reset
 			$('input[name=nom_elu]').val('').removeClass('has-content');
 			$('input[name=prenom_elu]').val('').removeClass('has-content');
@@ -57,13 +57,6 @@ function initAdherentForm(){
 	if($('input#reseaux_cler_1').is(':checked')){
 		$('input#reseaux_cler_1').triggerHandler('click');
 	}
-
-    // Toggle mode d'emploi
-
-    $('.js-toggle-mode-emploi').on('click', function(){
-        $('.js-mode-emploi').toggleClass('is-visible');
-    })
-
 
     // Validation
     $.validate({

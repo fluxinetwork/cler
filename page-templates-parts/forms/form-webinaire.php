@@ -42,7 +42,7 @@
 			</label>							 
 	    </div>		   
 
-		<div class="is-accordeon js-nom-structure">
+		<div class="js-nom-structure" style="display:none">
 			<div class="c-form__fieldset__row">
 				<label class="c-form__label" for="nom_structure">Nom de la structure<span class="i-required">•</span></label>		   		
 		    	<input type="text" class="c-form__input" name="nom_structure" id="nom_structure" value="<?php echo $nom_structure; ?>" placeholder="" data-validation="required" data-validation-depends-on="adherent_cler">		    	
