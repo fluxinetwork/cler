@@ -3,6 +3,22 @@
  * The template part for displaying the content
  */
 ?>
+<style type="text/css" media="print">
+	.is-hide-print, .wrap-navBar{
+		display: none;
+	}
+	.is-none{
+		display: block !important;
+	}
+	a{
+		text-decoration: none;
+		box-shadow:inherit !important;
+	}
+	.recu__contact{
+		margin-top: 2rem;
+	}
+</style>
+
 <?php 
 	$type_recu = get_field('type_recu');
 	$statut_paiement = get_field('statut_paiement');
@@ -55,25 +71,30 @@
 			  Montant de l\'adhésion : '.$montant.',00 €
 			</p>
 
-			<a href="javascript:window.print()" class="c-btn js-print">Imprimer le reçu</a>
+			<div class="is-hide-print">
 
-			<h2>Cher membre</h2>
-			
-			<p>Nous avons reçu votre paiement pour votre adhésion ou ré-adhésion au CLER – Réseau pour la transition énergétique et nous vous en remercions. Votre adhésion ou ré-adhésion pour l\'année '.$annee_cotisation.' est désormais enregistrée. Vous trouverez ci-dessous le reçu de votre cotisation.</p>			
+				<a href="javascript:window.print()" class="c-btn js-print">Imprimer le reçu</a>
 
-			<h3 class="t-fw--700">Nous avons le plaisir de vous compter parmi les membres adhérents de notre association.</h3>
-			<h3 class="t-fw--700">Dès à présent, vous pouvez :</h3>
+				<h2>Cher membre</h2>
+				
+				<p>Nous avons reçu votre paiement pour votre adhésion ou ré-adhésion au CLER – Réseau pour la transition énergétique et nous vous en remercions. Votre adhésion ou ré-adhésion pour l\'année '.$annee_cotisation.' est désormais enregistrée. Vous trouverez ci-dessous le reçu de votre cotisation.</p>			
 
-			<ul class="c-list">
-			  <li class="c-list__item">contribuer à construire l\'action et les propositions du réseau et diffuser nos propositions pour mettre en œuvre ensemble la transition énergétique aux niveaux local, national et européen</li>
-			  <li class="c-list__item">recevoir notre revue trimestrielle CLER Infos</li>
-			  <li class="c-list__item">échanger sur une liste de discussion modérée réunissant plus de 500 contributeurs professionnels</li>
-			  <li class="c-list__item">avoir accès au plus grand centre de documentation français consacré à la transition énergétique ainsi qu’à sa revue de presse exhaustive sous format électronique : Doc&CLER</li>
-			  <li class="c-list__item">publier gratuitement vos offres d\'emplois sur le site Internet du CLER</li>
-			  <li class="c-list__item">participer à nos événements : assemblée générale, formations, webinaires, salons, conférences et groupes de travail</li>
-			</ul>
+				<h3 class="t-fw--700">Nous avons le plaisir de vous compter parmi les membres adhérents de notre association.</h3>
+				<h3 class="t-fw--700">Dès à présent, vous pouvez :</h3>
 
-			<p class="">Pour toute question relative à votre adhésion, vous pouvez contacter Alexis Monteil au 01 55 86 80 09.</p>';
+				<ul class="c-list">
+				  <li class="c-list__item">contribuer à construire l\'action et les propositions du réseau et diffuser nos propositions pour mettre en œuvre ensemble la transition énergétique aux niveaux local, national et européen</li>
+				  <li class="c-list__item">recevoir notre revue trimestrielle CLER Infos</li>
+				  <li class="c-list__item">échanger sur une liste de discussion modérée réunissant plus de 500 contributeurs professionnels</li>
+				  <li class="c-list__item">avoir accès au plus grand centre de documentation français consacré à la transition énergétique ainsi qu’à sa revue de presse exhaustive sous format électronique : Doc&CLER</li>
+				  <li class="c-list__item">publier gratuitement vos offres d\'emplois sur le site Internet du CLER</li>
+				  <li class="c-list__item">participer à nos événements : assemblée générale, formations, webinaires, salons, conférences et groupes de travail</li>
+				</ul>
+
+				<p>Pour toute question relative à votre adhésion, vous pouvez contacter Alexis Monteil au 01 55 86 80 09.</p>
+
+			</div>
+			<div class="recu__contact is-none">'.get_footer_mail().'</div>';
 
 
 		elseif( $type_recu == 'recu_emploi' ):
@@ -93,7 +114,8 @@
                     Pour la publication "'.$publi_title.'" sur le site du CLER – Réseau pour la transition énergétique (Association loi 1901 non assujettie à la TVA) acquitté le '.$date_paiement.''.$infos_paiement.' <br><br>
 
                     Montant : '.$montant.',00 €
-                  </p>';
+                  </p>
+                  <div class="recu__contact is-none">'.get_footer_mail().'</div>';
 		
 		endif;	
 	

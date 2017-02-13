@@ -664,7 +664,7 @@ function get_footer_mail(){
           <tr style="margin:0;padding:0;">
             <td colspan="2" style="margin:0;padding:0;"><p style="text-align:center; font-size:12px;line-height:16px;margin:15px 0 30px;padding:0;font-family: gotham,helvetica,arial,sans-serif;">Association loi 1901 • SIRET : 352 400 436 00049 • Code APE : 7022 Z</p></td>
           </tr>
-          <tr style="margin:0;padding:0;">
+          <tr style="margin:0;padding:0;" class="is-hide-print">
             <td colspan="2" style="margin:0;padding:0;">
               <p style="text-align:center; line-height:18px;font-family: gotham,helvetica,arial,sans-serif; font-size:13px;"><a style="border-radius: 100px;letter-spacing: 1px;text-transform: uppercase;background-color: #00c15f;color: white;cursor: pointer;font-weight: bold;display: inline-block;padding:20px 30px; text-decoration:none;" href="https://www.cler.org" target="_blank">www.cler.org</a></p>
             </td>

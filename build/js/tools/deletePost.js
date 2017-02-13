@@ -26,7 +26,7 @@ function initFluxiDelPost(){
 
             var theIdp = $button.data('idp');
             var ajaxAction = 'fluxi_delete_post';
-            $button.html('<i class="spinner"></i>');
+            $button.html('<i class=”fa fa-circle-o-notch fa-spin js-spinner”></i>');
             $('.l-card-slider .js-notify').html('');
 
             $.ajax({

@@ -24,7 +24,7 @@ function initaddPay(){
 	$formObj.submit(function (e) {
 
 		e.preventDefault();
-		$formObj.find('button[type=submit]').prop('disabled', true).html('<i class="spinner"></i> En cours ...'); // On désactive le bouton submit
+		$formObj.find('button[type=submit]').prop('disabled', true).html('<i class=”fa fa-circle-o-notch fa-spin js-spinner”></i> En cours ...'); // On désactive le bouton submit
 
 		Stripe.card.createToken($formObj, function (status, response) {
 

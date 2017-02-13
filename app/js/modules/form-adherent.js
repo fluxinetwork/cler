@@ -73,7 +73,7 @@ function initAdherentForm(){
         validateOnBlur : true,
         modules : 'logic',
         onError : function($form) {
-            $form.find('button[type=submit]').prop('disabled', false).find('.spinner').remove();
+            $form.find('button[type=submit]').prop('disabled', false).find('.js-spinner').remove();
         },
         onSuccess : function($form) {
 
@@ -85,7 +85,7 @@ function initAdherentForm(){
                 url: ajax_object.ajax_url,
                 data: 'action=fluxi_manage_adherent&'+params,
                 success: function(data){
-                    $formObj.find('button[type=submit] .spinner').remove();
+                    $formObj.find('button[type=submit] .js-spinner').remove();
 
                     if(data[0].validation == 'error'){
                         $formObj.find('button[type=submit]').prop('disabled', false);
@@ -98,7 +98,7 @@ function initAdherentForm(){
                 },
                 error : function(jqXHR, textStatus, errorThrown) {
                     //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
-                    $formObj.find('button[type=submit]').prop('disabled', false).find('.spinner').remove();
+                    $formObj.find('button[type=submit]').prop('disabled', false).find('.js-spinner').remove();
                 }
 
             });
@@ -106,7 +106,7 @@ function initAdherentForm(){
         },
         onValidate : function($form) {
             $formObj.find('.js-notify').html('');
-            $formObj.find('button[type=submit]').prop('disabled', true).prepend('<i class="spinner"></i>');
+            $formObj.find('button[type=submit]').prop('disabled', true).prepend('<i class=”fa fa-circle-o-notch fa-spin js-spinner”></i>');
         }
     });
 

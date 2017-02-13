@@ -50,7 +50,7 @@ function initVoteConcours(){
 
         if( user_r_v != '42' ) {
 
-        	$button.html('<i class="spinner"></i> En cours ...').prop('disabled', true);
+        	$button.html('<i class=”fa fa-circle-o-notch fa-spin js-spinner”></i> En cours ...').prop('disabled', true);
 
 	        $.ajax({
 	            type: 'POST',
