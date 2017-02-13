@@ -95,7 +95,7 @@ function fluxi_manage_emploi(){
 						}
 
 						// Notification mail admin
-						notify_by_mail (array(CONTACTS_EMPLOI_1, CONTACTS_EMPLOI_2),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Offre d\'emploi en attente de validation',false,'<h2>Nouvelle offre d\'emploi ajoutée</h2><p>' . $current_user->user_firstname . ' vient d\'ajouter l\'offre <strong>"' .  $title . '"</strong>.<br>Vous devez la publier pour la rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#86bd4c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'offre</a></p>');
+						notify_by_mail (array(CONTACTS_EMPLOI_1),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Offre d\'emploi en attente de validation',false,'<h2>Nouvelle offre d\'emploi ajoutée</h2><p>' . $current_user->user_firstname . ' vient d\'ajouter l\'offre <strong>"' .  $title . '"</strong>.<br>Vous devez la publier pour la rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#86bd4c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'offre</a></p>');
 
 						// Notification mail contact
 						$mail_new_offre = array(get_footer_mail(), $redirect_slug, $is_adherent);
