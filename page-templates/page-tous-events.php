@@ -84,10 +84,18 @@ Template Name: Toutes les événements
 	<?php
 		$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 		$args_filtered = array(
-			'post_type' => 'evenements',
-			'post_status' => 'publish',
-			'posts_per_page' => 5,
-			'paged' => $paged
+			'post_type' 	=> 'evenements',
+			'post_status' 	=> 'publish',
+			'paged' 		=> $paged,
+			'meta_key'		=> 'date_event',
+			'orderby'		=> 'meta_value_num',
+			'order'			=> 'ASC',
+			'meta_query' => array(
+			array(
+		        'key'		=> 'date_event',
+		        'compare'	=> '>=',
+		        'value'		=> date('Ymd'),
+		    ))
  		);
 		$query_filtered = new WP_Query( $args_filtered );
 

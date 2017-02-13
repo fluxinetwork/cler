@@ -31,7 +31,7 @@ function initFluxiFilterPosts(){
             label = 'publication';
         }
 
-        $formObj.find('button[type=submit]').html('<span class="spinner"></span> Chargement');
+        $formObj.find('button[type=submit]').html('<i class="spinner"></i> Chargement');
         $results.prev().html('');
 
         $.ajax({
@@ -42,7 +42,7 @@ function initFluxiFilterPosts(){
             success: function(data){
 
                 if(data[0].validation == 'error'){
-                    $formObj.find('button[type=submit]').html('Filtrer');
+                    $formObj.find('button[type=submit]').html('<i class="fa fa-filter c-meta__meta__icon"></i> Filtrer');
                 }else{
                     if(data[0].total > 0){
 
@@ -68,11 +68,11 @@ function initFluxiFilterPosts(){
                         $results.prev().html('<p class="mgTop--s"><strong>'+data[0].message+'</strong></p>');
                     }
                 }
-                $formObj.find('button[type=submit]').html('Filtrer');
+                //$formObj.find('button[type=submit]').html('<i class="fa fa-filter c-meta__meta__icon"></i> Filtrer');
             },
             error : function(jqXHR, textStatus, errorThrown) {
                 //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
-                $formObj.find('button[type=submit]').html('Filtrer');
+                $formObj.find('button[type=submit]').html('<i class="fa fa-filter c-meta__meta__icon"></i> Filtrer');
             }
 
         });
@@ -117,7 +117,7 @@ function initFluxiAutoFilterPosts(){
             label = 'publication';
         }
 
-        $formObj.find('.js-loader').html('<span class="c-btn"><span class="spinner"></span></span>');
+        $formObj.find('.js-loader').html('<span class="c-btn"><i class="spinner"></i></span>');
         $results.prev().html('');
 
         $.ajax({

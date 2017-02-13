@@ -33,12 +33,12 @@ function slider() {
 		var posL = parseInt($slides.css('left'));
 		slider_in_motion = true;
 
-		if( $this.attr('data-direction') == 'prev' && step > 0 ) {
+		if( $this.data('direction') == 'prev' && step > 0 ) {
 			$slides.css('left', posL+colW)
 			$slides.children().eq(step-1).toggleClass('is-off');
 			$this.parent().data('step', step-1);
 
-		} else if( $this.attr('data-direction') == 'next' && step < nbSlides ) {
+		} else if( $this.data('direction') == 'next' && step < nbSlides ) {
 			$slides.children().eq(step).toggleClass('is-off');
 			$slides.css('left', posL-colW);
 			$this.parent().data('step', step+1);

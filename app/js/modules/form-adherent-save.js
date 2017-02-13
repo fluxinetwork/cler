@@ -100,7 +100,7 @@ function initAdherentForm(){
         },
         onValidate : function($form) {
             $formObj.find('.notify').html('');
-            $formObj.find('button[type=submit]').prop('disabled', true).prepend('<i class=”fa fa-circle-o-notch fa-spin js-spinner”></i>');
+            $formObj.find('button[type=submit]').prop('disabled', true).prepend('<i class="fa fa-circle-o-notch fa-spin js-spinner"></i>');
         }
     });
 

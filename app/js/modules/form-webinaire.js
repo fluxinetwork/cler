@@ -40,7 +40,7 @@ function initWebinairesForm(){
         validateOnBlur : true,
         modules : 'logic',
         onError : function($form) {
-            $form.find('button[type=submit]').prop('disabled', false).find('.js-spinner').remove();
+            $form.find('button[type=submit]').prop('disabled', false).find('.spinner').remove();
         },
         onSuccess : function($form) {
 
@@ -52,7 +52,7 @@ function initWebinairesForm(){
                 url: ajax_object.ajax_url,
                 data: 'action=fluxi_participation_webinaire&'+params,
                 success: function(data){
-                    $formObj.find('button[type=submit] .js-spinner').remove();
+                    $formObj.find('button[type=submit] .spinner').remove();
 
                     if(data[0].validation == 'error'){
                         $formObj.find('button[type=submit]').prop('disabled', false);
@@ -64,7 +64,7 @@ function initWebinairesForm(){
                 },
                 error : function(jqXHR, textStatus, errorThrown) {
                     //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
-                    $formObj.find('button[type=submit]').prop('disabled', false).find('.js-spinner').remove();
+                    $formObj.find('button[type=submit]').prop('disabled', false).find('.spinner').remove();
                 }
 
             });
@@ -72,7 +72,7 @@ function initWebinairesForm(){
         },
         onValidate : function($form) {
             $formObj.find('.js-notify').html('');
-            $formObj.find('button[type=submit]').prop('disabled', true).prepend('<i class=”fa fa-circle-o-notch fa-spin js-spinner”></i>');
+            $formObj.find('button[type=submit]').prop('disabled', true).prepend('<i class="spinner"></i>');
         }
     });
    

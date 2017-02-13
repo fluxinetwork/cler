@@ -1909,17 +1909,20 @@ body {
   height: 3rem;
 }
 
-.form button[type="submit"] .spinner {
+.c-btn[type="submit"] {
   display: inline-block;
-  margin-right: 0.5rem;
   vertical-align: middle;
 }
-.form button[type="submit"] .spinner:before, .form button[type="submit"] .spinner:after {
+
+.c-btn[type="submit"] .spinner:before, .c-btn[type="submit"] .spinner:after {
   height: 2rem;
   width: 2rem;
 }
-.form button[type="submit"] .spinner:before {
-  border-width: 0.4rem;
+.c-btn[type="submit"] .spinner:before {
+  border-top: 0.4rem solid rgba(255, 255, 255, 0.2);
+  border-right: 0.4rem solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0.4rem solid rgba(255, 255, 255, 0.2);
+  border-left: 0.4rem solid white;
 }
 
 .spinner.bg-spin {

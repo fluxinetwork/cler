@@ -29,18 +29,20 @@
   }
 
 }
-
-.form button[type="submit"] .spinner{
-	display: inline-block;
-    margin-right: 0.5rem;
-    vertical-align: middle;
-
+.c-btn[type="submit"]{
+  display: inline-block;
+  vertical-align: middle;
+}
+.c-btn[type="submit"] .spinner{
 	&:before, &:after{	
     	height: 2rem;
     	width: 2rem;
 	}
 	&:before{
-		border-width: 0.4rem;	
+    border-top: 0.4rem solid rgba(white,0.2);
+    border-right: 0.4rem solid rgba(white,0.2);
+    border-bottom: 0.4rem solid rgba(white,0.2);
+    border-left: 0.4rem solid white;
 	}
 }
 

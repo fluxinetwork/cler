@@ -54,7 +54,7 @@ var FOO = {
             tabs();
             
             if ( $('.fitvid').length ) {
-                console.log('fitvid init + dailymotion');
+                //console.log('fitvid init + dailymotion');
                 $('.fitvid').fitVids({ customSelector: "iframe[src*='dailymotion.com']"});
             }
         }
@@ -213,7 +213,7 @@ function initFluxiDelPost(){
 
             var theIdp = $button.data('idp');
             var ajaxAction = 'fluxi_delete_post';
-            $button.html('<i class=”fa fa-circle-o-notch fa-spin js-spinner”></i>');
+            $button.html('<i class="spinner"></i>');
             $('.l-card-slider .js-notify').html('');
 
             $.ajax({
@@ -312,7 +312,7 @@ function initFluxiFilterPosts(){
             label = 'publication';
         }
 
-        $formObj.find('button[type=submit]').html('<span class="spinner"></span> Chargement');
+        $formObj.find('button[type=submit]').html('<i class="spinner"></i> Chargement');
         $results.prev().html('');
 
         $.ajax({
@@ -323,7 +323,7 @@ function initFluxiFilterPosts(){
             success: function(data){
 
                 if(data[0].validation == 'error'){
-                    $formObj.find('button[type=submit]').html('Filtrer');
+                    $formObj.find('button[type=submit]').html('<i class="fa fa-filter c-meta__meta__icon"></i> Filtrer');
                 }else{
                     if(data[0].total > 0){
 
@@ -349,11 +349,11 @@ function initFluxiFilterPosts(){
                         $results.prev().html('<p class="mgTop--s"><strong>'+data[0].message+'</strong></p>');
                     }
                 }
-                $formObj.find('button[type=submit]').html('Filtrer');
+                //$formObj.find('button[type=submit]').html('<i class="fa fa-filter c-meta__meta__icon"></i> Filtrer');
             },
             error : function(jqXHR, textStatus, errorThrown) {
                 //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
-                $formObj.find('button[type=submit]').html('Filtrer');
+                $formObj.find('button[type=submit]').html('<i class="fa fa-filter c-meta__meta__icon"></i> Filtrer');
             }
 
         });
@@ -398,7 +398,7 @@ function initFluxiAutoFilterPosts(){
             label = 'publication';
         }
 
-        $formObj.find('.js-loader').html('<span class="c-btn"><span class="spinner"></span></span>');
+        $formObj.find('.js-loader').html('<span class="c-btn"><i class="spinner"></i></span>');
         $results.prev().html('');
 
         $.ajax({
@@ -740,12 +740,12 @@ function slider() {
 		var posL = parseInt($slides.css('left'));
 		slider_in_motion = true;
 
-		if( $this.attr('data-direction') == 'prev' && step > 0 ) {
+		if( $this.data('direction') == 'prev' && step > 0 ) {
 			$slides.css('left', posL+colW)
 			$slides.children().eq(step-1).toggleClass('is-off');
 			$this.parent().data('step', step-1);
 
-		} else if( $this.attr('data-direction') == 'next' && step < nbSlides ) {
+		} else if( $this.data('direction') == 'next' && step < nbSlides ) {
 			$slides.children().eq(step).toggleClass('is-off');
 			$slides.css('left', posL-colW);
 			$this.parent().data('step', step+1);
