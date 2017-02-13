@@ -1,10 +1,6 @@
 <?php
-
-global $isMobile;
-($isMobile) ? $img_size = 'thumb2x' : $img_size = 'thumbnail';
-
 $post_img_id = get_field('main_image');
-$post_img_array = wp_get_attachment_image_src($post_img_id, $img_size, true);
+$post_img_array = wp_get_attachment_image_src($post_img_id, 'thumb2x', true);
 $post_img_url = $post_img_array[0];	
 
 $permalink = get_permalink();

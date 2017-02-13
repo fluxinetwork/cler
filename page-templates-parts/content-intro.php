@@ -1,6 +1,5 @@
 <?php
 if (get_field('add_image') == 1) {
-
 	$post_img_id = get_field('main_image');
 
 	if ($post_img_id) {

@@ -31,8 +31,10 @@ $break: $break--m;
 		}
 	}
 
-	p {
+	p,
+	.t-list {
 		@extend .h5;
+		font-family: $font-subh;
 
 		+ .c-form__label:not(.c-form__label--checkbox) {
 			padding-top: $space--xs;
@@ -226,6 +228,10 @@ $break: $break--m;
 	display: flex;
 	flex-wrap: wrap;
 	margin-top: $space--xs;
+
+	input[type="radio"] {
+		margin-right: $space--xs;
+	}
 }
 .c-form__label__checkbox {
 	position: relative;
@@ -235,10 +241,8 @@ $break: $break--m;
 }
 .c-form__label__txt {
 	flex: 1;
-	font-family: $font-h;
-	small {
-		font-weight: 400;
-	}
+	font-family: $font-subh;
+	font-weight: 400;
 }
 
 

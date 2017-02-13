@@ -103,6 +103,8 @@ Template Name: Toutes les actualités
 		if ( $query_filtered->have_posts() ) :
 			while ( $query_filtered->have_posts() ) :
 				$query_filtered->the_post();
+
+				global $post_img_url;
 				get_template_part( 'page-templates-parts/content', 'thumb' );
 
 				$permalink = get_permalink();

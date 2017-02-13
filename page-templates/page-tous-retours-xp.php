@@ -36,6 +36,7 @@ Template Name: Tous les retours d'experience
 				$date = get_the_date('d M Y');
 				$title = get_the_title();
 
+				global $post_img_url;
 				get_template_part( 'page-templates-parts/content', 'thumb' );
 
 				$categories = get_the_category();
@@ -48,7 +49,7 @@ Template Name: Tous les retours d'experience
 				$output = '<li class="l-postList__item">';
 				$output .= '<a href="'.$permalink.'">';
 				$output .= '<article class="c-newsH">';
-				$output .= '<div class="c-newsH__img" style="background-image:'.$post_img_url.'"></div>';
+				$output .= '<div class="c-newsH__img" style="background-image:url('.$post_img_url.')"></div>';
 				$output .= '<div class="c-newsH__body">';
 				$output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
 				$output .= '<div class="c-meta">';

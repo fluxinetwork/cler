@@ -26,6 +26,8 @@ Template Name: Toutes les actions
 		<?php if( $subpages->have_posts() ) :
 
 		    while( $subpages->have_posts() ) : $subpages->the_post();
+
+		    	global $post_img_url;
 		      	get_template_part( 'page-templates-parts/content', 'thumb' );
 
 				$permalink = get_permalink();

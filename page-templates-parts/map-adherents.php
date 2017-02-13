@@ -42,9 +42,9 @@
 			<input type="hidden" value="<?php echo mt_rand(0,9999); ?>" name="toky_toky">
 			<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
 
-			<button type="submit" id="submit-filters" class="c-btn l-monoFilter__btn">Filtrer</button>
+			<button type="submit" id="submit-filters" class="c-btn c-btn--ghost l-monoFilter__btn">Filtrer</button>
 
-			<a href="<?php the_permalink(PAGE_ADHEREZ); ?>" class="c-link c-link--shy l-monoFilter__link">Devenir adhérent</a>
+			<a href="<?php the_permalink(PAGE_ADHEREZ); ?>" class="c-link c-link--shy l-monoFilter__link"><i class="fa fa-user-plus c-meta__meta__icon"></i>Devenir adhérent</a>
 		</form>
 	</aside>
 
@@ -53,6 +53,12 @@
 	<div id="map"></div>
 
 	<div class="map__holder__cards"></div>
+</div>
+
+<div class="l-row">
+	<div class="l-col l-col--content">
+		<?php the_content(); ?>
+	</div>
 </div>
 
 <?php the_content(); ?>

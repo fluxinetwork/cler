@@ -39,6 +39,7 @@ Template Name: Tous les portraits
 				$title = get_the_title();
 				$description = get_field('fluxi_resum', false, false);
 
+				global $post_img_url;
 				get_template_part( 'page-templates-parts/content', 'thumb' );
 
 				$categories = get_the_category();
@@ -51,7 +52,7 @@ Template Name: Tous les portraits
 				$output = '<li class="l-postList__item">';
 				$output .= '<a href="'.$permalink.'">';
 				$output .= '<article class="c-newsH c-newsH--contact">';
-				$output .= '<div class="c-newsH__img" style="background-image:'.$post_img_url.'"></div>';
+				$output .= '<div class="c-newsH__img" style="background-image:url('.$post_img_url.')"></div>';
 				$output .= '<div class="c-newsH__body">';
 				$output .= '<span class="c-newsH__body__meta">'.$date.'</span>';
 				$output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';

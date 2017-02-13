@@ -585,20 +585,23 @@ h4, .h4 {
   }
 }
 
-h5, .h5, .c-card__header__cat, .c-form p, .c-form__input,
+h5, .h5, .c-card__header__cat, .c-form p,
+.c-form .t-list, .c-form__input,
 .c-form__textarea,
 .c-form__select, .c-figure__caption, .fc__accordeon__icon, .c-newsH__body__desc, .miniEvent__title {
   font-size: 12px;
 }
 @media screen and (min-width: 700px) {
-  h5, .h5, .c-card__header__cat, .c-form p, .c-form__input,
+  h5, .h5, .c-card__header__cat, .c-form p,
+  .c-form .t-list, .c-form__input,
   .c-form__textarea,
   .c-form__select, .c-figure__caption, .fc__accordeon__icon, .c-newsH__body__desc, .miniEvent__title {
     font-size: 14px;
   }
 }
 @media screen and (min-width: 960px) {
-  h5, .h5, .c-card__header__cat, .c-form p, .c-form__input,
+  h5, .h5, .c-card__header__cat, .c-form p,
+  .c-form .t-list, .c-form__input,
   .c-form__textarea,
   .c-form__select, .c-figure__caption, .fc__accordeon__icon, .c-newsH__body__desc, .miniEvent__title {
     font-size: 16px;
@@ -3050,7 +3053,12 @@ body {
     padding: 0 4.48rem 4.48rem 4.48rem;
   }
 }
-.c-form p + .c-form__label:not(.c-form__label--checkbox) {
+.c-form p,
+.c-form .t-list {
+  font-family: "Roboto Condensed", sans-serif;
+}
+.c-form p + .c-form__label:not(.c-form__label--checkbox),
+.c-form .t-list + .c-form__label:not(.c-form__label--checkbox) {
   padding-top: 0.98rem;
 }
 .c-form--blend::before {
@@ -3218,6 +3226,9 @@ body {
           flex-wrap: wrap;
   margin-top: 0.98rem;
 }
+.c-form__label--checkbox input[type="radio"] {
+  margin-right: 0.98rem;
+}
 
 .c-form__label__checkbox {
   position: relative;
@@ -3232,9 +3243,7 @@ body {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  font-family: "qanelas", gotham, helvetica, arial, sans-serif;
-}
-.c-form__label__txt small {
+  font-family: "Roboto Condensed", sans-serif;
   font-weight: 400;
 }
 
