@@ -3116,6 +3116,10 @@ body {
   margin-top: 2.8rem;
 }
 
+.fc__lien {
+  margin-top: 2.8rem;
+}
+
 .fc__blockquote {
   position: relative;
   padding: 2.8rem 0;
@@ -3271,7 +3275,7 @@ body {
 }
 
 .c-list__item {
-  margin-top: 0.49rem;
+  margin-top: 0.98rem;
 }
 .c-list__item:first-child {
   margin-top: 1.736rem;
@@ -3340,6 +3344,7 @@ body {
   flex-direction: column;
   background: #fff;
   border-radius: 0 3px 3px 0;
+  -ms-flex: 1;
 }
 @media screen and (min-width: 700px) {
   .c-newsH__body {

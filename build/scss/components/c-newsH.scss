@@ -44,6 +44,7 @@ $break: $break--m;
 	@include flex(center null, true);
 	background: #fff;
 	border-radius: 0 $radius $radius 0;
+	-ms-flex: 1;
 
 	@media screen and (min-width: $break) {
 		padding-left: $space--s;
