@@ -22,14 +22,68 @@ var activateFilters = false;
 var filterCat = 'all_cat';
 var is_filtered = false;
 
-var infowindow;
+var currentInfowindow;
 
 var markerCluster = null;
 var cluster_markers = [];
 
 var stylesMap = [
-   {
+    {
+        "featureType": "administrative",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.country",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.country",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.neighborhood",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.land_parcel",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
         "featureType": "landscape.natural.terrain",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
         "elementType": "all",
         "stylers": [
             {
@@ -51,7 +105,7 @@ var stylesMap = [
         "elementType": "geometry",
         "stylers": [
             {
-                "color": "#ffffff"
+                "color": "#f7f7f7"
             }
         ]
     },
@@ -70,6 +124,15 @@ var stylesMap = [
             },
             {
                 "lightness": "45"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
             }
         ]
     },
@@ -296,7 +359,7 @@ function addMakers(map, data){
                 });
 
 
-                infowindow = new google.maps.InfoWindow({
+                var infowindow = new google.maps.InfoWindow({
                     content: '<div class="infowindow--content">'+
                                 '<h3 class="infowindow--content--title">'+
                                     data[i].title+
@@ -313,11 +376,8 @@ function addMakers(map, data){
                               '</div>'
                 });
 
-
                 marker.addListener('click', function(e) {
-                    onClickMarker(i,map,marker,tag,e);
-                    if (infowindow) { infowindow.close();}
-                    infowindow.open(map, marker);
+                    onClickMarker(i,map,marker,tag,e,infowindow);                   
                 });
 
                 // Add class to info window
@@ -378,7 +438,7 @@ function addMakers(map, data){
 
 
 // Event on click  on a marker
-function onClickMarker(index,map,marker,tag,e){
+function onClickMarker(index,map,marker,tag,e,infowindow){
 
     // Add a shadow
    /* if (markerShadow && markerShadow.setPosition) {
@@ -392,11 +452,15 @@ function onClickMarker(index,map,marker,tag,e){
     if(isOpenMarker){
         previousMarker.setIcon(iconsMap[previousTag]);
         previousMarker.setZIndex(1);
+        currentInfowindow.close();
     }
     // Change the icon
     marker.setIcon(iconsSelMap[tag]);
     previousMarker = marker;
     previousTag = tag;
+
+    infowindow.open(map, marker);
+    currentInfowindow = infowindow;
 
     marker.setZIndex(10000);
     // center on marker
