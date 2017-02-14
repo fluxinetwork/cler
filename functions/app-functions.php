@@ -201,24 +201,34 @@ function fluxi_filter_posts(){
 
 					$agrement_formateree = get_field_object('agrement_formateree');
 					if($agrement_formateree == 'oui'):
-						$formateree_label = 'Agrément Format’eree';
+						$formateree_label = ' - Agrément Format’eree';
 					else:
-						$formateree_label = 'Non agréée Format’eree';
+						$formateree_label = '';
 					endif;
 
-					$nom_centre = $get_field('nom_centre');
+					$nom_centre = $get_field('nom_centre');					
 
-					$result_content .= '<li classs="l-postList__item">
-						<a href="'.get_the_permalink().'">
-						<article class="c-offre">
-							<h1 class="c-offre__title">'.get_the_title ().'</h1>
-							<div class="c-offre__meta">'.$nom_centre.' <i class="mgLeft--s fa fa-map-marker" aria-hidden="true"></i>'.get_field('ville').' <i class="mgLeft--s fa fa-location-arrow" aria-hidden="true"></i>'.$label_departement.' - '.$formateree_label.'</div>
-							<div class="c-offre__tags">								
-								'.$label_secteur.$label_thematique.'
-							</div>
-						</article>
-						</a>
-					</li>';
+					$result_content = '<li class="l-postList__item">';
+					$result_content .= '<a href="'.get_permalink().'">';
+					$result_content .= '<article class="offre">';
+
+					$result_content .= '<h1 class="h2">'.get_the_title().'</h1>';
+
+					$result_content .= '<div class="c-meta">';
+					$result_content .= '<div class="c-dash"></div>';
+					$result_content .= '<span class="c-meta__meta">'.$nom_centre.$formateree_label.'</span>';
+					$result_content .= '<span class="c-meta__meta"><i class="fa fa-map-marker c-meta__meta__icon" aria-hidden="true"></i>'.get_field('ville').'</span>';
+					$result_content .= '<span class="c-meta__meta"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i>'.$numero_departement.'</span>';
+					$result_content .= '</div>';
+
+					$result_content .= '<div class="mgTop--s">';
+					$result_content .= $label_secteur;
+					$result_content .= $label_thematique;
+					$result_content .= '</div>';
+
+					$result_content .= '</article>';
+					$result_content .= '</a>';
+					$result_content .= '</li>';
 
 
 				elseif( $pt_slug == 'actualites'):

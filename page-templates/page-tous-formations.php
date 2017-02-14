@@ -130,17 +130,8 @@ Template Name: Toutes les formations
 
 						$ob_departement = get_field_object('field_57b6eab6f05cd');
 						$label_departement = $ob_departement['choices'][ get_field('departement') ];
-
-						$ob_niveau_detude = get_field_object('field_574dae0e3c7b2');
-						$ch_niveau_detude = $ob_niveau_detude['choices'];
-						$val_niveau_detude = $ob_niveau_detude['value'];
-						$label_niveau_detude = '';
-
-						if( $val_niveau_detude ):
-							foreach( $val_niveau_detude as $v ):
-								$label_niveau_detude .= '<span class="c-tag">'.$ch_niveau_detude[ $v ] .'</span>';
-							endforeach;
-						endif;
+						$code_postal = get_field('code_postal');
+						$numero_departement = substr($code_postal,0,-3);
 
 						$ob_thematique = get_field_object('field_57b6ebc6f05d3');
 						$ch_thematique = $ob_thematique['choices'];
@@ -166,48 +157,50 @@ Template Name: Toutes les formations
 
 						$agrement_formateree = get_field_object('agrement_formateree');
 						if($agrement_formateree == 'oui'):
-							$formateree_label = 'Agrément Format’eree';
+							$formateree_label = ' - Agrément Format’eree';
 						else:
-							$formateree_label = 'Non agréée Format’eree';
+							$formateree_label = '';
 						endif;
 
-						$output = '<li classs="l-postList__item">';
+						$output = '<li class="l-postList__item">';
 						$output .= '<a href="'.get_permalink().'">';
-						$output .= '<article class="c-offre">';
+						$output .= '<article class="offre">';
 
-						$output .= '<h1 class="c-offre__title">'.get_the_title().'</h1>';
+						$output .= '<h1 class="h2">'.get_the_title().'</h1>';
 
-						$output .= '<div class="c-offre__meta">'.get_field('nom_centre').' <i class="mgLeft--s fa fa-map-marker" aria-hidden="true"></i>'.get_field('ville').' <i class="mgLeft--s fa fa-location-arrow" aria-hidden="true"></i>'.$label_departement.' - '.$formateree_label.'</div>';
+						$output .= '<div class="c-meta">';
+						$output .= '<div class="c-dash"></div>';
+						$output .= '<span class="c-meta__meta">'.get_field('nom_centre').$formateree_label.'</span>';
+						$output .= '<span class="c-meta__meta"><i class="fa fa-map-marker c-meta__meta__icon" aria-hidden="true"></i>'.get_field('ville').'</span>';
+						$output .= '<span class="c-meta__meta"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i>'.$numero_departement.'</span>';
+						$output .= '</div>';
 
-						//$output .= '<p class="c-offre_description">'.get_field('descriptif_organisme').'</p>';
-
-						$output .= '<div class="c-offre__tags">';
+						$output .= '<div class="mgTop--s">';
 						$output .= $label_secteur;
 						$output .= $label_thematique;
-						//$output .= $label_niveau_detude;						
 						$output .= '</div>';
 
 						$output .= '</article>';
 						$output .= '</a>';
 						$output .= '</li>';
 						
-						echo $output;						
+						echo $output;
 
 					endwhile;
 
 					echo '</ul>';
 					
 		            echo '<div class="pagination">';
-		            echo '<div class="nav-links">';
-		            echo paginate_links( array(
-		            	'base' => @add_query_arg('paged','%#%'),
-		            	'before_page_number' => 'Page ',
-		            	'format' => '?paged=%#%',
-		            	'current' => max( 1, get_query_var('paged') ),
-		            	'total' => $query_filtered->max_num_pages,
-		            	'prev_next'=> false
-		            ) );
-		            echo '</div>';
+			            echo '<div class="nav-links">';
+			            echo paginate_links( array(
+			            	'base' => @add_query_arg('paged','%#%'),
+			            	'before_page_number' => 'Page ',
+			            	'format' => '?paged=%#%',
+			            	'current' => max( 1, get_query_var('paged') ),
+			            	'total' => $query_filtered->max_num_pages,
+			            	'prev_next'=> false
+			            ) );
+			            echo '</div>';
 		            echo '</div>';
 				
 			else :
