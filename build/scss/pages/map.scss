@@ -8,23 +8,41 @@
 
 #map{
 	width:100%;
-	height:800px;
+	height:700px;
 	max-height: 80vh;	
 }
 
 //============================================================ INFO WINDOW
 
-.infowindow--content{
-	.infowindow--content--title{
+.infowindow__content{
+	padding: $space--s;
+	
+	.infowindow__content__structure {
+		@extend .t-meta;
+		color: #fff;
+	}
+
+	.infowindow__content__title{
 		margin:0;
 		padding:0;
 		color:#fff;
+		font-weight: 900;
+		@extend .h2;
+		margin-bottom: $space--s;
+		max-width: 280px;
+		line-height: 1.1;
 	}
-	p{
+
+	.infowindow__content__ville {
+		font-weight: 700;
 		margin:0;
 		padding:0;
-		color:#f3f3f3;
+		color:#fff;
+		font-family: $font-subh;
+		@extend .h5;
 	}
+
+
 	.button{
 		color:#005d8c;
 		background:#fff;
@@ -35,19 +53,34 @@
 
 
 .infowindow--bg{
-	.infowindow--bg--corne{}
-	.infowindow--bg--corne__l div{background:#005d8c !important;}
-	.infowindow--bg--corne__r div{background:#005d8c !important;}
+	.infowindow--bg--corne {}
+	.infowindow--bg--corne__l div,
+	.infowindow--bg--corne__r div {
+		background: $c-dark !important;
+	}
 	.infowindow--bg--shadow__corne{}
 
 	.infowindow--bg--bubble{
-		background:#005d8c !important;
-		border-radius: 3px !important;
+		background:$c-dark !important;
+		border-radius: $radius !important;
 	}
 	.infowindow--bg--shadow__bubble{}
 }
 
-.infowindow--close{}
+.infowindow__close {
+	height: auto !important;
+	width: auto !important;
+	opacity: 1 !important;
+	top:  0!important;
+	right: 0 !important;
+
+	.fa {
+		padding: $space--xs;
+		color: #fff;
+		display: block;
+		font-size: 18px;
+	}
+}
 
 //============================================================= MAP HOLDER
 

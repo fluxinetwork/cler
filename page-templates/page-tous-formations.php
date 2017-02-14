@@ -8,7 +8,7 @@ Template Name: Toutes les formations
 	$nb_result = wp_count_posts('formations')->publish;	
 	$output = ($nb_result>1) ? $nb_result.' formations disponibles' : $nb_result.' formation disponible';
 ?>
-<div class="l-row bg-accent--grad">
+<div class="l-row bg-dark--grad">
 	<header class="l-col l-col--content">
 		<h1 class="c-white"><?php echo get_the_title(); ?></h1>
 

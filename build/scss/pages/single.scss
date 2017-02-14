@@ -23,7 +23,6 @@
 
 	@media screen and (min-width: $break) {
 		margin-left: $gutter;
-		flex: 1 0 47%;
 		@include flex(center);
 	}
 }

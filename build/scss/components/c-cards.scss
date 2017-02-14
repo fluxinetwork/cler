@@ -22,13 +22,17 @@
 	&.c-form {
 		flex-direction: column;
 		align-items: flex-start;
+		height: auto;
+
+		&--popin {
+			margin: 0;
+		}
 	}
 
 	@media screen and (min-width: $break--m) {
 		flex-direction: column;
-		align-items: stretch;
-		min-height: $cardH;
-		max-width: $cardW;
+		height: $cardH;
+		width: $cardW;
 
 		&:not(.c-form):not(.c-card--user):hover {
 			transform: scale(1.05);
@@ -87,7 +91,6 @@
 }
 
 .c-card__header__tag {
-	flex: 1 0 50%;
 	@include flex(center);
 	text-align: center;
 	@extend .h3;
@@ -159,9 +162,7 @@
 
 .c-card__body {
 	padding: $space--xs $space--s;
-	flex: 1;
 	width: 100%;
-
 	@media screen and (min-width: $break--m) {
 		padding: $space--m;
 	}
@@ -181,6 +182,7 @@
 
 .c-card__footer {
 	padding: unpack(0 $space--s $space--s);
+	margin-top: auto;
 	display: none;
 	width: 100%;
 

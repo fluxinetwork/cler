@@ -9,7 +9,7 @@
 	flex-wrap: wrap;
 
 	.l-grid__col {
-		flex: 0 1 50%;
+		flex: 1 0 48%;
 		padding: 0  $gutter/2  $gutter $gutter/2;
 	
 		&:first-child {
@@ -42,7 +42,7 @@
 // CHILDREN
 
 .l-grid__col {
-	flex: 1;
+	flex: 1 1 0%;
 	padding: $gutter/2 0 $gutter/2 0;
 	min-height: 100%;
 

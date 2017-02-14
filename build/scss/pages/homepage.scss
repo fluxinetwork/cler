@@ -137,11 +137,11 @@ $loop: 1;
 		align-items: center;
 
 		.l-grid__col {
-			flex: 1 0 auto !important;
+			flex: 1 0 auto;
 			padding: 0 $gutter/2 0 $gutter/2 !important;
 
 			&:first-child {
-			 flex: 1.5 0 auto !important;
+			 flex: 1.5 0 auto;
 			}
 		}
 	}

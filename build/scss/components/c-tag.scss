@@ -19,10 +19,7 @@
 	color: $c-dark;
 	opacity: 0.5;
 	text-transform: uppercase;
-
-	+ .c-tag {
-		margin-left: $space--xs*$smaller
-	}
+	margin: 0 $space--xs/2 $space--xs/2 0;
 
 	&--focus {
 		background-color: $c-dark;

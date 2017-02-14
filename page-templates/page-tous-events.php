@@ -9,7 +9,7 @@ Template Name: Toutes les événements
 	$output = ($nb_result>1) ? $nb_result.' événements disponibles' : $nb_result.' événement disponible';
 ?>
 
-<div class="l-row bg-accent--grad">
+<div class="l-row bg-dark--grad">
 	<header class="l-col l-col--content">
 		<h1 class="c-white"><?php echo get_the_title(); ?></h1>
 

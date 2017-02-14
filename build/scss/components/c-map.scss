@@ -19,7 +19,9 @@
 	p{
 		margin:0;
 		padding:0;
-		color:#f3f3f3;
+		color:#fff;
+		font-family: $font-subh;
+		@extend .h5;
 	}
 	.button{
 		color:#005d8c;
@@ -37,8 +39,9 @@
 	.infowindow--bg--shadow__corne{}
 
 	.infowindow--bg--bubble{
-		background:#005d8c !important;
-		border-radius: 3px !important;
+		background:$c-dark !important;
+		border-radius: $radius !important;
+		padding: $space--s;
 	}
 	.infowindow--bg--shadow__bubble{}
 }

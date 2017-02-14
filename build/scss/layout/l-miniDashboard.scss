@@ -75,12 +75,16 @@ $break: $break--m;
 	}
 }
 
+.l-miniDashboard__duo__right,
+.l-miniDashboard__duo__left {
+	flex: 1 0 40%;
+}
+
 .l-miniDashboard__duo__left {
 	@extend .l-box;
 	margin-bottom: $gutter;
 
 	@media screen and (min-width: $break) {
-		flex: 1 0 47%;
 		margin-bottom: 0;
 	}
 }

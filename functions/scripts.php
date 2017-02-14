@@ -21,8 +21,8 @@ function enqueue_styles() {
     /* ENQUEUE */
 
     if ( DEV ) {
-        wp_enqueue_style('css');
-        //wp_enqueue_style('css-min');
+        //wp_enqueue_style('css');
+        wp_enqueue_style('css-min');
     } else {
         wp_enqueue_style('css-min');
     }

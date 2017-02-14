@@ -360,17 +360,17 @@ function addMakers(map, data){
 
 
                 var infowindow = new google.maps.InfoWindow({
-                    content: '<div class="infowindow--content">'+
-                                '<h3 class="infowindow--content--title">'+
+                    content: '<div class="infowindow__content">'+
+                                '<p class="infowindow__content__structure">'+
+                                    data[i].catName+
+                                '</p>'+
+                                '<h3 class="infowindow__content__title">'+
                                     data[i].title+
                                 '</h3>'+
-                                '<p>'+
+                                '<p class="infowindow__content__ville"><i class="fa fa-map-marker mgRight--xs"></i>'+
                                     data[i].ville+
                                     ' ('+data[i].departement+')'+
-                                '</p>'+
-                                '<p>'+
-                                    data[i].catName+
-                                '</p>'+                               
+                                '</p>'+                             
                                 //'<a class="button" href="'+data[i].permalink+'">Consulter la fiche</a>'+
 
                               '</div>'
@@ -386,7 +386,7 @@ function addMakers(map, data){
                     $infoBg = $('.gm-style-iw').prev();                  
 
                     $infoBg.addClass('infowindow--bg');
-                    $('.gm-style-iw').next().addClass('infowindow--close');
+                    $('.gm-style-iw').next().addClass('infowindow__close').empty().append('<i class="fa fa-times"></i>');
 
                     $infoBg.find('div:eq(0)').addClass('infowindow--bg--shadow__corne')
                     $infoBg.find('div:eq(1)').addClass('infowindow--bg--shadow__bubble');
