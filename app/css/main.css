@@ -232,6 +232,10 @@ html {
   background-image: radial-gradient(circle, #00db6c, #00C15F 100%);
 }
 
+.bg-light--grad {
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
 /*------------------------------*\
 
     #SPACES
@@ -1501,10 +1505,15 @@ body {
 
 .l-postList__item {
   border-bottom: 1px solid rgba(0, 17, 53, 0.1);
-  padding: 4.48rem 0;
+  padding: 2.8rem 0;
 }
 .l-postList__item:hover .c-dash {
   transform: scaleX(0.7);
+}
+@media screen and (min-width: 960px) {
+  .l-postList__item {
+    padding: 4.48rem 0;
+  }
 }
 
 /*------------------------------*\
@@ -1585,34 +1594,89 @@ body {
 
 ==========================================================================
 \*======================================================================*/
+.l-download__tabs {
+  position: relative;
+  display: flex;
+  overflow-x: auto;
+}
+.l-download__tabs::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 17, 53, 0.2);
+  bottom: 3px;
+}
+
 .l-download__title {
   display: flex;
   align-items: center;
   flex-direction: column;
+  flex: none;
+  font-family: "Roboto Condensed", sans-serif;
   color: #001135;
+  padding: 0 1.736rem;
+}
+@media screen and (min-width: 700px) {
+  .l-download__title {
+    flex: 1 0 auto;
+  }
 }
 .l-download__title .c-dash {
   background-color: #001135;
   display: block;
   margin-top: 1.736rem;
 }
-.l-download.is-active .l-download__title .c-dash {
+.l-download__title.is-active .c-dash {
   width: 100%;
 }
+.l-download__title:not(.is-active):hover .c-dash {
+  width: 100px;
+}
 
-.l-download__list {
+.l-download__content {
+  position: relative;
+  margin-top: 2.8rem;
+}
+
+.l-download__content__list {
   margin: 0;
   padding: 0;
   list-style: none;
   flex-wrap: wrap;
   display: none;
 }
-.l-download.is-active .l-download__list {
+.l-download__content__list.is-active {
   display: flex;
 }
 
-.l-download__list__item {
-  margin: 1.736rem;
+.l-download__content__list__item {
+  flex: 1 0 100%;
+  max-width: 100%;
+}
+@media screen and (min-width: 480px) {
+  .l-download__content__list__item {
+    flex: 1 0 50%;
+    max-width: 50%;
+  }
+}
+@media screen and (min-width: 700px) {
+  .l-download__content__list__item {
+    flex: 1 0 33.333%;
+    max-width: 33.333%;
+  }
+}
+@media screen and (min-width: 960px) {
+  .l-download__content__list__item {
+    flex: 1 0 25%;
+    max-width: 25%;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .l-download__content__list__item {
+    flex: 1 0 20%;
+    max-width: 20%;
+  }
 }
 
 /*======================================================================*\
@@ -2045,33 +2109,9 @@ body {
   border-radius: 3px 0 0 3px;
   color: #fff;
 }
-.c-card__header::before, .c-card__header::after {
-  content: '';
-  position: absolute;
-  display: block;
-  top: 2.8rem;
-  height: 7px;
-  z-index: 10;
-}
-.bg-main .c-card__header::before, .bg-main--grad .c-card__header::before, .bg-main .c-card__header::after, .bg-main--grad .c-card__header::after {
-  background-color: #0022A0 !important;
-}
-.c-card__header::before {
-  border-radius: 0 100px 100px 0;
-  left: 0;
-  width: 80px;
-}
-.c-card__header::after {
-  border-radius: 100px 0 0 100px;
-  right: 0;
-  width: 170px;
-}
 .c-card--emploi .c-card__header, .c-card--user .c-card__header {
   flex-wrap: wrap;
   background-image: none;
-}
-.c-card--emploi .c-card__header::before, .c-card--emploi .c-card__header::after, .c-card--user .c-card__header::before, .c-card--user .c-card__header::after, .c-form--popin .c-card__header::before, .c-form--popin .c-card__header::after {
-  display: none;
 }
 .c-form .c-card__header {
   width: 100%;
@@ -3058,22 +3098,10 @@ body {
 .fc li a,
 .fc p a,
 .fc .fc__focus p a {
-  color: #333;
+  color: #0022A0;
+  font-family: 900px;
   position: relative;
-  box-shadow: inset 0 -2px 0 0 #fff, inset 0 -4px 0 0 #0022A0;
-}
-@media screen and (min-width: 700px) {
-  .fc li a,
-  .fc p a,
-  .fc .fc__focus p a {
-    box-shadow: inset 0 0 0 0 #fff, inset 0 -2px 0 0 #0022A0;
-  }
-}
-.fc li a:hover,
-.fc p a:hover,
-.fc .fc__focus p a:hover {
-  text-shadow: none;
-  box-shadow: inset 0 0 0 0 #fff, inset 0 -2px 0 0 rgba(0, 34, 160, 0.1);
+  border-bottom: 3px solid #0022A0;
 }
 .fc h2 {
   font-weight: 900;
@@ -3195,13 +3223,15 @@ body {
 }
 
 .fc__contact + .fc__contact,
-.fc__publication + .fc__publication {
+.fc__publication + .fc__publication,
+.fc__accordeon + .fc__accordeon {
   margin-top: -4.48rem 0.1;
   border-top: none;
 }
 @media screen and (min-width: 960px) {
   .fc__contact + .fc__contact,
-  .fc__publication + .fc__publication {
+  .fc__publication + .fc__publication,
+  .fc__accordeon + .fc__accordeon {
     margin-top: -7rem;
   }
 }
@@ -3407,12 +3437,26 @@ a.c-meta__meta:hover {
 
 ==========================================================================
 \*======================================================================*/
+.c-downloadItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.8rem;
+  border-radius: 3px;
+  flex: none;
+}
+
 .c-downloadItem__icon {
-  color: #0022A0;
+  flex: none;
+  color: #00C15F;
+}
+.c-downloadItem:hover .c-downloadItem__icon {
+  background-color: #00C15F !important;
+  color: #fff !important;
 }
 
 .c-downloadItem__title {
   margin-left: 0.98rem;
+  padding-right: 2.8rem;
 }
 
 /*======================================================================*\
@@ -4122,6 +4166,7 @@ a.c-meta__meta:hover {
   flex-direction: column;
   margin-top: 2.8rem;
   margin-bottom: 1.736rem;
+  font-family: "Roboto Condensed", sans-serif;
 }
 @media screen and (min-width: 480px) {
   .thematique__content__extra {
@@ -4328,9 +4373,6 @@ a.c-meta__meta:hover {
 .formateree .c-link::after, .formateree .fc__focus__link::after {
   background-color: #001135;
 }
-.formateree .c-card__header::before, .formateree .c-card__header::after {
-  background-color: #338699;
-}
 .formateree .c-btnIcon--controls {
   color: #338699;
 }
@@ -4358,6 +4400,11 @@ a.c-meta__meta:hover {
 .formateree .map-formateree {
   max-width: 90%;
   margin: 0 auto;
+}
+.formateree .fc > *:not(section) {
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*------------------------------*\

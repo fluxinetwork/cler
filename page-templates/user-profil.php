@@ -56,15 +56,15 @@ Template Name: Profil
 		<?php if ($adherent) : ?>
 
 			<div class="l-grid__col l-center">
-				<a href="<?php echo get_the_permalink(FORM_ADHESION); ?>?act=mod" class="c-link">Modifier votre adhésion</a>
+				<a href="<?php echo get_the_permalink(FORM_ADHESION); ?>?act=mod" class="c-btn c-btn--ghost"><i class="fa fa-pencil c-meta__meta__icon"></i>Modifier votre adhésion</a>
 			</div>
 			<div class="l-grid__col l-center">
-				<a href="<?php echo get_the_permalink(FORM_ADHESION); ?>?act=rad" class="c-btn c-btn--cta"><div>Renouveler votre adhésion</div></a>
+				<a href="<?php echo get_the_permalink(FORM_ADHESION); ?>?act=rad" class="c-btn c-btn--cta"><div><i class="fa fa-refresh c-meta__meta__icon"></i>Renouveler votre adhésion</div></a>
 			</div>
 
 		<?php else : ?>
 
-			<a href="<?php echo get_the_permalink(FORM_ADHESION); ?>?act=add" class="c-btn c-btn--cta"><div>Devenir adhérent</div></a>
+			<a href="<?php echo get_the_permalink(FORM_ADHESION); ?>?act=add" class="c-btn c-btn--cta"><div><i class="fa fa-user-plus c-meta__meta__icon"></i>Devenir adhérent</div></a>
 
 		<?php endif; ?>
 		</div>

@@ -19,9 +19,9 @@ if( is_user_logged_in() ):
 	echo '</div>'; ;
 else:
 	if( !is_page('connexion')):
-		echo '<a href="connexion" class="c-btn js-popin-show"><i class="fa fa-sign-in mgRight--xs"></i>Connexion</a>';
+		echo '<a href="connexion" class="c-btn c-btn--ghost js-popin-show"><i class="fa fa-sign-in mgRight--xs"></i>Connexion</a>';
 	else:
-		echo '<a href="connexion" class="c-btn"><i class="fa fa-sign-in mgRight--xs"></i>Connexion</a>';
+		echo '<a href="connexion" class="c-btn c-btn--ghost"><i class="fa fa-sign-in mgRight--xs"></i>Connexion</a>';
 	endif; 
 endif;
 ?>

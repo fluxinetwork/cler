@@ -77,14 +77,17 @@ Template Name: Tous les retours d'experience
 
 		<?php
 			echo '<div class="pagination">';
+			echo '<div class="nav-links">';
 			echo paginate_links( array(
 				'base' => @add_query_arg('paged','%#%'),
+				'before_page_number' => 'Page ',
 				'format' => '?paged=%#%',
 				'current' => max( 1, get_query_var('paged') ),
-				'total' => $query_all->max_num_pages,
-	        	'prev_next'=> false
+				'total' => $query_filtered->max_num_pages,
+				'prev_next'=> false
 			) );
-		    echo '</div>';
+			echo '</div>';
+			echo '</div>';
 		?>
 	</div>
 </section>

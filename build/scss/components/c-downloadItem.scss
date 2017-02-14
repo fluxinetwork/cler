@@ -7,14 +7,24 @@
 \*======================================================================*/
 
 .c-downloadItem {
-
+	@include flex(null center);
+	margin-bottom: $space--m;
+	border-radius: $radius;
+	flex: none;
 }
 
 .c-downloadItem__icon {
-	color: $c-main;
+	flex: none;
+	color: $c-valid;
+
+	.c-downloadItem:hover & {
+		background-color: $c-valid !important;
+		color: #fff !important;
+	}
 }
 
 .c-downloadItem__title {
 	@extend .t-meta;
 	margin-left: $space--xs;
+	padding-right: $space--m;
 }

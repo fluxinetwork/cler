@@ -37,6 +37,7 @@ $c-formateree: #338699;
 	.bg-slider-formateree {
 		background-image: radial-grad($c-formateree, 50%);
 	}
+
 	.c-link {
 		color: $c-dark;
 
@@ -44,17 +45,15 @@ $c-formateree: #338699;
 			background-color: $c-dark;
 		}
 	}
-	.c-card__header {
-		&::before, &::after {
-			background-color: $c-formateree;
-		}
-	}
+
 	.c-btnIcon--controls {
 		color: $c-formateree;
 	}
+
 	.c-ghostCard {
 		box-shadow: none;
 	}
+	
 	.formateree-photo {
 		width: 100%;
 	}
@@ -80,6 +79,12 @@ $c-formateree: #338699;
 	.map-formateree {
 		max-width: 90%;
 		margin: 0 auto;
+	}
+
+	.fc > *:not(section) {
+		max-width: $contentW;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	
 }

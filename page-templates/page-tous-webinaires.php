@@ -11,7 +11,7 @@ Template Name: Tous les webinaires
 	$args = array(
 		'post_type' => 'webinaires',
 		'post_status' => 'publish',
-		'paged' => $paged			
+		'paged' => $paged	
 	);	
 
 	$query_all = new WP_Query( $args );
@@ -81,14 +81,16 @@ Template Name: Tous les webinaires
 
 		<?php
 			echo '<div class="pagination">';
+			echo '<div class="nav-links">';
 			echo paginate_links( array(
 				'base' => @add_query_arg('paged','%#%'),
+				'before_page_number' => 'Page ',
 				'format' => '?paged=%#%',
 				'current' => max( 1, get_query_var('paged') ),
-				'total' => $query_all->max_num_pages,
-	        	'prev_next'=> false
+				'prev_next'=> false
 			) );
-		    echo '</div>';
+			echo '</div>';
+			echo '</div>';
 		?>
 	</div>
 </section>

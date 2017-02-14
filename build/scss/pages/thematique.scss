@@ -36,6 +36,7 @@ $break2 : $break--l;
 	flex-direction: column;
 	margin-top: $space--m;
 	margin-bottom: $gutter;
+	font-family: $font-subh;
 
 	@media screen and(min-width: $break1) {
 		flex-direction: row;

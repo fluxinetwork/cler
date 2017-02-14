@@ -67,7 +67,7 @@ Template Name: Toutes les actualités
 		<form id="form-auto-filter-posts" role="form" class="l-monoFilter">
 		    <div class="l-filterList__filter">
 		    	<label for="category" class="is-none">Thématique</label>
-		    	<i class="fa fa-bookmark" aria-hidden="true"></i>
+		    	<i class="fa fa-filter" aria-hidden="true"></i>
 				<select name="category" id="category" data-validation="required" class="c-form__select">
 					<option disabled selected value="">Thématique</option>
 					<?php
@@ -118,10 +118,10 @@ Template Name: Toutes les actualités
 				$output .= '<article class="c-newsH">';
 				$output .= '<div class="c-newsH__img" style="background-image: url('.$post_img_url.')"></div>';
 				$output .= '<div class="c-newsH__body">';
+				$output .= '<span class="t-meta">'.$date.'</span>';
 				$output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
 				$output .= '<div class="c-meta">';
 				$output .= '<div class="c-dash"></div>';
-				$output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>';
 				$output .= '<span class="c-meta__meta"><i class="fa fa-bookmark c-meta__meta__icon" aria-hidden="true"></i>'.$cat_name.'</span>';
 				$output .= '</div>';
 				$output .= '</div>';
@@ -142,16 +142,19 @@ Template Name: Toutes les actualités
 		?>
 		</ul>
 
-		<?php
+		<?php 
 			echo '<div class="pagination">';
+			echo '<div class="nav-links">';
 			echo paginate_links( array(
 				'base' => @add_query_arg('paged','%#%'),
+				'before_page_number' => 'Page ',
 				'format' => '?paged=%#%',
 				'current' => max( 1, get_query_var('paged') ),
 				'total' => $query_filtered->max_num_pages,
-	        	'prev_next'=> false
+				'prev_next'=> false
 			) );
-		    echo '</div>';
+			echo '</div>';
+			echo '</div>';
 		?>
 	</div>
 </section>

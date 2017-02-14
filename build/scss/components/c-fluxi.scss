@@ -15,26 +15,10 @@ $border: 7px solid $c-accent;
 	p a,
 	.fc__focus p a {
 		@extend .p;
-		color: $c-txt;
-		//font-weight: 700;
+		color: $c-main;
+		font-family: 900px;
 		position: relative;
-		box-shadow:
-			inset 0 -2px 0 0 #fff,
-			inset 0 -4px 0 0 $c-main;
-
-		@media screen and (min-width: $break--m) {
-			box-shadow:
-				inset 0 0 0 0 #fff,
-				inset 0 -2px 0 0 $c-main;
-		}
-
-		&:hover {
-			text-shadow: none;
-			box-shadow:
-				inset 0 0 0 0 #fff,
-				inset 0 -2px 0 0 rgba($c-main, 0.1);
-
-		}
+		border-bottom: 3px solid $c-main;
 	}
 
 	h2 {
@@ -189,7 +173,8 @@ $border: 7px solid $c-accent;
 } 
 
 .fc__contact + .fc__contact,
-.fc__publication + .fc__publication {
+.fc__publication + .fc__publication,
+.fc__accordeon + .fc__accordeon {
 	margin-top: -$space--l*1.0.1;
 	border-top: none;
 

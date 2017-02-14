@@ -14,20 +14,20 @@
 			$texte_onglet = get_sub_field('texte_onglet');
 			$documents = get_sub_field('documents');
 
-			$all_onglets .= '<a href="#" class="l-download__title" data-tab="'.$nb_tabs.'">'.$texte_onglet.'</a>';
+			$all_onglets .= '<a href="#" class="l-download__title js-tab" data-tab="'.$nb_tabs.'">'.$texte_onglet.'<span class="c-dash"></span></a>';
 
 			//$all_pans .= '<li class="l-download is-active l-grid__col">';
 
 			if( $documents ):
 
-				$all_pans .= '<ul class="l-download l-grid__col">';
+				$all_pans .= '<ul class="l-download__content__list ">';
 
 			    foreach( $documents as $post): 
 			        setup_postdata($post);
 			        
-			        $all_pans .= '<li class="l-download__list__item">
+			        $all_pans .= '<li class="l-download__content__list__item">
 			        		<a href="'.$post->guid.'" class="c-downloadItem">
-			        			<i class="fa fa-download c-downloadItem__icon"></i>
+			        			<span class="c-downloadItem__icon c-btnIcon c-btn--ghost"><i class="fa fa-download"></i></span>
 			        			<span class="c-downloadItem__title">'.$post->post_title.'</span>
 			        		</a>
 			        	  </li>';
@@ -49,11 +49,18 @@
 
 		// OUTPUT
 
-		echo '<div class="js-tab">'.$all_onglets.'</div>';
+		echo '<section class="l-row">';
+		echo '<div class="l-col">';
+		echo '<h3 class="c-section-title">Zone téléchargements</h3>';
 
-		echo '<div class="l-col list-reset l-grid">';
+		echo '<div class="l-download__tabs">'.$all_onglets.'</div>';
+
+		echo '<div class="l-download__content">';
 			echo $all_pans;
-		echo '</div>';		
+		echo '</div>';	
+
+		echo '</div>';	
+		echo '</section>';		
 		
 
 	else:

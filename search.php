@@ -61,9 +61,8 @@ if ($nb_results == 0) {
             $post_type = 'emploi';
           }
 
-          $post_img_id = get_field('main_image');
-          $post_img_array = wp_get_attachment_image_src($post_img_id, 'thumbnail', true);
-          $post_img_url = $post_img_array[0];  
+          global $post_img_url;
+          get_template_part( 'page-templates-parts/content', 'thumb' );
 
           $permalink = get_permalink();
           $date_publi = get_the_date('d M Y');
@@ -79,7 +78,7 @@ if ($nb_results == 0) {
 
           // HEADER
     
-          if ($post_type == 'actualité') { // ACTU
+          if ($post_type == 'actualité' || $post_type == 'webinaires' || $post_type == 'portraits' || $post_type == 'retours-experience') { // ACTU
 
             $output .= '<div class="c-newsH__img" style="background-image: url('.$post_img_url.')"></div>';
 

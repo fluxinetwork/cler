@@ -91,3 +91,7 @@
 .bg-valid--grad {
 	background-image: radial-grad($c-valid, 50%);
 }
+
+.bg-light--grad {
+	background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}

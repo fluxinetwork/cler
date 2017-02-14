@@ -86,7 +86,6 @@ Template Name: Toutes les événements
 		$args_filtered = array(
 			'post_type' => 'evenements',
 			'post_status' => 'publish',
-			'posts_per_page' => 5,
 			'paged' => $paged
  		);
 		$query_filtered = new WP_Query( $args_filtered );

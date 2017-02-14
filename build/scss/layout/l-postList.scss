@@ -12,9 +12,13 @@
 
 .l-postList__item {
 	border-bottom: 1px solid rgba($c-dark, 0.1);
-	padding: $space--l 0;
+	padding: $space--m 0;
 
 	&:hover .c-dash {
 		transform: scaleX(0.7);
+	}
+
+	@media screen and (min-width: $break--l) {
+		padding: $space--l 0;
 	}
 }
