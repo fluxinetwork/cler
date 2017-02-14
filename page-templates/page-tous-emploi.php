@@ -179,7 +179,6 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 		        	'before_page_number' => 'Page ',
 		        	'format' => '?paged=%#%',
 		        	'current' => max( 1, get_query_var('paged') ),
-		        	'total' => $query_filtered->max_num_pages,
 		        	'prev_next'=> false
 		        ) );
 		        echo '</div>';

@@ -87,7 +87,6 @@ Template Name: Tous les webinaires
 				'before_page_number' => 'Page ',
 				'format' => '?paged=%#%',
 				'current' => max( 1, get_query_var('paged') ),
-				'prev_next'=> false
 			) );
 			echo '</div>';
 			echo '</div>';
