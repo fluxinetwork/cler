@@ -398,7 +398,7 @@ function initFluxiAutoFilterPosts(){
             label = 'publication';
         }
 
-        $formObj.find('.js-loader').html('<span class="c-btn"><i class="fa fa-cog fa-spin js-spinner" aria-hidden="true"></i></span>');
+        $formObj.find('.js-loader').html('<span class="c-btn l-monoFilter__btn"><i class="fa fa-cog fa-spin js-spinner" aria-hidden="true"></i></span>');
         $results.prev().html('');
 
         $.ajax({
