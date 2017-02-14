@@ -74,7 +74,7 @@ define('HUB_CITOYEN', '1288');
 define('HUB_ELU', '1291');
 define('HUB_PRESSE', '1292');
 
-define('ALL_NEWS', '2897');
+define('ALL_NEWS', '1276');
 
 define('PAGE_OFFRE', '3067');
 define('PAGE_OFFRES', '1300');
