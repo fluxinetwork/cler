@@ -150,6 +150,7 @@ Template Name: Toutes les actualités
 				'before_page_number' => 'Page ',
 				'format' => '?paged=%#%',
 				'current' => max( 1, get_query_var('paged') ),
+				'total' => $query_filtered->max_num_pages,
 				'prev_next'=> false
 			) );
 			echo '</div>';
