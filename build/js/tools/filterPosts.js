@@ -31,7 +31,7 @@ function initFluxiFilterPosts(){
             label = 'publication';
         }
 
-        $formObj.find('button[type=submit]').html('<i class="spinner"></i> Chargement');
+        $formObj.find('button[type=submit]').html('<i class="fa fa-cog fa-spin js-spinner"></i> Chargement');
         $results.prev().html('');
 
         $.ajax({
@@ -68,7 +68,7 @@ function initFluxiFilterPosts(){
                         $results.prev().html('<p class="mgTop--s"><strong>'+data[0].message+'</strong></p>');
                     }
                 }
-                //$formObj.find('button[type=submit]').html('<i class="fa fa-filter c-meta__meta__icon"></i> Filtrer');
+                $formObj.find('button[type=submit]').html('<i class="fa fa-filter c-meta__meta__icon"></i> Filtrer');
             },
             error : function(jqXHR, textStatus, errorThrown) {
                 //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
@@ -117,7 +117,7 @@ function initFluxiAutoFilterPosts(){
             label = 'publication';
         }
 
-        $formObj.find('.js-loader').html('<span class="c-btn"><i class="spinner"></i></span>');
+        $formObj.find('.js-loader').html('<span class="c-btn"><i class="fa fa-cog fa-spin js-spinner" aria-hidden="true"></i></span>');
         $results.prev().html('');
 
         $.ajax({

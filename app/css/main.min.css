@@ -2074,14 +2074,6 @@ body {
   background-color: #00C15F !important;
   color: #fff !important;
 }
-.c-btn[type="submit"] {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
 .c-btn[type="submit"] .spinner {
   margin-right: 1.736rem;
 }
@@ -2187,22 +2179,22 @@ body {
   height: 3rem;
 }
 
-.c-btn[type="submit"] {
+/*.c-btn[type="submit"]{
   display: inline-block;
   vertical-align: middle;
 }
-
-.c-btn[type="submit"] .spinner:before, .c-btn[type="submit"] .spinner:after {
-  height: 2rem;
-  width: 2rem;
-}
-.c-btn[type="submit"] .spinner:before {
-  border-top: 0.4rem solid rgba(255, 255, 255, 0.2);
-  border-right: 0.4rem solid rgba(255, 255, 255, 0.2);
-  border-bottom: 0.4rem solid rgba(255, 255, 255, 0.2);
-  border-left: 0.4rem solid white;
-}
-
+.c-btn[type="submit"] .spinner{
+	&:before, &:after{	
+    	height: 2rem;
+    	width: 2rem;
+	}
+	&:before{
+    border-top: 0.4rem solid rgba(white,0.2);
+    border-right: 0.4rem solid rgba(white,0.2);
+    border-bottom: 0.4rem solid rgba(white,0.2);
+    border-left: 0.4rem solid white;
+	}
+}*/
 .spinner.bg-spin {
   position: absolute;
   background-color: #FFF7EF;
