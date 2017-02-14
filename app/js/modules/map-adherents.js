@@ -307,10 +307,7 @@ function addMakers(map, data){
                                 '</p>'+
                                 '<p>'+
                                     data[i].catName+
-                                '</p>'+
-                                '<p>'+
-                                    data[i].catName+
-                                '</p>'+
+                                '</p>'+                               
                                 //'<a class="button" href="'+data[i].permalink+'">Consulter la fiche</a>'+
 
                               '</div>'
