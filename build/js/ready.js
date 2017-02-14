@@ -12,7 +12,7 @@ var FOO = {
             tabs();
             
             if ( $('.fitvid').length ) {
-                console.log('fitvid init + dailymotion');
+                //console.log('fitvid init + dailymotion');
                 $('.fitvid').fitVids({ customSelector: "iframe[src*='dailymotion.com']"});
             }
         }

@@ -87,6 +87,18 @@ Template Name: Toutes les événements
 			'post_type' => 'evenements',
 			'post_status' => 'publish',
 			'paged' => $paged
+			'post_type' 	=> 'evenements',
+			'post_status' 	=> 'publish',
+			'paged' 		=> $paged,
+			'meta_key'		=> 'date_event',
+			'orderby'		=> 'meta_value_num',
+			'order'			=> 'ASC',
+			'meta_query' => array(
+			array(
+		        'key'		=> 'date_event',
+		        'compare'	=> '>=',
+		        'value'		=> date('Ymd'),
+		    ))
  		);
 		$query_filtered = new WP_Query( $args_filtered );
 

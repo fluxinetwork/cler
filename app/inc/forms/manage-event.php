@@ -89,7 +89,7 @@ function fluxi_manage_event(){
 						}
 
 						// Notification mail admin
-						notify_by_mail (array(CONTACTS_EVENT_1, CONTACTS_EVENT_2),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Événement en attente de validation',false,'<h2>Nouvel événement ajouté</h2><p>' . $current_user->user_firstname . ' vient d\'ajouter l\'événement <strong>"' . wp_strip_all_tags( $title ) . '"</strong>.<br>Vous devez le publier pour le rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'événement</a></p>');
+						notify_by_mail (array(CONTACTS_EVENT_1),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Événement en attente de validation',false,'<h2>Nouvel événement ajouté</h2><p>' . $current_user->user_firstname . ' vient d\'ajouter l\'événement <strong>"' . wp_strip_all_tags( $title ) . '"</strong>.<br>Vous devez le publier pour le rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'événement</a></p>');
 
 						// Notification mail current user
 						$mail_new_event = array(get_footer_mail(), $redirect_slug);

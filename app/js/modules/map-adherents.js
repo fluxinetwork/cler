@@ -343,6 +343,7 @@ function addMakers(map, data){
 
                     markerCluster = new MarkerClusterer(map, gmarkers, {imagePath: themeURL+'/app/img/m'});
                     markerCluster.setIgnoreHidden(true);
+                    markerCluster.setMaxZoom(10);
 
                     centerMapOnMarkers(map);
 
@@ -430,8 +431,7 @@ function initFilters(map){
             var $form = $('#form-filter-map');
             filterCat = $('#type_structure').val();
 
-            //$form.find('button[type=submit]').prop('disabled', false).prepend('<i class="spinner"></i>');
-            //$form.find('button[type=submit] .spinner').remove();
+            $('#form-filter-map').find('.js-reload').removeClass('is-none');
 
             for (i = 0; i < nbMakers; i++) {
                 // If is same category or category not picked
@@ -451,18 +451,22 @@ function initFilters(map){
 
 
     });
+
+    $('#type_structure').on('change', function(e){
+        $('#form-filter-map').triggerHandler('submit');
+    });
+
     // reset
     $('button[type="reset"]').on('click', function(e){
         e.preventDefault();
         e.stopPropagation();
         resetMarkers();
         if(is_filtered){
-            
+            $('#form-filter-map').find('.js-reload').remove();
             resetFilters();
             resetMarkers();
             markerCluster.repaint();
-            centerMapOnMarkers(map);
-            
+            centerMapOnMarkers(map);            
             $('#type_structure option').prop('selected', function() {
                 return this.defaultSelected;
             });

@@ -18,16 +18,13 @@ function initWebinairesForm(){
     $(formID+' button[type=submit]').prop('disabled', false);
     $formObj = $('#form-participation-webinaire');
 
-
     // Add nom structure
     $('input[name=adherent_cler]').click(function() {
     	if(this.checked){
-		    $('.js-nom-structure').toggleClass('is-visible');
-		    // $(formID+' button[type=submit]').prop('disabled', false).removeClass('hide');
+		    $('.js-nom-structure').slideToggle();		    
 		}else{
-			$('.js-nom-structure').toggleClass('is-visible');
-			$('input[name=nom_structure]').val('');
-			//$(formID+' button[type=submit]').prop('disabled', true).addClass('hide');
+			$('.js-nom-structure').slideToggle();
+			$('input[name=nom_structure]').val('');			
 		}
 	});
 
@@ -43,7 +40,7 @@ function initWebinairesForm(){
         validateOnBlur : true,
         modules : 'logic',
         onError : function($form) {
-            $form.find('button[type=submit]').prop('disabled', false).find('.spinner').remove();
+            $form.find('button[type=submit]').prop('disabled', false).find('.js-spinner').remove();
         },
         onSuccess : function($form) {
 
@@ -55,7 +52,7 @@ function initWebinairesForm(){
                 url: ajax_object.ajax_url,
                 data: 'action=fluxi_participation_webinaire&'+params,
                 success: function(data){
-                    $formObj.find('button[type=submit] .spinner').remove();
+                    $formObj.find('button[type=submit] .js-spinner').remove();
 
                     if(data[0].validation == 'error'){
                         $formObj.find('button[type=submit]').prop('disabled', false);
@@ -67,7 +64,7 @@ function initWebinairesForm(){
                 },
                 error : function(jqXHR, textStatus, errorThrown) {
                     //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
-                    $formObj.find('button[type=submit]').prop('disabled', false).find('.spinner').remove();
+                    $formObj.find('button[type=submit]').prop('disabled', false).find('.js-spinner').remove();
                 }
 
             });
@@ -75,7 +72,7 @@ function initWebinairesForm(){
         },
         onValidate : function($form) {
             $formObj.find('.js-notify').html('');
-            $formObj.find('button[type=submit]').prop('disabled', true).prepend('<i class="spinner"></i>');
+            $formObj.find('button[type=submit]').prop('disabled', true).prepend('<i class="fa fa-cog fa-spin js-spinner" aria-hidden="true"></i>');
         }
     });
    

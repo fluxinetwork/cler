@@ -73,13 +73,8 @@
 		}
 	}
 
-	&[type="submit"] {
-		display: flex;
-		align-items: center;
-
-		.spinner {
-			margin-right: $space--s;
-		}
+	&[type="submit"] .spinner {
+		margin-right: $space--s;		
 	}
 }	
 

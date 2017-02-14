@@ -20,9 +20,9 @@ function initAdherentForm(){
     // Add secondary contact
     $('input[name=add_contact]').click(function() {
     	if($('input[name=add_contact]').is(':checked')){
-		    $('.js-contact2').toggleClass('is-visible');
+		    $('.js-contact2').slideToggle();
 		}else{
-			$('.js-contact2').toggleClass('is-visible');
+			$('.js-contact2').slideToggle();
 
 			$('input[name=nom_contact2]').val('').removeClass('has-content');
 			$('input[name=prenom_contact2]').val('').removeClass('has-content');
@@ -34,15 +34,15 @@ function initAdherentForm(){
 	});
 
 	if($('input[name=add_contact]').is(':checked')){
-		$('.js-add-conatct').triggerHandler('click');
+		$('input[name=add_contact]').triggerHandler('click');
 	}
 
 	// Add TEPOS fields
 	$('input#reseaux_cler_1').click(function() {
     	if(this.checked){
-		    $('.js-tepos').toggleClass('is-visible');
+		    $('.js-tepos').slideToggle();
 		}else{
-			$('.js-tepos').toggleClass('is-visible');
+			$('.js-tepos').slideToggle();
 			// reset
 			$('input[name=nom_elu]').val('').removeClass('has-content');
 			$('input[name=prenom_elu]').val('').removeClass('has-content');
@@ -58,13 +58,6 @@ function initAdherentForm(){
 		$('input#reseaux_cler_1').triggerHandler('click');
 	}
 
-    // Toggle mode d'emploi
-
-    $('.js-toggle-mode-emploi').on('click', function(){
-        $('.js-mode-emploi').toggleClass('is-visible');
-    })
-
-
     // Validation
     $.validate({
         form : formID,
@@ -73,7 +66,7 @@ function initAdherentForm(){
         validateOnBlur : true,
         modules : 'logic',
         onError : function($form) {
-            $form.find('button[type=submit]').prop('disabled', false).find('.spinner').remove();
+            $form.find('button[type=submit]').prop('disabled', false).find('.js-spinner').remove();
         },
         onSuccess : function($form) {
 
@@ -85,7 +78,7 @@ function initAdherentForm(){
                 url: ajax_object.ajax_url,
                 data: 'action=fluxi_manage_adherent&'+params,
                 success: function(data){
-                    $formObj.find('button[type=submit] .spinner').remove();
+                    $formObj.find('button[type=submit] .js-spinner').remove();
 
                     if(data[0].validation == 'error'){
                         $formObj.find('button[type=submit]').prop('disabled', false);
@@ -98,7 +91,7 @@ function initAdherentForm(){
                 },
                 error : function(jqXHR, textStatus, errorThrown) {
                     //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
-                    $formObj.find('button[type=submit]').prop('disabled', false).find('.spinner').remove();
+                    $formObj.find('button[type=submit]').prop('disabled', false).find('.js-spinner').remove();
                 }
 
             });
@@ -106,7 +99,7 @@ function initAdherentForm(){
         },
         onValidate : function($form) {
             $formObj.find('.js-notify').html('');
-            $formObj.find('button[type=submit]').prop('disabled', true).prepend('<i class="spinner"></i>');
+            $formObj.find('button[type=submit]').prop('disabled', true).prepend('<i class="fa fa-cog fa-spin js-spinner" aria-hidden="true"></i>');
         }
     });
 

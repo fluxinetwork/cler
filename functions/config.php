@@ -50,10 +50,8 @@ define('CONTACTS_PAIEMENT_1', 'radhia.berdaoui@cler.org');
 define('CONTACTS_PAIEMENT_2','lucile.krezel@cler.org');
 
 define('CONTACTS_EVENT_1','lucile.krezel@cler.org');
-define('CONTACTS_EVENT_2','info@cler.org');
 
-define('CONTACTS_EMPLOI_1', 'info@cler.org');
-define('CONTACTS_EMPLOI_2', 'lucile.krezel@cler.org');
+define('CONTACTS_EMPLOI_1', 'lucile.krezel@cler.org');
 
 define('CONTACTS_CONCOURS', 'info@cler.org');
 

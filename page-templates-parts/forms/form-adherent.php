@@ -84,7 +84,7 @@
 			</label>
 	    </div>
 
-		<div class="is-accordeon js-contact2">
+		<div class="js-contact2" style="display:none">
 			<div class="c-form__fieldset__flexrow">
 				<div class="c-form__fieldset__row">
 			    	<label class="c-form__label" for="nom_contact2">Nom<span class="i-required">•</span></label>
@@ -160,7 +160,7 @@
 
 	</fieldset>
 	
-	<div class="is-accordeon js-tepos">
+	<div class="js-tepos" style="display:none">
     	<fieldset class="c-form__fieldset">
     		<legend class="c-form__legend c-form--indicateur c-form__fieldset__row">Réseau Territoires à énergie positive (TEPOS)</legend>
 
@@ -203,7 +203,7 @@
 					<input type="checkbox" name="accepte_charte_energie_positive" id="accepte_charte_energie_positive" data-validation="required" value="1" data-validation-depends-on="reseaux_cler[]" data-validation-depends-on-value="tepos" <?php if($accepte_charte_energie_positive=='1')echo 'checked'; ?> class="c-form__label__checkbox">
 					<div class="c-form__label__txt">Je déclare avoir pris connaissance de la charte du Réseau Territoires à énergie positive<span class="i-required">•</span></div>
 				</label>
-				<a href="#" class="c-link c-link--shy mgTop--xs">Lire la charte</a>
+				<a href="<?php echo get_the_permalink(CHARTE_CLER); ?>" class="c-link c-link--shy mgTop--xs">Lire la charte</a>
 		    </div>
     	</fieldset>
 	</div>
