@@ -11,11 +11,17 @@ Template Name: Accueil
 			<h1 class="l-hero__title"><span class="u-hide@med">CLER, </span>Réseau pour la<br class="u-show@small"> transition énergétique</h1>
 			<h2 class="l-hero__subtitle">We believe that a genuine-fair energy transition is the right answer to our global crisis.</h2>
 			<div class="l-hero__btn">
-			<?php  if (!is_adherent_cler()) : ?>
-				<a href="<?php echo get_the_permalink(MAP_ADHERENT); ?>" class="c-btn c-btn--cta"><span><i class="fa fa-map mgRight--xs"></i>Explorer le réseau</span></a>
-			<?php else : ?>
-				<a href="<?php echo get_the_permalink(FORM_ADHESION); ?>?act=add" class="c-btn c-btn--cta"><span><i class="fa fa-user-plus mgRight--xs"></i>Devenir adhérent</span></a>
-			<?php endif; ?>
+			<?php
+			if (!is_user_logged_in()) :
+				echo '<a href="'.get_the_permalink(MAP_ADHERENT).'" class="c-btn c-btn--cta"><span><i class="fa fa-map mgRight--xs"></i>Explorer le réseau</span></a>';
+			else :
+				if (!is_adherent_cler()) :
+					echo '<a href="'.get_the_permalink(FORM_ADHESION).'?act=add" class="c-btn c-btn--cta"><span><i class="fa fa-user-plus mgRight--xs"></i>Devenir adhérent</span></a>';
+				else :
+					echo '<a href="'.get_the_permalink(HUB_ADHERENT).'?act=add" class="c-btn c-btn--cta"><span><i class="fa fa-users mgRight--xs"></i>Espace adhérents</span></a>';
+				endif;
+			endif;
+			?>
 
 			</div>
 		</div>
