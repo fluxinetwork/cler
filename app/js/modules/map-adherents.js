@@ -299,13 +299,20 @@ function addMakers(map, data){
                 infowindow = new google.maps.InfoWindow({
                     content: '<div class="infowindow--content">'+
                                 '<h3 class="infowindow--content--title">'+
-                                data[i].title+
+                                    data[i].title+
                                 '</h3>'+
                                 '<p>'+
-                                data[i].ville+
-                                ' ('+data[i].departement+')'+
+                                    data[i].ville+
+                                    ' ('+data[i].departement+')'+
                                 '</p>'+
-                                '<a class="button" href="'+data[i].permalink+'">Consulter la fiche</a>'+
+                                '<p>'+
+                                    data[i].catName+
+                                '</p>'+
+                                '<p>'+
+                                    data[i].catName+
+                                '</p>'+
+                                //'<a class="button" href="'+data[i].permalink+'">Consulter la fiche</a>'+
+
                               '</div>'
                 });
 

@@ -23,9 +23,11 @@
 					($count_recus==4) ? print('<div style="display:none;">') : '';
 
 					echo '<a class="c-downloadItem__title" href="'.get_the_permalink().'">';					
-					echo get_the_title();
+					echo get_the_title().' - ';
+					echo get_field('type_recu').' - ';
+					echo get_field('date_paiement');
 					echo '</a>';
-
+					// Tu peux effacer le truc avec le BR
 					($count_recus<$query_recus->post_count) ? print('<br>') : '';
 
 					($count_recus==$query_recus->post_count) ? print('</div>') : '';

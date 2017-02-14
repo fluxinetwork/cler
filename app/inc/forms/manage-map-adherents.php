@@ -82,7 +82,8 @@ function get_json_map(){
 
 			$data = array(
 				'postType' => $post_type,
-				'title' => get_field('nom_structure'),
+				'title' => get_the_title(),
+				//'title' => get_field('nom_structure'),
 				'permalink' => get_the_permalink(),
 				'latitude' => $latitude,
 				'longitude' => $longitude,
