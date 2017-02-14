@@ -530,7 +530,7 @@ function initFilters(map){
         e.stopPropagation();
         resetMarkers();
         if(is_filtered){
-            $('#form-filter-map').find('.js-reload').remove();
+            $('#form-filter-map').find('.js-reload').addClass('is-none');
             resetFilters();
             resetMarkers();
             markerCluster.repaint();
@@ -560,10 +560,10 @@ function resetMarkers() {
     if(isOpenMarker){
         // reset icon       
         previousMarker.setIcon(iconsMap[previousTag]);
-       // markerShadow.hide();
-        isOpenMarker = false;
+       // markerShadow.hide();        
         // close infowindow
-        if (infowindow) { infowindow.close();}
+        if (isOpenMarker) { currentInfowindow.close();}
+        isOpenMarker = false;
         // reset card
         //$('.map-cards .card-map:eq('+prevCardMapId+')').toggleClass('hide');
         //prevCardMapId = null;
@@ -610,7 +610,7 @@ function removeMarkers() {
  *
  */
 function reloadCurrentPage(){
-    if(lastWindowW <= bpSmall && windowW >= bpSmall && $('.map-adherents').length == 1){
+    if(lastWindowW <= bpSmall && windowW >= bpSmall && $('#map').length == 1){
         location.reload(true);
         lastWindowW = windowW;
     }
