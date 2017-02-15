@@ -76,10 +76,12 @@ $c-formateree: #338699;
 		}
 	}
 
-	.map-formateree {
-		max-width: 90%;
-		margin: 0 auto;
+	p + .map__holder {
+		margin-top: $space--l;
 	}
+
+
+	// WIDTH CONTENT
 
 	.fc > *:not(section) {
 		max-width: $contentW;

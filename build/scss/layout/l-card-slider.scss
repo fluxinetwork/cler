@@ -9,12 +9,33 @@
 $break: $break--m;
 
 .l-card-slider {
+	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
 
 	@media screen and(min-width: $break) {
 		flex-direction: row;
+	}
+
+	&::after {
+		@include pseudo_round(500px);
+		background-color: rgba(#FFF, 0.2);
+
+		[class*='bg-main'] & {
+			top: -200px;
+			left: -80px;	
+		}
+
+		[class*='bg-accent'] & {
+			bottom: -200px;
+			right: -80px;
+		}
+
+		[class*='bg-valid'] & {
+			top: -200px;
+			right: 100px;
+		}
 	}
 }
 
@@ -23,7 +44,7 @@ $break: $break--m;
 
 .l-card-slider__aside {
 	position: relative;
-	z-index: 2;
+	z-index: 3;
 	display: flex;
 	padding-bottom: $gutter;
 	flex: none;
@@ -104,6 +125,7 @@ $break: $break--m;
 .l-card-slider__cards {
 	position: relative;
 	display: flex;
+	z-index: 2;
 
 	@media screen and(min-width: $break) {
 		flex: 2;

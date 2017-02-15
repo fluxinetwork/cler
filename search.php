@@ -61,8 +61,7 @@ if ($nb_results == 0) {
             $post_type = 'emploi';
           }
 
-          global $post_img_url;
-          get_template_part( 'page-templates-parts/content', 'thumb' );
+          include(locate_template('page-templates-parts/get-thumb.php'));
 
           $permalink = get_permalink();
           $date_publi = get_the_date('d M Y');

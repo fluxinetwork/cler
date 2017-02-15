@@ -48,7 +48,7 @@
 	}
 
 	&--accent,
-	.bg-main .l-card-slider__aside & {
+	[class*='bg-main'] .l-card-slider__aside & {
 		color: $c-accent;
 
 		&::after {

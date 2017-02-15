@@ -1,6 +1,5 @@
 <?php
 $post_img_id = get_field('main_image');
-global $post_img_url;
 $post_img_url = 'none';
 if ($post_img_id) {
 	global $isMobile;

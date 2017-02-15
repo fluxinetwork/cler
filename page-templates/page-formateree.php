@@ -25,14 +25,16 @@ if ( have_posts() ) :
 		
 
 	    $query_adherents = new WP_Query($args_adherents);
-	    if ($query_adherents -> have_posts()) :  while ($query_adherents -> have_posts()) : $query_adherents -> the_post();
-
-	    	echo "string";
-
-	    endwhile; endif;
+	    if ($query_adherents -> have_posts()) :
+	    	while ($query_adherents -> have_posts()) : $query_adherents -> the_post();
+	    		$nb_formations = $query_adherents -> post_count;
+	    	endwhile;
+	    else : 
+	    	$nb_formations = '0';
+	    endif;
 	    wp_reset_postdata();
 
-		get_template_part( 'page-templates-parts/content', 'formateree' );			
+	    include(locate_template('page-templates-parts/content-formateree.php'));		
 	endwhile;
 else:
 	get_template_part( 'page-templates-parts/content', 'none' );

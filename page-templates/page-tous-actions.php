@@ -27,8 +27,8 @@ Template Name: Toutes les actions
 
 		    while( $subpages->have_posts() ) : $subpages->the_post();
 
-		    	global $post_img_url;
-		      	get_template_part( 'page-templates-parts/content', 'thumb' );
+		    	
+		      	include(locate_template('page-templates-parts/get-thumb.php'));
 
 				$permalink = get_permalink();
 				$title = get_the_title();

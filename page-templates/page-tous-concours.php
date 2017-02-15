@@ -64,8 +64,8 @@ Template Name: Tous les concours
 				$date = get_the_date('d M Y');
 				$title = get_the_title();
 
-				global $post_img_url;
-				get_template_part( 'page-templates-parts/content', 'thumb' );
+				
+				include(locate_template('page-templates-parts/get-thumb.php'));
 				
 				$categories = get_the_category();
 				if($categories){					

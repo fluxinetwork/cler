@@ -39,8 +39,8 @@ Template Name: Tous les portraits
 				$title = get_the_title();
 				$description = get_field('fluxi_resum', false, false);
 
-				global $post_img_url;
-				get_template_part( 'page-templates-parts/content', 'thumb' );
+				
+				include(locate_template('page-templates-parts/get-thumb.php'));
 
 				$categories = get_the_category();
 				if($categories){
