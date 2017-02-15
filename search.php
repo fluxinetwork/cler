@@ -34,13 +34,14 @@ if ($nb_results == 0) {
       <div class="l-filterList__filter">
         <i class="fa fa-filter" aria-hidden="true"></i>
         <select class="c-form__select postform" id="filter" name="filter">
-            <option value="-1">Aucun filtre</option>
-            <option value="page">Pages</option>
+            <option value="-1">Aucun filtre</option>            
+            <option value="post">Actualités</option>
             <option value="offres-emploi">Offres d'emploi</option>
             <!--<option value="adherents">Adhérents</option>-->
             <option value="evenements">Evènements</option>
             <option value="formations">Formations</option>
             <option value="webinaires">Webinaires</option>
+            <option value="page">Pages</option>
         </select>
       </div>
   </aside>
