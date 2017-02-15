@@ -3884,6 +3884,44 @@ a.c-meta__meta:hover {
   }
 }
 
+.grid-actions .c-tile[class*="action"]::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 3px;
+  width: 10px;
+  background-color: #FFF;
+  -webkit-transition: all 0.15s ease-out 0s;
+  -moz-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+}
+.grid-actions .c-tile[class*="action"]:hover::after {
+  background-color: #0022A0;
+}
+.grid-actions .c-tile[class*="action"].action1::after {
+  top: -3px;
+  left: 10%;
+}
+.grid-actions .c-tile[class*="action"].action1:hover::after {
+  left: 20%;
+}
+.grid-actions .c-tile[class*="action"].action2::after {
+  right: -3px;
+  top: 20%;
+  width: 3px;
+  height: 10px;
+}
+.grid-actions .c-tile[class*="action"].action2:hover::after {
+  top: 30%;
+}
+.grid-actions .c-tile[class*="action"].action3::after {
+  bottom: -3px;
+  right: 30%;
+}
+.grid-actions .c-tile[class*="action"].action3:hover::after {
+  right: 40%;
+}
+
 .hp-adherer-tmp {
   background-color: #FFF7EF;
   height: 100%;

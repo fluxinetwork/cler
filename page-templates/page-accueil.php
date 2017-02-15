@@ -97,7 +97,7 @@ Template Name: Accueil
 		<h2 class="c-section-title">Nos actions</h2>
 		<div class="l-grid l-grid--2col grid-actions">
 			<div class="l-grid__col">
-				<a href="<?php echo get_the_permalink(PAGE_SLIME); ?>" class="c-tile c-tile--rectangle c-tile--hover">
+				<a href="<?php echo get_the_permalink(PAGE_SLIME); ?>" class="c-tile c-tile--rectangle c-tile--hover action1">
 					<div class="c-tile__content">
 						<span class="c-tile__content__title">SLIME</span>
 						<span class="c-tile__content__subtitle">Services Locaux d'Intervention pour la Maîtrise de l'Énergie</span>
@@ -105,7 +105,7 @@ Template Name: Accueil
 				</a>
 			</div>
 			<div class="l-grid__col">
-				<a href="<?php echo get_the_permalink(PAGE_TEPOS); ?>" class="c-tile c-tile--rectangle c-tile--hover">
+				<a href="<?php echo get_the_permalink(PAGE_TEPOS); ?>" class="c-tile c-tile--rectangle c-tile--hover action2">
 					<div class="c-tile__content">
 						<span class="c-tile__content__title">TEPOS</span>
 						<span class="c-tile__content__subtitle">TErritoires à énergie POSitive</span>
@@ -113,7 +113,7 @@ Template Name: Accueil
 				</a>
 			</div>
 			<div class="l-grid__col">
-				<a href="<?php echo get_the_permalink(PAGE_RAPPEL); ?>" class="c-tile c-tile--rectangle c-tile--hover">
+				<a href="<?php echo get_the_permalink(PAGE_RAPPEL); ?>" class="c-tile c-tile--rectangle c-tile--hover action3">
 					<div class="c-tile__content">
 						<span class="c-tile__content__title">RAPPEL</span>
 						<span class="c-tile__content__subtitle">Réseau des Acteurs de la Pauvreté et de la Précarité Energétique dans le Logement</span>

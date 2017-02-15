@@ -98,6 +98,8 @@ define('REGLEMENT_CLER', '2665');
 
 define('CONTACT', '3183');
 
+define('NEWSLETTER_FORM_URL', 'http://eepurl.com/cBY7OD');
+
 /**
  * Add excerpt to pages
  */
