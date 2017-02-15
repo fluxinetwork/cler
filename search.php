@@ -37,7 +37,7 @@ if ($nb_results == 0) {
             <option value="-1">Aucun filtre</option>
             <option value="page">Pages</option>
             <option value="offres-emploi">Offres d'emploi</option>
-            <option value="adherents">Adhérents</option>
+            <!--<option value="adherents">Adhérents</option>-->
             <option value="evenements">Evènements</option>
             <option value="formations">Formations</option>
             <option value="webinaires">Webinaires</option>
