@@ -34,10 +34,10 @@ Template Name: Tous les webinaires
 			while ( $query_all->have_posts() ) : $query_all->the_post();
 
 				$permalink = get_permalink();
-				$date = get_the_date('d M Y');
+				$date = get_the_date();
 				$title = get_the_title();
 
-				$date_webiniare = new DateTime(get_field('date_webinaire', false, false));
+				$date_webiniare = get_field('date_webinaire');
 				$heure_webinaire = get_field('heure_webinaire');
 
 				include(locate_template('page-templates-parts/get-thumb.php'));
@@ -57,7 +57,7 @@ Template Name: Tous les webinaires
 				$output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
 				$output .= '<div class="c-meta">';
 				$output .= '<div class="c-dash"></div>';
-				$output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date_webiniare->format('j M Y').'</span>';
+				$output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date_webiniare.'</span>';
 				$output .= '<span class="c-meta__meta"><i class="fa fa-clock-o c-meta__meta__icon" aria-hidden="true"></i>'.$heure_webinaire.'</span>';
 				$output .= '</div>';
 				$output .= '</div>';

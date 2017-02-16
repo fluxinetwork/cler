@@ -3138,7 +3138,7 @@ body {
 .fc p a,
 .fc .fc__focus p a {
   color: #0022A0;
-  font-family: 900px;
+  font-weight: 900;
   position: relative;
   border-bottom: 3px solid #0022A0;
 }

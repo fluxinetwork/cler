@@ -65,7 +65,7 @@ module.exports = function (grunt) {
 		        map: false,
 		        processors: [
 		          	require('autoprefixer')({browsers: ['last 3 versions']}),
-		          	//require('cssnano')()
+		          	require('cssnano')()
 		        ]
 			},
 			main: {
@@ -87,7 +87,7 @@ module.exports = function (grunt) {
 		},
 	});
 
-	grunt.registerTask('css', ['sass']);
+	grunt.registerTask('css', ['sass', 'postcss']);
 	grunt.registerTask('js', ['jshint:all', 'concat:mainJS', 'concat:fullJS', 'uglify:full', 'uglify:main',]);
 	grunt.registerTask('default', ['watch']);
 

@@ -20,7 +20,7 @@
 
 	endif;
 
-	$date_webiniare = new DateTime(get_field('date_webinaire', false, false));
+	$date_webiniare = get_field('date_webinaire');
 	$heure_webinaire = get_field('heure_webinaire');
 	$themes = get_field('themes');
 	$liste_themes = '';
@@ -37,13 +37,13 @@
 
 			<div class="l-miniDashboard ">
 				<div class="l-miniDashboard__row">
-					<span class="l-miniDashboard__row__element"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i><?php echo $date_webiniare->format('j M Y'); ?></span>
+					<span class="l-miniDashboard__row__element"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i><?php echo $date_webiniare; ?></span>
 					<span class="l-miniDashboard__row__element"><i class="fa fa-clock-o c-meta__meta__icon" aria-hidden="true"></i><?php echo $heure_webinaire; ?></span>
 					<a href="#inscription" class="l-miniDashboard__row__element l-miniDashboard__row__element--btn c-btn c-btn--ghost"><i class="fa fa-user-plus c-meta__meta__icon" aria-hidden="true"></i>Inscription</a>
 				</div>
 			</div>
 
-			<?php get_template_part( 'page-templates-parts/content', 'intro'); ?>
+			<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum', false, false); ?></h2>
 		</header>
 	</div>
 

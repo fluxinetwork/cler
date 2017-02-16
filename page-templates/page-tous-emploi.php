@@ -123,6 +123,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 
 						$ob_type_de_poste = get_field_object('field_574dadcc3c7b1');
 						$label_type_de_poste = $ob_type_de_poste['choices'][ get_field('type_de_poste') ];
+						$nom = limitString(get_field('nom_structure'), 0, 60, ' [...]');
 
 						$code_postal = get_field('code_postal');
 						$numero_departement = substr($code_postal,0,-3);
@@ -144,12 +145,12 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 						$output = '<li class="l-postList__item">';
 						$output .= '<a href="'.get_permalink().'">';
 						$output .= '<article class="offre">';
-						$output .= '<time datetime="'.get_the_date('Y-m-d').'" class="t-meta l-header__date">'.get_the_date().'</time> ';
+						$output .= '<time datetime="'.get_the_date('Y-m-d').'" class="t-meta l-header__date">'.get_the_date('d M Y').'</time> ';
 						$output .= '<h1 class="h2">'.get_the_title().'</h1>';
 
 						$output .= '<div class="c-meta">';
 						$output .= '<div class="c-dash"></div>';
-						$output .= '<span class="c-meta__meta">'.get_field('nom_structure').'</span>';
+						$output .= '<span class="c-meta__meta"><i class="fa fa-cube c-meta__meta__icon" aria-hidden="true"></i>'.$nom.'</span>';
 						$output .= '<span class="c-meta__meta"><i class="fa fa-map-marker c-meta__meta__icon" aria-hidden="true"></i>'.get_field('ville').'</span>';
 						$output .= '<span class="c-meta__meta"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i>'.$numero_departement.'</span>';
 						$output .= '</div>';

@@ -16,7 +16,7 @@ $border: 7px solid $c-accent;
 	.fc__focus p a {
 		@extend .p;
 		color: $c-main;
-		font-family: 900px;
+		font-weight: 900;
 		position: relative;
 		border-bottom: 3px solid $c-main;
 	}

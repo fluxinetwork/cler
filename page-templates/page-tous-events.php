@@ -15,7 +15,7 @@ Template Name: Toutes les événements
 
 		<div class="c-meta">
 			<div class="c-dash bg-white"></div>
-			<span class="c-meta__meta c-white">&nbsp;<span class="js-nb-results"><?php echo $output; ?></span></span>
+			<span class="c-meta__meta c-white"><i class="fa fa-graduation-cap c-meta__meta__icon" aria-hidden="true"></i>&nbsp;<span class="js-nb-results"><?php echo $output; ?></span></span>
 		</div>
 	</header>
 </div>
@@ -145,7 +145,7 @@ Template Name: Toutes les événements
 
 				$output .= '<div class="c-meta">';
 				$output .= '<div class="c-dash"></div>';
-				$output .= '<span class="c-meta__meta">'.$date_event.'</span>';
+				$output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date_event.'</span>';
 				$output .= '<span class="c-meta__meta"><i class="fa fa-map-marker c-meta__meta__icon" aria-hidden="true"></i>'.get_field('ville').'</span>';
 				$output .= '<span class="c-meta__meta"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i>'.$numero_departement.'</span>';
 				$output .= '</div>';

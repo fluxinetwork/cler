@@ -170,7 +170,7 @@ Template Name: Toutes les formations
 
 						$output .= '<div class="c-meta">';
 						$output .= '<div class="c-dash"></div>';
-						$output .= '<span class="c-meta__meta">'.get_field('nom_centre').$formateree_label.'</span>';
+						$output .= '<span class="c-meta__meta"><i class="fa fa-cube c-meta__meta__icon" aria-hidden="true"></i>'.get_field('nom_centre').$formateree_label.'</span>';
 						$output .= '<span class="c-meta__meta"><i class="fa fa-map-marker c-meta__meta__icon" aria-hidden="true"></i>'.get_field('ville').'</span>';
 						$output .= '<span class="c-meta__meta"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i>'.$numero_departement.'</span>';
 						$output .= '</div>';
