@@ -119,9 +119,9 @@ function enqueue_scripts() {
     /* REGISTER */
 
     wp_register_script( 'jQuery', THEME_DIR_PATH . '/app/js/vendors/jquery-1.11.3.min.js', array(), null, false );
-    wp_register_script( 'imagesLoaded', THEME_DIR_PATH . '/app/js/vendors/imagesloaded.min.js', array(), null, true );
-    wp_register_script( 'waypoint', THEME_DIR_PATH . '/app/js/vendors/base/waypoints.min.js', array(), null, true );
-    wp_register_script( 'mousewheel', THEME_DIR_PATH . '/app/js/vendors/jquery.mousewheel.min.js', array(), null, true );
+    //wp_register_script( 'imagesLoaded', THEME_DIR_PATH . '/app/js/vendors/imagesloaded.min.js', array(), null, true );
+    //wp_register_script( 'waypoint', THEME_DIR_PATH . '/app/js/vendors/base/waypoints.min.js', array(), null, true );
+    //wp_register_script( 'mousewheel', THEME_DIR_PATH . '/app/js/vendors/jquery.mousewheel.min.js', array(), null, true );
     wp_register_script( 'fitvids', THEME_DIR_PATH . '/app/js/vendors/base/jquery.fitvids.min.js', array(), null, true );
 
     wp_register_script( 'stripeApi', 'https://js.stripe.com/v2/', array(), null, true );
@@ -199,7 +199,7 @@ function enqueue_scripts() {
     }
 
     // Main
-    wp_register_script( 'main', THEME_DIR_PATH . '/app/js/main.js', array('jQuery', 'imagesLoaded', 'waypoint', 'mousewheel', 'fitvids'), null, true );
+    wp_register_script( 'main', THEME_DIR_PATH . '/app/js/main.js', array('jQuery', 'fitvids'), null, true );
 
     wp_register_script( 'full', THEME_DIR_PATH . '/app/js/full.min.js', array('jQuery'), null, true );
 
