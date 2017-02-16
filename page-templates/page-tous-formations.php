@@ -155,7 +155,7 @@ Template Name: Toutes les formations
 							endforeach;
 						endif;
 
-						$agrement_formateree = get_field_object('agrement_formateree');
+						$agrement_formateree = get_field_object('field_57b6ed427ce87');
 						if($agrement_formateree == 'oui'):
 							$formateree_label = ' - Agrément Format’eree';
 						else:

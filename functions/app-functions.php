@@ -199,14 +199,14 @@ function fluxi_filter_posts(){
 						endforeach;
 					endif;
 
-					$agrement_formateree = get_field_object('agrement_formateree');
+					$agrement_formateree = get_field_object('field_57b6ed427ce87');
 					if($agrement_formateree == 'oui'):
 						$formateree_label = ' - Agrément Format’eree';
 					else:
 						$formateree_label = '';
 					endif;
 
-					$nom_centre = $get_field('nom_centre');					
+					$nom_centre = get_field('nom_centre');
 
 					$result_content .= '<li class="l-postList__item">';
 					$result_content .= '<a href="'.get_permalink().'">';
