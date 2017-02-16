@@ -39,4 +39,10 @@
 	</div>
 </article>
 
+<section class="l-row bg-main--grad">
+	<div class="l-col">
+		<?php get_template_part( 'page-templates-parts/sliders/hp-actus' ); ?>
+	</div>
+</section>
+
 

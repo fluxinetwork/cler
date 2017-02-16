@@ -147,7 +147,7 @@ Template Name: Accueil
 		<div class="l-grid__col l-flexCol l-flex--center">
 			<h2 class="c-section-title">Devenir adhérent</h2>
 			<p class="hp-adherer-txt">Adhérer au réseau du CLER, c’est avant tout adhérer à des valeurs et intégrer un réseau partageant des objectifs communs. Mais c’est aussi bénéficier de nombreux avantages…</p>
-			<a href="<?php echo get_the_permalink(PAGE_ADHEREZ); ?>" class="c-btn c-btn--cta mgTop--l"><span>Ça m'interesse !</span></a>
+			<a href="<?php echo get_the_permalink(PAGE_ADHEREZ); ?>" class="c-btn c-btn--cta mgTop--l"><span><i class="fa fa-thumbs-up mgRight--xs"></i>Ça m'interesse !</span></a>
 		</div>
 	</div>
 </section>

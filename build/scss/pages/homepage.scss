@@ -11,13 +11,17 @@
 
 .hp-hero__content {
 	position: relative;
-	max-width: $maxW/2;
+	max-width: $maxW/2.2;
 	text-align: center;
 	margin: 0 auto;
 
 	@media screen and (min-width: $break--m) {
 		text-align: left;
 		margin-left: 0;
+	}
+
+	@media screen and (min-width: $break--l) {
+		max-width: $maxW/2;
 	}
 }
 
@@ -27,7 +31,8 @@
 
 .hp-portraits {
 	position: absolute;
-	top: -95px;
+	top: 50%;
+	transform: translateY(-50%);
 	right: -405px;
 	width: 1000px;
 	opacity: 0;
@@ -38,18 +43,14 @@
 	}
 
 	@media screen and (min-width: 850px) {
-		top: -105px;
 		right: -295px;
 	}
 
 	@media screen and (min-width: $break--l) {
-		transform: scale(1);
-		top: -63px;
 		right: -270px;
 	}
 
 	@media screen and (min-width: $break--xl) {
-		top: -25px;
 		right: -60px;
 	}
 

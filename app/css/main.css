@@ -3778,7 +3778,7 @@ a.c-meta__meta:hover {
 \*======================================================================*/
 .hp-hero__content {
   position: relative;
-  max-width: 550px;
+  max-width: 500.0px;
   text-align: center;
   margin: 0 auto;
 }
@@ -3788,10 +3788,16 @@ a.c-meta__meta:hover {
     margin-left: 0;
   }
 }
+@media screen and (min-width: 960px) {
+  .hp-hero__content {
+    max-width: 550px;
+  }
+}
 
 .hp-portraits {
   position: absolute;
-  top: -95px;
+  top: 50%;
+  transform: translateY(-50%);
   right: -405px;
   width: 1000px;
   opacity: 0;
@@ -3803,20 +3809,16 @@ a.c-meta__meta:hover {
 }
 @media screen and (min-width: 850px) {
   .hp-portraits {
-    top: -105px;
     right: -295px;
   }
 }
 @media screen and (min-width: 960px) {
   .hp-portraits {
-    transform: scale(1);
-    top: -63px;
     right: -270px;
   }
 }
 @media screen and (min-width: 1300px) {
   .hp-portraits {
-    top: -25px;
     right: -60px;
   }
 }
