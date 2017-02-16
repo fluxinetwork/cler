@@ -5,7 +5,7 @@
 \*------------------------------*/
 
 var map = null;
-var themeURL = 'https://cler.org/dev-cler/wp-content/themes/cler';
+var themeURL = 'https://cler.org/wp-content/themes/cler';
 
 var windowW = $(window).width();
 var bpSmall = '400';

@@ -207,8 +207,10 @@ function enqueue_scripts() {
     /* ENQUEUE */
 
     if ( DEV ) {
+        wp_localize_script( 'main', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
         wp_enqueue_script('main');
     } else {
+        wp_localize_script( 'full', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
         wp_enqueue_script('full');
     }
 
