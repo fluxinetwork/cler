@@ -6,7 +6,7 @@
 
 <?php 	
 	$date_publi = get_the_date('d M Y');
-	$date_candidature = new DateTime( get_field( 'date_candidature', false, false ) );
+	$date_candidature = get_field( 'date_candidature');
 
 	$nom = get_field('nom_structure');	
 	$field = get_field_object('type_structure');
@@ -51,7 +51,7 @@
 
 	<div class="l-row bg-accent--grad">
 		<header class="l-col l-col--content">
-			<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta c-white l-header__date"><?php echo get_the_date(); ?></time>
+			<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta c-white l-header__date"><?php echo get_the_date('d M Y'); ?></time>
 			<h1 class="c-white"><?php echo get_the_title(); ?></h1>
 
 			<div class="c-meta l-header__meta c-meta--white">
@@ -80,7 +80,7 @@
 						<div class="c-tag"><?php echo $label_experience; ?></div>
 						<?php echo $label_niveau_detude; ?>
 					</div>
-					<span class="l-miniDashboard__row__element"><i class="fa fa-clock-o c-meta__meta__icon" aria-hidden="true"></i>Postuler avant le <?php echo $date_candidature->format('j M Y'); ?></span>
+					<span class="l-miniDashboard__row__element"><i class="fa fa-clock-o c-meta__meta__icon" aria-hidden="true"></i>Postuler avant le <?php echo $date_candidature; ?></span>
 				</div>
 				<div class="l-miniDashboard__duo">
 					<div class="l-miniDashboard__duo__left">
@@ -90,9 +90,9 @@
 							echo '<a href="'.$site_internet_structure.'" class="c-link c-link--more mgTop--m" target="_blank">Voir le site internet</a>';
 						endif ?>
 					</div>
-					<div class="l-miniDashboard__duo__right offre-localisation">
-						<div class="offre-localisation__nb"><?php echo $numero_departement; ?></div>
-						<div class="offre-localisation__txt">
+					<div class="l-miniDashboard__duo__right">
+						<div class="l-miniDashboard__duo__right__nb"><?php echo $numero_departement; ?></div>
+						<div class="l-miniDashboard__duo__right__txt">
 							<div class="t-meta t-meta--dark"><i class="fa fa-map-marker c-meta__meta__icon" aria-hidden="true"></i><?php echo $ville; ?></div>
 							<div class="t-meta t-meta--dark mgTop--xs"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i><?php echo $label_departement; ?></div>
 						</div>

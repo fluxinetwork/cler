@@ -14,7 +14,7 @@ Template Name: Toutes les formations
 
 		<div class="c-meta">
 			<div class="c-dash bg-white"></div>
-			<span class="c-meta__meta c-white">&nbsp;<span class="js-nb-results"><?php echo $output; ?></span></span>
+			<span class="c-meta__meta c-white"><i class="fa fa-graduation-cap c-meta__meta__icon" aria-hidden="true"></i><span class="js-nb-results"><?php echo $output; ?></span></span>
 		</div>
 	</header>
 </div>

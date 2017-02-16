@@ -54,6 +54,14 @@ $break: $break--m;
 	}
 }
 
+.l-miniDashboard__row__element--tags {
+	flex: 1 0 100%;
+
+	@media screen and (min-width: $break) {
+		flex: 1 0 50%;
+	}
+}
+
 .l-miniDashboard__row__element--btn {
 	flex: 1 0 100%;
 
@@ -74,6 +82,14 @@ $break: $break--m;
 	@media screen and (min-width: $break) {
 		flex-direction: row;
 	}
+
+	&:first-child {
+		margin-top: $space--m;
+
+		@media screen and (min-width: $break) {
+			margin-top: $space--l;
+		}
+	}
 }
 
 .l-miniDashboard__duo__right,
@@ -87,5 +103,39 @@ $break: $break--m;
 
 	@media screen and (min-width: $break) {
 		margin-bottom: 0;
+	}
+}
+
+.l-miniDashboard__duo__right {
+	position: relative;
+	@extend .l-box;
+
+	@media screen and (min-width: $break) {
+		margin-left: $gutter;
+		@include flex(center);
+	}
+}
+
+.l-miniDashboard__duo__right__nb {
+	display: none;
+	position: absolute;
+	font-size: 180px;
+	font-weight: 900;
+	font-family: $font-h;
+	opacity: 0.2;
+	color: $c-accent;
+
+	@media screen and (min-width: $break) {
+		@include flex(center);
+		top: 0;
+		height: 100%;
+	}
+}
+
+.l-miniDashboard__duo__right__txt {
+	z-index: 2;
+
+	@media screen and (min-width: $break) {
+		text-align: center;
 	}
 }

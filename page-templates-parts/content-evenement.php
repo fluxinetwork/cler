@@ -48,9 +48,9 @@
 							<a href="<?php echo $link_event; ?>" class="c-link c-link--more mgTop--m" target="_blank">Site internet de l'évènement</a>
 						<?php endif; ?>
 					</div>
-					<div class="l-miniDashboard__duo__right offre-localisation">
-						<div class="offre-localisation__nb"><?php echo $numero_departement; ?></div>
-						<div class="offre-localisation__txt">
+					<div class="l-miniDashboard__duo__right">
+						<div class="l-miniDashboard__duo__right__nb"><?php echo $numero_departement; ?></div>
+						<div class="l-miniDashboard__duo__right__txt">
 							<div class="t-meta t-meta--dark"><i class="fa fa-map-marker c-meta__meta__icon" aria-hidden="true"></i><?php echo $ville; ?></div>
 							<?php if ($ville != 'Paris') : ?>
 								<div class="t-meta t-meta--dark mgTop--xs"><i class="fa fa-location-arrow c-meta__meta__icon" aria-hidden="true"></i><?php echo $label_departement; ?></div>

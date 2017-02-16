@@ -21,31 +21,7 @@ Template Name: Hub adhérents
 		
 		<aside class="adherents__aside">
 			<div class="adherents__aside__contact">
-				<?php /*
-					$contact = get_field('contact_referent');
-					$contact_id = $contact[0];
-					$descriptif_contact = get_field('descriptif_contact', false, false);					
-
-					if( $contact ):			
-						$photo = get_field('photo', $contact_id);
-
-						$output = '<a href="mailto:'.get_field('mail_contact', $contact_id).'">';
-						$output .= '<article class="c-card">';
-						$output .= '<div class="c-card__header" style="background-image: url('.$photo['sizes']['thumbnail'].')"></div>';
-						$output .= '<div class="c-card__body">';
-						$output .= '<div class="c-card__body__meta"><span class="t-meta">'.$descriptif_contact.'</span></div>';
-						$output .= '<h1 class="c-card__body__title">'.get_the_title($contact_id).'</h1>';
-						$output .= '</div>';
-						$output .= '<div class="c-card__footer"><span class="c-link c-link--more c-card__body__link">Contactez moi</span></div>';
-						$output .= '</article>';
-						$output .= '</a>';
-
-						echo $output;
-						
-					endif; */
-
-					get_template_part( 'page-templates-parts/card','contact' );
-				?>
+				<?php get_template_part( 'page-templates-parts/card','contact' ); ?>
 			</div>
 
 			<div class="adherents__aside__events">
@@ -70,15 +46,13 @@ Template Name: Hub adhérents
 						$query->the_post();
 
 						$permalink = get_permalink();
-						$dateformatstring = "d M";
-						$unixtimestamp = strtotime(get_field('date_event'));
 						$ville = get_field('ville');
 						$title = get_the_title();
 
 						$output = '<li class="eventList__item">';
 						$output .= '<a href="'.$permalink.'">';
 						$output .= '<article class="miniEvent">';
-						$output .= '<h2 class="miniEvent__meta">'.date_i18n($dateformatstring, $unixtimestamp).'. à '.$ville.'</h2>';
+						$output .= '<h2 class="miniEvent__meta"><i class="fa fa-calendar mgRight--xs"></i>'.get_field('date_event').' <i class="fa fa-map-marker mgRight--xs mgLeft--s"></i>'.$ville.'</h2>';
 						$output .= '<h1 class="miniEvent__title">'.$title.'</h1>';
 						$output .= '</article>';
 						$output .= '</a>';
