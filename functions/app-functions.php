@@ -94,7 +94,7 @@ function fluxi_filter_posts(){
 
 					endif;
 
-					$result_content = '<li class="l-postList__item">';
+					$result_content .= '<li class="l-postList__item">';
 					$result_content .= '<a href="'.get_permalink().'">';
 					$result_content .= '<article class="offre">';
 
@@ -148,7 +148,7 @@ function fluxi_filter_posts(){
 						endforeach;
 					endif; 
 
-					$result_content = '<li class="l-postList__item">';
+					$result_content .= '<li class="l-postList__item">';
 					$result_content .= '<a href="'.get_permalink().'">';
 					$result_content .= '<article class="offre">';
 
@@ -208,7 +208,7 @@ function fluxi_filter_posts(){
 
 					$nom_centre = $get_field('nom_centre');					
 
-					$result_content = '<li class="l-postList__item">';
+					$result_content .= '<li class="l-postList__item">';
 					$result_content .= '<a href="'.get_permalink().'">';
 					$result_content .= '<article class="offre">';
 
