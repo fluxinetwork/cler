@@ -21,6 +21,7 @@ $break: $break--m;
 	&::after {
 		@include pseudo_round(500px);
 		background-color: rgba(#FFF, 0.2);
+		z-index: 0;
 
 		[class*='bg-main'] & {
 			top: -200px;
@@ -33,8 +34,13 @@ $break: $break--m;
 		}
 
 		[class*='bg-valid'] & {
-			top: -200px;
-			right: 100px;
+			top: -180px;
+			left: 170px;
+		}
+
+		[class*='bg-slider'] & {
+			bottom: -270px;
+			right: 590px;
 		}
 	}
 }
@@ -186,6 +192,7 @@ $break: $break--m;
 .l-card-slider__controls {
 	display: none;
 	margin-top: $gutter*2;
+	z-index: 2;
 
 	@media screen and(min-width: $break) {
 		display: flex;

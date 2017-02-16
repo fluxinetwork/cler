@@ -8,8 +8,8 @@ Template Name: Accueil
 <section class="l-row bg-light hp-hero">
 	<div class="l-col l-hero">
 		<div class="hp-hero__content">
-			<h1 class="l-hero__title"><span class="u-hide@med">CLER, </span>Réseau pour la<br class="u-show@small"> transition énergétique</h1>
-			<h2 class="l-hero__subtitle">We believe that a genuine-fair energy transition is the right answer to our global crisis.</h2>
+			<h1 class="l-hero__title">Réseau pour la<br class="u-show@small"> transition énergétique</h1>
+			<h2 class="l-hero__subtitle"><?php echo get_field('fluxi_resum', false, false); ?></h2>
 			<div class="l-hero__btn">
 			<?php
 			if (!is_user_logged_in()) :

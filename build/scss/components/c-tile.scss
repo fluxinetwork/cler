@@ -36,6 +36,8 @@
 .c-tile__content__subtitle {
 	@include flex(center);
 	position: absolute;
+	left: 0;
+	top: 0;
 	width: 100%;
 	height: 100%;
 	font-family: $font-subh;

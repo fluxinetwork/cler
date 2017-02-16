@@ -21,7 +21,8 @@ $break: $break--m;
 			justify-content: center;
 		}
 
-		.single-concours & {
+		.single-concours &,
+		.single-evenements & {
 			flex-direction: column
 		}
 	}

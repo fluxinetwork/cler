@@ -1154,6 +1154,7 @@ body {
   width: 500px;
   height: 500px;
   background-color: rgba(255, 255, 255, 0.2);
+  z-index: 0;
 }
 [class*='bg-main'] .l-card-slider::after {
   top: -200px;
@@ -1164,8 +1165,12 @@ body {
   right: -80px;
 }
 [class*='bg-valid'] .l-card-slider::after {
-  top: -200px;
-  right: 100px;
+  top: -180px;
+  left: 170px;
+}
+[class*='bg-slider'] .l-card-slider::after {
+  bottom: -270px;
+  right: 590px;
 }
 
 .l-card-slider__aside {
@@ -1318,6 +1323,7 @@ body {
 .l-card-slider__controls {
   display: none;
   margin-top: 3.472rem;
+  z-index: 2;
 }
 @media screen and (min-width: 700px) {
   .l-card-slider__controls {
@@ -1718,7 +1724,7 @@ body {
   .single-webinaires .l-miniDashboard__row {
     justify-content: center;
   }
-  .single-concours .l-miniDashboard__row {
+  .single-concours .l-miniDashboard__row, .single-evenements .l-miniDashboard__row {
     flex-direction: column;
   }
 }
@@ -2317,6 +2323,8 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   font-family: "Roboto Condensed", sans-serif;
