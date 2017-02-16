@@ -11,7 +11,7 @@
 
 .wrap-navBar {
 	position: relative;
-	z-index: 2000;
+	z-index: 10;
 	background-color: #fff;
 	box-shadow: $shadow;
 	padding: 0 $space--m;
@@ -38,7 +38,6 @@
 #search-btn {
 	position: fixed;
 	display: none;
-	z-index: 2000;
 	bottom: $space--m;
 	right: $space--m;
 	@include transition;
@@ -75,12 +74,6 @@
 	}
 }
 
-
-//================================================================  FOOTER
-
-.footer .l-col {
-	min-height: 20vh;
-}
 
 //============================================================= PAGINATION
 
@@ -142,5 +135,30 @@
 .pagination .page-numbers:last-child,
 .pagination .page-numbers:not(.current):nth-last-child(2) {
 	padding-right: $space--m;
+}
+
+
+//============================================================= FOOTER
+
+.footer {
+	z-index: 20;
+}
+
+.footer__content {
+	@include flex(space-between center);
+}
+
+.footer__content__col2 {
+	width: 100%;
+	@include flex(center);
+
+	a[href*='twitter'] {
+		margin: 0 $space--m 0 $space--xs;
+	}
+}
+
+.footer__content__col3 {
+	display: flex;
+	justify-content: flex-end;
 }
 

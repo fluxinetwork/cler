@@ -132,18 +132,22 @@ Template Name: Accueil
 </section>
 
 <section class="l-row">
-	<div class="l-col l-grid">
-		<div class="l-grid__col">
-			<div class="l-grid__col__content hp-adherer-tmp">
-				
-			</div>	
+	<div class="l-col l-grid hp_adhesion">
+		<div class="l-grid__col u-show@large">
+		<?php
+			for ($i=1; $i<4; $i++) {
+				echo '<div class="hp-portraits__row">';
+				for ($j=0; $j<$i+1; $j++) {
+					echo '<div class="hp-portraits_img"></div>';
+				}
+				echo '</div>';
+			}
+		?>
 		</div>
-		<div class="l-grid__col">
-			<div class="l-flexCol l-flex--center">
-				<h2 class="c-section-title">Devenir adhérent</h2>
-				<p class="hp-adherer-txt">Adhérer au réseau du CLER, c’est avant tout adhérer à des valeurs et intégrer un réseau partageant des objectifs communs. Mais c’est aussi bénéficier de nombreux avantages…</p>
-				<a href="<?php echo get_the_permalink(PAGE_ADHEREZ); ?>" class="c-btn c-btn--cta mgTop--l"><span>Ça m'interesse !</span></a>
-			</div>	
+		<div class="l-grid__col l-flexCol l-flex--center">
+			<h2 class="c-section-title">Devenir adhérent</h2>
+			<p class="hp-adherer-txt">Adhérer au réseau du CLER, c’est avant tout adhérer à des valeurs et intégrer un réseau partageant des objectifs communs. Mais c’est aussi bénéficier de nombreux avantages…</p>
+			<a href="<?php echo get_the_permalink(PAGE_ADHEREZ); ?>" class="c-btn c-btn--cta mgTop--l"><span>Ça m'interesse !</span></a>
 		</div>
 	</div>
 </section>
