@@ -56,7 +56,7 @@ define('CONTACTS_EMPLOI_1', 'lucile.krezel@cler.org');
 define('CONTACTS_CONCOURS', 'info@cler.org');
 
 define('CONTACTS_FORMATION_1', 'info@cler.org');
-
+define('CONTACTS_FORMATION_2', 'alexis.monteil@cler.org');
 
 /**
  * LINKS

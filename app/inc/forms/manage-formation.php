@@ -110,7 +110,7 @@ function fluxi_manage_formation(){
 						}
 
 						// Notification mail admin
-						notify_by_mail (array(CONTACTS_FORMATION_1),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Formation en attente de validation',false,'<h2>Nouvelle formation ajoutée</h2><p>' . $current_user->user_firstname . ' vient d\'ajouter la formation <strong>"' . wp_strip_all_tags( $title ) . '"</strong>.<br>Vous devez la publier pour la rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#86bd4c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'offre</a></p>');
+						notify_by_mail (array(CONTACTS_FORMATION_1,CONTACTS_FORMATION_2),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Formation en attente de validation',false,'<h2>Nouvelle formation ajoutée</h2><p>' . $current_user->user_firstname . ' vient d\'ajouter la formation <strong>"' . wp_strip_all_tags( $title ) . '"</strong>.<br>Vous devez la publier pour la rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#86bd4c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'offre</a></p>');
 
 						// Notification mail current user
 						$mail_new_formation = array(get_footer_mail(), $redirect_slug, $is_adherent);

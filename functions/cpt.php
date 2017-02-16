@@ -29,7 +29,7 @@ if ( CUSTOM_POST_TYPE ) {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'outils/offresemploi', 'with_front' => true ),
+			'rewrite' => array( 'slug' => 'outils/offres-emploi', 'with_front' => true ),
 			'query_var' => true,
 
 			'supports' => array( 'title', 'author' ),
@@ -127,7 +127,7 @@ if ( CUSTOM_POST_TYPE ) {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'rendez-vous/agenda', 'with_front' => true ),
+			'rewrite' => array( 'slug' => 'rendez-vous/evenements', 'with_front' => true ),
 			'query_var' => true,
 
 			'supports' => array( 'title', 'author' ),
@@ -191,7 +191,7 @@ if ( CUSTOM_POST_TYPE ) {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'rendez-vous/web-seminaires', 'with_front' => true ),
+			'rewrite' => array( 'slug' => 'rendez-vous/webinaires', 'with_front' => true ),
 			'query_var' => true,
 
 			'supports' => array( 'title', 'author' ),
@@ -223,7 +223,7 @@ if ( CUSTOM_POST_TYPE ) {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'outils/formation', 'with_front' => true ),
+			'rewrite' => array( 'slug' => 'outils/formations', 'with_front' => true ),
 			'query_var' => true,
 
 			'supports' => array( 'title', 'author' ),
@@ -255,7 +255,7 @@ if ( CUSTOM_POST_TYPE ) {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'le-reseau/les-portraits', 'with_front' => true ),
+			'rewrite' => array( 'slug' => 'le-reseau/portraits', 'with_front' => true ),
 			'query_var' => true,
 
 			'supports' => array( 'title', 'author' ),
@@ -286,7 +286,7 @@ if ( CUSTOM_POST_TYPE ) {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'le-reseau/sur-le-terrain', 'with_front' => true ),
+			'rewrite' => array( 'slug' => 'le-reseau/retours-experience', 'with_front' => true ),
 			'query_var' => true,
 
 			'supports' => array( 'title', 'author' ),

@@ -172,7 +172,7 @@
 	    </div>
 
 		<div class="c-form__fieldset__row">
-	    	<label class="c-form__label">Êtes-vous labellisé par le CLER - Réseau pour la transition énergétique (Agrément Format’eree) <span class="i-required">•</span></label>
+	    	<label class="c-form__label">La formation bénéficie-t-elle de l’agrément Format’eree ? <span class="i-required">•</span></label>
 		    <label class="c-form__label c-form__label--checkbox">			    	
 		    	<input type="radio" name="agrement_formateree" data-validation="required" value="non" <?php if( !empty($agrement_formateree) && $agrement_formateree == 'non')echo 'checked';?>>
 		    	<div class="c-form__label__txt">Non</div>
