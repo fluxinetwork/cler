@@ -62,7 +62,7 @@
 	min-height: 70vh;
 
 	&::after {
-		z-index: 10;
+		z-index: 5;
 		@include pseudo_bg($c-light, 1);
 		@include visibility();
 		transition: $transition--dynamic;

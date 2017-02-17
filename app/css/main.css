@@ -3674,7 +3674,7 @@ a.c-meta__meta:hover {
   min-height: 70vh;
 }
 .main::after {
-  z-index: 10;
+  z-index: 5;
   content: '';
   position: absolute;
   top: 0;

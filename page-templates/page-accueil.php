@@ -8,8 +8,8 @@ Template Name: Accueil
 <section class="l-row bg-light hp-hero">
 	<div class="l-col l-hero">
 		<div class="hp-hero__content">
-			<h1 class="l-hero__title">Réseau pour la<br class="u-show@small"> transition énergétique</h1>
-			<h2 class="l-hero__subtitle"><?php echo get_field('fluxi_resum', false, false); ?></h2>
+			<h1 class="l-hero__title"><?php echo get_field('hp_title'); ?></h1>
+			<h2 class="l-hero__subtitle"><?php echo get_field('hp_subtitle'); ?></h2>
 			<div class="l-hero__btn">
 			<?php
 			if (!is_user_logged_in()) :
@@ -146,7 +146,7 @@ Template Name: Accueil
 		</div>
 		<div class="l-grid__col l-flexCol l-flex--center">
 			<h2 class="c-section-title">Devenir adhérent</h2>
-			<p class="hp-adherer-txt">Adhérer au réseau du CLER, c’est avant tout adhérer à des valeurs et intégrer un réseau partageant des objectifs communs. Mais c’est aussi bénéficier de nombreux avantages…</p>
+			<p class="hp-adherer-txt"><?php echo get_field('hp_txt_adhesion'); ?></p>
 			<a href="<?php echo get_the_permalink(PAGE_ADHEREZ); ?>" class="c-btn c-btn--cta mgTop--l"><span><i class="fa fa-thumbs-up mgRight--xs"></i>Ça m'interesse !</span></a>
 		</div>
 	</div>
