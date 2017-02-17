@@ -64,8 +64,8 @@
 	</div>
 	
 	<div class="l-row">
-		<div class="l-col l-col--content fc">
-			<p><?php echo get_field('descriptif_event'); ?></p>
+		<div class="l-col l-col--content fc">			
+			<?php the_content(); ?>
 		</div>
 	</div>
 </article>
