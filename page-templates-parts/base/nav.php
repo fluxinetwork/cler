@@ -16,7 +16,7 @@
 					'walker'         => new fluxi_walker_nav_menu
 				) ); ?>
 
-				<?php if (is_user_logged_in() && current_user_can('administrator')) : ?>
+				<?php if (is_user_logged_in() && current_user_can('administrator') || is_user_logged_in() && current_user_can('subadmin')) : ?>
 					<li class="c-navList__item">
 						<a href="<?php bloginfo('url'); ?>/wp-admin" class="c-navList__item__link has-dropdown">Admin</a>
 					</li>
