@@ -44,7 +44,7 @@ Template Name: Toutes les actualités
 	else:									$public_label = 'Actualités';
 	endif;
 
-	$query_filtered = new WP_Query( $args_filtered );
+	$query_paged = new WP_Query( $args_filtered );
 ?>
 
 <div class="l-row bg-main--grad">
@@ -100,9 +100,9 @@ Template Name: Toutes les actualités
 		<ul class="l-postList">	
 		<?php
 		
-		if ( $query_filtered->have_posts() ) :
-			while ( $query_filtered->have_posts() ) :
-				$query_filtered->the_post();
+		if ( $query_paged->have_posts() ) :
+			while ( $query_paged->have_posts() ) :
+				$query_paged->the_post();
 
 				
 				include(locate_template('page-templates-parts/get-thumb.php'));
@@ -142,20 +142,7 @@ Template Name: Toutes les actualités
 		?>
 		</ul>
 
-		<?php 
-			echo '<div class="pagination">';
-			echo '<div class="nav-links">';
-			echo paginate_links( array(
-				'base' => @add_query_arg('paged','%#%'),
-				'before_page_number' => 'Page ',
-				'format' => '?paged=%#%',
-				'current' => max( 1, get_query_var('paged') ),
-				'total' => $query_filtered->max_num_pages,
-				'prev_next'=> false
-			) );
-			echo '</div>';
-			echo '</div>';
-		?>
+		<?php include(locate_template('page-templates-parts/base/pagination.php')); ?>
 	</div>
 </section>
 

@@ -1,22 +1,19 @@
 /*======================================================================*\
 ==========================================================================
 
-//	ALL PAGES 
+//	COMOSANT PAGINATION
 
 ==========================================================================
 \*======================================================================*/
 
-//============================================================= PAGINATION
-
-.pagination {
+.c-pagination {
 	border-radius: 100px;
 	overflow: hidden;
-	margin-top: $space--m;
 	display: inline-block;
+}
 
-	.nav-links {
-		display: flex;
-	}
+.c-pagination__links {
+	display: flex;
 
 	.t-meta {
 		color: #fff;
@@ -34,7 +31,7 @@
 		opacity: 1;
 		@extend .t-meta;
 		@include transition();
- 
+
 		&.current {
 			position: relative;
 			color: rgba(#fff, 0.5);
@@ -58,14 +55,12 @@
 	}
 }
 
-.pagination .page-numbers:first-child,
-.pagination .prev + .page-numbers {
+.c-pagination .page-numbers:first-child,
+.c-pagination .prev + .page-numbers {
 	padding-left: $space--m;
 }
 
-.pagination .page-numbers:last-child,
-.pagination .page-numbers:not(.current):nth-last-child(2) {
+.c-pagination .page-numbers:last-child,
+.c-pagination .page-numbers:not(.current):nth-last-child(2) {
 	padding-right: $space--m;
 }
-
-

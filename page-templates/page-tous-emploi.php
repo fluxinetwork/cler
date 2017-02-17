@@ -114,12 +114,12 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 				'post_status' => 'publish',
 				'paged' => $paged
 	 		);
-			$query_filtered = new WP_Query( $args_filtered );
+			$query_paged = new WP_Query( $args_filtered );
 
-			if ( $query_filtered->have_posts() ) :
+			if ( $query_paged->have_posts() ) :
 				
 				echo '<ul class="l-postList">';
-					while ( $query_filtered->have_posts() ) : $query_filtered->the_post();
+					while ( $query_paged->have_posts() ) : $query_paged->the_post();
 
 						$ob_type_de_poste = get_field_object('field_574dadcc3c7b1');
 						$label_type_de_poste = $ob_type_de_poste['choices'][ get_field('type_de_poste') ];
@@ -173,18 +173,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 
 				echo '</ul>';
 
-		        echo '<div class="pagination">';
-		        echo '<div class="nav-links">';
-		        echo paginate_links( array(
-		        	'base' => @add_query_arg('paged','%#%'),
-		        	'before_page_number' => 'Page ',
-		        	'format' => '?paged=%#%',
-		        	'current' => max( 1, get_query_var('paged') ),
-		        	'total' => $query_filtered->max_num_pages,
-		        	'prev_next'=> false
-		        ) );
-		        echo '</div>';
-		        echo '</div>';
+		        include(locate_template('page-templates-parts/base/pagination.php'));
 
 			else :
 				echo '<p class="mgTop--s font-subh"><strong>Il n\'y a aucune offre d\'emploi pour l\'instant.</strong></p>';

@@ -100,12 +100,12 @@ Template Name: Toutes les événements
 		        'value'		=> date('Ymd'),
 		    ))
  		);
-		$query_filtered = new WP_Query( $args_filtered );
+		$query_paged = new WP_Query( $args_filtered );
 
-		if ( $query_filtered->have_posts() ) : 
+		if ( $query_paged->have_posts() ) : 
 
 			echo '<ul class="l-postList">';
-				while ( $query_filtered->have_posts() ) : $query_filtered->the_post();
+				while ( $query_paged->have_posts() ) : $query_paged->the_post();
 
 				$ob_departement = get_field_object('field_577e40ac4281f');
 				$label_departement = $ob_departement['choices'][ get_field('departement') ];
@@ -167,18 +167,7 @@ Template Name: Toutes les événements
 
 			echo '</ul>';
 
-	        echo '<div class="pagination">';
-			    echo '<div class="nav-links">';
-			    echo paginate_links( array(
-			    	'base' => @add_query_arg('paged','%#%'),
-			    	'before_page_number' => 'Page ',
-			    	'format' => '?paged=%#%',
-			    	'current' => max( 1, get_query_var('paged') ),
-			    	'total' => $query_filtered->max_num_pages,
-			    	'prev_next'=> false
-			    ) );
-			    echo '</div>';
-		    echo '</div>';
+	        include(locate_template('page-templates-parts/base/pagination.php'));
 				
 		else :
 

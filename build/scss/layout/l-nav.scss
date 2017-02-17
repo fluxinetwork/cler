@@ -10,10 +10,9 @@
 	@include flex(space-between stretch);
 	padding-top: $space--s;
 	padding-bottom: $space--s;
-
-	@media screen and (min-width: $break--l) {
-		//padding-top: $space--m; 
-	}
+	max-width: $maxW;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 //================================================================== LOGO
@@ -22,6 +21,7 @@
 	display: block;
 	flex: none;
 	max-width: 180px;
+	transition: $transition--dynamic;
 
 	.navBar.is-open & {
 		margin-left: -300px;
@@ -56,6 +56,7 @@
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
+	transition: $transition--dynamic;
 
 	.navBar.is-open & {
 		top: 0;
@@ -79,6 +80,7 @@
 	align-self: center;
 	margin-left: auto;
 	transform: translateX(150%);
+	transition: $transition--dynamic;
 
 	.navBar.is-open & {
 		transform: translateX(0);
@@ -103,4 +105,43 @@
 	right: 0;
 	display: flex;
 	margin: 0 $space--m $space--m 0;
+}
+
+
+//=========================================================== SEARCH
+
+.l-nav__search__btn {
+	position: fixed;
+	display: none;
+	bottom: $space--m;
+	right: $space--m;
+	@include transition;
+	z-index: 4;
+
+	@media screen and (min-width: $break--l) {
+		display: block;
+		right: $space--l;
+	}
+}
+
+.l-nav__search__input {
+	z-index: 1;
+}
+
+//=========================================================== ADMIN
+
+.l-nav__admin {
+	display: none;
+	position: fixed;
+	bottom: $space--m;
+	left: $space--m;
+
+	a:first-child {
+		margin-bottom: $space--xs;
+	}
+	
+	@media screen and (min-width: $break--m) {
+		display: flex;
+		flex-direction: column;
+	}
 }

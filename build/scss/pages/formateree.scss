@@ -8,17 +8,21 @@
 
 $c-formateree: #338699;
 
-.formateree-nav {
-	.c-navList__item__link span {
-		display: block;
-	}
-
-	.c-btn {
-		background-color: $c-formateree;
-	}
-}
-
 .formateree {
+
+	// MENU
+
+	.c-navList__item__link {
+		margin-right: $space--m;
+
+		span {
+			display: block;
+		}
+	}
+
+	.l-nav__login .c-btn {
+		background-color: $c-dark;
+	}
 
 	// PAGE INTRO
 
@@ -82,6 +86,8 @@ $c-formateree: #338699;
 			@extend .l-col;
 			@extend .l-col--content;
 			padding-bottom: $space--m;
+			padding-top: 0;
+			text-align: left;
 			color: #fff;
 		}
 	}
@@ -89,7 +95,54 @@ $c-formateree: #338699;
 	p + .map__holder {
 		margin-top: $space--l;
 	}
+	
 
+	// TITLE 
+
+	.fc__title {
+		@extend .h1;
+		position: relative;
+		padding-right: 15% !important;
+
+		@media screen and (min-width: $break--m) {
+			margin-top: $space--l*2 !important;
+		}
+
+		@media screen and (min-width: $break--l) {
+			margin-top: $space--xl*2 !important;
+		}
+
+		&::before {
+			@include pseudo_round(250px);
+			background-color: $c-light;
+			z-index: -1;
+			top: 50%;
+			left: 0;
+			transform: translate(-50%,-50%);
+		}
+	}
+
+	.fc__title__tail {
+		position: relative;
+		display: inline-block;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: $space--s;
+			height: 10px;
+			width: 1000px;
+			background-color: $c-formateree;
+			border-radius: 100px;
+			transform: translateY(-120%);
+
+			@media screen and (min-width: $break--l) {
+				height: 14px;
+				transform: translateY(-130%);
+			}
+		}
+	}
 
 	// WIDTH CONTENT
 
@@ -97,6 +150,19 @@ $c-formateree: #338699;
 		max-width: $contentW;
 		margin-left: auto;
 		margin-right: auto;
+		padding-left: $space--m;
+		padding-right: $space--m;
+
+
+		@media screen and (min-width: $break--s) {
+			padding-left: $space--l;
+			padding-right: $space--l;
+		}
+
+		@media screen and (min-width: $break--xl) {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 	
 }

@@ -181,7 +181,7 @@ $border: 7px solid $c-accent;
 .fc__contact + .fc__contact,
 .fc__publication + .fc__publication,
 .fc__accordeon + .fc__accordeon {
-	margin-top: -$space--l*1.0.1;
+	margin-top: -$space--l*1.01;
 	border-top: none;
 
 	@media screen and (min-width: $break--l) {

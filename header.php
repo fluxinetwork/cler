@@ -29,7 +29,7 @@
 
 		<?php 
 		if (is_page_template('page-templates/page-formateree.php')) :
-			get_template_part('page-templates-parts/nav-formateree');
+			get_template_part('page-templates-parts/base/nav-formateree');
 		else :
 			get_template_part('page-templates-parts/base/nav');
 		endif;

@@ -9,7 +9,7 @@ Template Name: Hub adhérents
 	<div class="l-col adherents">
 		<div class="adherents__main">
 			<h1 class="l-hero__title">espace adhérents</h1>
-			<h2 class="l-hero__subtitle"><?php echo get_field('fluxi_resum');?></h2>
+			<h2 class="l-hero__subtitle"><?php echo get_field('fluxi_resum', false, false);?></h2>
 
 			<div class="adherents__main__links">
 				<div class="h3 t-fw--700 mgBottom--s">Vous cherchez quelqu'un ?</div>
@@ -52,7 +52,7 @@ Template Name: Hub adhérents
 						$output = '<li class="eventList__item">';
 						$output .= '<a href="'.$permalink.'">';
 						$output .= '<article class="miniEvent">';
-						$output .= '<h2 class="miniEvent__meta"><i class="fa fa-calendar mgRight--xs"></i>'.get_field('date_event').' <i class="fa fa-map-marker mgRight--xs mgLeft--s"></i>'.$ville.'</h2>';
+						$output .= '<h2 class="miniEvent__meta"><i class="fa fa-calendar c-meta__meta__icon"></i>'.get_field('date_event').' <i class="fa fa-map-marker c-meta__meta__icon mgLeft--s"></i>'.$ville.'</h2>';
 						$output .= '<h1 class="miniEvent__title">'.$title.'</h1>';
 						$output .= '</article>';
 						$output .= '</a>';

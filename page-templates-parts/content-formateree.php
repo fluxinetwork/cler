@@ -1,13 +1,7 @@
-<?php
-/**
- * The template part for displaying the content
- */
-?>
-
-<article classe="page formateree">
+<article>
 
 	<div class="l-row bg-pattern-formateree">
-		<header class="l-col l-col--content l-header no-pdBottom">
+		<header class="l-col l-col--content l-header">
 			<h1><?php echo get_the_title(); ?></h1>
 			<div class="c-meta l-header__meta">
 				<div class="c-dash"></div>

@@ -1,6 +1,12 @@
 		    </main>
 
-		    <?php get_template_part( 'page-templates-parts/base/footer'); ?>
+		    <?php 
+		    if (is_page_template('page-templates/page-formateree.php')) :
+		    	get_template_part( 'page-templates-parts/base/footer-formateree');
+		    else :
+		    	get_template_part( 'page-templates-parts/base/footer');
+		    endif;
+		    ?>
 		    
     </div><!-- .global -->	
 

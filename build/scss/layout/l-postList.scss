@@ -8,6 +8,14 @@
 
 .l-postList {
 	@include list-reset();
+
+	+ .c-pagination {
+		margin-top: $space--m;
+
+		@media screen and (min-width: $break--l) {
+			margin-top: $space--l;
+		}
+	}
 }
 
 .l-postList__item {

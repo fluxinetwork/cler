@@ -1,7 +1,42 @@
 /*------------------------------*\
 
-    #FOOTER
+    #l-FOOTER
 
 \*------------------------------*/
 
+.l-footer {
+	z-index: 5;
+}
+
+.l-footer__content {
+	@include flex(space-between center);
+}
+
+.l-footer__content__col1 {
+	@include flex(null center);
+	flex: 1.5;
+
+	img {
+		flex: none;
+		margin-right: $space--xs;
+	}
+
+	p {
+		margin-top: 0;
+	}
+}
+
+.l-footer__content__col2 {
+	width: 100%;
+	@include flex(center);
+
+	a[href*='twitter'] {
+		margin: 0 $space--m 0 $space--xs;
+	}
+}
+
+.l-footer__content__col3 {
+	display: flex;
+	justify-content: flex-end;
+}
 

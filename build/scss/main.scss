@@ -33,7 +33,7 @@
 @import "layout/l-monoFilter";
 @import "layout/l-overlay";
 @import "layout/l-postList";
-//@import "layout/l-footer";
+@import "layout/l-footer";
 @import "layout/l-header";
 @import "layout/l-hub-header";
 @import "layout/l-download";
@@ -61,12 +61,12 @@
 @import "components/c-meta";
 @import "components/c-downloadItem";
 @import "components/c-ghostCard";
+@import "components/c-pagination";
 
 
 // PAGES 
 
 @import "pages/style-guide";
-@import "pages/all";
 @import "pages/homepage";
 @import "pages/profil";
 @import "pages/hub-adherents";

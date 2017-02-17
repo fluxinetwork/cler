@@ -14,7 +14,7 @@ Template Name: Tous les portraits
 		'paged' => $paged
 	);
 
-	$query_all = new WP_Query( $args );
+	$query_paged = new WP_Query( $args );
 
 ?>
 
@@ -31,8 +31,8 @@ Template Name: Tous les portraits
 		<ul class="l-postList">
 		<?php
 
-		if ( $query_all->have_posts() ) :
-			while ( $query_all->have_posts() ) : $query_all->the_post();
+		if ( $query_paged->have_posts() ) :
+			while ( $query_paged->have_posts() ) : $query_paged->the_post();
 
 				$permalink = get_permalink();
 				$date = get_the_date('d M Y');
@@ -75,20 +75,7 @@ Template Name: Tous les portraits
 		?>
 		</ul>
 
-		<?php
-			echo '<div class="pagination">';
-			echo '<div class="nav-links">';
-			echo paginate_links( array(
-				'base' => @add_query_arg('paged','%#%'),
-				'before_page_number' => 'Page ',
-				'format' => '?paged=%#%',
-				'current' => max( 1, get_query_var('paged') ),
-				'total' => $query_all->max_num_pages,
-				'prev_next'=> false
-			) );
-			echo '</div>';
-			echo '</div>';
-		?>
+		<?php include(locate_template('page-templates-parts/base/pagination.php')); ?>
 	</div>
 </section>
 

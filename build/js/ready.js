@@ -45,6 +45,20 @@ var FOO = {
         init: function(){
             isLogged = true;
         }
+    },
+    formateree: {
+        init: function(){ 
+            var first = true;
+            $('.fc__title').each(function(){
+                $(this).append('<span class="fc__title__tail"></span>');
+                if (first) {
+                    $(this).attr('id', 'organisme');
+                } else {
+                    $(this).attr('id', 'recherche');
+                }
+                first = false;
+            });
+        }
     }
 };
 
