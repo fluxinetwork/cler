@@ -83,7 +83,7 @@ $c-formateree: #338699;
 
 	// WIDTH CONTENT
 
-	.fc > *:not(section) {
+	.fc > *:not(section):not(img) {
 		max-width: $contentW;
 		margin-left: auto;
 		margin-right: auto;

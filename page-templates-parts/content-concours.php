@@ -13,33 +13,35 @@
 	$idp = get_the_ID();
 	$date_debut_candidatures = get_field('date_debut_candidatures', false, false);
 	$date_fin_candidatures = get_field('date_fin_candidatures', false, false);
-	$date_debut_votes = get_field('date_debut_votes', false, false);
-	$date_fin_votes = get_field('date_fin_votes', false, false);
-	$date_publication_resultats = get_field('date_publication_resultats', false, false);
+	$date_debut_votes = get_field('date_debut_votes');
+	$date_fin_votes = get_field('date_fin_votes');
+	$date_publication_resultats = get_field('date_publication_resultats');
 
-	$start_candidatures = new DateTime($date_debut_candidatures);
-	$stop_candidatures = new DateTime($date_fin_candidatures);
-	$start_votes = new DateTime($date_debut_votes);
-	$stop_votes = new DateTime($date_fin_votes);
-	$date_resultats = new DateTime($date_publication_resultats);
 
 	$today = date('Ymd');
+	$start = new DateTime($date_debut_candidatures);
+	$date_start = $start->format('Ymd');
+	$stop = new DateTime($date_fin_candidatures);
+	$date_stop = $stop->format('Ymd');
 ?>
 
 <div class="l-row bg-light">
 	<header class="l-col l-col--content l-header">
 		<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta l-header__date"><?php echo get_the_date(); ?></time>
 		<h1><?php echo get_the_title(); ?></h1>
+		<div class="c-meta l-header__meta">
+			<div class="c-dash"></div>
+		</div>
 
 		<div class="l-miniDashboard ">
 			<div class="l-miniDashboard__row">
-				<span class="l-miniDashboard__row__element"><i class="fa fa-toggle-on c-meta__meta__icon" aria-hidden="true"></i>Participation : <?php echo $start_candidatures->format('j M'); ?> - <?php echo $stop_candidatures->format('j M'); ?></span>
-				<?php if( $today >= $date_debut_candidatures && $today <= $date_fin_candidatures ): ?>
-					<span class="l-miniDashboard__row__element"><i class="fa fa-trophy c-meta__meta__icon" aria-hidden="true"></i>Résultats : <?php echo $date_resultats->format('j M Y'); ?></span>
+				<span class="l-miniDashboard__row__element"><i class="fa fa-toggle-on c-meta__meta__icon" aria-hidden="true"></i>Participation : <?php echo $start->format('d/m/y'); ?> - <?php echo $stop->format('d/m/y'); ?></span>
+				<?php if( $today >= $date_start && $today <= $date_stop ): ?>
+					<span class="l-miniDashboard__row__element"><i class="fa fa-trophy c-meta__meta__icon" aria-hidden="true"></i>Résultats : <?php echo $date_publication_resultats; ?></span>
 					<a href="#concours" class="l-miniDashboard__row__element l-miniDashboard__row__element--btn c-btn c-btn--ghost"><i class="fa fa-user-plus c-meta__meta__icon" aria-hidden="true"></i>Participer</a>
 				<?php else : ?>
-					<span class="l-miniDashboard__row__element"><i class="fa fa-comments c-meta__meta__icon" aria-hidden="true"></i>Jury : <?php echo $start_votes->format('j M'); ?> - <?php echo $stop_votes->format('j M'); ?></span>
-					<span class="l-miniDashboard__row__element"><i class="fa fa-trophy c-meta__meta__icon" aria-hidden="true"></i>Résultats : <?php echo $date_resultats->format('j M Y'); ?></span>
+					<span class="l-miniDashboard__row__element"><i class="fa fa-comments c-meta__meta__icon" aria-hidden="true"></i>Jury : <?php echo $date_debut_votes; ?> - <?php echo $date_fin_votes; ?></span>
+					<span class="l-miniDashboard__row__element"><i class="fa fa-trophy c-meta__meta__icon" aria-hidden="true"></i>Résultats : <?php echo $date_publication_resultats; ?></span>
 				<?php endif; ?>
 			</div>
 		</div>

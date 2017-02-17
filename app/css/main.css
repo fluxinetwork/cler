@@ -4505,7 +4505,7 @@ a.c-meta__meta:hover {
 .formateree p + .map__holder {
   margin-top: 4.48rem;
 }
-.formateree .fc > *:not(section) {
+.formateree .fc > *:not(section):not(img) {
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;

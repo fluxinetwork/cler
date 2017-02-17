@@ -44,7 +44,7 @@ Template Name: Tous les concours
 			while ( $query_all->have_posts() ) : $query_all->the_post();
 
 				$permalink = get_permalink();
-				$date = get_the_date('d M Y');
+				$date = get_the_date();
 				$title = get_the_title();
 
 				$post_img_id = get_field('main_image');
