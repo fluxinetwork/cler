@@ -12,27 +12,20 @@
 	<h1 class="c-card__header__title"><?php echo $page_title; ?></h1>
 </div>
 
-<form id="form-manage-emploi" role="form" class="c-card__body">
-
-	<?php 
-		if(is_adherent_cler() ):
-			echo '<div class="fc c-form__fieldset__row">';
-				if( !empty($statut_paiement) && $statut_paiement == 'succeeded' ): ?>
-
-					<p>Vous avez payé pour la publication de cette offre d'emploi, vous pouvez <a href="<?php echo get_the_permalink($id_recu); ?>">consulter le reçu</a>.</p>
-				<?php else: ?>
-					
-					<p>Vous n'êtes pas adhérent au CLER : une contribution de <strong><?php echo get_field('montant_publication_offre_emploi', 'option'); ?> euros</strong> vous sera donc demandée pour chaque nouvelle publication. Vous recevrez un email contenant les informations nécessaires au réglement dès que nous aurons validé votre offre. Pour devenir adhérent, vous pouvez <a href="<?php the_permalink(PAGE_ADHEREZ); ?>">consulter cette page</a>.</p>
-
-				<?php
-				endif;	
-			echo '</div>';
-	 	endif; 
-	 ?>
-
+<form id="form-manage-emploi" role="form" class="c-card__body">	
 	<fieldset class="c-form__fieldset">
 		<legend class="c-form__legend c-form--indicateur">Votre offre</legend>
-
+		<div class="c-form__fieldset__row">
+	<?php 
+		if(is_adherent_cler() ):			
+			if( !empty($statut_paiement) && $statut_paiement == 'succeeded' ): ?>
+				<p>Vous avez payé pour la publication de cette offre d'emploi, vous pouvez <a href="<?php echo get_the_permalink($id_recu); ?>">consulter le reçu</a>.</p>
+			<?php
+			endif;				
+		else: ?>					
+			<p>Vous n'êtes pas adhérent au CLER : une contribution de <strong><?php echo get_field('montant_publication_offre_emploi', 'option'); ?> euros</strong> vous sera donc demandée pour chaque nouvelle publication. Vous recevrez un email contenant les informations nécessaires au réglement dès que nous aurons validé votre offre. Pour devenir adhérent, vous pouvez <a class="c-link c-link--shy" href="<?php the_permalink(PAGE_ADHEREZ); ?>">consulter cette page</a>.</p>
+	<?php endif; ?>
+	</div>
 	    <div class="c-form__fieldset__row">	    	
 	    	<label class="c-form__label" for="title">Intitulé de l’offre<span class="i-required">•</span></label>
 	    	<input class="c-form__input" type="text" name="title" id="title" value="<?php echo $offer_title; ?>" data-validation="required"  placeholder="">
@@ -207,6 +200,3 @@
    		<button type="submit" id="submit-manage-emploi" class="c-btn"><?php echo $type_form_name; ?></button>
     </div>
 </form>
-
-
-
