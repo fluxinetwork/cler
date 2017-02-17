@@ -166,35 +166,35 @@
 
     		<div class="c-form__fieldset__flexrow">
     			<div class="c-form__fieldset__row">
-			    	<label class="c-form__label" for="nom_elu">Nom de l'élu référent<span class="i-required">•</span></label>
-			    	<input type="text" placeholder="" value="<?php echo $nom_elu; ?>" name="nom_elu" id="nom_elu" data-validation="required" data-validation-depends-on="reseaux_cler[]" data-validation-depends-on-value="tepos" class="c-form__input">
+			    	<label class="c-form__label" for="nom_elu">Nom de l'élu référent</label>
+			    	<input type="text" placeholder="" value="<?php echo $nom_elu; ?>" name="nom_elu" id="nom_elu" class="c-form__input">
 		    	</div>
 
 			    <div class="c-form__fieldset__row">
-			    	<label class="c-form__label" for="prenom_elu">Prénom de l'élu référent<span class="i-required">•</span></label>
-			    	<input type="text" placeholder="" value="<?php echo $prenom_elu; ?>" name="prenom_elu" id="prenom_elu" data-validation="required" data-validation-depends-on="reseaux_cler[]" data-validation-depends-on-value="tepos" class="c-form__input">
+			    	<label class="c-form__label" for="prenom_elu">Prénom de l'élu référent</label>
+			    	<input type="text" placeholder="" value="<?php echo $prenom_elu; ?>" name="prenom_elu" id="prenom_elu" class="c-form__input">
 			    </div>
 		    </div>
 
 		    <div class="c-form__fieldset__row">
-		    	<label class="c-form__label" for="fonction_elu">Fonction de l'élu référent<span class="i-required">•</span></label>
-		    	<input type="text" placeholder="" value="<?php echo $fonction_elu; ?>" name="fonction_elu" id="fonction_elu" data-validation="required" data-validation-depends-on="reseaux_cler[]" data-validation-depends-on-value="tepos" class="c-form__input">
+		    	<label class="c-form__label" for="fonction_elu">Fonction de l'élu référent</label>
+		    	<input type="text" placeholder="" value="<?php echo $fonction_elu; ?>" name="fonction_elu" id="fonction_elu" class="c-form__input">
 		    </div>
 
 			<div class="c-form__fieldset__row">
-		    	<label class="c-form__label" for="email_elu">Email de l'élu référent<span class="i-required">•</span></label>
-		    	<input type="text" placeholder="" value="<?php echo $email_elu; ?>" name="email_elu" id="email_elu" data-validation="email"  data-validation-depends-on="reseaux_cler[]" data-validation-depends-on-value="tepos" class="c-form__input">
+		    	<label class="c-form__label" for="email_elu">Email de l'élu référent</label>
+		    	<input type="text" placeholder="" value="<?php echo $email_elu; ?>" name="email_elu" id="email_elu" class="c-form__input">
 		    </div>
 
 		    <div class="c-form__fieldset__row">
-		    	<label class="c-form__label" for="telephone_elu">Téléphone de l'élu référent<span class="i-required">•</span></label>
-		    	<input type="text" maxlength="10" placeholder="" value="<?php echo $telephone_elu; ?>" name="telephone_elu" id="telephone_elu" data-validation="number"  data-validation-depends-on="reseaux_cler[]" data-validation-depends-on-value="tepos" class="c-form__input">
+		    	<label class="c-form__label" for="telephone_elu">Téléphone de l'élu référent</label>
+		    	<input type="text" maxlength="10" placeholder="" value="<?php echo $telephone_elu; ?>" name="telephone_elu" id="telephone_elu" class="c-form__input">
 		    </div>
 
 		    <div class="c-form__fieldset__row">		  
 		    	<p>Votre candidature au réseau TEPOS doit être parrainé par un Territoire à énergie positive déjà membre.<br>Si vous n’avez pas de parrain, écrivez “je n’ai pas de parrain”.</p>  
-		    	<label class="c-form__label" for="nom_parrain">Qui est votre parrain ?<span class="i-required">•</span></label>
-		    	<input type="text" placeholder="" value="<?php echo $nom_parrain; ?>" name="nom_parrain" id="nom_parrain" data-validation="required" data-validation-depends-on="reseaux_cler[]" data-validation-depends-on-value="tepos" class="c-form__input">
+		    	<label class="c-form__label" for="nom_parrain">Qui est votre parrain ?</label>
+		    	<input type="text" placeholder="" value="<?php echo $nom_parrain; ?>" name="nom_parrain" id="nom_parrain" class="c-form__input">
 		    </div>		    
 
 		    <div class="c-form__fieldset__row">

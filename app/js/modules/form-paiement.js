@@ -127,7 +127,7 @@ function initaddPay(){
 	                        $formObj.find('button[type=submit]').prop('disabled', false).html('Payer');
 	                    }else{
 	                        $formObj.find('button[type=submit]').remove();
-	                        $formObj.find('.c-form__submit').html('<a href="'+data[0].redirect+'" class="button">Retour</a>');
+	                        $formObj.find('.c-form__submit').html('<a class="c-btn" href="'+data[0].redirect+'">Retour</a>');
 	                    }
 	                    $formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
 
