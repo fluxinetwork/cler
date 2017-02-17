@@ -61,7 +61,6 @@
 
 	&.is-active {
 		display: flex;
-		justify-content: center;
 	}
 }
 
@@ -71,13 +70,16 @@
 
 	@media screen and (min-width: $break--s) {
 		flex: 1 0 50%;
+		max-width: 50%;
 	}
 
 	@media screen and (min-width: $break--m) {
 		flex: 1 0 33.333%;
+		max-width: 33.333%;
 	}
 	
 	@media screen and (min-width: $break--xl) {
 		flex: 1 0 25%;
+		max-width: 25%;
 	}
 }

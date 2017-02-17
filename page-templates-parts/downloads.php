@@ -11,7 +11,7 @@
 
 		while ( have_rows('onglet_documents') ) : the_row();			
 			
-			$texte_onglet = limitString(get_sub_field('texte_onglet'), 0, 80, ' [...]');;
+			$texte_onglet = get_sub_field('texte_onglet');
 			$documents = get_sub_field('documents');
 
 			$all_onglets .= '<a href="#" class="l-download__title js-tab" data-tab="'.$nb_tabs.'">'.$texte_onglet.'<span class="c-dash"></span></a>';
@@ -24,11 +24,12 @@
 
 			    foreach( $documents as $post): 
 			        setup_postdata($post);
+			    	$title = limitString($post->post_title, 0, 80, ' [...]');
 			        
 			        $all_pans .= '<li class="l-download__content__list__item">
 			        		<a href="'.$post->guid.'" class="c-downloadItem">
 			        			<span class="c-downloadItem__icon c-btnIcon c-btn--ghost"><i class="fa fa-download"></i></span>
-			        			<span class="c-downloadItem__title">'.$post->post_title.'</span>
+			        			<span class="c-downloadItem__title">'.$title.'</span>
 			        		</a>
 			        	  </li>';
 
