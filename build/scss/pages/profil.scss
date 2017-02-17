@@ -71,10 +71,6 @@ $break: $break--l;
 	}
 }
 
-.userDashboard__infos__footer {
-	
-}
-
 
 // ASIDE
 
@@ -113,37 +109,6 @@ $break: $break--l;
 					transform: scale(1);
 				}
 			}
-		}
-	}
-}
-
-.user-postLink__icon {
-	position: relative;
-	width: 100px;
-	height: 100px;
-	margin-bottom: $space--m;
-	@include flex(center);
-	flex: none;
-
-	&::before {
-		@include pseudo_bg($c-light);
-		@include transition();
-		border-radius: 50%;
-	}
-
-	@media screen and(min-width: $break) {
-		width: 160px;
-		height: 160px;
-	}
-
-	.fa {
-		position: absolute;
-		@extend .h2;
-		color: $c-main;
-		@include transition();
-
-		&:last-child {
-			transform: scale(0);
 		}
 	}
 }

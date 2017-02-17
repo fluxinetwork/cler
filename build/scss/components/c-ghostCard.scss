@@ -9,7 +9,7 @@
 .c-ghostCard {
 	@include flex(center, true);
 	height: 100%;
-	border: 3px solid #fff;
+	border: 3px solid #fff !important;
 	border-radius: $radius;
 	transition: $transition--dynamic;
 

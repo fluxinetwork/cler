@@ -45,7 +45,7 @@
 						<span class="t-meta">Adresse</span>
 						<h3 class="c-card__body__title"><?php echo $adresse; ?></h3>
 						<?php if ($link_event) : ?>
-							<a href="<?php echo $link_event; ?>" class="c-link c-link--more mgTop--m" target="_blank">Site internet de l'évènement</a>
+							<a href="<?php echo $link_event; ?>" class="c-link c-link--more l-miniDashboard__duo__left__link" target="_blank">Site internet de l'évènement</a>
 						<?php endif; ?>
 					</div>
 					<div class="l-miniDashboard__duo__right">

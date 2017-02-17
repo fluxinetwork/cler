@@ -69,7 +69,7 @@
 				<a href="<?php echo get_the_permalink(FORM_OFFRE); ?>?act=add" class="c-ghostCard">
 					<button class="c-btnIcon"><i class="fa fa-plus"></i></button>
 					<span class="c-link c-link--white">offre d'emploi</span>
-					<span class="t-meta t-meta--white pdTop--s"><?php ($adherent) ? print('') : print('Payant'); ?></span>
+					<span class="t-meta t-meta--white pdTop--s"><?php ($adherent) ? print('Gratuit') : print('Payant'); ?></span>
 				</a>
 			</li>
 			<li class="l-card-slider__cards__row__col u-show@med">

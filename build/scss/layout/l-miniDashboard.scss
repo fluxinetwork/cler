@@ -103,6 +103,16 @@ $break: $break--m;
 
 	@media screen and (min-width: $break) {
 		margin-bottom: 0;
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.l-miniDashboard__duo__left__link {
+	margin-top: $space--m;
+
+	@media screen and (min-width: $break) {
+		margin-top: auto;
 	}
 }
 

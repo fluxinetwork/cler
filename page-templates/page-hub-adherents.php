@@ -78,6 +78,40 @@ Template Name: Hub adhérents
 	</div>
 </section>
 
+<section class="l-row bg-white">
+	<?php
+	if( is_user_logged_in() ):
+		(is_adherent_cler()) ? $adherent = true : $adherent = false;
+	else : 
+		$adherent = false;
+	endif;
+	?>
+	<div class="l-col l-col--content">
+		<h2 class="c-section-title">Publier un contenu</h2>
+
+		<ul class="l-grid list-reset">
+			<li class="l-grid__col">
+				<div class="user-postLink">
+					<a href="<?php echo get_the_permalink(FORM_EVENT); ?>?act=add" class="c-btn c-btn--ghost"><i class="u-show@large mgRight--xs fa fa-calendar"></i>Évènement</a>
+					<span class="t-meta pdTop--s">Gratuit</span>
+				</div>
+			</li>
+			<li class="l-grid__col">
+				<div class="user-postLink">
+					<a href="<?php echo get_the_permalink(FORM_OFFRE); ?>?act=add" class="c-btn c-btn--ghost"><i class="u-show@large mgRight--xs fa fa-briefcase"></i>Offre <span class="u-show@xlarge">d'</span>emploi</a>
+					<span class="t-meta pdTop--s"><?php ($adherent) ? print('Gratuit') : print('Payant'); ?></span>
+				</div>
+			</li>
+			<li class="l-grid__col">
+				<div class="user-postLink">
+					<a href="<?php echo get_the_permalink(FORM_FORMATION); ?>?act=add" class="c-btn c-btn--ghost"><i class="u-show@large mgRight--xs fa fa-graduation-cap"></i>Formation</a>
+					<span class="t-meta pdTop--s">Gratuit</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+</section>
+
 <section class="l-row">
 <?php get_template_part( 'page-templates-parts/downloads' ); ?>
 </section>

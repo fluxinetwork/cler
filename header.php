@@ -27,6 +27,12 @@
 
 	<div class="global">
 
-		<?php get_template_part( 'page-templates-parts/base/nav'); ?>
+		<?php 
+		if (is_page_template('page-templates/page-formateree.php')) :
+			get_template_part('page-templates-parts/nav-formateree');
+		else :
+			get_template_part('page-templates-parts/base/nav');
+		endif;
+		?>
 
 		<main role="main" class="main">
