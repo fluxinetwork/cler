@@ -54,7 +54,7 @@
 	
 	<div class="l-row">
 		<div class="l-col l-col--content fc">			
-			<?php the_content(); ?>
+			<p><?php the_content(); ?></p>
 		</div>
 	</div>
 </article>
