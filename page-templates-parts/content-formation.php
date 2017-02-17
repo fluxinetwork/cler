@@ -54,8 +54,8 @@
 	</div>
 	
 	<div class="l-row">
-		<div class="l-col l-col--content">
-			<p><?php echo get_field('descriptif_formation'); ?></p>
+		<div class="l-col l-col--content fc">			
+			<?php the_content(); ?>
 		</div>
 	</div>
 </article>
