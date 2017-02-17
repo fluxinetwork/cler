@@ -192,7 +192,7 @@
 		    </div>
 
 		    <div class="c-form__fieldset__row">		  
-		    	<p>Votre candidature au réseau TEPOS doit être parrainé par un Territoire à énergie positive déjà membre.<br>Si vous n’avez pas de parrain, écrivez “je n’ai pas de parrain”.</p>  
+		    	<p>Votre candidature au réseau TEPOS doit être parrainé par un Territoire à énergie positive déjà membre. Si vous n’avez pas de parrain, écrivez "je n’ai pas de parrain".</p>  
 		    	<label class="c-form__label" for="nom_parrain">Qui est votre parrain ?</label>
 		    	<input type="text" placeholder="" value="<?php echo $nom_parrain; ?>" name="nom_parrain" id="nom_parrain" class="c-form__input">
 		    </div>		    
