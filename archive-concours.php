@@ -1,8 +1,3 @@
-<?php
-/*
-Template Name: Tous les concours
-*/
-?>
 <?php get_header(); ?>
 <?php
 	

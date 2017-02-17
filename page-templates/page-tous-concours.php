@@ -8,46 +8,18 @@ Template Name: Tous les concours
 	
 	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
-	if( isset( $_GET['type'] ) && !empty( $_GET['type'] ) ):
-		$type_concours = filter_var($_GET['type'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
-
-		if( $type_concours == 'haiku' ):
-			$page_title = get_the_title(1275);
-			$fluxi_resum = get_field('fluxi_resum', 1275);
-		elseif( $type_concours == 'cler_obscur' ):
-			$page_title = get_the_title(3117);
-			$fluxi_resum = get_field('fluxi_resum', 3117);		
-		else:	
-			$page_title = 'Nos concours';
-			$fluxi_resum = "Afin de donner la parole aux citoyens, le CLER a créé deux concours ouverts à tous. Grâce à ces deux compétitions réunissant des films courts et des haïkus, nous souhaitons récompenser la créativité et encourager l'expression de messages positifs autour des énergies renouvelables et de la maîtrise de l'énergie. L'enthousiasme, l'esprit collectif et la capacité mobilisatrice des oeuvres amateurs, scolaires ou semi-professionnelles présentées chaque année montrent les multiples visages de la transition énergétique sur le terrain.";
-		endif;
-
-		$args = array(
-			'post_type' => 'concours',
-			'post_status' => 'publish',
-			'paged' => $paged,
-			'meta_key'		=> 'type_concours',
-			'meta_value'	=> $type_concours	
-		);
-
-	else:
-		$page_title = 'Nos concours';
-
-		$args = array(
-			'post_type' => 'concours',
-			'post_status' => 'publish',
-			'paged' => $paged	
-		);
-
-		$fluxi_resum = "Afin de donner la parole aux citoyens, le CLER a créé deux concours ouverts à tous. Grâce à ces deux compétitions réunissant des films courts et des haïkus, nous souhaitons récompenser la créativité et encourager l'expression de messages positifs autour des énergies renouvelables et de la maîtrise de l'énergie. L'enthousiasme, l'esprit collectif et la capacité mobilisatrice des oeuvres amateurs, scolaires ou semi-professionnelles présentées chaque année montrent les multiples visages de la transition énergétique sur le terrain.";
-	endif;
+	$args = array(
+		'post_type' => 'concours',
+		'post_status' => 'publish',
+		'paged' => $paged	
+	);	
 
 	$query_all = new WP_Query( $args );
 ?>
 
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
-		<h1><?php echo $page_title; ?></h1>
+		<h1><?php the_title(); ?></h1>
 		<?php get_template_part( 'page-templates-parts/content', 'intro'); ?>
 	</header>
 </div>
@@ -63,7 +35,6 @@ Template Name: Tous les concours
 				$permalink = get_permalink();
 				$date = get_the_date('d M Y');
 				$title = get_the_title();
-
 				
 				include(locate_template('page-templates-parts/get-thumb.php'));
 				
@@ -105,16 +76,17 @@ Template Name: Tous les concours
 
 		<?php
 			echo '<div class="pagination">';
-			echo '<div class="nav-links">';
-			echo paginate_links( array(
-				'base' => @add_query_arg('paged','%#%'),
-				'before_page_number' => 'Page ',
-				'format' => '?paged=%#%',
-				'current' => max( 1, get_query_var('paged') ),
-				'prev_next'=> false
-			) );
-			echo '</div>';
-			echo '</div>';
+		        echo '<div class="nav-links">';
+		        echo paginate_links( array(
+		        	'base' => @add_query_arg('paged','%#%'),
+		        	'before_page_number' => 'Page ',
+		        	'format' => '?paged=%#%',
+		        	'current' => max( 1, get_query_var('paged') ),
+		        	'total' => $query_all->max_num_pages,
+		        	'prev_next'=> false
+		        ) );
+		        echo '</div>';
+		    echo '</div>';
 		?>
 	</div>
 </section>
