@@ -1,14 +1,13 @@
 <article>
 	<div class="l-row bg-light">
 		<header class="l-col l-col--content l-header">
-			<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta l-header__date"><?php echo get_the_date(); ?></time> 
 			<h1><?php echo get_the_title(); ?></h1>
 
 			<div class="c-meta l-header__meta">
 				<div class="c-dash"></div>
 				<?php
 				$formateree = get_field('agrement_formateree');
-				if ($formateree == 1) : 
+				if ($formateree == 'oui') : 
 					echo '<span class="c-meta__meta"><i class="fa fa-check-circle c-meta__meta__icon" aria-hidden="true"></i>Agréé Format\'eree</span>';
 				else :
 					echo '<span class="c-meta__meta"><i class="fa fa-times-circle c-meta__meta__icon" aria-hidden="true"></i>Non agréé Format\'eree</span>';
@@ -36,7 +35,7 @@
 				<div class="l-miniDashboard__duo">
 					<div class="l-miniDashboard__duo__left">
 						<span class="t-meta"><i class="fa fa-id-card-o c-meta__meta__icon" aria-hidden="true"></i><?php echo $nom; ?></span>
-						<h3 class="c-card__body__title"><?php echo $adresse; ?></h3>
+						<h3 class="c-card__body__title l-miniDashboard__duo__left__title"><?php echo $adresse; ?></h3>
 						<?php if ($link_formation) : ?>
 							<a href="<?php echo $link_formation; ?>" class="c-link c-link--more l-miniDashboard__duo__left__link" target="_blank">Site internet de la formation</a>
 						<?php endif; ?>

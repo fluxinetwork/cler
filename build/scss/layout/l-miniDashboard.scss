@@ -108,6 +108,14 @@ $break: $break--m;
 	}
 }
 
+.l-miniDashboard__duo__left__title {
+	margin-bottom: $space--s;
+
+	@media screen and (min-width: $break) {
+		margin-bottom: $sapce--m;
+	}
+}
+
 .l-miniDashboard__duo__left__link {
 	margin-top: $space--m;
 
@@ -123,6 +131,7 @@ $break: $break--m;
 	@media screen and (min-width: $break) {
 		margin-left: $gutter;
 		@include flex(center);
+		min-height: 200px;
 	}
 }
 

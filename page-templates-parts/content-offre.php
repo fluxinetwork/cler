@@ -85,7 +85,7 @@
 				<div class="l-miniDashboard__duo">
 					<div class="l-miniDashboard__duo__left">
 						<span class="t-meta"><i class="fa fa-cube c-meta__meta__icon" aria-hidden="true"></i><?php echo $type_structure; ?></span>
-						<h3 class="c-card__body__title"><?php echo $nom; ?></h3>
+						<h3 class="c-card__body__title l-miniDashboard__duo__left__title"><?php echo $nom; ?></h3>
 						<?php if ($site_internet_structure) :
 							echo '<a href="'.$site_internet_structure.'" class="c-link c-link--more l-miniDashboard__duo__left__link" target="_blank">Voir le site internet</a>';
 						endif ?>

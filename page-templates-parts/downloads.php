@@ -24,7 +24,7 @@
 
 			    foreach( $documents as $post): 
 			        setup_postdata($post);
-			    	$title = limitString($post->post_title, 0, 80, ' [...]');
+			    	$title = limitString($post->post_title, 0, 70, ' [...]');
 			        
 			        $all_pans .= '<li class="l-download__content__list__item">
 			        		<a href="'.$post->guid.'" class="c-downloadItem">

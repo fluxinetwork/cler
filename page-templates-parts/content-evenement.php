@@ -43,7 +43,7 @@
 				<div class="l-miniDashboard__duo">
 					<div class="l-miniDashboard__duo__left">
 						<span class="t-meta">Adresse</span>
-						<h3 class="c-card__body__title"><?php echo $adresse; ?></h3>
+						<h3 class="c-card__body__title l-miniDashboard__duo__left__title"><?php echo $adresse; ?></h3>
 						<?php if ($link_event) : ?>
 							<a href="<?php echo $link_event; ?>" class="c-link c-link--more l-miniDashboard__duo__left__link" target="_blank">Site internet de l'évènement</a>
 						<?php endif; ?>
