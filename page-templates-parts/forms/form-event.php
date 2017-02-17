@@ -10,6 +10,13 @@
 
 <form id="form-manage-event" role="form" class="c-card__body">
 	<fieldset class="c-form__fieldset">
+
+		<?php if( $type_form == 'mod' && current_user_can( 'edit_post', $the_idp ) ): ?>
+			<div class="c-form__fieldset__row c-form--indicateur">
+				<p> Votre modification devra être validée par l’équipe avant d’être publiée.</p>
+			</div>		
+		<?php endif; ?>	
+
 		<legend class="c-form__legend c-form--indicateur">Détail de l'événement</legend>
 		<div class="c-form__fieldset__row">
 		  	<label class="c-form__label" for="title">Intitulé de l’événement<span class="i-required">•</span></label>

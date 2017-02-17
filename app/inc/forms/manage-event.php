@@ -133,6 +133,8 @@ function fluxi_manage_event(){
 							}
 						}
 
+						notify_by_mail ( array(CONTACTS_EVENT_1), 'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Modification d\'un événement',false,'<h2>Modification d\'un événement</h2><p>' . $current_user->user_firstname . ' ' . $current_user->user_lastname . ' vient de modifier l\'événement "' . wp_strip_all_tags( $title ). '".<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_idp . '&action=edit">Accéder à l\'événement</a></p>');
+
 						// Response
 						$message_response = 'Votre événement a été mis à jour.';
 
