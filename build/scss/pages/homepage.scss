@@ -109,7 +109,7 @@ $size-portrait: 100px;
 $loop: 1;
 @for $i from 1 through 5 {
 	.hp-portraits__row:nth-child(#{$i}) {
-		@for $j from 1 through $i+3 {
+		@for $j from 1 through $i+2 {
 			.hp-portraits_img:nth-child(#{$j}) {
 				background-position: $size-portrait*$loop;
 			}
