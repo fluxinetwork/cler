@@ -71,21 +71,13 @@
 
 	@media screen and (min-width: $break--s) {
 		flex: 1 0 50%;
-		max-width: 50%;
 	}
 
 	@media screen and (min-width: $break--m) {
 		flex: 1 0 33.333%;
-		max-width: 33.333%;
 	}
-
-	@media screen and (min-width: $break--l) {
-		flex: 1 0 25%;
-		max-width: 25%;
-	}
-
+	
 	@media screen and (min-width: $break--xl) {
-		flex: 1 0 20%;
-		max-width: 20%;
+		flex: 1 0 25%;
 	}
 }
