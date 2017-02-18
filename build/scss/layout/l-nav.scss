@@ -10,9 +10,19 @@
 	@include flex(space-between stretch);
 	padding-top: $space--s;
 	padding-bottom: $space--s;
-	max-width: $maxW;
-	margin-left: auto;
-	margin-right: auto;
+
+	&.is-compact {
+		padding-top: $space--xs;	
+		padding-bottom: $space--xs;	
+
+		.l-nav__logo {
+			width: 55px;
+		}
+
+		.l-nav__logo__img {
+			width: 170px;
+		}
+	}
 }
 
 //================================================================== LOGO
@@ -20,30 +30,28 @@
 .l-nav__logo {
 	display: block;
 	flex: none;
-	max-width: 180px;
+	width: 180px;
+	overflow: hidden;
 	transition: $transition--dynamic;
+
+	@media screen and (min-width: $break--m) {
+		width: 220px;
+	}
 
 	.navBar.is-open & {
 		margin-left: -300px;
 	}
+}
 
-	img {
-		display: block;
-	}
+.l-nav__logo__img {
+	display: block;
+	width: 180px;
+	max-width: 220px;
+	transition: $transition--dynamic;
 
 	@media screen and (min-width: $break--m) {
-		max-width: 220px;
+		width: 220px;
 	}
-
-	@media screen and (min-width: $break--l) {
-		//max-width: 200px;
-	}
-
-
-	@media screen and (min-width: $break--l+100) {
-		//max-width: 250px;
-	}
-
 }
 
 
@@ -58,7 +66,7 @@
 	overflow: hidden;
 	transition: $transition--dynamic;
 
-	.navBar.is-open & {
+	.nav.is-open & {
 		top: 0;
 	}
 
@@ -93,55 +101,4 @@
 
 .l-nav__login__buttons {
 	display: flex;
-}
-
-
-//=========================================================== BUTTONS
-
-.l-nav__buttons {
-	position: fixed;
-	z-index: 2000;
-	bottom: 0;
-	right: 0;
-	display: flex;
-	margin: 0 $space--m $space--m 0;
-}
-
-
-//=========================================================== SEARCH
-
-.l-nav__search__btn {
-	position: fixed;
-	display: none;
-	bottom: $space--m;
-	right: $space--m;
-	@include transition;
-	z-index: 4;
-
-	@media screen and (min-width: $break--l) {
-		display: block;
-		right: $space--l;
-	}
-}
-
-.l-nav__search__input {
-	z-index: 1;
-}
-
-//=========================================================== ADMIN
-
-.l-nav__admin {
-	display: none;
-	position: fixed;
-	bottom: $space--m;
-	left: $space--m;
-
-	a:first-child {
-		margin-bottom: $space--xs;
-	}
-	
-	@media screen and (min-width: $break--m) {
-		display: flex;
-		flex-direction: column;
-	}
 }

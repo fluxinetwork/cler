@@ -129,7 +129,7 @@
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
 		<?php the_title( '<h1>', '</h1>' ); ?>
-		<h2 class="l-header__excerpt"><?php echo $message; ?></h2>
+		<h2 class="l-intro__excerpt"><?php echo $message; ?></h2>
 	</header>
 </div>
 

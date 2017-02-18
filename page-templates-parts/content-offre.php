@@ -51,10 +51,10 @@
 
 	<div class="l-row bg-accent--grad">
 		<header class="l-col l-col--content">
-			<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta c-white l-header__date"><?php echo get_the_date('d M Y'); ?></time>
+			<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta c-white l-intro__date"><?php echo get_the_date('d M Y'); ?></time>
 			<h1 class="c-white"><?php echo get_the_title(); ?></h1>
 
-			<div class="c-meta l-header__meta c-meta--white">
+			<div class="c-meta l-intro__meta c-meta--white">
 				<div class="c-dash"></div>
 				<?php				
 				$categories = get_the_category();

@@ -8,7 +8,7 @@
 
 .c-notify {
 	position: fixed;
-	z-index: 3;
+	z-index: 2;
 	left: 0;
 	bottom: 0;
 	background-color: $c-dark;
@@ -30,7 +30,7 @@
 .c-notify__message {
 	color: #fff !important;
 
-	.l-nav__search__input & {
+	.l-navExtra__search__input & {
 		@extend .h3;
 		color: #fff;
 		background-color: transparent;

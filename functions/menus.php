@@ -56,9 +56,11 @@ class fluxi_walker_nav_menu extends Walker_Nav_Menu {
         }
 
         if (in_array('menu-item-has-children', $classes)) {
-            $class_dropdown = ' has-dropdown js-open-subnav';
+            $class_dropdown = ' js-open-subnav';
+            $icon = '<i class="fa fa-chevron-right"></i>';
         }else{
         	$class_dropdown = '';
+        	$icon = '';
         }
 
 		$class_names = ( $depth > 0  ? 'c-navList__item' : 'c-navList__item js-mute-main' );
@@ -74,7 +76,7 @@ class fluxi_walker_nav_menu extends Walker_Nav_Menu {
 		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 		$attributes .= ' class="c-navList__item__link ' . $class_dropdown . '"';
 	  
-		$item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
+		$item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s '.$icon.'</a>%6$s',
 			$args->before,
 			$attributes,
 			$args->link_before,

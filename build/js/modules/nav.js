@@ -5,10 +5,36 @@
 \*------------------------------*/
 
 function nav() {
-	$('.js-open-nav').on('click', function(e){
-		$('.navBar').toggleClass('is-open');
 
-		if (!$('.navBar').hasClass('is-open')) {
+	// DISPLAY NAV
+
+	$(document).bind('mousewheel', monitorScroll);
+
+	function monitorScroll() {
+		var documentOffset = $(window).scrollTop();
+	    if ( event.deltaY > 0 ) {
+	    	if( documentOffset > 200 ) {
+	    		$('.navBar').addClass('is-out');
+	    		$('.nav').addClass('is-compact');
+	    	}
+	    } else if (event.deltaY < 0)  {
+	    	if( $('.navBar').hasClass('is-out') ) {
+	    		$('.navBar').removeClass('is-out');
+	    	}
+	    	if( documentOffset < 100 && $('.nav').hasClass('is-compact') ) {
+	    		$('.nav').removeClass('is-compact');
+	    	}
+	    }
+	}
+
+
+	// MAIN NAV
+
+	$('.js-open-nav').on('click', function(e){
+		$('.nav').toggleClass('is-open');
+		$(this).toggleClass('icon2');
+
+		if (!$('.nav').hasClass('is-open')) {
 			$('.js-close-subnav').removeClass('is-visible');
 			$('.c-navList.is-open').removeClass('is-open');
 		}
@@ -22,6 +48,9 @@ function nav() {
 			$('.main').removeClass('is-overlayed');
 		}
 	)
+
+
+	// SUBNAV
 
 	$('.js-open-subnav').on('click', function(e){
 		e.preventDefault();
@@ -42,6 +71,9 @@ function nav() {
 		}
 	})
 
+
+	// LOGOUT
+
 	$('.js-tips-logout').hover(
 		function() {
 			$('.btn-profil').addClass('bg-error is-collapsed').data('title', $('.btn-profil').html()).html('A bientôt !')
@@ -50,6 +82,9 @@ function nav() {
 			$('.btn-profil').removeClass('bg-error is-collapsed').html($('.btn-profil').data('title')).removeData();
 		}
 	)
+
+
+	// SEARCH
 
 	$('.js-open-search').on('click', function(){
 		$(this).toggleClass('icon2');

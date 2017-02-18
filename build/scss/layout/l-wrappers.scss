@@ -8,17 +8,24 @@
 
 body {
 	overflow-x: hidden;
-}
-
-.nav {
-	position: relative;
-	z-index: 2;
-	background-color: #fff;
-	box-shadow: $shadow;
-	padding: 0 $space--m;
+	padding-top: 91px;
 
 	@media screen and (min-width: $break--m) {
-		padding: 0 $space--l;
+		padding-top: 105px;
+	}
+}
+
+.navBar {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 3;
+	background-color: #fff;
+	box-shadow: $shadow;
+	transition: $transition--dynamic;
+	
+	&.is-out {
+		transform: translateY(-100%);
 	}
 }
 

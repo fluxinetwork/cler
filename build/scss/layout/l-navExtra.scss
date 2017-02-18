@@ -1,0 +1,78 @@
+/*======================================================================*\
+==========================================================================
+
+//	LAYOUT NAV EXTRA
+
+==========================================================================
+\*======================================================================*/
+
+
+.l-navExtra {
+	position: relative;
+	z-index: 4;
+}
+
+
+//=========================================================== BUTTONS
+
+.l-navExtra__buttons {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	margin: 0 $space--m $space--m 0;
+
+	button:first-child {
+		margin-right: $space--xs;
+	}
+}
+
+
+//=========================================================== SEARCH
+
+.l-navExtra__search {
+	display: none;
+
+	@media screen and (min-width: $break--l) {
+		display: block;
+		right: $space--l;
+	}
+}
+
+.l-navExtra__search__btn {
+	position: fixed;
+	z-index: 3;
+	bottom: $space--m;
+	right: $space--m;
+	@include transition;
+
+	@media screen and (min-width: $break--l) {
+		right: $space--l;
+	}
+}
+
+.l-navExtra__search__input {
+	z-index: 1;
+}
+
+//=========================================================== ADMIN
+
+.l-navExtra__admin {
+	display: none;
+	position: fixed;
+	bottom: 8.6rem;
+	right: $space--m;
+
+	a:first-child {
+		margin-bottom: $space--xs;
+	}
+	
+	@media screen and (min-width: $break--m) {
+		display: flex;
+		flex-direction: column;
+	}
+
+	@media screen and (min-width: $break--l) {
+		right: $space--l;
+	}
+}

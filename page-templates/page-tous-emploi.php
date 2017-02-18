@@ -145,7 +145,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 						$output = '<li class="l-postList__item">';
 						$output .= '<a href="'.get_permalink().'">';
 						$output .= '<article class="offre">';
-						$output .= '<time datetime="'.get_the_date('Y-m-d').'" class="t-meta l-header__date">'.get_the_date('d M Y').'</time> ';
+						$output .= '<time datetime="'.get_the_date('Y-m-d').'" class="t-meta l-intro__date">'.get_the_date('d M Y').'</time> ';
 						$output .= '<h1 class="h2">'.get_the_title().'</h1>';
 
 						$output .= '<div class="c-meta">';

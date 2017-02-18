@@ -149,17 +149,13 @@
 	}
 
 	&.icon2 {
-		background-color: transparent;
+		//background-color: transparent;
 
 		.fa:nth-child(1) {
 			display: none;
 		}
 		.fa:nth-child(2) {
 			display: block;
-		}
-
-		@media screen and (max-width: $break--xl) {
-			display: none;
 		}
 	}
 }

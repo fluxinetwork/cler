@@ -6,9 +6,9 @@ Template Name: Hub
 <?php get_header(); ?>
 
 <section class="l-row bg-light">
-	<header class="l-col l-col--content l-header">
+	<header class="l-col l-col--content l-intro">
 		<h1><?php echo get_the_title(); ?></h1>
-		<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum', false, false); ?></h2>
+		<h2 class="l-intro__excerpt"><?php echo get_field('fluxi_resum', false, false); ?></h2>
 	</header>
 </section>
 

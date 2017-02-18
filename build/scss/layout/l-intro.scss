@@ -1,26 +1,26 @@
 /*======================================================================*\
 ==========================================================================
 
-//	LAYOUT HEADER
+//	LAYOUT INTRO
 
 ==========================================================================
 \*======================================================================*/
 
-.l-header {
+.l-intro {
 
 }
 
-.l-header__date {
+.l-intro__date {
 	margin-bottom: $space--s;
 }
 
-.l-header__meta {
+.l-intro__meta {
 	margin-top: $space--s;
 }
 
 
-.l-header__figure,
-.l-header__excerpt {
+.l-intro__figure,
+.l-intro__excerpt {
 	margin-top: $space--m;
 
 	@media screen and (min-width: $break--m) {
@@ -28,6 +28,6 @@
 	}
 }
 
-.l-header__excerpt {
+.l-intro__excerpt {
 	font-family: $font-subh;
 }

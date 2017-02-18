@@ -31,8 +31,8 @@
 
 <article>
 	<div class="l-row bg-light">
-		<header class="l-col l-col--content l-header">
-			<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta l-header__date"><?php echo get_the_date(); ?></time>
+		<header class="l-col l-col--content l-intro">
+			<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta l-intro__date"><?php echo get_the_date(); ?></time>
 			<h1><?php echo get_the_title(); ?></h1>
 
 			<div class="l-miniDashboard ">
@@ -43,7 +43,7 @@
 				</div>
 			</div>
 
-			<h2 class="l-header__excerpt"><?php echo get_field('fluxi_resum', false, false); ?></h2>
+			<h2 class="l-intro__excerpt"><?php echo get_field('fluxi_resum', false, false); ?></h2>
 		</header>
 	</div>
 
