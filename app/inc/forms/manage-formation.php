@@ -16,7 +16,7 @@ function fluxi_manage_formation(){
 	// vars
 	$current_user = wp_get_current_user();
 	$redirect_slug = home_url().'/mon-profil/';
-	$toky_toky = $_POST['toky_toky'];
+	$toky_toky = filter_var( $_POST['toky_toky'], FILTER_SANITIZE_NUMBER_INT);
 	$action_form = filter_var($_POST['act'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 	$the_idp = filter_var($_POST['idp'], FILTER_SANITIZE_NUMBER_INT);
 
@@ -110,7 +110,7 @@ function fluxi_manage_formation(){
 						}
 
 						// Notification mail admin
-						notify_by_mail (array(CONTACTS_FORMATION_1,CONTACTS_FORMATION_2),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Formation en attente de validation',false,'<h2>Nouvelle formation ajoutée</h2><p>' . $current_user->user_firstname . ' vient d\'ajouter la formation <strong>"' . wp_strip_all_tags( $title ) . '"</strong>.<br>Vous devez la publier pour la rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#86bd4c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'offre</a></p>');
+						notify_by_mail (array(CONTACTS_FORMATION_1,CONTACTS_FORMATION_2),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Formation en attente de validation',false,'<h2>Nouvelle formation ajoutée</h2><p>' . $s->user_firstname . ' vient d\'ajouter la formation <strong>"' . wp_strip_all_tags( $title ) . '"</strong>.<br>Vous devez la publier pour la rendre accessible à tous les utilisateurs du site.<br><br><a style="background-color:#86bd4c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_post_id . '&action=edit">Accéder à l\'offre</a></p>');
 
 						// Notification mail current user
 						$mail_new_formation = array(get_footer_mail(), $redirect_slug, $is_adherent);
@@ -144,6 +144,8 @@ function fluxi_manage_formation(){
 
 						// Update tags
 						wp_set_post_tags($the_idp, $niveau_detude, true );
+
+						notify_by_mail ( array(CONTACTS_FORMATION_1,CONTACTS_FORMATION_2), 'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>','Modification d\'une formation',false,'<h2>Modification d\'une formation</h2><p>' . $current_user->user_firstname . ' ' . $current_user->user_lastname . ' vient de modifier la formation "' . wp_strip_all_tags( $title ). '".<br><br><a style="background-color:#005d8c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_idp . '&action=edit">Accéder à la formation</a></p>');
 
 						// Response
 						$message_response = 'Votre formation a été mise à jour.';

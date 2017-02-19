@@ -82,6 +82,6 @@
 	<div class="c-form__notify js-notify"></div>
 
   	<div class="c-form__submit">
-  		<button type="submit" class="c-btn">Payer</button>
+  		<button type="submit" class="c-btn"><i class="fa fa-eur" aria-hidden="true"></i> Payer</button>
   	</div>
 </form>

@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * The template part for displaying the form "adhèrent" (add/re-add/update)
  */
@@ -9,7 +9,8 @@
 </div>
 
 <form id="form-manage-adherent" role="form" class="c-card__body">
-	<fieldset class="c-form__fieldset">
+	<fieldset class="c-form__fieldset">		
+
 		<legend class="c-form__legend c-form--indicateur">Votre structure</legend>
 
 		<div class="c-form__fieldset__row">

@@ -13,11 +13,9 @@ function fluxi_participation_concours(){
     $results = array();
     global $reg_errors;
 	$reg_errors = new WP_Error;
-	// vars
-	//$current_user = wp_get_current_user();
+	// vars	
 	$redirect_slug = filter_var($_POST['link_concours'], FILTER_SANITIZE_URL);
-	$toky_toky = $_POST['toky_toky'];
-
+	$toky_toky = filter_var( $_POST['toky_toky'], FILTER_SANITIZE_NUMBER_INT);
 	$the_idp = filter_var($_POST['idp'], FILTER_SANITIZE_NUMBER_INT);
 	$title_concours = filter_var($_POST['titre_concours'], FILTER_SANITIZE_STRING);
 

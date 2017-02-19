@@ -39,7 +39,7 @@ define('DISALLOW_FILE_EDIT', true);
 
 /**
  * MAILS
- */
+
 define('CONTACT_GENERAL', 'info@cler.org');
 
 define('CONTACTS_ADHESION_1', 'lucile.krezel@cler.org');
@@ -57,6 +57,26 @@ define('CONTACTS_CONCOURS', 'info@cler.org');
 
 define('CONTACTS_FORMATION_1', 'info@cler.org');
 define('CONTACTS_FORMATION_2', 'alexis.monteil@cler.org');
+ */
+
+define('CONTACT_GENERAL', 'rollandyann@gmail.com');
+
+define('CONTACTS_ADHESION_1', 'rollandyann@gmail.com');
+define('CONTACTS_ADHESION_2','rollandyann@gmail.com');
+define('CONTACT_TEPOS', 'rollandyann@gmail.com');
+
+define('CONTACTS_PAIEMENT_1', 'rollandyann@gmail.com');
+define('CONTACTS_PAIEMENT_2','rollandyann@gmail.com');
+
+define('CONTACTS_EVENT_1','rollandyann@gmail.com');
+
+define('CONTACTS_EMPLOI_1', 'rollandyann@gmail.com');
+
+define('CONTACTS_CONCOURS', 'rollandyann@gmail.com');
+
+define('CONTACTS_FORMATION_1', 'rollandyann@gmail.com');
+define('CONTACTS_FORMATION_2', 'rollandyann@gmail.com');
+
 
 /**
  * LINKS

@@ -16,7 +16,7 @@ function fluxi_participation_webinaire(){
 	// vars
 	$current_user = wp_get_current_user();
 	$redirect_slug = home_url().'/mon-profil/';
-	$toky_toky = $_POST['toky_toky'];
+	$toky_toky = filter_var( $_POST['toky_toky'], FILTER_SANITIZE_NUMBER_INT);
 	$the_idp = filter_var($_POST['idp'], FILTER_SANITIZE_NUMBER_INT);
 	$date_webinaire = filter_var($_POST['date'], FILTER_SANITIZE_STRING);
 	$hour_webinaire = filter_var($_POST['heure'], FILTER_SANITIZE_STRING);

@@ -16,7 +16,7 @@ function fluxi_manage_event(){
 	// vars
 	$current_user = wp_get_current_user();
 	$redirect_slug = home_url().'/mon-profil/';
-	$toky_toky = $_POST['toky_toky'];
+	$toky_toky = filter_var( $_POST['toky_toky'], FILTER_SANITIZE_NUMBER_INT);
 	$action_form = filter_var($_POST['act'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 	$the_idp = filter_var($_POST['idp'], FILTER_SANITIZE_NUMBER_INT);
 

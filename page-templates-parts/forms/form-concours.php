@@ -76,7 +76,7 @@
     <div class="c-form__notify js-notify"></div>
 
 	<div class="c-form__submit no-pdBottom">
-    	<button type="submit" id="submit-participation-concours" class="c-btn">Participer au concours</button>
+    	<button type="submit" id="submit-participation-concours" class="c-btn"><i class="fa fa-plus" aria-hidden="true"></i> Participer au concours</button>
     </div>
 
 </form>

@@ -35,7 +35,7 @@ Template Name: Gérer adhèrent
 						$email_contact1 = $current_user->user_email;
 					
 						// Button form label
-						$type_form_name = 'Envoyer la demande d\'adhésion';
+						$type_form_name = '<i class="fa fa-plus" aria-hidden="true"></i> Envoyer la demande d\'adhésion';
 						// Form option value for annee_cotisation
 						$fields_annees_cotisation ='
 							<option disabled selected value=""> Selectionner</option>
@@ -47,7 +47,7 @@ Template Name: Gérer adhèrent
 
 					elseif( $type_form == 'add' && is_adherent_cler() || $type_form == 'mod' || $type_form == 'rad' || $type_form == 'add' && get_adherent_status() != 'non_adherent' ):
 
-						if( isset($_GET['idp']) && is_numeric($_GET['idp']) ):
+						if( isset($_GET['idp']) && is_numeric($_GET['idp']) && !empty($_GET['idp']) ):
 							$the_idp = filter_var($_GET['idp'], FILTER_SANITIZE_NUMBER_INT);
 						else:
 							$the_idp = get_adherent_idp();
@@ -105,7 +105,7 @@ Template Name: Gérer adhèrent
 								$page_title = 'Mettre à jour mon adhésion '.$last_year_cotisation;
 								
 								// Button form label
-								$type_form_name = 'Mettre à jour';
+								$type_form_name = '<i class="fa fa-pencil" aria-hidden="true"></i> Mettre à jour';
 								$montant_cotisation = $last_montant_cotisation;
 								// Form option value for annee_cotisation
 								$fields_annees_cotisation = '<option value="'.$last_year_cotisation.'">Année de cotisation '.$last_year_cotisation.'</option>';						
@@ -115,7 +115,7 @@ Template Name: Gérer adhèrent
 								$page_title = 'Demande de ré-adhésion '.($last_year_cotisation + 1);
 								
 								// Button form label
-								$type_form_name = 'Renouveler mon adhésion';
+								$type_form_name = '<i class="fa fa-refresh c-meta__meta__icon"></i> Renouveler mon adhésion';
 								// Form option value for annee_cotisation
 								$fields_annees_cotisation = '<option value="'.($last_year_cotisation + 1).'">Année de cotisation '.($last_year_cotisation + 1).'</option>';
 								$fields_annees_cotisation .= '<option value="'.($last_year_cotisation + 2).'">Année de cotisation '.($last_year_cotisation + 2).'</option>';
