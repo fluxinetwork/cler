@@ -58,6 +58,11 @@ var FOO = {
                 }
                 first = false;
             });
+
+            $('.js-scroll-top').on('click', function(){
+                $('.nav').removeClass('is-compact');
+                $('.navBar').removeClass('is-out');
+            });
         }
     }
 };

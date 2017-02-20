@@ -19,3 +19,5 @@
 		</div>
 	</nav>
 </div>
+
+<button class="l-navExtra__backTop c-btnIcon bg-dark js-scroll-top"><i class="fa fa-chevron-up"></i></button>

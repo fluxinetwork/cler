@@ -933,7 +933,7 @@ p {
 \*======================================================================*/
 body {
   overflow-x: hidden;
-  padding-top: 91px;
+  padding-top: 96px;
 }
 @media screen and (min-width: 700px) {
   body {
@@ -1098,10 +1098,12 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  visibility: hidden;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .nav.is-open .l-nav__primary {
   top: 0;
+  visibility: visible;
 }
 @media screen and (min-width: 960px) {
   .l-nav__primary {
@@ -1111,6 +1113,7 @@ body {
     margin-right: 0.98rem;
     background-color: transparent;
     overflow: visible;
+    visibility: visible;
   }
 }
 
@@ -1185,6 +1188,18 @@ body {
 
 .l-navExtra__search__input {
   z-index: 1;
+}
+@media screen and (max-width: 1300px) {
+  .l-navExtra__search__input {
+    padding-right: 60px;
+  }
+}
+
+.l-navExtra__backTop {
+  position: fixed;
+  z-index: 3;
+  bottom: 2.8rem;
+  right: 2.8rem;
 }
 
 .l-navExtra__admin {
@@ -1710,15 +1725,27 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 1.736rem 0;
 }
 .l-footer__content__col2 a[href*='twitter'] {
   margin: 0 2.8rem 0 0.98rem;
 }
+@media screen and (min-width: 700px) {
+  .l-footer__content__col2 {
+    margin: 0;
+  }
+}
 
 .l-footer__content__col3 {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+}
+@media screen and (min-width: 700px) {
+  .l-footer__content__col3 {
+    justify-content: flex-end;
+  }
 }
 
 /*======================================================================*\
@@ -2018,7 +2045,9 @@ body {
     justify-content: center;
     align-items: center;
     top: 0;
+    left: 0;
     height: 100%;
+    width: 100%;
   }
 }
 
@@ -3392,6 +3421,7 @@ body {
 
 .fc__lien {
   margin-top: 2.8rem;
+  margin-right: 1.736rem;
 }
 
 .fc__blockquote {
@@ -3633,6 +3663,9 @@ body {
     margin-left: 0;
   }
 }
+.c-newsH--action .c-newsH__body {
+  padding-left: 0 !important;
+}
 
 .equipe .c-newsH__body__meta, .administrateurs .c-newsH__body__meta {
   display: none;
@@ -3652,10 +3685,15 @@ body {
 }
 
 .c-newsH__body__link {
-  margin-top: 2.8rem;
+  margin-top: 1.736rem;
   padding-bottom: 0;
   position: relative;
   top: 4px;
+}
+@media screen and (min-width: 700px) {
+  .c-newsH__body__link {
+    margin-top: 2.8rem;
+  }
 }
 
 /*======================================================================*\
@@ -4581,6 +4619,11 @@ a.c-meta__meta:hover {
 .formateree .formateree-mosaic img {
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (min-width: 1200px) {
+  .formateree .formateree-mosaic img {
+    border-radius: 3px;
+  }
 }
 .formateree .map__holder::before {
   content: '';

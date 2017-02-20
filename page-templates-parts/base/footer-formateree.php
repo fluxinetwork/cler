@@ -1,4 +1,4 @@
-<footer class="l-row bg-dark footer" id="contact">
+<footer class="l-row bg-dark l-footer" id="contact">
 	<div class="l-col l-footer__content l-grid">
 		<div class="l-grid__col l-footer__content__col1">
 			<img src="<?php echo get_bloginfo('template_url'); ?>/app/img/formateree-logo-symbole-mini.png" alt="Symbole du logo de Format'eree - Formations de la transition énergétique">

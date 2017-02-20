@@ -97,6 +97,9 @@ $break: $break--m;
 	flex: 1 0 40%;
 }
 
+
+// LEFT
+
 .l-miniDashboard__duo__left {
 	@extend .l-box;
 	margin-bottom: $gutter;
@@ -124,6 +127,9 @@ $break: $break--m;
 	}
 }
 
+
+// RIGHT
+
 .l-miniDashboard__duo__right {
 	position: relative;
 	@extend .l-box;
@@ -147,7 +153,9 @@ $break: $break--m;
 	@media screen and (min-width: $break) {
 		@include flex(center);
 		top: 0;
+		left: 0;
 		height: 100%;
+		width: 100%;
 	}
 }
 

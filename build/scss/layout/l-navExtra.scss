@@ -53,6 +53,20 @@
 
 .l-navExtra__search__input {
 	z-index: 1;
+
+	@media screen and (max-width: $break--xl) {
+		padding-right: 60px;
+	}
+}
+
+
+//========================================================= BACK TOP
+
+.l-navExtra__backTop {
+	position: fixed;
+	z-index: 3;
+	bottom: $space--m;
+	right: $space--m;
 }
 
 //=========================================================== ADMIN

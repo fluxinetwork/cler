@@ -19,6 +19,10 @@ function scroll_to(position, duration, relative) {
 		position = position.offset().top;
 	}
 
+	if (position != 'bottom') {
+		position = position - ($(window).height()*0.1) - parseInt($('body').css('paddingTop'));
+	}
+
 	if (duration === 'fast') {
 		coef = 0.1;
 		duration = 200;
@@ -45,7 +49,6 @@ function scroll_to(position, duration, relative) {
 $('.js-scroll-to').click(function(e){
 	e.preventDefault();
 	id = $($(this).attr('href'));
-	console.log(id);
 	scroll_to(id);
 })
 
@@ -54,5 +57,5 @@ $('.js-scroll-top').click(function(e){
 })
 
 $('.js-scroll-bottom').click(function(e){
-	scroll_to('bottom', true);
+	scroll_to('bottom');
 })

@@ -20,6 +20,9 @@ Template Name: Tous les concours
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
 		<h1><?php the_title(); ?></h1>
+		<div class="c-meta l-intro__meta">
+			<div class="c-dash"></div>
+		</div>
 		<?php get_template_part( 'page-templates-parts/content', 'intro'); ?>
 	</header>
 </div>

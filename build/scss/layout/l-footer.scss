@@ -29,13 +29,23 @@
 .l-footer__content__col2 {
 	width: 100%;
 	@include flex(center);
+	margin: $space--s 0;
 
 	a[href*='twitter'] {
 		margin: 0 $space--m 0 $space--xs;
 	}
+
+	@media screen and (min-width: $break--m) {
+		margin: 0;
+	}
 }
 
 .l-footer__content__col3 {
-	@include flex(flex-end center);
+	@include flex(center);
+	width: 100%;
+
+	@media screen and (min-width: $break--m) {
+		justify-content: flex-end;
+	}
 }
 

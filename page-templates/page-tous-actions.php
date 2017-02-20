@@ -15,6 +15,9 @@ Template Name: Toutes les actions
 <div class="l-row bg-light">
 	<header class="l-col l-col--content">
 		<h1><?php echo get_the_title(); ?></h1>
+		<div class="c-meta l-intro__meta">
+			<div class="c-dash"></div>
+		</div>
 		<?php get_template_part( 'page-templates-parts/content', 'intro'); ?>
 	</header>
 </div>
@@ -37,9 +40,7 @@ Template Name: Toutes les actions
 							$output .= '<div class="c-newsH__body">';
 								$output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
 								$output .= '<p class="c-newsH__body__desc">'.$description.'</p>';
-								$output .= '<div class="c-meta">';
-									$output .= '<span class="c-link c-link--more c-newsH__body__link" target="_blank">En savoir plus</span>';				
-								$output .= '</div>';
+								$output .= '<span class="c-link c-link--more c-newsH__body__link" target="_blank">En savoir plus</span>';				
 							$output .= '</div>';
 						$output .= '</article>';
 					$output .= '</a>';
