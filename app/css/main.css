@@ -4658,6 +4658,9 @@ a.c-meta__meta:hover {
     padding-right: 0;
   }
 }
+.formateree .c-newsH__body {
+  background-color: transparent;
+}
 .formateree .l-footer__content__col1 {
   flex: 1;
 }

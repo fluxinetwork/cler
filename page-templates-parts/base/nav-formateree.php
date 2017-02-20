@@ -15,7 +15,7 @@
 		</div>
 		
 		<div class="l-nav__login">
-			<a href="#contact" class="c-btn">Contact</a>
+			<a href="#contact" class="c-btn c-btn--ghost"><i class="fa fa-comments c-meta__meta__icon"></i>Contact</a>
 		</div>
 	</nav>
 </div>
