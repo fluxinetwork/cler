@@ -27,7 +27,6 @@ $logoMaxW : 256px;
 		width: $logoMinW;
 	}
 
-
 	.c-navList__item__link {
 		margin-right: $space--m;
 
@@ -42,6 +41,16 @@ $logoMaxW : 256px;
 
 	.l-nav__login .c-btn {
 		background-color: $c-dark;
+	}
+
+	.c-btn--ghost {
+		border-color: $c-formateree;
+		color: $c-formateree !important;
+
+		&:hover {
+			background-color: $c-formateree !important;
+			color: #fff !important;
+		}
 	}
 
 	// PAGE INTRO
@@ -183,6 +192,17 @@ $logoMaxW : 256px;
 			padding-left: 0;
 			padding-right: 0;
 		}
+	}
+
+
+	// FOOTER 
+
+	.l-footer__content__col1 {
+		flex: 1;
+	}
+
+	.l-footer__content__col3 {
+		flex: 1.5;
 	}
 	
 }

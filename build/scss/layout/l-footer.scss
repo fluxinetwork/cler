@@ -36,7 +36,6 @@
 }
 
 .l-footer__content__col3 {
-	display: flex;
-	justify-content: flex-end;
+	@include flex(flex-end center);
 }
 
