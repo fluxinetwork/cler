@@ -85,7 +85,7 @@ function initAdherentForm(){
                         $formObj.find('button[type=submit]').prop('disabled', false);
                     }else{
                         //$formObj.find('button[type=submit]').hide();
-                        $formObj.find('.c-form__submit').html('<a class="c-btn" href="'+data[0].redirect+'"><i class="fa fa-arrow-left" aria-hidden="true"></i> Retour</a>');
+                        $formObj.find('.c-form__submit').html('<a class="c-btn" href="'+data[0].redirect+'"><i class="fa fa-arrow-left mgRight--xs" aria-hidden="true"></i>Retour</a>');
                     }
                     $formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');                   
 
@@ -101,7 +101,7 @@ function initAdherentForm(){
         onValidate : function($form) {
             labelBtn = $formObj.find('button[type=submit]').html();
             $formObj.find('.js-notify').html('');
-            $formObj.find('button[type=submit]').prop('disabled', true).html('<i class="fa fa-cog fa-spin js-spinner" aria-hidden="true"></i> En cours');
+            $formObj.find('button[type=submit]').prop('disabled', true).html('<i class="fa fa-cog fa-spin js-spinner mgRight--xs" aria-hidden="true"></i>En cours');
         }
     });
 

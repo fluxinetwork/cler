@@ -24,7 +24,7 @@ function initaddPay(){
 	$formObj.submit(function (e) {
 
 		e.preventDefault();
-		$formObj.find('button[type=submit]').prop('disabled', true).html('<i class="fa fa-cog fa-spin js-spinner" aria-hidden="true"></i> En cours ...'); // On désactive le bouton submit
+		$formObj.find('button[type=submit]').prop('disabled', true).html('<i class="fa fa-cog fa-spin js-spinner mgRight--xs" aria-hidden="true"></i>En cours ...'); // On désactive le bouton submit
 
 		Stripe.card.createToken($formObj, function (status, response) {
 
@@ -105,7 +105,7 @@ function initaddPay(){
 				// On affiche les erreurs
 			    $formObj.find('.js-notify').html('<span class="error">' + error_mess + '</span>');
 				// On réactive le bouton
-				$formObj.find('button[type=submit]').prop('disabled', false).html('<i class="fa fa-eur" aria-hidden="true"></i> Payer');
+				$formObj.find('button[type=submit]').prop('disabled', false).html('<i class="fa fa-eur mgRight--xs" aria-hidden="true"></i>Payer');
 
 		    } else { // Le token a bien été créé
 
@@ -124,17 +124,17 @@ function initaddPay(){
 	                success: function(data){
 
 	                    if(data[0].validation == 'error'){
-	                        $formObj.find('button[type=submit]').prop('disabled', false).html('<i class="fa fa-eur" aria-hidden="true"></i> Payer');
+	                        $formObj.find('button[type=submit]').prop('disabled', false).html('<i class="fa fa-eur mgRight--xs" aria-hidden="true"></i>Payer');
 	                    }else{
 	                        $formObj.find('button[type=submit]').remove();
-	                        $formObj.find('.c-form__submit').html('<a class="c-btn" href="'+data[0].redirect+'"><i class="fa fa-arrow-left" aria-hidden="true"></i> Retour</a>');
+	                        $formObj.find('.c-form__submit').html('<a class="c-btn" href="'+data[0].redirect+'"><i class="fa fa-arrow-left mgRight--xs" aria-hidden="true"></i>Retour</a>');
 	                    }
 	                    $formObj.find('.js-notify').html('<span class="'+data[0].validation+'">'+data[0].message+'</span>');
 
 	                },
 	                error : function(jqXHR, textStatus, errorThrown) {
 	                    //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
-	                    $formObj.find('button[type=submit]').prop('disabled', false).html('<i class="fa fa-eur" aria-hidden="true"></i> Payer');
+	                    $formObj.find('button[type=submit]').prop('disabled', false).html('<i class="fa fa-eur mgRight--xs" aria-hidden="true"></i>Payer');
 	                }
 
 	            });
