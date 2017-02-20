@@ -25,7 +25,7 @@
 				$ob_departement = get_field_object('field_574dab093c7b0');
 				$label_departement = $ob_departement['choices'][ get_field('departement') ];
 				$code_postal = get_field('code_postal');
-				$numero_departement = substr($code_postal,0,-3);
+				$numero_departement = substr($ob_departement['value'], 12, 3);
 				
 				$link_formation = get_field( 'site_internet' );
 			?>
