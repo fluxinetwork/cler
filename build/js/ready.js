@@ -50,7 +50,7 @@ var FOO = {
         init: function(){ 
             var first = true;
             $('.fc__title').each(function(){
-                $(this).append('<span class="fc__title__tail"></span>');
+                $(this).append('<span class="fc__title__tail"></span>').addClass('js-scroll-to');
                 if (first) {
                     $(this).attr('id', 'organisme');
                 } else {

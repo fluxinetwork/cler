@@ -78,6 +78,10 @@ $break: $break--m;
 	&:first-child {
 		margin-top: 0;
 	}
+
+	.c-newsH--action & {
+		@extend .h2;
+	}
 }
 
 .c-newsH__body__desc {
@@ -85,6 +89,10 @@ $break: $break--m;
 	font-family: $font-subh;
 	color: $c-txt;
 	margin-top: $space--xs;
+
+	.c-newsH--action & {
+		@extend .h4;
+	}
 }
 
 .c-newsH__body__link {

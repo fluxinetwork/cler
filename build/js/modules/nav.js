@@ -10,14 +10,14 @@ function nav() {
 
 	$(document).bind('mousewheel', monitorScroll);
 
-	function monitorScroll() {
+	function monitorScroll(event) {
 		var documentOffset = $(window).scrollTop();
-	    if ( event.deltaY > 0 ) {
+	    if ( event.deltaY < 0 ) {
 	    	if( documentOffset > 200 ) {
 	    		$('.navBar').addClass('is-out');
 	    		$('.nav').addClass('is-compact');
 	    	}
-	    } else if (event.deltaY < 0)  {
+	    } else if (event.deltaY > 0)  {
 	    	if( $('.navBar').hasClass('is-out') ) {
 	    		$('.navBar').removeClass('is-out');
 	    	}

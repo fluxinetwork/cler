@@ -92,7 +92,7 @@ var FOO = {
         init: function(){ 
             var first = true;
             $('.fc__title').each(function(){
-                $(this).append('<span class="fc__title__tail"></span>');
+                $(this).append('<span class="fc__title__tail"></span>').addClass('js-scroll-to');
                 if (first) {
                     $(this).attr('id', 'organisme');
                 } else {
@@ -530,7 +530,7 @@ function scroll_to(position, duration, relative) {
 		position = 0;
 		top = true;
 	} else if (position === 'bottom') {
-		position = $(document).height()-$('.footer').height();
+		position = $(document).height();
 		bottom = true;
 	} else {
 		position = position.offset().top;
@@ -539,20 +539,18 @@ function scroll_to(position, duration, relative) {
 	if (duration === 'fast') {
 		coef = 0.1;
 		duration = 200;
-	} else if (duration === 'normal') {
-		coef = 0.25;
-		duration = 350;
 	} else if (duration === 'slow') {
 		coef = 0.4;
-		duration = 500;
+		duration = 600;
 	} else {
-		coef = duration/1000;
+		coef = 0.25;
+		duration= 400;
 	}
 
 	if (relative === true) {
 		calc_windowH();
 		if (top) {
-			duration = $(document).height()*coef;
+			duration = $(document).scrollTop()*coef;
 		} else if (bottom) {
 			duration = ($(document).height()-$(document).scrollTop())*coef;
 		}
@@ -560,6 +558,21 @@ function scroll_to(position, duration, relative) {
 
 	$('html, body').animate({scrollTop: position}, duration);
 }
+
+$('.js-scroll-to').click(function(e){
+	e.preventDefault();
+	id = $($(this).attr('href'));
+	console.log(id);
+	scroll_to(id);
+})
+
+$('.js-scroll-top').click(function(e){
+	scroll_to('top');
+})
+
+$('.js-scroll-bottom').click(function(e){
+	scroll_to('bottom', true);
+})
 
 /*------------------------------*\
 
@@ -671,14 +684,14 @@ function nav() {
 
 	$(document).bind('mousewheel', monitorScroll);
 
-	function monitorScroll() {
+	function monitorScroll(event) {
 		var documentOffset = $(window).scrollTop();
-	    if ( event.deltaY > 0 ) {
+	    if ( event.deltaY < 0 ) {
 	    	if( documentOffset > 200 ) {
 	    		$('.navBar').addClass('is-out');
 	    		$('.nav').addClass('is-compact');
 	    	}
-	    } else if (event.deltaY < 0)  {
+	    } else if (event.deltaY > 0)  {
 	    	if( $('.navBar').hasClass('is-out') ) {
 	    		$('.navBar').removeClass('is-out');
 	    	}

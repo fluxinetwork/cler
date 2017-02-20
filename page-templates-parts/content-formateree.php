@@ -1,7 +1,7 @@
 <article>
 
 	<div class="l-row bg-pattern-formateree">
-		<header class="l-col l-col--content l-intro">
+		<header class="l-col l-col--content l-intro no-pdBottom">
 			<h1><?php echo get_the_title(); ?></h1>
 			<div class="c-meta l-intro__meta">
 				<div class="c-dash"></div>

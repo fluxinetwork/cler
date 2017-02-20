@@ -97,8 +97,23 @@ $logoMaxW : 256px;
 		box-shadow: none;
 	}
 	
-	.formateree-photo {
-		width: 100%;
+
+	.formateree-mosaic {
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			@extend .bg-slider-formateree;
+			height: 50%;
+			z-index: -1;
+		}
+
+		img {
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 	
 
@@ -175,7 +190,7 @@ $logoMaxW : 256px;
 
 	// WIDTH CONTENT
 
-	.fc > *:not(section):not(img) {
+	.fc > *:not(.fullW) {
 		max-width: $contentW;
 		margin-left: auto;
 		margin-right: auto;

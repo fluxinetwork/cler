@@ -27,21 +27,17 @@ Template Name: Toutes les actions
 
 		    while( $subpages->have_posts() ) : $subpages->the_post();
 
-		    	
-		      	include(locate_template('page-templates-parts/get-thumb.php'));
-
 				$permalink = get_permalink();
 				$title = get_the_title();
 				$description = get_field('fluxi_resum', false, false);
 
 				$output = '<li class="l-postList__item">';
 					$output .= '<a href="'.$permalink.'">';
-						$output .= '<article class="c-newsH">';
-							$output .= '<div class="c-newsH__img is-none" style="background-image: url('.$post_img_url.')"></div>';
+						$output .= '<article class="c-newsH c-newsH--action">';
 							$output .= '<div class="c-newsH__body">';
 								$output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
 								$output .= '<p class="c-newsH__body__desc">'.$description.'</p>';
-								$output .= '<div class="c-meta is-none">';
+								$output .= '<div class="c-meta">';
 									$output .= '<span class="c-link c-link--more c-newsH__body__link" target="_blank">En savoir plus</span>';				
 								$output .= '</div>';
 							$output .= '</div>';
