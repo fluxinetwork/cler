@@ -204,7 +204,7 @@
 					<input type="checkbox" name="accepte_charte_energie_positive" id="accepte_charte_energie_positive" data-validation="required" value="1" data-validation-depends-on="reseaux_cler[]" data-validation-depends-on-value="tepos" <?php if($accepte_charte_energie_positive=='1')echo 'checked'; ?> class="c-form__label__checkbox">
 					<div class="c-form__label__txt">Je déclare avoir pris connaissance de la charte du Réseau Territoires à énergie positive<span class="i-required">•</span></div>
 				</label>
-				<a href="<?php echo get_the_permalink(CHARTE_CLER); ?>" class="c-link c-link--shy mgTop--xs">Lire la charte</a>
+				<a href="<?php echo get_the_permalink(CHARTE_TEPOS); ?>" class="c-link c-link--shy mgTop--xs" target="_blank">Lire la charte</a>
 		    </div>
     	</fieldset>
 	</div>
