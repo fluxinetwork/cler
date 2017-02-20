@@ -27,6 +27,8 @@
 
 //================================================================== LOGO
 
+$logoMaxW : 221px;
+
 .l-nav__logo {
 	display: block;
 	flex: none;
@@ -35,7 +37,7 @@
 	transition: $transition--dynamic;
 
 	@media screen and (min-width: $break--m) {
-		width: 220px;
+		width: $logoMaxW;
 	}
 
 	.navBar.is-open & {
@@ -46,11 +48,11 @@
 .l-nav__logo__img {
 	display: block;
 	width: 180px;
-	max-width: 220px;
+	max-width: $logoMaxW;
 	transition: $transition--dynamic;
 
 	@media screen and (min-width: $break--m) {
-		width: 220px;
+		width: $logoMaxW;
 	}
 }
 

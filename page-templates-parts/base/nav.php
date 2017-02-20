@@ -1,7 +1,7 @@
 <div class="navBar">
 	<nav class="l-nav l-col nav" role="navigation">
 		<a href="<?php bloginfo('url'); ?>" class="l-nav__logo nav-logo">
-			<img src="<?php bloginfo('template_url'); ?>/app/img/cler-logo.png" alt="Logo du CLER, Réseau pour la transition énergétique" class="l-nav__logo__img">
+			<img src="<?php bloginfo('template_url'); ?>/app/img/cler-logo.jpg" alt="Logo du CLER, Réseau pour la transition énergétique" class="l-nav__logo__img">
 		</a>
 
 		<div class="l-nav__primary" role="navigation">

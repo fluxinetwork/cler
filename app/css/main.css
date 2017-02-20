@@ -1078,7 +1078,7 @@ body {
 }
 @media screen and (min-width: 700px) {
   .l-nav__logo {
-    width: 220px;
+    width: 221px;
   }
 }
 .navBar.is-open .l-nav__logo {
@@ -1088,12 +1088,12 @@ body {
 .l-nav__logo__img {
   display: block;
   width: 180px;
-  max-width: 220px;
+  max-width: 221px;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 @media screen and (min-width: 700px) {
   .l-nav__logo__img {
-    width: 220px;
+    width: 221px;
   }
 }
 
@@ -4504,11 +4504,22 @@ a.c-meta__meta:hover {
 
 ==========================================================================
 \*======================================================================*/
+.formateree .l-nav__logo {
+  width: 210px;
+}
+@media screen and (min-width: 700px) {
+  .formateree .l-nav__logo {
+    width: 256px;
+  }
+}
 .formateree .c-navList__item__link {
   margin-right: 2.8rem;
 }
 .formateree .c-navList__item__link span {
   display: block;
+}
+.c-navList__item:hover .formateree .c-navList__item__link {
+  color: #338699 !important;
 }
 .formateree .l-nav__login .c-btn {
   background-color: #001135;

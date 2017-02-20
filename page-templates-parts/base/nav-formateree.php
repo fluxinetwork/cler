@@ -1,7 +1,7 @@
-<header class="wrap-navBar">
-	<nav class="l-nav navBar" role="navigation">
+<div class="navBar">
+	<nav class="l-nav l-col nav" role="navigation">
 		<a href="<?php bloginfo('url'); ?>" class="l-nav__logo nav-logo">
-			<img src="<?php bloginfo('template_url'); ?>/app/img/cler-logo.png" alt="Logo Formateree">
+			<img src="<?php bloginfo('template_url'); ?>/app/img/formateree-logo.jpg" alt="Logo Formateree">
 		</a>
 		<div class="l-nav__primary nav" role="navigation">
 			<ul class="c-navList  c-navList--lvl1">			
@@ -18,4 +18,4 @@
 			<a href="#contact" class="c-btn">Contact</a>
 		</div>
 	</nav>
-</header>
+</div>

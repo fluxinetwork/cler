@@ -11,12 +11,25 @@ $c-formateree: #338699;
 .formateree {
 
 	// MENU
+	
+	.l-nav__logo {
+		width: 210px;
+
+		@media screen and (min-width: $break--m) {
+			width: 256px;
+		}
+	}
+
 
 	.c-navList__item__link {
 		margin-right: $space--m;
 
 		span {
 			display: block;
+		}
+
+		.c-navList__item:hover & {
+			color: $c-formateree !important;
 		}
 	}
 
