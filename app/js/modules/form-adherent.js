@@ -16,6 +16,7 @@ function initAdherentForm(){
     var formID = '#form-manage-adherent';
     $(formID+' button[type=submit]').prop('disabled', false);
     $formObj = $('#form-manage-adherent');
+    var labelBtn = '';
 
     // Add secondary contact
     $('input[name=add_contact]').click(function() {
@@ -78,7 +79,7 @@ function initAdherentForm(){
                 url: ajax_object.ajax_url,
                 data: 'action=fluxi_manage_adherent&'+params,
                 success: function(data){
-                    $formObj.find('button[type=submit] .js-spinner').remove();
+                    $formObj.find('button[type=submit]').html(labelBtn);
 
                     if(data[0].validation == 'error'){
                         $formObj.find('button[type=submit]').prop('disabled', false);
@@ -91,15 +92,16 @@ function initAdherentForm(){
                 },
                 error : function(jqXHR, textStatus, errorThrown) {
                     //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
-                    $formObj.find('button[type=submit]').prop('disabled', false).find('.js-spinner').remove();
+                    $formObj.find('button[type=submit]').prop('disabled', false).html(labelBtn);
                 }
 
             });
             return false;
         },
         onValidate : function($form) {
+            labelBtn = $formObj.find('button[type=submit]').html();
             $formObj.find('.js-notify').html('');
-            $formObj.find('button[type=submit]').prop('disabled', true).prepend('<i class="fa fa-cog fa-spin js-spinner" aria-hidden="true"></i>');
+            $formObj.find('button[type=submit]').prop('disabled', true).html('<i class="fa fa-cog fa-spin js-spinner" aria-hidden="true"></i> En cours');
         }
     });
 

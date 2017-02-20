@@ -25,12 +25,14 @@ Template Name: Gestion de paiement
 						if( get_field('statut_paiement', $id_recu) == 'succeeded' ):
 
 							echo '<div class="c-card__header"><h1 class="c-card__header__title">Vous avez déjà réglé cette facture</h1>';
-							echo '<a href="'.get_the_permalink($id_recu).'" class="c-btn mgTop--s">Consulter le reçu</a></div>';
+							echo '<a href="'.get_the_permalink($id_recu).'" class="c-btn mgTop--s"><i class="fa fa-eye" aria-hidden="true"></i>
+ Consulter le reçu</a></div>';
 
 						elseif( get_field('statut_paiement', $id_recu) == 'failed' ):
 
 							echo '<div class="c-card__header"><h1 class="c-card__header__title">Echec du paiement</h1>';
-							echo '<a href="'.get_the_permalink($id_recu).'" class="c-btn mgTop--s">Consulter le reçu</a></div>';
+							echo '<a href="'.get_the_permalink($id_recu).'" class="c-btn mgTop--s"><i class="fa fa-eye" aria-hidden="true"></i>
+ Consulter le reçu</a></div>';
 
 						else:
 
