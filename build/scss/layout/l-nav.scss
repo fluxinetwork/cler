@@ -6,6 +6,9 @@
 ==========================================================================
 \*======================================================================*/
 
+$logoMinW : 180px;
+$logoMaxW : 221px;
+
 .l-nav {
 	@include flex(space-between stretch);
 	padding-top: $space--s;
@@ -20,25 +23,18 @@
 		}
 
 		.l-nav__logo__img {
-			width: 170px;
+			width: $logoMinW;
 		}
 	}
 }
 
 //================================================================== LOGO
 
-$logoMaxW : 221px;
-
 .l-nav__logo {
 	display: block;
 	flex: none;
-	width: 180px;
 	overflow: hidden;
 	transition: $transition--dynamic;
-
-	@media screen and (min-width: $break--m) {
-		width: $logoMaxW;
-	}
 
 	.navBar.is-open & {
 		margin-left: -300px;
@@ -47,7 +43,7 @@ $logoMaxW : 221px;
 
 .l-nav__logo__img {
 	display: block;
-	width: 180px;
+	width: $logoMinW;
 	max-width: $logoMaxW;
 	transition: $transition--dynamic;
 

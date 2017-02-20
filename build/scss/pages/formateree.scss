@@ -7,17 +7,24 @@
 \*======================================================================*/
 
 $c-formateree: #338699;
+$logoMinW : 210px;
+$logoMaxW : 256px;
 
 .formateree {
 
 	// MENU
-	
-	.l-nav__logo {
-		width: 210px;
+
+	.l-nav__logo__img {
+		width: $logoMinW;
+		max-width: $logoMaxW;
 
 		@media screen and (min-width: $break--m) {
-			width: 256px;
+			width: $logoMaxW;
 		}
+	}
+
+	.l-nav.is-compact .l-nav__logo__img {
+		width: $logoMinW;
 	}
 
 
@@ -27,10 +34,10 @@ $c-formateree: #338699;
 		span {
 			display: block;
 		}
+	}
 
-		.c-navList__item:hover & {
-			color: $c-formateree !important;
-		}
+	.c-navList__item:hover .c-navList__item__link {
+		color: $c-formateree;
 	}
 
 	.l-nav__login .c-btn {

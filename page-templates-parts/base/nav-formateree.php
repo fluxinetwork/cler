@@ -1,7 +1,7 @@
 <div class="navBar">
 	<nav class="l-nav l-col nav" role="navigation">
-		<a href="<?php bloginfo('url'); ?>" class="l-nav__logo nav-logo">
-			<img src="<?php bloginfo('template_url'); ?>/app/img/formateree-logo.jpg" alt="Logo Formateree">
+		<a href="<?php echo get_permalink(); ?>" class="l-nav__logo nav-logo">
+			<img src="<?php bloginfo('template_url'); ?>/app/img/formateree-logo.jpg" alt="Logo Formateree" class="l-nav__logo__img">
 		</a>
 		<div class="l-nav__primary nav" role="navigation">
 			<ul class="c-navList  c-navList--lvl1">			

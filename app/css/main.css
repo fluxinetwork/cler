@@ -1066,20 +1066,14 @@ body {
   width: 55px;
 }
 .l-nav.is-compact .l-nav__logo__img {
-  width: 170px;
+  width: 180px;
 }
 
 .l-nav__logo {
   display: block;
   flex: none;
-  width: 180px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-@media screen and (min-width: 700px) {
-  .l-nav__logo {
-    width: 221px;
-  }
 }
 .navBar.is-open .l-nav__logo {
   margin-left: -300px;
@@ -4504,13 +4498,17 @@ a.c-meta__meta:hover {
 
 ==========================================================================
 \*======================================================================*/
-.formateree .l-nav__logo {
+.formateree .l-nav__logo__img {
   width: 210px;
+  max-width: 256px;
 }
 @media screen and (min-width: 700px) {
-  .formateree .l-nav__logo {
+  .formateree .l-nav__logo__img {
     width: 256px;
   }
+}
+.formateree .l-nav.is-compact .l-nav__logo__img {
+  width: 210px;
 }
 .formateree .c-navList__item__link {
   margin-right: 2.8rem;
@@ -4518,8 +4516,8 @@ a.c-meta__meta:hover {
 .formateree .c-navList__item__link span {
   display: block;
 }
-.c-navList__item:hover .formateree .c-navList__item__link {
-  color: #338699 !important;
+.formateree .c-navList__item:hover .c-navList__item__link {
+  color: #338699;
 }
 .formateree .l-nav__login .c-btn {
   background-color: #001135;
