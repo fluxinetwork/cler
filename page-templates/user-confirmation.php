@@ -21,7 +21,7 @@ Template Name: Confirmation de compte utilisateur
 						$the_user_id = $the_user->ID;
 						$stored_token = get_user_meta( $the_user_id, 'token_activation', true );
 						//$account_state = get_field('disable_account', 'user_'.$the_user_id); 		
-						$account_state = get_field($the_user_id, 'disable_account', true);
+						$account_state = get_user_meta($the_user_id, 'disable_account', true);
 
 						if( !is_user_logged_in () ): 
 							$connexion_link = '<a href="connexion" class="js-popin-show">Connectez-vous</a>';
@@ -32,7 +32,7 @@ Template Name: Confirmation de compte utilisateur
 						// If token is confirmed
 						if( $stored_token == $get_token_user ):
 							// If user is not already activate
-							if( $account_state == NULL ):
+							if( $account_state == true ):
 								$date = new DateTime();
 								
 								update_user_meta( $the_user_id, 'disable_account', false );
@@ -43,11 +43,11 @@ Template Name: Confirmation de compte utilisateur
 								$result_message = '<span class="success">Votre compte utilisateur est déjà activé. '.$connexion_link.'</span>';
 							endif;				
 						else:
-							$result_message = '<span class="error">La vérification ne se passe pas correctement.<br>Essayez de cliquer à nouveau sur le lien que vous avez reçu par email.<br>Si le problème persite <a href="'.home_url().'/creation-utilisateur/">créez un nouveau compte utilisateur</a> ou contactez-nous.</span>';
+							$result_message = '<span class="error">La vérification ne se passe pas correctement.<br>Essayez de cliquer à nouveau sur le lien que vous avez reçu par email.<br>Si le problème persite contactez-nous.</span>';
 						endif;
 
 					else:
-						$result_message = '<span class="error">Cette adresse email n\'est rattachée a aucun compte utilisateur.<br>Nous vous invitons à <a href="'.home_url().'/creation-utilisateur/">créer un nouveau compte utilisateur</a>.</span>';
+						$result_message = '<span class="error">Cette adresse email n\'est rattachée a aucun compte utilisateur.<br>Nous vous invitons à <a href="'.get_the_permalink(CREER_USER).'">créer un nouveau compte utilisateur</a>.</span>';
 					endif;
 
 					// Output
