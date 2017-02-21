@@ -66,13 +66,13 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
                     <br>
                     <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Comment payer ?</h3>
 
-                    <h4 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:17px;line-height: 20px;">Réglement par carte bancaire</h4>                 
+                    <h4 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:17px;line-height: 20px;">Règlement par carte bancaire</h4>                 
                     <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Merci de procéder au règlement via la page de <a style="color: #00c15f; display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-bottom: 3px solid #00c15f; text-decoration: none;" href="'.$refer_url.'" target="_blank">paiement en ligne</a>.</p>
 
-                    <h4 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:17px;line-height: 20px;">Réglement par chèque</h4>
-                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Merci d\'adresser votre règlement de '.$montant_offre.',00 € à l\'ordre du CLER et de l\'envoyer par voie postale à :<br>Mundo-m, 47 avenue Pasteur, 93100 Montreuil.</p>                    
+                    <h4 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:17px;line-height: 20px;">Règlement par chèque</h4>
+                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Merci d\'adresser votre règlement à l\'ordre du CLER et de l\'envoyer par voie postale à :<br>Mundo-m, 47 avenue Pasteur, 93100 Montreuil.</p>                    
         
-                    <h4 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:17px;line-height: 20px;">Réglement par mandat administratif</h4>
+                    <h4 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:17px;line-height: 20px;">Règlement par mandat administratif</h4>
                     <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Merci de nous adresser un bon de commande à l\'adresse suivante : reseau@cler.org </p>
 
                   </td>

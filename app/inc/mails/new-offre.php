@@ -29,7 +29,7 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 
                     $contenu_mail .='
                       
-                      <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Bonjour</h3>Bonjour</h3>
+                      <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Bonjour</h3>
                       <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Vous venez de saisir une offre d\'emploi sur le site du CLER – Réseau pour la transition énergétique, et nous vous en remercions.<br><br>
 
                         Vous pouvez actualiser ou supprimer cette offre dans votre <a style="color: #00c15f; display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-bottom: 3px solid #00c15f; text-decoration: none;" href="'.$refer_url.'" target="_blank">espace privé</a>.</p>
@@ -39,14 +39,14 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
                   else:  
                     $contenu_mail .='
                               
-                      <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Bonjour</h3>Bonjour</h3>
+                      <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Bonjour</h3>
                       <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Vous venez de saisir une offre d\'emploi sur le site du CLER – Réseau pour la transition énergétique, et nous vous en remercions.<br><br>  
 
                         Vous pouvez actualiser ou supprimer cette offre dans votre <a style="color: #00c15f; display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-bottom: 3px solid #00c15f; text-decoration: none;" href="'.$refer_url.'" target="_blank">espace privé</a>.<br><br>  
 
                         Votre offre sera publiée prochainement sur notre site après vérification de notre équipe. Les offres qui ne concerneraient pas de manière explicite la transition énergétique, les énergies renouvelables ou la maîtrise de l\'énergie ne seront pas publiées.<br><br>  
 
-                        Vous recevrez un email comportant les informations nécessaire au paiement de la publication.</p>    
+                        Vous recevrez un email comportant les informations nécessaires au paiement de la publication.</p>    
 
                         <p style="font-family: gotham,helvetica,arial,sans-serif;font-size:14px;padding:20px 0; color:#999;line-height: 20px;">Vous souhaitez recevoir des informations concernant le CLER – Réseau pour la transition énergétique ? Contactez Alexis Monteil, responsable de projets Animation de réseau et Emploi-formation à l\'adresse : reseau@cler.org.</p>';
 

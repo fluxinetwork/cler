@@ -24,7 +24,7 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
                 <tr style="margin:0;padding:0;">
                   <td style="background: #fff; padding:20px 30px 30px;">
 
-                    <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Bonjour</h3>Bonjour</h3>
+                    <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Bonjour</h3>
                     <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Vous venez de saisir une formation sur le site du CLER – Réseau pour la transition énergétique, et nous vous en remercions.<br><br>
                     Vous pouvez actualiser ou supprimer cette formation dans votre <a style="color: #00c15f; display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-bottom: 3px solid #00c15f; text-decoration: none;" href="'.$refer_url.'" target="_blank">espace privé</a>.</p>
 

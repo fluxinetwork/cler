@@ -38,7 +38,7 @@
 		<div class="c-form__fieldset__row">							 
 			<label for="adherent_cler" class="c-form__label c-form__label--checkbox" >
 				<input class="c-form__label__checkbox" type="checkbox" name="adherent_cler" id="adherent_cler" value="1" <?php if($adherent_cler=='1')echo 'checked'; ?>>
-				<div class="c-form__label__txt">Etes-vous adhérent au CLER ?</div>			
+				<div class="c-form__label__txt">Adhérent au CLER</div>			
 			</label>							 
 	    </div>		   
 
