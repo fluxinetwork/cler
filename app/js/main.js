@@ -692,18 +692,29 @@ function nav() {
 
 	$(document).bind('mousewheel', monitorScroll);
 
+	var posTrigger ;
+	var firstChild = $( $('.main').children().eq(0) );
+	if ( firstChild.is('article') ) {
+		posTrigger = firstChild.children().eq(1).offset().top-$('.navBar').height();
+	} else {
+		posTrigger = $('.main').children().eq(1).offset().top-$('.navBar').height();
+	}
+	console.log(posTrigger)
+
 	function monitorScroll(event) {
 		var documentOffset = $(window).scrollTop();
 	    if ( event.deltaY < 0 ) {
-	    	if( documentOffset > 200 ) {
+	    	if( documentOffset > posTrigger ) {
 	    		$('.navBar').addClass('is-out');
-	    		$('.nav').addClass('is-compact');
+	    		setTimeout(function(){
+	    			$('.nav').addClass('is-compact')
+	    		}, 400);
 	    	}
 	    } else if (event.deltaY > 0)  {
 	    	if( $('.navBar').hasClass('is-out') ) {
 	    		$('.navBar').removeClass('is-out');
 	    	}
-	    	if( documentOffset < 100 && $('.nav').hasClass('is-compact') ) {
+	    	if( documentOffset < posTrigger && $('.nav').hasClass('is-compact') ) {
 	    		$('.nav').removeClass('is-compact');
 	    	}
 	    }

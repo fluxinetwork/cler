@@ -949,6 +949,7 @@ body {
   background-color: #fff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-duration: 0.4s;
 }
 .navBar.is-out {
   transform: translateY(-100%);
@@ -1057,6 +1058,7 @@ body {
   align-items: stretch;
   padding-top: 1.736rem;
   padding-bottom: 1.736rem;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .l-nav.is-compact {
   padding-top: 0.98rem;
@@ -1083,7 +1085,7 @@ body {
   display: block;
   width: 180px;
   max-width: 221px;
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.2s ease-in-out;
 }
 @media screen and (min-width: 700px) {
   .l-nav__logo__img {

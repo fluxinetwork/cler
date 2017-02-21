@@ -23,6 +23,8 @@ body {
 	background-color: #fff;
 	box-shadow: $shadow;
 	transition: $transition--dynamic;
+	transition-duration: 0.4s;
+
 	
 	&.is-out {
 		transform: translateY(-100%);

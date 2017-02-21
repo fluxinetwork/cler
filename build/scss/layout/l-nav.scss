@@ -13,6 +13,7 @@ $logoMaxW : 221px;
 	@include flex(space-between stretch);
 	padding-top: $space--s;
 	padding-bottom: $space--s;
+	transition: $transition--dynamic;
 
 	&.is-compact {
 		padding-top: $space--xs;	
@@ -45,7 +46,7 @@ $logoMaxW : 221px;
 	display: block;
 	width: $logoMinW;
 	max-width: $logoMaxW;
-	transition: $transition--dynamic;
+	transition: $transition;
 
 	@media screen and (min-width: $break--m) {
 		width: $logoMaxW;
