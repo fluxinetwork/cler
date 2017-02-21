@@ -27,7 +27,8 @@ function initaddOfferForm(){
 		clear: 'Effacer',
 		close: 'Fermer',
 		format: 'dd/mm/yyyy',
-		formatSubmit: 'yyyymmdd'
+		formatSubmit: 'yyyymmdd',
+		min: $.now()
 	});
 
 	$('#date_candidature').on('change', function(){

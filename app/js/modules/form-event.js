@@ -28,7 +28,8 @@ function initManageEventForm(){
 		clear: 'Effacer',
 		close: 'Fermer',
 		format: 'dd/mm/yyyy',
-		formatSubmit: 'yyyymmdd'
+		formatSubmit: 'yyyymmdd',
+		min: $.now()
 	});
 
 	$('#date_event').on('change', function(){
