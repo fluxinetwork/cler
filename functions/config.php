@@ -106,7 +106,7 @@ define('FORM_PROFIL', '9');
 define('FORM_ADHESION', '141');
 
 define('CREER_USER', '7');
-define('RESET_PASS', '10');
+define('RESET_PASSWORD', '10');
 
 define('PAGE_ACTIONS', '1246');
 define('PAGE_SLIME', '1269');

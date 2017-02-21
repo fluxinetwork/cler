@@ -26,7 +26,7 @@ Template Name: Confirmation de compte utilisateur
 						if( !is_user_logged_in () ): 
 							$connexion_link = '<a href="connexion" class="js-popin-show">Connectez-vous</a>';
 						else: 
-							$connexion_link = '';	
+							$connexion_link = '';
 						endif;
 
 						// If token is confirmed
