@@ -18,8 +18,7 @@ Template Name: Confirmation de compte utilisateur
 					
 					$the_user = get_user_by('email', $mail_user);
 					$the_user_id = $the_user->ID;
-					$stored_token = get_user_meta( $the_user_id, 'token_activation', true );
-					$account_state = get_field('disable_account', 'user_'.$the_user_id); 		
+					$stored_token = get_user_meta( $the_user_id, 'token_activation', true );					 		
 					$account_state = get_field($the_user_id, 'disable_account', true);
 
 					if( !is_user_logged_in () ): 
@@ -32,7 +31,7 @@ Template Name: Confirmation de compte utilisateur
 					if( $stored_token == $get_token_user ):
 
 						// If user is not already activate
-						if( $account_state == NULL ):
+						if( $account_state == true ):
 
 							$date = new DateTime();
 							
