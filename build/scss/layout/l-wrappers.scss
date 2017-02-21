@@ -56,7 +56,10 @@ body {
 
 .l-row {
 	@include fill('viewport');
-	overflow: hidden;
+
+	&--ovh {
+		overflow: hidden;
+	}
 }
 
 

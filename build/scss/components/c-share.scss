@@ -1,0 +1,48 @@
+/*======================================================================*\
+==========================================================================
+
+//	COMPOSANT SHARE
+
+==========================================================================
+\*======================================================================*/
+
+.c-share {
+	display: flex;
+	align-items: center;
+	border-radius: $radius;
+}
+
+.c-share__txt {
+	font-family: $font-subh;
+	margin-right: $space--s;
+}
+
+.c-share__item {
+	//margin-right: $space--s;
+	@extend .t-meta;
+	opacity: 1;
+	color: #fff;
+	padding: $space--xs $space--s;
+	background-color: $c-dark;
+	@include transition();
+
+	&:first-child {
+		border-radius: $radius 0 0 $radius;
+	}
+
+	&:last-child {
+		border-radius: 0 $radius $radius 0;
+	}
+
+	&.js-share:hover {
+		background-color: $c-valid;
+	}
+	
+	&[data-network="facebook"] {
+		background-color: $c-facebook;
+	}
+
+	&[data-network="twitter"] {
+		background-color: $c-twitter;
+	}
+}

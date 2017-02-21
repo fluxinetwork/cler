@@ -20,7 +20,8 @@
 
 
 .l-intro__figure,
-.l-intro__excerpt {
+.l-intro__excerpt,
+.l-intro__share  {
 	margin-top: $space--m;
 
 	@media screen and (min-width: $break--m) {

@@ -463,7 +463,7 @@ html {
 
 \*------------------------------*/
 body {
-  font: 16px "Sansita", Georgia, serif;
+  font: 16px Georgia, serif;
   line-height: 1.4;
   color: #333;
 }
@@ -604,16 +604,16 @@ h5, .h5, .c-card__header__cat, .c-form p,
   }
 }
 
-h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
+h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .c-share__item, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
   font-size: 10px;
 }
 @media screen and (min-width: 700px) {
-  h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
+  h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .c-share__item, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
     font-size: 11px;
   }
 }
 @media screen and (min-width: 960px) {
-  h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
+  h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .c-share__item, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
     font-size: 12px;
   }
 }
@@ -643,7 +643,7 @@ p {
   margin-top: 2.0832rem;
 }
 
-.t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure {
+.t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .c-share__item, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure {
   letter-spacing: 0.5px;
   font-weight: 700;
   font-family: "Roboto Condensed", sans-serif;
@@ -658,7 +658,7 @@ p {
 .t-meta--dark {
   opacity: 1;
 }
-.fc .t-meta, .fc .l-miniDashboard__row__element, .fc .c-newsH__body__meta, .fc .c-meta__meta, .fc .c-downloadItem__title, .fc .c-pagination__links .page-numbers, .c-pagination__links .fc .page-numbers, .fc .receipts__overview__col, .fc .miniEvent__meta, .fc .infowindow__content .infowindow__content__structure, .infowindow__content .fc .infowindow__content__structure {
+.fc .t-meta, .fc .l-miniDashboard__row__element, .fc .c-newsH__body__meta, .fc .c-meta__meta, .fc .c-downloadItem__title, .fc .c-pagination__links .page-numbers, .c-pagination__links .fc .page-numbers, .fc .c-share__item, .fc .receipts__overview__col, .fc .miniEvent__meta, .fc .infowindow__content .infowindow__content__structure, .infowindow__content .fc .infowindow__content__structure {
   display: inline-block;
 }
 
@@ -983,6 +983,8 @@ body {
   position: relative;
   width: 100vw;
   max-width: 100%;
+}
+.l-row--ovh {
   overflow: hidden;
 }
 
@@ -1774,12 +1776,14 @@ body {
 }
 
 .l-intro__figure,
-.l-intro__excerpt {
+.l-intro__excerpt,
+.l-intro__share {
   margin-top: 2.8rem;
 }
 @media screen and (min-width: 700px) {
   .l-intro__figure,
-  .l-intro__excerpt {
+  .l-intro__excerpt,
+  .l-intro__share {
     margin-top: 4.48rem;
   }
 }
@@ -3864,7 +3868,7 @@ a.c-meta__meta:hover {
 .c-pagination__links {
   display: flex;
 }
-.c-pagination__links .t-meta, .c-pagination__links .l-miniDashboard__row__element, .c-pagination__links .c-newsH__body__meta, .c-pagination__links .c-meta__meta, .c-pagination__links .c-downloadItem__title, .c-pagination__links .page-numbers, .c-pagination__links .receipts__overview__col, .c-pagination__links .miniEvent__meta, .c-pagination__links .infowindow__content .infowindow__content__structure, .infowindow__content .c-pagination__links .infowindow__content__structure {
+.c-pagination__links .t-meta, .c-pagination__links .l-miniDashboard__row__element, .c-pagination__links .c-newsH__body__meta, .c-pagination__links .c-meta__meta, .c-pagination__links .c-downloadItem__title, .c-pagination__links .page-numbers, .c-pagination__links .c-share__item, .c-pagination__links .receipts__overview__col, .c-pagination__links .miniEvent__meta, .c-pagination__links .infowindow__content .infowindow__content__structure, .infowindow__content .c-pagination__links .infowindow__content__structure {
   color: #fff;
 }
 .c-pagination__links .screen-reader-text,
@@ -3906,6 +3910,49 @@ a.c-meta__meta:hover {
 .c-pagination .page-numbers:last-child,
 .c-pagination .page-numbers:not(.current):nth-last-child(2) {
   padding-right: 2.8rem;
+}
+
+/*======================================================================*\
+==========================================================================
+
+//	COMPOSANT SHARE
+
+==========================================================================
+\*======================================================================*/
+.c-share {
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.c-share__txt {
+  font-family: "Roboto Condensed", sans-serif;
+  margin-right: 1.736rem;
+}
+
+.c-share__item {
+  opacity: 1;
+  color: #fff;
+  padding: 0.98rem 1.736rem;
+  background-color: #001135;
+  -webkit-transition: all 0.15s ease-out 0s;
+  -moz-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+}
+.c-share__item:first-child {
+  border-radius: 3px 0 0 3px;
+}
+.c-share__item:last-child {
+  border-radius: 0 3px 3px 0;
+}
+.c-share__item.js-share:hover {
+  background-color: #00C15F;
+}
+.c-share__item[data-network="facebook"] {
+  background-color: #3b5998;
+}
+.c-share__item[data-network="twitter"] {
+  background-color: #1da1f2;
 }
 
 /*------------------------------*\
