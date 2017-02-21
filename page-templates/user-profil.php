@@ -81,7 +81,7 @@ Template Name: Profil
 <?php include(TEMPLATEPATH.'/page-templates-parts/recus.php'); ?>
 
 
-<section class="l-row bg-light">
+<section class="l-row">
 	<div class="l-col l-col--content">
 		<h2 class="c-section-title">Publier un contenu</h2>
 
