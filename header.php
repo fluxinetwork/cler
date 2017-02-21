@@ -16,6 +16,7 @@
 
 	<title><?php get_template_part( 'page-templates-parts/base/title'); ?></title>
 	
+	<link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url'); ?>/app/img/favicon.png" /> 
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
 	<script src="https://use.fontawesome.com/441df5285e.js"></script>
 	<?php wp_head(); ?>
