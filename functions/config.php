@@ -40,6 +40,7 @@ define('DISALLOW_FILE_EDIT', true);
 /**
  * MAILS
  */
+
 define('CONTACT_GENERAL', 'info@cler.org');
 
 define('CONTACTS_ADHESION_1', 'lucile.krezel@cler.org');
@@ -57,7 +58,6 @@ define('CONTACTS_CONCOURS', 'info@cler.org');
 
 define('CONTACTS_FORMATION_1', 'info@cler.org');
 define('CONTACTS_FORMATION_2', 'alexis.monteil@cler.org');
-
 /*
 define('CONTACT_GENERAL', 'rollandyann@gmail.com');
 

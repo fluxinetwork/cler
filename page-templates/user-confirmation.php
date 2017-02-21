@@ -5,7 +5,6 @@ Template Name: Confirmation de compte utilisateur
 ?>
 <?php get_header(); ?>
 
-
 <section class="l-row">
 	<div class="l-col l-col--content">
 		<?php 
