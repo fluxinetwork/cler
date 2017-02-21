@@ -56,6 +56,13 @@ $break: $break--m;
 			margin-top: 0 !important;
 		}
 	}
+
+	.picker__box {
+		font-family: $font-subh;
+	}
+	.picker--opened .picker__frame {
+		top: 20% !important;
+	}
 }
 
 
@@ -300,6 +307,10 @@ $break: $break--m;
 	@include flex(space-between center);
 	margin-top: $space--m*$bigger;
 	margin-bottom: $space--l;
+
+	.c-btn .fa {
+		margin-right: $space--xs;
+	}
 }
 
 

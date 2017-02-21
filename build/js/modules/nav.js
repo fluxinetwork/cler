@@ -6,30 +6,39 @@
 
 function nav() {
 
+
 	// DISPLAY NAV
+
+
+	// Where to trigger nav hiding
+
+	var posTrigger ;
+	var childNumber = $('.main').children().length;
+	if ( childNumber == 1 ) {
+		posTrigger = '400';
+	} else {
+		var firstChild = $( $('.main').children().eq(0) );
+		if ( firstChild.is('article') ) {
+			posTrigger = firstChild.children().eq(1).offset().top-$('.navBar').height();
+		} else {
+			posTrigger = $('.main').children().eq(1).offset().top-$('.navBar').height();
+		}
+	} 
+	(posTrigger<=0) ? posTrigger = '400' : '';
+
+
+	// Listen to scroll
 
 	$(document).bind('mousewheel', monitorScroll);
 
-	var posTrigger ;
-	var firstChild = $( $('.main').children().eq(0) );
-	if ( firstChild.is('article') ) {
-		posTrigger = firstChild.children().eq(1).offset().top-$('.navBar').height();
-	} else {
-		posTrigger = $('.main').children().eq(1).offset().top-$('.navBar').height();
-	}
-	(posTrigger<=0) ? posTrigger = '400' : '';
-	console.log(posTrigger)
-
 	function monitorScroll(event) {
 		var documentOffset = $(window).scrollTop();
-	    if ( event.deltaY < 0 ) {
-	    	if( documentOffset > posTrigger ) {
-	    		$('.navBar').addClass('is-out');
-	    		setTimeout(function(){
-	    			$('.nav').addClass('is-compact')
-	    		}, 400);
-	    	}
-	    } else if (event.deltaY > 0)  {
+	    if ( event.deltaY < 0 && documentOffset > posTrigger ) { // if scroll down
+    		$('.navBar').addClass('is-out');
+    		setTimeout(function(){
+    			$('.nav').addClass('is-compact')
+    		}, 400);
+	    } else if (event.deltaY > 0)  {  // if scroll up
 	    	if( $('.navBar').hasClass('is-out') ) {
 	    		$('.navBar').removeClass('is-out');
 	    	}

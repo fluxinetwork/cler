@@ -23,10 +23,6 @@
 		flex-direction: column;
 		align-items: flex-start;
 		height: auto;
-
-		&--popin {
-			margin: 0;
-		}
 	}
 
 	@media screen and (min-width: $break--m) {
@@ -164,8 +160,16 @@
 .c-card__body {
 	padding: $space--xs $space--s;
 	width: 100%;
+
 	@media screen and (min-width: $break--m) {
 		padding: $space--m;
+	}
+
+	&--need {
+		text-align: center;
+		@include flex(center, true);
+		padding-top: $space--xl;
+		padding-bottom: $space--xl;
 	}
 }
 
