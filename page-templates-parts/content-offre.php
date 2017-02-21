@@ -119,7 +119,7 @@
 
 	<div class="l-row bg-light">
 		<div class="l-col l-col--content fc">
-			<h2 clas>Postulez avant le <?php echo $date_candidature->format('j M Y'); ?></h2>
+			<h2 clas>Postulez avant le <?php echo $date_candidature; ?></h2>
 
 			<?php
 				if( $val_modalite_candidature ): 
