@@ -116,7 +116,7 @@ define('PAGE_PROFIL', '8');
 
 define('CHARTE_CLER', '2659');
 define('REGLEMENT_CLER', '2665');
-define('CHARTE_TEPOS', 'http://www.territoires-energie-positive.fr/documents/documents-cadres-du-reseau/charte-du-reseau-territoires-a-energie-positive');
+define('CHARTE_TEPOS', 'http://www.territoires-energie-positive.fr/documents/documents-cadres-du-reseau/');
 
 define('CONTACT', '3183');
 

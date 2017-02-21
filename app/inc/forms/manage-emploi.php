@@ -343,7 +343,8 @@ function send_email_paiement_offre_emp() {
 					$adresse_structure = get_field('adresse').' '.get_field('code_postal').' '.get_field('ville');
 					$telephone = get_field('telephone');
 					$author_id = $query_offre_emp->post_author;
-					$mail_contact = get_field('contact_email');
+					$author_datas = get_userdata($author_id);
+					$mail_contact = $author_datas->user_email;
 					// security token
 					$security_token = bin2hex(random_bytes(24));
 
