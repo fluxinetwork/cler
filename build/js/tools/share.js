@@ -29,7 +29,7 @@ $('.js-share').on('click', function(e){
 		shareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
 		popupCenter(shareUrl, "Partager sur Facebook");
 	} if (network == 'twitter') {
-		var origin = "energiepartagee";
+		var origin = "assoCLER";
 		shareUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(document.title) +
             "&via=" + origin + "" +
             "&url=" + encodeURIComponent(url);

@@ -3932,21 +3932,26 @@ a.c-meta__meta:hover {
 
 .c-share__item {
   opacity: 1;
-  color: #fff;
   padding: 0.98rem 1.736rem;
-  background-color: #001135;
   -webkit-transition: all 0.15s ease-out 0s;
   -moz-transition: all 0.15s ease-out 0s;
   transition: all 0.15s ease-out 0s;
 }
-.c-share__item:first-child {
-  border-radius: 3px 0 0 3px;
+.c-share__item--txt {
+  padding-left: 0;
 }
-.c-share__item:last-child {
-  border-radius: 0 3px 3px 0;
+@media screen and (max-width: 480px) {
+  .c-share__item--txt {
+    display: none;
+  }
 }
-.c-share__item.js-share:hover {
-  background-color: #00C15F;
+.c-share__item--btn {
+  color: #fff;
+  margin-right: 1.736rem;
+  border-radius: 3px;
+}
+.c-share__item--btn:hover {
+  background-color: #0022A0 !important;
 }
 .c-share__item[data-network="facebook"] {
   background-color: #3b5998;

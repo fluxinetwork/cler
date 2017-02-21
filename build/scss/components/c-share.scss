@@ -18,24 +18,27 @@
 }
 
 .c-share__item {
-	//margin-right: $space--s;
 	@extend .t-meta;
 	opacity: 1;
-	color: #fff;
 	padding: $space--xs $space--s;
-	background-color: $c-dark;
 	@include transition();
 
-	&:first-child {
-		border-radius: $radius 0 0 $radius;
+	&--txt {
+		padding-left: 0;
+
+		@media screen and (max-width: $break--s) {
+			display: none;
+		}
 	}
 
-	&:last-child {
-		border-radius: 0 $radius $radius 0;
-	}
+	&--btn {
+		color: #fff;
+		margin-right: $space--s;
+		border-radius: $radius;
 
-	&.js-share:hover {
-		background-color: $c-valid;
+		&:hover {
+			background-color: $c-main !important;
+		}
 	}
 	
 	&[data-network="facebook"] {

@@ -23,7 +23,7 @@ add_filter('language_attributes', 'add_opengraph_doctype');
 // Add Open Graph meta in head
 function insert_fb_in_head() {
 	global $post;
-	if ( !is_singular()) //if it is not a post or a page
+	if ( !is_singular() ) { //if it is not a post or a page
 		return;
         echo '<meta property="fb:admins" content="1678343189101829"/>';
         echo '<meta property="og:title" content="' . get_the_title() . '"/>';
@@ -33,11 +33,15 @@ function insert_fb_in_head() {
 		if( !has_post_thumbnail( $post->ID )  || is_home() ) {
 			echo '<meta property="og:image" content="'.get_bloginfo('template_url').$default_image.'"/>';
 		}
-	else{
-		$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
-		echo '<meta property="og:image" content="'.esc_attr( $thumbnail_src[0] ).'"/>';
+	} else {
+		$post_img_id = get_field('main_image');
+		if ($post_img_id) {
+			$post_img_array = wp_get_attachment_image_src($post_img_id, 'single', true);
+			$post_img_url = $post_img_array[0];	
+		} else {
+			$post_img_url = get_bloginfo('template_url').'/app/img/default.jpg';
+		}
+		echo '<meta property="og:image" content="'.$post_img_url.'"/>';
 	}
-	echo "
-";
 }
 add_action( 'wp_head', 'insert_fb_in_head', 5 );
