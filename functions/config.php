@@ -112,6 +112,7 @@ define('PAGE_ACTIONS', '1246');
 define('PAGE_SLIME', '1269');
 define('PAGE_TEPOS', '1250');
 define('PAGE_RAPPEL', '1248');
+define('PAGE_PROFIL', '8');
 
 define('CHARTE_CLER', '2659');
 define('REGLEMENT_CLER', '2665');

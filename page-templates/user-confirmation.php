@@ -24,7 +24,7 @@ Template Name: Confirmation de compte utilisateur
 					if( !is_user_logged_in () ): 
 						$result_btn = '<a href="connexion" class="c-btn c-btn--cta mgTop--m js-popin-show"><span><i class="fa fa-sign-in"></i>Connexion</span></a>';
 					else: 
-						$result_btn = '<a href="'.home_url().'/mon-profil" class="c-btn c-btn--cta mgTop--m"><span><i class="fa fa-user"></i>Voir profil</span></a>';
+						$result_btn = '<a href="'.get_permalink(PAGE_PROFIL).'" class="c-btn c-btn--cta mgTop--m"><span><i class="fa fa-user"></i>Voir profil</span></a>';
 					endif;
 
 					// If token is confirmed
@@ -52,7 +52,7 @@ Template Name: Confirmation de compte utilisateur
 						$result_message = '<h1>La vérification ne se passe pas correctement.</h1>';
 						$result_message .= '<p>Essayez de cliquer à nouveau sur le lien que vous avez reçu par email.<br>Si le problème persite :</p>';
 
-						$result_btn = '<a href="'.home_url().'/creation-utilisateur/" class="c-btn c-btn--cta mgTop--m"><span><i class="fa fa-user-plus"></i>Créer un compte</span></a>';
+						$result_btn = '<a href="'.get_permalink(CREER_USER).'" class="c-btn c-btn--cta mgTop--m"><span><i class="fa fa-user-plus"></i>Créer un compte</span></a>';
 						$result_btn .= '<a href="'.get_permalink(CONTACT).'" class="c-btn c-btn--ghost mgLeft--m">Contact</a>';
 
 					endif;
@@ -60,7 +60,7 @@ Template Name: Confirmation de compte utilisateur
 				else:
 
 					$result_message = '<h1>Cette adresse email n\'est rattachée a aucun compte utilisateur.</h1>';
-					$result_btn = '<a href="'.home_url().'/creation-utilisateur/" class="c-btn c-btn--cta mgTop--m"><span><i class="fa fa-user-plus"></i>Créer un compte</span></a>';
+					$result_btn = '<a href="'.get_permalink(CREER_USER).'" class="c-btn c-btn--cta mgTop--m"><span><i class="fa fa-user-plus"></i>Créer un compte</span></a>';
 
 				endif;
 
