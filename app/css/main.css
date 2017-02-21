@@ -604,16 +604,16 @@ h5, .h5, .c-card__header__cat, .c-form p,
   }
 }
 
-h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
+h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
   font-size: 10px;
 }
 @media screen and (min-width: 700px) {
-  h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
+  h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
     font-size: 11px;
   }
 }
 @media screen and (min-width: 960px) {
-  h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
+  h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
     font-size: 12px;
   }
 }
@@ -643,7 +643,7 @@ p {
   margin-top: 2.0832rem;
 }
 
-.t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .miniEvent__meta, .infowindow__content .infowindow__content__structure {
+.t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure {
   letter-spacing: 0.5px;
   font-weight: 700;
   font-family: "Roboto Condensed", sans-serif;
@@ -658,7 +658,7 @@ p {
 .t-meta--dark {
   opacity: 1;
 }
-.fc .t-meta, .fc .l-miniDashboard__row__element, .fc .c-newsH__body__meta, .fc .c-meta__meta, .fc .c-downloadItem__title, .fc .c-pagination__links .page-numbers, .c-pagination__links .fc .page-numbers, .fc .miniEvent__meta, .fc .infowindow__content .infowindow__content__structure, .infowindow__content .fc .infowindow__content__structure {
+.fc .t-meta, .fc .l-miniDashboard__row__element, .fc .c-newsH__body__meta, .fc .c-meta__meta, .fc .c-downloadItem__title, .fc .c-pagination__links .page-numbers, .c-pagination__links .fc .page-numbers, .fc .receipts__overview__col, .fc .miniEvent__meta, .fc .infowindow__content .infowindow__content__structure, .infowindow__content .fc .infowindow__content__structure {
   display: inline-block;
 }
 
@@ -3617,6 +3617,10 @@ body {
 .c-newsH:hover .c-link::before, .c-newsH:hover .fc__focus__link::before {
   transform: scaleX(0.7);
 }
+.c-newsH:hover .c-btnIcon, .c-newsH:hover .fc__accordeon__icon {
+  background-color: #00C15F !important;
+  color: #fff !important;
+}
 
 .c-newsH__img {
   display: none;
@@ -3821,7 +3825,7 @@ a.c-meta__meta:hover {
 .c-pagination__links {
   display: flex;
 }
-.c-pagination__links .t-meta, .c-pagination__links .l-miniDashboard__row__element, .c-pagination__links .c-newsH__body__meta, .c-pagination__links .c-meta__meta, .c-pagination__links .c-downloadItem__title, .c-pagination__links .page-numbers, .c-pagination__links .miniEvent__meta, .c-pagination__links .infowindow__content .infowindow__content__structure, .infowindow__content .c-pagination__links .infowindow__content__structure {
+.c-pagination__links .t-meta, .c-pagination__links .l-miniDashboard__row__element, .c-pagination__links .c-newsH__body__meta, .c-pagination__links .c-meta__meta, .c-pagination__links .c-downloadItem__title, .c-pagination__links .page-numbers, .c-pagination__links .receipts__overview__col, .c-pagination__links .miniEvent__meta, .c-pagination__links .infowindow__content .infowindow__content__structure, .infowindow__content .c-pagination__links .infowindow__content__structure {
   color: #fff;
 }
 .c-pagination__links .screen-reader-text,
@@ -4234,6 +4238,41 @@ a.c-meta__meta:hover {
     margin-top: 0;
     margin-left: 1.736rem;
   }
+}
+
+.receipts {
+  display: flex;
+  flex-direction: column;
+  max-width: 550px;
+}
+
+.receipts__title {
+  margin-bottom: 1.736rem !important;
+}
+
+.receipts__overview {
+  order: 0;
+  margin-bottom: 2.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.receipts__overview__col {
+  opacity: 1;
+  margin-right: 2.8rem;
+}
+.receipts__overview__col:last-child {
+  margin-right: 0;
+}
+
+.receipts__list {
+  border-top: 1px solid rgba(0, 17, 53, 0.1);
+  order: 1;
+}
+
+.receipts__btn {
+  margin-top: 2.8rem;
+  text-align: center;
 }
 
 .user-postLink {

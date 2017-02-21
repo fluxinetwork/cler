@@ -4,44 +4,93 @@
  */
 ?>
 <?php
-	$count_recus = 0;
 	$query_recus = new WP_Query( array(
 	    'post_type' => 'recus',
 	    'posts_per_page' => -1,
 	    'author' => get_current_user_id()
 	));
-	if( $query_recus->have_posts() ) : ?>
 
-		<section class="l-row">
-			<div class="l-col">
-				<h2 class="c-section-title">Vos reçus</h2>
-				
-				<?php while( $query_recus->have_posts() ) : $query_recus->the_post();			    	
+	if( $query_recus->have_posts() ) :
 
-					$count_recus++;
+		$count_recus = 0;
+		$limit = 1;
+		$valid = 0;
+		$pending = 0;
+		$error = 0;
+?>
 
-					($count_recus==4) ? print('<div style="display:none;">') : '';
 
-					echo '<a class="c-downloadItem__title" href="'.get_the_permalink().'">';					
-					echo get_the_title().' - ';
-					echo get_field('type_recu').' - ';
-					echo get_field('date_paiement');
-					echo '</a>';
-					// Tu peux effacer le truc avec le BR
-					($count_recus<$query_recus->post_count) ? print('<br>') : '';
+	<section class="l-row">
+		<div class="l-col l-col--content receipts">
+			<h2 class="c-section-title receipts__title">Vos reçus</h2>
 
-					($count_recus==$query_recus->post_count) ? print('</div>') : '';
+			<ul class="l-postList receipts__list">	
 
-				endwhile; ?>
-				
+			<?php
+			while( $query_recus->have_posts() ) : $query_recus->the_post();	
 
-				<?php
-					if($query_recus->post_count > 3):
-						echo '<a href="#" class="c-btn js-toggle-list">Afficher tout</a>';
-					endif;
-				?>
-		 	</div>
-		</section>
+				$title = get_the_title();
+				$date = get_field('date_paiement');
+				$permalink = get_the_permalink();
+				$status = get_field('statut_paiement');
+				if ( $status=='succeeded' ) {
+					$valid ++;
+					$status = 'Réglée';
+					$color = 'c-valid';
+					$icon = 'fa-check-circle';
+				} else {
+					if ( $status=='pending' ) {
+						$pending ++;
+						$status = 'Paiement en attente';
+						$icon = 'fa-exclamation-circle';
+						$color = 'c-error';
+					} else {
+						$error ++;
+						$status = 'Echec du paiement';
+						$icon = 'fa-times-circle';
+						$color = 'c-dark';
+					}
+				}
+
+
+				( $count_recus==$limit ) ? print('<div class="js-receipts-hidden">') : '';
+
+				$output = '<li class="l-postList__item">';
+					$output .= '<a href="'.$permalink.'">';
+						$output .= '<article class="c-newsH l-flex--aic">';
+							$output .= '<span class="c-downloadItem__icon c-btnIcon c-btn--ghost"><i class="fa fa-download"></i></span>';
+							$output .= '<div class="c-newsH__body">';
+								$output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
+								$output .= '<div class="c-meta">';
+									$output .= '<div class="c-dash"></div>';
+									$output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>';
+									$output .= '<span class="c-meta__meta t-meta--dark '.$color.'"><i class="fa '.$icon.' c-meta__meta__icon" aria-hidden="true"></i>'.$status.'</span>';
+								$output .= '</div>';
+							$output .= '</div>';
+						$output .= '</article>';
+					$output .= '</a>';
+				$output .= '</li>';
+
+				echo $output;
+
+				$count_recus++;
+
+				if ($count_recus>$limit && $count_recus==$query_recus->post_count) {
+					echo '</div>';
+					echo '<div class="receipts__btn"><a href="#" class="c-btn js-toggle-receipts"><i class="fa fa-search-plus c-meta__meta__icon"></i>Afficher tout</a></div>';
+				}
+
+			endwhile;
+			?>
+			</ul>
+
+			<div class="receipts__overview">
+				<div class="receipts__overview__col c-valid"><i class="fa fa-check-circle mgRight--xs"></i><?php echo $valid; ?></div>
+				<div class="receipts__overview__col c-error"><i class="fa fa-exclamation-circle mgRight--xs"></i><?php echo $pending; ?></div>
+				<div class="receipts__overview__col c-dark"><i class="fa fa-times-circle mgRight--xs"></i><?php echo $error; ?></div>
+			</div>
+	 	</div>
+	</section>
 
 	<?php 
 	endif; 

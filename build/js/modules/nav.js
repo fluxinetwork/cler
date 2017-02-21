@@ -17,6 +17,7 @@ function nav() {
 	} else {
 		posTrigger = $('.main').children().eq(1).offset().top-$('.navBar').height();
 	}
+	(posTrigger<=0) ? posTrigger = '400' : '';
 	console.log(posTrigger)
 
 	function monitorScroll(event) {

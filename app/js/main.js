@@ -71,6 +71,22 @@ var FOO = {
     page_template_user_profil: {
         init: function(){
              initFluxiDelPost();
+
+             $('.js-receipts-hidden').slideToggle(0);
+             var list_is_open = false;
+
+             $('.js-toggle-receipts').click( function(e) {          
+                 e.preventDefault();
+                 $('.js-receipts-hidden').slideToggle();
+
+                 if( list_is_open===false ){
+                     $(this).html('<i class="fa fa-search-minus mgRight--xs"></i>Afficher moins');
+                     list_is_open=true;
+                 } else {
+                     $(this).html('<i class="fa fa-search-plus mgRight--xs"></i>Afficher tout');
+                     list_is_open=false;
+                 }
+             });
         }
     },
     page_has_filters: {
@@ -699,6 +715,7 @@ function nav() {
 	} else {
 		posTrigger = $('.main').children().eq(1).offset().top-$('.navBar').height();
 	}
+	(posTrigger<=0) ? posTrigger = '400' : '';
 	console.log(posTrigger)
 
 	function monitorScroll(event) {

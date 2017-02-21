@@ -40,6 +40,8 @@
 						$mod_post_url = get_the_permalink(FORM_FORMATION).'?act=mod&amp;idp='.get_the_ID();
 						$cpt_label = 'Formation';
 					endif;
+
+					$title = limitString(get_the_title(), 0, LIMIT_STRING, ' [...]');
 			?>
 
 				<li id="js-idp-<?php echo get_the_ID(); ?>" class="l-card-slider__cards__row__col">
@@ -53,7 +55,7 @@
 						<a href="<?php echo get_the_permalink(get_the_ID()); ?>" class="c-card__bodyLink">
 						<div class="c-card__body">
 							<span class="t-meta"></span>
-							<h1 class="c-card__body__title"><?php the_title(); ?></h1>
+							<h1 class="c-card__body__title"><?php echo $title; ?></h1>
 						</div>
 						<footer class="c-card__footer">
 							<span class="c-link c-link--more">Voir la publication</span>

@@ -11,8 +11,15 @@ $break: $break--m;
 .c-newsH {
 	display: flex;
 
-	&:hover .c-link::before {
-	    transform: scaleX(0.7);
+	&:hover {
+		.c-link::before {
+		    transform: scaleX(0.7);
+		}
+
+		.c-btnIcon {
+			background-color: $c-valid !important;
+			color: #fff !important;
+		}
 	}
 }
 

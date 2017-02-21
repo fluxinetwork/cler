@@ -85,6 +85,46 @@ $break: $break--l;
 }
 
 
+//============================================================== RECEIPTS
+
+.receipts {
+	display: flex;
+	flex-direction: column;
+	max-width: $maxW/2;
+}
+
+.receipts__title {
+	margin-bottom: $space--s !important;
+}
+
+.receipts__overview {
+	order: 0;
+	margin-bottom: $space--m;
+	display: flex;
+	justify-content: center;
+}
+
+.receipts__overview__col {
+	@extend .t-meta;
+	opacity: 1;
+	margin-right: $space--m;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.receipts__list {
+	border-top: 1px solid rgba($c-dark, 0.1);
+	order: 1;
+}
+
+.receipts__btn {
+	margin-top: $space--m;
+	text-align: center;
+}
+
+
 //============================================================== PUBLIER
 
 .user-postLink {
