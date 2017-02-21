@@ -99,7 +99,7 @@ function fluxi_manage_emploi(){
 
 						// Notification mail contact
 						$mail_new_offre = array(get_footer_mail(), $redirect_slug, $is_adherent);
-						notify_by_mail (array($contact_email),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Votre offre d\'emploi est enregistrée', true, get_template_directory() . '/app/inc/mails/new-offre.php', $mail_new_offre);
+						notify_by_mail (array($current_user->user_email),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Votre offre d\'emploi est enregistrée', true, get_template_directory() . '/app/inc/mails/new-offre.php', $mail_new_offre);
 
 						if( $is_adherent ):
 							$message_response = 'Votre offre a été ajoutée. Elle sera publiée sur le site après avoir été validée par nos soins.';
@@ -299,7 +299,8 @@ function send_email_paiement_offre_emp() {
 					$nom_contact = get_field('nom_prenom_contact');
 					$adresse_structure = get_field('adresse').' '.get_field('code_postal').' '.get_field('ville');
 					$author_id = $query_offre_emp->post_author;
-					$mail_contact = get_field('contact_email');
+					$author_datas = get_userdata($author_id);
+					$mail_contact = $author_datas->user_email;
 					$telephone = get_field('telephone');
 					// security token
 					$security_token = bin2hex(random_bytes(24));
