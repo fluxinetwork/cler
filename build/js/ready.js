@@ -14,6 +14,8 @@ var FOO = {
             if ( $('.fitvid').length ) {
                 $('.fitvid').fitVids({ customSelector: "iframe[src*='dailymotion.com']"});
             }
+
+            notify('Système utilisateur en cours de paramétrage, veuillez vous en servir qu\'à partir de demain');
         }
     },
     home: {

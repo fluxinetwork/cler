@@ -56,6 +56,8 @@ var FOO = {
             if ( $('.fitvid').length ) {
                 $('.fitvid').fitVids({ customSelector: "iframe[src*='dailymotion.com']"});
             }
+
+            notify('Système utilisateur en cours de paramétrage, veuillez vous en servir qu\'à partir de demain');
         }
     },
     home: {
@@ -587,12 +589,14 @@ function loading_img(container, loader) {
 \*------------------------------*/
 
 function notify(message) {
-	$('.js-notify').addClass('is-open');
 	$('.js-notify-message').html(message);
 
-	setTimeout(function() {
-	    $('.js-notify').removeClass('is-open');
-	}, 4000);
+	setTimeout(function(){
+		$('.js-notify').addClass('is-open');
+		setTimeout(function() {
+		    $('.js-notify').removeClass('is-open');
+		}, 10000);
+	}, 2000);
 }
 
 $('.js-notify-close').on('click', function(){
