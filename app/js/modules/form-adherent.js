@@ -67,7 +67,7 @@ function initAdherentForm(){
         validateOnBlur : true,
         modules : 'logic',
         onError : function($form) {
-            $form.find('button[type=submit]').prop('disabled', false).find('.js-spinner').remove();
+            $form.find('button[type=submit]').prop('disabled', false).html(labelBtn);;
         },
         onSuccess : function($form) {
 
