@@ -19,7 +19,7 @@ Template Name: Confirmation de compte utilisateur
 					$the_user = get_user_by('email', $mail_user);
 					$the_user_id = $the_user->ID;
 					$stored_token = get_user_meta( $the_user_id, 'token_activation', true );					 		
-					$account_state = get_field($the_user_id, 'disable_account', true);
+					$account_state = get_user_meta($the_user_id, 'disable_account', true);
 
 					if( !is_user_logged_in () ): 
 						$result_btn = '<a href="connexion" class="c-btn c-btn--cta mgTop--m js-popin-show"><span><i class="fa fa-sign-in"></i>Connexion</span></a>';
