@@ -33,8 +33,8 @@
 
 	&--btn {
 		color: #fff;
-		margin-right: $space--s;
-		border-radius: $radius;
+		margin-right: $space--xs;
+		border-radius: 100px;
 
 		&:hover {
 			background-color: $c-main !important;
@@ -47,5 +47,27 @@
 
 	&[data-network="twitter"] {
 		background-color: $c-twitter;
+	}
+}
+
+[class*='bg-accent'] {
+	.c-share__item--txt {
+		color: #fff;
+	}
+
+	.c-share__item--btn {
+		background-color: #FFF;
+
+		&[data-network="facebook"] {
+			color: $c-facebook;
+		}
+
+		&[data-network="twitter"] {
+			color: $c-twitter;
+		}
+
+		&:hover {
+			color: #fff;
+		}
 	}
 }

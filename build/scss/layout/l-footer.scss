@@ -4,10 +4,6 @@
 
 \*------------------------------*/
 
-.l-footer {
-	z-index: 5;
-}
-
 .l-footer__content {
 	@include flex(space-between center);
 }

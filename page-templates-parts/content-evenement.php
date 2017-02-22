@@ -60,6 +60,8 @@
 				</div>
 				<?php endif; ?>
 			</div>
+
+			<?php get_template_part( 'page-templates-parts/share' ); ?>
 		</header>
 	</div>
 	

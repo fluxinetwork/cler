@@ -56,10 +56,6 @@ var FOO = {
             if ( $('.fitvid').length ) {
                 $('.fitvid').fitVids({ customSelector: "iframe[src*='dailymotion.com']"});
             }
-
-            if ( (document.URL).substr(7, 9) != 'localhost' ) {
-                notify('Système utilisateur en cours de paramétrage, veuillez ne vous en servir qu\'à partir de demain');
-            }
         }
     },
     home: {
@@ -627,10 +623,6 @@ function scroll_to(position, duration, relative) {
 		position = position.offset().top;
 	}
 
-	if (position != 'bottom') {
-		position = position - ($(window).height()*0.1) - parseInt($('body').css('paddingTop'));
-	}
-
 	if (duration === 'fast') {
 		coef = 0.1;
 		duration = 200;
@@ -656,6 +648,7 @@ function scroll_to(position, duration, relative) {
 
 $('.js-scroll-to').click(function(e){
 	e.preventDefault();
+	$('.navBar').addClass('is-out');
 	id = $($(this).attr('href'));
 	scroll_to(id);
 })
@@ -810,7 +803,7 @@ function nav() {
 	    	if( $('.navBar').hasClass('is-out') ) {
 	    		$('.navBar').removeClass('is-out');
 	    	}
-	    	if( documentOffset < posTrigger && $('.nav').hasClass('is-compact') ) {
+	    	if( documentOffset < 10 && $('.nav').hasClass('is-compact') ) {
 	    		$('.nav').removeClass('is-compact');
 	    	}
 	    }
@@ -876,10 +869,20 @@ function nav() {
 	// SEARCH
 
 	$('.js-open-search').on('click', function(){
-		$(this).toggleClass('icon2');
+		openSearch();
+		$('.footer').removeClass('is-out');
+	})
+
+	$('.js-force-search').on('click', function(){
+		$('.footer').toggleClass('is-out');
+		openSearch();
+	})
+
+	function openSearch() {
+		$('.js-open-search').toggleClass('icon2 c-btn--ghost');
 		$('#search').toggleClass('is-open');
 		$('#search-input').focus();
-	})
+	}
 }
 /*------------------------------*\
 

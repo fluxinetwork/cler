@@ -158,6 +158,7 @@ if ($nb_results == 0) {
           ( !empty($_GET['s']) ) ? $search_string = filter_var( $_GET['s'], FILTER_SANITIZE_STRING) : $search_string = '';
           ( !empty($_GET['cpt']) ) ? $search_filter = ' filtré par <strong>'.filter_var( $_GET['cpt'], FILTER_SANITIZE_STRING).'</strong>' : $search_filter = '';
           echo '<p class="font-subh">Il n\'y a pas de résultat pour "<strong>'.$search_string.'</strong>"'.$search_filter.'.</p>';
+          echo '<button class="c-btn c-btn--ghost mgTop--s js-force-search"><i class="fa fa-search"></i>Relancer une recherche</button>';
 
       endif;
       ?>

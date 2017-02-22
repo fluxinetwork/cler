@@ -13,12 +13,12 @@ Template Name: Accueil
 			<div class="l-hero__btn">
 			<?php
 			if (!is_user_logged_in()) :
-				echo '<a href="'.get_the_permalink(MAP_ADHERENT).'" class="c-btn c-btn--cta"><span><i class="fa fa-map mgRight--xs"></i>Explorer le réseau</span></a>';
+				echo '<a href="'.get_the_permalink(MAP_ADHERENT).'" class="c-btn c-btn--cta"><span><i class="fa fa-map"></i>Explorer le réseau</span></a>';
 			else :
 				if (!is_adherent_cler()) :
-					echo '<a href="'.get_the_permalink(FORM_ADHESION).'?act=add" class="c-btn c-btn--cta"><span><i class="fa fa-user-plus mgRight--xs"></i>Devenir adhérent</span></a>';
+					echo '<a href="'.get_the_permalink(FORM_ADHESION).'?act=add" class="c-btn c-btn--cta"><span><i class="fa fa-user-plus"></i>Devenir adhérent</span></a>';
 				else :
-					echo '<a href="'.get_the_permalink(HUB_ADHERENT).'?act=add" class="c-btn c-btn--cta"><span><i class="fa fa-users mgRight--xs"></i>Espace adhérents</span></a>';
+					echo '<a href="'.get_the_permalink(HUB_ADHERENT).'?act=add" class="c-btn c-btn--cta"><span><i class="fa fa-users"></i>Espace adhérents</span></a>';
 				endif;
 			endif;
 			?>
@@ -147,7 +147,7 @@ Template Name: Accueil
 		<div class="l-grid__col l-flexCol l-flex--center">
 			<h2 class="c-section-title">Devenir adhérent</h2>
 			<p class="hp-adherer-txt"><?php echo get_field('hp_txt_adhesion'); ?></p>
-			<a href="<?php echo get_the_permalink(PAGE_ADHEREZ); ?>" class="c-btn c-btn--cta mgTop--l"><span><i class="fa fa-thumbs-up mgRight--xs"></i>Ça m'interesse !</span></a>
+			<a href="<?php echo get_the_permalink(PAGE_ADHEREZ); ?>" class="c-btn c-btn--cta mgTop--l"><span><i class="fa fa-thumbs-up"></i>Ça m'interesse !</span></a>
 		</div>
 	</div>
 </section>

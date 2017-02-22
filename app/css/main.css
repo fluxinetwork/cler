@@ -979,6 +979,14 @@ body {
   opacity: 0.7;
 }
 
+.footer {
+  z-index: 5;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.footer.is-out {
+  transform: translateY(100%);
+}
+
 .l-row {
   position: relative;
   width: 100vw;
@@ -1709,10 +1717,6 @@ body {
     #l-FOOTER
 
 \*------------------------------*/
-.l-footer {
-  z-index: 5;
-}
-
 .l-footer__content {
   display: flex;
   justify-content: space-between;
@@ -2120,6 +2124,9 @@ body {
 .c-btn:hover {
   background-color: #0022A0;
 }
+.c-btn .fa {
+  margin-right: 0.98rem;
+}
 .c-btn--cta {
   position: relative;
   background-color: transparent;
@@ -2168,9 +2175,6 @@ body {
 .c-btn--cta:hover::before, .c-btn--cta:hover::after {
   transform: scale(1.1);
   background-color: #0022A0;
-}
-.c-btn--cta .fa {
-  margin-right: 0.98rem;
 }
 @media screen and (min-width: 700px) {
   .c-btn--cta {
@@ -2759,6 +2763,9 @@ body {
 }
 .c-link:hover::after, .fc__focus__link:hover::after, .c-ghostCard:hover .c-link::after, .c-ghostCard:hover .fc__focus__link::after, .c-tile:hover .c-link::after, .c-tile:hover .fc__focus__link::after, .user-postLink:hover .c-link::after, .user-postLink:hover .fc__focus__link::after {
   width: 70%;
+}
+.c-link .fa, .fc__focus__link .fa {
+  margin-right: space--xs;
 }
 .c-link--white {
   color: #fff !important;
@@ -3368,6 +3375,10 @@ body {
   outline: 0;
 }
 
+.c-notify__btn {
+  flex: none;
+}
+
 /*======================================================================*\
 ==========================================================================
 
@@ -3950,8 +3961,8 @@ a.c-meta__meta:hover {
 }
 .c-share__item--btn {
   color: #fff;
-  margin-right: 1.736rem;
-  border-radius: 3px;
+  margin-right: 0.98rem;
+  border-radius: 100px;
 }
 .c-share__item--btn:hover {
   background-color: #0022A0 !important;
@@ -3961,6 +3972,22 @@ a.c-meta__meta:hover {
 }
 .c-share__item[data-network="twitter"] {
   background-color: #1da1f2;
+}
+
+[class*='bg-accent'] .c-share__item--txt {
+  color: #fff;
+}
+[class*='bg-accent'] .c-share__item--btn {
+  background-color: #FFF;
+}
+[class*='bg-accent'] .c-share__item--btn[data-network="facebook"] {
+  color: #3b5998;
+}
+[class*='bg-accent'] .c-share__item--btn[data-network="twitter"] {
+  color: #1da1f2;
+}
+[class*='bg-accent'] .c-share__item--btn:hover {
+  color: #fff;
 }
 
 /*------------------------------*\

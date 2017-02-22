@@ -19,7 +19,7 @@ Template Name: Connexion utilisateur
 		<header class="l-col l-col--content">
 			<h1>Vous êtes déjà connecté.</h1>
 			<a href="<?php echo home_url(); ?>/mon-profil" class="c-btn c-btn--cta mgTop--m"><span><i class="fa fa-user"></i>Voir profil</span></a>
-			<a href="<?php echo home_url(); ?>" class="c-btn c-btn--ghost mgTop--m mgLeft--m"><span><i class="fa fa-home mgRight--xs"></i>Retour accueil</span></a>
+			<a href="<?php echo home_url(); ?>" class="c-btn c-btn--ghost mgTop--m mgLeft--m"><span><i class="fa fa-home"></i>Retour accueil</span></a>
 		</header>
 	</article>
 

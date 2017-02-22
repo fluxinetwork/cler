@@ -19,6 +19,10 @@
 		background-color: $c-main;
 	}
 
+	.fa {
+		margin-right: $space--xs;
+	}
+
 	&--cta {
 		@include bg-with-shadow($c-valid, $c-dark, 0.1, 10px);
 		background-color: transparent;
@@ -37,10 +41,6 @@
 				transform: scale(1.1);
 				background-color: $c-main;
 			}
-		}
-
-		.fa {
-			margin-right: $space--xs;
 		}
 
 		@media screen and (min-width: $break--m) {

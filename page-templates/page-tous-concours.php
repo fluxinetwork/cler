@@ -36,8 +36,9 @@ Template Name: Tous les concours
 			while ( $query_paged->have_posts() ) : $query_paged->the_post();
 
 				$permalink = get_permalink();
-				$date = get_the_date('d M Y');
 				$title = get_the_title();
+				$date_debut_candidatures = get_field('date_debut_candidatures');
+				$date_fin_candidatures = get_field('date_fin_candidatures');
 				
 				include(locate_template('page-templates-parts/get-thumb.php'));
 				
@@ -56,7 +57,7 @@ Template Name: Tous les concours
 				$output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
 				$output .= '<div class="c-meta">';
 				$output .= '<div class="c-dash"></div>';
-				$output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>';
+				$output .= '<span class="c-meta__meta"><i class="fa fa-toggle-on c-meta__meta__icon" aria-hidden="true"></i>Participez du '.$date_debut_candidatures.' au '.$date_fin_candidatures.'</span>';
 				$output .= $cat_name;
 				$output .= '</div>';
 				$output .= '</div>';

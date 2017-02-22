@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * The template part for displaying the form "webinaire" (add)
  */
@@ -59,7 +59,7 @@
     <div class="c-form__notify js-notify"></div>
 
 	<div class="c-form__submit">
-    	<button type="submit" id="submit-participation-webinaire" class="c-btn"><i class="fa fa-plus" aria-hidden="true"></i> Envoyer</button>
+    	<button type="submit" id="submit-participation-webinaire" class="c-btn"><i class="fa fa-plus" aria-hidden="true"></i>Envoyer</button>
     </div>
 </form>	 	  
 	    

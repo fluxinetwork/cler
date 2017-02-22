@@ -42,7 +42,7 @@ function nav() {
 	    	if( $('.navBar').hasClass('is-out') ) {
 	    		$('.navBar').removeClass('is-out');
 	    	}
-	    	if( documentOffset < posTrigger && $('.nav').hasClass('is-compact') ) {
+	    	if( documentOffset < 10 && $('.nav').hasClass('is-compact') ) {
 	    		$('.nav').removeClass('is-compact');
 	    	}
 	    }
@@ -108,8 +108,18 @@ function nav() {
 	// SEARCH
 
 	$('.js-open-search').on('click', function(){
-		$(this).toggleClass('icon2');
+		openSearch();
+		$('.footer').removeClass('is-out');
+	})
+
+	$('.js-force-search').on('click', function(){
+		$('.footer').toggleClass('is-out');
+		openSearch();
+	})
+
+	function openSearch() {
+		$('.js-open-search').toggleClass('icon2 c-btn--ghost');
 		$('#search').toggleClass('is-open');
 		$('#search-input').focus();
-	})
+	}
 }

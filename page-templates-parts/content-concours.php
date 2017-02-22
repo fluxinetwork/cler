@@ -27,7 +27,6 @@
 
 <div class="l-row bg-light">
 	<header class="l-col l-col--content l-intro">
-		<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta l-intro__date"><?php echo get_the_date(); ?></time>
 		<h1><?php echo get_the_title(); ?></h1>
 		<div class="c-meta l-intro__meta">
 			<div class="c-dash"></div>
@@ -38,7 +37,7 @@
 				<span class="l-miniDashboard__row__element"><i class="fa fa-toggle-on c-meta__meta__icon" aria-hidden="true"></i>Participation : <?php echo $start->format('d/m/y'); ?> - <?php echo $stop->format('d/m/y'); ?></span>
 				<?php if( $today >= $date_start && $today <= $date_stop ): ?>
 					<span class="l-miniDashboard__row__element"><i class="fa fa-trophy c-meta__meta__icon" aria-hidden="true"></i>Résultats : <?php echo $date_publication_resultats; ?></span>
-					<a href="#concours" class="l-miniDashboard__row__element l-miniDashboard__row__element--btn c-btn c-btn--ghost"><i class="fa fa-user-plus c-meta__meta__icon" aria-hidden="true"></i>Participer</a>
+					<a href="#concours" class="l-miniDashboard__row__element l-miniDashboard__row__element--btn c-btn c-btn--ghost js-scroll-to"><i class="fa fa-user-plus c-meta__meta__icon" aria-hidden="true"></i>Participer</a>
 				<?php else : ?>
 					<span class="l-miniDashboard__row__element"><i class="fa fa-comments c-meta__meta__icon" aria-hidden="true"></i>Jury : <?php echo $date_debut_votes; ?> - <?php echo $date_fin_votes; ?></span>
 					<span class="l-miniDashboard__row__element"><i class="fa fa-trophy c-meta__meta__icon" aria-hidden="true"></i>Résultats : <?php echo $date_publication_resultats; ?></span>
@@ -47,6 +46,8 @@
 		</div>
 
 		<?php get_template_part( 'page-templates-parts/content', 'intro'); ?>
+
+		<?php get_template_part( 'page-templates-parts/share' ); ?>
 	</header>
 </div>
 

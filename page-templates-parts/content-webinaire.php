@@ -39,11 +39,13 @@
 				<div class="l-miniDashboard__row">
 					<span class="l-miniDashboard__row__element"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i><?php echo $date_webiniare; ?></span>
 					<span class="l-miniDashboard__row__element"><i class="fa fa-clock-o c-meta__meta__icon" aria-hidden="true"></i><?php echo $heure_webinaire; ?></span>
-					<a href="#inscription" class="l-miniDashboard__row__element l-miniDashboard__row__element--btn c-btn c-btn--ghost"><i class="fa fa-user-plus c-meta__meta__icon" aria-hidden="true"></i>Inscription</a>
+					<a href="#inscription" class="l-miniDashboard__row__element l-miniDashboard__row__element--btn c-btn c-btn--ghost js-scroll-to"><i class="fa fa-user-plus" aria-hidden="true"></i>Inscription</a>
 				</div>
 			</div>
 
 			<h2 class="l-intro__excerpt"><?php echo get_field('fluxi_resum', false, false); ?></h2>
+
+			<?php get_template_part( 'page-templates-parts/share' ); ?>
 		</header>
 	</div>
 

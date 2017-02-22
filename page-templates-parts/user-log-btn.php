@@ -10,7 +10,7 @@ if( is_user_logged_in() ):
 	$current_user = wp_get_current_user();
 	
 	echo '<div class="l-nav__login__buttons">';
-			if( !is_page('mon-profil')){ echo '<a href="'.home_url().'/mon-profil" class="c-btn btn-profil"><i class="fa fa-user mgRight--xs"></i>Mon profil</a>'; }
+			if( !is_page('mon-profil')){ echo '<a href="'.home_url().'/mon-profil" class="c-btn btn-profil"><i class="fa fa-user"></i>Mon profil</a>'; }
 			if( is_home() || is_page('connexion') ):		
 				echo '<a href="'.wp_logout_url(esc_url(home_url())).'" class="c-btnIcon  bg-error mgLeft--xs js-tips-logout"><i class="fa fa-sign-out"></i></a>';
 			else:
@@ -19,9 +19,9 @@ if( is_user_logged_in() ):
 	echo '</div>'; ;
 else:
 	if( !is_page('connexion')):
-		echo '<a href="connexion" class="c-btn c-btn--ghost js-popin-show"><i class="fa fa-sign-in mgRight--xs"></i>Connexion</a>';
+		echo '<a href="connexion" class="c-btn c-btn--ghost js-popin-show"><i class="fa fa-sign-in"></i>Connexion</a>';
 	else:
-		echo '<a href="connexion" class="c-btn c-btn--ghost"><i class="fa fa-sign-in mgRight--xs"></i>Connexion</a>';
+		echo '<a href="connexion" class="c-btn c-btn--ghost"><i class="fa fa-sign-in"></i>Connexion</a>';
 	endif; 
 endif;
 ?>

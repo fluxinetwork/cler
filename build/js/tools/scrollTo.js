@@ -19,10 +19,6 @@ function scroll_to(position, duration, relative) {
 		position = position.offset().top;
 	}
 
-	if (position != 'bottom') {
-		position = position - ($(window).height()*0.1) - parseInt($('body').css('paddingTop'));
-	}
-
 	if (duration === 'fast') {
 		coef = 0.1;
 		duration = 200;
@@ -48,6 +44,7 @@ function scroll_to(position, duration, relative) {
 
 $('.js-scroll-to').click(function(e){
 	e.preventDefault();
+	$('.navBar').addClass('is-out');
 	id = $($(this).attr('href'));
 	scroll_to(id);
 })

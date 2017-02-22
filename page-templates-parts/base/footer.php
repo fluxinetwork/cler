@@ -1,4 +1,4 @@
-<footer class="l-row bg-dark l-footer">
+<footer class="l-row bg-dark l-footer footer">
 	<div class="l-col l-footer__content l-grid">
 		<div class="l-grid__col l-footer__content__col1">
 			<img src="<?php echo get_bloginfo('template_url'); ?>/app/img/cler-logo-symbole-mini.png" alt="Symbole du logo du CLER - Réseau pour la transition énergétique">
@@ -10,6 +10,6 @@
 			<a href="<?php echo TWITTER; ?>" class="c-btnIcon c-btn--ghost" target="_blank"><i class="fa fa-twitter"></i></a>
 			<a href="<?php the_permalink(CONTACT); ?>" class="c-link c-link--white">Contact</a>
 		</div>
-		<div class="l-grid__col l-footer__content__col3"><a href="<?php echo NEWSLETTER_FORM_URL; ?>" class="c-btn" target="_blank"><i class="fa fa-envelope mgRight--xs"></i>Newsletter</a></div>
+		<div class="l-grid__col l-footer__content__col3"><a href="<?php echo NEWSLETTER_FORM_URL; ?>" class="c-btn" target="_blank"><i class="fa fa-envelope"></i>Newsletter</a></div>
 	</div>
 </footer>
