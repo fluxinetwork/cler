@@ -103,7 +103,7 @@ function fluxi_manage_emploi(){
 
 						if( $is_adherent ):
 							$message_response = 'Votre offre a été ajoutée. Elle sera publiée sur le site après avoir été validée par nos soins.';
-						else:	
+						else:
 							// Message
 							$message_response = 'Votre offre a été ajoutée. Une fois validée par nos soins, vous recevrez un email vous permettant de régler la participation de '. get_field('montant_publication_offre_emploi', 'option').' € due pour la publication de votre offre.';
 						endif;
@@ -210,7 +210,7 @@ function manage_offre_metabox() {
 	$is_payed = get_field('offer_payed');
 	$id_recu = get_field('recu_offer', false, false);
 	$post_id = $post->ID;
-	$author = $post->post_author;	
+	$author = $post->post_author;
 
 	if(get_field('nb_send_mail_recu')):
 		$nb_send_mail_recu = get_field('nb_send_mail_recu');
@@ -231,10 +231,10 @@ function manage_offre_metabox() {
 			echo '<p class="f-success-mess">L\'offre d\'emploi est payée.</p>';
 			if( $id_recu && get_post_status( $id_recu ) != '' && get_post_status( $id_recu ) != 'trash' ):
 				echo '<a href="#" class="f-button js-send-facture" data-idp="'.$post_id.'" data-idr="'.$id_recu.'">Envoyer le reçu ('.$nb_send_mail_recu.')</a>';
-				
+
 				echo '<p><a href="'.get_edit_post_link($id_recu).'">Consulter le reçu</a></p>';
-			else : 
-				echo '<p class="f-error-mess">Envoyez la demande de paiement et le reçu sera créé automatiquement. Si vous créez le reçu manuellement n\'oublier de relier les posts.</p>';	
+			else :
+				echo '<p class="f-error-mess">Envoyez la demande de paiement et le reçu sera créé automatiquement. Si vous créez le reçu manuellement n\'oublier de relier les posts.</p>';
 			endif;
 
 		elseif( is_adherent_cler($author) ):
@@ -243,7 +243,7 @@ function manage_offre_metabox() {
 
 		else:
 
-			echo '<a href="#" class="f-button js-send-paiement" data-idp="'.$post_id.'">Envoyer la demande de paiement ('.$nb_send_mail_paiement_offre.')</a>';			
+			echo '<a href="#" class="f-button js-send-paiement" data-idp="'.$post_id.'">Envoyer la demande de paiement ('.$nb_send_mail_paiement_offre.')</a>';
 
 			if( $id_recu && get_post_status( $id_recu ) != '' && get_post_status( $id_recu ) != 'trash' ):
 				echo '<p><a href="'.get_edit_post_link($id_recu).'">Consulter le reçu</a></p>';
@@ -284,11 +284,11 @@ function send_email_paiement_offre_emp() {
 
 		if ( $query_offre_emp->have_posts() ) :
 
-			while ( $query_offre_emp->have_posts() ) : $query_offre_emp->the_post();
-
-				if( get_field('recu_offer', false, false) && get_post_status( get_field('recu_offer', false, false) ) != '' && get_post_status( get_field('recu_offer', false, false) ) != 'trash' ):				
+			while ( $query_offre_emp->have_posts() ) : $query_offre_emp->the_post();				
 				
-					// Update reçu					
+				if( get_field('recu_offer', false, false) && get_post_status( get_field('recu_offer', false, false) ) != '' && get_post_status( get_field('recu_offer', false, false) ) != 'trash' ):
+
+					// Update reçu
 					$id_recu = get_field('recu_offer', false, false);
 
 					$title_offer = get_the_title();
@@ -298,9 +298,8 @@ function send_email_paiement_offre_emp() {
 					$nom_structure = get_field('nom_structure');
 					$nom_contact = get_field('nom_prenom_contact');
 					$adresse_structure = get_field('adresse').' '.get_field('code_postal').' '.get_field('ville');
-					$author_id = $query_offre_emp->post_author;
-					$author_datas = get_userdata($author_id);
-					$mail_contact = $author_datas->user_email;
+					$author_id = get_the_author_meta( 'ID' );
+					$mail_contact = get_the_author_meta( 'user_email', $author_id );
 					$telephone = get_field('telephone');
 					// security token
 					$security_token = bin2hex(random_bytes(24));
@@ -312,7 +311,7 @@ function send_email_paiement_offre_emp() {
 						'publication'	=> $the_idp,
 						'nom_prenom_contact' => $nom_contact,
 						'nom_structure' => $nom_structure,
-						'adresse' 		=> $adresse_structure,						
+						'adresse' 		=> $adresse_structure,
 						'contact_email' => $mail_contact,
 						'telephone'		=> $telephone,
 						'security_token'=> $security_token
@@ -342,9 +341,8 @@ function send_email_paiement_offre_emp() {
 					$nom_contact = get_field('nom_prenom_contact');
 					$adresse_structure = get_field('adresse').' '.get_field('code_postal').' '.get_field('ville');
 					$telephone = get_field('telephone');
-					$author_id = $query_offre_emp->post_author;
-					$author_datas = get_userdata($author_id);
-					$mail_contact = $author_datas->user_email;
+					$author_id = get_the_author_meta( 'ID' );
+					$mail_contact = get_the_author_meta( 'user_email', $author_id );
 					// security token
 					$security_token = bin2hex(random_bytes(24));
 
@@ -394,10 +392,11 @@ function send_email_paiement_offre_emp() {
 
 				// Procédure de paiement offre d'emploi
 				$mail_vars_paiement = array(get_footer_mail(), $today, $nom_structure, $adresse_structure, $nom_contact, $montant_offre, $refer_url );
-				notify_by_mail (array($mail_contact),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Payer le publication de votre offre d\'emploi sur le site du CLER', true, get_template_directory() . '/app/inc/mails/paiement-offre.php', $mail_vars_paiement);
+				notify_by_mail (array($mail_contact),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Payer le publication de votre offre d\'emploi sur le site du CLER', true, get_template_directory() . '/app/inc/mails/paiement-offre.php', $mail_vars_paiement);				
+				
 
 				$message_response = 'L\'email contenant la procédure de paiement a bien été envoyé.';
-
+				
 			endwhile;
 
 		endif;

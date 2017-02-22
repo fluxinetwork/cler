@@ -415,6 +415,7 @@ function send_email_paiement() {
 
 				while ( $query_adherent->have_posts() ) : $query_adherent->the_post();
 
+					$author_id = get_the_author_meta( 'ID' );
 					$mail_contact = get_field('email_contact1');
 					$today = date('d/m/Y');
 					$nom_structure = get_field('nom_structure');
@@ -467,7 +468,7 @@ function send_email_paiement() {
 										'ID'			=> $recu_id,
 										'post_title'    => 'Reçu cotisation '.$annee_cotisation.' - ' . $nom_structure,
 										'post_status'   => 'pending',
-										'post_author'   => $query_adherent->post_author,
+										'post_author'   => $author_id,
 										'post_type' 	=> 'recus'
 									);
 
@@ -501,7 +502,7 @@ function send_email_paiement() {
 									$new_recu = array(
 										'post_title'    => 'Reçu cotisation '.$annee_cotisation.' - ' . $nom_structure,
 										'post_status'   => 'pending',
-										'post_author'   => $query_adherent->post_author,
+										'post_author'   => $author_id,
 										'post_type' 	=> 'recus'
 									);
 

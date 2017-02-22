@@ -540,7 +540,7 @@ function is_adherent_cler( $user_id = null ) {
 
 		 while ( $query_adherent->have_posts() ) : $query_adherent->the_post();			
 			$status_field = get_field('statut_adhesion');
-			if( $status_field != 'attente_validation' && $status_field != 'annulee'):
+			if( $status_field != 'attente_validation' && $status_field != 'annulee' && $status_field != 'attente_paiement' ):
 				$status_adhesion = true;
 			else:
 				$status_adhesion = false;
