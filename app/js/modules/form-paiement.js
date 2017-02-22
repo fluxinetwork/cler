@@ -13,7 +13,7 @@ $( document ).ready(function() {
 
 function initaddPay(){
 
-	Stripe.setPublishableKey('pk_live_3PxBPl8r2MazKXqqUrmkhJ3D');
+	Stripe.setPublishableKey('pk_live_HEusQjHfIL04ZU0eoOTkE18s');
 
     var formID = '#form-paiement';
 
