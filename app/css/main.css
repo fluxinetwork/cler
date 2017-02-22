@@ -1739,8 +1739,11 @@ body {
   align-items: center;
   margin: 1.736rem 0;
 }
-.l-footer__content__col2 a[href*='twitter'] {
-  margin: 0 2.8rem 0 0.98rem;
+.l-footer__content__col2 .c-btnIcon, .l-footer__content__col2 .fc__accordeon__icon {
+  margin-right: 0.98rem;
+}
+.l-footer__content__col2 .c-link, .l-footer__content__col2 .fc__focus__link {
+  margin-left: 1.736rem;
 }
 @media screen and (min-width: 700px) {
   .l-footer__content__col2 {

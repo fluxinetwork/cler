@@ -31,8 +31,12 @@
 	@include flex(center);
 	margin: $space--s 0;
 
-	a[href*='twitter'] {
-		margin: 0 $space--m 0 $space--xs;
+	.c-btnIcon {
+		margin-right: $space--xs;
+	}
+
+	.c-link {
+		margin-left:  $space--s;
 	}
 
 	@media screen and (min-width: $break--m) {
