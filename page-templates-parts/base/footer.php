@@ -6,7 +6,7 @@
 		</div>
 		<div class="l-footer__content__col2 l-grid__col">
 			<a href="https://cler.org/feed/" class="c-btnIcon c-btn--ghost" target="_blank"><i class="fa fa-rss"></i></a>
-			<a href="<?php echo FACEBOOK; ?>" class="c-btnIcon c-btn--ghost" target="_blank><i class="fa fa-facebook"></i></a>
+			<a href="<?php echo FACEBOOK; ?>" class="c-btnIcon c-btn--ghost" target="_blank"><i class="fa fa-facebook"></i></a>
 			<a href="<?php echo TWITTER; ?>" class="c-btnIcon c-btn--ghost" target="_blank"><i class="fa fa-twitter"></i></a>
 			<a href="<?php the_permalink(CONTACT); ?>" class="c-link c-link--white">Contact</a>
 		</div>

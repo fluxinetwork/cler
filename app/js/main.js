@@ -57,7 +57,9 @@ var FOO = {
                 $('.fitvid').fitVids({ customSelector: "iframe[src*='dailymotion.com']"});
             }
 
-            notify('Système utilisateur en cours de paramétrage, veuillez ne vous en servir qu\'à partir de demain');
+            if ( (document.URL).substr(7, 9) != 'localhost' ) {
+                notify('Système utilisateur en cours de paramétrage, veuillez ne vous en servir qu\'à partir de demain');
+            }
         }
     },
     home: {

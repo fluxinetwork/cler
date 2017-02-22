@@ -62,9 +62,9 @@
 							$output .= '<div class="c-newsH__body">';
 								$output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
 								$output .= '<div class="c-meta">';
-									$output .= '<div class="c-dash"></div>';
-									$output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>';
+									$output .= '<div class="c-dash bg-'.substr($color, 2).'"></div>';
 									$output .= '<span class="c-meta__meta t-meta--dark '.$color.'"><i class="fa '.$icon.' c-meta__meta__icon" aria-hidden="true"></i>'.$status.'</span>';
+									$output .= '<span class="c-meta__meta"><i class="fa fa-calendar c-meta__meta__icon" aria-hidden="true"></i>'.$date.'</span>';
 								$output .= '</div>';
 							$output .= '</div>';
 						$output .= '</article>';
