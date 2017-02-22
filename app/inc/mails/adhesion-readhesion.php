@@ -71,7 +71,7 @@ else:
                         <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Bonjour</h3>
                         <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Nous avons bien reçu votre dossier de candidature pour une demande d\'adhésion au CLER – Réseau pour la transition énergétique, et nous vous en remercions.<br><br>
 
-                        Vous pouvez dès à présent, si vous le souhaitez, compléter ou modifier <a style="color: #00c15f; display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-bottom: 3px solid #00c15f; text-decoration: none;" href="'.$refer_url.'" target="_blank">votre formulaire</a> dans votre espace privé sur le site CLER.org.<br><br>
+                        Vous pouvez dès à présent, si vous le souhaitez, compléter ou modifier <a style="color: #00c15f; display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-bottom: 3px solid #00c15f; text-decoration: none;" href="'.$refer_url.'adhesion/?act=mod" target="_blank">votre formulaire</a> dans votre espace privé sur le site CLER.org.<br><br>
 
                         Pour les entreprises uniquement : merci de nous envoyer un extrait Kbis de moins de trois mois en format PDF à l\'adresse reseau@cler.org.</p>';
 
