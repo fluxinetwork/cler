@@ -4,7 +4,7 @@
  */
 ?>
 <style type="text/css" media="print">
-	.is-hide-print, .wrap-navBar{
+	.is-hide-print, .navBar, .l-footer, .l-navExtra, .js-print{
 		display: none;
 	}
 	.is-none{
@@ -35,7 +35,8 @@
 		$contact_email = get_field('contact_email');
 		$telephone = get_field('telephone');
 		$n_transaction = get_field('n_transaction');
-		$date_paiement = get_field('date_paiement');
+		$date_paiement = get_field('date_paiement', false, false);
+		$date_paiement = new DateTime($date_paiement);
 		$derniers_chiffres = get_field('derniers_chiffres');
 		$montant = get_field('montant');
 		$mode_paiement = get_field('mode_paiement');
@@ -59,21 +60,21 @@
 			$annee_cotisation = get_field('annee_cotisation');
 
 			$recu = '                       
-			<h2>Montreuil le '.$date_paiement.',</h2>
+			<h2>Montreuil le '.$date_paiement->format('d/m/y').',</h2>
 
 			<h3 class="t-fw--700"><strong>Destinataire :</strong> '.$nom_structure.', '.$adresse_structure.'</h3>						
 			
 			<p style="border:2px solid #000; padding:15px;">
 			  <strong>REÇU - appel à cotisation '.$annee_cotisation.' acquitté </strong><br><br>
 
-			  Pour l\'adhésion de '.$nom_structure.' au CLER – Réseau pour la transition énergétique (Association loi 1901 non assujettie à la TVA) acquitté le '.$date_paiement.''.$infos_paiement.' <br><br>
+			  Pour l\'adhésion de '.$nom_structure.' au CLER – Réseau pour la transition énergétique (Association loi 1901 non assujettie à la TVA) acquitté le '.$date_paiement->format('d/m/y').''.$infos_paiement.' <br><br>
 
 			  Montant de l\'adhésion : '.$montant.',00 €
 			</p>
 
 			<div class="is-hide-print">
 
-				<a href="javascript:window.print()" class="c-btn js-print">Imprimer le reçu</a>
+				<a href="javascript:window.print()" class="c-btn js-print mgTop--m">Imprimer le reçu</a>
 
 				<h2>Cher membre</h2>
 				
@@ -99,7 +100,7 @@
 
 		elseif( $type_recu == 'recu_emploi' ):
 
-			$recu = '<h2>Montreuil, le '.$date_paiement.'</h2>
+			$recu = '<h2>Montreuil, le '.$date_paiement->format('d/m/y').'</h2>
 
                   <h3 class="t-fw--700"><strong>Destinataire :</strong><br>
                   '.$nom_structure.'<br>
@@ -111,11 +112,13 @@
                   <p style="border:2px solid #000; padding:15px;">
                     <strong>REÇU - publication d\'une offre d\'emploi acquitté </strong><br><br>
 
-                    Pour la publication "'.$publi_title.'" sur le site du CLER – Réseau pour la transition énergétique (Association loi 1901 non assujettie à la TVA) acquitté le '.$date_paiement.''.$infos_paiement.' <br><br>
+                    Pour la publication "'.$publi_title.'" sur le site du CLER – Réseau pour la transition énergétique (Association loi 1901 non assujettie à la TVA) acquitté le '.$date_paiement->format('d/m/y').''.$infos_paiement.' <br><br>
 
                     Montant : '.$montant.',00 €
                   </p>
-                  <div class="recu__contact is-none">'.get_footer_mail().'</div>';
+                  <div class="recu__contact is-none">'.get_footer_mail().'</div>
+
+                  <a href="javascript:window.print()" class="c-btn js-print mgTop--m">Imprimer le reçu</a>';
 		
 		endif;	
 	

@@ -13,8 +13,9 @@ $( document ).ready(function() {
 
 function initaddPay(){
 
-	Stripe.setPublishableKey('pk_live_HEusQjHfIL04ZU0eoOTkE18s');
-
+	//Stripe.setPublishableKey('pk_live_HEusQjHfIL04ZU0eoOTkE18s');
+	Stripe.setPublishableKey('pk_test_kWCl1avZGd4nDMAfjpXOpaRD');
+	
     var formID = '#form-paiement';
 
     $(formID+' button[type=submit]').prop('disabled', false);
