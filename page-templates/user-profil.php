@@ -95,16 +95,10 @@ Template Name: Profil
 			<?php endif; ?>
 		</div>
 	</section>
-
-	<section class="l-row bg-valid--grad">
-		<div class="l-col">
-			<?php include(TEMPLATEPATH.'/page-templates-parts/sliders/publications-slider.php'); ?>
-		</div>
-	</section>
-
+	
+	<?php include(TEMPLATEPATH.'/page-templates-parts/sliders/publications-slider.php'); ?>
 		
 	<?php include(TEMPLATEPATH.'/page-templates-parts/recus.php'); ?>
-
 
 	<section class="l-row">
 		<div class="l-col l-col--content">
