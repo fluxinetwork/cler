@@ -17,7 +17,7 @@
 			<?php the_content(); ?>
 	</div>
 
-	<div class="l-row bg-light" id="contact">
+	<div class="l-row" id="contact">
 		<div class="l-col l-col--content">
 		<?php
 			$contact = get_field('contact_referent');

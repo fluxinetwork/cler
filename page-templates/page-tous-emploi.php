@@ -96,7 +96,7 @@ $output = ($nb_result>1) ? $nb_result.' offres d\'emploi disponibles' : $nb_resu
 			<a href="<?php echo home_url().'/outils/publiez-vos-offres-demploi/'; ?>" class="c-link c-link--shy"><i class="fa fa-plus c-meta__meta__icon" aria-hidden="true"></i>Poster une offre</a>
 			<div class="l-filterList__buttons__submit">
 				<button type="reset" class="c-btn c-btn--reset js-reload is-none">Reset</button>
-				<button type="submit" id="submit-filters" class="c-btn c-btn--ghost"><i class="fa fa-filter c-meta__meta__icon"></i> Filtrer</button>
+				<button type="submit" id="submit-filters" class="c-btn c-btn--ghost"><i class="fa fa-filter"></i>Filtrer</button>
 			</div>
 		</div>
 

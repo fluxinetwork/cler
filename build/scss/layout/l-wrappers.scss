@@ -34,7 +34,7 @@ body {
 .main {
 	position: relative;
 	transition: $transition--dynamic;
-	min-height: 70vh;
+	min-height: 80vh;
 	z-index: 1;
 
 	&::after {

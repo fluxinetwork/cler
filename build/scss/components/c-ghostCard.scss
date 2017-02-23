@@ -8,7 +8,7 @@
 
 .c-ghostCard {
 	@include flex(center, true);
-	height: 100%;
+	height: $cardH;
 	border: 3px solid #fff !important;
 	border-radius: $radius;
 	transition: $transition--dynamic;

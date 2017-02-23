@@ -27,7 +27,7 @@
 			    	$title = limitString($post->post_title, 0, 70, ' [...]');
 			        
 			        $all_pans .= '<li class="l-download__content__list__item">
-			        		<a href="'.$post->guid.'" class="c-downloadItem">
+			        		<a href="'.$post->guid.'" class="c-downloadItem" target="_blank">
 			        			<span class="c-downloadItem__icon c-btnIcon c-btn--ghost"><i class="fa fa-download"></i></span>
 			        			<span class="c-downloadItem__title">'.$title.'</span>
 			        		</a>

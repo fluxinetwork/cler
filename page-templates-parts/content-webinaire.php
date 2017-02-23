@@ -32,7 +32,6 @@
 <article>
 	<div class="l-row bg-light">
 		<header class="l-col l-col--content l-intro">
-			<time datetime="<?php echo get_the_date('Y-m-d'); ?>" class="t-meta l-intro__date"><?php echo get_the_date(); ?></time>
 			<h1><?php echo get_the_title(); ?></h1>
 
 			<div class="l-miniDashboard ">
