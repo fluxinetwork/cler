@@ -146,12 +146,7 @@ if ($nb_results == 0) {
 
         echo '</ul>';      
 
-        the_posts_pagination( array(
-        'prev_text' => __( 'Précédent', 'cler' ),
-        'next_text' => __( 'Suivant', 'cler' ),
-        'mid_size' => 2,
-        'before_page_number' => '<span>' . __( 'Page', 'cler' ) . ' </span>',
-        ) );
+        include(locate_template('page-templates-parts/base/pagination.php'));
 
         else :
 

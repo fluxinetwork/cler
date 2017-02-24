@@ -1,4 +1,7 @@
 <?php 
+	if (!isset($query_paged)) {
+		$query_paged = $wp_query;
+	}
 	echo '<div class="c-pagination">';
 		echo '<div class="c-pagination__links">';
 		echo paginate_links( array(
