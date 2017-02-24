@@ -29,7 +29,7 @@ function fluxi_manage_paiement(){
 
 			// Verify concordance post/reçu
 			if ( get_field('publication', $idr) == $idp && get_field('security_token', $idr) == $security_tok ):
-				if( is_user_logged_in() ):
+				if( is_user_logged_in() && current_user_can( 'publish_posts' ) && current_user_can( 'edit_published_posts', $idr) ):
 					if ( !empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['token_s']) ):
 
 						require (get_template_directory() . '/app/inc/forms/Stripe.php');

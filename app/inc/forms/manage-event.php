@@ -97,7 +97,7 @@ function fluxi_manage_event(){
 
 						$message_response = 'Votre événement a été ajouté. Il sera publié sur le site après avoir été validé par nos soins.';
 
-					elseif( $action_form == 'mod' && verify_post_author( $current_user->ID, $the_idp ) && current_user_can( 'edit_post', $the_idp ) ):
+					elseif( $action_form == 'mod' && verify_post_author( $current_user->ID, $the_idp ) && current_user_can( 'edit_published_posts', $the_idp ) ):
 						// Update post
 						$update_post = array(
 					      	'ID'           => $the_idp,
