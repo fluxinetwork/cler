@@ -30,7 +30,7 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 
                     <p style="font-family: gotham,helvetica,arial,sans-serif;font-size:14px;padding:20px 0; color:#999;line-height: 20px;">Votre formation sera publiée prochainement sur notre site après vérification de notre équipe.</p>
 
-                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">En vous souhaitant une bonne journée,<br><br>Bien cordialement, l\'équipe du CLER</p>
+                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">En vous souhaitant une bonne journée,<br><br>Bien cordialement, l\'équipe du CLER - Réseau pour la transition énergétique</p>
          
                   </td>
                 </tr>
