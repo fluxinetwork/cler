@@ -33,7 +33,7 @@ Template Name: Gérer offre d'emploi
 				if( verify_post_author( $current_user->ID, $the_idp ) ):
 
 					// Modify
-					if( $type_form == 'mod' && current_user_can( 'edit_post', $the_idp ) ):
+					if( $type_form == 'mod' && current_user_can( 'edit_published_posts', $the_idp ) ):
 
 						$offer_title = get_the_title ( $the_idp );
 						$type_de_poste = get_field('type_de_poste', $the_idp);

@@ -31,7 +31,7 @@ Template Name: Gérer formation
 						if( verify_post_author( $current_user->ID, $the_idp ) ):
 
 							// Modify
-							if( $type_form == 'mod' && current_user_can( 'edit_post', $the_idp ) ):
+							if( $type_form == 'mod' && current_user_can( 'edit_published_posts', $the_idp ) ):
 
 								$formation_title= get_the_title ( $the_idp );
 								

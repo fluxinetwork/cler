@@ -33,7 +33,7 @@ Template Name: Gérer événement
 						if( verify_post_author( $current_user->ID, $the_idp ) ):
 
 							// Modify
-							if( $type_form == 'mod' && current_user_can( 'edit_post', $the_idp ) ):
+							if( $type_form == 'mod' && current_user_can( 'edit_published_posts', $the_idp ) ):
 
 								$title_event = get_the_title ( $the_idp );
 								$publics_event = get_field('publics_event', $the_idp);
