@@ -94,9 +94,9 @@ if ($nb_results == 0) {
             $output .= '</div>';
 
           } else if ($post_type == 'evenements') { // EVENT
-
-            $date = get_the_date('d M');
-            $output .= '<div class="c-newsH__img "><div class="c-card__header__tag">'.$date.'</div></div>';
+            $date = get_field('date_event', false, false);
+            $date = new DateTime($date);
+            $output .= '<div class="c-newsH__img "><div class="c-card__header__tag">'.$date->format('d M').'</div></div>';
 
           } else {
 
@@ -107,7 +107,9 @@ if ($nb_results == 0) {
           // BODY
 
           $output .= '<div class="c-newsH__body">';
-          $output .= '<span class="t-meta">'.$date_publi  .'</span>';
+          if ($post_type == 'actualité' ) {
+            $output .= '<span class="t-meta">'.$date_publi.'</span>';
+          }
           $output .= '<h1 class="c-newsH__body__title">'.$title.'</h1>';
 
           // META
