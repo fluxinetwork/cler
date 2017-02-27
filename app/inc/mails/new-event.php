@@ -31,7 +31,7 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
                     <p style="font-size:14px;padding:20px 0; color:#999; line-height:20px;">Les événements qui ne concerneraient pas de manière explicite la transition énergétique, les énergies renouvelables ou la maîtrise de l’énergie ne seront pas publiés.</p>
 
                     <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">En vous souhaitant une bonne journée,<br><br>
-                    Bien cordialement, l\'équipe du CLER</p>
+                    Bien cordialement, l\'équipe du CLER – Réseau pour la transition énergétique</p>
                   </td>
                 </tr>
               </table>

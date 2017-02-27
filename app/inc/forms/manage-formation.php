@@ -118,7 +118,7 @@ function fluxi_manage_formation(){
 
 						$message_response = 'Votre formation a été ajoutée. Elle sera publiée sur le site après avoir été validée par nos soins.';
 
-					elseif( $action_form == 'mod' && verify_post_author( $current_user->ID, $the_idp ) && current_user_can( 'edit_post', $the_idp ) ):
+					elseif( $action_form == 'mod' && verify_post_author( $current_user->ID, $the_idp ) && current_user_can( 'edit_published_posts', $the_idp ) ):
 						// Update post
 						$update_post = array(
 					      	'ID'           => $the_idp,

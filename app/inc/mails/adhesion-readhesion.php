@@ -31,7 +31,7 @@ if($type_adhesion=='rad'):
                             <p style="font-size:14px;padding:20px 0; color:#999;font-family: gotham,helvetica,arial,sans-serif;line-height: 20px;">Pour toute question relative à votre adhésion, vous pouvez contacter :<br>
                             Alexis Monteil au 01 55 86 80 09.</p>
                             <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">En vous souhaitant une bonne journée,<br><br>
-                            Bien cordialement, l\'équipe du CLER</p>
+                            Bien cordialement, l\'équipe du CLER – Réseau pour la transition énergétique</p>
                           </td>
                         </tr>   
                       </table>
@@ -84,7 +84,7 @@ else:
                         Alexis Monteil au 01 55 86 80 09.</p>
 
                         <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">En vous souhaitant une bonne journée,<br><br>
-                        Bien cordialement, l\'équipe du CLER</p>
+                        Bien cordialement, l\'équipe du CLER – Réseau pour la transition énergétique</p>
                       </td>
                     </tr>
                   </table>

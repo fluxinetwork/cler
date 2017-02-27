@@ -431,7 +431,7 @@ function fluxi_delete_post(){
 		$the_idp = filter_var($_POST['idp'], FILTER_SANITIZE_NUMBER_INT);
 
 		// Verify id post & token
-		if( verify_post_author( $current_user->ID, $the_idp ) && current_user_can( 'delete_posts', $the_idp ) && current_user_can( 'delete_published_posts', $the_idp ) ):
+		if( verify_post_author( $current_user->ID, $the_idp ) && current_user_can( 'delete_published_posts', $the_idp ) ):
 
 			// Delete post
 			wp_delete_post($the_idp ,true);

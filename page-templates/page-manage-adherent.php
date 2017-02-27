@@ -53,7 +53,7 @@ Template Name: Gérer adhèrent
 							$the_idp = get_adherent_idp();
 						endif;
 
-						if( current_user_can( 'edit_post', $the_idp ) && $the_idp != 0 ):
+						if( current_user_can( 'edit_published_posts', $the_idp ) && $the_idp != 0 ):
 
 							$type_structure = get_field('type_structure', $the_idp);
 							$nom_structure = get_field('nom_structure', $the_idp);

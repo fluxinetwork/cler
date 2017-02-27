@@ -37,9 +37,9 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
                     
                     <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Bonjour '.$prenom.' '.$nom.'</h3>
 
-                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Vous êtes inscrit au prochain web-séminaire organisé par le CLER – Réseau pour la transition énergétique qui aura lieu le '.$date_webinaire.' à 16 h, et nous vous en remercions.<br><br>
+                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Vous venez de vous inscrire au prochain « Mardi de la transition énergétique » organisé par le CLER – Réseau pour la transition énergétique, et nous vous en remercions. Votre participation au web-séminaire du '.$date_webinaire.' a bien été prise en compte.<br><br>
 
-                    Pour connaître le programme de ce « Mardi de la transition énergétique », les intervenants et les modalités de votre participation, rendez-vous sur <a style="color: #00c15f; display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-bottom: 3px solid #00c15f; text-decoration: none;" href="'.get_the_permalink(PAGE_MODE_EMP_WEBINAIRE).'" target="_blank">cette page</a> de notre site internet.<br><br>A bientôt, l\'équipe du CLER – Réseau pour la transition énergétique</p>
+                    Vous recevrez un email récapitulant le programme de ce web-séminaire, les intervenants et les modalités de votre participation quelques jours précédant l\'événement.<br><br>A bientôt, l\'équipe du CLER – Réseau pour la transition énergétique</p>
 
                   </td>
                 </tr>

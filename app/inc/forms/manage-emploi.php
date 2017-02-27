@@ -108,7 +108,7 @@ function fluxi_manage_emploi(){
 							$message_response = 'Votre offre a été ajoutée. Une fois validée par nos soins, vous recevrez un email vous permettant de régler la participation de '. get_field('montant_publication_offre_emploi', 'option').' € due pour la publication de votre offre.';
 						endif;
 
-					elseif( $action_form == 'mod' && verify_post_author( $current_user->ID, $the_idp ) && current_user_can( 'edit_post', $the_idp ) ):
+					elseif( $action_form == 'mod' && verify_post_author( $current_user->ID, $the_idp ) && current_user_can( 'edit_published_posts', $the_idp ) ):
 						// Update post
 						$update_post = array(
 					      	'ID'           => $the_idp,
