@@ -139,6 +139,20 @@ $break: $break--m;
 		@include flex(center);
 		min-height: 200px;
 	}
+
+	&--formation {
+		@include flex(flex-start,true);
+	}
+}
+
+.l-miniDashboard__duo__right__label {
+	position: absolute;
+	left: 0;
+	top: 0;
+	@extend .l-box;
+	background-color: transparent;
+	width: 100%;
+	text-align: center;
 }
 
 .l-miniDashboard__duo__right__nb {
