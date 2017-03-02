@@ -16,7 +16,7 @@
 	    </div>
 
 	    <div class="c-form__fieldset__row">
-	    	<label class="c-form__label" for="nom_structure">Nom de la structure<span class="i-required">•</span></label>
+	    	<label class="c-form__label" for="nom_structure">Nom de la structure</label>
 	      	<input type="text" placeholder="" class="c-form__input" value="<?php echo $nom_structure; ?>" name="nom_structure" id="nom_structure">
 	    </div>
 

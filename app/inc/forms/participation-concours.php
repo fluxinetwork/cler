@@ -26,13 +26,13 @@ function fluxi_participation_concours(){
 		// Verify email & token
 		if ( is_numeric($toky_toky) && $toky_toky == 5931886351 ):
 
-			if ( !empty($_POST['nom_prenom']) && !empty($_POST['mail_contact']) && !empty($_POST['titre_participation']) && !empty($_POST['accepte_reglement']) ):
-					
-					$modalites = get_field('regles_concours', $the_idp);					
+			if ( !empty($_POST['nom_prenom']) && !empty($_POST['mail_contact']) && !empty($_POST['titre_participation']) && !empty($_POST['accepte_reglement']) ):					
+										
 					$type_concours = get_field('type_concours', $the_idp);
 
 					if( $type_concours == 'cler_obscur'){
-						$lien_video = filter_var( $_POST['lien_video'], FILTER_SANITIZE_URL);
+						$url_video = filter_var( $_POST['lien_video'], FILTER_SANITIZE_URL);
+						$lien_video = '<p><strong>Lien vidéo : </strong><a href="' . $url_video . '">' . $url_video . '</a></p>';
 					}else{
 						$lien_video = '';
 					}
@@ -44,7 +44,7 @@ function fluxi_participation_concours(){
 						'accepte_reglement'		=> filter_var( $_POST['accepte_reglement'], FILTER_SANITIZE_STRING),
 						'titre_participation'	=> filter_var( $_POST['titre_participation'], FILTER_SANITIZE_STRING),
 						'texte_participation'	=> filter_var( $_POST['texte_participation'], FILTER_SANITIZE_STRING),
-						'lien_video'			=> $lien_video,
+						'lien_video'			=> $url_video,
 					);
 
 					// Notification mail participation
@@ -53,14 +53,13 @@ function fluxi_participation_concours(){
 
 					// Notification admin
 					
-					notify_by_mail (array(CONTACTS_CONCOURS),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Nouvelle participation à "'.$title_concours.'"', false, '<h2>Nouvelle participation à "'.$title_concours.'"</h2>'.
-						
+					notify_by_mail (array(CONTACTS_CONCOURS),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Nouvelle participation à "'.$title_concours.'"', false, '<h2>Nouvelle participation à "'.$title_concours.'"</h2>'.	
 						'<p><strong>Nom et prénom :</strong><br> ' . $metas_tab['nom_prenom'] . '</p>'.
+						'<p><strong>Email :</strong><br> ' . $metas_tab['email'] . '</p>'.
 						'<p><strong>Nom structure :</strong><br> ' . $metas_tab['nom_structure'] . '</p>'.
 						'<p><strong>Titre de la participation :</strong><br> ' . $metas_tab['titre_participation'] . '</p>'.
-						'<p><strong>Texte de la participation :</strong><br> ' . $metas_tab['texte_participation'] . '</p>'.
-						'<p><strong>Lien : </strong><a href="' . $lien_video . '">' . $lien_video . '</a></p>'.
-						
+						'<p><strong>Texte de la participation :</strong><br> ' . nl2br($metas_tab['texte_participation']) . '</p>'.
+						$lien_video.						
 						'<p><a style="background-color:#86bd4c; display:inline-block; padding:10px 20px; color:#fff; text-decoration:none;" href="' .home_url() . '/wp-admin/post.php?post=' . $the_idp . '&action=edit">Accéder au concours</a></p>');
 
 					$message_response = 'Votre participation au concours est enregistrée.';
