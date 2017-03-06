@@ -188,31 +188,31 @@ function fluxi_manage_adherent(){
 
 
 							// if is a modification
-							else:								
+							else:
 
 								// Update repeater
 								$counter_cotisations = 0;
-								if( have_rows('cotisations', $the_idp) ):					
+								if( have_rows('cotisations', $the_idp) ):
 									while( have_rows('cotisations', $the_idp) ): the_row();
-								        if( get_sub_field('annee_cotisation') == $annee_cotisation ):	
-											
+								        if( get_sub_field('annee_cotisation') == $annee_cotisation ):
+
 											$cotisations_value[$counter_cotisations] = array(
 												'annee_cotisation' => get_sub_field('annee_cotisation'),
 												'montant_cotisation' => $montant_cotisation,
 												'date_paiement' => get_sub_field('date_paiement', false, false),
 												'recu' => get_sub_field('recu', false, false)
 											);
-											
+
 											update_field( 'cotisations', $cotisations_value, $the_idp );
 										else:
-											
+
 											$cotisations_value[$counter_cotisations] = array(
 												'annee_cotisation' => get_sub_field('annee_cotisation'),
 												'montant_cotisation' => get_sub_field('montant_cotisation'),
 												'date_paiement' => get_sub_field('date_paiement', false, false),
 												'recu' => get_sub_field('recu', false, false)
 											);
-											
+
 											update_field( 'cotisations', $cotisations_value, $the_idp );
 										endif;
 										$counter_cotisations++;
@@ -359,7 +359,7 @@ function manage_adhesion_metabox() {
 						if( get_sub_field('date_paiement') != '' && get_post_status($recu_id) != '' && get_post_status($recu_id) != 'trash'):
 							if( $recu_status != 'publish' ):
 								echo '<li><p class="f-error-mess">Veuillez publier le reçu associé pour envoyer l\'email de la cotisation ' . get_sub_field('annee_cotisation') . '.<br>&darr;&darr;<br>' . $link_recu . '.</p></li>';
-							else:	
+							else:
 								echo '<li><a href="#" class="f-button js-send-facture" data-idp="'.$post->ID.'" data-year="'. get_sub_field('annee_cotisation') .'" data-montant="'. get_sub_field('montant_cotisation') .'" data-datepaiement="'. get_sub_field('date_paiement') .'" data-idr="'. $recu_id .'">Envoyer le reçu '. get_sub_field('annee_cotisation') .' ('.$nb_send_mail_recu.')</a></li> '. $link_recu;
 							endif;
 						else:
@@ -455,13 +455,13 @@ function send_email_paiement() {
 					endif;
 
 					$counter_cotisations = 0;
-					if( have_rows('cotisations') ):					
+					if( have_rows('cotisations') ):
 						while( have_rows('cotisations') ): the_row();
 					        if( get_sub_field('annee_cotisation') == $annee_cotisation ):
-					        	
+
 					        	$recu_id = get_sub_field('recu', false, false);
 
-					        	if( $recu_id && get_post_status($recu_id) != '' && get_post_status($recu_id) != 'trash' ):		            
+					        	if( $recu_id && get_post_status($recu_id) != '' && get_post_status($recu_id) != 'trash' ):
 
 									// Update reçu
 									$update_recu = array(
@@ -520,7 +520,7 @@ function send_email_paiement() {
 										'recu' => $recu_id
 									);
 									update_field( 'cotisations', $cotisations_value, $the_idp );
-								
+
 
 									$paiement_url = home_url().'/payer/?st='.$security_token_r.'&ido='.$the_idp.'&idr='.$recu_id;
 
@@ -531,7 +531,7 @@ function send_email_paiement() {
 									$message_response = 'L\'email contenant la procédure de paiement de la cotisation '.$annee_cotisation.' a bien été envoyé.';
 
 								endif;
-							else:	
+							else:
 									// Update repeater
 									$cotisations_value[$counter_cotisations] = array(
 										'annee_cotisation' => get_sub_field('annee_cotisation'),
@@ -539,7 +539,7 @@ function send_email_paiement() {
 										'date_paiement' => get_sub_field('date_paiement', false, false),
 										'recu' => get_sub_field('recu', false, false)
 									);
-									
+
 									update_field( 'cotisations', $cotisations_value, $the_idp );
 					        endif;
 
@@ -549,7 +549,7 @@ function send_email_paiement() {
 				    else:
 				    	$reg_errors->add( 'recu', 'Vérifiez que le reçu existe. Sinon envoyez l\'appel à cotisation et le reçu sera créé automatiquement. Si vous créez le reçu manuellement n\'oublier de relier les posts.' );
 				    endif;
-					
+
 
 				endwhile;
 
@@ -630,10 +630,10 @@ function send_email_facture() {
 				$mail_contact = get_field('contact_email', $the_idr);
 				$nom_prenom_contact = get_field('nom_prenom_contact', $the_idr);
 				$nom_structure = get_field('nom_structure', $the_idr);
-				$adresse_structure = get_field('adresse', $the_idr).' '.get_field('code_postal', $the_idr).' '.get_field('ville', $the_idr);
-				$telephone = get_field('telephone', $the_idr);	
+				$adresse_structure = get_field('adresse', $the_idr);
+				$telephone = get_field('telephone', $the_idr);
 
-				if( $mail_contact && $nom_prenom_contact && $nom_structure && get_field('adresse', $the_idr) && get_field('code_postal', $the_idr) && get_field('ville', $the_idr) && $telephone ):						
+				if( $mail_contact && $nom_prenom_contact && $nom_structure && $adresse_structure && $telephone ):
 
 					$mode_paiement = get_field('mode_paiement', $the_idr);
 					if($mode_paiement=='cb'):
@@ -643,11 +643,11 @@ function send_email_facture() {
 					endif;
 
 					// Create/update count sending & create/update reçu
-					$nb_send_mail_slug = 'nb_send_mail_recu_' . $annee_cotisation;				
+					$nb_send_mail_slug = 'nb_send_mail_recu_' . $annee_cotisation;
 					if( get_field($nb_send_mail_slug, $the_idp) ):
 						$nb_send_mail_recu = (get_field($nb_send_mail_slug, $the_idp) + 1);
 						update_field( $nb_send_mail_slug, $nb_send_mail_recu, $the_idp );
-					else:						
+					else:
 						update_field( $nb_send_mail_slug, 1, $the_idp );
 					endif;
 
@@ -657,25 +657,25 @@ function send_email_facture() {
 
 					$message_response = 'L\'email contenant le reçu '.$annee_cotisation.' a bien été envoyé.';
 
-			else:
+				else:
 
-				$reg_errors->add( 'emptyfields', 'Veuillez renseigner toutes les données du reçu associé pour envoyer l\'email.' );
+					$reg_errors->add( 'emptyfields', 'Veuillez renseigner toutes les données du reçu associé pour envoyer l\'email.' );
 
-			endif;
+				endif;
 
 			else:
 
 				$reg_errors->add( 'notpub', 'Veuillez publier le reçu associé pour envoyer l\'email.' );
 
 			endif;
-			
-			
+
+
 		else:
 
 			$reg_errors->add( 'nonce', $message_response );
 
 		endif;
-	
+
 
 	// Error process
 	if ( is_wp_error( $reg_errors ) && count( $reg_errors->get_error_messages() ) > 0):
