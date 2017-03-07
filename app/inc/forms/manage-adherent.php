@@ -638,7 +638,9 @@ function send_email_facture() {
 					$mode_paiement = get_field('mode_paiement', $the_idr);
 					if($mode_paiement=='cb'):
 						$num_mode_paiement = get_field('derniers_chiffres', $the_idr);
-					else:
+					elseif($mode_paiement=='virement'):
+						$num_mode_paiement = get_field('num_virement', $the_idr);
+					else:	
 						$num_mode_paiement = get_field('num_cheque', $the_idr);
 					endif;
 

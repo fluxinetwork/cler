@@ -52,6 +52,8 @@
 			$infos_paiement = ' par carte bancaire n° '.get_field('derniers_chiffres').'.';
 		}elseif($mode_paiement == 'cheque'){
 			$infos_paiement = ' par chèque n° '.get_field('num_cheque').'.';
+		}elseif($mode_paiement == 'virement'){
+			$infos_paiement = ' par virement n° '.get_field('num_virement').'.';	
 		}else{
 			$infos_paiement = '.';
 		}

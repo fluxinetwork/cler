@@ -23,7 +23,9 @@ endif;
 
 if($mode_paiement=='cb'):
   $infos_paiement = 'par carte bancaire n°'.$num_mode_paiement;
-else:
+elseif($mode_paiement=='virement'):
+  $infos_paiement = 'par virement n°'.$num_mode_paiement;
+else :  
   $infos_paiement = 'par chéque n°'.$num_mode_paiement;
 endif;
 

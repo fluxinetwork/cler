@@ -484,7 +484,9 @@ function send_email_facture_offre() {
 				$mode_paiement = get_field('mode_paiement');
 				if($mode_paiement=='cb'):
 					$num_mode_paiement = get_field('derniers_chiffres');
-				else:
+				elseif($mode_paiement=='virement'):
+					$num_mode_paiement = get_field('num_virement');
+				else:	
 					$num_mode_paiement = get_field('num_cheque');
 				endif;
 
