@@ -246,7 +246,8 @@ var iconsSelMap = {
 
 $( document ).ready( function() {
 
-	if( $('.page-template-page-map-adherents').length ){        
+	if( $('.page-template-page-map-adherents').length ){
+        //console.log('ready');     
         activateFilters = true;
         initAdherentsMap();
     }
@@ -342,12 +343,12 @@ function addMakers(map, data){
 
         // If it's an adherent
         if(data[i].postType == 'cartes'){
+
             // Slug tag
             var tag = data[i].catSlug;
 
             //  Add markers on the map only on desktop
-            if(windowW >= bpSmall){
-
+            //if(windowW >= bpSmall){                
                 var newLatLng = {lat: Number(data[i].latitude), lng: Number(data[i].longitude)};
 
                 var marker = new google.maps.Marker({
@@ -412,7 +413,7 @@ function addMakers(map, data){
                     centerMapOnMarkers(map);
 
                 }
-            }
+            //}
             // Add info card
             var markerContent = '<div class="card-map c-'+tag+' hide">';
                     markerContent += '<a href="'+data[i].permalink+'">';
