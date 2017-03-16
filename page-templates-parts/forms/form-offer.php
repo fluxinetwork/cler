@@ -23,7 +23,7 @@
 				<?php
 				endif;				
 			else: ?>					
-				<p>Vous n'êtes pas adhérent au CLER : une contribution de <strong><?php echo get_field('montant_publication_offre_emploi', 'option'); ?> euros</strong> vous sera donc demandée pour chaque nouvelle publication. Vous recevrez un email contenant les informations nécessaires au réglement dès que nous aurons validé votre offre. Pour devenir adhérent, vous pouvez <a class="c-link c-link--shy" href="<?php the_permalink(PAGE_ADHEREZ); ?>">consulter cette page</a>.</p>
+				<p>Si vous n'êtes pas adhérent au CLER : une contribution de <strong><?php echo get_field('montant_publication_offre_emploi', 'option'); ?> euros</strong> vous sera donc demandée pour chaque nouvelle publication. Vous recevrez un email contenant les informations nécessaires au réglement dès que nous aurons validé votre offre. Pour devenir adhérent, vous pouvez <a class="c-link c-link--shy" href="<?php the_permalink(PAGE_ADHEREZ); ?>">consulter cette page</a>.</p>
 		<?php endif; ?>
 		
 		</div>
