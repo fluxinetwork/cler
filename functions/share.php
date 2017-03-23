@@ -23,25 +23,25 @@ add_filter('language_attributes', 'add_opengraph_doctype');
 // Add Open Graph meta in head
 function insert_fb_in_head() {
 	global $post;
-	if ( !is_singular() ) { //if it is not a post or a page
-		return;
-        echo '<meta property="fb:admins" content="1678343189101829"/>';
-        echo '<meta property="og:title" content="' . get_the_title() . '"/>';
-        echo '<meta property="og:type" content="article"/>';
-        echo '<meta property="og:url" content="' . get_permalink() . '"/>';
-        echo '<meta property="og:site_name" content="Occur Books"/>';
-		if( !has_post_thumbnail( $post->ID )  || is_home() ) {
-			echo '<meta property="og:image" content="'.get_bloginfo('template_url').$default_image.'"/>';
-		}
+	$post_img_url = get_bloginfo('template_url').'/app/img/default_fb.jpg';
+
+	if ( is_front_page() ) {
+		echo '<meta property="og:type" content="website"/>';
+        echo '<meta property="og:title" content="' .get_bloginfo('name'). '"/>';
+        echo '<meta property="og:description" content="' .get_bloginfo('description'). '"/>';
+       	echo '<meta property="og:url" content="' .get_bloginfo('url'). '"/>';
 	} else {
-		$post_img_id = get_field('main_image');
-		if ($post_img_id) {
-			$post_img_array = wp_get_attachment_image_src($post_img_id, 'single', true);
-			$post_img_url = $post_img_array[0];	
-		} else {
-			$post_img_url = get_bloginfo('template_url').'/app/img/default.jpg';
+		echo '<meta property="og:type" content="article"/>';
+		echo '<meta property="og:title" content="' .get_the_title(). '"/>';
+		echo '<meta property="og:description" content="' .get_field('google_description'). '"/>';
+		echo '<meta property="og:url" content="' .get_permalink(). '"/>';
+
+		if ( get_field('main_image') ) {
+			$post_img_array = get_field('main_image');
+			$post_img_url = $post_img_array['sizes']['medium'];	
 		}
-		echo '<meta property="og:image" content="'.$post_img_url.'"/>';
 	}
+
+	echo '<meta property="og:image" content="'.$post_img_url.'"/>';
 }
 add_action( 'wp_head', 'insert_fb_in_head', 5 );
