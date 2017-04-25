@@ -53,7 +53,7 @@ function fluxi_participation_concours(){
 
 					// Notification admin
 					
-					notify_by_mail (array(CONTACTS_CONCOURS),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Nouvelle participation à "'.$title_concours.'"', false, '<h2>Nouvelle participation à "'.$title_concours.'"</h2>'.	
+					notify_by_mail (array(CONTACTS_CONCOURS_1, CONTACTS_CONCOURS_2, CONTACTS_CONCOURS_3),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Nouvelle participation à "'.$title_concours.'"', false, '<h2>Nouvelle participation à "'.$title_concours.'"</h2>'.	
 						'<p><strong>Nom et prénom :</strong><br> ' . $metas_tab['nom_prenom'] . '</p>'.
 						'<p><strong>Email :</strong><br> ' . $metas_tab['email'] . '</p>'.
 						'<p><strong>Nom structure :</strong><br> ' . $metas_tab['nom_structure'] . '</p>'.

@@ -83,10 +83,7 @@ Template Name: Toutes les événements
 	<div class="js-notify"></div>
 	<?php
 		$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-		$args_filtered = array(
-			'post_type' => 'evenements',
-			'post_status' => 'publish',
-			'paged' => $paged,
+		$args_filtered = array(			
 			'post_type' 	=> 'evenements',
 			'post_status' 	=> 'publish',
 			'paged' 		=> $paged,
