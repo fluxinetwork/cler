@@ -16,6 +16,9 @@ define('POST_EXCERPT_LENGTH', 40);
 define('SLIDER_NB_POSTS', 10);
 define('LIMIT_STRING', 90);
 
+
+//define('STRIPE_KEY', 'sk_test_v6Ap9E383Hth1I9JkIuHXJFJ');
+
 define('GOOGLE_ANALYTICS_ID', '');
 define('GOOGLE_MAP_API_KEY', 'AIzaSyCHOJtRqM6DSAm6HXYsYSITlHhzkvLKH_M');
 /* ACF Google Maps */
@@ -52,7 +55,9 @@ define('CONTACTS_EVENT_1','lucile.krezel@cler.org');
 
 define('CONTACTS_EMPLOI_1', 'lucile.krezel@cler.org');
 
-define('CONTACTS_CONCOURS', 'info@cler.org');
+define('CONTACTS_CONCOURS_1', 'lucile.krezel@cler.org');
+define('CONTACTS_CONCOURS_2', 'jane.mery@cler.org');
+define('CONTACTS_CONCOURS_3', 'jennifer.lavalle@cler.org');
 
 define('CONTACTS_FORMATION_1', 'lucile.krezel@cler.org');
 define('CONTACTS_FORMATION_2', 'alexis.monteil@cler.org');
@@ -115,7 +120,7 @@ define('PAGE_MODE_EMP_WEBINAIRE', '3756');
 
 define('CHARTE_CLER', '2659');
 define('REGLEMENT_CLER', '2665');
-define('CHARTE_TEPOS', 'http://www.territoires-energie-positive.fr/documents/documents-cadres-du-reseau/');
+define('CHARTE_TEPOS', 'http://www.territoires-energie-positive.fr/fre/content/download/49430/485703/file/Charte_TEPOS.pdf');
 
 define('CONTACT', '3183');
 
