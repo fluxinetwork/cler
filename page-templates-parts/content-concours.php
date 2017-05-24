@@ -13,16 +13,22 @@
 	$idp = get_the_ID();
 	$date_debut_candidatures = get_field('date_debut_candidatures', false, false);
 	$date_fin_candidatures = get_field('date_fin_candidatures', false, false);
-	$date_debut_votes = get_field('date_debut_votes');
-	$date_fin_votes = get_field('date_fin_votes');
+	$date_debut_votes = get_field('date_debut_votes', false, false);
+	$date_fin_votes = get_field('date_fin_votes', false, false);
 	$date_publication_resultats = get_field('date_publication_resultats');
 
 
 	$today = date('Ymd');
+
 	$start = new DateTime($date_debut_candidatures);
 	$date_start = $start->format('Ymd');
 	$stop = new DateTime($date_fin_candidatures);
 	$date_stop = $stop->format('Ymd');
+
+	$start_votes = new DateTime($date_debut_votes);
+	$date_start_votes = $start_votes->format('Ymd');
+	$stop_votes = new DateTime($date_fin_votes);
+	$date_stop_votes = $stop_votes->format('Ymd');
 ?>
 
 <div class="l-row bg-light">
@@ -34,12 +40,20 @@
 
 		<div class="l-miniDashboard ">
 			<div class="l-miniDashboard__row">
-				<span class="l-miniDashboard__row__element"><i class="fa fa-toggle-on c-meta__meta__icon" aria-hidden="true"></i>Participation : <?php echo $start->format('d/m/y'); ?> - <?php echo $stop->format('d/m/y'); ?></span>
-				<?php if( $today >= $date_start && $today <= $date_stop ): ?>
+				
+				<?php if( $today >= $date_start && $today <= $date_stop ): // PHASE PARTICPATION ?> 
+					<span class="l-miniDashboard__row__element"><i class="fa fa-toggle-on c-meta__meta__icon" aria-hidden="true"></i>Participation : <?php echo $start->format('d/m/y'); ?> - <?php echo $stop->format('d/m/y'); ?></span>
 					<span class="l-miniDashboard__row__element"><i class="fa fa-trophy c-meta__meta__icon" aria-hidden="true"></i>Résultats : <?php echo $date_publication_resultats; ?></span>
 					<a href="#concours" class="l-miniDashboard__row__element l-miniDashboard__row__element--btn c-btn c-btn--ghost js-scroll-to"><i class="fa fa-user-plus c-meta__meta__icon" aria-hidden="true"></i>Participer</a>
+
+				<?php elseif( $today >= $date_start_votes && $today <= $date_stop_votes ): // PHASE VOTE ?>
+					<span class="l-miniDashboard__row__element"><i class="fa fa-comments c-meta__meta__icon" aria-hidden="true"></i>Jury : <?php echo $start_votes->format('d/m/y'); ?> - <?php echo $stop_votes->format('d/m/y'); ?></span>
+					<span class="l-miniDashboard__row__element"><i class="fa fa-trophy c-meta__meta__icon" aria-hidden="true"></i>Résultats : <?php echo $date_publication_resultats; ?></span>
+					<a href="#voter" class="l-miniDashboard__row__element l-miniDashboard__row__element--btn c-btn c-btn--ghost js-scroll-to"><i class="fa fa-heart c-meta__meta__icon" aria-hidden="true"></i>Voter</a>
+
 				<?php else : ?>
-					<span class="l-miniDashboard__row__element"><i class="fa fa-comments c-meta__meta__icon" aria-hidden="true"></i>Jury : <?php echo $date_debut_votes; ?> - <?php echo $date_fin_votes; ?></span>
+					<span class="l-miniDashboard__row__element"><i class="fa fa-toggle-on c-meta__meta__icon" aria-hidden="true"></i>Participation : <?php echo $start->format('d/m/y'); ?> - <?php echo $stop->format('d/m/y'); ?></span>
+					<span class="l-miniDashboard__row__element"><i class="fa fa-comments c-meta__meta__icon" aria-hidden="true"></i>Jury : <?php echo $start_votes->format('d/m/y'); ?> - <?php echo $stop_votes->format('d/m/y'); ?></span>
 					<span class="l-miniDashboard__row__element"><i class="fa fa-trophy c-meta__meta__icon" aria-hidden="true"></i>Résultats : <?php echo $date_publication_resultats; ?></span>
 				<?php endif; ?>
 			</div>
@@ -71,32 +85,49 @@
 
 <!-- Participations -->
 <?php
-	if( $today >= $date_debut_votes && $today <= $date_fin_votes ):
+	if( $today >= $date_start_votes && $today <= $date_stop_votes && is_user_logged_in() ):
 		if( have_rows('candidatures') ): 
 			$i = 0;
-			echo '<section class="participations">';
+			echo '<section class="l-row participations" id="voter">';
+			echo '<div class="l-col l-col--content">';
+			echo '<ul class="l-postList participations">';
 		    while ( have_rows('candidatures') ) : the_row(); 
 		    	$i++; 
 		    	$nb_votes = get_sub_field('nombre_votes');
 				$video = get_sub_field('video_candidature');
+				$nom = get_sub_field('nom_prenom');
+				$structure = false;
+				if ( get_sub_field('nom_structure') ) {
+					$structure = get_sub_field('nom_structure');
+				}
 				?>
-				<div class="participation">
-			        <h3><?php echo get_sub_field('titre_candidature'); ?></h3>
-			        <p><?php echo get_sub_field('texte_candidature'); ?></p>
-			        <div><?php echo $video; ?></div>
+				<li class="l-postList__item ">
+					<article class="participation">
+						<p class="t-meta"><span class="js-nb-rate"><?php echo $nb_votes; ?></span> votes</p>
+						<h1 class="h2"><?php echo get_sub_field('titre_candidature'); ?></h1>
+						<div class="c-meta">
+							<div class="c-dash"></div>
+							<span class="c-meta__meta"><i class="fa fa-user c-meta__meta__icon" aria-hidden="true"></i><?php echo $nom; ?></span>
+							<?php if ($structure) : ?>
+								<span class="c-meta__meta"><i class="fa fa-cube c-meta__meta__icon" aria-hidden="true"></i><?php echo $structure; ?></span>
+							<?php endif; ?>
+						</div>
 
-					<div class="rating">
-						<p>Votes : <span class="js-nb-rate"><?php echo $nb_votes; ?></span></p>
-				       <form class="form-rating" role="form">					       		
+				        <p><?php echo get_sub_field('texte_candidature'); ?></p>
+				        <div><?php echo $video; ?></div>
+							
+				       	<form class="form-rating mgTop--s" role="form">					       		
 				       		<input type="hidden" value="<?php echo $idp; ?>" name="idp">
 							<input type="hidden" value="<?php echo $i; ?>" name="idc">
 							<?php wp_nonce_field( 'fluxi_rating_concours', 'fluxi_rating_concours_nonce_field' ); ?>
-				       		<button type="submit" class="c-btn">Voter</button>					       		
-				       </form>
-			       </div>
-				</div>
+				       		<button type="submit" class="c-btn"><i class="fa fa-heart c-meta__meta__icon" aria-hidden="true"></i>Voter</button>			       		
+				       	</form>
+			       </article>
+				</li>
 			<?php
 		    endwhile;
+			echo '</ul>';
+			echo '</div>';
 			echo '</section>';
 		endif;
 	endif;
