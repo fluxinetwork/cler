@@ -71,25 +71,14 @@
 	</div>
 </div>
 
-<!-- Form participation concours -->	
-<?php if( $today >= $date_debut_candidatures && $today <= $date_fin_candidatures ): ?>
-	<?php //data-idp est utilisée par le formulaire ?>
-	<section class="l-row bg-valid--grad"  id="concours" data-idp="<?php echo get_the_ID(); ?>">
-		<div class="l-col">
-			<div class="c-form c-form--large c-card">
-				<?php require_once( get_template_directory() . '/page-templates-parts/forms/form-concours.php' ); ?>							
-			</div>
-		</div>
-	</section>
-<?php endif; ?>
-
 <!-- Participations -->
 <?php
-	if( $today >= $date_start_votes && $today <= $date_stop_votes && is_user_logged_in() ):
+	if( $today >= $date_start_votes && $today <= $date_stop_votes || is_user_logged_in() ):
 		if( have_rows('candidatures') ): 
 			$i = 0;
-			echo '<section class="l-row participations" id="voter">';
-			echo '<div class="l-col l-col--content">';
+			echo '<section class="l-row participations bg-light" id="voter">';
+			echo '<div class="l-col l-col--content fc">';
+			echo '<h2 class="fc_title">Liste des participations</h2>';
 			echo '<ul class="l-postList participations">';
 		    while ( have_rows('candidatures') ) : the_row(); 
 		    	$i++; 
@@ -132,3 +121,16 @@
 		endif;
 	endif;
 ?>
+
+<!-- Form participation concours -->	
+<?php if( $today >= $date_debut_candidatures && $today <= $date_fin_candidatures ): ?>
+	<?php //data-idp est utilisée par le formulaire ?>
+	<section class="l-row bg-valid--grad"  id="concours" data-idp="<?php echo get_the_ID(); ?>">
+		<div class="l-col">
+			<div class="c-form c-form--large c-card">
+				<?php require_once( get_template_directory() . '/page-templates-parts/forms/form-concours.php' ); ?>							
+			</div>
+		</div>
+	</section>
+<?php endif; ?>
+
