@@ -41,7 +41,7 @@
 			<button type="reset" class="c-btn c-btn--reset l-monoFilter__btn js-reload is-none">Reset</button>
 			<button type="submit" id="submit-filters" class="c-btn c-btn--ghost l-monoFilter__btn is-none">Filtrer</button>
 
-			<a href="<?php the_permalink(PAGE_ADHEREZ); ?>" class="c-link c-link--shy l-monoFilter__link"><i class="fa fa-user-plus c-meta__meta__icon"></i>Devenir adhérent</a>
+			<a href="<?php echo get_permalink(PAGE_ADHEREZ); ?>" class="c-link c-link--shy l-monoFilter__link"><i class="fa fa-user-plus c-meta__meta__icon"></i>Devenir adhérent</a>
 		</form>
 	</aside>
 

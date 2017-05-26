@@ -99,7 +99,7 @@ Template Name: Toutes les formations
 		<?php wp_nonce_field( 'fluxi_filter_posts', 'fluxi_filter_posts_nonce_field' ); ?>
 
 		<div class="l-filterList__buttons">
-			<a href="<?php the_permalink(FORM_FORMATION); ?>?act=add" class="c-link c-link--shy"><i class="fa fa-plus"></i>Poster une formation</a>
+			<a href="<?php echo get_permalink(FORM_FORMATION); ?>?act=add" class="c-link c-link--shy"><i class="fa fa-plus"></i>Poster une formation</a>
 			<div class="l-filterList__buttons__submit">
 				<button type="reset" class="c-btn c-btn--reset js-reload is-none">Reset</button>
 				<button type="submit" id="submit-filters" class="c-btn c-btn--ghost"><i class="fa fa-filter c-meta__meta__icon"></i>Filtrer</button>

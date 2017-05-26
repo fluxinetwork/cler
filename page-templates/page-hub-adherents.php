@@ -13,9 +13,9 @@ Template Name: Hub adhérents
 
 			<div class="adherents__main__links">
 				<div class="h3 t-fw--700 mgBottom--s">Vous cherchez quelqu'un ?</div>
-				<a href="<?php the_permalink(PAGE_CA); ?>" class="c-link">Le C.A</a>
-				<a href="<?php the_permalink(PAGE_EQUIPE); ?>" class="c-link">L'équipe</a>
-				<a href="<?php the_permalink(MAP_ADHERENT); ?>" class="c-link">Le réseau</a>
+				<a href="<?php echo get_permalink(PAGE_CA); ?>" class="c-link">Le C.A</a>
+				<a href="<?php echo get_permalink(PAGE_EQUIPE); ?>" class="c-link">L'équipe</a>
+				<a href="<?php echo get_permalink(MAP_ADHERENT); ?>" class="c-link">Le réseau</a>
 			</div>
 		</div>
 		
@@ -92,19 +92,19 @@ Template Name: Hub adhérents
 		<ul class="l-grid list-reset">
 			<li class="l-grid__col">
 				<div class="user-postLink">
-					<a href="<?php echo get_the_permalink(FORM_EVENT); ?>?act=add" class="c-btn c-btn--ghost"><i class="u-show@large fa fa-calendar"></i>Évènement</a>
+					<a href="<?php echo get_permalink(FORM_EVENT); ?>?act=add" class="c-btn c-btn--ghost"><i class="u-show@large fa fa-calendar"></i>Évènement</a>
 					<span class="t-meta pdTop--s">Gratuit</span>
 				</div>
 			</li>
 			<li class="l-grid__col">
 				<div class="user-postLink">
-					<a href="<?php echo get_the_permalink(FORM_OFFRE); ?>?act=add" class="c-btn c-btn--ghost"><i class="u-show@large fa fa-briefcase"></i>Offre <span class="u-show@xlarge">d'</span>emploi</a>
+					<a href="<?php echo get_permalink(FORM_OFFRE); ?>?act=add" class="c-btn c-btn--ghost"><i class="u-show@large fa fa-briefcase"></i>Offre <span class="u-show@xlarge">d'</span>emploi</a>
 					<span class="t-meta pdTop--s"><?php ($adherent) ? print('Gratuit') : print('Payant'); ?></span>
 				</div>
 			</li>
 			<li class="l-grid__col">
 				<div class="user-postLink">
-					<a href="<?php echo get_the_permalink(FORM_FORMATION); ?>?act=add" class="c-btn c-btn--ghost"><i class="u-show@large fa fa-graduation-cap"></i>Formation</a>
+					<a href="<?php echo get_permalink(FORM_FORMATION); ?>?act=add" class="c-btn c-btn--ghost"><i class="u-show@large fa fa-graduation-cap"></i>Formation</a>
 					<span class="t-meta pdTop--s">Gratuit</span>
 				</div>
 			</li>

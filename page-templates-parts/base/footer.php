@@ -8,7 +8,7 @@
 			<a href="https://cler.org/feed/" class="c-btnIcon c-btn--ghost" target="_blank"><i class="fa fa-rss"></i></a>
 			<a href="<?php echo FACEBOOK; ?>" class="c-btnIcon c-btn--ghost" target="_blank"><i class="fa fa-facebook"></i></a>
 			<a href="<?php echo TWITTER; ?>" class="c-btnIcon c-btn--ghost" target="_blank"><i class="fa fa-twitter"></i></a>
-			<a href="<?php the_permalink(CONTACT); ?>" class="c-link c-link--white">Contact</a>
+			<a href="<?php echo get_permalink(CONTACT); ?>" class="c-link c-link--white">Contact</a>
 		</div>
 		<div class="l-grid__col l-footer__content__col3"><a href="<?php echo NEWSLETTER_FORM_URL; ?>" class="c-btn" target="_blank"><i class="fa fa-envelope"></i>Newsletter</a></div>
 	</div>

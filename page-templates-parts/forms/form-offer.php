@@ -19,11 +19,11 @@
 		<?php 
 			if(is_adherent_cler() ):			
 				if( !empty($statut_paiement) && $statut_paiement == 'succeeded' ): ?>
-					<p>Vous avez payé pour la publication de cette offre d'emploi, vous pouvez <a href="<?php echo get_the_permalink($id_recu); ?>">consulter le reçu</a>.</p>
+					<p>Vous avez payé pour la publication de cette offre d'emploi, vous pouvez <a href="<?php echo get_permalink($id_recu); ?>">consulter le reçu</a>.</p>
 				<?php
 				endif;				
 			else: ?>					
-				<p>Si vous n'êtes pas adhérent au CLER : une contribution de <strong><?php echo get_field('montant_publication_offre_emploi', 'option'); ?> euros</strong> vous sera donc demandée pour chaque nouvelle publication. Vous recevrez un email contenant les informations nécessaires au réglement dès que nous aurons validé votre offre. Pour devenir adhérent, vous pouvez <a class="c-link c-link--shy" href="<?php the_permalink(PAGE_ADHEREZ); ?>">consulter cette page</a>.</p>
+				<p>Si vous n'êtes pas adhérent au CLER : une contribution de <strong><?php echo get_field('montant_publication_offre_emploi', 'option'); ?> euros</strong> vous sera donc demandée pour chaque nouvelle publication. Vous recevrez un email contenant les informations nécessaires au réglement dès que nous aurons validé votre offre. Pour devenir adhérent, vous pouvez <a class="c-link c-link--shy" href="<?php echo get_permalink(PAGE_ADHEREZ); ?>">consulter cette page</a>.</p>
 		<?php endif; ?>
 		
 		</div>
