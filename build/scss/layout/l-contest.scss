@@ -1,0 +1,39 @@
+/*======================================================================*\
+==========================================================================
+
+//	LAYOUT CONTEST
+
+==========================================================================
+\*======================================================================*/
+
+.l-contest {
+	@extend .l-grid;
+	flex-wrap: wrap;
+	@extend .list-reset;
+
+	@media screen and (min-width: $break--s) {
+		flex-direction: row;
+	}
+}
+
+.l-contest__entry {
+	@extend .l-grid__col;
+	margin-top: $gutter !important;
+	width: 100%;
+
+	@media screen and (min-width: $break--s) {
+		flex: none;
+		width: 50%;
+	}
+	
+	@media screen and (min-width: $break--m) {
+		width: 33.33%;
+		margin-top: $gutter*2 !important;
+	}
+
+	@media screen and (min-width: $break--l) {
+		width: 25%;
+	}
+}
+
+

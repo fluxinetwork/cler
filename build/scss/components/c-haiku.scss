@@ -1,0 +1,41 @@
+/*======================================================================*\
+==========================================================================
+
+//	COMPOSANT HAIKU
+
+==========================================================================
+\*======================================================================*/
+
+.c-haiku {
+	@include flex(space-between center);
+	height: 100%;
+
+	@media screen and (min-width: $break--s) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+.c-haiku__content__txt {
+	@extend .h5;
+}
+
+.c-haiku__vote {
+	@include flex(null center);
+
+	@media screen and (min-width: $break--s) {
+		padding-top: $space--s;
+		margin-top: auto;
+	}
+}
+
+.c-haiku__vote__button {
+	
+}
+
+.c-haiku__vote__count {
+	@extend .t-meta;
+	margin-left: $space--s;
+	margin-top: 0;
+}
+

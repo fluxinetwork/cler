@@ -20,7 +20,7 @@
   clear: both;
 }
 
-.list-reset {
+.list-reset, .l-contest {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -584,14 +584,14 @@ h4, .h4, .c-newsH--action .c-newsH__body__desc {
 h5, .h5, .c-card__header__cat, .c-form p,
 .c-form .t-list, .c-form__input,
 .c-form__textarea,
-.c-form__select, .c-figure__caption, .fc__accordeon__icon, .c-newsH__body__desc, .miniEvent__title, .infowindow__content .infowindow__content__ville {
+.c-form__select, .c-figure__caption, .fc__accordeon__icon, .c-newsH__body__desc, .c-haiku__content__txt, .miniEvent__title, .infowindow__content .infowindow__content__ville {
   font-size: 12px;
 }
 @media screen and (min-width: 700px) {
   h5, .h5, .c-card__header__cat, .c-form p,
   .c-form .t-list, .c-form__input,
   .c-form__textarea,
-  .c-form__select, .c-figure__caption, .fc__accordeon__icon, .c-newsH__body__desc, .miniEvent__title, .infowindow__content .infowindow__content__ville {
+  .c-form__select, .c-figure__caption, .fc__accordeon__icon, .c-newsH__body__desc, .c-haiku__content__txt, .miniEvent__title, .infowindow__content .infowindow__content__ville {
     font-size: 14px;
   }
 }
@@ -599,21 +599,21 @@ h5, .h5, .c-card__header__cat, .c-form p,
   h5, .h5, .c-card__header__cat, .c-form p,
   .c-form .t-list, .c-form__input,
   .c-form__textarea,
-  .c-form__select, .c-figure__caption, .fc__accordeon__icon, .c-newsH__body__desc, .miniEvent__title, .infowindow__content .infowindow__content__ville {
+  .c-form__select, .c-figure__caption, .fc__accordeon__icon, .c-newsH__body__desc, .c-haiku__content__txt, .miniEvent__title, .infowindow__content .infowindow__content__ville {
     font-size: 16px;
   }
 }
 
-h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .c-share__item, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
+h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .c-share__item, .c-haiku__vote__count, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
   font-size: 10px;
 }
 @media screen and (min-width: 700px) {
-  h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .c-share__item, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
+  h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .c-share__item, .c-haiku__vote__count, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
     font-size: 11px;
   }
 }
 @media screen and (min-width: 960px) {
-  h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .c-share__item, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
+  h6, .h6, .t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .c-share__item, .c-haiku__vote__count, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure, .c-tag {
     font-size: 12px;
   }
 }
@@ -643,7 +643,7 @@ p {
   margin-top: 2.0832rem;
 }
 
-.t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .c-share__item, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure {
+.t-meta, .l-miniDashboard__row__element, .c-newsH__body__meta, .c-meta__meta, .c-downloadItem__title, .c-pagination__links .page-numbers, .c-share__item, .c-haiku__vote__count, .receipts__overview__col, .miniEvent__meta, .infowindow__content .infowindow__content__structure {
   letter-spacing: 0.5px;
   font-weight: 700;
   font-family: "Roboto Condensed", sans-serif;
@@ -658,7 +658,7 @@ p {
 .t-meta--dark {
   opacity: 1;
 }
-.fc .t-meta, .fc .l-miniDashboard__row__element, .fc .c-newsH__body__meta, .fc .c-meta__meta, .fc .c-downloadItem__title, .fc .c-pagination__links .page-numbers, .c-pagination__links .fc .page-numbers, .fc .c-share__item, .fc .receipts__overview__col, .fc .miniEvent__meta, .fc .infowindow__content .infowindow__content__structure, .infowindow__content .fc .infowindow__content__structure {
+.fc .t-meta, .fc .l-miniDashboard__row__element, .fc .c-newsH__body__meta, .fc .c-meta__meta, .fc .c-downloadItem__title, .fc .c-pagination__links .page-numbers, .c-pagination__links .fc .page-numbers, .fc .c-share__item, .fc .c-haiku__vote__count, .fc .receipts__overview__col, .fc .miniEvent__meta, .fc .infowindow__content .infowindow__content__structure, .infowindow__content .fc .infowindow__content__structure {
   display: inline-block;
 }
 
@@ -764,7 +764,7 @@ p {
     #GRID (LIB)
 
 \*------------------------------*/
-.l-grid {
+.l-grid, .l-contest {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -774,35 +774,35 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
 }
-.l-grid--2col .l-grid__col {
+.l-grid--2col .l-grid__col, .l-grid--2col .l-contest__entry {
   flex: 1 0 48%;
   padding: 0 0.868rem 1.736rem 0.868rem;
 }
-.l-grid--2col .l-grid__col:first-child {
+.l-grid--2col .l-grid__col:first-child, .l-grid--2col .l-contest__entry:first-child {
   padding-left: 0;
 }
-.l-grid--2col .l-grid__col:nth-child(2n+2) {
+.l-grid--2col .l-grid__col:nth-child(2n+2), .l-grid--2col .l-contest__entry:nth-child(2n+2) {
   padding-right: 0;
 }
-.l-grid--2col .l-grid__col:nth-child(2n+3) {
+.l-grid--2col .l-grid__col:nth-child(2n+3), .l-grid--2col .l-contest__entry:nth-child(2n+3) {
   padding-left: 0;
 }
-.l-grid--2col .l-grid__col:nth-last-child(-n+2) {
+.l-grid--2col .l-grid__col:nth-last-child(-n+2), .l-grid--2col .l-contest__entry:nth-last-child(-n+2) {
   padding-bottom: 0;
 }
 
-.l-grid__col {
+.l-grid__col, .l-contest__entry {
   flex: 1 1 0%;
   padding: 0.868rem 0 0.868rem 0;
   min-height: 100%;
 }
-.l-grid__col:first-child {
+.l-grid__col:first-child, .l-contest__entry:first-child {
   padding-top: 0;
 }
-.l-grid__col:last-child {
+.l-grid__col:last-child, .l-contest__entry:last-child {
   padding-bottom: 0;
 }
-.l-grid--noGutter .l-grid__col {
+.l-grid--noGutter .l-grid__col, .l-grid--noGutter .l-contest__entry {
   padding: 0 !important;
 }
 
@@ -811,35 +811,35 @@ p {
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .l-grid--2col\@small .l-grid__col {
+  .l-grid--2col\@small .l-grid__col, .l-grid--2col\@small .l-contest__entry {
     flex: 1 0 48%;
     padding: 0 0.868rem 1.736rem 0.868rem;
   }
-  .l-grid--2col\@small .l-grid__col:first-child {
+  .l-grid--2col\@small .l-grid__col:first-child, .l-grid--2col\@small .l-contest__entry:first-child {
     padding-left: 0;
   }
-  .l-grid--2col\@small .l-grid__col:nth-child(2n+2) {
+  .l-grid--2col\@small .l-grid__col:nth-child(2n+2), .l-grid--2col\@small .l-contest__entry:nth-child(2n+2) {
     padding-right: 0;
   }
-  .l-grid--2col\@small .l-grid__col:nth-child(2n+3) {
+  .l-grid--2col\@small .l-grid__col:nth-child(2n+3), .l-grid--2col\@small .l-contest__entry:nth-child(2n+3) {
     padding-left: 0;
   }
-  .l-grid--2col\@small .l-grid__col:nth-last-child(-n+2) {
+  .l-grid--2col\@small .l-grid__col:nth-last-child(-n+2), .l-grid--2col\@small .l-contest__entry:nth-last-child(-n+2) {
     padding-bottom: 0;
   }
 }
 @media screen and (min-width: 700px) {
-  .l-grid {
+  .l-grid, .l-contest {
     flex-direction: row;
   }
 
-  .l-grid__col {
+  .l-grid__col, .l-contest__entry {
     padding: 0 0.868rem 0 0.868rem;
   }
-  .l-grid__col:first-child {
+  .l-grid__col:first-child, .l-contest__entry:first-child {
     padding-left: 0;
   }
-  .l-grid__col:last-child {
+  .l-grid__col:last-child, .l-contest__entry:last-child {
     padding-right: 0;
   }
 }
@@ -2093,6 +2093,44 @@ body {
 @media screen and (min-width: 700px) {
   .l-miniDashboard__duo__right__txt {
     text-align: center;
+  }
+}
+
+/*======================================================================*\
+==========================================================================
+
+//	LAYOUT CONTEST
+
+==========================================================================
+\*======================================================================*/
+.l-contest {
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 480px) {
+  .l-contest {
+    flex-direction: row;
+  }
+}
+
+.l-contest__entry {
+  margin-top: 1.736rem !important;
+  width: 100%;
+}
+@media screen and (min-width: 480px) {
+  .l-contest__entry {
+    flex: none;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 700px) {
+  .l-contest__entry {
+    width: 33.33%;
+    margin-top: 3.472rem !important;
+  }
+}
+@media screen and (min-width: 960px) {
+  .l-contest__entry {
+    width: 25%;
   }
 }
 
@@ -3897,7 +3935,7 @@ a.c-meta__meta:hover {
 .c-pagination__links {
   display: flex;
 }
-.c-pagination__links .t-meta, .c-pagination__links .l-miniDashboard__row__element, .c-pagination__links .c-newsH__body__meta, .c-pagination__links .c-meta__meta, .c-pagination__links .c-downloadItem__title, .c-pagination__links .page-numbers, .c-pagination__links .c-share__item, .c-pagination__links .receipts__overview__col, .c-pagination__links .miniEvent__meta, .c-pagination__links .infowindow__content .infowindow__content__structure, .infowindow__content .c-pagination__links .infowindow__content__structure {
+.c-pagination__links .t-meta, .c-pagination__links .l-miniDashboard__row__element, .c-pagination__links .c-newsH__body__meta, .c-pagination__links .c-meta__meta, .c-pagination__links .c-downloadItem__title, .c-pagination__links .page-numbers, .c-pagination__links .c-share__item, .c-pagination__links .c-haiku__vote__count, .c-pagination__links .receipts__overview__col, .c-pagination__links .miniEvent__meta, .c-pagination__links .infowindow__content .infowindow__content__structure, .infowindow__content .c-pagination__links .infowindow__content__structure {
   color: #fff;
 }
 .c-pagination__links .screen-reader-text,
@@ -4003,6 +4041,42 @@ a.c-meta__meta:hover {
 }
 [class*='bg-accent'] .c-share__item--btn:hover {
   color: #fff;
+}
+
+/*======================================================================*\
+==========================================================================
+
+//	COMPOSANT HAIKU
+
+==========================================================================
+\*======================================================================*/
+.c-haiku {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+@media screen and (min-width: 480px) {
+  .c-haiku {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.c-haiku__vote {
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 480px) {
+  .c-haiku__vote {
+    padding-top: 1.736rem;
+    margin-top: auto;
+  }
+}
+
+.c-haiku__vote__count {
+  margin-left: 1.736rem;
+  margin-top: 0;
 }
 
 /*------------------------------*\
@@ -4241,11 +4315,11 @@ a.c-meta__meta:hover {
     margin: 0 auto;
     align-items: center;
   }
-  .grid-espaces-dedies .l-grid__col {
+  .grid-espaces-dedies .l-grid__col, .grid-espaces-dedies .l-contest__entry {
     flex: 1 0 auto;
     padding: 0 0.868rem 0 0.868rem !important;
   }
-  .grid-espaces-dedies .l-grid__col:first-child {
+  .grid-espaces-dedies .l-grid__col:first-child, .grid-espaces-dedies .l-contest__entry:first-child {
     flex: 1.5 0 auto;
   }
 }
@@ -4350,11 +4424,11 @@ a.c-meta__meta:hover {
     margin: 2.8rem 0;
   }
 }
-.userDashboard__infos__body .l-grid__col:nth-child(2) {
+.userDashboard__infos__body .l-grid__col:nth-child(2), .userDashboard__infos__body .l-contest__entry:nth-child(2) {
   position: relative;
 }
 @media screen and (min-width: 700px) {
-  .userDashboard__infos__body .l-grid__col:nth-child(2)::before {
+  .userDashboard__infos__body .l-grid__col:nth-child(2)::before, .userDashboard__infos__body .l-contest__entry:nth-child(2)::before {
     content: '';
     position: absolute;
     display: block;

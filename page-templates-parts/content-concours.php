@@ -76,41 +76,43 @@
 	if( $today >= $date_start_votes && $today <= $date_stop_votes || is_user_logged_in() ):
 		if( have_rows('candidatures') ): 
 			$i = 0;
-			echo '<section class="l-row participations bg-light" id="voter">';
-			echo '<div class="l-col l-col--content fc">';
-			echo '<h2 class="fc_title">Liste des participations</h2>';
-			echo '<ul class="l-postList participations">';
+			echo '<section class="l-row participations bg-white" id="voter">';
+			echo '<div class="l-col l-col--content"><h2 class="fc_title">Liste des participations</h2></div>';
+			echo '<div class="l-col no-pdTop fc">';
+
+			echo '<ul class="l-contest">';
 		    while ( have_rows('candidatures') ) : the_row(); 
 		    	$i++; 
 		    	$nb_votes = get_sub_field('nombre_votes');
+		    	$nb_votes_label = 'vote';
+		    	if ( $nb_votes > 0 ) {
+		    		$nb_votes_label == 'votes';
+		    	}
+
 				$video = get_sub_field('video_candidature');
+
 				$nom = get_sub_field('nom_prenom');
 				$structure = false;
 				if ( get_sub_field('nom_structure') ) {
 					$structure = get_sub_field('nom_structure');
 				}
 				?>
-				<li class="l-postList__item ">
-					<article class="participation">
-						<p class="t-meta"><span class="js-nb-rate"><?php echo $nb_votes; ?></span> votes</p>
-						<h1 class="h2"><?php echo get_sub_field('titre_candidature'); ?></h1>
-						<div class="c-meta">
-							<div class="c-dash"></div>
-							<span class="c-meta__meta"><i class="fa fa-user c-meta__meta__icon" aria-hidden="true"></i><?php echo $nom; ?></span>
-							<?php if ($structure) : ?>
-								<span class="c-meta__meta"><i class="fa fa-cube c-meta__meta__icon" aria-hidden="true"></i><?php echo $structure; ?></span>
-							<?php endif; ?>
+				<li class="l-contest__entry">
+					<article class="c-haiku participation">
+						<div class="c-haiku__content">
+							<p class="c-haiku__content__txt"><?php echo get_sub_field('texte_candidature'); ?></p>
+				        	<!-- <div><?php //echo $video; ?></div>	 -->
 						</div>
-
-				        <p><?php echo get_sub_field('texte_candidature'); ?></p>
-				        <div><?php echo $video; ?></div>
-							
-				       	<form class="form-rating mgTop--s" role="form">					       		
-				       		<input type="hidden" value="<?php echo $idp; ?>" name="idp">
-							<input type="hidden" value="<?php echo $i; ?>" name="idc">
-							<?php wp_nonce_field( 'fluxi_rating_concours', 'fluxi_rating_concours_nonce_field' ); ?>
-				       		<button type="submit" class="c-btn"><i class="fa fa-heart c-meta__meta__icon" aria-hidden="true"></i>Voter</button>			       		
-				       	</form>
+				        
+				        <div class="c-haiku__vote">
+				       	 	<form class="form-rating c-haiku__vote__button" role="form">					       		
+					       		<input type="hidden" value="<?php echo $idp; ?>" name="idp">
+								<input type="hidden" value="<?php echo $i; ?>" name="idc">
+								<?php wp_nonce_field( 'fluxi_rating_concours', 'fluxi_rating_concours_nonce_field' ); ?>
+					       		<button type="submit" class="c-btn c-btn--ghost"><i class="fa fa-heart c-meta__meta__icon" aria-hidden="true"></i>Voter</button>			       		
+					       	</form>
+							<p class="c-haiku__vote__count"><span class="js-nb-rate"><?php echo $nb_votes; ?></span> <?php echo $nb_votes_label; ?></p>
+						</div>
 			       </article>
 				</li>
 			<?php
