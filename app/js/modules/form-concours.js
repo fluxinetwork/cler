@@ -8,7 +8,8 @@ $( document ).ready(function() {
 	if($('.single-concours').length){
         initParticipationConcoursForm();
 
-        if($('js-haiku').length){
+        if($('.js-haiku')){
+        	
         	initMultiVoteConcours();
         }else{
         	initOneVoteConcours();
