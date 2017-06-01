@@ -31,7 +31,7 @@
 	$date_stop_votes = $stop_votes->format('Ymd');
 ?>
 
-<div class="l-row bg-light">
+<div class="l-row bg-light js-<?php echo $type_concours; ?> js-is-concours" data-idp="<?php echo $idp;?>">
 	<header class="l-col l-col--content l-intro">
 		<h1><?php echo get_the_title(); ?></h1>
 		<div class="c-meta l-intro__meta">

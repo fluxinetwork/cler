@@ -7,7 +7,12 @@
 $( document ).ready(function() {
 	if($('.single-concours').length){
         initParticipationConcoursForm();
-        initVoteConcours();
+
+        if($('js-haiku').length){
+        	initMultiVoteConcours();
+        }else{
+        	initOneVoteConcours();
+        }
     }
 });
 
@@ -27,12 +32,12 @@ function initParticipationConcoursForm(){
 
 // Vote
 
-function initVoteConcours(){
+function initOneVoteConcours(){
 	// Test if user already rate & hide rating button
-	var concoursId = $('#concours').data('idp');
+	var concoursId = $('.js-is-concours').data('idp');
 	var localS = localStorage.getItem('fluxi_r_c-'+concoursId);
-
-	if( localS == '42' ) {
+	
+	if( localS == '42' ) {		
 		$('.form-rating').remove();
 	}
 	
@@ -84,7 +89,7 @@ function initVoteConcours(){
 	        });
 	        return false;
 	        
-	    }else{
+	    }else{	    	
 	    	// Déjà voté
 	    	$('.form-rating button[type=submit]').hide().prop('disabled', true);
 	    }
@@ -93,3 +98,54 @@ function initVoteConcours(){
    
 }
 
+
+function initMultiVoteConcours(){
+	// Test if user already rate & hide rating button
+	var concoursId = $('#concours').data('idp');	
+	
+	// On submit rating
+	$('.form-rating').on('submit', function(e){		
+		e.preventDefault();
+		var $formObj = $(this);
+        var params = $formObj.serialize();		
+        var $button = $formObj.find('button[type=submit]');
+
+        var the_idp = $formObj.find('input[name=idp]').val();
+        var the_idc = $formObj.find('input[name=idc]').val(); 
+
+        $button.html('<i class="fa fa-cog fa-spin js-spinner mgRight--xs" aria-hidden="true"></i>En cours').prop('disabled', true);
+
+	    $.ajax({
+	        type: 'POST',
+	        dataType: 'JSON',
+	        url: ajax_object.ajax_url,
+	        data: 'action=fluxi_rating_concours&'+params,
+	        success: function(data){
+
+	            if(data[0].validation == 'error'){                
+	            	$('<p class="error">'+data[0].message+'</p>').insertAfter($button);
+	                $button.prop('disabled', false).html('Voter');
+	            }else{
+	                $('<p class="success">'+data[0].message+'</p>').insertAfter($button);
+
+	                var nb_votes = parseInt($formObj.parent().find('.js-nb-rate').text()) + 1;
+	                $formObj.parent().find('.js-nb-rate').html(nb_votes);
+	               	
+	                $button.hide();
+
+	                $button.prop('disabled', true);
+	                
+	            }
+
+	        },
+	        error : function(jqXHR, textStatus, errorThrown) {
+	            //console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
+	            $button.prop('disabled', false).html('Voter');
+	        }
+
+	    });
+	    return false;	 
+
+	});    
+   
+}
