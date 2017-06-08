@@ -57,17 +57,15 @@ Template Name: Toutes les formations
 			  <select class="c-form__select" name="thematique" id="thematique">
 			    <option disabled selected value="">Thématique</option>
 			    <option value="thematique_1">Maîtrise de l’énergie</option>
-				<option value="thematique_2">Énergies renouvelables/Généraliste </option>
-				<option value="thematique_3">Énergies renouvelables/Solaire thermique</option>
-				<option value="thematique_4">Énergies renouvelables/Solaire photovoltaïque</option>
-				<option value="thematique_5">Énergies renouvelables/Biomasse</option>
-				<option value="thematique_6">Énergies renouvelables/Biogaz</option>
-				<option value="thematique_7">Énergies renouvelables/Eolien</option>
-				<option value="thematique_8">Énergies renouvelables/Hydraulique</option>
-				<option value="thematique_9">Énergies renouvelables/Géothermie</option>
-				<option value="thematique_10">Territoires &amp; environnement </option>
-				<option value="thematique_11">Précarité énergétique</option>
-				<option value="thematique_12">Mobilité</option>
+				<option value="thematique_2">Bâtiment</option>
+				<option value="thematique_3">Énergies renouvelables/Généraliste</option>
+				<option value="thematique_4">Énergies renouvelables/Solaire</option>
+				<option value="thematique_5">Énergies renouvelables/Biomasse et biogaz</option>
+				<option value="thematique_6">Énergies renouvelables/Eolien</option>
+				<option value="thematique_7">Précarité énergétique</option>
+				<option value="thematique_8">Mobilité</option>
+				<option value="thematique_9">Territoires et environnement</option>
+				<option value="thematique_10">Agriculture et agronomie</option>
 			  </select>
 			</div>
 
