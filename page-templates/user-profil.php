@@ -97,7 +97,9 @@ Template Name: Profil
 	</section>
 	
 	<?php include(TEMPLATEPATH.'/page-templates-parts/sliders/publications-slider.php'); ?>
-		
+	
+	<?php include(TEMPLATEPATH.'/page-templates-parts/appels.php'); ?>
+
 	<?php include(TEMPLATEPATH.'/page-templates-parts/recus.php'); ?>
 
 	<section class="l-row">

@@ -330,8 +330,6 @@ function manage_adhesion_metabox() {
 						$recu_id = get_sub_field('recu', false, false);
 						$recu_status = get_post_status( $recu_id );
 
-						$appel_id = get_sub_field('appel', false, false);
-
 						// Count var mail paiement
 						$nb_send_mail_paie_slug = 'nb_send_mail_paiement_' . get_sub_field('annee_cotisation');
 						if(get_field($nb_send_mail_paie_slug)):
@@ -351,14 +349,11 @@ function manage_adhesion_metabox() {
 						$link_recu = '';
 						if( $recu_id && get_post_status($recu_id) != '' && get_post_status($recu_id) != 'trash' ):
 							$link_recu = '<a href="'.get_edit_post_link($recu_id).'">Modifier le reçu</a>';
-							// link to appel						
-							if( $appel_id && get_post_status($appel_id) != '' && get_post_status($appel_id) != 'trash' ):
-								$link_recu .= ' | <a href="'.get_edit_post_link($appel_id).'">Modifier l\'appel</a>';
-							endif;
 
 						else:
-							echo '<p class="f-error-mess">Envoyez l\'appel à cotisation il sera créé automatiquement ainsi que le reçu. Si vous créez le reçu ou l\'appel à cotisation manuellement, n\'oublier pas de relier les posts.</p>';
+							echo '<p class="f-error-mess">Envoyez l\'appel à cotisation et le reçu sera créé automatiquement. Si vous créez le reçu manuellement n\'oublier pas de relier les posts.</p>';
 						endif;
+
 
 						// Send paiement & reçu
 						if( get_sub_field('date_paiement') != '' && get_post_status($recu_id) != '' && get_post_status($recu_id) != 'trash'):
@@ -387,7 +382,7 @@ add_action( 'add_meta_boxes', 'add_control_adhesion' );
 
 
 /**
-* Send email (appel à cotisation)
+* Send email (paiement)
 *
 * @param n/a
 * @return Json - process response
@@ -428,8 +423,6 @@ function send_email_paiement() {
 					$telephone = get_field('telephone_contact1');
 					$adresse_structure = get_field('adresse').' '.get_field('code_postal').' '.get_field('ville');
 					$security_token_r = bin2hex(random_bytes(24));
-					$security_token_ap = bin2hex(random_bytes(24));
-					$profil_url = esc_url(get_permalink(PAGE_PROFIL));
 
 					$metas_tab_r = array(
 						'type_recu'		=> 'recu_adhesion',
@@ -443,19 +436,6 @@ function send_email_paiement() {
 						'contact_email' => $mail_contact,
 						'telephone'		=> $telephone,
 						'security_token'=> $security_token_r
-					);
-
-					$metas_tab_ap = array(
-						'nom_structure' => $nom_structure,
-						'adresse_structure'	=> $adresse_structure,
-						'date_creation' => date('Ymd'),
-						'annee_cotisation' => $annee_cotisation,
-						'montant_cotisation' => $montant_cotisation,
-						'publication'	=> $the_idp,
-						'nom_prenom_contact' => $nom_prenom_contact,
-						'contact_email' => $mail_contact,
-						'telephone'		=> $telephone,
-						'security_token'=> $security_token_ap
 					);
 
 					// Update status adhésion
@@ -480,13 +460,9 @@ function send_email_paiement() {
 					        if( get_sub_field('annee_cotisation') == $annee_cotisation ):
 
 					        	$recu_id = get_sub_field('recu', false, false);
-					        	$appel_id = get_sub_field('appel', false, false);
 
-					        	// **
-					        	// If "reçu" exist
 					        	if( $recu_id && get_post_status($recu_id) != '' && get_post_status($recu_id) != 'trash' ):
 
-					        		// **
 									// Update reçu
 									$update_recu = array(
 										'ID'			=> $recu_id,
@@ -502,67 +478,27 @@ function send_email_paiement() {
 									foreach( $metas_tab_r as $key => $value ){
 										update_post_meta($recu_id, $key, $value);
 									}
-									
-									// **
-									// Update appel à cotisation
-					        		if( $appel_id && get_post_status($appel_id) != '' && get_post_status($appel_id) != 'trash' ):
-					        			
-										$update_appel = array(
-											'ID'			=> $appel_id,
-											'post_title'    => 'Appel à cotisation '.$annee_cotisation.' - ' . $nom_structure,
-											'post_status'   => 'publish',
-											'post_author'   => $author_id,
-											'post_type' 	=> 'appelcotise'
-										);
 
-										wp_update_post($update_appel);
-
-										// Update metas reçu
-										foreach( $metas_tab_ap as $key => $value ){
-											update_post_meta($appel_id, $key, $value);
-										}
-					        		endif;										
-
-					        		// **
-									// Update repeater
 									$cotisations_value[$counter_cotisations] = array(
 										'annee_cotisation' => $annee_cotisation,
 										'montant_cotisation' => $montant_cotisation,
 										'date_paiement' => get_sub_field('date_paiement', false, false),
-										'recu' => $recu_id,
-										'appel' => $appel_id
+										'recu' => $recu_id
 									);
 									update_field( 'cotisations', $cotisations_value, $the_idp );
 
 									// Paiement url
 							        $paiement_url = home_url().'/payer/?st='.$security_token_r.'&ido='.$the_idp.'&idr='.$recu_id;
 
-							        // **
-									// Mailing Appel à cotisation
-									$mail_vars_paiement = array(get_footer_mail(), $montant_cotisation, $today, $nom_structure, $adresse_structure, $annee_cotisation, $paiement_url, $profil_url );
+							        // Appel à cotisation
+									$mail_vars_paiement = array(get_footer_mail(), $montant_cotisation, $today, $nom_structure, $adresse_structure, $annee_cotisation, $paiement_url );
 									notify_by_mail (array($mail_contact),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Payer votre cotisation d\'adhésion '.$annee_cotisation.' au CLER', true, get_template_directory() . '/app/inc/mails/appel-cotisation.php', $mail_vars_paiement);
 
 									$message_response = 'L\'email contenant la procédure de paiement de la cotisation '.$annee_cotisation.' a bien été envoyé.';
 
 						        else:
-						        	// **
-						        	// Création d'un appel à cotisation
-						        	$new_appel = array(
-										'post_title'    => 'Appel à cotisation '.$annee_cotisation.' - ' . $nom_structure,
-										'post_status'   => 'publish',
-										'post_author'   => $author_id,
-										'post_type' 	=> 'appelcotise'
-									);
 
-						        	$appel_id = wp_insert_post( $new_appel );
-
-						        	// Insert meta
-									foreach( $metas_tab_ap as $key => $value ){
-										add_post_meta($appel_id, $key, $value, true);
-									}
-
-						        	// **
-						        	// Création d'un pré-reçu						        	
+						        	// Création d'un pré-reçu
 									$new_recu = array(
 										'post_title'    => 'Reçu cotisation '.$annee_cotisation.' - ' . $nom_structure,
 										'post_status'   => 'pending',
@@ -577,42 +513,34 @@ function send_email_paiement() {
 										add_post_meta($recu_id, $key, $value, true);
 									}
 
-									// **
-									// Repeater
 									$cotisations_value[$counter_cotisations] = array(
 										'annee_cotisation' => $annee_cotisation,
 										'montant_cotisation' => $montant_cotisation,
 										'date_paiement' => get_sub_field('date_paiement', false, false),
-										'recu' => $recu_id,
-										'appel' => $appel_id,
+										'recu' => $recu_id
 									);
 									update_field( 'cotisations', $cotisations_value, $the_idp );
 
-									// **
-									// Secure paiment url
+
 									$paiement_url = home_url().'/payer/?st='.$security_token_r.'&ido='.$the_idp.'&idr='.$recu_id;
 
-									// **
-									// Mailing Appel à cotisation									
-									$mail_vars_paiement = array(get_footer_mail(), $montant_cotisation, $today, $nom_structure, $adresse_structure, $annee_cotisation, $paiement_url, $profil_url );
+									// Appel à cotisation
+									$mail_vars_paiement = array(get_footer_mail(), $montant_cotisation, $today, $nom_structure, $adresse_structure, $annee_cotisation, $paiement_url );
 									notify_by_mail (array($mail_contact),'CLER - Réseau pour la transition énergétique <' . CONTACT_GENERAL . '>', 'Payer votre cotisation d\'adhésion '.$annee_cotisation.' au CLER', true, get_template_directory() . '/app/inc/mails/appel-cotisation.php', $mail_vars_paiement);
 
 									$message_response = 'L\'email contenant la procédure de paiement de la cotisation '.$annee_cotisation.' a bien été envoyé.';
 
 								endif;
-
 							else:
-								// **
-								// Update repeater
-								$cotisations_value[$counter_cotisations] = array(
-									'annee_cotisation' => get_sub_field('annee_cotisation'),
-									'montant_cotisation' => get_sub_field('montant_cotisation'),
-									'date_paiement' => get_sub_field('date_paiement', false, false),
-									'recu' => get_sub_field('recu', false, false),
-									'appel' => get_sub_field('recu', false, false)
-								);
+									// Update repeater
+									$cotisations_value[$counter_cotisations] = array(
+										'annee_cotisation' => get_sub_field('annee_cotisation'),
+										'montant_cotisation' => get_sub_field('montant_cotisation'),
+										'date_paiement' => get_sub_field('date_paiement', false, false),
+										'recu' => get_sub_field('recu', false, false)
+									);
 
-								update_field( 'cotisations', $cotisations_value, $the_idp );
+									update_field( 'cotisations', $cotisations_value, $the_idp );
 					        endif;
 
 					        $counter_cotisations++;
@@ -712,7 +640,7 @@ function send_email_facture() {
 						$num_mode_paiement = get_field('derniers_chiffres', $the_idr);
 					elseif($mode_paiement=='virement'):
 						$num_mode_paiement = get_field('num_virement', $the_idr);
-					else:
+					else:	
 						$num_mode_paiement = get_field('num_cheque', $the_idr);
 					endif;
 

@@ -23,3 +23,4 @@ require_once locate_template('/app/inc/forms/manage-map-adherents.php');
 
 require_once locate_template('/app/inc/forms/manage-paiement.php');
 require_once locate_template('/app/inc/forms/manage-recu.php');
+require_once locate_template('/app/inc/forms/manage-appel.php');

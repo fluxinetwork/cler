@@ -11,7 +11,7 @@
 	if( $contact ):			
 		$photo = get_field('photo', $contact_id);
 
-		$output = '<a href="mailto:'.get_field('mail_contact', $contact_id).'">';
+		$output = '<div>';
 			$output .= '<article class="c-card">';
 				$output .= '<div class="c-card__header" style="background-image: url('.$photo['sizes']['thumb2x'].')"></div>';
 				$output .= '<div class="c-card__body">';
@@ -21,7 +21,7 @@
 				$output .= '</div>';
 				$output .= '<div class="c-card__footer"><span class="c-link c-link--more c-card__body__link">Contactez moi</span></div>';
 			$output .= '</article>';
-		$output .= '</a>';
+		$output .= '</div>';
 
 		echo $output;
 		

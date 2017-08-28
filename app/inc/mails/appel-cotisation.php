@@ -16,6 +16,7 @@ if ( $vars ) :
     $adresse_structure = $vars[4];
     $annee_cotisation = $vars[5];
     $refer_url = $vars[6];
+    $profil_url = $vars[7];
 endif;
 
 
@@ -51,17 +52,17 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 
                       Pour confirmer votre adhésion ou ré-adhésion au CLER – Réseau pour la transition énergétique, nous vous prions d\'acquitter rapidement votre cotisation pour l\'année '.$annee_cotisation.'.<br><br>
 
-                      A réception du paiement, nous vous ferons parvenir un reçu attestant du règlement de votre cotisation.<br><br>
+                      Vous trouverez votre appel à cotisation ci-dessous. Il est également à votre disposition (à conserver ou à imprimer) en ligne, dans <a href="'.$profil_url.'" target="_blank">votre espace adhérent</a>. Veuillez noter qu\'aucune facture ne vous sera envoyée par courrier ou email.<br><br>
 
-                      Vous trouverez ci-dessous l’appel à cotisation :
+                      A réception du paiement, un reçu attestant du règlement de votre cotisation vous parviendra par email. Ce reçu sera également téléchargeable dans votre espace adhérent.
                     </p>
                     
                     <p style="border:2px solid #000; padding:15px;text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">
                       <strong>Appel à cotisation '.$annee_cotisation.'</strong><br><br>
 
-                      Pour l\'adhésion de '.$nom_structure.' au CLER – Réseau pour la transition énergétique (Association loi 1901 non assujettie à la TVA) demandée le '.$today.'.<br><br>
+                      Pour l\'adhésion de '.$nom_structure.' au CLER – Réseau pour la transition énergétique<sup>*</sup><br><br>
 
-                      Montant de l’adhésion : '.$montant_cotisation.',00 €
+                      Montant de l\'adhésion : '.$montant_cotisation.',00 €
                     </p>
                     <br>
                     <h3 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:20px;line-height: 22px;">Comment payer ?</h3>
@@ -70,10 +71,10 @@ $contenu_mail = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
                     <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Merci de procéder au règlement via la page de <a style="color: #00c15f; display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-bottom: 3px solid #00c15f; text-decoration: none;" href="'.$refer_url.'" target="_blank">paiement en ligne</a>.</p>
 
                     <h4 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:17px;line-height: 20px;">Règlement par chèque</h4>
-                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Merci d\'adresser votre règlement à l\'ordre du CLER et de l\'envoyer par voie postale à :<br>Mundo-m, 47 avenue Pasteur, 93100 Montreuil.</p>                    
+                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Merci d\'adresser votre règlement à l\'ordre du CLER (référence à indiquer : Adhésion '.$annee_cotisation.') et de l\'envoyer par voie postale à :<br>Mundo-m, 47 avenue Pasteur, 93100 Montreuil.</p>                    
         
                     <h4 style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:17px;line-height: 20px;">Règlement par mandat administratif</h4>
-                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Merci de nous adresser un bon de commande à l\'adresse suivante : reseau@cler.org </p>
+                    <p style="text-align:left; font-family: gotham,helvetica,arial,sans-serif; font-size:16px;line-height: 22px;">Merci de nous adresser un bon de commande (référence à indiquer : Adhésion '.$annee_cotisation.') à l\'adresse suivante : reseau@cler.org </p>
 
                   </td>
                 </tr> 

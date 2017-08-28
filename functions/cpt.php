@@ -72,6 +72,38 @@ if ( CUSTOM_POST_TYPE ) {
 	}
 	add_action( 'init', 'cpts_adherent' );
 
+	// Appels à cotisation
+	function cpts_cotisation() {
+		$labels = array(
+			'name' => __( 'Appels à cotisation', '' ),
+			'singular_name' => __( 'Appel à cotisation', '' ),
+			);
+
+		$args = array(
+			'label' => __( 'Appels à cotisation', '' ),
+			'labels' => $labels,
+			'description' => '',
+			'public' => true,
+			'show_ui' => true,
+			'show_in_rest' => false,
+			'rest_base' => '',
+			'has_archive' => false,
+			'show_in_menu' => true,
+			'exclude_from_search' => true,
+			'capability_type' => 'post',
+			'map_meta_cap' => true,
+			'hierarchical' => false,
+			'rewrite' => array( 'slug' => 'appelcotise', 'with_front' => true ),
+			'query_var' => true,
+
+			'supports' => array( 'title', 'author' ),
+			'taxonomies' => array(),
+		);
+		register_post_type( 'appelcotise', $args );
+
+	}
+	add_action( 'init', 'cpts_cotisation' );
+
 	// Reçus
 	function cpts_recus() {
 		$labels = array(

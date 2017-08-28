@@ -30,6 +30,7 @@ var FOO = {
         init: function(){
              initFluxiDelPost();
 
+             // Toggle reçu
              $('.js-receipts-hidden').slideToggle(0);
              var list_is_open = false;
 
@@ -45,6 +46,24 @@ var FOO = {
                      list_is_open=false;
                  }
              });
+
+             // Toggle appels
+             $('.js-appels-hidden').slideToggle(0);
+             var list_is_open = false;
+
+             $('.js-toggle-appels').click( function(e) {
+                 e.preventDefault();
+                 $('.js-appels-hidden').slideToggle();
+
+                 if( list_is_open===false ){
+                     $(this).html('<i class="fa fa-search-minus mgRight--xs"></i>Afficher moins');
+                     list_is_open=true;
+                 } else {
+                     $(this).html('<i class="fa fa-search-plus mgRight--xs"></i>Afficher tout');
+                     list_is_open=false;
+                 }
+             });
+
         }
     },
     page_has_filters: {
