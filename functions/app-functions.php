@@ -1,5 +1,6 @@
 <?php
 /**
+ * update_formatere_cron()
  * fluxi_filter_posts()
  * fluxi_delete_post()
  * load_departements_fields()
@@ -8,6 +9,34 @@
  * get_footer_mail()
  * participation_webinaire_registered()
  */
+
+
+/**
+ * Auto update formatere page
+ * 
+ * @param   N/A
+ *
+ * @return	N/A
+ */
+
+function update_formatere_cron () {	
+	$post_id = PAGE_FORMATERE;
+
+	// Get Fluxi content
+	$the_fluxi_content = get_fluxi_fields($post_id);
+	$fluxi_resum = get_field('fluxi_resum', $post_id);
+
+	// Update post content with Fluxi content
+	wp_update_post(
+		array(
+			'ID' => $post_id,
+			'post_content' => $the_fluxi_content,
+			'post_excerpt' => $fluxi_resum
+		)
+	);
+
+} add_action('update_formatere_cron', 'update_formatere_cron'); 
+
 
 /**
  * Filter posts - Use tags

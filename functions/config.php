@@ -16,11 +16,11 @@ define('POST_EXCERPT_LENGTH', 40);
 define('SLIDER_NB_POSTS', 10);
 define('LIMIT_STRING', 90);
 
-
+define('STRIPE_KEY', get_field('stripe_key','option'));
 //define('STRIPE_KEY', 'sk_test_v6Ap9E383Hth1I9JkIuHXJFJ');
 
-define('GOOGLE_ANALYTICS_ID', '');
-define('GOOGLE_MAP_API_KEY', 'AIzaSyCHOJtRqM6DSAm6HXYsYSITlHhzkvLKH_M');
+define('GOOGLE_ANALYTICS_ID', get_field('analitics_key','option'));
+define('GOOGLE_MAP_API_KEY', get_field('google_map_key','option'));
 /* ACF Google Maps */
 function wpc_acf_init() {
 	acf_update_setting('google_api_key', GOOGLE_MAP_API_KEY);
@@ -36,6 +36,8 @@ define('PAGE_TAXO', true);
 define('ACF_OPTION_PAGE', true);
 define('ADD_THUMBNAILS', false);
 define('DISALLOW_FILE_EDIT', true);
+// CRON
+define('DISABLE_WP_CRON', false);
 
 
 /**
@@ -61,7 +63,7 @@ define('CONTACTS_CONCOURS_3', 'jennifer.lavalle@cler.org');
 
 define('CONTACTS_FORMATION_1', 'lucile.krezel@cler.org');
 define('CONTACTS_FORMATION_2', 'alexis.monteil@cler.org');
-/*
+/* 
 define('CONTACT_GENERAL', 'rollandyann@gmail.com');
 
 define('CONTACTS_ADHESION_1', 'rollandyann@gmail.com');
@@ -79,7 +81,7 @@ define('CONTACTS_CONCOURS', 'rollandyann@gmail.com');
 
 define('CONTACTS_FORMATION_1', 'rollandyann@gmail.com');
 define('CONTACTS_FORMATION_2', 'rollandyann@gmail.com');
- */
+*/
 
 /**
  * LINKS
@@ -91,6 +93,7 @@ define('MAP_ADHERENT', '311');
 define('PAGE_ADHEREZ', '1286');
 define('PAGE_CA', '2655');
 define('PAGE_EQUIPE', '2658');
+define('PAGE_FORMATERE', '1270');
 
 define('HUB_ADHERENT', '3024');
 define('HUB_CITOYEN', '1288');
@@ -107,6 +110,14 @@ define('FORM_EVENT', '313');
 define('FORM_FORMATION', '1234');
 define('FORM_PROFIL', '9');
 define('FORM_ADHESION', '141');
+
+/*
+define('FORM_OFFRE', '143');
+define('FORM_EVENT', '313');
+define('FORM_FORMATION', '1234');
+define('FORM_PROFIL', '9');
+define('FORM_ADHESION', '873');
+*/
 
 define('CREER_USER', '7');
 define('RESET_PASSWORD', '10');
