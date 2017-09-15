@@ -16,12 +16,7 @@ define('POST_EXCERPT_LENGTH', 40);
 define('SLIDER_NB_POSTS', 10);
 define('LIMIT_STRING', 90);
 
-define('STRIPE_KEY', 'sk_live_m9VYtSl6e3nnuQzGyE4g6PCD');
-//define('STRIPE_KEY', 'sk_test_v6Ap9E383Hth1I9JkIuHXJFJ');
 
-define('GOOGLE_ANALYTICS_ID', 'UA-93488630-1');
-
-define('GOOGLE_MAP_API_KEY', 'AIzaSyCHOJtRqM6DSAm6HXYsYSITlHhzkvLKH_M');
 /* ACF Google Maps */
 function wpc_acf_init() {
 	acf_update_setting('google_api_key', GOOGLE_MAP_API_KEY);
